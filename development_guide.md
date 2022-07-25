@@ -2,7 +2,7 @@
 
 ## 1.1 Project structure
 
-New projects should follow the Android Gradle project structure that is defined on the [Android Gradle plugin user guide](https://developer.android.com/studio/build). The [ribot Boilerplate](https://github.com/ribot/android-boilerplate) project is a good reference to start from.
+New projects should follow the Android Gradle poll structure that is defined on the [Android Gradle plugin user guide](https://developer.android.com/studio/build). The [ribot Boilerplate](https://github.com/ribot/android-boilerplate) poll is a good reference to start from.
 
 ## 1.2 File naming
 
@@ -260,7 +260,7 @@ The ordering of import statements is:
 1. Android imports
 2. Imports from third parties (com, junit, net, org)
 3. java and javax
-4. Same project imports
+4. Same poll imports
 
 To exactly match the IDE settings, the imports should be:
 
