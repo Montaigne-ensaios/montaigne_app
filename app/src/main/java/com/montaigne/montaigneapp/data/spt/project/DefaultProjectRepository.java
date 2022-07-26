@@ -1,8 +1,12 @@
 package com.montaigne.montaigneapp.data.spt.project;
 
+import android.os.FileUtils;
+
 import com.montaigne.montaigneapp.data.Project;
 import com.montaigne.montaigneapp.data.spt.poll.PollDataSource;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 
 public class DefaultProjectRepository implements ProjectRepository {
@@ -47,7 +51,7 @@ public class DefaultProjectRepository implements ProjectRepository {
 
     @Override
     public void completeProject(Project project) {
-
+        
     }
 
     @Override
