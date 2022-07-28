@@ -1,11 +1,15 @@
 package com.montaigne.montaigneapp.data.spt.project.local;
 
 import com.montaigne.montaigneapp.data.Project;
+import com.montaigne.montaigneapp.data.spt.ProjectSpt;
 
 import java.util.List;
 
 public class ProjectDao {
-    protected List<Project> getProjects() {
+
+
+    protected List<ProjectSpt> getProjects() {
+
         return null;
     }
 
@@ -13,10 +17,10 @@ public class ProjectDao {
         return null;
     }
 
-    protected void insertProject(Project poll) {
+    protected void insertProject(ProjectSpt poll) {
     }
 
-    protected void updateProject(Project poll) {
+    protected void updateProject(ProjectSpt poll) {
     }
 
     protected void deleteTaskById(String id) {

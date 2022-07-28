@@ -1,14 +1,16 @@
 package com.montaigne.montaigneapp.data.spt.project.remote;
 
 import com.montaigne.montaigneapp.data.Project;
-import com.montaigne.montaigneapp.data.spt.poll.PollDataSource;
+import com.montaigne.montaigneapp.data.spt.ProjectSpt;
 import com.montaigne.montaigneapp.data.spt.project.ProjectDataSource;
 
 import java.util.List;
 
-public class ProjectLocalDataSource implements ProjectDataSource {
+public class ProjectRemoteDataSource implements ProjectDataSource {
+
+
     @Override
-    public List<Project> getProjects() {
+    public List<ProjectSpt> getProjects() {
         return null;
     }
 
@@ -28,7 +30,7 @@ public class ProjectLocalDataSource implements ProjectDataSource {
     }
 
     @Override
-    public void saveProject(Project poll) {
+    public void saveProject(ProjectSpt poll) {
 
     }
 

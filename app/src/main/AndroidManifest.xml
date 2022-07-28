@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MontaigneApp"
-        tools:targetApi="31">
+        android:name="com.orm.SugarApp"
+        tools:targetApi="31"
+        tools:replace="android:icon">
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -24,6 +26,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="DATABASE"
+            android:value="exemplo.db"/>
+
+        <meta-data android:name="VERSION"
+            android:value="1"/>
+
+        <meta-data android:name="QUERY_LOG"
+            android:value="true"/>
+
+        <meta-data android:name="DOMAIN_PACKAGE_NOME"
+            android:value="com.montaigne.montaigneapp"/>
+
     </application>
 
 </manifest>

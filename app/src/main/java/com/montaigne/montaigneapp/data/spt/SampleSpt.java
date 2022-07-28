@@ -1,5 +1,6 @@
 package com.montaigne.montaigneapp.data.spt;
 
+
 public class SampleSpt {
     private long id, idSondagem;
     private int blows1, blows2, blows3, nspt;
@@ -8,6 +9,8 @@ public class SampleSpt {
     }
 
     public SampleSpt(long id, long idSondagem, int blows1, int blows2, int blows3, int nspt) {
+
+
         this.id = id;
         this.idSondagem = idSondagem;
         this.blows1 = blows1;
