@@ -4,11 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class HomeActivity extends AppCompatActivity {
+    protected FloatingActionButton newProjectFab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        new HomeVM()
+
+        initializeViews();
+
+        HomeVM viewModel = new HomeVM(this);
+    }
+
+    private void initializeViews() {
+
     }
 }
