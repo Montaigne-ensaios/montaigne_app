@@ -1,4 +1,4 @@
 package com.montaigne.montaigneapp.activity.spt.furo;
 
-public class furoVM {
+public class FuroVM {
 }
