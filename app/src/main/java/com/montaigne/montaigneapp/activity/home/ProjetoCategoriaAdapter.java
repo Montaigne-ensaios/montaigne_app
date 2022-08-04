@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class ProjetoCategoriaAdapter extends RecyclerView.Adapter<ProjetoCategoriaAdapter.ViewHolder>{
-    private Context context;
+    private final Context context;
     private ArrayList<Object[]> categoriasProjeto = new ArrayList<>();
     // lista com: nome, referência da imagem
     // não pode ser um hash map pois não é acessível por posição
@@ -33,9 +33,9 @@ public class ProjetoCategoriaAdapter extends RecyclerView.Adapter<ProjetoCategor
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.buttonProjectName.setText((String) categoriasProjeto.get(position)[0]);
+        holder.buttonProjetoName.setText((String) categoriasProjeto.get(position)[0]);
         int drawableId = (Integer) categoriasProjeto.get(position)[1];
-        holder.imageProject.setImageDrawable(AppCompatResources.getDrawable(context, drawableId));
+        holder.imageProjeto.setImageDrawable(AppCompatResources.getDrawable(context, drawableId));
     }
 
     @Override
@@ -49,8 +49,8 @@ public class ProjetoCategoriaAdapter extends RecyclerView.Adapter<ProjetoCategor
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        protected ImageView imageProject;
-        protected Button buttonProjectName;
+        protected ImageView imageProjeto;
+        protected Button buttonProjetoName;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
