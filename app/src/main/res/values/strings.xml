@@ -9,12 +9,13 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 
-    <!-- Strings da tela Home-->
+    <!-- Strings da tela HOME-->
     <string name="TxtHomeFiltrosEnsaiosStr">Filtro de Ensaios</string>
     <string name="TxtHomeMeusProjetosStr">Meus Projetos</string>
 
     <!-- Strings da tela Adpter_home_filtro_Ensaios-->
     <string name="TxtHomeSptNameStr">SPT</string>
     <string name="TxtHomeGranulometriaNameStr">Granulometria</string>
+
 
 </resources>
