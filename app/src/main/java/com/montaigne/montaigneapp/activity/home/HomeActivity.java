@@ -9,7 +9,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class HomeActivity extends AppCompatActivity {
     protected FloatingActionButton newProjectFab;
-    protected RecyclerView projetoCategorias;
+    protected RecyclerView recyclerProjetoCategorias, recyclerProjetosSalvos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

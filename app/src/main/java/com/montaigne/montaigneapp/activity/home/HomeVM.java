@@ -10,29 +10,51 @@ import com.montaigne.montaigneapp.activity.carimboDefinitivo.CarimboDefinitivoAc
 import java.util.ArrayList;
 
 public class HomeVM {
-    // inicializar o adapter de projetos salvos
-    // inicializar o adapter de projetos categorias
-    // acessar lista de projetos
-    // intent menu lateral
     private final HomeActivity activity;
+    private final ArrayList<String> projetosSalvos;
 
-    public HomeVM (HomeActivity activity){
+    public HomeVM (HomeActivity activity) {
         this.activity = activity;
 
-        initializeProjectCategoriaAdapter();
+        projetosSalvos = getProjetos();
+
+        initializeProjetoCategoriaAdapter();
+        updateProjetosSalvosAdapter(projetosSalvos);
 
         activity.newProjectFab.setOnClickListener(this::newProjectFabListener);
     }
 
-    private void initializeProjectCategoriaAdapter (){
+    private void initializeProjetoCategoriaAdapter() {
         ArrayList<Object[]> categorias = new ArrayList<>();
         categorias.add(new Object[]{"SPT", 0});
         categorias.add(new Object[]{"Granulometria", 0});
 
         ProjetoCategoriaAdapter adapter = new ProjetoCategoriaAdapter(activity);
         adapter.setCategoriasProjeto(categorias);
-        activity.projetoCategorias.setAdapter(adapter);
-        activity.projetoCategorias.setLayoutManager(new LinearLayoutManager(activity));
+        activity.recyclerProjetoCategorias.setAdapter(adapter);
+        activity.recyclerProjetoCategorias.setLayoutManager(new LinearLayoutManager(
+                        activity,
+                        LinearLayoutManager.HORIZONTAL,
+                        false));
+    }
+
+    private void updateProjetosSalvosAdapter(ArrayList<String> projetos) {
+        ProjetosSalvosAdapter adapter = new ProjetosSalvosAdapter(activity, projetos);
+        activity.recyclerProjetosSalvos.setAdapter(adapter);
+        activity.recyclerProjetosSalvos.setLayoutManager(new LinearLayoutManager(activity));
+    }
+
+    private ArrayList<String> getProjetos() {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Exemplo de projeto");
+        list.add("Outro exemplo");
+        list.add("Só mais um");
+        list.add("Tá bom parei");
+        return list;
+    }
+
+    private void categoriaFilterListener(View view) {
+        // seleciona apenas os projetos da categoria especifica
     }
 
     private void newProjectFabListener(View view) {

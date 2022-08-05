@@ -55,7 +55,10 @@ public class ProjetoCategoriaAdapter extends RecyclerView.Adapter<ProjetoCategor
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
+
             // todo: initialize views
+            // itemView.findviewById(R.id.??)
+            // itemView.findviewById(R.id.??)
         }
     }
 }
