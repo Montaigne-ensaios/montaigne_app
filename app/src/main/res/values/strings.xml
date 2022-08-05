@@ -5,8 +5,17 @@
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+
+    <!-- Strings da tela HOME-->
+    <string name="TxtHomeFiltrosEnsaiosStr">Filtro de Ensaios</string>
+    <string name="TxtHomeMeusProjetosStr">Meus Projetos</string>
+
+    <!-- Strings da tela Adpter_home_filtro_Ensaios-->
+    <string name="TxtHomeSptNameStr">SPT</string>
+    <string name="TxtHomeGranulometriaNameStr">Granulometria</string>
+
+
 </resources>
