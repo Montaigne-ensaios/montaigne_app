@@ -4,10 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class FuroActivity extends AppCompatActivity {
+import com.montaigne.montaigneapp.activity.AbstractActivity;
+
+public class FuroActivity extends AbstractActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    protected void initializeViews() {
+
     }
 }

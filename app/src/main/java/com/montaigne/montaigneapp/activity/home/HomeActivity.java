@@ -6,8 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.montaigne.montaigneapp.activity.AbstractActivity;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AbstractActivity {
     protected FloatingActionButton newProjectFab;
     protected RecyclerView recyclerProjetoCategorias, recyclerProjetosSalvos;
 
@@ -15,12 +16,11 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        initializeViews();
-
         HomeVM viewModel = new HomeVM(this);
     }
 
-    private void initializeViews() {
+    @Override
+    protected void initializeViews() {
 
     }
 }

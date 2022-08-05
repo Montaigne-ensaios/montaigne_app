@@ -4,7 +4,9 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class CarimboDefinitivoActivity extends AppCompatActivity {
+import com.montaigne.montaigneapp.activity.AbstractActivity;
+
+public class CarimboDefinitivoActivity extends AbstractActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,7 +17,7 @@ public class CarimboDefinitivoActivity extends AppCompatActivity {
         CarimboDefinitivoVM viewModel = new CarimboDefinitivoVM();
     }
 
-    private void initializeViews() {
+    protected void initializeViews() {
 
     }
 }
