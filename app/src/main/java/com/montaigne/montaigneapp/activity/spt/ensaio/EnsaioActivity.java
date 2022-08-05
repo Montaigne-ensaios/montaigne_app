@@ -1,6 +1,5 @@
 package com.montaigne.montaigneapp.activity.spt.ensaio;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.montaigne.montaigneapp.activity.AbstractActivity;

@@ -1,6 +1,5 @@
 package com.montaigne.montaigneapp.activity.home;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;

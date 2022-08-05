@@ -1,7 +1,5 @@
 package com.montaigne.montaigneapp.activity.spt.furo;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
 import com.montaigne.montaigneapp.activity.AbstractActivity;
