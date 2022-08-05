@@ -6,7 +6,7 @@ import com.orm.SugarRecord;
 
 import java.util.List;
 
-public class ProjectLocalDataSource extends SugarRecord<ProjectSpt> implements ProjectDataSource {
+public class ProjectLocalDataSource extends SugarRecord implements ProjectDataSource {
     @Override
     public List<ProjectSpt> getProjects() {
 

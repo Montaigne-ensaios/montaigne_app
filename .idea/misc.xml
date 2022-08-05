@@ -3,8 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android Projects/app-medidas/montaigne_app/app/src/main/res/drawable/ic_launcher_background.xml" value="0.196" />
-        <entry key="..\:/Android Projects/app-medidas/montaigne_app/app/src/main/res/layout/adpter_home_projetos.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/20191161010021/AndroidStudioProjects/montaigne_app/app/src/main/res/layout/activity_home.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/20191161010021/AndroidStudioProjects/montaigne_app/app/src/main/res/layout/adapter_home_projeto_categoria.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/20191161010021/AndroidStudioProjects/montaigne_app/app/src/main/res/menu/menu_main.xml" value="0.14722222222222223" />
       </map>
     </option>
   </component>

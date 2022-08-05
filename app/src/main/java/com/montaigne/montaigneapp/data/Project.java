@@ -2,7 +2,7 @@ package com.montaigne.montaigneapp.data;
 
 import com.orm.SugarRecord;
 
-public abstract class Project extends SugarRecord<Project> {
+public abstract class Project extends SugarRecord{
 
     private long id;
     private String name;

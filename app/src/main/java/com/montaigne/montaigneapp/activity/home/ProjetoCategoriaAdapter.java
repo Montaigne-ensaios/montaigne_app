@@ -1,6 +1,7 @@
 package com.montaigne.montaigneapp.activity.home;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -9,6 +10,8 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.montaigne.montaigneapp.R;
 
 import java.util.ArrayList;
 
@@ -26,16 +29,19 @@ public class ProjetoCategoriaAdapter extends RecyclerView.Adapter<ProjetoCategor
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        //View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_projeto_categoria, parent, false);
-        //new ViewHolder(view);
-        return null;
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_home_projeto_categoria, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.buttonProjetoName.setText((String) categoriasProjeto.get(position)[0]);
-        int drawableId = (Integer) categoriasProjeto.get(position)[1];
-        holder.imageProjeto.setImageDrawable(AppCompatResources.getDrawable(context, drawableId));
+        try {
+            holder.buttonProjetoName.setText((String) categoriasProjeto.get(position)[0]);
+            int drawableId = (Integer) categoriasProjeto.get(position)[1];
+            holder.imageProjeto.setImageDrawable(AppCompatResources.getDrawable(context, drawableId));
+        } catch (Exception exception){
+
+        }
     }
 
     @Override
@@ -55,10 +61,9 @@ public class ProjetoCategoriaAdapter extends RecyclerView.Adapter<ProjetoCategor
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-
             // todo: initialize views
-            // itemView.findviewById(R.id.??)
-            // itemView.findviewById(R.id.??)
+             itemView.findViewById(R.id.imageView2);
+             itemView.findViewById(R.id.button);
         }
     }
 }
