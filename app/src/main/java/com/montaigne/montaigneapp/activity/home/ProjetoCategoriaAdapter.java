@@ -36,6 +36,8 @@ public class ProjetoCategoriaAdapter extends RecyclerView.Adapter<ProjetoCategor
         holder.buttonProjetoName.setText((String) categoriasProjeto.get(position)[0]);
         int drawableId = (Integer) categoriasProjeto.get(position)[1];
         holder.imageProjeto.setImageDrawable(AppCompatResources.getDrawable(context, drawableId));
+
+        // Aqui que se deve passar o listener
     }
 
     @Override
@@ -48,9 +50,9 @@ public class ProjetoCategoriaAdapter extends RecyclerView.Adapter<ProjetoCategor
         notifyDataSetChanged();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
-        protected ImageView imageProjeto;
-        protected Button buttonProjetoName;
+    protected class ViewHolder extends RecyclerView.ViewHolder{
+        protected final ImageView imageProjeto;
+        protected final Button buttonProjetoName;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -59,6 +61,8 @@ public class ProjetoCategoriaAdapter extends RecyclerView.Adapter<ProjetoCategor
             // todo: initialize views
             // itemView.findviewById(R.id.??)
             // itemView.findviewById(R.id.??)
+            buttonProjetoName = null;
+            imageProjeto = null;
         }
     }
 }

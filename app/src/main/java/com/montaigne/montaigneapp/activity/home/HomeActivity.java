@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.AbstractActivity;
 
 public class HomeActivity extends AbstractActivity {
@@ -14,6 +15,7 @@ public class HomeActivity extends AbstractActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        setContentView(R.layout)
 
         HomeVM viewModel = new HomeVM(this);
     }
