@@ -1,12 +1,12 @@
 package com.montaigne.montaigneapp.data.spt.project.local;
 
 import com.montaigne.montaigneapp.data.spt.ProjectSpt;
-import com.montaigne.montaigneapp.data.spt.project.ProjectDataSource;
+import com.montaigne.montaigneapp.data.spt.project.ProjectsptDataSource;
 import com.orm.SugarRecord;
 
 import java.util.List;
 
-public class ProjectLocalDataSource extends SugarRecord<ProjectSpt> implements ProjectDataSource {
+public class ProjectSptLocalDataSource extends SugarRecord<ProjectSpt> implements ProjectsptDataSource {
     @Override
     public List<ProjectSpt> getProjects() {
 
@@ -19,19 +19,20 @@ public class ProjectLocalDataSource extends SugarRecord<ProjectSpt> implements P
     public void refreshProjects() {}
 
     @Override
-    public void getProject(String id) {
+    public ProjectSpt getProject(String id) {
 
         ProjectSpt poll = ProjectSpt.
                 findById(ProjectSpt.class,Long.parseLong(id));
-
+        return poll;
 
     }
 
     @Override
-    public void refreshProject(String id) {
+    public ProjectSpt refreshProject(String id) {
 
         ProjectSpt poll = ProjectSpt.
                 findById(ProjectSpt.class,Long.parseLong(id));
+        return poll;
 
     }
 

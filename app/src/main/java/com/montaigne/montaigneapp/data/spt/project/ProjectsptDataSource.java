@@ -5,14 +5,14 @@ import com.montaigne.montaigneapp.data.spt.ProjectSpt;
 
 import java.util.List;
 
-public interface ProjectDataSource {
+public interface ProjectsptDataSource {
     List<ProjectSpt> getProjects();
 
     void refreshProjects();
 
-    void getProject(String id);
+    ProjectSpt getProject(String id);
 
-    void refreshProject(String id);
+    ProjectSpt refreshProject(String id);
 
     void saveProject(ProjectSpt poll);
 

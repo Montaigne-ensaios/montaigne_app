@@ -1,27 +1,33 @@
 package com.montaigne.montaigneapp.data.spt.project;
 
-import android.os.FileUtils;
-
 import com.montaigne.montaigneapp.data.Project;
+import com.montaigne.montaigneapp.data.spt.ProjectSpt;
 import com.montaigne.montaigneapp.data.spt.poll.PollDataSource;
+import com.montaigne.montaigneapp.data.spt.project.local.ProjectSptLocalDataSource;
+import com.montaigne.montaigneapp.data.spt.project.remote.ProjectSptRemoteDataSource;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.List;
 
 public class DefaultProjectRepository implements ProjectRepository {
 
-    PollDataSource pollLocalDataSource;
-    PollDataSource pollRemoteDataSource;
+    ProjectSptLocalDataSource projectSptLocalDataSource;
+    ProjectSptRemoteDataSource projectSptRemoteDataSource;
 
-    public DefaultProjectRepository(PollDataSource pollLocalDataSource, PollDataSource pollRemoteDataSource) {
-        this.pollLocalDataSource = pollLocalDataSource;
-        this.pollRemoteDataSource = pollRemoteDataSource;
+    public DefaultProjectRepository(ProjectSptLocalDataSource projectSptLocalDataSource, ProjectSptRemoteDataSource projectSptRemoteDataSource) {
+        this.projectSptLocalDataSource = projectSptLocalDataSource;
+        this.projectSptRemoteDataSource = projectSptRemoteDataSource;
     }
 
     @Override
-    public List<Project> getProjects() {
+    public List<ProjectSpt> getProjects() {
         return null;
+    }
+
+    @Override
+    public List<ProjectSpt> getProjectStream() {
+
+        return projectSptLocalDataSource.getProjects();
+
     }
 
     @Override
@@ -35,22 +41,43 @@ public class DefaultProjectRepository implements ProjectRepository {
     }
 
     @Override
-    public void saveProject(Project poll) {
+    public void saveProject(ProjectSpt poll) {
+
+        try{
+
+            projectSptLocalDataSource.saveProject((ProjectSpt) poll);
+            projectSptRemoteDataSource.saveProject((ProjectSpt) poll);
+
+        }catch (RuntimeException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void deleteProject(ProjectSpt poll) {
+
+        try {
+
+            projectSptRemoteDataSource.deleteProject(poll.getId().toString());
+            projectSptLocalDataSource.deleteProject(poll.getId().toString());
+
+        }catch (RuntimeException e) {
+
+            e.printStackTrace();
+
+        }
+    }
+
+    @Override
+    public void updateProject(ProjectSpt poll) {
+
+       projectSptLocalDataSource.refreshProjects();
+
 
     }
 
     @Override
-    public void deleteProject(Project poll) {
-
-    }
-
-    @Override
-    public void updateProject(Project poll) {
-
-    }
-
-    @Override
-    public void completeProject(Project project) {
+    public void completeProject(ProjectSpt project) {
         
     }
 
