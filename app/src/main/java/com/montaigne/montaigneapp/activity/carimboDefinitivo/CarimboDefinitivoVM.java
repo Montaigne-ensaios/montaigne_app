@@ -12,16 +12,16 @@ public class CarimboDefinitivoVM {
     }
     // método de getData (validação de entradas)
 
-    private void returnButtonListener (View view) {
+    private void retornoButtonListener (View view) {
     }
 
-    private void homeButtonListener (View view) {
+    private void inicialButtonListener (View view) {
     }
 
     private void cameraButtonListener (View view) {
     }
 
-    private void continuationButtonListener (View view) {
+    private void continuacaoButtonListener (View view) {
     }
 
 }

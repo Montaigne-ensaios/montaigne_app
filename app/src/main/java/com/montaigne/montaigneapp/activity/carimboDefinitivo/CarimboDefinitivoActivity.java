@@ -9,14 +9,14 @@ import android.widget.ImageView;
 import com.montaigne.montaigneapp.activity.AbstractActivity;
 
 public class CarimboDefinitivoActivity extends AbstractActivity {
-    protected Button buttonReturn;
-    protected Button buttonHome;
-    protected Button buttonContinuation;
+    protected Button buttonRetorno;
+    protected Button buttonInicial;
+    protected Button buttonContinuacao;
     protected ImageButton buttonCamera;
-    protected ImageView imagePerson;
-    protected EditText fieldProjectName;
-    protected EditText fieldTecnic;
-    protected EditText fieldCompany;
+    protected ImageView imagePessoa;
+    protected EditText fieldNomeProjeto;
+    protected EditText fieldTecnica;
+    protected EditText fieldCompanhia;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

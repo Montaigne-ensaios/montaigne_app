@@ -7,12 +7,12 @@ import android.widget.EditText;
 import com.montaigne.montaigneapp.activity.AbstractActivity;
 
 public class CarimboUnicoActivity extends AbstractActivity {
-    protected Button buttonReturn;
-    protected Button buttonHome;
-    protected Button buttonCaptureLocalization;
-    protected Button buttonStart;
-    protected EditText fieldDate;
-    protected EditText fieldHoleLevel;
+    protected Button buttonRetorno;
+    protected Button buttonInicial;
+    protected Button buttonCapturarLocalizacao;
+    protected Button buttonComecar;
+    protected EditText fieldData;
+    protected EditText fieldNivelFuro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
