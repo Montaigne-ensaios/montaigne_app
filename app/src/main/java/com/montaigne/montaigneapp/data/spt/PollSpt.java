@@ -1,23 +1,26 @@
 package com.montaigne.montaigneapp.data.spt;
 
 import java.util.Date;
+import java.util.List;
 
 public class PollSpt {
-    private long id, idProject;
+    private long id;
+    private String code;
     private float waterLevel, holeLevel;
-    private String poll;
-    private Date startDate;
+    private Date startDate, endDate;
+    private List<SampleSpt> samples;
 
     public PollSpt() {
     }
 
-    public PollSpt(long id, long idProject, float waterLevel, float holeLevel, String poll, Date startDate) {
+    public PollSpt(long id, String code, float waterLevel, float holeLevel, Date startDate, Date endDate, List<SampleSpt> samples) {
         this.id = id;
-        this.idProject = idProject;
+        this.code = code;
         this.waterLevel = waterLevel;
         this.holeLevel = holeLevel;
-        this.poll = poll;
         this.startDate = startDate;
+        this.endDate = endDate;
+        this.samples = samples;
     }
 
     public long getId() {
@@ -28,12 +31,12 @@ public class PollSpt {
         this.id = id;
     }
 
-    public long getIdProject() {
-        return idProject;
+    public String getCode() {
+        return code;
     }
 
-    public void setIdProject(long idProject) {
-        this.idProject = idProject;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public float getWaterLevel() {
@@ -52,19 +55,27 @@ public class PollSpt {
         this.holeLevel = holeLevel;
     }
 
-    public String getPoll() {
-        return poll;
-    }
-
-    public void setPoll(String poll) {
-        this.poll = poll;
-    }
-
     public Date getStartDate() {
         return startDate;
     }
 
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
+    public List<SampleSpt> getSamples() {
+        return samples;
+    }
+
+    public void setSamples(List<SampleSpt> samples) {
+        this.samples = samples;
     }
 }
