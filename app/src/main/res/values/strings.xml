@@ -15,7 +15,12 @@
 
 
     <!-- Strings da tela Carimbo Definitivo-->
-
+    <string name="TxtCarimboDefinitivoAviso1">O carimbo definitivo é feito para todos os furos contendo informações gerais que não serão alteradas nas outras sondagens.</string>
+    <string name="TxtCarimboDefinitivoAviso2">Alterações salvas automaticamente.</string>
+    <string name="TxtCarimboDefinitivoNomeProjeto">Nome do Projeto:</string>
+    <string name="TxtCarimboDefinitivoNomeTecnico">Técnico:</string>
+    <string name="TxtCarimboDefinitivoNomeEmpresa">Empresa Responsável:</string>
+    <string name="TxtBotaoContinuacao">Continuação</string>
 
 
     <!-- Strings da tela Carimbo Único-->
