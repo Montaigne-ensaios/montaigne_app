@@ -32,19 +32,25 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAd
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.textNomeProjeto.setText(projetos.get(position));
+        // todo: passar o intent com listners por aqui. Pode passar com uma lista de intents
     }
 
     @Override
     public int getItemCount() { return projetos.size(); }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        protected ImageView imageProjeto;
-        protected TextView textNomeProjeto, textDescricaoProjeto, textTipoProjeto, textDateProjeto;
+    protected class ViewHolder extends RecyclerView.ViewHolder {
+        protected final ImageView imageProjeto;
+        protected final TextView textNomeProjeto, textDescricaoProjeto, textTipoProjeto, textDateProjeto;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             // todo: initialize views
+            textNomeProjeto = null;
+            textDescricaoProjeto = null;
+            textTipoProjeto = null;
+            textDateProjeto = null;
+            imageProjeto = null;
         }
     }
 }

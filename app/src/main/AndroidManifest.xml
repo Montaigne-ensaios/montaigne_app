@@ -12,22 +12,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MontaigneApp"
-        android:name="com.orm.SugarApp"
-        tools:targetApi="31" tools:replace="android:icon">
+        tools:targetApi="31">
         <activity
-            android:name=".activity.spt.projeto.ProjetoActivity"
+            android:name=".CarimboUnicoActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.spt.furo.FuroActivity"
+            android:name=".ProjetoActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.spt.ensaio.EnsaioActivity"
+            android:name=".FuroActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.carimboDefinitivo.CarimboDefinitivoActivity"
+            android:name=".EnsaioActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.home.HomeActivity"
+            android:name=".CarimboDefinitivoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.MontaigneApp.NoActionBar">
@@ -37,20 +42,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <meta-data
-            android:name="DATABASE"
-            android:value="exemplo.db"/>
-
-        <meta-data android:name="VERSION"
-            android:value="1"/>
-
-        <meta-data android:name="QUERY_LOG"
-            android:value="true"/>
-
-        <meta-data android:name="DOMAIN_PACKAGE_NOME"
-            android:value="com.montaigne.montaigneapp"/>
-
     </application>
 
 </manifest>

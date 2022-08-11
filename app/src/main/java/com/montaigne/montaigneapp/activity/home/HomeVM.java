@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class HomeVM {
     private final HomeActivity activity;
-    private final ArrayList<String> projetosSalvos;
+    private ArrayList<String> projetosSalvos;
 
     public HomeVM (HomeActivity activity) {
         this.activity = activity;
