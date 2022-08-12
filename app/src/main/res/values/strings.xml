@@ -21,10 +21,15 @@
     <string name="TxtCarimboDefinitivoNomeTecnico">Técnico:</string>
     <string name="TxtCarimboDefinitivoNomeEmpresa">Empresa Responsável:</string>
     <string name="TxtBotaoContinuacao">Continuação</string>
-
+    <string name="TxtCampoAsterisco">*</string>
 
     <!-- Strings da tela Carimbo Único-->
-
+    <string name="TxtCarimboUnicoDataInicio">Data de inicio:</string>
+    <string name="TxtCarimboUnicoNivelFuro">Nivel do Furo N:</string>
+    <string name="TxtCarimboUnicoCoordenadaFuro">Coordernadas do Furo N:</string>
+    <string name="TxtBotaoLocalizacao">Capturar Localização</string>
+    <string name="TxtCarimboUnicoAviso">Os campos indicados com * são obrigatórios</string>
+    <string name="TxtBotaoIniciarEnsaio">Iniciar Ensaio</string>
 
     <!-- Strings da Projeto-->
 
