@@ -189,7 +189,7 @@
     <FrameLayout
         android:id="@+id/rodapeCarimbo"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/conteudoCarimbo"
         app:layout_constraintVertical_bias="1.0">

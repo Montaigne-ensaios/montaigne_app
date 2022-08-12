@@ -15,9 +15,9 @@ public class HomeActivity extends AbstractActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout)
+        setContentView(R.layout.activity_carimbo_unico);
 
-        HomeVM viewModel = new HomeVM(this);
+//        HomeVM viewModel = new HomeVM(this);
     }
 
     @Override
