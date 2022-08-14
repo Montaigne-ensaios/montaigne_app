@@ -30,6 +30,11 @@
     <string name="TxtCarimboDefinitivoNomeTecnico">Técnico:</string>
     <string name="TxtCarimboDefinitivoNomeEmpresa">Empresa Responsável:</string>
     <string name="TxtBotaoContinuacao">Continuação</string>
+    <string name="TxtCarimboDefinitivoContato">Contato:</string>
+    <string name="TxtCarimboDefinitivoNomeCliente">Nome do Cliente:</string>
+    <string name="TxtCarimboDefinitivoLocalObra">Local da obra:</string>
+    <string name="TxtCarimboDefinitivoQuantidadeFuros">Quantidade de Furos:</string>
+    <string name="TxtCarimboDefinitivoReferenciaNivel">Referência de Nível:</string>
     <string name="TxtCampoAsterisco">*</string>
 
     <!-- Strings da tela Carimbo Único-->
