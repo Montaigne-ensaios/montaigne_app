@@ -64,7 +64,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginTop="4dp"
-            android:text="Texto de descrição. \nEste texto pode ser substituido por múltiplos textViews."
+            android:text="Descrição do projeto localização"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
