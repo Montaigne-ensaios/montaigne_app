@@ -5,6 +5,7 @@ import android.view.View;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.carimboDefinitivo.CarimboDefinitivoActivity;
 
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ public class HomeVM {
 
         projetosSalvos = getProjetos();
 
-//        initializeProjetoCategoriaAdapter();
+        initializeProjetoCategoriaAdapter();
 //        updateProjetosSalvosAdapter(projetosSalvos);
 
 //        activity.newProjectFab.setOnClickListener(this::newProjectFabListener);
@@ -26,8 +27,8 @@ public class HomeVM {
 
     private void initializeProjetoCategoriaAdapter() {
         ArrayList<Object[]> categorias = new ArrayList<>();
-        categorias.add(new Object[]{"SPT", 0});
-        categorias.add(new Object[]{"Granulometria", 0});
+        categorias.add(new Object[]{"SPT", R.drawable.ic_logospt_azul});
+        categorias.add(new Object[]{"Granulometria", R.drawable.ic_logospt_azul});
 
         ProjetoCategoriaAdapter adapter = new ProjetoCategoriaAdapter(activity);
         adapter.setCategoriasProjeto(categorias);
