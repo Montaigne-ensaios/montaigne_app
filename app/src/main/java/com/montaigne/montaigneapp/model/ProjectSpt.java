@@ -1,7 +1,7 @@
-package com.montaigne.montaigneapp.data.spt;
+package com.montaigne.montaigneapp.model;
 
-import com.montaigne.montaigneapp.data.Coordinate;
-import com.montaigne.montaigneapp.data.Project;
+import com.montaigne.montaigneapp.model.Coordinate;
+import com.montaigne.montaigneapp.model.Project;
 
 import java.util.List;
 
