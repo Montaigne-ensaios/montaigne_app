@@ -18,7 +18,7 @@ public class HomeVM {
 
         projetosSalvos = getProjetos();
 
-        initializeProjetoCategoriaAdapter();
+//        initializeProjetoCategoriaAdapter();
 //        updateProjetosSalvosAdapter(projetosSalvos);
 
 //        activity.newProjectFab.setOnClickListener(this::newProjectFabListener);

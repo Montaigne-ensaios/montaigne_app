@@ -15,13 +15,17 @@ public class HomeActivity extends AbstractActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_carimbo_definitivo);
+        setContentView(R.layout.activity_home);
 
-//        HomeVM viewModel = new HomeVM(this);
+        initializeViews();
+
+        HomeVM viewModel = new HomeVM(this);
     }
 
     @Override
     protected void initializeViews() {
-
+        newProjectFab = findViewById(R.id.fabNewProjeto);
+        recyclerProjetoCategorias = findViewById(R.id.recyclerCategorias);
+        recyclerProjetosSalvos = findViewById(R.id.recyclerProjetosSalvos);
     }
 }

@@ -16,7 +16,7 @@ public class ProjectSpt extends Project {
                       String phoneNumber, String starData, Coordinate coordinate, int holeNumber,
                       List<PollSpt> samples) {
 
-        super(id, name, client, company, technician, phoneNumber, starData, coordinate);
+        super(Long.toString(id), name, client, company, technician, phoneNumber, starData, coordinate);
         this.holeNumber = holeNumber;
         this.polls = samples;
     }
