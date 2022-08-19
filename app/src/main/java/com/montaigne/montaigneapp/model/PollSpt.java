@@ -1,10 +1,10 @@
-package com.montaigne.montaigneapp.data.spt;
+package com.montaigne.montaigneapp.model;
 
 import java.util.Date;
 import java.util.List;
 
 public class PollSpt {
-    private long id;
+    private String id;
     private String code;
     private float waterLevel, holeLevel;
     private Date startDate, endDate;
@@ -13,7 +13,7 @@ public class PollSpt {
     public PollSpt() {
     }
 
-    public PollSpt(long id, String code, float waterLevel, float holeLevel, Date startDate, Date endDate, List<SampleSpt> samples) {
+    public PollSpt(String id, String code, float waterLevel, float holeLevel, Date startDate, Date endDate, List<SampleSpt> samples) {
         this.id = id;
         this.code = code;
         this.waterLevel = waterLevel;
@@ -23,11 +23,11 @@ public class PollSpt {
         this.samples = samples;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

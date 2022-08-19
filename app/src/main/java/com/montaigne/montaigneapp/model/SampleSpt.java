@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.data.spt;
+package com.montaigne.montaigneapp.model;
 
 public class SampleSpt {
     private String id;

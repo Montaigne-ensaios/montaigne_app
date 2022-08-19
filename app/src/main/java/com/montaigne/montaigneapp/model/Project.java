@@ -1,22 +1,20 @@
-package com.montaigne.montaigneapp.data;
+package com.montaigne.montaigneapp.model;
 
-import com.orm.SugarRecord;
+public abstract class Project {
 
-public abstract class Project extends SugarRecord{
-
-    private long id;
+    private String id;
     private String name;
     private String client;
     private String company;
     private String technician;
     private String phoneNumber;
-    private String starData;
+    private String startData;
     private Coordinate coordinate;
 
     public Project() {}
 
-    public Project(Long id, String name, String client, String company, String technician,
-                   String phoneNumber, String starData, Coordinate coordinate) {
+    public Project(String id, String name, String client, String company, String technician,
+                   String phoneNumber, String startData, Coordinate coordinate) {
 
         this.id = id;
         this.name = name;
@@ -24,16 +22,16 @@ public abstract class Project extends SugarRecord{
         this.company = company;
         this.technician = technician;
         this.phoneNumber = phoneNumber;
-        this.starData = starData;
+        this.startData = startData;
         this.coordinate = coordinate;
 
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -77,11 +75,11 @@ public abstract class Project extends SugarRecord{
         this.phoneNumber = phoneNumber;
     }
 
-    public String getStarData() {
+    public String getStartData() {
         return starData;
     }
 
-    public void setStarData(String starData) {
+    public void setStartData(String starData) {
         this.starData = starData;
     }
 
