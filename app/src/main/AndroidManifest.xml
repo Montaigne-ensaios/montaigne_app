@@ -14,25 +14,22 @@
         android:theme="@style/Theme.MontaigneApp"
         tools:targetApi="31">
         <activity
-            android:name=".CarimboUnicoActivity"
+            android:name=".activity.spt.carimboUnico.CarimboUnicoActivity"
             android:exported="false" />
         <activity
-            android:name=".ProjetoActivity"
+            android:name=".activity.spt.projeto.ProjetoActivity"
             android:exported="false" />
         <activity
-            android:name=".FuroActivity"
+            android:name=".activity.spt.furo.FuroActivity"
             android:exported="false" />
         <activity
-            android:name=".EnsaioActivity"
+            android:name=".activity.spt.ensaio.EnsaioActivity"
             android:exported="false" />
         <activity
-            android:name=".CarimboDefinitivoActivity"
+            android:name=".activity.carimboDefinitivo.CarimboDefinitivoActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".activity.home.HomeActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.MontaigneApp.NoActionBar">

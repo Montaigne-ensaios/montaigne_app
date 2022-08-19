@@ -1,21 +1,63 @@
 <resources>
     <string name="app_name">Montaigne App</string>
+
     <string name="action_settings">Settings</string>
+
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
+    <string name="previous">Previous</string>
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-
-
     <!-- Strings da tela HOME-->
     <string name="TxtHomeFiltrosEnsaiosStr">Filtro de Ensaios</string>
     <string name="TxtHomeMeusProjetosStr">Meus Projetos</string>
 
+    <!-- Strings da tela ENSAIO-->
+
+
+
+    <!-- Strings da tela FURO-->
+
+
+
+    <!-- Strings da tela Carimbo Definitivo-->
+    <string name="TxtCarimboDefinitivoAviso1">O carimbo definitivo é feito para todos os furos contendo informações gerais que não serão alteradas nas outras sondagens.</string>
+    <string name="TxtCarimboDefinitivoAviso2">Alterações salvas automaticamente.</string>
+    <string name="TxtCarimboDefinitivoNomeProjeto">Nome do Projeto:</string>
+    <string name="TxtCarimboDefinitivoNomeTecnico">Técnico:</string>
+    <string name="TxtCarimboDefinitivoNomeEmpresa">Empresa Responsável:</string>
+    <string name="TxtBotaoContinuacao">Continuação</string>
+    <string name="TxtCarimboDefinitivoContato">Contato:</string>
+    <string name="TxtCarimboDefinitivoNomeCliente">Nome do Cliente:</string>
+    <string name="TxtCarimboDefinitivoLocalObra">Local da obra:</string>
+    <string name="TxtCarimboDefinitivoQuantidadeFuros">Quantidade de Furos:</string>
+    <string name="TxtCarimboDefinitivoReferenciaNivel">Referência de Nível:</string>
+    <string name="TxtCampoAsterisco">*</string>
+
+    <!-- Strings da tela Carimbo Único-->
+    <string name="TxtCarimboUnicoDataInicio">Data de inicio:</string>
+    <string name="TxtCarimboUnicoNivelFuro">Nivel do Furo N:</string>
+    <string name="TxtCarimboUnicoCoordenadaFuro">Coordernadas do Furo N:</string>
+    <string name="TxtBotaoLocalizacao">Capturar Localização</string>
+    <string name="TxtCarimboUnicoAviso">Os campos indicados com * são obrigatórios</string>
+    <string name="TxtBotaoIniciarEnsaio">Iniciar Ensaio</string>
+
+    <!-- Strings da Projeto-->
+
+
+    <!-- Strings da tela Adpter_home_projetos-->
+
+
     <!-- Strings da tela Adpter_home_filtro_Ensaios-->
-    <string name="TxtHomeSptNameStr">SPT</string>
-    <string name="TxtHomeGranulometriaNameStr">Granulometria</string>
+
+
+
+
+
+
 
 
 </resources>

@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- Paleta de cores do aplicativo. -->
+    <color name="destaque">#FB0035</color>
+    <color name="color_primary">#042741</color>
+    <color name="fundo">#EAEAEA</color>
+    <color name="accent">#BDE3FF</color>
+
+
+
+
+
+    <!-- Cores extras -->
+
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -7,5 +20,4 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="color_primary">#042741</color>
 </resources>

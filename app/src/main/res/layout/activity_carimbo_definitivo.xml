@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/rodapeCarimbo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/continuarCarimboDefinitivo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/continuarCarimboDefinitivo"
+                app:srcCompat="@drawable/icon_home" />
+
+            <Button
+                android:id="@+id/continuarCarimboDefinitivo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:text="@string/TxtBotaoContinuacao"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/TxtCarimboUnicoAviso"
+                android:textColor="@color/destaque"
+                app:layout_constraintBottom_toTopOf="@+id/continuarCarimboDefinitivo"
+                app:layout_constraintEnd_toEndOf="@+id/continuarCarimboDefinitivo"
+                app:layout_constraintStart_toStartOf="@+id/continuarCarimboDefinitivo"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/rodapeCarimbo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:id="@+id/conteudoCarimboDefinitivo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/imageButton18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#00FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName5"
+                    app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName5"
+                    app:srcCompat="@android:drawable/ic_menu_help" />
+
+                <TextView
+                    android:id="@+id/textAviso1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="16dp"
+                    android:text="@string/TxtCarimboDefinitivoAviso1"
+                    android:textAlignment="center"
+                    android:textColor="@color/destaque"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textAviso2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/TxtCarimboDefinitivoAviso2"
+                    android:textColor="@color/destaque"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@+id/textAviso1" />
+
+                <ImageView
+                    android:id="@+id/imagemProjeto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@+id/textAviso2"
+                    app:srcCompat="@drawable/ic_launcher_background"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/textNomeProjeto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/TxtCarimboDefinitivoNomeProjeto"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@+id/imageButton10" />
+
+                <EditText
+
+                    android:id="@+id/inputNomeProjeto"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:drawableRight="@android:drawable/ic_menu_edit"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@+id/textNomeProjeto" />
+
+                <TextView
+                    android:id="@+id/textAsteriscoNomeProjeto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/TxtCampoAsterisco"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/textNomeProjeto"
+                    app:layout_constraintTop_toTopOf="@+id/textNomeProjeto" />
+
+                <TextView
+                    android:id="@+id/textNomeTecnico"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/TxtCarimboDefinitivoNomeTecnico"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/textNomeProjeto"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/textNomeProjeto"
+                    app:layout_constraintTop_toBottomOf="@+id/inputNomeProjeto" />
+
+                <EditText
+                    android:id="@+id/inputNomeTecnico"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:drawableRight="@android:drawable/ic_menu_today"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    app:layout_constraintEnd_toEndOf="@+id/inputNomeProjeto"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/inputNomeProjeto"
+                    app:layout_constraintTop_toBottomOf="@+id/textNomeTecnico" />
+
+                <TextView
+                    android:id="@+id/textAsteriscoTecnico"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/TxtCampoAsterisco"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/textNomeTecnico"
+                    app:layout_constraintTop_toTopOf="@+id/textNomeTecnico" />
+
+                <TextView
+                    android:id="@+id/textNomeEmpresa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/TxtCarimboDefinitivoNomeEmpresa"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/textNomeTecnico"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/textNomeTecnico"
+                    app:layout_constraintTop_toBottomOf="@+id/inputNomeTecnico" />
+
+                <TextView
+                    android:id="@+id/textAsteriscoEmpresa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/TxtCampoAsterisco"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/textNomeEmpresa"
+                    app:layout_constraintTop_toTopOf="@+id/textNomeEmpresa" />
+
+                <EditText
+                    android:id="@+id/inputNomeEmpresa"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:drawableRight="@android:drawable/ic_menu_today"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    app:layout_constraintEnd_toEndOf="@+id/inputNomeTecnico"
+                    app:layout_constraintStart_toStartOf="@+id/inputNomeTecnico"
+                    app:layout_constraintTop_toBottomOf="@+id/textNomeEmpresa" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.1" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.90" />
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/TxtCarimboDefinitivoContato"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/textNomeEmpresa"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/textNomeEmpresa"
+                    app:layout_constraintTop_toBottomOf="@+id/inputNomeEmpresa" />
+
+                <EditText
+                    android:id="@+id/editTextPhone2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:drawableRight="@android:drawable/ic_menu_call"
+                    android:ems="10"
+                    android:inputType="phone"
+                    android:minHeight="48dp"
+                    app:layout_constraintEnd_toEndOf="@+id/inputNomeEmpresa"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/inputNomeEmpresa"
+                    app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/TxtCarimboDefinitivoNomeCliente"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/textView14"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextPhone2" />
+
+                <EditText
+                    android:id="@+id/editTextTextPersonName3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextPhone2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/TxtCarimboDefinitivoLocalObra"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/textView15"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+
+                <EditText
+                    android:id="@+id/editTextTextPersonName5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:drawableRight="@android:drawable/ic_dialog_map"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName3"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/TxtCarimboDefinitivoQuantidadeFuros"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/textView16"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+
+                <EditText
+                    android:id="@+id/editTextTextPersonName6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:minHeight="48dp"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName5"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/TxtCarimboDefinitivoReferenciaNivel"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/textView17"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
+
+                <EditText
+                    android:id="@+id/editTextTextPersonName7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:drawableRight="@android:drawable/ic_menu_today"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName6"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+                <ImageButton
+                    android:id="@+id/imageButton10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="@+id/imagemProjeto"
+                    app:layout_constraintStart_toStartOf="@+id/imagemProjeto"
+                    app:layout_constraintTop_toBottomOf="@+id/imagemProjeto"
+                    app:srcCompat="@android:drawable/ic_menu_camera" />
+
+                <ImageButton
+                    android:id="@+id/imageButton11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#00FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="@+id/inputNomeProjeto"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/inputNomeProjeto"
+                    app:layout_constraintTop_toTopOf="@+id/inputNomeProjeto"
+                    app:srcCompat="@android:drawable/ic_menu_help" />
+
+                <ImageButton
+                    android:id="@+id/imageButton12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#00FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="@+id/inputNomeTecnico"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/inputNomeTecnico"
+                    app:layout_constraintTop_toTopOf="@+id/inputNomeTecnico"
+                    app:srcCompat="@android:drawable/ic_menu_help" />
+
+                <ImageButton
+                    android:id="@+id/imageButton13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#00FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="@+id/inputNomeEmpresa"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/inputNomeEmpresa"
+                    app:layout_constraintTop_toTopOf="@+id/inputNomeEmpresa"
+                    app:srcCompat="@android:drawable/ic_menu_help" />
+
+                <ImageButton
+                    android:id="@+id/imageButton14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#00FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextPhone2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/editTextPhone2"
+                    app:layout_constraintTop_toTopOf="@+id/editTextPhone2"
+                    app:srcCompat="@android:drawable/ic_menu_help" />
+
+                <ImageButton
+                    android:id="@+id/imageButton16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#00FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName6"
+                    app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName6"
+                    app:srcCompat="@android:drawable/ic_menu_help" />
+
+                <ImageButton
+                    android:id="@+id/imageButton15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#00FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName7"
+                    app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName7"
+                    app:srcCompat="@android:drawable/ic_menu_help" />
+
+                <ImageButton
+                    android:id="@+id/imageButton17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:backgroundTint="#00FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName3"
+                    app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName3"
+                    app:srcCompat="@android:drawable/ic_menu_help" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </FrameLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
