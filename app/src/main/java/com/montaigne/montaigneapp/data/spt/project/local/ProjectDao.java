@@ -1,28 +1,13 @@
 package com.montaigne.montaigneapp.data.spt.project.local;
 
-import com.montaigne.montaigneapp.data.Project;
-import com.montaigne.montaigneapp.data.spt.ProjectSpt;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.montaigne.montaigneapp.data.spt.ProjetoSpt;
 
-import java.util.List;
+import java.util.HashMap;
 
 public class ProjectDao {
 
-
-    protected List<ProjectSpt> getProjects() {
-
-        return null;
-    }
-
-    protected Project getProjectById() {
-        return null;
-    }
-
-    protected void insertProject(ProjectSpt poll) {
-    }
-
-    protected void updateProject(ProjectSpt poll) {
-    }
-
-    protected void deleteTaskById(String id) {
-    }
 }

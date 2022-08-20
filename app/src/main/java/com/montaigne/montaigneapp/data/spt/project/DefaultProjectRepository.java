@@ -1,8 +1,7 @@
 package com.montaigne.montaigneapp.data.spt.project;
 
 import com.montaigne.montaigneapp.data.Project;
-import com.montaigne.montaigneapp.data.spt.ProjectSpt;
-import com.montaigne.montaigneapp.data.spt.poll.PollDataSource;
+import com.montaigne.montaigneapp.data.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.data.spt.project.local.ProjectSptLocalDataSource;
 import com.montaigne.montaigneapp.data.spt.project.remote.ProjectSptRemoteDataSource;
 
@@ -19,12 +18,12 @@ public class DefaultProjectRepository implements ProjectRepository {
     }
 
     @Override
-    public List<ProjectSpt> getProjects() {
+    public List<ProjetoSpt> getProjects() {
         return null;
     }
 
     @Override
-    public List<ProjectSpt> getProjectStream() {
+    public List<ProjetoSpt> getProjectStream() {
 
         return projectSptLocalDataSource.getProjects();
 
@@ -41,12 +40,12 @@ public class DefaultProjectRepository implements ProjectRepository {
     }
 
     @Override
-    public void saveProject(ProjectSpt poll) {
+    public void saveProject(ProjetoSpt poll) {
 
         try{
 
-            projectSptLocalDataSource.saveProject((ProjectSpt) poll);
-            projectSptRemoteDataSource.saveProject((ProjectSpt) poll);
+            projectSptLocalDataSource.saveProject((ProjetoSpt) poll);
+            projectSptRemoteDataSource.saveProject((ProjetoSpt) poll);
 
         }catch (RuntimeException e) {
             e.printStackTrace();
@@ -54,7 +53,7 @@ public class DefaultProjectRepository implements ProjectRepository {
     }
 
     @Override
-    public void deleteProject(ProjectSpt poll) {
+    public void deleteProject(ProjetoSpt poll) {
 
         try {
 
@@ -69,7 +68,7 @@ public class DefaultProjectRepository implements ProjectRepository {
     }
 
     @Override
-    public void updateProject(ProjectSpt poll) {
+    public void updateProject(ProjetoSpt poll) {
 
        projectSptLocalDataSource.refreshProjects();
 
@@ -77,7 +76,7 @@ public class DefaultProjectRepository implements ProjectRepository {
     }
 
     @Override
-    public void completeProject(ProjectSpt project) {
+    public void completeProject(ProjetoSpt project) {
         
     }
 

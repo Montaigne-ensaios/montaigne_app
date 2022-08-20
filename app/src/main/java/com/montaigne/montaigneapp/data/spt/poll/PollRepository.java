@@ -1,28 +1,27 @@
 package com.montaigne.montaigneapp.data.spt.poll;
 
-import com.montaigne.montaigneapp.data.Project;
-import com.montaigne.montaigneapp.data.spt.PollSpt;
+import com.montaigne.montaigneapp.data.spt.Furo;
 
 import java.util.List;
 
 public interface PollRepository {
-    List<PollSpt> getPolls();
+    List<Furo> getPolls();
 
     void refreshPolls();
 
     void refreshPoll(String id);
 
-    void savePoll(PollSpt poll);
+    void savePoll(Furo poll);
 
-    void deletePoll(PollSpt poll);
+    void deletePoll(Furo poll);
 
-    void updatePoll(PollSpt poll);
+    void updatePoll(Furo poll);
 
-    void completePoll(PollSpt poll);
+    void completePoll(Furo poll);
 
     void completePoll(String id);
 
-    void activatePoll(PollSpt poll);
+    void activatePoll(Furo poll);
 
     void activatePoll(String id);
 }

@@ -1,7 +1,6 @@
 package com.montaigne.montaigneapp.data.spt.poll;
 
-import com.montaigne.montaigneapp.data.Project;
-import com.montaigne.montaigneapp.data.spt.PollSpt;
+import com.montaigne.montaigneapp.data.spt.Furo;
 
 import java.util.List;
 
@@ -15,7 +14,7 @@ public class DefaultPollRepository implements PollRepository {
     }
 
     @Override
-    public List<PollSpt> getPolls() {
+    public List<Furo> getPolls() {
         return null;
     }
 
@@ -30,22 +29,22 @@ public class DefaultPollRepository implements PollRepository {
     }
 
     @Override
-    public void savePoll(PollSpt poll) {
+    public void savePoll(Furo poll) {
 
     }
 
     @Override
-    public void deletePoll(PollSpt poll) {
+    public void deletePoll(Furo poll) {
 
     }
 
     @Override
-    public void updatePoll(PollSpt poll) {
+    public void updatePoll(Furo poll) {
 
     }
 
     @Override
-    public void completePoll(PollSpt poll) {
+    public void completePoll(Furo poll) {
 
     }
 
@@ -55,7 +54,7 @@ public class DefaultPollRepository implements PollRepository {
     }
 
     @Override
-    public void activatePoll(PollSpt poll) {
+    public void activatePoll(Furo poll) {
 
     }
 

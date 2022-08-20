@@ -1,27 +1,26 @@
 package com.montaigne.montaigneapp.data.spt.project;
 
 import com.montaigne.montaigneapp.data.Project;
-import com.montaigne.montaigneapp.data.spt.ProjectSpt;
+import com.montaigne.montaigneapp.data.spt.ProjetoSpt;
 
-import java.nio.file.Files;
 import java.util.List;
 
 public interface ProjectRepository {
-    List<ProjectSpt> getProjects();
+    List<ProjetoSpt> getProjects();
 
-    List<ProjectSpt> getProjectStream();
+    List<ProjetoSpt> getProjectStream();
 
     void refreshProjects();
 
     void refreshProject(String id);
 
-    void saveProject(ProjectSpt poll);
+    void saveProject(ProjetoSpt poll);
 
-    void deleteProject(ProjectSpt poll);
+    void deleteProject(ProjetoSpt poll);
 
-    void updateProject(ProjectSpt poll);
+    void updateProject(ProjetoSpt poll);
 
-    void completeProject(ProjectSpt project);
+    void completeProject(ProjetoSpt project);
 
     void completeProject(String id);
 

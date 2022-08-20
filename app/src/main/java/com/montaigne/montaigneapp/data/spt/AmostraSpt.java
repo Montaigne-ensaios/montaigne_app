@@ -1,13 +1,13 @@
 package com.montaigne.montaigneapp.data.spt;
 
-public class SampleSpt {
+public class AmostraSpt {
     private String id;
     private int blows1, blows2, blows3, nspt;
 
-    public SampleSpt() {
+    public AmostraSpt() {
     }
 
-    public SampleSpt(String id, int blows1, int blows2, int blows3, int nspt) {
+    public AmostraSpt(String id, int blows1, int blows2, int blows3, int nspt) {
         this.id = id;
         this.blows1 = blows1;
         this.blows2 = blows2;

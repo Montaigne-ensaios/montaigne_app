@@ -1,13 +1,13 @@
 package com.montaigne.montaigneapp.data.spt.sample.remote;
 
-import com.montaigne.montaigneapp.data.spt.SampleSpt;
+import com.montaigne.montaigneapp.data.spt.AmostraSpt;
 import com.montaigne.montaigneapp.data.spt.sample.SampleDataSource;
 
 import java.util.List;
 
 public class SampleRemoteDataSource implements SampleDataSource {
     @Override
-    public List<SampleSpt> getProjects() {
+    public List<AmostraSpt> getProjects() {
         return null;
     }
 
@@ -27,7 +27,7 @@ public class SampleRemoteDataSource implements SampleDataSource {
     }
 
     @Override
-    public void saveProject(SampleSpt poll) {
+    public void saveProject(AmostraSpt poll) {
 
     }
 

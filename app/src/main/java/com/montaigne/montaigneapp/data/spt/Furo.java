@@ -3,17 +3,17 @@ package com.montaigne.montaigneapp.data.spt;
 import java.util.Date;
 import java.util.List;
 
-public class PollSpt {
-    private long id;
+public class Furo {
+    private String id;
     private String code;
     private float waterLevel, holeLevel;
     private Date startDate, endDate;
-    private List<SampleSpt> samples;
+    private List<AmostraSpt> samples;
 
-    public PollSpt() {
+    public Furo() {
     }
 
-    public PollSpt(long id, String code, float waterLevel, float holeLevel, Date startDate, Date endDate, List<SampleSpt> samples) {
+    public Furo(String id, String code, float waterLevel, float holeLevel, Date startDate, Date endDate, List<AmostraSpt> samples) {
         this.id = id;
         this.code = code;
         this.waterLevel = waterLevel;
@@ -23,11 +23,11 @@ public class PollSpt {
         this.samples = samples;
     }
 
-    public long getId() {
-        return id;
+    public String getId() {
+        return this.id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -71,11 +71,11 @@ public class PollSpt {
         this.endDate = endDate;
     }
 
-    public List<SampleSpt> getSamples() {
+    public List<AmostraSpt> getSamples() {
         return samples;
     }
 
-    public void setSamples(List<SampleSpt> samples) {
+    public void setSamples(List<AmostraSpt> samples) {
         this.samples = samples;
     }
 }

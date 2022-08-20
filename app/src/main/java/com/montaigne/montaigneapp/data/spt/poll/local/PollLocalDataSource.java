@@ -1,7 +1,6 @@
 package com.montaigne.montaigneapp.data.spt.poll.local;
 
-import com.montaigne.montaigneapp.data.Project;
-import com.montaigne.montaigneapp.data.spt.PollSpt;
+import com.montaigne.montaigneapp.data.spt.Furo;
 import com.montaigne.montaigneapp.data.spt.poll.PollDataSource;
 
 import java.util.List;
@@ -9,7 +8,7 @@ import java.util.List;
 public class PollLocalDataSource implements PollDataSource {
 
     @Override
-    public List<PollSpt> getPolls() {
+    public List<Furo> getPolls() {
         return null;
     }
 
@@ -29,7 +28,7 @@ public class PollLocalDataSource implements PollDataSource {
     }
 
     @Override
-    public void savePoll(PollSpt poll) {
+    public void savePoll(Furo poll) {
 
     }
 

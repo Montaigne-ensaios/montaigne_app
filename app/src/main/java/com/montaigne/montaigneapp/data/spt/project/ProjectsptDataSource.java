@@ -1,20 +1,19 @@
 package com.montaigne.montaigneapp.data.spt.project;
 
-import com.montaigne.montaigneapp.data.Project;
-import com.montaigne.montaigneapp.data.spt.ProjectSpt;
+import com.montaigne.montaigneapp.data.spt.ProjetoSpt;
 
 import java.util.List;
 
 public interface ProjectsptDataSource {
-    List<ProjectSpt> getProjects();
+    List<ProjetoSpt> getProjects();
 
     void refreshProjects();
 
-    ProjectSpt getProject(String id);
+    ProjetoSpt getProject(String id);
 
-    ProjectSpt refreshProject(String id);
+    ProjetoSpt refreshProject(String id);
 
-    void saveProject(ProjectSpt poll);
+    void saveProject(ProjetoSpt poll);
 
     void deleteProject(String id);
 }

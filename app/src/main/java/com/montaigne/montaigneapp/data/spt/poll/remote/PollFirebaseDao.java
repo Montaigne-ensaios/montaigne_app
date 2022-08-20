@@ -1,24 +1,34 @@
 package com.montaigne.montaigneapp.data.spt.poll.remote;
 
-import com.montaigne.montaigneapp.data.Project;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.montaigne.montaigneapp.data.spt.Furo;
 
-import java.util.List;
+import java.util.HashMap;
 
 public class PollFirebaseDao {
-    protected List<Project> getPolls() {
-        return null;
+    protected DatabaseReference dbReference;
+    protected PollFirebaseDao() {
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        dbReference = firebaseDatabase.getReference(Furo.class.getSimpleName());
     }
 
-    protected Project getPollById() {
-        return null;
+    protected Query getPolls() {
+        return dbReference.orderByKey();
     }
 
-    protected void insertPoll(Project poll) {
+    protected Task<Void> insertPoll(Furo furo) {
+        furo.setId(dbReference.push().getKey());
+        return dbReference.child(furo.getId()).setValue(furo);
     }
 
-    protected void updatePoll(Project poll) {
+    protected Task<Void> updatePoll(String id, HashMap<String, Object> hashMap) {
+        return dbReference.child(id).setValue(hashMap);
     }
 
-    protected void deleteTaskById(String id) {
+    protected Task<Void> deletePollById(String id) {
+        return dbReference.child(id).removeValue();
     }
 }

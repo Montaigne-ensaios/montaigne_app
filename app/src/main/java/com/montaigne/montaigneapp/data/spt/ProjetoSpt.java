@@ -5,16 +5,16 @@ import com.montaigne.montaigneapp.data.Project;
 
 import java.util.List;
 
-public class ProjectSpt extends Project {
+public class ProjetoSpt extends Project {
 
     private int holeNumber;
-    private List<PollSpt> polls;
+    private List<Furo> polls;
 
-    public ProjectSpt() {}
+    public ProjetoSpt() {}
 
-    public ProjectSpt(Long id, String name, String client, String company, String technician,
+    public ProjetoSpt(Long id, String name, String client, String company, String technician,
                       String phoneNumber, String starData, Coordinate coordinate, int holeNumber,
-                      List<PollSpt> samples) {
+                      List<Furo> samples) {
 
         super(id, name, client, company, technician, phoneNumber, starData, coordinate);
         this.holeNumber = holeNumber;
@@ -29,11 +29,11 @@ public class ProjectSpt extends Project {
         this.holeNumber = holeNumber;
     }
 
-    public List<PollSpt> getPolls() {
+    public List<Furo> getPolls() {
         return polls;
     }
 
-    public void setPolls(List<PollSpt> polls) {
+    public void setPolls(List<Furo> polls) {
         this.polls = polls;
     }
 }

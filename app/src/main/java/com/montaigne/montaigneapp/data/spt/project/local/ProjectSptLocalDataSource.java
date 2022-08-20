@@ -1,16 +1,16 @@
 package com.montaigne.montaigneapp.data.spt.project.local;
 
-import com.montaigne.montaigneapp.data.spt.ProjectSpt;
+import com.montaigne.montaigneapp.data.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.data.spt.project.ProjectsptDataSource;
 import com.orm.SugarRecord;
 
 import java.util.List;
 
-public class ProjectSptLocalDataSource extends SugarRecord<ProjectSpt> implements ProjectsptDataSource {
+public class ProjectSptLocalDataSource extends SugarRecord<ProjetoSpt> implements ProjectsptDataSource {
     @Override
-    public List<ProjectSpt> getProjects() {
+    public List<ProjetoSpt> getProjects() {
 
-        List<ProjectSpt> projectSpts = ProjectSpt.listAll(ProjectSpt.class);
+        List<ProjetoSpt> projectSpts = ProjetoSpt.listAll(ProjetoSpt.class);
         return projectSpts;
 
     }
@@ -19,25 +19,25 @@ public class ProjectSptLocalDataSource extends SugarRecord<ProjectSpt> implement
     public void refreshProjects() {}
 
     @Override
-    public ProjectSpt getProject(String id) {
+    public ProjetoSpt getProject(String id) {
 
-        ProjectSpt poll = ProjectSpt.
-                findById(ProjectSpt.class,Long.parseLong(id));
+        ProjetoSpt poll = ProjetoSpt.
+                findById(ProjetoSpt.class,Long.parseLong(id));
         return poll;
 
     }
 
     @Override
-    public ProjectSpt refreshProject(String id) {
+    public ProjetoSpt refreshProject(String id) {
 
-        ProjectSpt poll = ProjectSpt.
-                findById(ProjectSpt.class,Long.parseLong(id));
+        ProjetoSpt poll = ProjetoSpt.
+                findById(ProjetoSpt.class,Long.parseLong(id));
         return poll;
 
     }
 
     @Override
-    public void saveProject(ProjectSpt poll) {
+    public void saveProject(ProjetoSpt poll) {
 
        poll.save();
 
@@ -46,8 +46,8 @@ public class ProjectSptLocalDataSource extends SugarRecord<ProjectSpt> implement
     @Override
     public void deleteProject(String id) {
 
-        ProjectSpt poll = ProjectSpt.
-                findById(ProjectSpt.class,Long.parseLong(id));
+        ProjetoSpt poll = ProjetoSpt.
+                findById(ProjetoSpt.class,Long.parseLong(id));
         poll.delete();
 
     }

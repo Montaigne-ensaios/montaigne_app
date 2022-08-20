@@ -6,7 +6,6 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.util.Log;
 import android.view.View;
 
 import androidx.navigation.NavController;
@@ -14,7 +13,6 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.montaigne.montaigneapp.data.spt.SampleSpt;
 import com.montaigne.montaigneapp.databinding.ActivityMainBinding;
 
 import android.view.Menu;
