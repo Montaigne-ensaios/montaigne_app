@@ -18,14 +18,14 @@
 
     <ImageButton
         android:id="@+id/imageButton19"
-        android:layout_width="44dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imprimir"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_input_add" />
+        app:srcCompat="@android:drawable/ic_menu_add" />
 
     <Button
         android:id="@+id/imprimir"
@@ -55,7 +55,8 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/imprimir"
         app:layout_constraintTop_toBottomOf="@+id/textView20"
-        tools:layout_editor_absoluteX="1dp" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="-104dp" />
 
     <TextView
         android:id="@+id/textView20"

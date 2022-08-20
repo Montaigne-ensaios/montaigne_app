@@ -45,7 +45,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_delete" />
+        app:srcCompat="@drawable/icon_adicionar" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerProjetosSalvos"

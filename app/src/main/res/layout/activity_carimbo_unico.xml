@@ -227,7 +227,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/carimboUnicoIniciarEnsaio"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/carimboUnicoIniciarEnsaio"
-                app:srcCompat="@drawable/icon_home" />
+                app:srcCompat="@drawable/icon_home3" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

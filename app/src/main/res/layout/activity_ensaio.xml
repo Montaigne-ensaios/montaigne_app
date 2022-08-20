@@ -23,7 +23,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/furoIniciarEnsaio"
         app:layout_constraintEnd_toStartOf="@+id/furoIniciarEnsaio"
         app:layout_constraintTop_toTopOf="@+id/furoIniciarEnsaio"
-        app:srcCompat="@drawable/icon_home" />
+        app:srcCompat="@drawable/icon_home3" />
 
     <FrameLayout
         android:id="@+id/frameLayout"

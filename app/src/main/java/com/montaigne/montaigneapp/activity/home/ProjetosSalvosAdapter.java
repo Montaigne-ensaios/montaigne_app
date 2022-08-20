@@ -55,7 +55,7 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAd
             textDateProjeto = itemView.findViewById(R.id.textDateProjeto);
             imageProjeto = itemView.findViewById(R.id.imageProjeto);
 
-           imageProjeto.setImageResource(R.drawable.icon_home);
+           imageProjeto.setImageResource(R.drawable.icon_home3);
         }
     }
 }

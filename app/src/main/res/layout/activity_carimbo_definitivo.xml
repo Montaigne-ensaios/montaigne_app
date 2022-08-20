@@ -30,7 +30,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/continuarCarimboDefinitivo"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/continuarCarimboDefinitivo"
-                app:srcCompat="@drawable/icon_home" />
+                app:srcCompat="@drawable/icon_home3" />
 
             <Button
                 android:id="@+id/continuarCarimboDefinitivo"
