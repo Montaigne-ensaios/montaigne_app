@@ -6,20 +6,20 @@
     android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView2"
+        android:id="@+id/recyclerFuro"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAlterarCarimbo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView19"
+        app:layout_constraintTop_toBottomOf="@+id/textFuro"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonAlterarCarimbo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
@@ -29,30 +29,30 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/imageButtonAdicionarFuro"
         android:layout_width="44dp"
         android:layout_height="50dp"
         android:layout_marginBottom="20dp"
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/buttonAlterarCarimbo"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:drawable/ic_input_add" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/imageButtonExcluirFuro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toTopOf="@+id/button2"
+        app:layout_constraintStart_toEndOf="@+id/buttonAlterarCarimbo"
+        app:layout_constraintTop_toTopOf="@+id/buttonAlterarCarimbo"
         app:layout_constraintVertical_bias="0.26"
         app:srcCompat="@android:drawable/ic_menu_delete" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/textFuro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
