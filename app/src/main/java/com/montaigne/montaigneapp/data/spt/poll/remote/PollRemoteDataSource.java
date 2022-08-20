@@ -1,13 +1,13 @@
 package com.montaigne.montaigneapp.data.spt.poll.remote;
 
-import com.montaigne.montaigneapp.data.spt.Furo;
+import com.montaigne.montaigneapp.data.spt.FuroSpt;
 import com.montaigne.montaigneapp.data.spt.poll.PollDataSource;
 
 import java.util.List;
 
 public class PollRemoteDataSource implements PollDataSource {
     @Override
-    public List<Furo> getPolls() {
+    public List<FuroSpt> getPolls() {
         return null;
     }
 
@@ -27,7 +27,7 @@ public class PollRemoteDataSource implements PollDataSource {
     }
 
     @Override
-    public void savePoll(Furo poll) {
+    public void savePoll(FuroSpt poll) {
 
     }
 

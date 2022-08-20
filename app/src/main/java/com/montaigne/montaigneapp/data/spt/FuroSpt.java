@@ -3,17 +3,17 @@ package com.montaigne.montaigneapp.data.spt;
 import java.util.Date;
 import java.util.List;
 
-public class Furo {
+public class FuroSpt {
     private String id;
     private String code;
     private float waterLevel, holeLevel;
     private Date startDate, endDate;
     private List<AmostraSpt> samples;
 
-    public Furo() {
+    public FuroSpt() {
     }
 
-    public Furo(String id, String code, float waterLevel, float holeLevel, Date startDate, Date endDate, List<AmostraSpt> samples) {
+    public FuroSpt(String id, String code, float waterLevel, float holeLevel, Date startDate, Date endDate, List<AmostraSpt> samples) {
         this.id = id;
         this.code = code;
         this.waterLevel = waterLevel;

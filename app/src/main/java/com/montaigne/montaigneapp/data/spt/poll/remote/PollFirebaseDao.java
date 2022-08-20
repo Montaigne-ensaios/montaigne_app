@@ -4,7 +4,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
-import com.montaigne.montaigneapp.data.spt.Furo;
+import com.montaigne.montaigneapp.data.spt.FuroSpt;
 
 import java.util.HashMap;
 
@@ -12,14 +12,14 @@ public class PollFirebaseDao {
     protected DatabaseReference dbReference;
     protected PollFirebaseDao() {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        dbReference = firebaseDatabase.getReference(Furo.class.getSimpleName());
+        dbReference = firebaseDatabase.getReference(FuroSpt.class.getSimpleName());
     }
 
     protected Query getPolls() {
         return dbReference.orderByKey();
     }
 
-    protected Task<Void> insertPoll(Furo furo) {
+    protected Task<Void> insertPoll(FuroSpt furo) {
         furo.setId(dbReference.push().getKey());
         return dbReference.child(furo.getId()).setValue(furo);
     }

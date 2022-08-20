@@ -1,7 +1,7 @@
 package com.montaigne.montaigneapp.data.spt.poll.local;
 
 import com.montaigne.montaigneapp.data.Project;
-import com.montaigne.montaigneapp.data.spt.Furo;
+import com.montaigne.montaigneapp.data.spt.FuroSpt;
 
 import java.util.List;
 
@@ -16,12 +16,12 @@ public class PollDao {
         return null;
     }
 
-    protected void insertPoll(Furo poll) {
+    protected void insertPoll(FuroSpt poll) {
     }
 
-    protected void updatePoll(Furo poll) {
+    protected void updatePoll(FuroSpt poll) {
     }
 
-    protected void deleteTaskById(Furo id) {
+    protected void deleteTaskById(FuroSpt id) {
     }
 }

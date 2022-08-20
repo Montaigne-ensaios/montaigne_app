@@ -1,11 +1,11 @@
 package com.montaigne.montaigneapp.data.spt.poll;
 
-import com.montaigne.montaigneapp.data.spt.Furo;
+import com.montaigne.montaigneapp.data.spt.FuroSpt;
 
 import java.util.List;
 
 public interface PollDataSource {
-    List<Furo> getPolls();
+    List<FuroSpt> getPolls();
 
     void refreshPolls();
 
@@ -13,7 +13,7 @@ public interface PollDataSource {
 
     void refreshPoll(String id);
 
-    void savePoll(Furo poll);
+    void savePoll(FuroSpt poll);
 
     void deletePoll(String id);
 }
