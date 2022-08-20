@@ -8,8 +8,11 @@
         <entry key="..\:/Users/julia/AndroidStudioProjects/montaigne_app/app/src/main/res/layout/activity_carimbo_definitivo.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/julia/AndroidStudioProjects/montaigne_app/app/src/main/res/layout/activity_carimbo_unico.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/julia/AndroidStudioProjects/montaigne_app/app/src/main/res/layout/activity_ensaio.xml" value="0.18229166666666666" />
-        <entry key="..\:/Users/julia/AndroidStudioProjects/montaigne_app/app/src/main/res/layout/activity_home.xml" value="0.33" />
+        <entry key="..\:/Users/julia/AndroidStudioProjects/montaigne_app/app/src/main/res/layout/activity_home.xml" value="0.22" />
         <entry key="..\:/Users/julia/AndroidStudioProjects/montaigne_app/app/src/main/res/layout/activity_projeto.xml" value="0.25" />
+        <entry key="..\:/Users/julia/AndroidStudioProjects/montaigne_app/app/src/main/res/layout/adapter_home_projeto_categoria.xml" value="0.33" />
+        <entry key="..\:/Users/julia/AndroidStudioProjects/montaigne_app/app/src/main/res/layout/adapter_home_projetos.xml" value="0.33" />
+        <entry key="..\:/Users/julia/AndroidStudioProjects/montaigne_app/app/src/main/res/layout/adapter_projeto.xml" value="0.18229166666666666" />
       </map>
     </option>
   </component>
