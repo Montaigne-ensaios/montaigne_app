@@ -1,11 +1,12 @@
-package com.montaigne.montaigneapp.data.spt;
+package com.montaigne.montaigneapp.model.spt;
 
-import com.montaigne.montaigneapp.data.Coordinate;
-import com.montaigne.montaigneapp.data.Project;
+import com.montaigne.montaigneapp.model.Coordinate;
+import com.montaigne.montaigneapp.model.Projeto;
+import com.montaigne.montaigneapp.model.spt.FuroSpt;
 
 import java.util.List;
 
-public class ProjetoSpt extends Project {
+public class ProjetoSpt extends Projeto {
 
     private int holeNumber;
     private List<FuroSpt> polls;

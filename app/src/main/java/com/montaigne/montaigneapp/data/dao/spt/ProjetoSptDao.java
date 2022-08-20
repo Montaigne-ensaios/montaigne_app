@@ -1,16 +1,16 @@
-package com.montaigne.montaigneapp.data.spt.project.remote;
+package com.montaigne.montaigneapp.data.dao.spt;
 
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
-import com.montaigne.montaigneapp.data.spt.ProjetoSpt;
+import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.HashMap;
 
-public class ProjectDao {
+public class ProjetoSptDao {
     protected DatabaseReference dbReference;
-    protected ProjectDao() {
+    protected ProjetoSptDao() {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         dbReference = firebaseDatabase.getReference(ProjetoSpt.class.getSimpleName());
     }

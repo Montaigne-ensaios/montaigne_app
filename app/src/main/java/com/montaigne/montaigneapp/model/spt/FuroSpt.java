@@ -1,4 +1,6 @@
-package com.montaigne.montaigneapp.data.spt;
+package com.montaigne.montaigneapp.model.spt;
+
+import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 
 import java.util.Date;
 import java.util.List;

@@ -1,16 +1,16 @@
-package com.montaigne.montaigneapp.data.spt.poll.remote;
+package com.montaigne.montaigneapp.data.dao.spt;
 
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
-import com.montaigne.montaigneapp.data.spt.FuroSpt;
+import com.montaigne.montaigneapp.model.spt.FuroSpt;
 
 import java.util.HashMap;
 
-public class PollFirebaseDao {
+public class FuroSptDao {
     protected DatabaseReference dbReference;
-    protected PollFirebaseDao() {
+    protected FuroSptDao() {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         dbReference = firebaseDatabase.getReference(FuroSpt.class.getSimpleName());
     }

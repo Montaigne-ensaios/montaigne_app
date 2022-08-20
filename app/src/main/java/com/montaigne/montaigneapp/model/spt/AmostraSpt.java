@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.data.spt;
+package com.montaigne.montaigneapp.model.spt;
 
 public class AmostraSpt {
     private String id;
