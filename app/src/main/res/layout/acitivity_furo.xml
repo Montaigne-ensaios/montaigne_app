@@ -6,29 +6,29 @@
     android:layout_height="match_parent">
 
     <ImageButton
-        android:id="@+id/imageButton20"
+        android:id="@+id/imageButtonExcluirAmostra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/imprimir"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonImprimir"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imprimir"
-        app:layout_constraintTop_toTopOf="@+id/imprimir"
+        app:layout_constraintStart_toEndOf="@+id/buttonImprimir"
+        app:layout_constraintTop_toTopOf="@+id/buttonImprimir"
         app:srcCompat="@android:drawable/ic_menu_delete" />
 
     <ImageButton
-        android:id="@+id/imageButton19"
+        android:id="@+id/imageButtonAdicionarAmostra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imprimir"
+        app:layout_constraintEnd_toStartOf="@+id/buttonImprimir"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:drawable/ic_menu_add" />
 
     <Button
-        android:id="@+id/imprimir"
+        android:id="@+id/buttonImprimir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
@@ -38,34 +38,34 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textAmostra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Amostras N"
-        app:layout_constraintBottom_toTopOf="@+id/imprimir"
+        app:layout_constraintBottom_toTopOf="@+id/buttonImprimir"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerAmostras"
+        android:id="@+id/recyclerAmostra"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/imprimir"
-        app:layout_constraintTop_toBottomOf="@+id/textView20"
+        app:layout_constraintBottom_toTopOf="@+id/buttonImprimir"
+        app:layout_constraintTop_toBottomOf="@+id/textAviso"
         app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="-104dp" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/textAviso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Os dados apresentados podem ser editados"
         android:textColor="#FF0101"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintEnd_toEndOf="@+id/textAmostra"
+        app:layout_constraintStart_toStartOf="@+id/textAmostra"
+        app:layout_constraintTop_toBottomOf="@+id/textAmostra" />
 </androidx.constraintlayout.widget.ConstraintLayout>
