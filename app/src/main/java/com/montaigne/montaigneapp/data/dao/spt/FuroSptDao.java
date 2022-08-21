@@ -9,26 +9,27 @@ import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import java.util.HashMap;
 
 public class FuroSptDao {
-    protected DatabaseReference dbReference;
-    protected FuroSptDao() {
+    private DatabaseReference dbReference;
+
+    public FuroSptDao() {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         dbReference = firebaseDatabase.getReference(FuroSpt.class.getSimpleName());
     }
 
-    protected Query getPolls() {
+    public Query getPolls() {
         return dbReference.orderByKey();
     }
 
-    protected Task<Void> insertPoll(FuroSpt furo) {
+    public Task<Void> insertPoll(FuroSpt furo) {
         furo.setId(dbReference.push().getKey());
         return dbReference.child(furo.getId()).setValue(furo);
     }
 
-    protected Task<Void> updatePoll(String id, HashMap<String, Object> hashMap) {
+    public Task<Void> updatePoll(String id, HashMap<String, Object> hashMap) {
         return dbReference.child(id).setValue(hashMap);
     }
 
-    protected Task<Void> deletePollById(String id) {
+    public Task<Void> deletePollById(String id) {
         return dbReference.child(id).removeValue();
     }
 }
