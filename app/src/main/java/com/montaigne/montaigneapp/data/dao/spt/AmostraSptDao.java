@@ -29,7 +29,7 @@ public class AmostraSptDao {
         return dbReference.child(id).setValue(hashMap);
     }
 
-    public Task<Void> deleteAmostra(String id) {
+    public Task<Void> deleteAmostraById(String id) {
         return dbReference.child(id).removeValue();
     }
 }

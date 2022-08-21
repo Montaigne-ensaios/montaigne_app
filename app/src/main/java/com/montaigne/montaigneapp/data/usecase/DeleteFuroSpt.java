@@ -3,9 +3,13 @@ package com.montaigne.montaigneapp.data.usecase;
 import com.montaigne.montaigneapp.data.dao.spt.FuroSptDao;
 
 public class DeleteFuroSpt {
-    private static FuroSptDao amostraSptDao = new FuroSptDao();
+    private static FuroSptDao furoSptDao = new FuroSptDao();
 
-    public static void deleteFuroSpt() {
-        
+    public static void deleteFuroSpt(String id) {
+        furoSptDao.deleteFuroById(id).addOnCompleteListener(event -> {
+
+        }).addOnFailureListener(event ->  {
+
+        });
     }
 }
