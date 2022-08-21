@@ -6,9 +6,9 @@ public class DeleteFuroSpt {
     private static FuroSptDao furoSptDao = new FuroSptDao();
 
     public static void deleteFuroSpt(String id) {
-        furoSptDao.deleteFuroById(id).addOnCompleteListener(event -> {
+        furoSptDao.deleteFuroById(id).addOnCompleteListener(task -> {
 
-        }).addOnFailureListener(event ->  {
+        }).addOnFailureListener(exception ->  {
 
         });
     }

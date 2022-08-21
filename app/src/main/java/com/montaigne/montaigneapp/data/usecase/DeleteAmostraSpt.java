@@ -6,9 +6,9 @@ public class DeleteAmostraSpt {
     private static AmostraSptDao amostraSptDao = new AmostraSptDao();
 
     public static void deleteAmostraSpt(String id) {
-        amostraSptDao.deleteAmostraById(id).addOnCompleteListener(event -> {
+        amostraSptDao.deleteAmostraById(id).addOnCompleteListener(task -> {
 
-        }).addOnFailureListener(event ->  {
+        }).addOnFailureListener(exception ->  {
 
         });
     }

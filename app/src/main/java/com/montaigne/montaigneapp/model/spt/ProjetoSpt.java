@@ -13,7 +13,7 @@ public class ProjetoSpt extends Projeto {
 
     public ProjetoSpt() {}
 
-    public ProjetoSpt(Long id, String name, String client, String company, String technician,
+    public ProjetoSpt(String id, String name, String client, String company, String technician,
                       String phoneNumber, String starData, Coordinate coordinate, int holeNumber,
                       List<FuroSpt> samples) {
 

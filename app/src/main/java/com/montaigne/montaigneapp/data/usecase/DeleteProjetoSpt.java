@@ -6,9 +6,9 @@ public class DeleteProjetoSpt {
     private static ProjetoSptDao projetoSptDao = new ProjetoSptDao();
 
     public static void deleteProjetoSpt(String id) {
-        projetoSptDao.deleteProjetoById(id).addOnCompleteListener(event -> {
+        projetoSptDao.deleteProjetoById(id).addOnCompleteListener(task -> {
 
-        }).addOnFailureListener(event ->  {
+        }).addOnFailureListener(exception ->  {
 
         });
     }

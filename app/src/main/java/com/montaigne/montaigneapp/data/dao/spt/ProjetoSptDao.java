@@ -20,7 +20,9 @@ public class ProjetoSptDao {
         return dbReference.orderByKey();
     }
 
-    public void insertProjeto(ProjetoSpt projeto) {
+    public Task<Void> insertProjeto(ProjetoSpt projeto) {
+        projeto.setId(dbReference.push().getKey());
+        return dbReference.child(projeto.getId()).setValue(projeto);
     }
 
     public Task<Void> updateProjeto(String id, HashMap<String, Object> hashMap) {

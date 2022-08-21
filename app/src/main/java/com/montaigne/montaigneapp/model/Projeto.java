@@ -1,10 +1,8 @@
 package com.montaigne.montaigneapp.model;
 
-import com.orm.SugarRecord;
+public abstract class Projeto {
 
-public abstract class Projeto extends SugarRecord<Projeto> {
-
-    private long id;
+    private String id;
     private String name;
     private String client;
     private String company;
@@ -15,7 +13,7 @@ public abstract class Projeto extends SugarRecord<Projeto> {
 
     public Projeto() {}
 
-    public Projeto(Long id, String name, String client, String company, String technician,
+    public Projeto(String id, String name, String client, String company, String technician,
                    String phoneNumber, String starData, Coordinate coordinate) {
 
         this.id = id;
@@ -29,11 +27,11 @@ public abstract class Projeto extends SugarRecord<Projeto> {
 
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
