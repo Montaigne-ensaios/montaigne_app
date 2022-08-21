@@ -17,7 +17,7 @@ public class GetProjetoSpt {
 
     public static Map<String, ProjetoSpt> getProjetosSpt() {
         Map<String, ProjetoSpt> projetos = new HashMap<>();
-        Query projetoQuery = projetoSptDao.getProjects();
+        Query projetoQuery = projetoSptDao.getProjetos();
 
         projetoQuery.get().addOnCompleteListener(dataSnapshotTask -> {
             for (DataSnapshot child : dataSnapshotTask.getResult().getChildren()) {

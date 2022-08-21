@@ -4,7 +4,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.Query;
 import com.montaigne.montaigneapp.data.dao.spt.AmostraSptDao;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
-import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,7 +17,7 @@ public class GetAmostraSpt {
 
     public static Map<String, AmostraSpt> getProjetosSpt() {
         Map<String, AmostraSpt> amostras = new HashMap<>();
-        Query amostraQuery = amostraSptDao.getSamples();
+        Query amostraQuery = amostraSptDao.getAmostras();
 
         amostraQuery.get().addOnCompleteListener(dataSnapshotTask -> {
             for (DataSnapshot child : dataSnapshotTask.getResult().getChildren()) {

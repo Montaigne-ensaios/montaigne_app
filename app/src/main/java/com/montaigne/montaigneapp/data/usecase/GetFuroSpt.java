@@ -4,7 +4,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.Query;
 import com.montaigne.montaigneapp.data.dao.spt.FuroSptDao;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
-import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,7 +17,7 @@ public class GetFuroSpt {
 
     public static Map<String, FuroSpt> getProjetosSpt() {
         Map<String, FuroSpt> furos = new HashMap<>();
-        Query furoQuery = furoSptDao.getPolls();
+        Query furoQuery = furoSptDao.getFuros();
 
         furoQuery.get().addOnCompleteListener(dataSnapshotTask -> {
             for (DataSnapshot child : dataSnapshotTask.getResult().getChildren()) {

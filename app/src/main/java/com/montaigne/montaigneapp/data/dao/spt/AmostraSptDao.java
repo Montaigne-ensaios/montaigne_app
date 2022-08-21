@@ -16,20 +16,20 @@ public class AmostraSptDao {
         dbReference = firebaseDatabase.getReference(AmostraSpt.class.getSimpleName());
     }
 
-    public Query getSamples() {
+    public Query getAmostras() {
         return dbReference.orderByKey();
     }
 
-    public Task<Void> insertSample(AmostraSpt amostra) {
+    public Task<Void> insertAmostra(AmostraSpt amostra) {
         amostra.setId(dbReference.push().getKey());
         return dbReference.child(amostra.getId()).setValue(amostra);
     }
 
-    public Task<Void> updateSample(String id, HashMap<String, Object> hashMap) {
+    public Task<Void> updateAmostra(String id, HashMap<String, Object> hashMap) {
         return dbReference.child(id).setValue(hashMap);
     }
 
-    public Task<Void> deleteSample(String id) {
+    public Task<Void> deleteAmostra(String id) {
         return dbReference.child(id).removeValue();
     }
 }

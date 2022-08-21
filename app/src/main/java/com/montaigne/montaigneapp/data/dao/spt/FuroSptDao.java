@@ -16,20 +16,20 @@ public class FuroSptDao {
         dbReference = firebaseDatabase.getReference(FuroSpt.class.getSimpleName());
     }
 
-    public Query getPolls() {
+    public Query getFuros() {
         return dbReference.orderByKey();
     }
 
-    public Task<Void> insertPoll(FuroSpt furo) {
+    public Task<Void> insertFuro(FuroSpt furo) {
         furo.setId(dbReference.push().getKey());
         return dbReference.child(furo.getId()).setValue(furo);
     }
 
-    public Task<Void> updatePoll(String id, HashMap<String, Object> hashMap) {
+    public Task<Void> updateFuro(String id, HashMap<String, Object> hashMap) {
         return dbReference.child(id).setValue(hashMap);
     }
 
-    public Task<Void> deletePollById(String id) {
+    public Task<Void> deleteFuroById(String id) {
         return dbReference.child(id).removeValue();
     }
 }

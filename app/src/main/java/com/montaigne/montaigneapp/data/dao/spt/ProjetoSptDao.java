@@ -16,18 +16,18 @@ public class ProjetoSptDao {
         dbReference = firebaseDatabase.getReference(ProjetoSpt.class.getSimpleName());
     }
 
-    public Query getProjects() {
+    public Query getProjetos() {
         return dbReference.orderByKey();
     }
 
-    public void insertProject(ProjetoSpt projeto) {
+    public void insertProjeto(ProjetoSpt projeto) {
     }
 
-    public Task<Void> updateProject(String id, HashMap<String, Object> hashMap) {
+    public Task<Void> updateProjeto(String id, HashMap<String, Object> hashMap) {
         return dbReference.child(id).setValue(hashMap);
     }
 
-    public Task<Void> deleteProjectById(String id) {
+    public Task<Void> deleteProjetoById(String id) {
         return dbReference.child(id).removeValue();
     }
 }
