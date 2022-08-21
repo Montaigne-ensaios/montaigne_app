@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class GetFuroSpt {
-    public static FuroSptDao furoSptDao = new FuroSptDao();
+    private static FuroSptDao furoSptDao = new FuroSptDao();
 
     public static void getFuroSpt() {
 

@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class GetProjetoSpt {
-    public static ProjetoSptDao projetoSptDao = new ProjetoSptDao();
+    private static ProjetoSptDao projetoSptDao = new ProjetoSptDao();
 
     public static void getProjetoSpt() {
 

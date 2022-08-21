@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class GetAmostraSpt {
-    public static AmostraSptDao amostraSptDao = new AmostraSptDao();
+    private static AmostraSptDao amostraSptDao = new AmostraSptDao();
 
     public static void getProjetoSpt() {
 
