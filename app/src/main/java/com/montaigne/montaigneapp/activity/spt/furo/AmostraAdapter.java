@@ -13,11 +13,6 @@ import java.util.ArrayList;
 
 public class AmostraAdapter extends RecyclerView.Adapter<AmostraAdapter.ViewHolder>{
     private ArrayList<String> amostras;
-    private final Context context;
-
-    public AmostraAdapter(Context context) {
-        this.context = context;
-    }
 
     @NonNull
     @Override

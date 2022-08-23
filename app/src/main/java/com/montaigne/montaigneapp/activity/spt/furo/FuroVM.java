@@ -28,7 +28,7 @@ public class FuroVM {
     }
 
     private void updateAmostrasAdapter(ArrayList<String> amostras) {
-        AmostraAdapter adapter = new AmostraAdapter(activity);
+        AmostraAdapter adapter = new AmostraAdapter();
         adapter.setAmostras(amostras);
         activity.recyclerAmostras.setAdapter(adapter);
         activity.recyclerAmostras.setLayoutManager(new LinearLayoutManager(activity));

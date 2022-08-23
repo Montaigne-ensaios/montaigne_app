@@ -13,7 +13,6 @@ import java.util.ArrayList;
 
 public class FurosAdapter extends RecyclerView.Adapter<FurosAdapter.ViewHolder> {
     protected ArrayList<String> furos;
-    protected final Context context;
 
     @NonNull
     @Override
@@ -32,10 +31,6 @@ public class FurosAdapter extends RecyclerView.Adapter<FurosAdapter.ViewHolder> 
     @Override
     public int getItemCount() {
         return furos.size();
-    }
-
-    public FurosAdapter(Context context) {
-        this.context = context;
     }
 
     public void setFuros(ArrayList<String> furos) {

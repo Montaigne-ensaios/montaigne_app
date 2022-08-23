@@ -16,15 +16,9 @@ import com.montaigne.montaigneapp.R;
 import java.util.ArrayList;
 
 public class ProjetoCategoriaAdapter extends RecyclerView.Adapter<ProjetoCategoriaAdapter.ViewHolder>{
-    private final Context context;
     private ArrayList<Object[]> categoriasProjeto = new ArrayList<>();
     // lista com: nome, referência da imagem
     // não pode ser um hash map pois não é acessível por posição
-
-
-    public ProjetoCategoriaAdapter(Context context) {
-        this.context = context;
-    }
 
     @NonNull
     @Override
