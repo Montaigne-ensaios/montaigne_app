@@ -1,5 +1,6 @@
 package com.montaigne.montaigneapp.activity.carimboDefinitivo;
 
+import android.content.Intent;
 import android.view.View;
 
 import com.montaigne.montaigneapp.activity.spt.carimboUnico.CarimboUnicoActivity;
@@ -12,7 +13,8 @@ public class CarimboDefinitivoVM {
     }
     // método de getData (validação de entradas)
 
-    private void retornoButtonListener (View view) {
+    private void continuarCarimboButtonListener (View view) {
+        activity.startActivity(new Intent(activity, CarimboUnicoActivity.class));
     }
 
     private void inicialButtonListener (View view) {
@@ -21,7 +23,6 @@ public class CarimboDefinitivoVM {
     private void cameraButtonListener (View view) {
     }
 
-    private void continuacaoButtonListener (View view) {
-    }
+
 
 }
