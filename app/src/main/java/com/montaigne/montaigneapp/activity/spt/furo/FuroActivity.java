@@ -11,7 +11,6 @@ import com.montaigne.montaigneapp.activity.AbstractActivity;
 
 public class FuroActivity extends AbstractActivity {
     protected RecyclerView recyclerAmostras;
-    protected Button buttonDeleteAmostras;
     protected ImageButton buttonAddAmostra;
     protected ImageButton buttonDeleteAmostra;
     protected Button buttonPrint;
@@ -30,5 +29,6 @@ public class FuroActivity extends AbstractActivity {
         buttonAddAmostra = findViewById(R.id.imageButtonAddAmostra);
         buttonDeleteAmostra = findViewById(R.id.imageButtonDeleteAmostra);
         buttonPrint = findViewById(R.id.buttonPrint);
+        recyclerAmostras = findViewById(R.id.recyclerAmostra);
     }
 }
