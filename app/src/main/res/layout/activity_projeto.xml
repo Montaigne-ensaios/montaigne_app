@@ -29,7 +29,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButtonAdicionarFuro"
+        android:id="@+id/imageButtonAddFuro"
         android:layout_width="44dp"
         android:layout_height="50dp"
         android:layout_marginBottom="20dp"

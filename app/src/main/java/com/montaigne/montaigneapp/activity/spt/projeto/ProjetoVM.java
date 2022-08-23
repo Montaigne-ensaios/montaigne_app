@@ -14,7 +14,7 @@ public class ProjetoVM {
         this.activity = activity;
 
         furos = getFuros();
-//        updateFurosAdapter(furos);
+        updateFurosAdapter(furos);
         
         activity.buttonDeleteFuro.setOnClickListener(this::deleteFurosButtonListener);
     }

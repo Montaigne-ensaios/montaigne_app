@@ -11,7 +11,8 @@ import com.montaigne.montaigneapp.activity.AbstractActivity;
 
 public class ProjetoActivity extends AbstractActivity {
     protected RecyclerView recyclerFuros;
-    protected ImageButton buttonDeleteFuro;
+    protected ImageButton buttonDeleteFuro, buttonAddFuro;
+    // todo: pensar na implementação do DeleteFuro
     protected TextView textFuro;  // todo: remover quando corrigido
 
     @Override
@@ -32,6 +33,7 @@ public class ProjetoActivity extends AbstractActivity {
     protected void initializeViews() {
         recyclerFuros = findViewById(R.id.recyclerFuro);
         buttonDeleteFuro = findViewById(R.id.imageButtonDeleteFuro);
+        buttonAddFuro = findViewById(R.id.imageButtonAddFuro);
         textFuro = findViewById(R.id.textFuro);  // adicionado apenas pela atual ausência
         // de título na activity
     }
