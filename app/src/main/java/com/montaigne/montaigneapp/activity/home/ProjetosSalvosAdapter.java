@@ -55,7 +55,6 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAd
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            // todo: initialize views
             cardView = itemView.findViewById(R.id.cardView);
             textNomeProjeto = itemView.findViewById(R.id.textNomeProjeto);
             textDescricaoProjeto = itemView.findViewById(R.id.textDescricaoProjeto);
