@@ -12,22 +12,23 @@ import com.montaigne.montaigneapp.activity.AbstractActivity;
 public class FuroActivity extends AbstractActivity {
     protected RecyclerView recyclerAmostras;
     protected Button buttonDeleteAmostras;
-    protected ImageButton imageButtonExcluirAmostra;
-    protected ImageButton imageButtonAdicionarAmostra;
-    protected Button buttonImprimir;
+    protected ImageButton buttonAddAmostra;
+    protected ImageButton buttonDeleteAmostra;
+    protected Button buttonPrint;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initializeViews();
         setContentView(R.layout.acitivity_furo);
+
+        initializeViews();
         FuroVM viewModel = new FuroVM(this);
     }
 
     @Override
     protected void initializeViews() {
-        imageButtonAdicionarAmostra = findViewById(R.id.imageButtonAdicionarAmostra);
-        imageButtonExcluirAmostra = findViewById(R.id.imageButtonExcluirAmostra);
-        buttonImprimir = findViewById(R.id.buttonImprimir);
+        buttonAddAmostra = findViewById(R.id.imageButtonAddAmostra);
+        buttonDeleteAmostra = findViewById(R.id.imageButtonDeleteAmostra);
+        buttonPrint = findViewById(R.id.buttonPrint);
     }
 }
