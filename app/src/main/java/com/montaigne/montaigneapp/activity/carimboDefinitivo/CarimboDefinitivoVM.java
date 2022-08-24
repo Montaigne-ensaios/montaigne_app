@@ -15,11 +15,11 @@ public class CarimboDefinitivoVM {
     // método de getData (validação de entradas)
 
     private void continuarCarimboButtonListener (View view) {
-        activity.startActivity(new Intent(activity, CarimboUnicoActivity.class));
+        view.getContext().startActivity(new Intent(view.getContext(), CarimboUnicoActivity.class));
     }
 
     private void HomeListener (View view) {
-        activity.startActivity(new Intent(activity, HomeActivity.class));
+        view.getContext().startActivity(new Intent(view.getContext(), HomeActivity.class));
     }
 
     private void cameraButtonListener (View view) {

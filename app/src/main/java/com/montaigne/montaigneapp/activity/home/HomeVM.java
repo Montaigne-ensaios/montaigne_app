@@ -59,6 +59,6 @@ public class HomeVM {
     }
 
     private void newProjectFabListener(View view) {
-        activity.startActivity(new Intent(activity, CarimboDefinitivoActivity.class));
+        view.getContext().startActivity(new Intent(view.getContext(), CarimboDefinitivoActivity.class));
     }
 }
