@@ -3,6 +3,7 @@ package com.montaigne.montaigneapp.activity.carimboDefinitivo;
 import android.content.Intent;
 import android.view.View;
 
+import com.montaigne.montaigneapp.activity.home.HomeActivity;
 import com.montaigne.montaigneapp.activity.spt.carimboUnico.CarimboUnicoActivity;
 
 public class CarimboDefinitivoVM {
@@ -17,7 +18,8 @@ public class CarimboDefinitivoVM {
         activity.startActivity(new Intent(activity, CarimboUnicoActivity.class));
     }
 
-    private void inicialButtonListener (View view) {
+    private void HomeListener (View view) {
+        activity.startActivity(new Intent(activity, HomeActivity.class));
     }
 
     private void cameraButtonListener (View view) {

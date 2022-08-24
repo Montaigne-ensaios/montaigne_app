@@ -9,10 +9,11 @@ public class CarimboUnicoVM {
         this.activity = activity;
     }
 
-    private void retornoButtonListener (View view) {
+    private void returnButtonListener (View view) {
+
     }
 
-    private void inicialButtonListener (View view) {
+    private void homeButtonListener (View view) {
     }
 
     private void capturarLocalizacaoButtonListener (View view) {
