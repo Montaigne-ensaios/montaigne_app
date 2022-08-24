@@ -15,8 +15,8 @@ public class FuroVM {
 
         amostras = getAmostras();
         updateAmostrasAdapter(amostras);
-
         activity.buttonDeleteAmostra.setOnClickListener(this::deleteAmostrasButtonListener);
+
     }
 
     private ArrayList<String> getAmostras() {
