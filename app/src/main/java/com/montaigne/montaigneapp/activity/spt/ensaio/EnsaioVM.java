@@ -1,6 +1,10 @@
 package com.montaigne.montaigneapp.activity.spt.ensaio;
 
+import android.content.Intent;
+import android.view.View;
 import android.widget.EditText;
+
+import com.montaigne.montaigneapp.activity.spt.projeto.ProjetoActivity;
 
 public class EnsaioVM {
     private final EnsaioActivity activity;
@@ -8,8 +12,16 @@ public class EnsaioVM {
     public EnsaioVM(EnsaioActivity activity) {
 
         this.activity = activity;
-
+        activity.buttonFinalizarFuro.setOnClickListener(this::projetoButtonListener);
         setGolpeModfiersListners();
+    }
+
+    private void projetoButtonListener(View view) {
+        view.getContext().startActivity(new Intent(view.getContext(), ProjetoActivity.class));
+    }
+
+    private void homeButtonListener(View view) {
+        //todo: concertar o button home;
     }
 
     private void setGolpeModfiersListners(){
@@ -23,6 +35,7 @@ public class EnsaioVM {
     private void incrementGolpe(int segmento) {
         setGolpe(segmento, getGolpe(segmento) + 1);
     }
+
     private void decrementGolpe(int segmento) {
         // garante que o valor jamais será menor que zero
         int v = getGolpe(segmento);
