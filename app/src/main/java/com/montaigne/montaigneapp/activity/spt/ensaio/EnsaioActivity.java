@@ -50,6 +50,13 @@ public class EnsaioActivity extends AbstractActivity {
         imageButtonAumentarGolpe2 = findViewById(R.id.imageButtonAumentarGolpe2);
         imageButtonAumentarGolpe3 = findViewById(R.id.imageButtonAumentarGolpe3);
         imageButtonHelpNivelAgua = findViewById(R.id.imageButtonHelpNivelAgua);
+        buttonsDecrementGolpes.add(findViewById(R.id.imageButtonDiminuirGolpe1));
+        buttonsDecrementGolpes.add(findViewById(R.id.imageButtonDiminuirGolpe2));
+        buttonsDecrementGolpes.add(findViewById(R.id.imageButtonDiminuirGolpe3));
+        buttonsIncrementGolpes.add(findViewById(R.id.imageButtonAumentarGolpe1));
+        buttonsIncrementGolpes.add(findViewById(R.id.imageButtonAumentarGolpe2));
+        buttonsIncrementGolpes.add(findViewById(R.id.imageButtonAumentarGolpe3));
+
     }
 }
 
