@@ -15,7 +15,7 @@ public class EnsaioVM {
         this.activity = activity;
         activity.buttonFinalizarFuro.setOnClickListener(this::projetoButtonListener);
         activity.imageButtonHome.setOnClickListener(this::homeButtonListener);
-        setGolpeModfiersListners();
+//        setGolpeModfiersListners();
     }
 
     private void projetoButtonListener(View view) {
