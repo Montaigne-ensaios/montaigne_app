@@ -19,9 +19,8 @@ public class EnsaioActivity extends AbstractActivity {
     // lista de golpes e penetrações por segmento
     protected ArrayList<Button> buttonsIncrementGolpes, buttonsDecrementGolpes;
     protected Button buttonFinalizarFuro;
-    protected ImageView imageButtonHome;
     protected ImageButton imageButtonDiminuirGolpe1, imageButtonDiminuirGolpe2, imageButtonDiminuirGolpe3, imageButtonAumentarGolpe3,
-        imageButtonAumentarGolpe2, imageButtonAumentarGolpe1, imageButtonHelpNivelAgua;
+        imageButtonAumentarGolpe2, imageButtonAumentarGolpe1, imageButtonHelpNivelAgua, imageButtonHome;
 
 
     @Override
