@@ -34,6 +34,7 @@ public class AmostraAdapter extends RecyclerView.Adapter<AmostraAdapter.ViewHold
         holder.cardView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), EnsaioActivity.class);
             intent.putExtra("name", nome);
+            intent.putExtra("NAmostra", position);
             v.getContext().startActivity(intent);
         });
     }
@@ -56,6 +57,7 @@ public class AmostraAdapter extends RecyclerView.Adapter<AmostraAdapter.ViewHold
             super(itemView);
             cardView = itemView.findViewById(R.id.cardView);
             textView = itemView.findViewById(R.id.textFuroName);
+            // todo: garantir que este nome sempre seja um int
             checkBox = itemView.findViewById(R.id.checkBox);
         }
     }

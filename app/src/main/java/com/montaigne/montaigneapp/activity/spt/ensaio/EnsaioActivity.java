@@ -20,6 +20,7 @@ public class EnsaioActivity extends AbstractActivity {
             buttonsDecrementGolpes = new ArrayList<>();
     protected Button buttonFinalizarFuro;
     protected ImageButton imageButtonHelpNivelAgua, imageButtonHome;
+    protected TextView textAmostraN;
 
 
     @Override
@@ -33,6 +34,7 @@ public class EnsaioActivity extends AbstractActivity {
 
     @Override
     protected void initializeViews() {
+        textAmostraN = findViewById(R.id.textAmostraN);
         editTextProfundidade = findViewById(R.id.editTextProfundidade);
         golpes.add(findViewById(R.id.editTextGolpe1));
         golpes.add(findViewById(R.id.editTextGolpe2));

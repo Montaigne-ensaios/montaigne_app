@@ -9,10 +9,16 @@ import com.montaigne.montaigneapp.activity.spt.projeto.ProjetoActivity;
 
 public class EnsaioVM {
     private final EnsaioActivity activity;
+    private final int nAmostra;
 
     public EnsaioVM(EnsaioActivity activity) {
 
         this.activity = activity;
+
+        Intent intent = activity.getIntent();
+        nAmostra = intent.getIntExtra("NAmostra", 0);
+        activity.textAmostraN.setText("Amostra " + nAmostra);
+
         activity.buttonFinalizarFuro.setOnClickListener(this::projetoButtonListener);
         activity.imageButtonHome.setOnClickListener(this::homeButtonListener);
 //        setGolpeModfiersListners();

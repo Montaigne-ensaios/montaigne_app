@@ -3,6 +3,7 @@ package com.montaigne.montaigneapp.activity.spt.furo;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,6 +15,7 @@ public class FuroActivity extends AbstractActivity {
     protected ImageButton buttonAddAmostra;
     protected ImageButton buttonDeleteAmostra;
     protected Button buttonPrint;
+    protected TextView textAmostra;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,9 @@ public class FuroActivity extends AbstractActivity {
         setContentView(R.layout.acitivity_furo);
 
         initializeViews();
+
+        String nome = getIntent().getStringExtra("name");
+        textAmostra.setText(nome);
         FuroVM viewModel = new FuroVM(this);
     }
 
@@ -30,5 +35,6 @@ public class FuroActivity extends AbstractActivity {
         buttonDeleteAmostra = findViewById(R.id.imageButtonDeleteAmostra);
         buttonPrint = findViewById(R.id.buttonPrint);
         recyclerAmostras = findViewById(R.id.recyclerAmostra);
+        textAmostra = findViewById(R.id.textAmostra);
     }
 }
