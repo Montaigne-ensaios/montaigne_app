@@ -1,20 +1,21 @@
-package com.montaigne.montaigneapp.model;
+package com.montaigne.montaigneapp.model.spt;
 
 import com.montaigne.montaigneapp.model.Coordinate;
-import com.montaigne.montaigneapp.model.Project;
+import com.montaigne.montaigneapp.model.Projeto;
+import com.montaigne.montaigneapp.model.spt.FuroSpt;
 
 import java.util.List;
 
-public class ProjectSpt extends Project {
+public class ProjetoSpt extends Projeto {
 
     private int holeNumber;
-    private List<PollSpt> polls;
+    private List<FuroSpt> polls;
 
-    public ProjectSpt() {}
+    public ProjetoSpt() {}
 
-    public ProjectSpt(String  id, String name, String client, String company, String technician,
+    public ProjetoSpt(String id, String name, String client, String company, String technician,
                       String phoneNumber, String starData, Coordinate coordinate, int holeNumber,
-                      List<PollSpt> samples) {
+                      List<FuroSpt> samples) {
 
         super(id, name, client, company, technician, phoneNumber, starData, coordinate);
         this.holeNumber = holeNumber;
@@ -29,11 +30,11 @@ public class ProjectSpt extends Project {
         this.holeNumber = holeNumber;
     }
 
-    public List<PollSpt> getPolls() {
+    public List<FuroSpt> getPolls() {
         return polls;
     }
 
-    public void setPolls(List<PollSpt> polls) {
+    public void setPolls(List<FuroSpt> polls) {
         this.polls = polls;
     }
 }

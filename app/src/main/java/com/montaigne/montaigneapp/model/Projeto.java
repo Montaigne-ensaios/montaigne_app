@@ -1,6 +1,6 @@
 package com.montaigne.montaigneapp.model;
 
-public abstract class Project {
+public abstract class Projeto {
 
     private String id;
     private String name;
@@ -8,13 +8,13 @@ public abstract class Project {
     private String company;
     private String technician;
     private String phoneNumber;
-    private String startData;
+    private String starData;
     private Coordinate coordinate;
 
-    public Project() {}
+    public Projeto() {}
 
-    public Project(String id, String name, String client, String company, String technician,
-                   String phoneNumber, String startData, Coordinate coordinate) {
+    public Projeto(String id, String name, String client, String company, String technician,
+                   String phoneNumber, String starData, Coordinate coordinate) {
 
         this.id = id;
         this.name = name;
@@ -22,7 +22,7 @@ public abstract class Project {
         this.company = company;
         this.technician = technician;
         this.phoneNumber = phoneNumber;
-        this.startData = startData;
+        this.starData = starData;
         this.coordinate = coordinate;
 
     }
@@ -75,12 +75,12 @@ public abstract class Project {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getStartData() {
-        return startData;
+    public String getStarData() {
+        return starData;
     }
 
-    public void setStartData(String starData) {
-        this.startData = starData;
+    public void setStarData(String starData) {
+        this.starData = starData;
     }
 
     public Coordinate getCoordinate() {

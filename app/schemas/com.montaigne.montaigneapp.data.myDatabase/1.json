@@ -1,0 +1,138 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "d74d33203b050d990a9eb70790568bbd",
+    "entities": [
+      {
+        "tableName": "Projetos",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`cpProjeto` INTEGER PRIMARY KEY AUTOINCREMENT, `nome` TEXT, `cliente` TEXT, `compania` TEXT, `tecnico` TEXT, `num_telefone` TEXT, `datainicial` TEXT, `num_buraco` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "cpProjeto",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nome",
+            "columnName": "nome",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cliente",
+            "columnName": "cliente",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "compania",
+            "columnName": "compania",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tecnico",
+            "columnName": "tecnico",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "num_telefone",
+            "columnName": "num_telefone",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "datainicial",
+            "columnName": "datainicial",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "num_buraco",
+            "columnName": "num_buraco",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "cpProjeto"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Sondagem",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idSondagem` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `cfProjeto` INTEGER NOT NULL, `niveldaagua` REAL NOT NULL, `nivelburaco` REAL NOT NULL, `nome_sondagem` TEXT, `datainicial` TEXT, FOREIGN KEY(`cfProjeto`) REFERENCES `Projetos`(`cpProjeto`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "idSondagem",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "idProjeto",
+            "columnName": "cfProjeto",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "niveldaagua",
+            "columnName": "niveldaagua",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nivelburaco",
+            "columnName": "nivelburaco",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nome_sondagem",
+            "columnName": "nome_sondagem",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "datainicial",
+            "columnName": "datainicial",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "idSondagem"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "Projetos",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "cfProjeto"
+            ],
+            "referencedColumns": [
+              "cpProjeto"
+            ]
+          }
+        ]
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd74d33203b050d990a9eb70790568bbd')"
+    ]
+  }
+}

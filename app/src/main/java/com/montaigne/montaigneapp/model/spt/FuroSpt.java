@@ -1,19 +1,21 @@
-package com.montaigne.montaigneapp.model;
+package com.montaigne.montaigneapp.model.spt;
+
+import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 
 import java.util.Date;
 import java.util.List;
 
-public class PollSpt {
+public class FuroSpt {
     private String id;
     private String code;
     private float waterLevel, holeLevel;
     private Date startDate, endDate;
-    private List<SampleSpt> samples;
+    private List<AmostraSpt> samples;
 
-    public PollSpt() {
+    public FuroSpt() {
     }
 
-    public PollSpt(String id, String code, float waterLevel, float holeLevel, Date startDate, Date endDate, List<SampleSpt> samples) {
+    public FuroSpt(String id, String code, float waterLevel, float holeLevel, Date startDate, Date endDate, List<AmostraSpt> samples) {
         this.id = id;
         this.code = code;
         this.waterLevel = waterLevel;
@@ -24,7 +26,7 @@ public class PollSpt {
     }
 
     public String getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(String id) {
@@ -71,11 +73,11 @@ public class PollSpt {
         this.endDate = endDate;
     }
 
-    public List<SampleSpt> getSamples() {
+    public List<AmostraSpt> getSamples() {
         return samples;
     }
 
-    public void setSamples(List<SampleSpt> samples) {
+    public void setSamples(List<AmostraSpt> samples) {
         this.samples = samples;
     }
 }
