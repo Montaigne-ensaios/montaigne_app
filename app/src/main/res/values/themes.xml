@@ -13,10 +13,9 @@
         <!-- Estilos padrão. -->
         <item name="android:textColor">@color/black</item>
         <item name="android:colorAccent">@color/accent</item>
-        <item name="android:colorBackground">@color/accent</item>
-
-
-
+        <item name="android:colorBackground">#FFFFFF</item>
+        <item name="materialButtonStyle">@style/ButtonPadrao</item>
+        <item name="imageButtonStyle">@style/ImageButton</item>
 
 
 
@@ -30,8 +29,6 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
 
-
-
         <!--Styles do aplicativo. -->
     </style>
 
@@ -43,4 +40,10 @@
     <style name="Theme.MontaigneApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.MontaigneApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+
+
+
+
 </resources>
