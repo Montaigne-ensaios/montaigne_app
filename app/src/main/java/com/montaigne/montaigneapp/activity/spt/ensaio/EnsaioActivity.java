@@ -25,9 +25,10 @@ public class EnsaioActivity extends AbstractActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_ensaio);
+
         EnsaioVM viewModel = new EnsaioVM(this);
         initializeViews();
-        setContentView(R.layout.activity_ensaio);
     }
 
     @Override

@@ -21,9 +21,9 @@ public class CarimboUnicoActivity extends AbstractActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initializeViews();
         setContentView(R.layout.activity_carimbo_unico);
 
+        initializeViews();
         CarimboUnicoVM viewModel = new CarimboUnicoVM(this);
     }
 

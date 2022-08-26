@@ -37,8 +37,9 @@ public class CarimboDefinitivoActivity extends AbstractActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         CarimboDefinitivoVM viewModel = new CarimboDefinitivoVM(this);
-        initializeViews();
         setContentView(R.layout.activity_carimbo_definitivo);
+
+        initializeViews();
     }
 
     protected void initializeViews() {
