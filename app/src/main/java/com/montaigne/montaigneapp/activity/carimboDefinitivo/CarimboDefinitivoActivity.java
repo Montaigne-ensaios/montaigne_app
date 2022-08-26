@@ -10,27 +10,15 @@ import android.widget.TextView;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.AbstractActivity;
 
+import java.util.HashMap;
+
 public class CarimboDefinitivoActivity extends AbstractActivity {
+    protected final HashMap<String, EditText> fields = new HashMap<>();
+    protected final HashMap<EditText, ImageButton> buttonsHelp = new HashMap<>();
+
     protected Button buttonContinuarCarimbo;
-    protected ImageButton imageButtonHome;
-    protected ImageButton imageButtonHelpLocalObra;
-    protected ImageButton imageButtonCamera;
-    protected ImageButton imageButtonHelpNomeProjeto;
-    protected ImageButton imageButtonHelpTecnico;
-    protected ImageButton imageButtonHelpEmpresa;
-    protected ImageButton imageButtonHelpContato;
-    protected ImageButton imageButtonHelpQuantidadeFuros;
-    protected ImageButton imageButtonHelpReferenciaNivel;
-    protected ImageButton imageButtonHelpCliente;
+    protected ImageButton imageButtonHome, imageButtonCamera;
     protected ImageView imagePerfil;
-    protected EditText editTextNomeProjeto;
-    protected EditText editTextTecnico;
-    protected EditText editTextEmpresa;
-    protected EditText editTextContato;
-    protected EditText editTextCliente;
-    protected EditText editTextLocalObra;
-    protected EditText editTextQuantidadeFuros;
-    protected EditText editTextReferenciaNivel;
 
 
     @Override
@@ -45,24 +33,33 @@ public class CarimboDefinitivoActivity extends AbstractActivity {
     protected void initializeViews() {
         buttonContinuarCarimbo = findViewById(R.id.buttonContinuarCarimbo);
         imageButtonHome = findViewById(R.id.imageButtonHome);
-        imageButtonHelpLocalObra = findViewById(R.id.imageButtonHelpLocalObra);
         imageButtonCamera = findViewById(R.id.imageButtonCamera);
-        imageButtonHelpNomeProjeto = findViewById(R.id.imageButtonHelpNomeProjeto);
-        imageButtonHelpTecnico = findViewById(R.id.imageButtonHelpTecnico);
-        imageButtonHelpEmpresa = findViewById(R.id. imageButtonHelpEmpresa);
-        imageButtonHelpContato = findViewById(R.id.imageButtonHelpContato);
-        imageButtonHelpQuantidadeFuros = findViewById(R.id.imageButtonHelpQuantidadeFuros);
-        imageButtonHelpReferenciaNivel = findViewById(R.id.imageButtonHelpReferenciaNivel);
-        imageButtonHelpCliente = findViewById(R.id.imageButtonHelpCliente);
         imagePerfil = findViewById(R.id.imagePerfil);
-        editTextNomeProjeto = findViewById(R.id.editTextNomeProjeto);
-        editTextTecnico = findViewById(R.id.editTextTecnico);
-        editTextEmpresa = findViewById(R.id.editTextEmpresa);
-        editTextContato = findViewById(R.id.editTextContato);
-        editTextCliente = findViewById(R.id.editTextCliente);
-        editTextLocalObra = findViewById(R.id.editTextLocalObra);
-        editTextQuantidadeFuros = findViewById(R.id.editTextQuantidadeFuros);
-        editTextReferenciaNivel = findViewById(R.id.editTextReferenciaNivel);
 
+        fields.put ("Tecnico", (EditText) findViewById(R.id.editTextTecnico));
+        fields.put ("Empresa", (EditText) findViewById(R.id.editTextEmpresa));
+        fields.put ("Contato", (EditText) findViewById(R.id.editTextContato));
+        fields.put ("Cliente", (EditText) findViewById(R.id.editTextCliente));
+        fields.put ("LocalObra", (EditText) findViewById(R.id.editTextLocalObra));
+        fields.put ("QuantidadeFuros", (EditText) findViewById(R.id.editTextQuantidadeFuros));
+        fields.put ("ReferenciaNivel", (EditText) findViewById(R.id.editTextReferenciaNivel));
+        fields.put ("NomeProjeto", (EditText) findViewById(R.id.editTextNomeProjeto));
+
+        buttonsHelp.put(fields.get ("Tecnico"),
+                (ImageButton) findViewById(R.id.imageButtonHelpLocalObra));
+        buttonsHelp.put(fields.get ("Empresa"),
+                (ImageButton)findViewById(R.id.imageButtonHelpNomeProjeto));
+        buttonsHelp.put(fields.get ("Contato"),
+                (ImageButton)findViewById(R.id.imageButtonHelpTecnico));
+        buttonsHelp.put(fields.get ("Cliente"),
+                (ImageButton)findViewById(R.id. imageButtonHelpEmpresa));
+        buttonsHelp.put(fields.get ("LocalObra"),
+                (ImageButton) findViewById(R.id.imageButtonHelpContato));
+        buttonsHelp.put(fields.get ("QuantidadeFuros"),
+                (ImageButton) findViewById(R.id.imageButtonHelpQuantidadeFuros));
+        buttonsHelp.put(fields.get ("ReferenciaNivel"),
+                (ImageButton)findViewById(R.id.imageButtonHelpReferenciaNivel));
+        buttonsHelp.put(fields.get ("NomeProjeto"),
+                (ImageButton) findViewById(R.id.imageButtonHelpCliente));
     }
 }

@@ -14,9 +14,9 @@ import java.util.ArrayList;
 
 public class EnsaioActivity extends AbstractActivity {
     protected EditText editTextProfundidade, editTextNivelAgua;
-    protected ArrayList<EditText> golpes = new ArrayList<>(), penetracoes = new ArrayList<>();
+    protected final ArrayList<EditText> golpes = new ArrayList<>(), penetracoes = new ArrayList<>();
     // lista de golpes e penetrações por segmento
-    protected ArrayList<ImageButton> buttonsIncrementGolpes = new ArrayList<>(),
+    protected final ArrayList<ImageButton> buttonsIncrementGolpes = new ArrayList<>(),
             buttonsDecrementGolpes = new ArrayList<>();
     protected Button buttonFinalizarFuro;
     protected ImageButton imageButtonHelpNivelAgua, imageButtonHome;
