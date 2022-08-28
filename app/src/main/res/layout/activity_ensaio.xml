@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/furoIniciarEnsaio"
+        android:id="@+id/buttonFinalizarFuro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
@@ -15,15 +15,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+    <ImageButton
+        android:id="@+id/imageButtonHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/furoIniciarEnsaio"
-        app:layout_constraintEnd_toStartOf="@+id/furoIniciarEnsaio"
-        app:layout_constraintTop_toTopOf="@+id/furoIniciarEnsaio"
-        app:srcCompat="@drawable/icon_home" />
+        android:backgroundTint="#00FFFFFF"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonFinalizarFuro"
+        app:layout_constraintEnd_toStartOf="@+id/buttonFinalizarFuro"
+        app:layout_constraintTop_toTopOf="@+id/buttonFinalizarFuro"
+        app:srcCompat="@drawable/icon_home3" />
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -40,97 +42,97 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/textProfundidade"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="40dp"
                 android:text="Profundidade:"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+                app:layout_constraintTop_toBottomOf="@+id/textAmostraN" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/editTextProfundidade"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="30dp"
                 android:ems="10"
                 android:inputType="number"
                 android:text="xx"
-                app:layout_constraintBottom_toBottomOf="@+id/textView8"
+                app:layout_constraintBottom_toBottomOf="@+id/textProfundidade"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView8"
-                app:layout_constraintTop_toTopOf="@+id/textView8" />
+                app:layout_constraintStart_toEndOf="@+id/textProfundidade"
+                app:layout_constraintTop_toTopOf="@+id/textProfundidade" />
 
             <ImageButton
-                android:id="@+id/imageButton3"
+                android:id="@+id/imageButtonDiminuirGolpe1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:background="#00FFFFFF"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName2"
-                app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName2"
-                app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName2"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe1"
+                app:layout_constraintStart_toEndOf="@+id/editTextGolpe1"
+                app:layout_constraintTop_toTopOf="@+id/editTextGolpe1"
                 app:srcCompat="@android:drawable/ic_input_add" />
 
             <ImageButton
-                android:id="@+id/imageButton4"
+                android:id="@+id/imageButtonDiminuirGolpe2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:background="#00FFFFFF"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName8"
-                app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName8"
-                app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName8"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe2"
+                app:layout_constraintStart_toEndOf="@+id/editTextGolpe2"
+                app:layout_constraintTop_toTopOf="@+id/editTextGolpe2"
                 app:srcCompat="@android:drawable/ic_input_add" />
 
             <ImageButton
-                android:id="@+id/imageButton5"
+                android:id="@+id/imageButtonDiminuirGolpe3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:background="#00FFFFFF"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName10"
-                app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName10"
-                app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName10"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe3"
+                app:layout_constraintStart_toEndOf="@+id/editTextGolpe3"
+                app:layout_constraintTop_toTopOf="@+id/editTextGolpe3"
                 app:srcCompat="@android:drawable/ic_input_add" />
 
             <ImageButton
-                android:id="@+id/imageButton6"
+                android:id="@+id/imageButtonAumentarGolpe3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="5dp"
                 android:background="#00FFFFFF"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName10"
-                app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName10"
-                app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName10"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe3"
+                app:layout_constraintEnd_toStartOf="@+id/editTextGolpe3"
+                app:layout_constraintTop_toTopOf="@+id/editTextGolpe3"
                 app:layout_constraintVertical_bias="1.0"
                 app:srcCompat="@android:drawable/ic_input_add" />
 
             <ImageButton
-                android:id="@+id/imageButton7"
+                android:id="@+id/imageButtonAumentarGolpe2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="5dp"
                 android:background="#00FFFFFF"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName8"
-                app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName8"
-                app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName8"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe2"
+                app:layout_constraintEnd_toStartOf="@+id/editTextGolpe2"
+                app:layout_constraintTop_toTopOf="@+id/editTextGolpe2"
                 app:srcCompat="@android:drawable/ic_input_add" />
 
             <ImageButton
-                android:id="@+id/imageButton8"
+                android:id="@+id/imageButtonAumentarGolpe1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="5dp"
                 android:background="#00FFFFFF"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName2"
-                app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName2"
-                app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName2"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe1"
+                app:layout_constraintEnd_toStartOf="@+id/editTextGolpe1"
+                app:layout_constraintTop_toTopOf="@+id/editTextGolpe1"
                 app:srcCompat="@android:drawable/ic_input_add" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/textAmostraN"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
@@ -140,113 +142,113 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/textGolpes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="64dp"
                 android:layout_marginTop="40dp"
                 android:text="Golpes"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+                app:layout_constraintTop_toBottomOf="@+id/textProfundidade" />
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/textPenetracao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Penetração"
-                app:layout_constraintBottom_toBottomOf="@+id/textView9"
+                app:layout_constraintBottom_toBottomOf="@+id/textGolpes"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.49"
-                app:layout_constraintStart_toEndOf="@+id/textView9"
-                app:layout_constraintTop_toTopOf="@+id/textView9"
+                app:layout_constraintStart_toEndOf="@+id/textGolpes"
+                app:layout_constraintTop_toTopOf="@+id/textGolpes"
                 app:layout_constraintVertical_bias="1.0" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName2"
+                android:id="@+id/editTextGolpe1"
                 android:layout_width="93dp"
                 android:layout_height="41dp"
                 android:layout_marginTop="12dp"
                 android:ems="10"
                 android:inputType="number"
                 android:text="Name"
-                app:layout_constraintEnd_toEndOf="@+id/textView9"
+                app:layout_constraintEnd_toEndOf="@+id/textGolpes"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/textView9"
-                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                app:layout_constraintStart_toStartOf="@+id/textGolpes"
+                app:layout_constraintTop_toBottomOf="@+id/textGolpes" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName4"
+                android:id="@+id/editTextPenetracao1"
                 android:layout_width="93dp"
                 android:layout_height="41dp"
                 android:layout_marginStart="24dp"
                 android:ems="10"
                 android:hint="15"
                 android:inputType="number"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName2"
-                app:layout_constraintStart_toEndOf="@+id/imageButton3"
-                app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName2" />
+                app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe1"
+                app:layout_constraintStart_toEndOf="@+id/imageButtonDiminuirGolpe1"
+                app:layout_constraintTop_toTopOf="@+id/editTextGolpe1" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName9"
+                android:id="@+id/editTextPenetracao2"
                 android:layout_width="93dp"
                 android:layout_height="41dp"
                 android:layout_marginTop="16dp"
                 android:ems="10"
                 android:hint="15"
                 android:inputType="number"
-                app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName4"
-                app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName4"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+                app:layout_constraintEnd_toEndOf="@+id/editTextPenetracao1"
+                app:layout_constraintStart_toStartOf="@+id/editTextPenetracao1"
+                app:layout_constraintTop_toBottomOf="@+id/editTextPenetracao1" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName11"
+                android:id="@+id/editTextPenetracao3"
                 android:layout_width="93dp"
                 android:layout_height="41dp"
                 android:layout_marginTop="16dp"
                 android:ems="10"
                 android:hint="15"
                 android:inputType="number"
-                app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName9"
+                app:layout_constraintEnd_toEndOf="@+id/editTextPenetracao2"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName9"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName9" />
+                app:layout_constraintStart_toStartOf="@+id/editTextPenetracao2"
+                app:layout_constraintTop_toBottomOf="@+id/editTextPenetracao2" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName8"
+                android:id="@+id/editTextGolpe2"
                 android:layout_width="93dp"
                 android:layout_height="41dp"
                 android:layout_marginTop="16dp"
                 android:ems="10"
                 android:inputType="number"
                 android:text="Name"
-                app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName2"
-                app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName2"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+                app:layout_constraintEnd_toEndOf="@+id/editTextGolpe1"
+                app:layout_constraintStart_toStartOf="@+id/editTextGolpe1"
+                app:layout_constraintTop_toBottomOf="@+id/editTextGolpe1" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName10"
+                android:id="@+id/editTextGolpe3"
                 android:layout_width="93dp"
                 android:layout_height="41dp"
                 android:layout_marginTop="16dp"
                 android:ems="10"
                 android:inputType="number"
                 android:text="Name"
-                app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName8"
-                app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName8"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName8" />
+                app:layout_constraintEnd_toEndOf="@+id/editTextGolpe2"
+                app:layout_constraintStart_toStartOf="@+id/editTextGolpe2"
+                app:layout_constraintTop_toBottomOf="@+id/editTextGolpe2" />
 
             <ImageButton
-                android:id="@+id/imageButton9"
+                android:id="@+id/imageButtonHelpNivelAgua"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName12"
-                app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName12"
-                app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName12"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextNivelAgua"
+                app:layout_constraintStart_toEndOf="@+id/editTextNivelAgua"
+                app:layout_constraintTop_toTopOf="@+id/editTextNivelAgua"
                 app:srcCompat="@android:drawable/ic_menu_help" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName12"
+                android:id="@+id/editTextNivelAgua"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
@@ -255,31 +257,31 @@
                 android:inputType="number"
                 android:text="xx"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/imageButton9"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName10"
+                app:layout_constraintEnd_toStartOf="@+id/imageButtonHelpNivelAgua"
+                app:layout_constraintTop_toBottomOf="@+id/editTextGolpe3"
                 app:layout_constraintVertical_bias="1.0" />
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/textNivelAgua"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="4dp"
                 android:text="Nível de água"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName12"
-                app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName12"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextNivelAgua"
+                app:layout_constraintEnd_toStartOf="@+id/editTextNivelAgua"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName12" />
+                app:layout_constraintTop_toTopOf="@+id/editTextNivelAgua" />
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/textSegmento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:text="3 segmentos"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName11"
-                app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName9"
-                app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName4" />
+                app:layout_constraintBottom_toBottomOf="@+id/editTextPenetracao3"
+                app:layout_constraintStart_toEndOf="@+id/editTextPenetracao2"
+                app:layout_constraintTop_toTopOf="@+id/editTextPenetracao1" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>

@@ -15,8 +15,8 @@ public class FuroVM {
 
         amostras = getAmostras();
         updateAmostrasAdapter(amostras);
+        activity.buttonDeleteAmostra.setOnClickListener(this::deleteAmostrasButtonListener);
 
-        activity.buttonDeleteAmostras.setOnClickListener(this::deleteAmostrasButtonListener);
     }
 
     private ArrayList<String> getAmostras() {
@@ -24,11 +24,11 @@ public class FuroVM {
         mock.add("amostra1");
         mock.add("eu to literalmente copiando mocks aqui");
         mock.add("affs chato isso");
-        return mock;  // todo: talvez seja uma boa fazer uma classe abstrata para isso??
+        return mock;
     }
 
     private void updateAmostrasAdapter(ArrayList<String> amostras) {
-        AmostraAdapter adapter = new AmostraAdapter(activity);
+        AmostraAdapter adapter = new AmostraAdapter();
         adapter.setAmostras(amostras);
         activity.recyclerAmostras.setAdapter(adapter);
         activity.recyclerAmostras.setLayoutManager(new LinearLayoutManager(activity));

@@ -22,18 +22,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/imageView10"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+            <ImageButton
+                android:id="@+id/imageButtonHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                app:layout_constraintBottom_toBottomOf="@+id/continuarCarimboDefinitivo"
+                app:layout_constraintBottom_toBottomOf="@+id/buttonContinuarCarimbo"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/continuarCarimboDefinitivo"
-                app:srcCompat="@drawable/icon_home" />
+                app:layout_constraintTop_toTopOf="@+id/buttonContinuarCarimbo"
+                app:srcCompat="@drawable/icon_home3" />
 
             <Button
-                android:id="@+id/continuarCarimboDefinitivo"
+                android:id="@+id/buttonContinuarCarimbo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
@@ -43,16 +43,16 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/textAvisoObrigatorio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
                 android:text="@string/TxtCarimboUnicoAviso"
                 android:textColor="@color/destaque"
-                app:layout_constraintBottom_toTopOf="@+id/continuarCarimboDefinitivo"
-                app:layout_constraintEnd_toEndOf="@+id/continuarCarimboDefinitivo"
-                app:layout_constraintStart_toStartOf="@+id/continuarCarimboDefinitivo"
+                app:layout_constraintBottom_toTopOf="@+id/buttonContinuarCarimbo"
+                app:layout_constraintEnd_toEndOf="@+id/buttonContinuarCarimbo"
+                app:layout_constraintStart_toStartOf="@+id/buttonContinuarCarimbo"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -82,15 +82,15 @@
                 android:layout_height="wrap_content">
 
                 <ImageButton
-                    android:id="@+id/imageButton18"
+                    android:id="@+id/imageButtonHelpLocalObra"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#00FFFFFF"
-                    app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName5"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextLocalObra"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName5"
-                    app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName5"
+                    app:layout_constraintStart_toEndOf="@+id/editTextLocalObra"
+                    app:layout_constraintTop_toTopOf="@+id/editTextLocalObra"
                     app:srcCompat="@android:drawable/ic_menu_help" />
 
                 <TextView
@@ -120,7 +120,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textAviso1" />
 
                 <ImageView
-                    android:id="@+id/imagemProjeto"
+                    android:id="@+id/imagePerfil"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -141,11 +141,11 @@
                     app:layout_constraintEnd_toStartOf="@+id/guideline3"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@+id/imageButton10" />
+                    app:layout_constraintTop_toBottomOf="@+id/imageButtonCamera" />
 
                 <EditText
 
-                    android:id="@+id/inputNomeProjeto"
+                    android:id="@+id/editTextNomeProjeto"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -159,19 +159,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textNomeProjeto" />
 
                 <TextView
-                    android:id="@+id/textAsteriscoNomeProjeto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:text="@string/TxtCampoAsterisco"
-                    android:textColor="@color/black"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/textNomeProjeto"
-                    app:layout_constraintTop_toTopOf="@+id/textNomeProjeto" />
-
-                <TextView
-                    android:id="@+id/textNomeTecnico"
+                    android:id="@+id/textTecnico"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
@@ -181,10 +169,10 @@
                     app:layout_constraintEnd_toEndOf="@+id/textNomeProjeto"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/textNomeProjeto"
-                    app:layout_constraintTop_toBottomOf="@+id/inputNomeProjeto" />
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNomeProjeto" />
 
                 <EditText
-                    android:id="@+id/inputNomeTecnico"
+                    android:id="@+id/editTextTecnico"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -192,50 +180,26 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:minHeight="48dp"
-                    app:layout_constraintEnd_toEndOf="@+id/inputNomeProjeto"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextNomeProjeto"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/inputNomeProjeto"
-                    app:layout_constraintTop_toBottomOf="@+id/textNomeTecnico" />
+                    app:layout_constraintStart_toStartOf="@+id/editTextNomeProjeto"
+                    app:layout_constraintTop_toBottomOf="@+id/textTecnico" />
 
                 <TextView
-                    android:id="@+id/textAsteriscoTecnico"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:text="@string/TxtCampoAsterisco"
-                    android:textColor="@color/black"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/textNomeTecnico"
-                    app:layout_constraintTop_toTopOf="@+id/textNomeTecnico" />
-
-                <TextView
-                    android:id="@+id/textNomeEmpresa"
+                    android:id="@+id/textEmpresa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     android:text="@string/TxtCarimboDefinitivoNomeEmpresa"
                     android:textColor="@color/black"
                     android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="@+id/textNomeTecnico"
+                    app:layout_constraintEnd_toEndOf="@+id/textTecnico"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/textNomeTecnico"
-                    app:layout_constraintTop_toBottomOf="@+id/inputNomeTecnico" />
-
-                <TextView
-                    android:id="@+id/textAsteriscoEmpresa"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:text="@string/TxtCampoAsterisco"
-                    android:textColor="@color/black"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/textNomeEmpresa"
-                    app:layout_constraintTop_toTopOf="@+id/textNomeEmpresa" />
+                    app:layout_constraintStart_toStartOf="@+id/textTecnico"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTecnico" />
 
                 <EditText
-                    android:id="@+id/inputNomeEmpresa"
+                    android:id="@+id/editTextEmpresa"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -243,9 +207,9 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:minHeight="48dp"
-                    app:layout_constraintEnd_toEndOf="@+id/inputNomeTecnico"
-                    app:layout_constraintStart_toStartOf="@+id/inputNomeTecnico"
-                    app:layout_constraintTop_toBottomOf="@+id/textNomeEmpresa" />
+                    app:layout_constraintEnd_toEndOf="@+id/editTextTecnico"
+                    app:layout_constraintStart_toStartOf="@+id/editTextTecnico"
+                    app:layout_constraintTop_toBottomOf="@+id/textEmpresa" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline2"
@@ -262,20 +226,20 @@
                     app:layout_constraintGuide_percent="0.90" />
 
                 <TextView
-                    android:id="@+id/textView14"
+                    android:id="@+id/textContato"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     android:text="@string/TxtCarimboDefinitivoContato"
                     android:textColor="@color/black"
                     android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="@+id/textNomeEmpresa"
+                    app:layout_constraintEnd_toEndOf="@+id/textEmpresa"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/textNomeEmpresa"
-                    app:layout_constraintTop_toBottomOf="@+id/inputNomeEmpresa" />
+                    app:layout_constraintStart_toStartOf="@+id/textEmpresa"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextEmpresa" />
 
                 <EditText
-                    android:id="@+id/editTextPhone2"
+                    android:id="@+id/editTextContato"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -283,52 +247,52 @@
                     android:ems="10"
                     android:inputType="phone"
                     android:minHeight="48dp"
-                    app:layout_constraintEnd_toEndOf="@+id/inputNomeEmpresa"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextEmpresa"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/inputNomeEmpresa"
-                    app:layout_constraintTop_toBottomOf="@+id/textView14" />
+                    app:layout_constraintStart_toStartOf="@+id/editTextEmpresa"
+                    app:layout_constraintTop_toBottomOf="@+id/textContato" />
 
                 <TextView
-                    android:id="@+id/textView15"
+                    android:id="@+id/textCliente"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     android:text="@string/TxtCarimboDefinitivoNomeCliente"
                     android:textColor="@color/black"
                     android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="@+id/textView14"
+                    app:layout_constraintEnd_toEndOf="@+id/textContato"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextPhone2" />
+                    app:layout_constraintTop_toBottomOf="@+id/editTextContato" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName3"
+                    android:id="@+id/editTextCliente"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:minHeight="48dp"
-                    app:layout_constraintEnd_toEndOf="@+id/editTextPhone2"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextContato"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@+id/textView15" />
+                    app:layout_constraintTop_toBottomOf="@+id/textCliente" />
 
                 <TextView
-                    android:id="@+id/textView16"
+                    android:id="@+id/textLocalObra"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     android:text="@string/TxtCarimboDefinitivoLocalObra"
                     android:textColor="@color/black"
                     android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="@+id/textView15"
+                    app:layout_constraintEnd_toEndOf="@+id/textCliente"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+                    app:layout_constraintTop_toBottomOf="@+id/editTextCliente" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName5"
+                    android:id="@+id/editTextLocalObra"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -336,52 +300,52 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:minHeight="48dp"
-                    app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName3"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextCliente"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@+id/textView16" />
+                    app:layout_constraintTop_toBottomOf="@+id/textLocalObra" />
 
                 <TextView
-                    android:id="@+id/textView17"
+                    android:id="@+id/textQuantidadeFuros"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     android:text="@string/TxtCarimboDefinitivoQuantidadeFuros"
                     android:textColor="@color/black"
                     android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="@+id/textView16"
+                    app:layout_constraintEnd_toEndOf="@+id/textLocalObra"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+                    app:layout_constraintTop_toBottomOf="@+id/editTextLocalObra" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName6"
+                    android:id="@+id/editTextQuantidadeFuros"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:ems="10"
                     android:inputType="number"
                     android:minHeight="48dp"
-                    app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName5"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextLocalObra"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@+id/textView17" />
+                    app:layout_constraintTop_toBottomOf="@+id/textQuantidadeFuros" />
 
                 <TextView
-                    android:id="@+id/textView18"
+                    android:id="@+id/textReferenciaNivel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     android:text="@string/TxtCarimboDefinitivoReferenciaNivel"
                     android:textColor="@color/black"
                     android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="@+id/textView17"
+                    app:layout_constraintEnd_toEndOf="@+id/textQuantidadeFuros"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
+                    app:layout_constraintTop_toBottomOf="@+id/editTextQuantidadeFuros" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName7"
+                    android:id="@+id/editTextReferenciaNivel"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -389,103 +353,103 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:minHeight="48dp"
-                    app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName6"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextQuantidadeFuros"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@+id/textView18" />
+                    app:layout_constraintTop_toBottomOf="@+id/textReferenciaNivel" />
 
                 <ImageButton
-                    android:id="@+id/imageButton10"
+                    android:id="@+id/imageButtonCamera"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    app:layout_constraintEnd_toEndOf="@+id/imagemProjeto"
-                    app:layout_constraintStart_toStartOf="@+id/imagemProjeto"
-                    app:layout_constraintTop_toBottomOf="@+id/imagemProjeto"
+                    app:layout_constraintEnd_toEndOf="@+id/imagePerfil"
+                    app:layout_constraintStart_toStartOf="@+id/imagePerfil"
+                    app:layout_constraintTop_toBottomOf="@+id/imagePerfil"
                     app:srcCompat="@android:drawable/ic_menu_camera" />
 
                 <ImageButton
-                    android:id="@+id/imageButton11"
+                    android:id="@+id/imageButtonHelpNomeProjeto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#00FFFFFF"
-                    app:layout_constraintBottom_toBottomOf="@+id/inputNomeProjeto"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextNomeProjeto"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/inputNomeProjeto"
-                    app:layout_constraintTop_toTopOf="@+id/inputNomeProjeto"
+                    app:layout_constraintStart_toEndOf="@+id/editTextNomeProjeto"
+                    app:layout_constraintTop_toTopOf="@+id/editTextNomeProjeto"
                     app:srcCompat="@android:drawable/ic_menu_help" />
 
                 <ImageButton
-                    android:id="@+id/imageButton12"
+                    android:id="@+id/imageButtonHelpTecnico"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#00FFFFFF"
-                    app:layout_constraintBottom_toBottomOf="@+id/inputNomeTecnico"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextTecnico"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/inputNomeTecnico"
-                    app:layout_constraintTop_toTopOf="@+id/inputNomeTecnico"
+                    app:layout_constraintStart_toEndOf="@+id/editTextTecnico"
+                    app:layout_constraintTop_toTopOf="@+id/editTextTecnico"
                     app:srcCompat="@android:drawable/ic_menu_help" />
 
                 <ImageButton
-                    android:id="@+id/imageButton13"
+                    android:id="@+id/imageButtonHelpEmpresa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#00FFFFFF"
-                    app:layout_constraintBottom_toBottomOf="@+id/inputNomeEmpresa"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextEmpresa"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/inputNomeEmpresa"
-                    app:layout_constraintTop_toTopOf="@+id/inputNomeEmpresa"
+                    app:layout_constraintStart_toEndOf="@+id/editTextEmpresa"
+                    app:layout_constraintTop_toTopOf="@+id/editTextEmpresa"
                     app:srcCompat="@android:drawable/ic_menu_help" />
 
                 <ImageButton
-                    android:id="@+id/imageButton14"
+                    android:id="@+id/imageButtonHelpContato"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#00FFFFFF"
-                    app:layout_constraintBottom_toBottomOf="@+id/editTextPhone2"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextContato"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/editTextPhone2"
-                    app:layout_constraintTop_toTopOf="@+id/editTextPhone2"
+                    app:layout_constraintStart_toEndOf="@+id/editTextContato"
+                    app:layout_constraintTop_toTopOf="@+id/editTextContato"
                     app:srcCompat="@android:drawable/ic_menu_help" />
 
                 <ImageButton
-                    android:id="@+id/imageButton16"
+                    android:id="@+id/imageButtonHelpQuantidadeFuros"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#00FFFFFF"
-                    app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName6"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextQuantidadeFuros"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName6"
-                    app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName6"
+                    app:layout_constraintStart_toEndOf="@+id/editTextQuantidadeFuros"
+                    app:layout_constraintTop_toTopOf="@+id/editTextQuantidadeFuros"
                     app:srcCompat="@android:drawable/ic_menu_help" />
 
                 <ImageButton
-                    android:id="@+id/imageButton15"
+                    android:id="@+id/imageButtonHelpReferenciaNivel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#00FFFFFF"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName7"
-                    app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName7"
+                    app:layout_constraintStart_toEndOf="@+id/editTextReferenciaNivel"
+                    app:layout_constraintTop_toTopOf="@+id/editTextReferenciaNivel"
                     app:srcCompat="@android:drawable/ic_menu_help" />
 
                 <ImageButton
-                    android:id="@+id/imageButton17"
+                    android:id="@+id/imageButtonHelpCliente"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
                     android:backgroundTint="#00FFFFFF"
-                    app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName3"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextCliente"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName3"
-                    app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName3"
+                    app:layout_constraintStart_toEndOf="@+id/editTextCliente"
+                    app:layout_constraintTop_toTopOf="@+id/editTextCliente"
                     app:srcCompat="@android:drawable/ic_menu_help" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

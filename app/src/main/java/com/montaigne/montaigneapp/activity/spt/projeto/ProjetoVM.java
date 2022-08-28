@@ -20,7 +20,7 @@ public class ProjetoVM {
     }
 
     private void updateFurosAdapter(ArrayList<String> furos) {
-        FurosAdapter adapter = new FurosAdapter(activity); // todo: revisar quando passar a lista
+        FurosAdapter adapter = new FurosAdapter(); // todo: revisar quando passar a lista
         adapter.setFuros(furos);
         activity.recyclerFuros.setAdapter(adapter);
         activity.recyclerFuros.setLayoutManager(new LinearLayoutManager(activity));

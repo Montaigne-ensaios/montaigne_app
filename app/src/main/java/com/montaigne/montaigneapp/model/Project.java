@@ -76,11 +76,11 @@ public abstract class Project {
     }
 
     public String getStartData() {
-        return starData;
+        return startData;
     }
 
     public void setStartData(String starData) {
-        this.starData = starData;
+        this.startData = starData;
     }
 
     public Coordinate getCoordinate() {

@@ -1,15 +1,36 @@
 package com.montaigne.montaigneapp.activity.spt.ensaio;
 
+import android.content.Intent;
+import android.view.View;
 import android.widget.EditText;
+
+import com.montaigne.montaigneapp.activity.home.HomeActivity;
+import com.montaigne.montaigneapp.activity.spt.projeto.ProjetoActivity;
 
 public class EnsaioVM {
     private final EnsaioActivity activity;
+    private final int nAmostra;
 
     public EnsaioVM(EnsaioActivity activity) {
 
         this.activity = activity;
 
-        setGolpeModfiersListners();
+        Intent intent = activity.getIntent();
+        nAmostra = intent.getIntExtra("NAmostra", 0);
+        activity.textAmostraN.setText("Amostra " + nAmostra);
+
+        activity.buttonFinalizarFuro.setOnClickListener(this::projetoButtonListener);
+        activity.imageButtonHome.setOnClickListener(this::homeButtonListener);
+//        setGolpeModfiersListners();
+    }
+
+    private void projetoButtonListener(View view) {
+        view.getContext().startActivity(new Intent(view.getContext(), ProjetoActivity.class));
+    }
+
+    private void homeButtonListener(View view) {
+        view.getContext().startActivity(new Intent(view.getContext(), HomeActivity.class));
+        //todo:limpar tasks
     }
 
     private void setGolpeModfiersListners(){
@@ -23,6 +44,7 @@ public class EnsaioVM {
     private void incrementGolpe(int segmento) {
         setGolpe(segmento, getGolpe(segmento) + 1);
     }
+
     private void decrementGolpe(int segmento) {
         // garante que o valor jamais será menor que zero
         int v = getGolpe(segmento);

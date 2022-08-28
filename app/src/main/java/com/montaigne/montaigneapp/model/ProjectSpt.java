@@ -12,7 +12,7 @@ public class ProjectSpt extends Project {
 
     public ProjectSpt() {}
 
-    public ProjectSpt(Long id, String name, String client, String company, String technician,
+    public ProjectSpt(String  id, String name, String client, String company, String technician,
                       String phoneNumber, String starData, Coordinate coordinate, int holeNumber,
                       List<PollSpt> samples) {
 

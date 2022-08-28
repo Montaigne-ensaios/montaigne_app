@@ -2,9 +2,10 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp"
+    android:layout_margin="5dp"
     app:cardCornerRadius="20dp"
     app:cardElevation="20dp">
 
@@ -13,7 +14,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageProjeto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
@@ -23,17 +24,17 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/nomeDoProjeto"
+            android:id="@+id/textNomeProjeto"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginTop="8dp"
             android:text="Nome do projeto"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toEndOf="@+id/imageProjeto"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textDateProjeto"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginBottom="5dp"
@@ -41,12 +42,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintStart_toEndOf="@+id/imageProjeto"
+            app:layout_constraintTop_toBottomOf="@+id/textTipoEnsaio"
             app:layout_constraintVertical_bias="1.0" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textTipoEnsaio"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginTop="2dp"
@@ -55,12 +56,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            app:layout_constraintStart_toEndOf="@+id/imageProjeto"
+            app:layout_constraintTop_toBottomOf="@+id/textDescricaoProjeto"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/textDescricaoProjeto"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginTop="4dp"
@@ -68,8 +69,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toBottomOf="@+id/nomeDoProjeto"
+            app:layout_constraintStart_toEndOf="@+id/imageProjeto"
+            app:layout_constraintTop_toBottomOf="@+id/textNomeProjeto"
             app:layout_constraintVertical_bias="0.122" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
