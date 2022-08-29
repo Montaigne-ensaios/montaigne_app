@@ -1,5 +1,7 @@
 package com.montaigne.montaigneapp.data.usecase;
 
+import android.util.Log;
+
 import com.montaigne.montaigneapp.data.dao.spt.ProjetoSptDao;
 
 public class DeleteProjetoSpt {
@@ -7,9 +9,9 @@ public class DeleteProjetoSpt {
 
     public static void deleteProjetoSpt(String id) {
         projetoSptDao.deleteProjetoById(id).addOnCompleteListener(task -> {
-
+            Log.i("Firebase", "Sucesso ao deletar projeto");
         }).addOnFailureListener(exception ->  {
-
+            Log.e("Firebase", "Erro ao deletar projeto");
         });
     }
 }
