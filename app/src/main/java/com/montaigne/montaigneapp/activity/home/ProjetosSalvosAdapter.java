@@ -1,6 +1,5 @@
 package com.montaigne.montaigneapp.activity.home;
 
-import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,7 +55,7 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAd
             super(itemView);
 
             cardView = itemView.findViewById(R.id.cardView);
-            textNomeProjeto = itemView.findViewById(R.id.textNomeProjeto);
+            textNomeProjeto = itemView.findViewById(R.id.textNameProjeto);
             textDescricaoProjeto = itemView.findViewById(R.id.textDescricaoProjeto);
             textTipoEnsaio = itemView.findViewById(R.id.textTipoEnsaio);
             textDateProjeto = itemView.findViewById(R.id.textDateProjeto);

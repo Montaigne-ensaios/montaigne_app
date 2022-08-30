@@ -27,13 +27,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                app:layout_constraintBottom_toBottomOf="@+id/buttonContinuarCarimbo"
+                app:layout_constraintBottom_toBottomOf="@+id/buttonContinueCarimbo"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/buttonContinuarCarimbo"
+                app:layout_constraintTop_toTopOf="@+id/buttonContinueCarimbo"
                 app:srcCompat="@drawable/icon_home3" />
 
             <Button
-                android:id="@+id/buttonContinuarCarimbo"
+                android:id="@+id/buttonContinueCarimbo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
@@ -43,16 +43,16 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/textAvisoObrigatorio"
+                android:id="@+id/textObligatoryWarning"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
                 android:text="@string/TxtCarimboUnicoAviso"
                 android:textColor="@color/destaque"
-                app:layout_constraintBottom_toTopOf="@+id/buttonContinuarCarimbo"
-                app:layout_constraintEnd_toEndOf="@+id/buttonContinuarCarimbo"
-                app:layout_constraintStart_toStartOf="@+id/buttonContinuarCarimbo"
+                app:layout_constraintBottom_toTopOf="@+id/buttonContinueCarimbo"
+                app:layout_constraintEnd_toEndOf="@+id/buttonContinueCarimbo"
+                app:layout_constraintStart_toStartOf="@+id/buttonContinueCarimbo"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -94,7 +94,7 @@
                     app:srcCompat="@android:drawable/ic_menu_help" />
 
                 <TextView
-                    android:id="@+id/textAviso1"
+                    android:id="@+id/textWarning1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
 
@@ -108,7 +108,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textAviso2"
+                    android:id="@+id/textWarning2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
@@ -117,21 +117,21 @@
                     android:textSize="18sp"
                     app:layout_constraintEnd_toStartOf="@+id/guideline3"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@+id/textAviso1" />
+                    app:layout_constraintTop_toBottomOf="@+id/textWarning1" />
 
                 <ImageView
-                    android:id="@+id/imagePerfil"
+                    android:id="@+id/imageProfile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     app:layout_constraintEnd_toStartOf="@+id/guideline3"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@+id/textAviso2"
+                    app:layout_constraintTop_toBottomOf="@+id/textWarning2"
                     app:srcCompat="@drawable/ic_launcher_background"
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <TextView
-                    android:id="@+id/textNomeProjeto"
+                    android:id="@+id/textNameProjeto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
@@ -141,11 +141,11 @@
                     app:layout_constraintEnd_toStartOf="@+id/guideline3"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@+id/imageButtonCamera" />
+                    app:layout_constraintTop_toBottomOf="@+id/imageButtonPhoto" />
 
                 <EditText
 
-                    android:id="@+id/editTextNomeProjeto"
+                    android:id="@+id/editTextNameProjeto"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -156,7 +156,7 @@
                     android:minHeight="48dp"
                     app:layout_constraintEnd_toStartOf="@+id/guideline3"
                     app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@+id/textNomeProjeto" />
+                    app:layout_constraintTop_toBottomOf="@+id/textNameProjeto" />
 
                 <TextView
                     android:id="@+id/textTecnico"
@@ -166,10 +166,10 @@
                     android:text="@string/TxtCarimboDefinitivoNomeTecnico"
                     android:textColor="@color/black"
                     android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="@+id/textNomeProjeto"
+                    app:layout_constraintEnd_toEndOf="@+id/textNameProjeto"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/textNomeProjeto"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextNomeProjeto" />
+                    app:layout_constraintStart_toStartOf="@+id/textNameProjeto"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNameProjeto" />
 
                 <EditText
                     android:id="@+id/editTextTecnico"
@@ -180,9 +180,9 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:minHeight="48dp"
-                    app:layout_constraintEnd_toEndOf="@+id/editTextNomeProjeto"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextNameProjeto"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/editTextNomeProjeto"
+                    app:layout_constraintStart_toStartOf="@+id/editTextNameProjeto"
                     app:layout_constraintTop_toBottomOf="@+id/textTecnico" />
 
                 <TextView
@@ -208,6 +208,7 @@
                     android:inputType="textPersonName"
                     android:minHeight="48dp"
                     app:layout_constraintEnd_toEndOf="@+id/editTextTecnico"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="@+id/editTextTecnico"
                     app:layout_constraintTop_toBottomOf="@+id/textEmpresa" />
 
@@ -359,25 +360,25 @@
                     app:layout_constraintTop_toBottomOf="@+id/textReferenciaNivel" />
 
                 <ImageButton
-                    android:id="@+id/imageButtonCamera"
+                    android:id="@+id/imageButtonPhoto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    app:layout_constraintEnd_toEndOf="@+id/imagePerfil"
-                    app:layout_constraintStart_toStartOf="@+id/imagePerfil"
-                    app:layout_constraintTop_toBottomOf="@+id/imagePerfil"
+                    app:layout_constraintEnd_toEndOf="@+id/imageProfile"
+                    app:layout_constraintStart_toStartOf="@+id/imageProfile"
+                    app:layout_constraintTop_toBottomOf="@+id/imageProfile"
                     app:srcCompat="@android:drawable/ic_menu_camera" />
 
                 <ImageButton
-                    android:id="@+id/imageButtonHelpNomeProjeto"
+                    android:id="@+id/imageButtonHelpNameProjeto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#00FFFFFF"
-                    app:layout_constraintBottom_toBottomOf="@+id/editTextNomeProjeto"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextNameProjeto"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/editTextNomeProjeto"
-                    app:layout_constraintTop_toTopOf="@+id/editTextNomeProjeto"
+                    app:layout_constraintStart_toEndOf="@+id/editTextNameProjeto"
+                    app:layout_constraintTop_toTopOf="@+id/editTextNameProjeto"
                     app:srcCompat="@android:drawable/ic_menu_help" />
 
                 <ImageButton
