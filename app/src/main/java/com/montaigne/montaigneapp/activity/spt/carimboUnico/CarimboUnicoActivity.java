@@ -29,12 +29,12 @@ public class CarimboUnicoActivity extends AbstractActivity {
 
     @Override
     protected void initializeViews() {
-        buttonPegarLocalizacao = findViewById(R.id.buttonPegarLocalizacao);
-        buttonIniciarEnsaio = findViewById(R.id.buttonIniciarEnsaio);
-        editTextDataInicio = findViewById(R.id.editTextDataInicio);
+        buttonPegarLocalizacao = findViewById(R.id.buttonGetLocation);
+        buttonIniciarEnsaio = findViewById(R.id.buttonStartEnsaio);
+        editTextDataInicio = findViewById(R.id.editTextStartDate);
         editTextNivelFuro = findViewById(R.id.editTextNivelFuro);
         imageButtonHelpCoordenadaFuro = findViewById(R.id.imageButtonHelpCoordenadaFuro);
-        imageButtonHelpDataInicio = findViewById(R.id.imageButtonHelpDataInicio);
+        imageButtonHelpDataInicio = findViewById(R.id.imageButtonHelpStartDate);
         imageButtonHelpNivelFuro = findViewById(R.id.imageButtonHelpNivelFuro);
         imageButtonHome = findViewById(R.id.imageButtonHome);
     }
