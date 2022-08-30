@@ -24,7 +24,7 @@ public class CarimboDefinitivoVM {
         intent.putExtra("Contato", activity.fields.get ("Contato"). getText(). toString());
         intent.putExtra("Cliente", activity.fields.get ("Cliente"). getText(). toString());
         intent.putExtra("LocalObra", activity.fields.get ("LocalObra"). getText(). toString());
-        intent.putExtra("QuantidadeFuros", activity.fields.get ("QuantidadeFuros"). getText(). toString());
+        intent.putExtra("nFuros", activity.fields.get ("QuantidadeFuros"). getText(). toString());
         intent.putExtra("ReferenciaNivel", activity.fields.get ("ReferenciaNivel"). getText(). toString());
         intent.putExtra("NomeProjeto", activity.fields.get ("NomeProjeto"). getText(). toString());
 
