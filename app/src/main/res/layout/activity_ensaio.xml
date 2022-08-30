@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/buttonFinalizarFuro"
+        android:id="@+id/buttonFinishFuro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
@@ -22,9 +22,9 @@
         android:layout_marginEnd="50dp"
         android:backgroundTint="#00FFFFFF"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonFinalizarFuro"
-        app:layout_constraintEnd_toStartOf="@+id/buttonFinalizarFuro"
-        app:layout_constraintTop_toTopOf="@+id/buttonFinalizarFuro"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonFinishFuro"
+        app:layout_constraintEnd_toStartOf="@+id/buttonFinishFuro"
+        app:layout_constraintTop_toTopOf="@+id/buttonFinishFuro"
         app:srcCompat="@drawable/icon_home3" />
 
     <FrameLayout
@@ -65,7 +65,7 @@
                 app:layout_constraintTop_toTopOf="@+id/textProfundidade" />
 
             <ImageButton
-                android:id="@+id/imageButtonDiminuirGolpe1"
+                android:id="@+id/imageButtonIcrementGolpe1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -76,7 +76,7 @@
                 app:srcCompat="@android:drawable/ic_input_add" />
 
             <ImageButton
-                android:id="@+id/imageButtonDiminuirGolpe2"
+                android:id="@+id/imageButtonIcrementGolpe2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -87,7 +87,7 @@
                 app:srcCompat="@android:drawable/ic_input_add" />
 
             <ImageButton
-                android:id="@+id/imageButtonDiminuirGolpe3"
+                android:id="@+id/imageButtonIcrementGolpe3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -98,7 +98,7 @@
                 app:srcCompat="@android:drawable/ic_input_add" />
 
             <ImageButton
-                android:id="@+id/imageButtonAumentarGolpe3"
+                android:id="@+id/imageButtonDecrementGolpe3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="5dp"
@@ -107,10 +107,10 @@
                 app:layout_constraintEnd_toStartOf="@+id/editTextGolpe3"
                 app:layout_constraintTop_toTopOf="@+id/editTextGolpe3"
                 app:layout_constraintVertical_bias="1.0"
-                app:srcCompat="@android:drawable/ic_input_add" />
+                app:srcCompat="@android:drawable/presence_offline" />
 
             <ImageButton
-                android:id="@+id/imageButtonAumentarGolpe2"
+                android:id="@+id/imageButtonDecrementGolpe2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="5dp"
@@ -118,10 +118,10 @@
                 app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe2"
                 app:layout_constraintEnd_toStartOf="@+id/editTextGolpe2"
                 app:layout_constraintTop_toTopOf="@+id/editTextGolpe2"
-                app:srcCompat="@android:drawable/ic_input_add" />
+                app:srcCompat="@android:drawable/presence_offline" />
 
             <ImageButton
-                android:id="@+id/imageButtonAumentarGolpe1"
+                android:id="@+id/imageButtonDecrementGolpe1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="5dp"
@@ -129,7 +129,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe1"
                 app:layout_constraintEnd_toStartOf="@+id/editTextGolpe1"
                 app:layout_constraintTop_toTopOf="@+id/editTextGolpe1"
-                app:srcCompat="@android:drawable/ic_input_add" />
+                app:srcCompat="@android:drawable/presence_offline" />
 
             <TextView
                 android:id="@+id/textAmostraN"
@@ -185,7 +185,7 @@
                 android:hint="15"
                 android:inputType="number"
                 app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe1"
-                app:layout_constraintStart_toEndOf="@+id/imageButtonDiminuirGolpe1"
+                app:layout_constraintStart_toEndOf="@+id/imageButtonIcrementGolpe1"
                 app:layout_constraintTop_toTopOf="@+id/editTextGolpe1" />
 
             <EditText

@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.montaigne.montaigneapp.R;
@@ -43,15 +42,15 @@ public class EnsaioActivity extends AbstractActivity {
         penetracoes.add(findViewById(R.id.editTextPenetracao2));
         penetracoes.add(findViewById(R.id.editTextPenetracao3));
         editTextNivelAgua = findViewById(R.id.editTextNivelAgua);
-        buttonFinalizarFuro = findViewById(R.id.buttonFinalizarFuro);
+        buttonFinalizarFuro = findViewById(R.id.buttonFinishFuro);
         imageButtonHome = findViewById(R.id.imageButtonHome);
         imageButtonHelpNivelAgua = findViewById(R.id.imageButtonHelpNivelAgua);
-        buttonsDecrementGolpes.add(findViewById(R.id.imageButtonDiminuirGolpe1));
-        buttonsDecrementGolpes.add(findViewById(R.id.imageButtonDiminuirGolpe2));
-        buttonsDecrementGolpes.add(findViewById(R.id.imageButtonDiminuirGolpe3));
-        buttonsIncrementGolpes.add(findViewById(R.id.imageButtonAumentarGolpe1));
-        buttonsIncrementGolpes.add(findViewById(R.id.imageButtonAumentarGolpe2));
-        buttonsIncrementGolpes.add(findViewById(R.id.imageButtonAumentarGolpe3));
+        buttonsDecrementGolpes.add(findViewById(R.id.imageButtonIcrementGolpe1));
+        buttonsDecrementGolpes.add(findViewById(R.id.imageButtonIcrementGolpe2));
+        buttonsDecrementGolpes.add(findViewById(R.id.imageButtonIcrementGolpe3));
+        buttonsIncrementGolpes.add(findViewById(R.id.imageButtonDecrementGolpe1));
+        buttonsIncrementGolpes.add(findViewById(R.id.imageButtonDecrementGolpe2));
+        buttonsIncrementGolpes.add(findViewById(R.id.imageButtonDecrementGolpe3));
 
     }
 }
