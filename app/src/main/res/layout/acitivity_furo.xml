@@ -54,12 +54,12 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonPrint"
-        app:layout_constraintTop_toBottomOf="@+id/textAviso"
+        app:layout_constraintTop_toBottomOf="@+id/textWarning"
         app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="-104dp" />
 
     <TextView
-        android:id="@+id/textAviso"
+        android:id="@+id/textWarning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
