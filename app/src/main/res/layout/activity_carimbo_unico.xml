@@ -20,7 +20,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textDataInicio"
+                android:id="@+id/textStartDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -33,7 +33,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editTextDataInicio"
+                android:id="@+id/editTextStartDate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -44,7 +44,7 @@
                 android:minHeight="48dp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline5"
                 app:layout_constraintStart_toStartOf="@+id/guideline4"
-                app:layout_constraintTop_toBottomOf="@+id/textDataInicio" />
+                app:layout_constraintTop_toBottomOf="@+id/textStartDate" />
 
             <TextView
                 android:id="@+id/textNivelFuro"
@@ -57,7 +57,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/guideline5"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/guideline4"
-                app:layout_constraintTop_toBottomOf="@+id/editTextDataInicio" />
+                app:layout_constraintTop_toBottomOf="@+id/editTextStartDate" />
 
             <EditText
                 android:id="@+id/editTextNivelFuro"
@@ -86,7 +86,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/editTextNivelFuro" />
 
             <Button
-                android:id="@+id/buttonPegarLocalizacao"
+                android:id="@+id/buttonGetLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -111,16 +111,16 @@
                 app:layout_constraintGuide_percent="0.90" />
 
             <ImageButton
-                android:id="@+id/imageButtonHelpDataInicio"
+                android:id="@+id/imageButtonHelpStartDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:background="#00FFFFFF"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextDataInicio"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextStartDate"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/editTextDataInicio"
-                app:layout_constraintTop_toTopOf="@+id/editTextDataInicio"
+                app:layout_constraintStart_toEndOf="@+id/editTextStartDate"
+                app:layout_constraintTop_toTopOf="@+id/editTextStartDate"
                 app:srcCompat="@android:drawable/ic_menu_help" />
 
             <ImageButton
@@ -142,11 +142,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:background="#00FFFFFF"
-                app:layout_constraintBottom_toBottomOf="@+id/buttonPegarLocalizacao"
+                app:layout_constraintBottom_toBottomOf="@+id/buttonGetLocation"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/buttonPegarLocalizacao"
-                app:layout_constraintTop_toTopOf="@+id/buttonPegarLocalizacao"
+                app:layout_constraintStart_toEndOf="@+id/buttonGetLocation"
+                app:layout_constraintTop_toTopOf="@+id/buttonGetLocation"
                 app:srcCompat="@android:drawable/ic_menu_help" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -166,18 +166,18 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textAvisoObrigatorio"
+                android:id="@+id/textWarningObrigatory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:text="@string/TxtCarimboUnicoAviso"
                 android:textColor="@color/destaque"
-                app:layout_constraintBottom_toTopOf="@+id/buttonIniciarEnsaio"
+                app:layout_constraintBottom_toTopOf="@+id/buttonStartEnsaio"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Button
-                android:id="@+id/buttonIniciarEnsaio"
+                android:id="@+id/buttonStartEnsaio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -191,9 +191,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                app:layout_constraintBottom_toBottomOf="@+id/buttonIniciarEnsaio"
+                app:layout_constraintBottom_toBottomOf="@+id/buttonStartEnsaio"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/buttonIniciarEnsaio"
+                app:layout_constraintTop_toTopOf="@+id/buttonStartEnsaio"
                 app:srcCompat="@drawable/icon_home3" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

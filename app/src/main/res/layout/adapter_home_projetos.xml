@@ -24,7 +24,7 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/textNomeProjeto"
+            android:id="@+id/textNameProjeto"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginTop="8dp"
@@ -70,7 +70,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/imageProjeto"
-            app:layout_constraintTop_toBottomOf="@+id/textNomeProjeto"
+            app:layout_constraintTop_toBottomOf="@+id/textNameProjeto"
             app:layout_constraintVertical_bias="0.122" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
