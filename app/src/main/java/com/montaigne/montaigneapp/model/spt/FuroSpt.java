@@ -2,10 +2,11 @@ package com.montaigne.montaigneapp.model.spt;
 
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class FuroSpt {
+public class FuroSpt implements Serializable {
     private String id;
     private String code;
     private float waterLevel, holeLevel;

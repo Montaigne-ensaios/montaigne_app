@@ -1,6 +1,8 @@
 package com.montaigne.montaigneapp.model.spt;
 
-public class AmostraSpt {
+import java.io.Serializable;
+
+public class AmostraSpt implements Serializable {
     private String id;
     private int blows1, blows2, blows3, nspt;
 

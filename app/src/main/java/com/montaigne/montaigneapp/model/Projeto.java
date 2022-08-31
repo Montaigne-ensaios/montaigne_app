@@ -1,6 +1,8 @@
 package com.montaigne.montaigneapp.model;
 
-public abstract class Projeto {
+import java.io.Serializable;
+
+public abstract class Projeto implements Serializable {
 
     private String id;
     private String name;

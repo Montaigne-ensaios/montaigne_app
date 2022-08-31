@@ -2,35 +2,55 @@ package com.montaigne.montaigneapp.activity.spt.ensaio;
 
 import android.content.Intent;
 import android.view.View;
-import android.widget.EditText;
 
 import com.montaigne.montaigneapp.activity.home.HomeActivity;
 import com.montaigne.montaigneapp.activity.spt.projeto.ProjetoActivity;
+import com.montaigne.montaigneapp.data.usecase.SaveAmostraSpt;
+import com.montaigne.montaigneapp.model.spt.AmostraSpt;
+import com.montaigne.montaigneapp.model.spt.FuroSpt;
+import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 public class EnsaioVM {
     private final EnsaioActivity activity;
-    private final int nAmostra;
+    private final ProjetoSpt projeto;
+    private final FuroSpt furo;
+    private final AmostraSpt amostra;
 
     public EnsaioVM(EnsaioActivity activity) {
 
         this.activity = activity;
 
         Intent intent = activity.getIntent();
-        nAmostra = intent.getIntExtra("NAmostra", 0);
-        activity.textAmostraN.setText("Amostra " + nAmostra);
+        projeto = (ProjetoSpt) intent.getSerializableExtra("Projeto");
+        furo = projeto.getPolls().get(intent.getIntExtra("nFuro", 0));
+        amostra = furo.getSamples().get(intent.getIntExtra("nAmostra", 0));
 
-        activity.buttonFinalizarFuro.setOnClickListener(this::projetoButtonListener);
+        activity.textAmostraN.setText("Amostra " + amostra.getId());
+
+        activity.buttonFinalizarFuro.setOnClickListener(this::finalizarFuroButtonListener);
         activity.imageButtonHome.setOnClickListener(this::homeButtonListener);
 //        setGolpeModfiersListners();
     }
 
-    private void projetoButtonListener(View view) {
+    private void finalizarFuroButtonListener(View view) {
+        updateAmostra();
+
         view.getContext().startActivity(new Intent(view.getContext(), ProjetoActivity.class));
     }
 
     private void homeButtonListener(View view) {
         view.getContext().startActivity(new Intent(view.getContext(), HomeActivity.class));
         //todo:limpar tasks
+    }
+
+    private void updateAmostra(){
+        amostra.setBlows1(getGolpe(0));
+        amostra.setBlows2(getGolpe(1));
+        amostra.setBlows3(getGolpe(2));
+
+        amostra.setNspt(getGolpe(1) + getGolpe(2));
+
+        SaveAmostraSpt.saveAmostraSpt(amostra);
     }
 
     private void setGolpeModfiersListners(){
