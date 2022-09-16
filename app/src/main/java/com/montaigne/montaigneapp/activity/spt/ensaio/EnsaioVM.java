@@ -19,6 +19,7 @@ public class EnsaioVM {
         Intent intent = activity.getIntent();
         nAmostra = intent.getIntExtra("NAmostra", 0);
         activity.textAmostraN.setText("Amostra " + nAmostra);
+        // todo: substituir string por referência ao `values.xml`
 
         activity.buttonFinalizarFuro.setOnClickListener(this::projetoButtonListener);
         activity.imageButtonHome.setOnClickListener(AbstractActivity::homeButtonListener);

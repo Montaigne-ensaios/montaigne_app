@@ -29,6 +29,7 @@ public class HomeVM {
         ArrayList<Object[]> categorias = new ArrayList<>();
         categorias.add(new Object[]{"SPT", R.drawable.ic_logospt_azul});
         categorias.add(new Object[]{"Granulometria", R.drawable.ic_logospt_azul});
+        // todo: substituir strings por referência ao `values.xml`
 
         ProjetoCategoriaAdapter adapter = new ProjetoCategoriaAdapter();
         adapter.setCategoriasProjeto(categorias);
