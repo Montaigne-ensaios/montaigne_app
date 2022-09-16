@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class HomeVM extends ViewModel {
     private ArrayList<String> projetosSalvos;
 
-    public HomeVM (HomeActivity activity) {
+    public HomeVM () {
         updateProjetos();
     }
 
