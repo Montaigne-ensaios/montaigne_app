@@ -23,13 +23,13 @@ public class CarimboDefinitivoActivity extends AbstractActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_carimbo_definitivo);
 
-        initializeViews();
         CarimboDefinitivoVM viewModel = new CarimboDefinitivoVM(this);
     }
 
-    protected void initializeViews() {
+    protected boolean initializeViews() {
+        setContentView(R.layout.activity_carimbo_definitivo);
+
         buttonContinuarCarimbo = findViewById(R.id.buttonContinueCarimbo);
         imageButtonHome = findViewById(R.id.imageButtonHome);
         imageButtonCamera = findViewById(R.id.imageButtonPhoto);
@@ -60,5 +60,7 @@ public class CarimboDefinitivoActivity extends AbstractActivity {
                 (ImageButton)findViewById(R.id.imageButtonHelpReferenciaNivel));
         buttonsHelp.put(fields.get ("NomeProjeto"),
                 (ImageButton) findViewById(R.id.imageButtonHelpCliente));
+
+        return imageButtonCamera == null;
     }
 }

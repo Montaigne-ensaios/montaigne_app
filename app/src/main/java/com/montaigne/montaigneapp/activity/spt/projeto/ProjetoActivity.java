@@ -18,9 +18,6 @@ public class ProjetoActivity extends AbstractActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_projeto);
-
-        initializeViews();
 
         String nome = getIntent().getStringExtra("name");
         // talvez seja uma boa usar enum para padronizar os nomes dos extras em intents
@@ -30,11 +27,15 @@ public class ProjetoActivity extends AbstractActivity {
     }
 
     @Override
-    protected void initializeViews() {
+    protected boolean initializeViews() {
+        setContentView(R.layout.activity_projeto);
+
         recyclerFuros = findViewById(R.id.recyclerFuro);
         buttonDeleteFuro = findViewById(R.id.imageButtonDeleteFuro);
         buttonAddFuro = findViewById(R.id.imageButtonAddFuro);
         textFuro = findViewById(R.id.textFuro);  // adicionado apenas pela atual ausência
         // de título na activity
+
+        return recyclerFuros == null;
     }
 }
