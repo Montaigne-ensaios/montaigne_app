@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.montaigne.montaigneapp.activity.AbstractActivity;
 import com.montaigne.montaigneapp.activity.home.HomeActivity;
 import com.montaigne.montaigneapp.activity.spt.ensaio.EnsaioActivity;
 
@@ -15,7 +16,7 @@ public class CarimboUnicoVM {
 
         this.activity = activity;
         activity.buttonIniciarEnsaio.setOnClickListener(this::ensaioButtonListener);
-        activity.imageButtonHome.setOnClickListener(this:: homeButtonListener);
+        activity.imageButtonHome.setOnClickListener(AbstractActivity::homeButtonListener);
 
         this.extras = activity.getIntent().getExtras();
     }
@@ -24,12 +25,5 @@ public class CarimboUnicoVM {
         Intent intent = new Intent(view.getContext(), EnsaioActivity.class);
         intent.putExtra("NomeProjeto", extras.getString("NomeProjeto"));
         view.getContext().startActivity(intent);
-
-
-    }
-
-    private void homeButtonListener (View view) {
-        view.getContext().startActivity(new Intent(view.getContext(), HomeActivity.class));
-        //todo: limpar tasks;
-    }
+    }  // todo: limpar stack (?)
 }

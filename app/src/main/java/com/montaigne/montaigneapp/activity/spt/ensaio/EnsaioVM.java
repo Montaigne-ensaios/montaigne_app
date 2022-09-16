@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 
+import com.montaigne.montaigneapp.activity.AbstractActivity;
 import com.montaigne.montaigneapp.activity.home.HomeActivity;
 import com.montaigne.montaigneapp.activity.spt.projeto.ProjetoActivity;
 
@@ -20,18 +21,13 @@ public class EnsaioVM {
         activity.textAmostraN.setText("Amostra " + nAmostra);
 
         activity.buttonFinalizarFuro.setOnClickListener(this::projetoButtonListener);
-        activity.imageButtonHome.setOnClickListener(this::homeButtonListener);
+        activity.imageButtonHome.setOnClickListener(AbstractActivity::homeButtonListener);
 //        setGolpeModfiersListners();
     }
 
     private void projetoButtonListener(View view) {
         view.getContext().startActivity(new Intent(view.getContext(), ProjetoActivity.class));
-    }
-
-    private void homeButtonListener(View view) {
-        view.getContext().startActivity(new Intent(view.getContext(), HomeActivity.class));
-        //todo:limpar tasks
-    }
+    }  // todo: limpar stack (?)
 
     private void setGolpeModfiersListners(){
         for (int i = 0; i < 3; i++) {
