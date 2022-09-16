@@ -26,8 +26,11 @@ public class EnsaioVM {
     }
 
     private void projetoButtonListener(View view) {
-        view.getContext().startActivity(new Intent(view.getContext(), ProjetoActivity.class));
-    }  // todo: limpar stack (?)
+        Intent intent = new Intent(view.getContext(), ProjetoActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        view.getContext().startActivity(intent);
+        // todo: chamar o view model clear, se necessário
+    }
 
     private void setGolpeModfiersListners(){
         for (int i = 0; i < 3; i++) {

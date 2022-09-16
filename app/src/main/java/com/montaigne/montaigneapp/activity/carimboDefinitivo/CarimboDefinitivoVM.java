@@ -30,6 +30,5 @@ public class CarimboDefinitivoVM {
         intent.putExtra("NomeProjeto", activity.fields.get ("NomeProjeto"). getText(). toString());
 
         view.getContext().startActivity(intent);
-        // todo: limpar stack (?)
     }
 }

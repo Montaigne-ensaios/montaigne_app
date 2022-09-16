@@ -25,5 +25,5 @@ public class CarimboUnicoVM {
         Intent intent = new Intent(view.getContext(), EnsaioActivity.class);
         intent.putExtra("NomeProjeto", extras.getString("NomeProjeto"));
         view.getContext().startActivity(intent);
-    }  // todo: limpar stack (?)
+    }
 }
