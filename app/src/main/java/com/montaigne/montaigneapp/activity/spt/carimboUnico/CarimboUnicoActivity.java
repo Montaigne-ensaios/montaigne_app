@@ -28,7 +28,7 @@ public class CarimboUnicoActivity extends AbstractActivity {
     }
 
     @Override
-    protected void initializeViews() {
+    protected boolean initializeViews() {
         buttonPegarLocalizacao = findViewById(R.id.buttonGetLocation);
         buttonIniciarEnsaio = findViewById(R.id.buttonStartEnsaio);
         editTextDataInicio = findViewById(R.id.editTextStartDate);
@@ -37,5 +37,7 @@ public class CarimboUnicoActivity extends AbstractActivity {
         imageButtonHelpDataInicio = findViewById(R.id.imageButtonHelpStartDate);
         imageButtonHelpNivelFuro = findViewById(R.id.imageButtonHelpNivelFuro);
         imageButtonHome = findViewById(R.id.imageButtonHome);
+
+        return buttonIniciarEnsaio == null;
     }
 }

@@ -29,7 +29,7 @@ public class CarimboDefinitivoActivity extends AbstractActivity {
         CarimboDefinitivoVM viewModel = new CarimboDefinitivoVM(this);
     }
 
-    protected void initializeViews() {
+    protected boolean initializeViews() {
         buttonContinuarCarimbo = findViewById(R.id.buttonContinueCarimbo);
         imageButtonHome = findViewById(R.id.imageButtonHome);
         imageButtonCamera = findViewById(R.id.imageButtonPhoto);
@@ -60,5 +60,7 @@ public class CarimboDefinitivoActivity extends AbstractActivity {
                 (ImageButton)findViewById(R.id.imageButtonHelpReferenciaNivel));
         buttonsHelp.put(fields.get ("NomeProjeto"),
                 (ImageButton) findViewById(R.id.imageButtonHelpCliente));
+
+        return imageButtonCamera == null;
     }
 }

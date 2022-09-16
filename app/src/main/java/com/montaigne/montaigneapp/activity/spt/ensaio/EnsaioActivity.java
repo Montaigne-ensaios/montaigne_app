@@ -32,7 +32,7 @@ public class EnsaioActivity extends AbstractActivity {
     }
 
     @Override
-    protected void initializeViews() {
+    protected boolean initializeViews() {
         textAmostraN = findViewById(R.id.textAmostraN);
         editTextProfundidade = findViewById(R.id.editTextProfundidade);
         golpes.add(findViewById(R.id.editTextGolpe1));
@@ -52,6 +52,7 @@ public class EnsaioActivity extends AbstractActivity {
         buttonsIncrementGolpes.add(findViewById(R.id.imageButtonDecrementGolpe2));
         buttonsIncrementGolpes.add(findViewById(R.id.imageButtonDecrementGolpe3));
 
+        return textAmostraN == null;
     }
 }
 
