@@ -20,9 +20,6 @@ public class FuroActivity extends AbstractActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.acitivity_furo);
-
-        initializeViews();
 
         String nome = getIntent().getStringExtra("name");
         textAmostra.setText(nome);
@@ -31,6 +28,8 @@ public class FuroActivity extends AbstractActivity {
 
     @Override
     protected boolean initializeViews() {
+        setContentView(R.layout.acitivity_furo);
+
         buttonAddAmostra = findViewById(R.id.imageButtonAddAmostra);
         buttonDeleteAmostra = findViewById(R.id.imageButtonDeleteAmostra);
         buttonPrint = findViewById(R.id.buttonPrint);

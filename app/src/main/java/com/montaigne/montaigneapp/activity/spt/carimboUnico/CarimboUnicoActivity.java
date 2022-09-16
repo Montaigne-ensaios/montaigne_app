@@ -21,14 +21,14 @@ public class CarimboUnicoActivity extends AbstractActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_carimbo_unico);
 
-        initializeViews();
         CarimboUnicoVM viewModel = new CarimboUnicoVM(this);
     }
 
     @Override
     protected boolean initializeViews() {
+        setContentView(R.layout.activity_carimbo_unico);
+
         buttonPegarLocalizacao = findViewById(R.id.buttonGetLocation);
         buttonIniciarEnsaio = findViewById(R.id.buttonStartEnsaio);
         editTextDataInicio = findViewById(R.id.editTextStartDate);

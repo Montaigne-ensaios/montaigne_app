@@ -25,14 +25,14 @@ public class EnsaioActivity extends AbstractActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ensaio);
 
-        initializeViews();
         EnsaioVM viewModel = new EnsaioVM(this);
     }
 
     @Override
     protected boolean initializeViews() {
+        setContentView(R.layout.activity_ensaio);
+
         textAmostraN = findViewById(R.id.textAmostraN);
         editTextProfundidade = findViewById(R.id.editTextProfundidade);
         golpes.add(findViewById(R.id.editTextGolpe1));
