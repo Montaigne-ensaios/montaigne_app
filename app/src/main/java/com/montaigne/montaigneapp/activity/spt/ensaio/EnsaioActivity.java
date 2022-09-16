@@ -35,19 +35,24 @@ public class EnsaioActivity extends AbstractActivity {
 
         textAmostraN = findViewById(R.id.textAmostraN);
         editTextProfundidade = findViewById(R.id.editTextProfundidade);
+
         golpes.add(findViewById(R.id.editTextGolpe1));
         golpes.add(findViewById(R.id.editTextGolpe2));
         golpes.add(findViewById(R.id.editTextGolpe3));
+
         penetracoes.add(findViewById(R.id.editTextPenetracao1));
         penetracoes.add(findViewById(R.id.editTextPenetracao2));
         penetracoes.add(findViewById(R.id.editTextPenetracao3));
+
         editTextNivelAgua = findViewById(R.id.editTextNivelAgua);
         buttonFinalizarFuro = findViewById(R.id.buttonFinishFuro);
         imageButtonHome = findViewById(R.id.imageButtonHome);
         imageButtonHelpNivelAgua = findViewById(R.id.imageButtonHelpNivelAgua);
+
         buttonsDecrementGolpes.add(findViewById(R.id.imageButtonIcrementGolpe1));
         buttonsDecrementGolpes.add(findViewById(R.id.imageButtonIcrementGolpe2));
         buttonsDecrementGolpes.add(findViewById(R.id.imageButtonIcrementGolpe3));
+
         buttonsIncrementGolpes.add(findViewById(R.id.imageButtonDecrementGolpe1));
         buttonsIncrementGolpes.add(findViewById(R.id.imageButtonDecrementGolpe2));
         buttonsIncrementGolpes.add(findViewById(R.id.imageButtonDecrementGolpe3));
