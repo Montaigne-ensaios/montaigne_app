@@ -27,10 +27,7 @@ public class EnsaioVM {
     }
 
     private void projetoButtonListener(View view) {
-        Intent intent = new Intent(view.getContext(), ProjetoActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-        view.getContext().startActivity(intent);
-        // todo: chamar o view model clear, se necessário
+        view.getContext().startActivity(new Intent(view.getContext(), ProjetoActivity.class));
     }
 
     private void setGolpeModfiersListners(){
