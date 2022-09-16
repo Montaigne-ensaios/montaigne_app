@@ -3,6 +3,7 @@ package com.montaigne.montaigneapp.activity.home;
 import android.content.Intent;
 import android.view.View;
 
+import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.montaigne.montaigneapp.R;
@@ -10,23 +11,15 @@ import com.montaigne.montaigneapp.activity.carimboDefinitivo.CarimboDefinitivoAc
 
 import java.util.ArrayList;
 
-public class HomeVM {
-    private final HomeActivity activity;
+public class HomeVM extends ViewModel {
     private ArrayList<String> projetosSalvos;
 
     public HomeVM (HomeActivity activity) {
-        this.activity = activity;
-
-        projetosSalvos = getProjetos();
-
-        initializeProjetoCategoriaAdapter();
-        initializeProjetosSalvosAdapter(projetosSalvos);
-
-        activity.newProjectFab.setOnClickListener(this::newProjectFabListener);
+        updateProjetos();
     }
 
-    private void initializeProjetoCategoriaAdapter() {
-        ArrayList<Object[]> categorias = new ArrayList<>();
+    protected void initializeProjetoCategoriaAdapter(HomeActivity activity) {
+        ArrayList<Object[]> categorias = new ArrayList<>();  // lista de filtros de projeto
         categorias.add(new Object[]{"SPT", R.drawable.ic_logospt_azul});
         categorias.add(new Object[]{"Granulometria", R.drawable.ic_logospt_azul});
 
@@ -39,26 +32,26 @@ public class HomeVM {
                         false));
     }
 
-    private void initializeProjetosSalvosAdapter(ArrayList<String> projetos) {
-        ProjetosSalvosAdapter adapter = new ProjetosSalvosAdapter(projetos);
+    protected void initializeProjetosSalvosAdapter(HomeActivity activity) {
+        ProjetosSalvosAdapter adapter = new ProjetosSalvosAdapter(this.projetosSalvos);
         activity.recyclerProjetosSalvos.setAdapter(adapter);
         activity.recyclerProjetosSalvos.setLayoutManager(new LinearLayoutManager(activity));
     }
 
-    private ArrayList<String> getProjetos() {
-        ArrayList<String> list = new ArrayList<>();
-        list.add("Exemplo de projeto");
-        list.add("Outro exemplo");
-        list.add("Só mais um");
-        list.add("Tá bom parei");
-        return list;
+    private void updateProjetos() {
+        ArrayList<String> mock = new ArrayList<>();
+        mock.add("Exemplo de projeto");
+        mock.add("Outro exemplo");
+        mock.add("Só mais um");
+        mock.add("Tá bom parei");
+        this.projetosSalvos = mock;
     }
 
-    private void categoriaFilterListener(View view) {
+    protected void categoriaFilterListener(View view) {
         // seleciona apenas os projetos da categoria especifica
     }
 
-    private void newProjectFabListener(View view) {
+    protected void newProjectFabListener(View view) {
         view.getContext().startActivity(new Intent(view.getContext(), CarimboDefinitivoActivity.class));
     }
 }

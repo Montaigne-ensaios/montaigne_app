@@ -20,6 +20,11 @@ public class HomeActivity extends AbstractActivity {
         initializeViews();
 
         HomeVM viewModel = new HomeVM(this);
+
+        viewModel.initializeProjetosSalvosAdapter(this);
+        viewModel.initializeProjetoCategoriaAdapter(this);
+
+        newProjectFab.setOnClickListener(viewModel::newProjectFabListener);
     }
 
     @Override
