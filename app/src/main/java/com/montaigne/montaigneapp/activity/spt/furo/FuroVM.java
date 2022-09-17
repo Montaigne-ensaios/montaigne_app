@@ -2,22 +2,14 @@ package com.montaigne.montaigneapp.activity.spt.furo;
 
 import android.view.View;
 
+import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class FuroVM {
-    private final FuroActivity activity;
+public class FuroVM extends ViewModel {
     private ArrayList<String> amostras;
-
-    public FuroVM(FuroActivity activity) {
-        this.activity = activity;
-
-        amostras = getAmostras();
-        updateAmostrasAdapter(amostras);
-        activity.buttonDeleteAmostra.setOnClickListener(this::deleteAmostrasButtonListener);
-
-    }
 
     private ArrayList<String> getAmostras() {
         ArrayList<String> mock = new ArrayList<>();
@@ -27,13 +19,14 @@ public class FuroVM {
         return mock;
     }
 
-    private void updateAmostrasAdapter(ArrayList<String> amostras) {
+    protected void updateAmostrasAdapter(RecyclerView recyclerAmostras) {
+        amostras = getAmostras();
         AmostraAdapter adapter = new AmostraAdapter();
         adapter.setAmostras(amostras);
-        activity.recyclerAmostras.setAdapter(adapter);
-        activity.recyclerAmostras.setLayoutManager(new LinearLayoutManager(activity));
+        recyclerAmostras.setAdapter(adapter);
+        recyclerAmostras.setLayoutManager(new LinearLayoutManager(recyclerAmostras.getContext()));
     }
 
-    private void deleteAmostrasButtonListener(View view) {
+    protected void deleteAmostrasButtonListener(View view) {
     }
 }

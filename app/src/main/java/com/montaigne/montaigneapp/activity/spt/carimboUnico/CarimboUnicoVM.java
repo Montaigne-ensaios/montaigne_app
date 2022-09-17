@@ -3,6 +3,9 @@ package com.montaigne.montaigneapp.activity.spt.carimboUnico;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+
+import androidx.lifecycle.ViewModel;
 
 import com.montaigne.montaigneapp.activity.home.HomeActivity;
 import com.montaigne.montaigneapp.activity.spt.ensaio.EnsaioActivity;
@@ -14,23 +17,19 @@ import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.ArrayList;
 
-public class CarimboUnicoVM {
-    private final CarimboUnicoActivity activity;
+public class CarimboUnicoVM extends ViewModel {
     private final ProjetoSpt projeto;
-    private final Bundle extras;
+    private Bundle extras;
 
-    public CarimboUnicoVM(CarimboUnicoActivity activity) {
-
-        this.activity = activity;
-        activity.buttonIniciarEnsaio.setOnClickListener(this::ensaioButtonListener);
-        activity.imageButtonHome.setOnClickListener(this:: homeButtonListener);
-
-        this.extras = activity.getIntent().getExtras();
+    public CarimboUnicoVM() {
         projeto = new ProjetoSpt();
-
     }
 
-    private void updateProjeto() {
+    protected void setExtras(Bundle bundle) {
+        extras = bundle;
+    }
+
+    private void updateProjeto(EditText editTextDataInicio) {
         projeto.setName(extras.getString("NomeProjeto"));
         projeto.setTechnician(extras.getString("Tecnico"));
         projeto.setCompany(extras.getString("Empresa"));
@@ -40,11 +39,11 @@ public class CarimboUnicoVM {
         projeto.setHoleNumber(extras.getInt("nFuros"));
         // todo: eliminar a recuperação dos campos por intent
 
-        projeto.setStarData(activity.editTextDataInicio.getText().toString());
+        projeto.setStarData(editTextDataInicio.getText().toString());
         SaveProjetoSpt.saveProjetoSpt(projeto);
     }
 
-    private void ensaioButtonListener(View view) {
+    protected void ensaioButtonListener(View view, EditText editTextDataInicio) {
         FuroSpt furoSpt = new FuroSpt();
         furoSpt.setCode("0");
         ArrayList<AmostraSpt> amostras = new ArrayList<>();
@@ -54,14 +53,14 @@ public class CarimboUnicoVM {
         ArrayList<FuroSpt> furos = new ArrayList();
         furos.add(furoSpt);
         projeto.setPolls(furos);
-        updateProjeto();
+        updateProjeto(editTextDataInicio);
 
         Intent intent = new Intent(view.getContext(), EnsaioActivity.class);
         intent.putExtra("Projeto", projeto);
         view.getContext().startActivity(intent);
     }
 
-    private void homeButtonListener (View view) {
+    protected void homeButtonListener (View view) {
         view.getContext().startActivity(new Intent(view.getContext(), HomeActivity.class));
         //todo: limpar tasks;
     }

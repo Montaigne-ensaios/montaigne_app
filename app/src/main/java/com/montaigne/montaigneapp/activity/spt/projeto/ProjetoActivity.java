@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
@@ -26,7 +27,9 @@ public class ProjetoActivity extends AbstractActivity {
         // talvez seja uma boa usar enum para padronizar os nomes dos extras em intents
         textFuro.setText(nome + ". " + textFuro.getText());
 
-        ProjetoVM viewModel = new ProjetoVM(this);
+        ProjetoVM viewModel = new ViewModelProvider(this).get(ProjetoVM.class);
+        buttonDeleteFuro.setOnClickListener(viewModel::deleteFurosButtonListener);
+        viewModel.updateFurosAdapter(recyclerFuros);
     }
 
     @Override

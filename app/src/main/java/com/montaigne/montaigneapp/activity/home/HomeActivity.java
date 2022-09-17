@@ -1,5 +1,6 @@
 package com.montaigne.montaigneapp.activity.home;
 
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -19,7 +20,11 @@ public class HomeActivity extends AbstractActivity {
 
         initializeViews();
 
-        HomeVM viewModel = new HomeVM(this);
+        HomeVM viewModel = new ViewModelProvider(this).get(HomeVM.class);
+
+        viewModel.initializeProjetosSalvosAdapter(recyclerProjetosSalvos);
+        viewModel.initializeProjetoCategoriaAdapter(recyclerProjetoCategorias);
+        newProjectFab.setOnClickListener(viewModel::newProjectFabListener);
     }
 
     @Override

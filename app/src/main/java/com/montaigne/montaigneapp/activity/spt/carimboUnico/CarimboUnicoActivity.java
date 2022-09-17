@@ -5,8 +5,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import androidx.lifecycle.ViewModelProvider;
+
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.AbstractActivity;
+import com.montaigne.montaigneapp.activity.carimboDefinitivo.CarimboDefinitivoVM;
 
 public class CarimboUnicoActivity extends AbstractActivity {
     protected Button buttonPegarLocalizacao;
@@ -24,7 +27,11 @@ public class CarimboUnicoActivity extends AbstractActivity {
         setContentView(R.layout.activity_carimbo_unico);
 
         initializeViews();
-        CarimboUnicoVM viewModel = new CarimboUnicoVM(this);
+        CarimboUnicoVM viewModel = new ViewModelProvider(this).get(CarimboUnicoVM.class);
+
+        viewModel.setExtras(getIntent().getExtras());
+        imageButtonHome.setOnClickListener(viewModel::homeButtonListener);
+        buttonIniciarEnsaio.setOnClickListener(v -> viewModel.ensaioButtonListener (v, editTextDataInicio));
     }
 
     @Override
