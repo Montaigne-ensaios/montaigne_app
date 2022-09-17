@@ -40,7 +40,6 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAd
             intent.putExtra("name", nome);
             v.getContext().startActivity(intent);
         });
-        // todo: definir se este listener deveria ficar aqui
     }
 
     @Override

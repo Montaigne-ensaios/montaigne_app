@@ -3,6 +3,7 @@ package com.montaigne.montaigneapp.activity.carimboDefinitivo;
 import android.content.Intent;
 import android.view.View;
 
+import com.montaigne.montaigneapp.activity.AbstractActivity;
 import com.montaigne.montaigneapp.activity.home.HomeActivity;
 import com.montaigne.montaigneapp.activity.spt.carimboUnico.CarimboUnicoActivity;
 
@@ -12,7 +13,7 @@ public class CarimboDefinitivoVM {
     public CarimboDefinitivoVM(CarimboDefinitivoActivity activity) {
         this.activity = activity;
         activity.buttonContinuarCarimbo.setOnClickListener(this::continuarCarimboButtonListener);
-        activity.imageButtonHome.setOnClickListener(this::homeButtonListener);
+        activity.imageButtonHome.setOnClickListener(AbstractActivity::homeButtonListener);
 
     }
     // método de getData (validação de entradas)
@@ -29,11 +30,5 @@ public class CarimboDefinitivoVM {
         intent.putExtra("NomeProjeto", activity.fields.get ("NomeProjeto"). getText(). toString());
 
         view.getContext().startActivity(intent);
-
-    }
-
-    private void homeButtonListener (View view) {
-        view.getContext().startActivity(new Intent(view.getContext(), HomeActivity.class));
-        //todo:limpar tasks;
     }
 }

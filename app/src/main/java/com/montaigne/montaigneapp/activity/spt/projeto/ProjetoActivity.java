@@ -13,14 +13,14 @@ public class ProjetoActivity extends AbstractActivity {
     protected RecyclerView recyclerFuros;
     protected ImageButton buttonDeleteFuro, buttonAddFuro;
     // todo: pensar na implementação do DeleteFuro
-    protected TextView textFuro;  // todo: remover quando corrigido
+    protected TextView textFuro;  // fixme: remover quando corrigido
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         String nome = getIntent().getStringExtra("name");
-        // talvez seja uma boa usar enum para padronizar os nomes dos extras em intents
+        // todo: talvez seja uma boa usar enum para padronizar os nomes dos extras em intents
         textFuro.setText(nome + ". " + textFuro.getText());
 
         ProjetoVM viewModel = new ProjetoVM(this);
