@@ -9,13 +9,16 @@ import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import java.util.HashMap;
 
 public class FuroSptDao {
-    private DatabaseReference dbReference;
+    private static DatabaseReference dbReference;
 
-    public FuroSptDao() {
+    public FuroSptDao(String idProjeto) {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        dbReference = firebaseDatabase.getReference(FuroSpt.class.getSimpleName());
+        dbReference = ProjetoSptDao.getDbReference().child(idProjeto);
     }
 
+    public static DatabaseReference getDbReference() {
+        return dbReference;
+    }
     public Query getFuros() {
         return dbReference.orderByKey();
     }

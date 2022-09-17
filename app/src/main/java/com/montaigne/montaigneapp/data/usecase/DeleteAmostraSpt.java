@@ -3,15 +3,16 @@ package com.montaigne.montaigneapp.data.usecase;
 import android.util.Log;
 
 import com.montaigne.montaigneapp.data.dao.spt.AmostraSptDao;
+import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 
 public class DeleteAmostraSpt {
-    private static AmostraSptDao amostraSptDao = new AmostraSptDao();
 
-    public static void deleteAmostraSpt(String id) {
-        amostraSptDao.deleteAmostraById(id).addOnCompleteListener(task -> {
+    public static void deleteAmostraSpt(AmostraSpt amostraSpt) {
+        AmostraSptDao amostraSptDao = new AmostraSptDao(amostraSpt.getIdFuro());
+        amostraSptDao.deleteAmostraById(amostraSpt.getId()).addOnCompleteListener(task -> {
             Log.i("Firebase", "Sucesso ao deletar amostra");
         }).addOnFailureListener(exception ->  {
-            Log.e("Firebase", "Erro ao deletar amostra");
+            Log.e("Firebase", "Falha ao deletar amostra");
         });
     }
 }
