@@ -22,8 +22,8 @@ public class HomeActivity extends AbstractActivity {
 
         HomeVM viewModel = new ViewModelProvider(this).get(HomeVM.class);
 
-        viewModel.initializeProjetosSalvosAdapter(this);
-        viewModel.initializeProjetoCategoriaAdapter(this);
+        viewModel.initializeProjetosSalvosAdapter(recyclerProjetosSalvos);
+        viewModel.initializeProjetoCategoriaAdapter(recyclerProjetoCategorias);
         newProjectFab.setOnClickListener(viewModel::newProjectFabListener);
     }
 

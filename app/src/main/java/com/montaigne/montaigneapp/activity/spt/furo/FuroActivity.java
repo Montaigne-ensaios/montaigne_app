@@ -5,6 +5,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
@@ -26,7 +27,9 @@ public class FuroActivity extends AbstractActivity {
 
         String nome = getIntent().getStringExtra("name");
         textAmostra.setText(nome);
-        FuroVM viewModel = new FuroVM(this);
+        FuroVM viewModel = new ViewModelProvider(this).get(FuroVM.class);
+        buttonDeleteAmostra.setOnClickListener(viewModel::deleteAmostrasButtonListener);
+        viewModel.updateAmostrasAdapter(recyclerAmostras);
     }
 
     @Override

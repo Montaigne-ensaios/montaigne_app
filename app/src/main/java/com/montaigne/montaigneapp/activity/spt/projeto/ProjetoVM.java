@@ -2,31 +2,24 @@ package com.montaigne.montaigneapp.activity.spt.projeto;
 
 import android.view.View;
 
+import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class ProjetoVM {
-    private final ProjetoActivity activity;
+public class ProjetoVM extends ViewModel {
     private ArrayList<String> furos;
 
-    public ProjetoVM(ProjetoActivity activity) {
-        this.activity = activity;
-
+    protected void updateFurosAdapter(RecyclerView recyclerFuros) {
         furos = getFuros();
-        updateFurosAdapter(furos);
-        
-        activity.buttonDeleteFuro.setOnClickListener(this::deleteFurosButtonListener);
-    }
-
-    private void updateFurosAdapter(ArrayList<String> furos) {
-        FurosAdapter adapter = new FurosAdapter(); // todo: revisar quando passar a lista
+        FurosAdapter adapter = new FurosAdapter();
         adapter.setFuros(furos);
-        activity.recyclerFuros.setAdapter(adapter);
-        activity.recyclerFuros.setLayoutManager(new LinearLayoutManager(activity));
+        recyclerFuros.setAdapter(adapter);
+        recyclerFuros.setLayoutManager(new LinearLayoutManager(recyclerFuros.getContext()));
     }
 
-    private void deleteFurosButtonListener(View view) {
+    protected void deleteFurosButtonListener(View view) {
     }
 
     private ArrayList<String> getFuros() {

@@ -5,6 +5,7 @@ import android.view.View;
 
 import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.carimboDefinitivo.CarimboDefinitivoActivity;
@@ -18,24 +19,25 @@ public class HomeVM extends ViewModel {
         updateProjetos();
     }
 
-    protected void initializeProjetoCategoriaAdapter(HomeActivity activity) {
+    protected void initializeProjetoCategoriaAdapter(RecyclerView recyclerProjetoCategorias) {
         ArrayList<Object[]> categorias = new ArrayList<>();  // lista de filtros de projeto
         categorias.add(new Object[]{"SPT", R.drawable.ic_logospt_azul});
         categorias.add(new Object[]{"Granulometria", R.drawable.ic_logospt_azul});
 
         ProjetoCategoriaAdapter adapter = new ProjetoCategoriaAdapter();
         adapter.setCategoriasProjeto(categorias);
-        activity.recyclerProjetoCategorias.setAdapter(adapter);
-        activity.recyclerProjetoCategorias.setLayoutManager(new LinearLayoutManager(
-                        activity,
+        recyclerProjetoCategorias.setAdapter(adapter);
+        recyclerProjetoCategorias.setLayoutManager(new LinearLayoutManager(
+                recyclerProjetoCategorias.getContext(),
                         LinearLayoutManager.HORIZONTAL,
                         false));
     }
 
-    protected void initializeProjetosSalvosAdapter(HomeActivity activity) {
+    protected void initializeProjetosSalvosAdapter(RecyclerView recyclerProjetosSalvos) {
         ProjetosSalvosAdapter adapter = new ProjetosSalvosAdapter(this.projetosSalvos);
-        activity.recyclerProjetosSalvos.setAdapter(adapter);
-        activity.recyclerProjetosSalvos.setLayoutManager(new LinearLayoutManager(activity));
+        recyclerProjetosSalvos.setAdapter(adapter);
+        recyclerProjetosSalvos.setLayoutManager(new LinearLayoutManager(
+                recyclerProjetosSalvos.getContext()));
     }
 
     private void updateProjetos() {
