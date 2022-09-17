@@ -7,8 +7,11 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.lifecycle.ViewModelProvider;
+
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.AbstractActivity;
+import com.montaigne.montaigneapp.activity.home.HomeVM;
 
 import java.util.ArrayList;
 
@@ -29,7 +32,18 @@ public class EnsaioActivity extends AbstractActivity {
         setContentView(R.layout.activity_ensaio);
 
         initializeViews();
-        EnsaioVM viewModel = new EnsaioVM(this);
+        EnsaioVM viewModel = new ViewModelProvider(this).get(EnsaioVM.class);
+        viewModel.setExtras(getIntent().getExtras());
+
+        textAmostraN.setText("Amostra " + viewModel.getAmostra().getId());
+
+        buttonFinalizarFuro.setOnClickListener(v -> viewModel.finalizarFuroButtonListener (v, golpes, penetracoes));
+        imageButtonHome.setOnClickListener(viewModel::homeButtonListener);
+
+        for (int i = 0; i < 3; i++) {
+            buttonsIncrementGolpes.get(i).setOnClickListener(v -> viewModel.incrementGolpe((EditText) v));
+            buttonsDecrementGolpes.get(i).setOnClickListener(v -> viewModel.decrementGolpe((EditText) v));
+        }
     }
 
     @Override

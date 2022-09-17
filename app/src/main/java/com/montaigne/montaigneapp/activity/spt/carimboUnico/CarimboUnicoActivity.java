@@ -29,9 +29,9 @@ public class CarimboUnicoActivity extends AbstractActivity {
         initializeViews();
         CarimboUnicoVM viewModel = new ViewModelProvider(this).get(CarimboUnicoVM.class);
 
+        viewModel.setExtras(getIntent().getExtras());
         imageButtonHome.setOnClickListener(viewModel::homeButtonListener);
         buttonIniciarEnsaio.setOnClickListener(v -> viewModel.ensaioButtonListener (v, editTextDataInicio));
-        viewModel.setExtras(getIntent().getExtras());
     }
 
     @Override
