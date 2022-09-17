@@ -22,7 +22,6 @@ public abstract class AbstractActivity extends AppCompatActivity {
 
     protected abstract boolean initializeViews();
     // deve retornar true se uma view de teste for nula
-    protected abstract void initializeViews();
 
     public static void homeButtonListener(View view) {
         Intent intent = new Intent(view.getContext(), HomeActivity.class);
