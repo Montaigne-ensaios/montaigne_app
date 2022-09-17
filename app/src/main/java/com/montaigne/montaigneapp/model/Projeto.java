@@ -5,28 +5,25 @@ import java.io.Serializable;
 public abstract class Projeto implements Serializable {
 
     private String id;
-    private String name;
-    private String client;
-    private String company;
-    private String technician;
-    private String phoneNumber;
-    private String starData;
-    private Coordinate coordinate;
+    private String nome;
+    private String cliente;
+    private String empresa;
+    private String tecnico;
+    private String numeroDeTelefone;
+    private String dataInicio;
+    private Coordenada coordenadas;
 
     public Projeto() {}
 
-    public Projeto(String id, String name, String client, String company, String technician,
-                   String phoneNumber, String starData, Coordinate coordinate) {
-
+    public Projeto(String id, String nome, String cliente, String empresa, String tecnico, String numeroDeTelefone, String dataInicio, Coordenada coordenadas) {
         this.id = id;
-        this.name = name;
-        this.client = client;
-        this.company = company;
-        this.technician = technician;
-        this.phoneNumber = phoneNumber;
-        this.starData = starData;
-        this.coordinate = coordinate;
-
+        this.nome = nome;
+        this.cliente = cliente;
+        this.empresa = empresa;
+        this.tecnico = tecnico;
+        this.numeroDeTelefone = numeroDeTelefone;
+        this.dataInicio = dataInicio;
+        this.coordenadas = coordenadas;
     }
 
     public String getId() {
@@ -37,59 +34,59 @@ public abstract class Projeto implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String getClient() {
-        return client;
+    public String getCliente() {
+        return cliente;
     }
 
-    public void setClient(String client) {
-        this.client = client;
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
     }
 
-    public String getCompany() {
-        return company;
+    public String getEmpresa() {
+        return empresa;
     }
 
-    public void setCompany(String company) {
-        this.company = company;
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
     }
 
-    public String getTechnician() {
-        return technician;
+    public String getTecnico() {
+        return tecnico;
     }
 
-    public void setTechnician(String technician) {
-        this.technician = technician;
+    public void setTecnico(String tecnico) {
+        this.tecnico = tecnico;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getNumeroDeTelefone() {
+        return numeroDeTelefone;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setNumeroDeTelefone(String numeroDeTelefone) {
+        this.numeroDeTelefone = numeroDeTelefone;
     }
 
-    public String getStarData() {
-        return starData;
+    public String getDataInicio() {
+        return dataInicio;
     }
 
-    public void setStarData(String starData) {
-        this.starData = starData;
+    public void setDataInicio(String dataInicio) {
+        this.dataInicio = dataInicio;
     }
 
-    public Coordinate getCoordinate() {
-        return coordinate;
+    public Coordenada getCoordenadas() {
+        return coordenadas;
     }
 
-    public void setCoordinate(Coordinate coordinate) {
-        this.coordinate = coordinate;
+    public void setCoordenadas(Coordenada coordenadas) {
+        this.coordenadas = coordenadas;
     }
 }

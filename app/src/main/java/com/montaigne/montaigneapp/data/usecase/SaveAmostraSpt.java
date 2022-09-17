@@ -6,22 +6,13 @@ import com.montaigne.montaigneapp.data.dao.spt.AmostraSptDao;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 
 public class SaveAmostraSpt {
-    private static boolean result = false;
-    private static AmostraSptDao amostraSptDao = new AmostraSptDao();
 
-    public static boolean saveAmostraSpt(AmostraSpt amostraSpt) {
-        result = false;
-
+    public void saveAmostraSpt(AmostraSpt amostraSpt) {
+        AmostraSptDao amostraSptDao = new AmostraSptDao(amostraSpt.getIdFuro());
         amostraSptDao.insertAmostra(amostraSpt).addOnCompleteListener(task -> {
-            result = true;
+            Log.i("Firebase", "Sucesso ao salvar amostra");
         }).addOnFailureListener(exception -> {
-            Log.e("Erro ao salvar", "Erro ao salvar amostra de SPT");
+            Log.e("Firebase", "Falha ao salvar amostra");
         });
-
-        return result;
-    }
-
-    public static void updateAmostraSpt() {
-        
     }
 }

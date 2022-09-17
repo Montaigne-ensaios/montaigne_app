@@ -3,20 +3,16 @@ package com.montaigne.montaigneapp.data.usecase;
 import android.util.Log;
 
 import com.montaigne.montaigneapp.data.dao.spt.FuroSptDao;
+import com.montaigne.montaigneapp.model.spt.FuroSpt;
 
 public class DeleteFuroSpt {
-    private static boolean result = false;
-    private static FuroSptDao furoSptDao = new FuroSptDao();
 
-    public static boolean deleteFuroSpt(String id) {
-        result = false;
-
-        furoSptDao.deleteFuroById(id).addOnCompleteListener(task -> {
-            result = true;
+    public static void deleteFuroSpt(FuroSpt furoSpt) {
+        FuroSptDao furoSptDao = new FuroSptDao(furoSpt.getIdProjeto());
+        furoSptDao.deleteFuroById(furoSpt.getId()).addOnCompleteListener(task -> {
+            Log.i("Firebase", "Sucesso ao deletar furo");
         }).addOnFailureListener(exception ->  {
-            Log.e("Erro ao salvar", "Erro ao deletar furo de SPT");
+            Log.e("Firebase", "Falha ao deletar furo");
         });
-
-        return result;
     }
 }

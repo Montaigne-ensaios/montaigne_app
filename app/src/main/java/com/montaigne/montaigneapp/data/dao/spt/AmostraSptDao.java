@@ -11,9 +11,9 @@ import java.util.HashMap;
 public class AmostraSptDao {
     private DatabaseReference dbReference;
 
-    public AmostraSptDao() {
+    public AmostraSptDao(String idFuro) {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        dbReference = firebaseDatabase.getReference(AmostraSpt.class.getSimpleName());
+        dbReference = FuroSptDao.getDbReference().child(idFuro);
     }
 
     public Query getAmostras() {

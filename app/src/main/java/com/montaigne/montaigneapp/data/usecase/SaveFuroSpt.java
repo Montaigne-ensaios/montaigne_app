@@ -6,22 +6,13 @@ import com.montaigne.montaigneapp.data.dao.spt.FuroSptDao;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 
 public class SaveFuroSpt {
-    private static boolean result = false;
-    private static FuroSptDao furoSptDao = new FuroSptDao();
 
-    public static boolean saveFuroSpt(FuroSpt furoSpt) {
-        result = false;
-
+    public void saveFuroSpt(FuroSpt furoSpt) {
+        FuroSptDao furoSptDao = new FuroSptDao(furoSpt.getIdProjeto());
         furoSptDao.insertFuro(furoSpt).addOnCompleteListener(task -> {
-            result = true;
+            Log.i("Firebase", "Sucesso ao salvar furo");
         }).addOnFailureListener(exception -> {
-            Log.e("Erro ao salvar", "Erro ao salvar furo de SPT");
+            Log.e("Firebase", "Falha ao salvar furo");
         });
-
-        return result;
-    }
-
-    public static void updateFuroSpt() {
-
     }
 }

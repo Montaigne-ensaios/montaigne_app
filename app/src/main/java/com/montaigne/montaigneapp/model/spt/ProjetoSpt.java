@@ -1,40 +1,36 @@
 package com.montaigne.montaigneapp.model.spt;
 
-import com.montaigne.montaigneapp.model.Coordinate;
+import com.montaigne.montaigneapp.model.Coordenada;
 import com.montaigne.montaigneapp.model.Projeto;
-import com.montaigne.montaigneapp.model.spt.FuroSpt;
 
 import java.util.List;
 
 public class ProjetoSpt extends Projeto {
 
-    private int holeNumber;
-    private List<FuroSpt> polls;
+    private int numeroDoFuro;
+    private List<FuroSpt> listaDeFuros;
 
     public ProjetoSpt() {}
 
-    public ProjetoSpt(String id, String name, String client, String company, String technician,
-                      String phoneNumber, String starData, Coordinate coordinate, int holeNumber,
-                      List<FuroSpt> samples) {
-
-        super(id, name, client, company, technician, phoneNumber, starData, coordinate);
-        this.holeNumber = holeNumber;
-        this.polls = samples;
+    public ProjetoSpt(String id, String nome, String cliente, String empresa, String tecnico, String numeroDeTelefone, String dataInicio, Coordenada coordenadas, int numeroDoFuro, List<FuroSpt> listaDeFuros) {
+        super(id, nome, cliente, empresa, tecnico, numeroDeTelefone, dataInicio, coordenadas);
+        this.numeroDoFuro = numeroDoFuro;
+        this.listaDeFuros = listaDeFuros;
     }
 
-    public int getHoleNumber() {
-        return holeNumber;
+    public int getNumeroDoFuro() {
+        return numeroDoFuro;
     }
 
-    public void setHoleNumber(int holeNumber) {
-        this.holeNumber = holeNumber;
+    public void setNumeroDoFuro(int numeroDoFuro) {
+        this.numeroDoFuro = numeroDoFuro;
     }
 
-    public List<FuroSpt> getPolls() {
-        return polls;
+    public List<FuroSpt> getListaDeFuros() {
+        return listaDeFuros;
     }
 
-    public void setPolls(List<FuroSpt> polls) {
-        this.polls = polls;
+    public void setListaDeFuros(List<FuroSpt> listaDeFuros) {
+        this.listaDeFuros = listaDeFuros;
     }
 }

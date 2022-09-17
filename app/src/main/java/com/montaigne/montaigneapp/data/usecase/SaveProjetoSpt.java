@@ -6,22 +6,13 @@ import com.montaigne.montaigneapp.data.dao.spt.ProjetoSptDao;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 public class SaveProjetoSpt {
-    private static boolean result = false;
-    private static ProjetoSptDao projetoSptDao = new ProjetoSptDao();
 
-    public static boolean saveProjetoSpt(ProjetoSpt projetoSpt) {
-        result = false;
-
+    public void saveProjetoSpt(ProjetoSpt projetoSpt) {
+        ProjetoSptDao projetoSptDao = new ProjetoSptDao();
         projetoSptDao.insertProjeto(projetoSpt).addOnCompleteListener(task -> {
-            result = true;
+            Log.i("Firebase", "Sucesso ao salvar projeto");
         }).addOnFailureListener(exception -> {
-            Log.e("Erro ao salvar", "Erro ao salvar projeto de SPT");
+            Log.e("Firebase", "Falha ao salvar projeto");
         });
-
-        return result;
-    }
-
-    public static void updateProjetoSpt() {
-
     }
 }
