@@ -7,8 +7,11 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.lifecycle.ViewModelProvider;
+
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.AbstractActivity;
+import com.montaigne.montaigneapp.activity.home.HomeVM;
 
 import java.util.HashMap;
 
@@ -27,7 +30,11 @@ public class CarimboDefinitivoActivity extends AbstractActivity {
         setContentView(R.layout.activity_carimbo_definitivo);
 
         initializeViews();
-        CarimboDefinitivoVM viewModel = new CarimboDefinitivoVM(this);
+
+        CarimboDefinitivoVM viewModel = new ViewModelProvider(this).get(CarimboDefinitivoVM.class);
+
+        buttonContinuarCarimbo.setOnClickListener(v -> viewModel.continuarCarimboButtonListener (v, fields));
+        imageButtonHome.setOnClickListener(viewModel::homeButtonListener);
     }
 
     protected void initializeViews() {
