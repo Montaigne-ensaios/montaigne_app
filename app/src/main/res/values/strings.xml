@@ -39,6 +39,7 @@
 
     <!-- Strings da tela Carimbo Único-->
     <string name="TxtCarimboUnicoDataInicio">Data de inicio:</string>
+    <string name="TxtCarimboUnicoHint">MM/DD/YYYY</string>
     <string name="TxtCarimboUnicoNivelFuro">Nivel do Furo N:</string>
     <string name="TxtCarimboUnicoCoordenadaFuro">Coordernadas do Furo N:</string>
     <string name="TxtBotaoLocalizacao">Capturar Localização</string>
