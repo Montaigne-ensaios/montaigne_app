@@ -20,10 +20,13 @@
 
 
 
+
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/color_primary</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
+
+        <!--Button flutuante-->
+        <item name="colorOnSecondary">@color/fundo</item>
 
 
         <!-- Status bar color. -->
@@ -40,7 +43,6 @@
     <style name="Theme.MontaigneApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.MontaigneApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
 
 
 

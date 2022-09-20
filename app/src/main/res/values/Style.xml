@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!--- Button padrão do app. -->
+
     <style name="ButtonPadrao" parent="Widget.MaterialComponents.Button">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">14dp</item>
@@ -12,9 +15,14 @@
 
 
     </style>
+
+    <!--- ImageButton padrão do app. -->
+
     <style name="ImageButton" parent="Widget.AppCompat.ImageButton">
         <item name="backgroundTint">#00042741</item>
     </style>
+
+
 
 
 </resources>
