@@ -22,7 +22,18 @@
         <item name="backgroundTint">#00042741</item>
     </style>
 
+    <!--- EditText padrão do app. -->
 
+<style name="Edit_Text" parent="Widget.AppCompat.EditText">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:colorAccent">@color/accent</item>
+    <item name="android:textColor">@color/black</item>
+    <item name="android:textSize">14dp</item>
+    <item name="android:padding">10dp</item>
+    <item name ="android:background">@drawable/style_edit_text</item>
+
+</style>
 
 
 </resources>
