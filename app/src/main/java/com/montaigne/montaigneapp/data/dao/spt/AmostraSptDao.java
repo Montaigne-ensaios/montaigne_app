@@ -13,7 +13,7 @@ public class AmostraSptDao {
 
     public AmostraSptDao(String idFuro) {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        dbReference = FuroSptDao.getDbReference().child(idFuro);
+        //dbReference = FuroSptDao.getDbReference().child(idFuro);
     }
 
     public DatabaseReference getDbReference() {
