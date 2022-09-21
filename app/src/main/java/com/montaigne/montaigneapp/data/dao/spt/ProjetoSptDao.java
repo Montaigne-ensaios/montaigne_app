@@ -9,16 +9,17 @@ import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import java.util.HashMap;
 
 public class ProjetoSptDao {
-    private static DatabaseReference dbReference;
+    private DatabaseReference dbReference;
 
     public ProjetoSptDao() {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        dbReference = firebaseDatabase.getReference("ProjetoSpt");
+        dbReference = firebaseDatabase.getReference(ProjetoSpt.class.getSimpleName());
     }
 
-    public static DatabaseReference getDbReference() {
+    public DatabaseReference getDbReference() {
         return dbReference;
     }
+
     public Query getProjetos() {
         return dbReference.orderByKey();
     }

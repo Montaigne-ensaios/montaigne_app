@@ -9,8 +9,6 @@ import androidx.lifecycle.ViewModel;
 
 import com.montaigne.montaigneapp.activity.home.HomeActivity;
 import com.montaigne.montaigneapp.activity.spt.ensaio.EnsaioActivity;
-import com.montaigne.montaigneapp.data.usecase.SaveAmostraSpt;
-import com.montaigne.montaigneapp.data.usecase.SaveProjetoSpt;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
@@ -30,29 +28,32 @@ public class CarimboUnicoVM extends ViewModel {
     }
 
     private void updateProjeto(EditText editTextDataInicio) {
-        projeto.setName(extras.getString("NomeProjeto"));
-        projeto.setTechnician(extras.getString("Tecnico"));
-        projeto.setCompany(extras.getString("Empresa"));
-        projeto.setPhoneNumber(extras.getString("Contato"));
-        projeto.setClient(extras.getString("Cliente"));
+        projeto.setNome(extras.getString("NomeProjeto"));
+        projeto.setTecnico(extras.getString("Tecnico"));
+        projeto.setEmpresa(extras.getString("Empresa"));
+        projeto.setNumeroDeTelefone(extras.getString("Contato"));
+        projeto.setCliente(extras.getString("Cliente"));
 //        projeto.setCoordinate(extras.getString("Cliente"));  // precisa da api de coordenadas
-        projeto.setHoleNumber(extras.getInt("nFuros"));
+        // projeto.setHoleNumber(extras.getInt("nFuros"));
         // todo: eliminar a recuperação dos campos por intent
 
-        projeto.setStarData(editTextDataInicio.getText().toString());
-        SaveProjetoSpt.saveProjetoSpt(projeto);
+        // projeto.setStarData(editTextDataInicio.getText().toString());
+        //SaveProjetoSpt.saveProjetoSpt(projeto);
     }
 
     protected void ensaioButtonListener(View view, EditText editTextDataInicio) {
         FuroSpt furoSpt = new FuroSpt();
-        furoSpt.setCode("0");
+        //furoSpt.setCode("0");
         ArrayList<AmostraSpt> amostras = new ArrayList<>();
         amostras.add(new AmostraSpt());
         amostras.get(0).setId("0");
-        furoSpt.setSamples(amostras);
+
+        furoSpt.setListaDeAmostras(amostras);
+
         ArrayList<FuroSpt> furos = new ArrayList();
         furos.add(furoSpt);
-        projeto.setPolls(furos);
+
+        projeto.setListaDeFuros(furos);
         updateProjeto(editTextDataInicio);
 
         Intent intent = new Intent(view.getContext(), EnsaioActivity.class);

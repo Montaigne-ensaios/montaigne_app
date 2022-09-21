@@ -16,6 +16,10 @@ public class AmostraSptDao {
         dbReference = FuroSptDao.getDbReference().child(idFuro);
     }
 
+    public DatabaseReference getDbReference() {
+        return dbReference;
+    }
+
     public Query getAmostras() {
         return dbReference.orderByKey();
     }

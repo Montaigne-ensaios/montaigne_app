@@ -9,7 +9,6 @@ import androidx.lifecycle.ViewModel;
 
 import com.montaigne.montaigneapp.activity.home.HomeActivity;
 import com.montaigne.montaigneapp.activity.spt.projeto.ProjetoActivity;
-import com.montaigne.montaigneapp.data.usecase.SaveAmostraSpt;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
@@ -24,8 +23,8 @@ public class EnsaioVM extends ViewModel {
 
     protected void setExtras(Bundle bundle) {
         projeto = (ProjetoSpt) bundle.getSerializable("Projeto");
-        furo = projeto.getPolls().get(bundle.getInt("nFuro", 0));
-        amostra = furo.getSamples().get(bundle.getInt("nAmostra", 0));
+        furo = projeto.getListaDeFuros().get(bundle.getInt("nFuro", 0));
+        amostra = furo.getListaDeAmostras().get(bundle.getInt("nAmostra", 0));
     }
 
     public AmostraSpt getAmostra() {
@@ -45,13 +44,13 @@ public class EnsaioVM extends ViewModel {
     }
 
     private void updateAmostra(ArrayList<EditText> golpes, ArrayList<EditText> penetracoes){
-        amostra.setBlows1(getInt(golpes.get(0)));
-        amostra.setBlows2(getInt(golpes.get(1)));
-        amostra.setBlows3(getInt(golpes.get(2)));
+        amostra.setGolpe1(getInt(golpes.get(0)));
+        amostra.setGolpe2(getInt(golpes.get(1)));
+        amostra.setGolpe3(getInt(golpes.get(2)));
 
-        amostra.setNspt(getInt(penetracoes.get(1)) + getInt(penetracoes.get(2)));
+        // amostra.setNspt(getInt(penetracoes.get(1)) + getInt(penetracoes.get(2)));
 
-        SaveAmostraSpt.saveAmostraSpt(amostra);
+        // SaveAmostraSpt.saveAmostraSpt(amostra);
     }
 
 

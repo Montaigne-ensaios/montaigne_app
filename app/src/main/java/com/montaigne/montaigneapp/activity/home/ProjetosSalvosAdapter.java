@@ -1,6 +1,5 @@
 package com.montaigne.montaigneapp.activity.home;
 
-import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,17 +11,25 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.spt.projeto.ProjetoActivity;
+import com.montaigne.montaigneapp.data.dao.spt.ProjetoSptDao;
+import com.montaigne.montaigneapp.model.Projeto;
+import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAdapter.ViewHolder> {
     // todo: passar esta array list para a entity
-    private final ArrayList<String> projetos;
+    private ProjetoSptDao projetoSptDao;
+    private List<Projeto> projetoList;
 
-    public ProjetosSalvosAdapter(ArrayList<String> projetos) {
-        this.projetos = projetos;
+    public ProjetosSalvosAdapter() {
+        this.projetoSptDao = new ProjetoSptDao();
+        reloadProjetos();
     }
 
     @NonNull
@@ -34,18 +41,41 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAd
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String nome = projetos.get(position);
-        holder.textNomeProjeto.setText(nome);
+        Projeto projeto = projetoList.get(position);
+
+        holder.textNomeProjeto.setText( projeto.getNome() );
+
         holder.cardView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), ProjetoActivity.class);
-            intent.putExtra("name", nome);
+            intent.putExtra("name", projeto);
             v.getContext().startActivity(intent);
         });
         // todo: definir se este listener deveria ficar aqui
     }
 
     @Override
-    public int getItemCount() { return projetos.size(); }
+    public int getItemCount() { return projetoList.size(); }
+
+    private void reloadProjetos() {
+        DatabaseReference reference = projetoSptDao.getDbReference();
+        projetoList.clear();
+
+        try {
+            reference.getDatabase().setPersistenceEnabled(true);
+        } catch (Exception e) {
+
+        }
+
+        reference.get().addOnCompleteListener(dataSnapshotProjetoSpt -> {
+            for (DataSnapshot child : dataSnapshotProjetoSpt.getResult().getChildren()) {
+                // todo: colocar os outros tipos de projeto (como granulometria) para serem adicionados na lista aqui
+                ProjetoSpt projeto = child.getValue(ProjetoSpt.class);
+                projetoList.add(projeto);
+            }
+
+            notifyDataSetChanged();
+        });
+    }
 
     protected class ViewHolder extends RecyclerView.ViewHolder {
         protected final CardView cardView;
@@ -62,7 +92,7 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAd
             textDateProjeto = itemView.findViewById(R.id.textDateProjeto);
             imageProjeto = itemView.findViewById(R.id.imageProjeto);
 
-           imageProjeto.setImageResource(R.drawable.icon_home3);
+            imageProjeto.setImageResource(R.drawable.icon_home3);
         }
     }
 }

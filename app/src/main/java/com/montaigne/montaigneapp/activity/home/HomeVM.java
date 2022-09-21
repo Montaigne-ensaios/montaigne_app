@@ -7,16 +7,27 @@ import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DatabaseReference;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.carimboDefinitivo.CarimboDefinitivoActivity;
+import com.montaigne.montaigneapp.data.dao.spt.ProjetoSptDao;
+import com.montaigne.montaigneapp.model.Projeto;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class HomeVM extends ViewModel {
+    private final HomeActivity activity;
     private ArrayList<String> projetosSalvos;
 
-    public HomeVM () {
-        updateProjetos();
+    public HomeVM (HomeActivity activity) {
+        this.activity = activity;
+
+        initializeProjetosSalvosAdapter();
+        initializeProjetoCategoriaAdapter(activity.recyclerProjetoCategorias);
+
+        activity.newProjectFab.setOnClickListener(this::newProjectFabListener);
     }
 
     protected void initializeProjetoCategoriaAdapter(RecyclerView recyclerProjetoCategorias) {
@@ -28,28 +39,28 @@ public class HomeVM extends ViewModel {
         adapter.setCategoriasProjeto(categorias);
         recyclerProjetoCategorias.setAdapter(adapter);
         recyclerProjetoCategorias.setLayoutManager(new LinearLayoutManager(
-                recyclerProjetoCategorias.getContext(),
+                        recyclerProjetoCategorias.getContext(),
                         LinearLayoutManager.HORIZONTAL,
                         false));
     }
 
-    protected void initializeProjetosSalvosAdapter(RecyclerView recyclerProjetosSalvos) {
-        ProjetosSalvosAdapter adapter = new ProjetosSalvosAdapter(this.projetosSalvos);
-        recyclerProjetosSalvos.setAdapter(adapter);
-        recyclerProjetosSalvos.setLayoutManager(new LinearLayoutManager(
-                recyclerProjetosSalvos.getContext()));
+    private void initializeProjetosSalvosAdapter() {
+        ProjetosSalvosAdapter adapter = new ProjetosSalvosAdapter();
+
+        activity.recyclerProjetosSalvos.setAdapter(adapter);
+        activity.recyclerProjetosSalvos.setLayoutManager(new LinearLayoutManager(activity));
     }
 
-    private void updateProjetos() {
-        ArrayList<String> mock = new ArrayList<>();
-        mock.add("Exemplo de projeto");
-        mock.add("Outro exemplo");
-        mock.add("Só mais um");
-        mock.add("Tá bom parei");
-        this.projetosSalvos = mock;
+    private ArrayList<String> getProjetos() {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Exemplo de projeto");
+        list.add("Outro exemplo");
+        list.add("Só mais um");
+        list.add("Tá bom parei");
+        return list;
     }
 
-    protected void categoriaFilterListener(View view) {
+    private void categoriaFilterListener(View view) {
         // seleciona apenas os projetos da categoria especifica
     }
 
