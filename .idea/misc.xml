@@ -8,12 +8,12 @@
         <entry key="..\:/Programas/Android_Studio/GitHub/montaigne_app/app/src/main/res/layout/activity_carimbo_unico.xml" value="0.3875" />
         <entry key="..\:/Users/julia/AndroidStudioProjects/montaigne_app/app/src/main/res/drawable/style_edit_text.xml" value="0.1565" />
         <entry key="..\:/Users/julia/AndroidStudioProjects/montaigne_app/app/src/main/res/layout/acitivity_furo.xml" value="0.22" />
-        <entry key="..\:/Users/julia/AndroidStudioProjects/montaigne_app/app/src/main/res/layout/activity_carimbo_definitivo.xml" value="0.33" />
-        <entry key="..\:/Users/julia/AndroidStudioProjects/montaigne_app/app/src/main/res/layout/activity_carimbo_unico.xml" value="0.25" />
+        <entry key="..\:/Users/julia/AndroidStudioProjects/montaigne_app/app/src/main/res/layout/activity_carimbo_definitivo.xml" value="0.67" />
+        <entry key="..\:/Users/julia/AndroidStudioProjects/montaigne_app/app/src/main/res/layout/activity_carimbo_unico.xml" value="0.22" />
         <entry key="..\:/Users/julia/AndroidStudioProjects/montaigne_app/app/src/main/res/layout/activity_ensaio.xml" value="0.33" />
-        <entry key="..\:/Users/julia/AndroidStudioProjects/montaigne_app/app/src/main/res/layout/activity_home.xml" value="0.22" />
+        <entry key="..\:/Users/julia/AndroidStudioProjects/montaigne_app/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/Users/julia/AndroidStudioProjects/montaigne_app/app/src/main/res/layout/activity_projeto.xml" value="0.2" />
-        <entry key="..\:/Users/julia/AndroidStudioProjects/montaigne_app/app/src/main/res/layout/adapter_home_projeto_categoria.xml" value="0.18229166666666666" />
+        <entry key="..\:/Users/julia/AndroidStudioProjects/montaigne_app/app/src/main/res/layout/adapter_home_projeto_categoria.xml" value="0.5" />
         <entry key="..\:/Users/julia/AndroidStudioProjects/montaigne_app/app/src/main/res/layout/adapter_home_projetos.xml" value="0.25" />
         <entry key="..\:/Users/julia/AndroidStudioProjects/montaigne_app/app/src/main/res/layout/adapter_projeto.xml" value="0.25" />
         <entry key="..\:/Users/julia/AndroidStudioProjects/montaigne_app/app/src/main/res/layout/toolbar_home.xml" value="0.22" />
@@ -21,7 +21,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
