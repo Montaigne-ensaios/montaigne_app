@@ -51,6 +51,7 @@ public class HomeVM {
         list.add("Outro exemplo");
         list.add("Só mais um");
         list.add("Tá bom parei");
+        list.add("Tá bom parei");
         return list;
     }
 
