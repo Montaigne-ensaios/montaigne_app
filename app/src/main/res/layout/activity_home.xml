@@ -60,7 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:src="@drawable/icon_adicionar"
+        android:src="@drawable/icon_fab_add"
         app:elevation="20dp"
         app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="parent"

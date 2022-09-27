@@ -81,6 +81,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textImputLayoutNameProject"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="70dp"
+                    android:hint="name"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/textNomeProjeto"
+                    app:layout_constraintTop_toBottomOf="@+id/textNomeProjeto">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textImputEditTextNameProject"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
                 <ImageButton
                     android:id="@+id/imageButtonHelpLocalObra"
                     android:layout_width="wrap_content"
@@ -103,8 +127,8 @@
                     android:textAlignment="center"
                     android:textColor="@color/destaque"
                     android:textSize="12sp"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
-                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
@@ -115,8 +139,8 @@
                     android:text="@string/TxtCarimboDefinitivoAviso2"
                     android:textColor="@color/destaque"
                     android:textSize="18sp"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
-                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
                     app:layout_constraintTop_toBottomOf="@+id/textAviso1" />
 
                 <ImageView
@@ -124,8 +148,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
-                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
                     app:layout_constraintTop_toBottomOf="@+id/textAviso2"
                     app:srcCompat="@drawable/ic_launcher_background"
                     tools:srcCompat="@tools:sample/avatars" />
@@ -138,25 +162,11 @@
                     android:text="@string/TxtCarimboDefinitivoNomeProjeto"
                     android:textColor="@color/black"
                     android:textSize="18sp"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
                     app:layout_constraintTop_toBottomOf="@+id/imageButtonCamera" />
 
-                <EditText
-
-                    android:id="@+id/editTextNomeProjeto"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:drawableRight="@android:drawable/ic_menu_edit"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:minHeight="48dp"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline3"
-                    app:layout_constraintStart_toStartOf="@+id/guideline2"
-                    app:layout_constraintTop_toBottomOf="@+id/textNomeProjeto" />
 
                 <TextView
                     android:id="@+id/textTecnico"
@@ -169,7 +179,7 @@
                     app:layout_constraintEnd_toEndOf="@+id/textNomeProjeto"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/textNomeProjeto"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextNomeProjeto" />
+                    app:layout_constraintTop_toBottomOf="@+id/textImputLayoutNameProject" />
 
                 <EditText
                     android:id="@+id/editTextTecnico"
@@ -180,9 +190,9 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:minHeight="48dp"
-                    app:layout_constraintEnd_toEndOf="@+id/editTextNomeProjeto"
+                    app:layout_constraintEnd_toEndOf="@+id/textImputLayoutNameProject"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/editTextNomeProjeto"
+                    app:layout_constraintStart_toStartOf="@+id/textImputLayoutNameProject"
                     app:layout_constraintTop_toBottomOf="@+id/textTecnico" />
 
                 <TextView
@@ -212,18 +222,18 @@
                     app:layout_constraintTop_toBottomOf="@+id/textEmpresa" />
 
                 <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline2"
+                    android:id="@+id/guidelineStart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.1" />
+                    app:layout_constraintGuide_percent="0.08" />
 
                 <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guideline3"
+                    android:id="@+id/guidelineEnd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.90" />
+                    app:layout_constraintGuide_percent="0.96" />
 
                 <TextView
                     android:id="@+id/textContato"
@@ -262,7 +272,7 @@
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="@+id/textContato"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
                     app:layout_constraintTop_toBottomOf="@+id/editTextContato" />
 
                 <EditText
@@ -275,7 +285,7 @@
                     android:minHeight="48dp"
                     app:layout_constraintEnd_toEndOf="@+id/editTextContato"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
                     app:layout_constraintTop_toBottomOf="@+id/textCliente" />
 
                 <TextView
@@ -288,7 +298,7 @@
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="@+id/textCliente"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
                     app:layout_constraintTop_toBottomOf="@+id/editTextCliente" />
 
                 <EditText
@@ -302,7 +312,7 @@
                     android:minHeight="48dp"
                     app:layout_constraintEnd_toEndOf="@+id/editTextCliente"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
                     app:layout_constraintTop_toBottomOf="@+id/textLocalObra" />
 
                 <TextView
@@ -315,7 +325,7 @@
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="@+id/textLocalObra"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
                     app:layout_constraintTop_toBottomOf="@+id/editTextLocalObra" />
 
                 <EditText
@@ -328,7 +338,7 @@
                     android:minHeight="48dp"
                     app:layout_constraintEnd_toEndOf="@+id/editTextLocalObra"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
                     app:layout_constraintTop_toBottomOf="@+id/textQuantidadeFuros" />
 
                 <TextView
@@ -341,7 +351,7 @@
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="@+id/textQuantidadeFuros"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
                     app:layout_constraintTop_toBottomOf="@+id/editTextQuantidadeFuros" />
 
                 <EditText
@@ -355,7 +365,7 @@
                     android:minHeight="48dp"
                     app:layout_constraintEnd_toEndOf="@+id/editTextQuantidadeFuros"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
                     app:layout_constraintTop_toBottomOf="@+id/textReferenciaNivel" />
 
                 <ImageButton
@@ -373,11 +383,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#00FFFFFF"
-                    app:layout_constraintBottom_toBottomOf="@+id/editTextNomeProjeto"
+                    app:layout_constraintBottom_toBottomOf="@+id/textImputLayoutNameProject"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/editTextNomeProjeto"
-                    app:layout_constraintTop_toTopOf="@+id/editTextNomeProjeto"
+                    app:layout_constraintStart_toEndOf="@+id/textImputLayoutNameProject"
+                    app:layout_constraintTop_toTopOf="@+id/textImputLayoutNameProject"
                     app:srcCompat="@android:drawable/ic_menu_help" />
 
                 <ImageButton

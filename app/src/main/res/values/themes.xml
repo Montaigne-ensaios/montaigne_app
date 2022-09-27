@@ -19,6 +19,7 @@
         <item name="android:textColorHint">@color/hint</item>
         <item name="materialButtonStyle">@style/ButtonPadrao</item>
         <item name="imageButtonStyle">@style/ImageButton</item>
+        <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
         <item name="editTextStyle">@style/Edit_Text</item>
 
 
