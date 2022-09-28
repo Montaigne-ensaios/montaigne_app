@@ -2,7 +2,6 @@ package com.montaigne.montaigneapp.data.dao.spt;
 
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 
@@ -11,9 +10,8 @@ import java.util.HashMap;
 public class AmostraSptDao {
     private DatabaseReference dbReference;
 
-    public AmostraSptDao(String idFuro) {
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        //dbReference = FuroSptDao.getDbReference().child(idFuro);
+    public AmostraSptDao(DatabaseReference furoSptReference) {
+        dbReference = furoSptReference.child("listaDeAmostras");
     }
 
     public DatabaseReference getDbReference() {
@@ -29,8 +27,8 @@ public class AmostraSptDao {
         return dbReference.child(amostra.getId()).setValue(amostra);
     }
 
-    public Task<Void> updateAmostra(String id, HashMap<String, Object> hashMap) {
-        return dbReference.child(id).setValue(hashMap);
+    public Task<Void> updateAmostra(AmostraSpt amostraSpt) {
+        return dbReference.child(amostraSpt.getId()).setValue(amostraSpt);
     }
 
     public Task<Void> deleteAmostraById(String id) {

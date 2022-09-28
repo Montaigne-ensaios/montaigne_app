@@ -29,8 +29,8 @@ public class ProjetoSptDao {
         return dbReference.child(projeto.getId()).setValue(projeto);
     }
 
-    public Task<Void> updateProjeto(String id, HashMap<String, Object> hashMap) {
-        return dbReference.child(id).setValue(hashMap);
+    public Task<Void> updateProjeto(ProjetoSpt projetoSpt) {
+        return dbReference.child(projetoSpt.getId()).setValue(projetoSpt);
     }
 
     public Task<Void> deleteProjetoById(String id) {

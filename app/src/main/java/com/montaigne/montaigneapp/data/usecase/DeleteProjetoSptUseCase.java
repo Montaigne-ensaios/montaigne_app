@@ -5,7 +5,7 @@ import android.util.Log;
 import com.montaigne.montaigneapp.data.dao.spt.ProjetoSptDao;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
-public class DeleteProjetoSpt {
+public class DeleteProjetoSptUseCase {
 
     public static void deleteProjetoSpt(ProjetoSpt projetoSpt) {
         ProjetoSptDao projetoSptDao = new ProjetoSptDao();

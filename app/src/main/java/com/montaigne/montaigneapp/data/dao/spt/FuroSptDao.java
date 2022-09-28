@@ -11,17 +11,12 @@ import java.util.HashMap;
 public class FuroSptDao {
     private DatabaseReference dbReference;
 
-    public FuroSptDao() {
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        dbReference = firebaseDatabase.getReference(FuroSpt.class.getSimpleName());
+    public FuroSptDao(DatabaseReference projetoSptReference) {
+        dbReference = projetoSptReference.child("listaDeFuros");
     }
 
     public DatabaseReference getDbReference() {
         return dbReference;
-    }
-
-    public void setDbReference(DatabaseReference dbReference) {
-        this.dbReference = dbReference;
     }
 
     public Query getFuros() {
@@ -33,8 +28,8 @@ public class FuroSptDao {
         return dbReference.child(furo.getId()).setValue(furo);
     }
 
-    public Task<Void> updateFuro(String id, HashMap<String, Object> hashMap) {
-        return dbReference.child(id).setValue(hashMap);
+    public Task<Void> updateFuro(FuroSpt furoSpt) {
+        return dbReference.child(furoSpt.getId()).setValue(furoSpt);
     }
 
     public Task<Void> deleteFuroById(String id) {
