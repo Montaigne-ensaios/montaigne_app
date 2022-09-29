@@ -18,9 +18,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HomeVM extends ViewModel {
-    private final HomeActivity activity;
+//    private final HomeActivity activity;
     private ArrayList<String> projetosSalvos;
 
+    /*
     public HomeVM (HomeActivity activity) {
         this.activity = activity;
 
@@ -29,6 +30,7 @@ public class HomeVM extends ViewModel {
 
         activity.newProjectFab.setOnClickListener(this::newProjectFabListener);
     }
+     */
 
     protected void initializeProjetoCategoriaAdapter(RecyclerView recyclerProjetoCategorias) {
         ArrayList<Object[]> categorias = new ArrayList<>();  // lista de filtros de projeto
@@ -44,11 +46,11 @@ public class HomeVM extends ViewModel {
                         false));
     }
 
-    private void initializeProjetosSalvosAdapter() {
+    protected void initializeProjetosSalvosAdapter(RecyclerView recyclerProjetosSalvos) {
         ProjetosSalvosAdapter adapter = new ProjetosSalvosAdapter();
 
-        activity.recyclerProjetosSalvos.setAdapter(adapter);
-        activity.recyclerProjetosSalvos.setLayoutManager(new LinearLayoutManager(activity));
+        recyclerProjetosSalvos.setAdapter(adapter);
+        recyclerProjetosSalvos.setLayoutManager(new LinearLayoutManager(recyclerProjetosSalvos.getContext()));
     }
 
     private ArrayList<String> getProjetos() {

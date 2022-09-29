@@ -12,8 +12,7 @@ public class ProjetoSptDao {
     private DatabaseReference dbReference;
 
     public ProjetoSptDao() {
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        dbReference = firebaseDatabase.getReference(ProjetoSpt.class.getSimpleName());
+        dbReference = FirebaseDatabase.getInstance().getReference().child("projetos").child("spt");
     }
 
     public DatabaseReference getDbReference() {

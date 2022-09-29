@@ -1,6 +1,7 @@
 package com.montaigne.montaigneapp.activity.home;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.spt.projeto.ProjetoActivity;
 import com.montaigne.montaigneapp.data.dao.spt.ProjetoSptDao;
@@ -28,6 +30,8 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAd
     private List<Projeto> projetoList;
 
     public ProjetosSalvosAdapter() {
+        projetoList = new ArrayList<>();
+
         this.projetoSptDao = new ProjetoSptDao();
         reloadProjetos();
     }

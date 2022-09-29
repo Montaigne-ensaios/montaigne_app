@@ -14,7 +14,7 @@ public class HomeActivity extends AbstractActivity {
     protected RecyclerView recyclerProjetoCategorias, recyclerProjetosSalvos;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 

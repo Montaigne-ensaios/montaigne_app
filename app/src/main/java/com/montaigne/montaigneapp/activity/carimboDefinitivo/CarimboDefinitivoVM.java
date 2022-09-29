@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModel;
 import com.montaigne.montaigneapp.activity.home.HomeActivity;
 import com.montaigne.montaigneapp.activity.spt.carimboUnico.CarimboUnicoActivity;
 import com.montaigne.montaigneapp.data.dao.spt.ProjetoSptDao;
+import com.montaigne.montaigneapp.data.usecase.SaveProjetoSptUseCase;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.Date;
@@ -39,8 +40,9 @@ public class CarimboDefinitivoVM extends ViewModel {
         String cotato = fields.get("Contato").getText().toString();
         String cliente = fields.get("Cliente").getText().toString();
         String local = fields.get("LocalObra").getText().toString();
-        String nFuros = fields.get("nFuros").getText().toString();
+        //String nFuros = fields.get("nFuros").getText().toString();
         String referenciaNivel = fields.get("ReferenciaNivel").getText().toString();
+
 
         ProjetoSpt projetoSpt = new ProjetoSpt();
         projetoSpt.setNome(nome);
@@ -48,10 +50,9 @@ public class CarimboDefinitivoVM extends ViewModel {
         projetoSpt.setCliente(cliente);
         projetoSpt.setTecnico(tecnico);
         projetoSpt.setNumeroDeTelefone(cotato);
-        projetoSpt.setEmpresa(fields.get("Empresa").getText().toString());
+        projetoSpt.setEmpresa(empresa);
 
-        ProjetoSptDao dao = new ProjetoSptDao();
-
+        SaveProjetoSptUseCase.saveProjetoSpt(projetoSpt);
 
         intent.putExtra("ProjetoSpt", projetoSpt);
 

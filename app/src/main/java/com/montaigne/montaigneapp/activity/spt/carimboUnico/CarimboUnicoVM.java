@@ -1,5 +1,6 @@
 package com.montaigne.montaigneapp.activity.spt.carimboUnico;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -7,8 +8,11 @@ import android.widget.EditText;
 
 import androidx.lifecycle.ViewModel;
 
+import com.google.firebase.database.DatabaseReference;
 import com.montaigne.montaigneapp.activity.home.HomeActivity;
 import com.montaigne.montaigneapp.activity.spt.ensaio.EnsaioActivity;
+import com.montaigne.montaigneapp.data.dao.spt.ProjetoSptDao;
+import com.montaigne.montaigneapp.data.usecase.SaveProjetoSptUseCase;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
@@ -16,11 +20,12 @@ import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import java.util.ArrayList;
 
 public class CarimboUnicoVM extends ViewModel {
-    private final ProjetoSpt projeto;
+    private ProjetoSpt projeto;
     private Bundle extras;
 
     public CarimboUnicoVM() {
         projeto = new ProjetoSpt();
+
     }
 
     protected void setExtras(Bundle bundle) {
@@ -28,17 +33,24 @@ public class CarimboUnicoVM extends ViewModel {
     }
 
     private void updateProjeto(EditText editTextDataInicio) {
+        projeto = (ProjetoSpt) extras.get("ProjetoSpt");
+
+        /*
         projeto.setNome(extras.getString("NomeProjeto"));
         projeto.setTecnico(extras.getString("Tecnico"));
         projeto.setEmpresa(extras.getString("Empresa"));
         projeto.setNumeroDeTelefone(extras.getString("Contato"));
         projeto.setCliente(extras.getString("Cliente"));
-//        projeto.setCoordinate(extras.getString("Cliente"));  // precisa da api de coordenadas
+         */
+
+        // projeto.setCoordinate(extras.getString("Cliente"));  // precisa da api de coordenadas
         // projeto.setHoleNumber(extras.getInt("nFuros"));
         // todo: eliminar a recuperação dos campos por intent
 
-        // projeto.setStarData(editTextDataInicio.getText().toString());
+        projeto.setDataInicio(editTextDataInicio.getText().toString());
         //SaveProjetoSpt.saveProjetoSpt(projeto);
+
+        SaveProjetoSptUseCase.saveProjetoSpt(projeto);
     }
 
     protected void ensaioButtonListener(View view, EditText editTextDataInicio) {
