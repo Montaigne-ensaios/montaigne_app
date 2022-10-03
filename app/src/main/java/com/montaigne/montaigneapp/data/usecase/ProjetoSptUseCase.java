@@ -2,7 +2,11 @@ package com.montaigne.montaigneapp.data.usecase;
 
 import android.util.Log;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.montaigne.montaigneapp.data.ModelHolder;
 import com.montaigne.montaigneapp.data.dao.spt.ProjetoSptDao;
+import com.montaigne.montaigneapp.model.Projeto;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 public class ProjetoSptUseCase {
@@ -32,6 +36,24 @@ public class ProjetoSptUseCase {
             Log.i("Firebase", "Sucesso ao deletar projeto");
         }).addOnFailureListener(exception ->  {
             Log.e("Firebase", "Falha ao deletar projeto");
+        });
+    }
+
+    public static void read(ModelHolder<Projeto> holder) {
+        DatabaseReference reference = new ProjetoSptDao().getDbReference();
+
+        try {
+            reference.getDatabase().setPersistenceEnabled(true);
+        } catch (Exception e) {
+            Log.e("Firebase", "Falha ao configurar persistência de projetos");
+        }
+
+        reference.get().addOnCompleteListener(dataSnapshotProjetoSpt -> {
+            for (DataSnapshot child : dataSnapshotProjetoSpt.getResult().getChildren()) {
+                ProjetoSpt projeto = child.getValue(ProjetoSpt.class);
+                holder.addModel(projeto);
+            }
+
         });
     }
 }

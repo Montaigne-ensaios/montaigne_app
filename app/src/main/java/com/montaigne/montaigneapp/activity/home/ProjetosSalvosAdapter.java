@@ -1,6 +1,5 @@
 package com.montaigne.montaigneapp.activity.home;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.spt.projeto.ProjetoActivity;
-import com.montaigne.montaigneapp.data.dao.spt.ProjetoSptDao;
 import com.montaigne.montaigneapp.model.Projeto;
 
 import java.util.ArrayList;
@@ -22,15 +20,10 @@ import java.util.List;
 
 public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAdapter.ViewHolder> {
     // todo: passar esta array list para a entity
-    private ProjetoSptDao projetoSptDao;
     private List<Projeto> projetoList;
 
-    public ProjetosSalvosAdapter(View view) {
+    public ProjetosSalvosAdapter() {
         projetoList = new ArrayList<>();
-
-        reloadProjetos((Activity) view.getContext());
-
-        this.projetoSptDao = new ProjetoSptDao();
     }
 
     @NonNull
@@ -54,13 +47,13 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAd
         // todo: definir se este listener deveria ficar aqui
     }
 
-    @Override
-    public int getItemCount() { return projetoList.size(); }
-
-    private void reloadProjetos(Activity activity) {
-        projetoList.clear();
-        // todo: leitura de dados do Firebase
+    public void setProjetoList(List<Projeto> projetoList){
+        this.projetoList = projetoList;
+        notifyDataSetChanged();
     }
+
+    @Override
+    public int getItemCount() { return projetoList.size();}
 
     protected class ViewHolder extends RecyclerView.ViewHolder {
         protected final CardView cardView;

@@ -7,30 +7,17 @@ import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firebase.database.DatabaseReference;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.carimboDefinitivo.CarimboDefinitivoActivity;
-import com.montaigne.montaigneapp.data.dao.spt.ProjetoSptDao;
+import com.montaigne.montaigneapp.data.ModelHolder;
+import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
 import com.montaigne.montaigneapp.model.Projeto;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
-public class HomeVM extends ViewModel {
-//    private final HomeActivity activity;
-    private ArrayList<String> projetosSalvos;
-
-    /*
-    public HomeVM (HomeActivity activity) {
-        this.activity = activity;
-
-        initializeProjetosSalvosAdapter();
-        initializeProjetoCategoriaAdapter(activity.recyclerProjetoCategorias);
-
-        activity.newProjectFab.setOnClickListener(this::newProjectFabListener);
-    }
-     */
+public class HomeVM extends ViewModel implements ModelHolder<Projeto> {
+    private ArrayList<Projeto> projetosSalvos = new ArrayList<>();
+    private final ProjetosSalvosAdapter adapter = new ProjetosSalvosAdapter();
 
     protected void initializeProjetoCategoriaAdapter(RecyclerView recyclerProjetoCategorias) {
         ArrayList<Object[]> categorias = new ArrayList<>();  // lista de filtros de projeto
@@ -47,19 +34,24 @@ public class HomeVM extends ViewModel {
     }
 
     protected void initializeProjetosSalvosAdapter(RecyclerView recyclerProjetosSalvos) {
-        ProjetosSalvosAdapter adapter = new ProjetosSalvosAdapter(recyclerProjetosSalvos);
-
         recyclerProjetosSalvos.setAdapter(adapter);
         recyclerProjetosSalvos.setLayoutManager(new LinearLayoutManager(recyclerProjetosSalvos.getContext()));
     }
 
-    private ArrayList<String> getProjetos() {
-        ArrayList<String> list = new ArrayList<>();
-        list.add("Exemplo de projeto");
-        list.add("Outro exemplo");
-        list.add("Só mais um");
-        list.add("Tá bom parei");
-        return list;
+    protected void refreshProjetosSalvos(){
+        ProjetoSptUseCase.read(this);
+    }
+
+    @Override
+    public void addModel(Projeto projeto) {
+        projetosSalvos.add(projeto);
+        adapter.setProjetoList(projetosSalvos);
+    }
+
+    @Override
+    public void clearModels() {
+        projetosSalvos = new ArrayList<>();
+        adapter.setProjetoList(projetosSalvos);
     }
 
     private void categoriaFilterListener(View view) {

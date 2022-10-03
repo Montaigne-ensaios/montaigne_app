@@ -25,6 +25,7 @@ public class HomeActivity extends AbstractActivity {
         viewModel.initializeProjetosSalvosAdapter(recyclerProjetosSalvos);
         viewModel.initializeProjetoCategoriaAdapter(recyclerProjetoCategorias);
         newProjectFab.setOnClickListener(viewModel::newProjectFabListener);
+        viewModel.refreshProjetosSalvos();
     }
 
     @Override
