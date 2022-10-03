@@ -5,14 +5,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
+import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.HashMap;
 
 public class FuroSptDao {
     private DatabaseReference dbReference;
 
-    public FuroSptDao(DatabaseReference projetoSptReference) {
-        dbReference = projetoSptReference.child("listaDeFuros");
+    public FuroSptDao(ProjetoSpt projetoSpt) {
+        ProjetoSptDao projetoSptDao = new ProjetoSptDao();
+        dbReference = projetoSptDao.getDbReference()
+                                    .child(projetoSpt.getId())
+                                    .child("listaDeFuros");
     }
 
     public DatabaseReference getDbReference() {

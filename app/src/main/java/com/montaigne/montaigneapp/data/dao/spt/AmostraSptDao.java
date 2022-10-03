@@ -4,14 +4,19 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Query;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
+import com.montaigne.montaigneapp.model.spt.FuroSpt;
+import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.HashMap;
 
 public class AmostraSptDao {
     private DatabaseReference dbReference;
 
-    public AmostraSptDao(DatabaseReference furoSptReference) {
-        dbReference = furoSptReference.child("listaDeAmostras");
+    public AmostraSptDao(FuroSpt furoSpt, ProjetoSpt projetoSpt) {
+        FuroSptDao furoSptDao = new FuroSptDao(projetoSpt);
+        dbReference = furoSptDao.getDbReference()
+                .child(furoSpt.getId())
+                .child("listaDeAmostras");
     }
 
     public DatabaseReference getDbReference() {

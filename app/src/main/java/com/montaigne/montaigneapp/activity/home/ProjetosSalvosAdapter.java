@@ -1,7 +1,7 @@
 package com.montaigne.montaigneapp.activity.home;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,14 +12,10 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.spt.projeto.ProjetoActivity;
 import com.montaigne.montaigneapp.data.dao.spt.ProjetoSptDao;
 import com.montaigne.montaigneapp.model.Projeto;
-import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,11 +25,12 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAd
     private ProjetoSptDao projetoSptDao;
     private List<Projeto> projetoList;
 
-    public ProjetosSalvosAdapter() {
+    public ProjetosSalvosAdapter(View view) {
         projetoList = new ArrayList<>();
 
+        reloadProjetos((Activity) view.getContext());
+
         this.projetoSptDao = new ProjetoSptDao();
-        reloadProjetos();
     }
 
     @NonNull
@@ -60,25 +57,9 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAd
     @Override
     public int getItemCount() { return projetoList.size(); }
 
-    private void reloadProjetos() {
-        DatabaseReference reference = projetoSptDao.getDbReference();
+    private void reloadProjetos(Activity activity) {
         projetoList.clear();
-
-        try {
-            reference.getDatabase().setPersistenceEnabled(true);
-        } catch (Exception e) {
-
-        }
-
-        reference.get().addOnCompleteListener(dataSnapshotProjetoSpt -> {
-            for (DataSnapshot child : dataSnapshotProjetoSpt.getResult().getChildren()) {
-                // todo: colocar os outros tipos de projeto (como granulometria) para serem adicionados na lista aqui
-                ProjetoSpt projeto = child.getValue(ProjetoSpt.class);
-                projetoList.add(projeto);
-            }
-
-            notifyDataSetChanged();
-        });
+        // todo: leitura de dados do Firebase
     }
 
     protected class ViewHolder extends RecyclerView.ViewHolder {

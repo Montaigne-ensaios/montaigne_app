@@ -6,15 +6,11 @@ import android.widget.EditText;
 
 import androidx.lifecycle.ViewModel;
 
-import androidx.lifecycle.ViewModel;
-
 import com.montaigne.montaigneapp.activity.home.HomeActivity;
 import com.montaigne.montaigneapp.activity.spt.carimboUnico.CarimboUnicoActivity;
-import com.montaigne.montaigneapp.data.dao.spt.ProjetoSptDao;
-import com.montaigne.montaigneapp.data.usecase.SaveProjetoSptUseCase;
+import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
-import java.util.Date;
 import java.util.Map;
 
 public class CarimboDefinitivoVM extends ViewModel {
@@ -52,7 +48,7 @@ public class CarimboDefinitivoVM extends ViewModel {
         projetoSpt.setNumeroDeTelefone(cotato);
         projetoSpt.setEmpresa(empresa);
 
-        SaveProjetoSptUseCase.saveProjetoSpt(projetoSpt);
+        ProjetoSptUseCase.save(projetoSpt);
 
         intent.putExtra("ProjetoSpt", projetoSpt);
 

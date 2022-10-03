@@ -1,6 +1,5 @@
 package com.montaigne.montaigneapp.activity.spt.carimboUnico;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,11 +7,9 @@ import android.widget.EditText;
 
 import androidx.lifecycle.ViewModel;
 
-import com.google.firebase.database.DatabaseReference;
 import com.montaigne.montaigneapp.activity.home.HomeActivity;
 import com.montaigne.montaigneapp.activity.spt.ensaio.EnsaioActivity;
-import com.montaigne.montaigneapp.data.dao.spt.ProjetoSptDao;
-import com.montaigne.montaigneapp.data.usecase.SaveProjetoSptUseCase;
+import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
@@ -50,7 +47,7 @@ public class CarimboUnicoVM extends ViewModel {
         projeto.setDataInicio(editTextDataInicio.getText().toString());
         //SaveProjetoSpt.saveProjetoSpt(projeto);
 
-        SaveProjetoSptUseCase.saveProjetoSpt(projeto);
+        ProjetoSptUseCase.save(projeto);
     }
 
     protected void ensaioButtonListener(View view, EditText editTextDataInicio) {

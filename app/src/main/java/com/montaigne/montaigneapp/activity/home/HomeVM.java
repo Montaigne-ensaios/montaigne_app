@@ -47,7 +47,7 @@ public class HomeVM extends ViewModel {
     }
 
     protected void initializeProjetosSalvosAdapter(RecyclerView recyclerProjetosSalvos) {
-        ProjetosSalvosAdapter adapter = new ProjetosSalvosAdapter();
+        ProjetosSalvosAdapter adapter = new ProjetosSalvosAdapter(recyclerProjetosSalvos);
 
         recyclerProjetosSalvos.setAdapter(adapter);
         recyclerProjetosSalvos.setLayoutManager(new LinearLayoutManager(recyclerProjetosSalvos.getContext()));
