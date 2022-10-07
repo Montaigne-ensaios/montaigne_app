@@ -10,7 +10,7 @@
         android:id="@+id/textFiltroEnsaio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="40dp"
         android:text="@string/TxtHomeFiltrosEnsaiosStr"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,16 +41,12 @@
         android:id="@+id/recyclerProjetosSalvos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.269"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textMeusProjetos"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/textMeusProjetos">
 
     </androidx.recyclerview.widget.RecyclerView>
 
@@ -65,5 +61,24 @@
         app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageFilterEnsaio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/textFiltroEnsaio"
+        app:layout_constraintEnd_toStartOf="@+id/textFiltroEnsaio"
+        app:layout_constraintTop_toTopOf="@+id/textFiltroEnsaio"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/icon_filter" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/textMeusProjetos"
+        app:layout_constraintEnd_toStartOf="@+id/textMeusProjetos"
+        app:layout_constraintTop_toTopOf="@+id/textMeusProjetos"
+        app:srcCompat="@drawable/icon_folder" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
