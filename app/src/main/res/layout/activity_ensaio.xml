@@ -23,7 +23,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/furoIniciarEnsaio"
         app:layout_constraintEnd_toStartOf="@+id/furoIniciarEnsaio"
         app:layout_constraintTop_toTopOf="@+id/furoIniciarEnsaio"
-        app:srcCompat="@drawable/icon_home3" />
+        app:srcCompat="@drawable/icon_home" />
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -43,7 +43,7 @@
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="60dp"
                 android:layout_marginTop="40dp"
                 android:text="Profundidade:"
                 app:layout_constraintStart_toStartOf="parent"
@@ -72,7 +72,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName2"
                 app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName2"
                 app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName2"
-                app:srcCompat="@android:drawable/ic_input_add" />
+                app:srcCompat="@drawable/icon_increase" />
 
             <ImageButton
                 android:id="@+id/imageButton4"
@@ -83,7 +83,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName8"
                 app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName8"
                 app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName8"
-                app:srcCompat="@android:drawable/ic_input_add" />
+                app:srcCompat="@drawable/icon_increase" />
 
             <ImageButton
                 android:id="@+id/imageButton5"
@@ -94,7 +94,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName10"
                 app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName10"
                 app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName10"
-                app:srcCompat="@android:drawable/ic_input_add" />
+                app:srcCompat="@drawable/icon_increase" />
 
             <ImageButton
                 android:id="@+id/imageButton6"
@@ -105,8 +105,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName10"
                 app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName10"
                 app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName10"
-                app:layout_constraintVertical_bias="1.0"
-                app:srcCompat="@android:drawable/ic_input_add" />
+                app:srcCompat="@drawable/icon_decrease" />
 
             <ImageButton
                 android:id="@+id/imageButton7"
@@ -117,7 +116,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName8"
                 app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName8"
                 app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName8"
-                app:srcCompat="@android:drawable/ic_input_add" />
+                app:srcCompat="@drawable/icon_decrease" />
 
             <ImageButton
                 android:id="@+id/imageButton8"
@@ -128,7 +127,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName2"
                 app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName2"
                 app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName2"
-                app:srcCompat="@android:drawable/ic_input_add" />
+                app:srcCompat="@drawable/icon_decrease" />
 
             <TextView
                 android:id="@+id/textView7"
@@ -144,10 +143,10 @@
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="64dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="32dp"
                 android:text="Golpes"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/textView8"
+                app:layout_constraintStart_toStartOf="@+id/textView8"
                 app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
             <TextView
@@ -157,7 +156,7 @@
                 android:text="Penetração"
                 app:layout_constraintBottom_toBottomOf="@+id/textView9"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.49"
+                app:layout_constraintHorizontal_bias="0.43"
                 app:layout_constraintStart_toEndOf="@+id/textView9"
                 app:layout_constraintTop_toTopOf="@+id/textView9"
                 app:layout_constraintVertical_bias="1.0" />
@@ -171,7 +170,7 @@
                 android:inputType="number"
                 android:text="Name"
                 app:layout_constraintEnd_toEndOf="@+id/textView9"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.3"
                 app:layout_constraintStart_toStartOf="@+id/textView9"
                 app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -264,19 +263,18 @@
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
                 android:layout_marginEnd="4dp"
                 android:text="Nível de água"
                 app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName12"
                 app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName12"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/imageButton6"
                 app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName12" />
 
             <TextView
                 android:id="@+id/textView13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="20dp"
                 android:text="3 segmentos"
                 app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName11"
                 app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName9"

@@ -145,7 +145,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:drawableLeft="@drawable/icon_localization"
+                android:drawableLeft="@drawable/icon_pin"
                 android:text="@string/TxtBotaoLocalizacao"
                 app:layout_constraintEnd_toEndOf="@+id/textCoordenadasFuro"
                 app:layout_constraintStart_toStartOf="@+id/textCoordenadasFuro"
@@ -196,7 +196,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/buttonIniciarEnsaio"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/buttonIniciarEnsaio"
-                app:srcCompat="@drawable/icon_home3" />
+                app:srcCompat="@drawable/icon_home" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

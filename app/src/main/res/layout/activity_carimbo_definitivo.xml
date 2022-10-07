@@ -30,7 +30,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/buttonContinuarCarimbo"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/buttonContinuarCarimbo"
-                app:srcCompat="@drawable/icon_home3" />
+                app:srcCompat="@drawable/icon_home" />
 
             <Button
                 android:id="@+id/buttonContinuarCarimbo"
@@ -145,14 +145,14 @@
 
                 <ImageView
                     android:id="@+id/imagePerfil"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
                     android:layout_marginTop="16dp"
                     app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
                     app:layout_constraintStart_toStartOf="@+id/guidelineStart"
                     app:layout_constraintTop_toBottomOf="@+id/textAviso2"
-                    app:srcCompat="@drawable/ic_launcher_background"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    app:srcCompat="@drawable/icon_profile"
+                    tools:srcCompat="@drawable/icon_profile" />
 
                 <TextView
                     android:id="@+id/textNomeProjeto"
@@ -183,7 +183,7 @@
 
                 <EditText
                     android:id="@+id/editTextTecnico"
-                    android:layout_width="0dp"
+                    android:layout_width="309dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:drawableRight="@android:drawable/ic_menu_today"
@@ -192,7 +192,7 @@
                     android:minHeight="48dp"
                     app:layout_constraintEnd_toEndOf="@+id/textImputLayoutNameProject"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/textImputLayoutNameProject"
+                    app:layout_constraintStart_toStartOf="@+id/textTecnico"
                     app:layout_constraintTop_toBottomOf="@+id/textTecnico" />
 
                 <TextView
@@ -370,13 +370,13 @@
 
                 <ImageButton
                     android:id="@+id/imageButtonCamera"
-                    android:layout_width="wrap_content"
+                    android:layout_width="32dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     app:layout_constraintEnd_toEndOf="@+id/imagePerfil"
                     app:layout_constraintStart_toStartOf="@+id/imagePerfil"
                     app:layout_constraintTop_toBottomOf="@+id/imagePerfil"
-                    app:srcCompat="@android:drawable/ic_menu_camera" />
+                    app:srcCompat="@drawable/icon_photo" />
 
                 <ImageButton
                     android:id="@+id/imageButtonHelpNomeProjeto"

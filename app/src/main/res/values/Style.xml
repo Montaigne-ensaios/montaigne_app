@@ -20,6 +20,7 @@
 
     <style name="ImageButton" parent="Widget.AppCompat.ImageButton">
         <item name="backgroundTint">#00042741</item>
+        <item name="tint">@color/color_primary</item>
     </style>
 
     <!--- EditText padrão do app. -->
