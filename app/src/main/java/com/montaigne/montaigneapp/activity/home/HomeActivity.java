@@ -8,6 +8,8 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.AbstractActivity;
+import com.montaigne.montaigneapp.data.usecase.AmostraSptUseCase;
+import com.montaigne.montaigneapp.data.usecase.FuroSptUseCase;
 import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
 import com.montaigne.montaigneapp.model.Coordenada;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
@@ -44,13 +46,21 @@ public class HomeActivity extends AbstractActivity {
         sample.setGolpe3(15);
         sample.setNspt(sample.getGolpe2(), sample.getGolpe3());
         samplesList.add(sample);
+
         AmostraSpt otherSample = new AmostraSpt();
         otherSample.setGolpe1(10);
         otherSample.setGolpe2(24);
         otherSample.setGolpe3(23);
         otherSample.setNspt(otherSample.getGolpe2(), otherSample.getGolpe3());
         samplesList.add(otherSample);
-// --------- Furos ----------
+
+        AmostraSpt oS1 = new AmostraSpt();
+        oS1.setGolpe1(7);
+        oS1.setGolpe2(7);
+        oS1.setGolpe3(7);
+        oS1.setNspt(oS1.getGolpe2(), oS1.getGolpe3());
+
+        // --------- Furos ----------
         List<FuroSpt> holesList = new ArrayList();
         FuroSpt hole = new FuroSpt();
         hole.setCodigo("SP-01");
@@ -59,6 +69,7 @@ public class HomeActivity extends AbstractActivity {
         hole.setDataInicio(new Date());
         hole.setDataFim(new Date());
         hole.setListaDeAmostras(samplesList);
+
         FuroSpt otherHole = new FuroSpt();
         otherHole.setCodigo("SP-02");
         otherHole.setNivelDAgua(40);
@@ -66,9 +77,20 @@ public class HomeActivity extends AbstractActivity {
         otherHole.setDataInicio(new Date());
         otherHole.setDataFim(new Date());
         otherHole.setListaDeAmostras(samplesList);
+
+        FuroSpt oHole1 = new FuroSpt();
+        oHole1.setCodigo("SP-55");
+        oHole1.setNivelDAgua(10);
+        oHole1.setNivelDoFuro(40);
+        oHole1.setDataInicio(new Date());
+        oHole1.setDataFim(new Date());
+        oHole1.setListaDeAmostras(samplesList);
+
         holesList.add(hole);
         holesList.add(otherHole);
-// --------- Projeto ----------
+        holesList.add(oHole1);
+
+        // --------- Projeto ----------
         ProjetoSpt projeto = new ProjetoSpt();
         projeto.setNome("Meu projeto");
         projeto.setCliente("Rodrigus");
@@ -79,8 +101,8 @@ public class HomeActivity extends AbstractActivity {
         projeto.setCoordenadas(new Coordenada(10, 10));
         projeto.setListaDeFuros(holesList);
 
-        projeto.setId("-NC7whysrLDOI9NFm5R-");
-        ProjetoSptUseCase.update(projeto);
+        // projeto.setId("");
+        ProjetoSptUseCase.save(projeto);
     }
 
     @Override
