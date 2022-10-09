@@ -12,8 +12,6 @@ public class FuroSptUseCase {
         List<FuroSpt> listaDeFuros = projetoSpt.getListaDeFuros();
         listaDeFuros.add(furoSpt);
 
-        Log.i("Lista", String.valueOf(listaDeFuros.size()));
-
         projetoSpt.setListaDeFuros(listaDeFuros);
         ProjetoSptUseCase.update(projetoSpt);
     }
