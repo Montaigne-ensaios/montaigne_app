@@ -2,40 +2,33 @@ package com.montaigne.montaigneapp.data.usecase;
 
 import android.util.Log;
 
-import com.montaigne.montaigneapp.data.dao.spt.FuroSptDao;
-import com.montaigne.montaigneapp.data.dao.spt.ProjetoSptDao;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
+import java.util.List;
+
 public class FuroSptUseCase {
     public static void save(FuroSpt furoSpt, ProjetoSpt projetoSpt) {
-        FuroSptDao furoSptDao = new FuroSptDao(projetoSpt);
+        List<FuroSpt> listaDeFuros = projetoSpt.getListaDeFuros();
+        listaDeFuros.add(furoSpt);
 
-        furoSptDao.insertFuro(furoSpt).addOnCompleteListener(task -> {
-            Log.i("Firebase", "Sucesso ao salvar furo");
-        }).addOnFailureListener(exception -> {
-            Log.e("Erro ao salvar", "Erro ao salvar furo de SPT");
-            Log.e("Firebase", "Falha ao salvar furo");
-        });
+        projetoSpt.setListaDeFuros(listaDeFuros);
+        ProjetoSptUseCase.update(projetoSpt);
     }
 
-    public static void update(FuroSpt furoSpt, ProjetoSpt projetoSpt) {
-        FuroSptDao furoSptDao = new FuroSptDao(projetoSpt);
+    public static void update(int idFuro, FuroSpt furoSpt, ProjetoSpt projetoSpt) {
+        List<FuroSpt> listaDeFuros = projetoSpt.getListaDeFuros();
+        listaDeFuros.set(idFuro, furoSpt);
 
-        furoSptDao.updateFuro(furoSpt)
-                .addOnSuccessListener(unused -> Log.i("Firebase", "Sucesso ao atualizar furo"))
-                .addOnFailureListener(e -> Log.e("Firebase", "Falha ao atualizar furo"));
+        projetoSpt.setListaDeFuros(listaDeFuros);
+        ProjetoSptUseCase.update(projetoSpt);
     }
 
-    public static void delete(FuroSpt furoSpt, ProjetoSpt projetoSpt) {
-        FuroSptDao furoSptDao = new FuroSptDao(projetoSpt);
+    public static void delete(int idFuro, ProjetoSpt projetoSpt) {
+        List<FuroSpt> listaDeFuros = projetoSpt.getListaDeFuros();
+        listaDeFuros.remove(idFuro);
 
-        furoSptDao.deleteFuroById(furoSpt.getId()).addOnCompleteListener(task -> {
-            Log.i("Firebase", "Sucesso ao deletar furo");
-        }).addOnFailureListener(exception ->  {
-            Log.e("Firebase", "Falha ao deletar furo");
-        });
+        projetoSpt.setListaDeFuros(listaDeFuros);
+        ProjetoSptUseCase.update(projetoSpt);
     }
-
-
 }
