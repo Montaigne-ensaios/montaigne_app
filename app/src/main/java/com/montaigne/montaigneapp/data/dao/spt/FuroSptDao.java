@@ -8,12 +8,15 @@ import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.HashMap;
+import java.util.List;
 
 public class FuroSptDao {
     private DatabaseReference dbReference;
+    private ProjetoSpt projetoSpt;
 
     public FuroSptDao(ProjetoSpt projetoSpt) {
         ProjetoSptDao projetoSptDao = new ProjetoSptDao();
+        this.projetoSpt = projetoSpt;
         dbReference = projetoSptDao.getDbReference()
                                     .child(projetoSpt.getId())
                                     .child("listaDeFuros");
@@ -23,20 +26,18 @@ public class FuroSptDao {
         return dbReference;
     }
 
-    public Query getFuros() {
-        return dbReference.orderByKey();
+    public Task<Void> insertListaDeFuros(List<FuroSpt> listaDeFuros) {
+        return dbReference.child(projetoSpt.getId()).child("listaDeFuros").setValue(listaDeFuros);
     }
 
-    public Task<Void> insertFuro(FuroSpt furo) {
-        furo.setId(dbReference.push().getKey());
-        return dbReference.child(furo.getId()).setValue(furo);
+    public Query readListaDeFuros() {
+        return dbReference.child(projetoSpt.getId()).child("listaDeFuros").orderByKey();
+    }
+    public Task<Void> updateListaDeFuros(List<FuroSpt> listaDeFuros) {
+        return dbReference.child(projetoSpt.getId()).child("listaDeFuros").setValue(listaDeFuros);
     }
 
-    public Task<Void> updateFuro(FuroSpt furoSpt) {
-        return dbReference.child(furoSpt.getId()).setValue(furoSpt);
-    }
-
-    public Task<Void> deleteFuroById(String id) {
-        return dbReference.child(id).removeValue();
+    public Task<Void> deleteListaDeFuros() {
+        return dbReference.child(projetoSpt.getId()).child("listaDeFuros").removeValue();
     }
 }

@@ -2,40 +2,65 @@ package com.montaigne.montaigneapp.data.usecase;
 
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
+import com.montaigne.montaigneapp.data.ModelHolder;
 import com.montaigne.montaigneapp.data.dao.spt.FuroSptDao;
-import com.montaigne.montaigneapp.data.dao.spt.ProjetoSptDao;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
+import java.util.List;
+
 public class FuroSptUseCase {
-    public static void save(FuroSpt furoSpt, ProjetoSpt projetoSpt) {
+    public static void saveListaDeFuros(ProjetoSpt projetoSpt, List<FuroSpt> listaDeFuros) {
         FuroSptDao furoSptDao = new FuroSptDao(projetoSpt);
 
-        furoSptDao.insertFuro(furoSpt).addOnCompleteListener(task -> {
-            Log.i("Firebase", "Sucesso ao salvar furo");
-        }).addOnFailureListener(exception -> {
-            Log.e("Erro ao salvar", "Erro ao salvar furo de SPT");
-            Log.e("Firebase", "Falha ao salvar furo");
+        furoSptDao.insertListaDeFuros(listaDeFuros).addOnSuccessListener(success -> {
+            Log.i("Firebase", "Sucesso ao salvar lista de furos");
+        }).addOnFailureListener(failure -> {
+            Log.e("Firebase", "Falha ao salvar lista de furos");
         });
     }
 
-    public static void update(FuroSpt furoSpt, ProjetoSpt projetoSpt) {
+    public static void updateListaDeFuros(ProjetoSpt projetoSpt, List<FuroSpt> listaDeFuros) {
         FuroSptDao furoSptDao = new FuroSptDao(projetoSpt);
 
-        furoSptDao.updateFuro(furoSpt)
-                .addOnSuccessListener(unused -> Log.i("Firebase", "Sucesso ao atualizar furo"))
-                .addOnFailureListener(e -> Log.e("Firebase", "Falha ao atualizar furo"));
-    }
-
-    public static void delete(FuroSpt furoSpt, ProjetoSpt projetoSpt) {
-        FuroSptDao furoSptDao = new FuroSptDao(projetoSpt);
-
-        furoSptDao.deleteFuroById(furoSpt.getId()).addOnCompleteListener(task -> {
-            Log.i("Firebase", "Sucesso ao deletar furo");
-        }).addOnFailureListener(exception ->  {
-            Log.e("Firebase", "Falha ao deletar furo");
+        furoSptDao.updateListaDeFuros(listaDeFuros).addOnSuccessListener(success -> {
+            Log.i("Firebase", "Sucesso ao atualizar lista de furos");
+        }).addOnFailureListener(failure -> {
+            Log.e("Firebase", "Falha ao atualizar lista de furos");
         });
     }
 
+    public static void readListaDeFuros(ProjetoSpt projetoSpt, ModelHolder<FuroSpt> holder) {
+        FuroSptDao furoSptDao = new FuroSptDao(projetoSpt);
 
+        furoSptDao.readListaDeFuros().addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshotFuro : snapshot.getChildren()) {
+                    FuroSpt furoSpt = dataSnapshotFuro.getValue(FuroSpt.class);
+                    holder.addModel(furoSpt);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    public static void deleteListaDeFuros(ProjetoSpt projetoSpt) {
+        FuroSptDao furoSptDao = new FuroSptDao(projetoSpt);
+
+        furoSptDao.deleteListaDeFuros().addOnSuccessListener(success -> {
+            Log.i("Firebase", "Sucesso ao deletar lista de furos");
+        }).addOnFailureListener(failure -> {
+            Log.e("Firebase", "Falha ao deletar lista de furos");
+        });
+    }
 }

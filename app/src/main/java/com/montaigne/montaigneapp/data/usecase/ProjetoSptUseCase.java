@@ -57,7 +57,7 @@ public class ProjetoSptUseCase {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    ProjetoSpt projetoSpt = snapshot.getValue(ProjetoSpt.class);
+                    ProjetoSpt projetoSpt = dataSnapshot.getValue(ProjetoSpt.class);
                     holder.addModel(projetoSpt);
                 }
             }

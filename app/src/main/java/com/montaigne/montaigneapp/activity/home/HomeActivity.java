@@ -8,15 +8,6 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.AbstractActivity;
-import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
-import com.montaigne.montaigneapp.model.Coordenada;
-import com.montaigne.montaigneapp.model.spt.AmostraSpt;
-import com.montaigne.montaigneapp.model.spt.FuroSpt;
-import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 public class HomeActivity extends AbstractActivity {
     protected FloatingActionButton newProjectFab;
