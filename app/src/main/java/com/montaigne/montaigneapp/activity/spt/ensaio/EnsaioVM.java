@@ -23,6 +23,7 @@ public class EnsaioVM extends ViewModel {
 
     protected void setExtras(Bundle bundle) {
         projeto = (ProjetoSpt) bundle.getSerializable("Projeto");
+        //TODO: java.lang.NullPointerException: Attempt to invoke interface method 'java.lang.Object java.util.List.get(int)' on a null object reference
         furo = projeto.getListaDeFuros().get(bundle.getInt("nFuro", 0));
         amostra = furo.getListaDeAmostras().get(bundle.getInt("nAmostra", 0));
     }

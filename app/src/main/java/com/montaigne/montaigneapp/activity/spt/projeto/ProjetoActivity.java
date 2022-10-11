@@ -1,6 +1,7 @@
 package com.montaigne.montaigneapp.activity.spt.projeto;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -22,8 +23,9 @@ public class ProjetoActivity extends AbstractActivity {
         setContentView(R.layout.activity_projeto);
 
         initializeViews();
-
+        //TODO: Causando exception de null
         String nome = getIntent().getStringExtra("name");
+        Log.e("PROJECTACTIVITY",nome);
         // talvez seja uma boa usar enum para padronizar os nomes dos extras em intents
         textFuro.setText(nome + ". " + textFuro.getText());
 
