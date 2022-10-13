@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.data.dao.spt;
+package com.montaigne.montaigneapp.data.dao;
 
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;

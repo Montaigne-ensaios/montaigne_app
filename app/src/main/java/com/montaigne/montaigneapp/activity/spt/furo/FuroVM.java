@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class FuroVM extends ViewModel {
+    private int idFuro;
     private ArrayList<String> amostras;
 
     private ArrayList<String> getAmostras() {
@@ -19,10 +20,18 @@ public class FuroVM extends ViewModel {
         return mock;
     }
 
+    private int getIdFuro() {
+        return 0;
+    }
+
     protected void updateAmostrasAdapter(RecyclerView recyclerAmostras) {
         amostras = getAmostras();
+        idFuro = getIdFuro();
+
         AmostraAdapter adapter = new AmostraAdapter();
         adapter.setAmostras(amostras);
+        adapter.setIdFuro(idFuro);
+
         recyclerAmostras.setAdapter(adapter);
         recyclerAmostras.setLayoutManager(new LinearLayoutManager(recyclerAmostras.getContext()));
     }

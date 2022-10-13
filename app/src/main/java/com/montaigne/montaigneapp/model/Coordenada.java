@@ -1,6 +1,8 @@
 package com.montaigne.montaigneapp.model;
 
-public class Coordenada {
+import java.io.Serializable;
+
+public class Coordenada implements Serializable {
     private int L;
     private int N;
     public Coordenada(int L, int N) {

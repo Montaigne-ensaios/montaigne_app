@@ -18,6 +18,7 @@ import com.montaigne.montaigneapp.activity.spt.ensaio.EnsaioActivity;
 import java.util.ArrayList;
 
 public class AmostraAdapter extends RecyclerView.Adapter<AmostraAdapter.ViewHolder>{
+    private int idFuro;
     private ArrayList<String> amostras;
 
     @NonNull
@@ -34,7 +35,8 @@ public class AmostraAdapter extends RecyclerView.Adapter<AmostraAdapter.ViewHold
         holder.cardView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), EnsaioActivity.class);
             intent.putExtra("name", nome);
-            intent.putExtra("NAmostra", position);
+            intent.putExtra("nFuro", idFuro);
+            intent.putExtra("nAmostra", position);
             v.getContext().startActivity(intent);
         });
     }
@@ -46,6 +48,10 @@ public class AmostraAdapter extends RecyclerView.Adapter<AmostraAdapter.ViewHold
 
     public void setAmostras(ArrayList<String> amostras) {
         this.amostras = amostras;
+    }
+
+    public void setIdFuro(int id) {
+        this.idFuro = id;
     }
 
     protected class ViewHolder extends RecyclerView.ViewHolder{

@@ -5,7 +5,7 @@ import android.util.Log;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.montaigne.montaigneapp.data.ModelHolder;
-import com.montaigne.montaigneapp.data.dao.spt.ProjetoSptDao;
+import com.montaigne.montaigneapp.data.dao.ProjetoSptDao;
 import com.montaigne.montaigneapp.model.Projeto;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
