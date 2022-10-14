@@ -1,7 +1,6 @@
 package com.montaigne.montaigneapp.data.usecase;
 
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
-import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 public class CheckAmostraSptUseCase {
     public static boolean canBeSave(AmostraSpt amostraSpt) {

@@ -1,6 +1,5 @@
 package com.montaigne.montaigneapp.activity.spt.projeto;
 
-import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,11 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.spt.furo.FuroActivity;
-import com.montaigne.montaigneapp.model.Projeto;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class FurosAdapter extends RecyclerView.Adapter<FurosAdapter.ViewHolder> {

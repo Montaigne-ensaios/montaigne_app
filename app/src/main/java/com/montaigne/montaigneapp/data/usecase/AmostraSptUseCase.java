@@ -1,7 +1,5 @@
 package com.montaigne.montaigneapp.data.usecase;
 
-import android.util.Log;
-
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;

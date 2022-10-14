@@ -1,24 +1,13 @@
 package com.montaigne.montaigneapp.activity.spt.ensaio;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.lifecycle.ViewModelProvider;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.AbstractActivity;
-import com.montaigne.montaigneapp.activity.home.HomeVM;
 import com.montaigne.montaigneapp.databinding.ActivityEnsaioBinding;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class EnsaioActivity extends AbstractActivity {
     /*

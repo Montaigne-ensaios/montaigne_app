@@ -9,7 +9,6 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.AbstractActivity;
-import com.montaigne.montaigneapp.activity.carimboDefinitivo.CarimboDefinitivoVM;
 
 public class CarimboUnicoActivity extends AbstractActivity {
     protected Button buttonPegarLocalizacao;

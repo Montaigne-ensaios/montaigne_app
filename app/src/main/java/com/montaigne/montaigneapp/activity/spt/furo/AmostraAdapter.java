@@ -1,6 +1,5 @@
 package com.montaigne.montaigneapp.activity.spt.furo;
 
-import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +16,6 @@ import com.montaigne.montaigneapp.activity.spt.ensaio.EnsaioActivity;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class AmostraAdapter extends RecyclerView.Adapter<AmostraAdapter.ViewHolder>{

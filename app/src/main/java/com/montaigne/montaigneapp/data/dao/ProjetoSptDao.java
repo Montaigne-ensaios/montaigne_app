@@ -6,8 +6,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
-import java.util.HashMap;
-
 public class ProjetoSptDao {
     private DatabaseReference dbReference;
 

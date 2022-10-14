@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class FuroVM extends ViewModel {
