@@ -26,6 +26,7 @@ public class HomeVM extends ViewModel implements ModelHolder<Projeto> {
 
         ProjetoCategoriaAdapter adapter = new ProjetoCategoriaAdapter();
         adapter.setCategoriasProjeto(categorias);
+
         recyclerProjetoCategorias.setAdapter(adapter);
         recyclerProjetoCategorias.setLayoutManager(new LinearLayoutManager(
                         recyclerProjetoCategorias.getContext(),

@@ -41,11 +41,11 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAd
 
         holder.cardView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), ProjetoActivity.class);
-            intent.putExtra("name", projeto);
+            intent.putExtra("projeto", projeto);
             //TODO: java.lang.RuntimeException: Parcelable encountered IOException writing serializable object (name = com.montaigne.montaigneapp.model.spt.ProjetoSpt)
             v.getContext().startActivity(intent);
         });
-        // TODO:: definir se este listener deveria ficar aqui
+        // todo: definir se este listener deveria ficar aqui
     }
 
     public void setProjetoList(List<Projeto> projetoList){
@@ -56,7 +56,7 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAd
     @Override
     public int getItemCount() { return projetoList.size();}
 
-    protected static class ViewHolder extends RecyclerView.ViewHolder {
+    protected class ViewHolder extends RecyclerView.ViewHolder {
         protected final CardView cardView;
         protected final ImageView imageProjeto;
         protected final TextView textNomeProjeto, textDescricaoProjeto, textTipoEnsaio, textDateProjeto;

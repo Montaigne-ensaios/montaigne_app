@@ -8,7 +8,6 @@ import androidx.lifecycle.ViewModel;
 
 import com.montaigne.montaigneapp.activity.home.HomeActivity;
 import com.montaigne.montaigneapp.activity.spt.carimboUnico.CarimboUnicoActivity;
-import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.Map;
@@ -16,7 +15,7 @@ import java.util.Map;
 public class CarimboDefinitivoVM extends ViewModel {
     // método de getData (validação de entradas)
 
-    protected void continuarCarimboButtonListener (View view, Map<String, EditText> fields) {
+    protected void continuarCarimboButtonListener(View view, Map<String, EditText> fields) {
         Intent intent = new Intent(view.getContext(), CarimboUnicoActivity.class);
 
         /*
@@ -48,14 +47,12 @@ public class CarimboDefinitivoVM extends ViewModel {
         projetoSpt.setNumeroDeTelefone(cotato);
         projetoSpt.setEmpresa(empresa);
 
-        ProjetoSptUseCase.save(projetoSpt);
-
         intent.putExtra("ProjetoSpt", projetoSpt);
 
         view.getContext().startActivity(intent);
     }
 
-    protected void homeButtonListener (View view) {
+    protected void homeButtonListener(View view) {
         view.getContext().startActivity(new Intent(view.getContext(), HomeActivity.class));
         //todo:limpar tasks;
     }

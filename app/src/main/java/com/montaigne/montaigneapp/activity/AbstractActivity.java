@@ -1,7 +1,6 @@
 package com.montaigne.montaigneapp.activity;
 
 import android.os.Bundle;
-import android.widget.Button;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;

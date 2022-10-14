@@ -1,9 +1,9 @@
 package com.montaigne.montaigneapp.activity.home;
 
+import android.os.Bundle;
+
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.montaigne.montaigneapp.R;

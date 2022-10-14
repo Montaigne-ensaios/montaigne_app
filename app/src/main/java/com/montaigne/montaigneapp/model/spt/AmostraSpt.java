@@ -63,6 +63,10 @@ public class AmostraSpt implements Serializable {
         return nspt;
     }
 
+    public void setNspt(int golpes) {
+        this.nspt = golpes;
+    }
+
     public void setNspt(int golpe2, int golpe3) {
         this.nspt = golpe2 + golpe3;
     }

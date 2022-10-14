@@ -8,7 +8,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.ValueEventListener;
 import com.montaigne.montaigneapp.data.ModelHolder;
-import com.montaigne.montaigneapp.data.dao.spt.ProjetoSptDao;
+import com.montaigne.montaigneapp.data.dao.ProjetoSptDao;
 import com.montaigne.montaigneapp.model.Projeto;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
