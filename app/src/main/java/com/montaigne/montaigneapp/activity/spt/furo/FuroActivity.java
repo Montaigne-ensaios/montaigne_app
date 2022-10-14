@@ -10,6 +10,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.AbstractActivity;
+import com.montaigne.montaigneapp.model.Projeto;
+import com.montaigne.montaigneapp.model.spt.FuroSpt;
+import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 public class FuroActivity extends AbstractActivity {
     protected RecyclerView recyclerAmostras;
@@ -25,9 +28,19 @@ public class FuroActivity extends AbstractActivity {
 
         initializeViews();
 
-        String nome = getIntent().getStringExtra("name");
-        textAmostra.setText(nome);
+        // TODO: rever como os extras estão sendo pegos
+        int idFuro = (int) getIntent().getExtras().get("idFuro");
+        ProjetoSpt projetoSpt = (ProjetoSpt) getIntent().getExtras().get("projetoSpt");
+
+        FuroSpt furo = projetoSpt.getListaDeFuros().get(idFuro);
+        String codigoFuro = furo.getCodigo();
+
+        textAmostra.setText("Furo " + String.valueOf(idFuro + 1) + " - " + codigoFuro);
+
         FuroVM viewModel = new ViewModelProvider(this).get(FuroVM.class);
+        viewModel.setIdFuro(idFuro);
+        viewModel.setProjetoSpt(projetoSpt);
+
         buttonDeleteAmostra.setOnClickListener(viewModel::deleteAmostrasButtonListener);
         viewModel.updateAmostrasAdapter(recyclerAmostras);
     }

@@ -48,8 +48,6 @@ public class CarimboDefinitivoVM extends ViewModel {
         projetoSpt.setNumeroDeTelefone(cotato);
         projetoSpt.setEmpresa(empresa);
 
-        ProjetoSptUseCase.save(projetoSpt);
-
         intent.putExtra("ProjetoSpt", projetoSpt);
 
         view.getContext().startActivity(intent);

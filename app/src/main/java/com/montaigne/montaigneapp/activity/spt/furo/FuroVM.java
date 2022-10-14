@@ -6,22 +6,42 @@ import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.montaigne.montaigneapp.model.spt.AmostraSpt;
+import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class FuroVM extends ViewModel {
     private int idFuro;
-    private ArrayList<String> amostras;
+    private ProjetoSpt projetoSpt;
+    private List<AmostraSpt> amostras;
 
-    private ArrayList<String> getAmostras() {
+    public int getIdFuro() {
+        return idFuro;
+    }
+
+    public void setIdFuro(int idFuro) {
+        this.idFuro = idFuro;
+    }
+
+    public ProjetoSpt getProjetoSpt() {
+        return projetoSpt;
+    }
+
+    public void setProjetoSpt(ProjetoSpt projetoSpt) {
+        this.projetoSpt = projetoSpt;
+    }
+
+    private List<AmostraSpt> getAmostras() {
+        /*
         ArrayList<String> mock = new ArrayList<>();
         mock.add("amostra1");
         mock.add("eu to literalmente copiando mocks aqui");
         mock.add("affs chato isso");
-        return mock;
-    }
+         */
 
-    private int getIdFuro() {
-        return 0;
+        return projetoSpt.getListaDeFuros().get(idFuro).getListaDeAmostras();
     }
 
     protected void updateAmostrasAdapter(RecyclerView recyclerAmostras) {
@@ -31,6 +51,7 @@ public class FuroVM extends ViewModel {
         AmostraAdapter adapter = new AmostraAdapter();
         adapter.setAmostras(amostras);
         adapter.setIdFuro(idFuro);
+        adapter.setProjetoSpt(projetoSpt);
 
         recyclerAmostras.setAdapter(adapter);
         recyclerAmostras.setLayoutManager(new LinearLayoutManager(recyclerAmostras.getContext()));

@@ -6,15 +6,22 @@ import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.montaigne.montaigneapp.model.spt.FuroSpt;
+import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProjetoVM extends ViewModel {
-    private ArrayList<String> furos;
+    private ProjetoSpt projetoSpt;
+    private List<FuroSpt> furos;
 
     protected void updateFurosAdapter(RecyclerView recyclerFuros) {
-        furos = getFuros();
+        // TODO: no caso de passar o projetoSpt para o adapter, não é preciso setar ele aqui
         FurosAdapter adapter = new FurosAdapter();
-        adapter.setFuros(furos);
+        adapter.setFuros(projetoSpt.getListaDeFuros());
+        adapter.setProjetoSpt(projetoSpt);
+
         recyclerFuros.setAdapter(adapter);
         recyclerFuros.setLayoutManager(new LinearLayoutManager(recyclerFuros.getContext()));
     }
@@ -22,11 +29,23 @@ public class ProjetoVM extends ViewModel {
     protected void deleteFurosButtonListener(View view) {
     }
 
-    private ArrayList<String> getFuros() {
+    private List<FuroSpt> getFuros() {
+        /*
         ArrayList<String> mock = new ArrayList<>();
         mock.add("furo1");
         mock.add("outro furo");
         mock.add("vc já entendeu");
         return mock;
+         */
+
+        return projetoSpt.getListaDeFuros();
+    }
+
+    public ProjetoSpt getProjetoSpt() {
+        return projetoSpt;
+    }
+
+    public void setProjetoSpt(ProjetoSpt projetoSpt) {
+        this.projetoSpt = projetoSpt;
     }
 }

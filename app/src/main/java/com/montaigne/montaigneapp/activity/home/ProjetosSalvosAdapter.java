@@ -41,7 +41,7 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAd
 
         holder.cardView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), ProjetoActivity.class);
-            intent.putExtra("name", projeto);
+            intent.putExtra("projeto", projeto);
             v.getContext().startActivity(intent);
         });
         // todo: definir se este listener deveria ficar aqui
