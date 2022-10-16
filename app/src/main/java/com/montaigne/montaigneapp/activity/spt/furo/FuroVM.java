@@ -2,38 +2,60 @@ package com.montaigne.montaigneapp.activity.spt.furo;
 
 import android.view.View;
 
+import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import com.montaigne.montaigneapp.model.spt.AmostraSpt;
+import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
-public class FuroVM {
-    private final FuroActivity activity;
-    private ArrayList<String> amostras;
+import java.util.List;
 
-    public FuroVM(FuroActivity activity) {
-        this.activity = activity;
+public class FuroVM extends ViewModel {
+    private int idFuro;
+    private ProjetoSpt projetoSpt;
+    private List<AmostraSpt> amostras;
 
-        amostras = getAmostras();
-        updateAmostrasAdapter(amostras);
-        activity.buttonDeleteAmostra.setOnClickListener(this::deleteAmostrasButtonListener);
-
+    public int getIdFuro() {
+        return idFuro;
     }
 
-    private ArrayList<String> getAmostras() {
+    public void setIdFuro(int idFuro) {
+        this.idFuro = idFuro;
+    }
+
+    public ProjetoSpt getProjetoSpt() {
+        return projetoSpt;
+    }
+
+    public void setProjetoSpt(ProjetoSpt projetoSpt) {
+        this.projetoSpt = projetoSpt;
+    }
+
+    private List<AmostraSpt> getAmostras() {
+        /*
         ArrayList<String> mock = new ArrayList<>();
         mock.add("amostra1");
         mock.add("eu to literalmente copiando mocks aqui");
         mock.add("affs chato isso");
-        return mock;
+         */
+
+        return projetoSpt.getListaDeFuros().get(idFuro).getListaDeAmostras();
     }
 
-    private void updateAmostrasAdapter(ArrayList<String> amostras) {
+    protected void updateAmostrasAdapter(RecyclerView recyclerAmostras) {
+        amostras = getAmostras();
+        idFuro = getIdFuro();
+
         AmostraAdapter adapter = new AmostraAdapter();
         adapter.setAmostras(amostras);
-        activity.recyclerAmostras.setAdapter(adapter);
-        activity.recyclerAmostras.setLayoutManager(new LinearLayoutManager(activity));
+        adapter.setIdFuro(idFuro);
+        adapter.setProjetoSpt(projetoSpt);
+
+        recyclerAmostras.setAdapter(adapter);
+        recyclerAmostras.setLayoutManager(new LinearLayoutManager(recyclerAmostras.getContext()));
     }
 
-    private void deleteAmostrasButtonListener(View view) {
+    protected void deleteAmostrasButtonListener(View view) {
     }
 }

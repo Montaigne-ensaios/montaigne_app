@@ -4,10 +4,12 @@ import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.AbstractActivity;
+import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 public class ProjetoActivity extends AbstractActivity {
     protected RecyclerView recyclerFuros;
@@ -19,11 +21,17 @@ public class ProjetoActivity extends AbstractActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        String nome = getIntent().getStringExtra("name");
+        ProjetoSpt projetoSpt = (ProjetoSpt) getIntent().getSerializableExtra("projeto");
         // todo: talvez seja uma boa usar enum para padronizar os nomes dos extras em intents
-        textFuro.setText(nome + ". " + textFuro.getText());
+        textFuro.setText(projetoSpt.getNome() + ". " + textFuro.getText());
 
-        ProjetoVM viewModel = new ProjetoVM(this);
+        ProjetoVM viewModel = new ViewModelProvider(this).get(ProjetoVM.class);
+        viewModel.setProjetoSpt(projetoSpt);
+
+        projetoSpt.getListaDeFuros();
+
+        buttonDeleteFuro.setOnClickListener(viewModel::deleteFurosButtonListener);
+        viewModel.updateFurosAdapter(recyclerFuros);
     }
 
     @Override

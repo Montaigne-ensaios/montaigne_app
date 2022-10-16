@@ -4,56 +4,73 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 
-import com.montaigne.montaigneapp.activity.AbstractActivity;
+import androidx.lifecycle.ViewModel;
+
 import com.montaigne.montaigneapp.activity.home.HomeActivity;
-import com.montaigne.montaigneapp.activity.spt.projeto.ProjetoActivity;
+import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
-public class EnsaioVM {
-    private final EnsaioActivity activity;
-    private final int nAmostra;
+import java.util.ArrayList;
 
-    public EnsaioVM(EnsaioActivity activity) {
+public class EnsaioVM extends ViewModel {
+    private  int idFuro;
+    private  int idAmostra;
+    private  ProjetoSpt projeto;
 
-        this.activity = activity;
-
-        Intent intent = activity.getIntent();
-        nAmostra = intent.getIntExtra("NAmostra", 0);
-        activity.textAmostraN.setText("Amostra " + nAmostra);
-        // todo: substituir string por referência ao `values.xml`
-
-        activity.buttonFinalizarFuro.setOnClickListener(this::projetoButtonListener);
-        activity.imageButtonHome.setOnClickListener(AbstractActivity::homeButtonListener);
-//        setGolpeModfiersListners();
+    public void setIdFuro(int idFuro) {
+        this.idFuro = idFuro;
     }
 
-    private void projetoButtonListener(View view) {
+    public void setIdAmostra(int idAmostra) {
+        this.idAmostra = idAmostra;
+    }
+
+    public void setProjeto(ProjetoSpt projeto) {
+        this.projeto = projeto;
+    }
+
+    /*
+    TODO: rever as formas(métodos) de atualização de uma amostra
+    protected void finalizarFuroButtonListener(View view, ArrayList<EditText> golpes,
+                                               ArrayList<EditText> penetracoes) {
+        updateAmostra(golpes, penetracoes);
         view.getContext().startActivity(new Intent(view.getContext(), ProjetoActivity.class));
     }
+     */
 
-    private void setGolpeModfiersListners(){
-        for (int i = 0; i < 3; i++) {
-            int finalI = i;  // finalização necessária para os lambdas
-            activity.buttonsIncrementGolpes.get(i).setOnClickListener(v -> incrementGolpe(finalI));
-            activity.buttonsDecrementGolpes.get(i).setOnClickListener(v -> decrementGolpe(finalI));
-        }
+    protected void homeButtonListener(View view) {
+        view.getContext().startActivity(new Intent(view.getContext(), HomeActivity.class));
+        //todo:limpar tasks
     }
 
-    private void incrementGolpe(int segmento) {
-        setGolpe(segmento, getGolpe(segmento) + 1);
+    private void updateAmostra(ArrayList<EditText> golpes, ArrayList<EditText> penetracoes){
+        /*
+        amostra.setGolpe1(getInt(golpes.get(0)));
+        amostra.setGolpe2(getInt(golpes.get(1)));
+        amostra.setGolpe3(getInt(golpes.get(2)));
+         */
+
+        // amostra.setNspt(getInt(penetracoes.get(1)) + getInt(penetracoes.get(2)));
+
+        // SaveAmostraSpt.saveAmostraSpt(amostra);
     }
 
-    private void decrementGolpe(int segmento) {
+
+    protected void incrementGolpe(EditText editText) {
+        setInt(editText, getInt(editText) + 1);
+    }
+
+    protected void decrementGolpe(EditText editText) {
         // garante que o valor jamais será menor que zero
-        int v = getGolpe(segmento);
+        int v = getInt(editText);
         v = (v > 0) ? (v - 1) : v;
-        setGolpe(segmento, v);
+        setInt(editText, v);
     }
 
-    private int getGolpe(int segmento) {
-        return Integer.parseInt(String.valueOf(activity.golpes.get(segmento).getText()));
+    private int getInt(EditText editText) {
+        return Integer.parseInt(String.valueOf(editText.getText()));
     }
 
-    private void setGolpe(int segmento, int value) {
-        activity.golpes.get(segmento).setText(String.valueOf(value));
+    private void setInt(EditText editText, int value) {
+        editText.setText(String.valueOf(value));
     }
 }

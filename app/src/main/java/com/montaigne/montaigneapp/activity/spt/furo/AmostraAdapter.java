@@ -1,6 +1,5 @@
 package com.montaigne.montaigneapp.activity.spt.furo;
 
-import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,11 +13,27 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.spt.ensaio.EnsaioActivity;
+import com.montaigne.montaigneapp.model.spt.AmostraSpt;
+import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class AmostraAdapter extends RecyclerView.Adapter<AmostraAdapter.ViewHolder>{
-    private ArrayList<String> amostras;
+    private int idFuro;
+    private ProjetoSpt projetoSpt;
+    private List<AmostraSpt> amostras;
+
+    public void setAmostras(List<AmostraSpt> amostras) {
+        this.amostras = amostras;
+    }
+
+    public void setIdFuro(int id) {
+        this.idFuro = id;
+    }
+
+    public void setProjetoSpt(ProjetoSpt projetoSpt) {
+        this.projetoSpt = projetoSpt;
+    }
 
     @NonNull
     @Override
@@ -29,12 +44,15 @@ public class AmostraAdapter extends RecyclerView.Adapter<AmostraAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.textView.setText(amostras.get(position));
-        String nome = amostras.get(position);
+        holder.textView.setText("Amostra " + (position + 1));
+        int idAmostra = position;
+
         holder.cardView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), EnsaioActivity.class);
-            intent.putExtra("name", nome);
-            intent.putExtra("NAmostra", position);
+            intent.putExtra("idAmostra", idAmostra);
+            intent.putExtra("idFuro", idFuro);
+            intent.putExtra("projetoSpt", projetoSpt);
+
             v.getContext().startActivity(intent);
         });
     }
@@ -42,10 +60,6 @@ public class AmostraAdapter extends RecyclerView.Adapter<AmostraAdapter.ViewHold
     @Override
     public int getItemCount() {
         return amostras.size();
-    }
-
-    public void setAmostras(ArrayList<String> amostras) {
-        this.amostras = amostras;
     }
 
     protected class ViewHolder extends RecyclerView.ViewHolder{

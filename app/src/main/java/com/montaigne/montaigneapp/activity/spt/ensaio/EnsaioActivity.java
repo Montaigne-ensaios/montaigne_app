@@ -6,8 +6,11 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import androidx.lifecycle.ViewModelProvider;
+
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.AbstractActivity;
+import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.ArrayList;
 
@@ -26,10 +29,31 @@ public class EnsaioActivity extends AbstractActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        EnsaioVM viewModel = new EnsaioVM(this);
-    }
+        initializeViews();
+        EnsaioVM viewModel = new ViewModelProvider(this).get(EnsaioVM.class);
+        // viewModel.setExtras(getIntent().getExtras());
+        int idFuro = (int) getIntent().getExtras().get("idFuro");
+        int idAmostra = (int) getIntent().getExtras().get("idAmostra");
+        ProjetoSpt projetoSpt = (ProjetoSpt) getIntent().getExtras().get("projetoSpt");
 
-    @Override
+        viewModel.setIdFuro(idFuro);
+        viewModel.setIdAmostra(idAmostra);
+        viewModel.setProjeto(projetoSpt);
+        // TODO: rever métodos de atualização de uma amostra
+
+        for (int i = 0; i < 3; i++) {
+            ib.setOnClickListener(v -> {
+                int value = Integer.parseInt(editText.getText().toString());
+                editText.setText(value + 1);
+            });
+
+
+            buttonsIncrementGolpes.get(i).setOnClickListener(v -> viewModel.incrementGolpe(editText));
+            buttonsDecrementGolpes.get(i).setOnClickListener(v -> viewModel.decrementGolpe(editText));
+        }
+
+
+        @Override
     protected boolean initializeViews() {
         setContentView(R.layout.activity_ensaio);
 

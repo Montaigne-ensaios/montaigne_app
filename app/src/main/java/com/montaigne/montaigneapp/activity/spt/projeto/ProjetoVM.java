@@ -2,38 +2,49 @@ package com.montaigne.montaigneapp.activity.spt.projeto;
 
 import android.view.View;
 
+import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import com.montaigne.montaigneapp.model.spt.FuroSpt;
+import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
-public class ProjetoVM {
-    private final ProjetoActivity activity;
-    private ArrayList<String> furos;
+import java.util.List;
 
-    public ProjetoVM(ProjetoActivity activity) {
-        this.activity = activity;
+public class ProjetoVM extends ViewModel {
+    private ProjetoSpt projetoSpt;
+    private List<FuroSpt> furos;
 
-        furos = getFuros();
-        updateFurosAdapter(furos);
-        
-        activity.buttonDeleteFuro.setOnClickListener(this::deleteFurosButtonListener);
+    protected void updateFurosAdapter(RecyclerView recyclerFuros) {
+        // TODO: no caso de passar o projetoSpt para o adapter, não é preciso setar ele aqui
+        FurosAdapter adapter = new FurosAdapter();
+        adapter.setFuros(projetoSpt.getListaDeFuros());
+        adapter.setProjetoSpt(projetoSpt);
+
+        recyclerFuros.setAdapter(adapter);
+        recyclerFuros.setLayoutManager(new LinearLayoutManager(recyclerFuros.getContext()));
     }
 
-    private void updateFurosAdapter(ArrayList<String> furos) {
-        FurosAdapter adapter = new FurosAdapter(); // todo: revisar quando passar a lista
-        adapter.setFuros(furos);
-        activity.recyclerFuros.setAdapter(adapter);
-        activity.recyclerFuros.setLayoutManager(new LinearLayoutManager(activity));
+    protected void deleteFurosButtonListener(View view) {
     }
 
-    private void deleteFurosButtonListener(View view) {
-    }
-
-    private ArrayList<String> getFuros() {
+    private List<FuroSpt> getFuros() {
+        /*
         ArrayList<String> mock = new ArrayList<>();
         mock.add("furo1");
         mock.add("outro furo");
         mock.add("vc já entendeu");
         return mock;
+         */
+
+        return projetoSpt.getListaDeFuros();
+    }
+
+    public ProjetoSpt getProjetoSpt() {
+        return projetoSpt;
+    }
+
+    public void setProjetoSpt(ProjetoSpt projetoSpt) {
+        this.projetoSpt = projetoSpt;
     }
 }

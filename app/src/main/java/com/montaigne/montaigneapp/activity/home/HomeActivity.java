@@ -1,8 +1,9 @@
 package com.montaigne.montaigneapp.activity.home;
 
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
+
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.montaigne.montaigneapp.R;
@@ -13,10 +14,15 @@ public class HomeActivity extends AbstractActivity {
     protected RecyclerView recyclerProjetoCategorias, recyclerProjetosSalvos;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        HomeVM viewModel = new HomeVM(this);
+        HomeVM viewModel = new ViewModelProvider(this).get(HomeVM.class);
+
+        viewModel.initializeProjetosSalvosAdapter(recyclerProjetosSalvos);
+        viewModel.initializeProjetoCategoriaAdapter(recyclerProjetoCategorias);
+        newProjectFab.setOnClickListener(viewModel::newProjectFabListener);
+        viewModel.refreshProjetosSalvos();
     }
 
     @Override

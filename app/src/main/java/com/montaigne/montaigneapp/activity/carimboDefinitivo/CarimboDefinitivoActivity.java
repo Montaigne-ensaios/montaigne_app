@@ -6,6 +6,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import androidx.lifecycle.ViewModelProvider;
+
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.AbstractActivity;
 
@@ -24,7 +26,12 @@ public class CarimboDefinitivoActivity extends AbstractActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        CarimboDefinitivoVM viewModel = new CarimboDefinitivoVM(this);
+        initializeViews();
+
+        CarimboDefinitivoVM viewModel = new ViewModelProvider(this).get(CarimboDefinitivoVM.class);
+
+        buttonContinuarCarimbo.setOnClickListener(v -> viewModel.continuarCarimboButtonListener (v, fields));
+        imageButtonHome.setOnClickListener(viewModel::homeButtonListener);
     }
 
     protected boolean initializeViews() {

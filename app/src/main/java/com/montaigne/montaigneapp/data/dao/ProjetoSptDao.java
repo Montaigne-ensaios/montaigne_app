@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.data.dao.spt;
+package com.montaigne.montaigneapp.data.dao;
 
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
@@ -6,14 +6,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
-import java.util.HashMap;
-
 public class ProjetoSptDao {
     private DatabaseReference dbReference;
 
     public ProjetoSptDao() {
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        dbReference = firebaseDatabase.getReference(ProjetoSpt.class.getSimpleName());
+        dbReference = FirebaseDatabase.getInstance().getReference().child("projetos").child("spt");
+    }
+
+    public DatabaseReference getDbReference() {
+        return dbReference;
     }
 
     public Query getProjetos() {
@@ -25,8 +26,8 @@ public class ProjetoSptDao {
         return dbReference.child(projeto.getId()).setValue(projeto);
     }
 
-    public Task<Void> updateProjeto(String id, HashMap<String, Object> hashMap) {
-        return dbReference.child(id).setValue(hashMap);
+    public Task<Void> updateProjeto(ProjetoSpt projetoSpt) {
+        return dbReference.child(projetoSpt.getId()).setValue(projetoSpt);
     }
 
     public Task<Void> deleteProjetoById(String id) {

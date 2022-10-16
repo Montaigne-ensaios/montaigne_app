@@ -5,6 +5,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import androidx.lifecycle.ViewModelProvider;
+
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.AbstractActivity;
 
@@ -22,7 +24,12 @@ public class CarimboUnicoActivity extends AbstractActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        CarimboUnicoVM viewModel = new CarimboUnicoVM(this);
+        initializeViews();
+        CarimboUnicoVM viewModel = new ViewModelProvider(this).get(CarimboUnicoVM.class);
+
+        viewModel.setExtras(getIntent().getExtras());
+        imageButtonHome.setOnClickListener(viewModel::homeButtonListener);
+        buttonIniciarEnsaio.setOnClickListener(v -> viewModel.ensaioButtonListener (v, editTextDataInicio));
     }
 
     @Override
