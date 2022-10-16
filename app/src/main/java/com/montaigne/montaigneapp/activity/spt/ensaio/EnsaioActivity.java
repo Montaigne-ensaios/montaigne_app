@@ -42,18 +42,15 @@ public class EnsaioActivity extends AbstractActivity {
         // TODO: rever métodos de atualização de uma amostra
 
         for (int i = 0; i < 3; i++) {
-            ib.setOnClickListener(v -> {
-                int value = Integer.parseInt(editText.getText().toString());
-                editText.setText(value + 1);
-            });
-
-
-            buttonsIncrementGolpes.get(i).setOnClickListener(v -> viewModel.incrementGolpe(editText));
-            buttonsDecrementGolpes.get(i).setOnClickListener(v -> viewModel.decrementGolpe(editText));
+            EditText editTextGolpe = golpes.get(i);
+            buttonsIncrementGolpes.get(i).setOnClickListener(v ->
+                    viewModel.incrementGolpe(editTextGolpe));
+            buttonsDecrementGolpes.get(i).setOnClickListener(v ->
+                    viewModel.decrementGolpe(editTextGolpe));
         }
+    }
 
-
-        @Override
+    @Override
     protected boolean initializeViews() {
         setContentView(R.layout.activity_ensaio);
 
