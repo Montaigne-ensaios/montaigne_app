@@ -5,7 +5,7 @@
 
 
         <!-- Primary color. -->
-        <item name="colorPrimary">#336E99</item>
+        <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryVariant">@color/black</item>
         <item name="colorOnPrimary">@color/white</item>
 
@@ -17,7 +17,7 @@
         <item name="android:windowBackground">#FFFFFF</item>
 
         <item name="android:textColorHint">@color/hint</item>
-        <item name="materialButtonStyle">@style/ButtonPadrao_light</item>
+        <item name="android:buttonStyle">@style/ButtonPadrao_light</item>
         <item name="imageButtonStyle">@style/ImageButton_light</item>
         <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
         <item name="editTextStyle">@style/Edit_Text_light</item>

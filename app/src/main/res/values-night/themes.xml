@@ -15,7 +15,7 @@
         <item name="backgroundColor">#000000</item>
 
         <item name="android:textColorHint">@color/material_dynamic_neutral_variant50</item>
-        <item name="materialButtonStyle">@style/ButtonPadrao_Dark</item>
+        <item name="android:buttonStyle">@style/ButtonPadrao_Dark</item>
         <item name="imageButtonStyle">@style/ImageButton_Dark</item>
         <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
         <item name="editTextStyle">@style/Edit_Text_dark</item>
