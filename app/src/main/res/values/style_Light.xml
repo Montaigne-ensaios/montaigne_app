@@ -3,7 +3,7 @@
 
     <!--- Button padrão do app. -->
 
-    <style name="ButtonPadrao" parent="Widget.MaterialComponents.Button">
+    <style name="ButtonPadrao_light" parent="Widget.AppCompat.Button">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">14dp</item>
         <item name="backgroundTint">@color/color_primary</item>
@@ -18,16 +18,16 @@
 
     <!--- ImageButton padrão do app. -->
 
-    <style name="ImageButton" parent="Widget.AppCompat.ImageButton">
+    <style name="ImageButton_light" parent="Widget.AppCompat.ImageButton">
         <item name="backgroundTint">#00042741</item>
         <item name="tint">@color/color_primary</item>
         <item name="android:layout_width">40dp</item>
         <item name="android:layout_height">40dp</item>
     </style>
 
-    <!--- EditText padrão do app. -->
+    <!--- EditText padrão do app Claro -->
 
-<style name="Edit_Text" parent="Widget.AppCompat.EditText">
+<style name="Edit_Text_light" parent="Widget.AppCompat.EditText">
     <item name="android:layout_width">match_parent</item>
     <item name="android:layout_height">wrap_content</item>
     <item name="android:colorAccent">@color/accent</item>
@@ -35,9 +35,8 @@
     <item name="android:textSize">14dp</item>
 
     <item name="android:padding">10dp</item>
-    <item name ="android:background">@drawable/style_edit_text</item>
+    <item name ="android:background">@drawable/style_edit_text_light</item>
 
 </style>
-
 
 </resources>

@@ -63,20 +63,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/imageFilterEnsaio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         app:layout_constraintBottom_toBottomOf="@+id/textFiltroEnsaio"
         app:layout_constraintEnd_toStartOf="@+id/textFiltroEnsaio"
         app:layout_constraintTop_toTopOf="@+id/textFiltroEnsaio"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.428"
         app:srcCompat="@drawable/icon_filter" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         app:layout_constraintBottom_toBottomOf="@+id/textMeusProjetos"
         app:layout_constraintEnd_toStartOf="@+id/textMeusProjetos"
         app:layout_constraintTop_toTopOf="@+id/textMeusProjetos"

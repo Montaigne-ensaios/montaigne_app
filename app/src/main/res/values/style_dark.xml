@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--- EditText padrão do app Dark -->
+
+    <style name="Edit_Text_dark" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:colorAccent">@color/accent</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14dp</item>
+
+        <item name="android:padding">10dp</item>
+        <item name ="android:background">@drawable/style_edit_text_dark</item>
+
+    </style>
+    <!--- Button padrão do app Dark. -->
+
+    <style name="ButtonPadrao_Dark" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14dp</item>
+        <item name="backgroundTint">@color/destaque</item>
+        <item name="cornerRadius">10dp</item>
+        <item name="android:elevation">20dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_width">126dp</item>
+        <item name="android:layout_height">wrap_content</item>
+
+
+    </style>
+
+    <!--- ImageButton padrão do app Dark. -->
+
+    <style name="ImageButton_Dark" parent="Widget.AppCompat.ImageButton">
+        <item name="backgroundTint">#00042741</item>
+        <item name="tint">@color/destaque</item>
+    </style>
+
+
+
+
+</resources>

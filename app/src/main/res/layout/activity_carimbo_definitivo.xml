@@ -27,13 +27,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                app:layout_constraintBottom_toBottomOf="@+id/buttonContinuarCarimbo"
+                app:layout_constraintBottom_toBottomOf="@+id/buttonNextCarimbo"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/buttonContinuarCarimbo"
+                app:layout_constraintTop_toTopOf="@+id/buttonNextCarimbo"
                 app:srcCompat="@drawable/icon_home" />
 
             <Button
-                android:id="@+id/buttonContinuarCarimbo"
+                android:id="@+id/buttonNextCarimbo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
@@ -50,9 +50,9 @@
                 android:layout_marginBottom="16dp"
                 android:text="@string/TxtCarimboUnicoAviso"
                 android:textColor="@color/destaque"
-                app:layout_constraintBottom_toTopOf="@+id/buttonContinuarCarimbo"
-                app:layout_constraintEnd_toEndOf="@+id/buttonContinuarCarimbo"
-                app:layout_constraintStart_toStartOf="@+id/buttonContinuarCarimbo"
+                app:layout_constraintBottom_toTopOf="@+id/buttonNextCarimbo"
+                app:layout_constraintEnd_toEndOf="@+id/buttonNextCarimbo"
+                app:layout_constraintStart_toStartOf="@+id/buttonNextCarimbo"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -151,7 +151,6 @@
                     app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
                     app:layout_constraintStart_toStartOf="@+id/guidelineStart"
                     app:layout_constraintTop_toBottomOf="@+id/textAviso2"
-                    app:srcCompat="@drawable/icon_profile"
                     tools:srcCompat="@drawable/icon_profile" />
 
                 <TextView
@@ -160,7 +159,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     android:text="@string/TxtCarimboDefinitivoNomeProjeto"
-                    android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -174,7 +172,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     android:text="@string/TxtCarimboDefinitivoNomeTecnico"
-                    android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="@+id/textNomeProjeto"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -201,7 +198,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     android:text="@string/TxtCarimboDefinitivoNomeEmpresa"
-                    android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="@+id/textTecnico"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -241,7 +237,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     android:text="@string/TxtCarimboDefinitivoContato"
-                    android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="@+id/textEmpresa"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -268,7 +263,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     android:text="@string/TxtCarimboDefinitivoNomeCliente"
-                    android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="@+id/textContato"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -294,7 +288,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     android:text="@string/TxtCarimboDefinitivoLocalObra"
-                    android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="@+id/textCliente"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -321,7 +314,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     android:text="@string/TxtCarimboDefinitivoQuantidadeFuros"
-                    android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="@+id/textLocalObra"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -347,7 +339,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     android:text="@string/TxtCarimboDefinitivoReferenciaNivel"
-                    android:textColor="@color/black"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="@+id/textQuantidadeFuros"
                     app:layout_constraintHorizontal_bias="0.0"
