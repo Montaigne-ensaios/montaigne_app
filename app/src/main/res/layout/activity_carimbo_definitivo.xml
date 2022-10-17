@@ -143,11 +143,12 @@
                     app:layout_constraintStart_toStartOf="@+id/guidelineStart"
                     app:layout_constraintTop_toBottomOf="@+id/textAviso1" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/imagePerfil"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_marginTop="16dp"
+                    android:scaleType="centerCrop"
                     app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
                     app:layout_constraintStart_toStartOf="@+id/guidelineStart"
                     app:layout_constraintTop_toBottomOf="@+id/textAviso2"
