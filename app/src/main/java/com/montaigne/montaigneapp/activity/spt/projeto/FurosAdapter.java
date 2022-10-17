@@ -46,9 +46,10 @@ public class FurosAdapter extends RecyclerView.Adapter<FurosAdapter.ViewHolder> 
     }
 
     @Override
-    //TODO java.lang.NullPointerException: Attempt to invoke interface method 'int java.util.List.size()' on a null object reference
-    //        at com.montaigne.montaigneapp.activity.spt.projeto.FurosAdapter.getItemCount(FurosAdapter.java:50)
     public int getItemCount() {
+        if (furos == null) {
+            return 0;
+        }
         return furos.size();
     }
 
