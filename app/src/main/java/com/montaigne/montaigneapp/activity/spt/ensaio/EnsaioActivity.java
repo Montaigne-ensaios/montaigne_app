@@ -32,6 +32,8 @@ public class EnsaioActivity extends AbstractActivity {
         initializeViews();
         EnsaioVM viewModel = new ViewModelProvider(this).get(EnsaioVM.class);
         // viewModel.setExtras(getIntent().getExtras());
+        //TODO   Caused by: java.lang.NullPointerException: Attempt to invoke virtual method 'int java.lang.Integer.intValue()' on a null object reference
+        //        at com.montaigne.montaigneapp.activity.spt.ensaio.EnsaioActivity.onCreate(EnsaioActivity.java:35)
         int idFuro = (int) getIntent().getExtras().get("idFuro");
         int idAmostra = (int) getIntent().getExtras().get("idAmostra");
         ProjetoSpt projetoSpt = (ProjetoSpt) getIntent().getExtras().get("projetoSpt");
