@@ -1,6 +1,7 @@
 package com.montaigne.montaigneapp.activity.spt.ensaio;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -33,10 +34,17 @@ public class EnsaioActivity extends AbstractActivity {
         EnsaioVM viewModel = new ViewModelProvider(this).get(EnsaioVM.class);
         // viewModel.setExtras(getIntent().getExtras());
         //TODO   Caused by: java.lang.NullPointerException: Attempt to invoke virtual method 'int java.lang.Integer.intValue()' on a null object reference
-        //        at com.montaigne.montaigneapp.activity.spt.ensaio.EnsaioActivity.onCreate(EnsaioActivity.java:35)
-        int idFuro = (int) getIntent().getExtras().get("idFuro");
-        int idAmostra = (int) getIntent().getExtras().get("idAmostra");
-        ProjetoSpt projetoSpt = (ProjetoSpt) getIntent().getExtras().get("projetoSpt");
+        //        at com.montaigne.montaigneapp.activity.spt.ensaio.EnsaioActivity.onCreate(EnsaioActivity.java:35)×
+        // Não existe o extra idFuro, idAmostra, projuetoSPT em CarimboUnicoVM.java linha 68
+        try {
+            int idFuro = (int) getIntent().getExtras().get("idFuro");
+            int idAmostra = (int) getIntent().getExtras().get("idAmostra");
+            ProjetoSpt projetoSpt = (ProjetoSpt) getIntent().getExtras().get("projetoSpt");
+        } catch (NullPointerException e) {
+            Log.e("EnsaioActivity", e.getMessage());
+            //TODO: Colocar os valores padrão dos extras.
+        }
+
 
         viewModel.setIdFuro(idFuro);
         viewModel.setIdAmostra(idAmostra);
