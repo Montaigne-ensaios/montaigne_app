@@ -40,16 +40,16 @@ public class EnsaioActivity extends AbstractActivity {
             int idFuro = (int) getIntent().getExtras().get("idFuro");
             int idAmostra = (int) getIntent().getExtras().get("idAmostra");
             ProjetoSpt projetoSpt = (ProjetoSpt) getIntent().getExtras().get("projetoSpt");
+
+            viewModel.setIdFuro(idFuro);
+            viewModel.setIdAmostra(idAmostra);
+            viewModel.setProjeto(projetoSpt);
+            // TODO: rever métodos de atualização de uma amostra
+
         } catch (NullPointerException e) {
             Log.e("EnsaioActivity", e.getMessage());
             //TODO: Colocar os valores padrão dos extras.
         }
-
-
-        viewModel.setIdFuro(idFuro);
-        viewModel.setIdAmostra(idAmostra);
-        viewModel.setProjeto(projetoSpt);
-        // TODO: rever métodos de atualização de uma amostra
 
         for (int i = 0; i < 3; i++) {
             EditText editTextGolpe = golpes.get(i);
