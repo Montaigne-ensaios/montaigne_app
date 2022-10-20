@@ -2,18 +2,16 @@
     <!-- Padrão do tema claro . -->
     <style name="Theme.MontaigneApp" parent="Theme.AppCompat.Light.NoActionBar">
 
-
-
         <!-- Primary color. -->
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryVariant">@color/black</item>
         <item name="colorOnPrimary">@color/white</item>
 
-
         <!-- Estilos padrão. -->
         <item name="android:textColor">@color/black</item>
         <item name="colorAccent">@color/accent</item>
-        //fundo
+
+        <!-- fundo-->
         <item name="android:windowBackground">#FFFFFF</item>
 
         <item name="android:textColorHint">@color/hint</item>
@@ -22,16 +20,11 @@
         <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
         <item name="editTextStyle">@style/Edit_Text_light</item>
 
-
-
-
-
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/color_primary</item>
 
         <!--Button flutuante-->
         <item name="colorOnSecondary">@color/white</item>
-
 
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/color_primary</item>
@@ -47,8 +40,4 @@
     <style name="Theme.MontaigneApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.MontaigneApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
-
-
-
 </resources>

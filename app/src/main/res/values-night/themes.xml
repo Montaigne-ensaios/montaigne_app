@@ -11,7 +11,8 @@
         <!-- Estilos padrão. -->
         <item name="android:textColor">@color/white</item>
         <item name="colorAccent">@color/accent</item>
-        //fundo
+
+        <!--  fundo-->
         <item name="backgroundColor">#000000</item>
 
         <item name="android:textColorHint">@color/material_dynamic_neutral_variant50</item>
