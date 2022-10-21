@@ -37,7 +37,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonCarimbo"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_input_add" />
+        app:srcCompat="@drawable/icon_add_padron" />
 
     <ImageButton
         android:id="@+id/imageButtonDeleteFuro"
@@ -49,7 +49,7 @@
         app:layout_constraintStart_toEndOf="@+id/buttonCarimbo"
         app:layout_constraintTop_toTopOf="@+id/buttonCarimbo"
         app:layout_constraintVertical_bias="0.26"
-        app:srcCompat="@android:drawable/ic_menu_delete" />
+        app:srcCompat="@drawable/icon_delet" />
 
     <TextView
         android:id="@+id/textFuro"

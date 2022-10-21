@@ -20,12 +20,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="50dp"
-        android:backgroundTint="#00FFFFFF"
-        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="@+id/buttonFinishFuro"
         app:layout_constraintEnd_toStartOf="@+id/buttonFinishFuro"
         app:layout_constraintTop_toTopOf="@+id/buttonFinishFuro"
-        app:srcCompat="@drawable/icon_home3" />
+        app:srcCompat="@drawable/icon_home" />
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -45,7 +43,7 @@
                 android:id="@+id/textProfundidade"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="60dp"
                 android:layout_marginTop="40dp"
                 android:text="Profundidade:"
                 app:layout_constraintStart_toStartOf="parent"
@@ -61,6 +59,7 @@
                 android:text="xx"
                 app:layout_constraintBottom_toBottomOf="@+id/textProfundidade"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/textProfundidade"
                 app:layout_constraintTop_toTopOf="@+id/textProfundidade" />
 
@@ -84,7 +83,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe2"
                 app:layout_constraintStart_toEndOf="@+id/editTextGolpe2"
                 app:layout_constraintTop_toTopOf="@+id/editTextGolpe2"
-                app:srcCompat="@android:drawable/ic_input_add" />
+                app:srcCompat="@android:drawable/icon_increase" />
 
             <ImageButton
                 android:id="@+id/imageButtonIcrementGolpe3"
@@ -95,7 +94,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe3"
                 app:layout_constraintStart_toEndOf="@+id/editTextGolpe3"
                 app:layout_constraintTop_toTopOf="@+id/editTextGolpe3"
-                app:srcCompat="@android:drawable/ic_input_add" />
+                app:srcCompat="@android:drawable/icon_increase" />
 
             <ImageButton
                 android:id="@+id/imageButtonDecrementGolpe3"
@@ -106,8 +105,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe3"
                 app:layout_constraintEnd_toStartOf="@+id/editTextGolpe3"
                 app:layout_constraintTop_toTopOf="@+id/editTextGolpe3"
-                app:layout_constraintVertical_bias="1.0"
-                app:srcCompat="@android:drawable/presence_offline" />
+                app:srcCompat="@android:drawable/icon_decrease" />
 
             <ImageButton
                 android:id="@+id/imageButtonDecrementGolpe2"
@@ -118,7 +116,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe2"
                 app:layout_constraintEnd_toStartOf="@+id/editTextGolpe2"
                 app:layout_constraintTop_toTopOf="@+id/editTextGolpe2"
-                app:srcCompat="@android:drawable/presence_offline" />
+                app:srcCompat="@android:drawable/icon_decrease" />
 
             <ImageButton
                 android:id="@+id/imageButtonDecrementGolpe1"
@@ -129,7 +127,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe1"
                 app:layout_constraintEnd_toStartOf="@+id/editTextGolpe1"
                 app:layout_constraintTop_toTopOf="@+id/editTextGolpe1"
-                app:srcCompat="@android:drawable/presence_offline" />
+                app:srcCompat="@android:drawable/icon_decrease" />
 
             <TextView
                 android:id="@+id/textAmostraN"
@@ -145,10 +143,10 @@
                 android:id="@+id/textGolpes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="64dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="32dp"
                 android:text="Golpes"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/textProfundidade"
+                app:layout_constraintStart_toStartOf="@+id/textProfundidade"
                 app:layout_constraintTop_toBottomOf="@+id/textProfundidade" />
 
             <TextView
@@ -158,7 +156,7 @@
                 android:text="Penetração"
                 app:layout_constraintBottom_toBottomOf="@+id/textGolpes"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.49"
+                app:layout_constraintHorizontal_bias="0.43"
                 app:layout_constraintStart_toEndOf="@+id/textGolpes"
                 app:layout_constraintTop_toTopOf="@+id/textGolpes"
                 app:layout_constraintVertical_bias="1.0" />
@@ -170,9 +168,9 @@
                 android:layout_marginTop="12dp"
                 android:ems="10"
                 android:inputType="number"
-                android:text="0"
+                android:text="Name"
                 app:layout_constraintEnd_toEndOf="@+id/textGolpes"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.3"
                 app:layout_constraintStart_toStartOf="@+id/textGolpes"
                 app:layout_constraintTop_toBottomOf="@+id/textGolpes" />
 
@@ -265,19 +263,18 @@
                 android:id="@+id/textNivelAgua"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
                 android:layout_marginEnd="4dp"
                 android:text="Nível de água"
                 app:layout_constraintBottom_toBottomOf="@+id/editTextNivelAgua"
                 app:layout_constraintEnd_toStartOf="@+id/editTextNivelAgua"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/imageButtonDecrementGolpe3"
                 app:layout_constraintTop_toTopOf="@+id/editTextNivelAgua" />
 
             <TextView
                 android:id="@+id/textSegmento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="20dp"
                 android:text="3 segmentos"
                 app:layout_constraintBottom_toBottomOf="@+id/editTextPenetracao3"
                 app:layout_constraintStart_toEndOf="@+id/editTextPenetracao2"

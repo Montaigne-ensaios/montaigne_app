@@ -25,7 +25,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/TxtCarimboUnicoDataInicio"
-                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline5"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -40,6 +39,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:ems="10"
+                android:hint="@string/TxtCarimboUnicoHint"
                 android:inputType="date|datetime"
                 android:minHeight="48dp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline5"
@@ -52,7 +52,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:text="@string/TxtCarimboUnicoNivelFuro"
-                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline5"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -79,22 +78,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:text="@string/TxtCarimboUnicoCoordenadaFuro"
-                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline5"
                 app:layout_constraintStart_toStartOf="@+id/guideline4"
                 app:layout_constraintTop_toBottomOf="@+id/editTextNivelFuro" />
-
-            <Button
-                android:id="@+id/buttonGetLocation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:drawableLeft="@drawable/icon_localization"
-                android:text="@string/TxtBotaoLocalizacao"
-                app:layout_constraintEnd_toStartOf="@+id/guideline5"
-                app:layout_constraintStart_toStartOf="@+id/guideline4"
-                app:layout_constraintTop_toBottomOf="@+id/textCoordenadasFuro" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline4"
@@ -149,6 +136,17 @@
                 app:layout_constraintTop_toTopOf="@+id/buttonGetLocation"
                 app:srcCompat="@android:drawable/ic_menu_help" />
 
+            <Button
+                android:id="@+id/buttonPegarLocalizacao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:drawableLeft="@drawable/icon_pin"
+                android:text="@string/TxtBotaoLocalizacao"
+                app:layout_constraintEnd_toEndOf="@+id/textCoordenadasFuro"
+                app:layout_constraintStart_toStartOf="@+id/textCoordenadasFuro"
+                app:layout_constraintTop_toBottomOf="@+id/textCoordenadasFuro" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </FrameLayout>
@@ -194,7 +192,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/buttonStartEnsaio"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/buttonStartEnsaio"
-                app:srcCompat="@drawable/icon_home3" />
+                app:srcCompat="@drawable/icon_home" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
