@@ -97,47 +97,8 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.90" />
 
-            <ImageButton
-                android:id="@+id/imageButtonHelpStartDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:background="#00FFFFFF"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextStartDate"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/editTextStartDate"
-                app:layout_constraintTop_toTopOf="@+id/editTextStartDate"
-                app:srcCompat="@android:drawable/ic_menu_help" />
-
-            <ImageButton
-                android:id="@+id/imageButtonHelpNivelFuro"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:background="#00FFFFFF"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextNivelFuro"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/editTextNivelFuro"
-                app:layout_constraintTop_toTopOf="@+id/editTextNivelFuro"
-                app:srcCompat="@android:drawable/ic_menu_help" />
-
-            <ImageButton
-                android:id="@+id/imageButtonHelpCoordenadaFuro"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:background="#00FFFFFF"
-                app:layout_constraintBottom_toBottomOf="@+id/buttonGetLocation"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/buttonGetLocation"
-                app:layout_constraintTop_toTopOf="@+id/buttonGetLocation"
-                app:srcCompat="@android:drawable/ic_menu_help" />
-
             <Button
-                android:id="@+id/buttonPegarLocalizacao"
+                android:id="@+id/buttonGetLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"

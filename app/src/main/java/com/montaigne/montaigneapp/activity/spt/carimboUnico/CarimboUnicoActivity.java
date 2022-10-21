@@ -40,9 +40,9 @@ public class CarimboUnicoActivity extends AbstractActivity {
         buttonIniciarEnsaio = findViewById(R.id.buttonStartEnsaio);
         editTextDataInicio = findViewById(R.id.editTextStartDate);
         editTextNivelFuro = findViewById(R.id.editTextNivelFuro);
-        imageButtonHelpCoordenadaFuro = findViewById(R.id.imageButtonHelpCoordenadaFuro);
-        imageButtonHelpDataInicio = findViewById(R.id.imageButtonHelpStartDate);
-        imageButtonHelpNivelFuro = findViewById(R.id.imageButtonHelpNivelFuro);
+       // imageButtonHelpCoordenadaFuro = findViewById(R.id.imageButtonHelpCoordenadaFuro);
+       // imageButtonHelpDataInicio = findViewById(R.id.imageButtonHelpStartDate);
+       // imageButtonHelpNivelFuro = findViewById(R.id.imageButtonHelpNivelFuro);
         imageButtonHome = findViewById(R.id.imageButtonHome);
 
         return buttonIniciarEnsaio == null;

@@ -30,7 +30,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/buttonContinueCarimbo"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/buttonContinueCarimbo"
-                app:srcCompat="@drawable/icon_home3" />
+                app:srcCompat="@drawable/icon_home" />
 
             <Button
                 android:id="@+id/buttonContinueCarimbo"
@@ -81,41 +81,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textImputLayoutNameProject"
+                <EditText
+                    android:id="@+id/editTextNameProjeto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="12dp"
                     android:layout_marginEnd="70dp"
                     android:hint="name"
-                    android:inputType="textPersonName"
                     android:minHeight="48dp"
                     app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/textNameProjeto"
-                    app:layout_constraintTop_toBottomOf="@+id/textNameProjeto">
+                    app:layout_constraintTop_toBottomOf="@+id/textNameProjeto"/>
 
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/textImputEditTextNameProject"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
 
-                    </com.google.android.material.textfield.TextInputEditText>
-                </com.google.android.material.textfield.TextInputLayout>
 
-                <ImageButton
-                    android:id="@+id/imageButtonHelpLocalObra"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    app:layout_constraintBottom_toBottomOf="@+id/editTextLocalObra"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/editTextLocalObra"
-                    app:layout_constraintTop_toTopOf="@+id/editTextLocalObra"
-                    app:srcCompat="@android:drawable/ic_menu_help" />
 
                 <TextView
                     android:id="@+id/textWarning1"
@@ -190,7 +172,7 @@
                     android:minHeight="48dp"
                     app:layout_constraintEnd_toEndOf="@+id/editTextNameProjeto"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/editTextNameProjeto"
+                    app:layout_constraintStart_toStartOf="@+id/textTecnico"
                     app:layout_constraintTop_toBottomOf="@+id/textTecnico" />
 
                 <TextView
@@ -369,91 +351,16 @@
                     app:layout_constraintEnd_toEndOf="@+id/imageProfile"
                     app:layout_constraintStart_toStartOf="@+id/imageProfile"
                     app:layout_constraintTop_toBottomOf="@+id/imageProfile"
-                    app:srcCompat="@android:drawable/ic_menu_camera" />
+                    app:srcCompat="@drawable/icon_photo" />
 
-                <ImageButton
-                    android:id="@+id/imageButtonHelpNameProjeto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    app:layout_constraintBottom_toBottomOf="@+id/textImputLayoutNameProject"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/editTextNameProjeto"
-                    app:layout_constraintTop_toTopOf="@+id/editTextNameProjeto"
-                    app:srcCompat="@android:drawable/ic_menu_help" />
 
-                <ImageButton
-                    android:id="@+id/imageButtonHelpTecnico"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    app:layout_constraintBottom_toBottomOf="@+id/editTextTecnico"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/editTextTecnico"
-                    app:layout_constraintTop_toTopOf="@+id/editTextTecnico"
-                    app:srcCompat="@android:drawable/ic_menu_help" />
 
-                <ImageButton
-                    android:id="@+id/imageButtonHelpEmpresa"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    app:layout_constraintBottom_toBottomOf="@+id/editTextEmpresa"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/editTextEmpresa"
-                    app:layout_constraintTop_toTopOf="@+id/editTextEmpresa"
-                    app:srcCompat="@android:drawable/ic_menu_help" />
 
-                <ImageButton
-                    android:id="@+id/imageButtonHelpContato"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    app:layout_constraintBottom_toBottomOf="@+id/editTextContato"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/editTextContato"
-                    app:layout_constraintTop_toTopOf="@+id/editTextContato"
-                    app:srcCompat="@android:drawable/ic_menu_help" />
 
-                <ImageButton
-                    android:id="@+id/imageButtonHelpQuantidadeFuros"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    app:layout_constraintBottom_toBottomOf="@+id/editTextQuantidadeFuros"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/editTextQuantidadeFuros"
-                    app:layout_constraintTop_toTopOf="@+id/editTextQuantidadeFuros"
-                    app:srcCompat="@android:drawable/ic_menu_help" />
 
-                <ImageButton
-                    android:id="@+id/imageButtonHelpReferenciaNivel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#00FFFFFF"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/editTextReferenciaNivel"
-                    app:layout_constraintTop_toTopOf="@+id/editTextReferenciaNivel"
-                    app:srcCompat="@android:drawable/ic_menu_help" />
 
-                <ImageButton
-                    android:id="@+id/imageButtonHelpCliente"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="3dp"
-                    android:backgroundTint="#00FFFFFF"
-                    app:layout_constraintBottom_toBottomOf="@+id/editTextCliente"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/editTextCliente"
-                    app:layout_constraintTop_toTopOf="@+id/editTextCliente"
-                    app:srcCompat="@android:drawable/ic_menu_help" />
+
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

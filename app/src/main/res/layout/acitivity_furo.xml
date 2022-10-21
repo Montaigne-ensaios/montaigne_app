@@ -9,10 +9,11 @@
         android:id="@+id/imageButtonDeleteAmostra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         app:layout_constraintBottom_toBottomOf="@+id/buttonPrint"
-        app:srcCompat="@drawable/ic_menu_delete"
         app:layout_constraintStart_toEndOf="@+id/buttonPrint"
-        app:layout_constraintTop_toTopOf="@+id/buttonPrint" />
+        app:layout_constraintTop_toTopOf="@+id/buttonPrint"
+        app:srcCompat="@drawable/icon_delet" />
 
     <ImageButton
         android:id="@+id/imageButtonAddAmostra"
@@ -22,8 +23,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonPrint"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerAmostras"
-        app:srcCompat="@drawable/ic_menu_add" />
+        app:layout_constraintTop_toBottomOf="@+id/recyclerAmostra"
+        app:srcCompat="@drawable/icon_add_padron" />
 
     <Button
         android:id="@+id/buttonPrint"
@@ -52,9 +53,10 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonPrint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textWarning"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="-104dp" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textWarning"

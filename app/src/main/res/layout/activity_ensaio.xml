@@ -72,7 +72,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe1"
                 app:layout_constraintStart_toEndOf="@+id/editTextGolpe1"
                 app:layout_constraintTop_toTopOf="@+id/editTextGolpe1"
-                app:srcCompat="@android:drawable/ic_input_add" />
+                app:srcCompat="@drawable/icon_increase" />
 
             <ImageButton
                 android:id="@+id/imageButtonIcrementGolpe2"
@@ -83,7 +83,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe2"
                 app:layout_constraintStart_toEndOf="@+id/editTextGolpe2"
                 app:layout_constraintTop_toTopOf="@+id/editTextGolpe2"
-                app:srcCompat="@android:drawable/icon_increase" />
+                app:srcCompat="@drawable/icon_increase" />
 
             <ImageButton
                 android:id="@+id/imageButtonIcrementGolpe3"
@@ -94,7 +94,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe3"
                 app:layout_constraintStart_toEndOf="@+id/editTextGolpe3"
                 app:layout_constraintTop_toTopOf="@+id/editTextGolpe3"
-                app:srcCompat="@android:drawable/icon_increase" />
+                app:srcCompat="@drawable/icon_increase" />
 
             <ImageButton
                 android:id="@+id/imageButtonDecrementGolpe3"
@@ -105,7 +105,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe3"
                 app:layout_constraintEnd_toStartOf="@+id/editTextGolpe3"
                 app:layout_constraintTop_toTopOf="@+id/editTextGolpe3"
-                app:srcCompat="@android:drawable/icon_decrease" />
+                app:srcCompat="@drawable/icon_decrease" />
 
             <ImageButton
                 android:id="@+id/imageButtonDecrementGolpe2"
@@ -116,7 +116,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe2"
                 app:layout_constraintEnd_toStartOf="@+id/editTextGolpe2"
                 app:layout_constraintTop_toTopOf="@+id/editTextGolpe2"
-                app:srcCompat="@android:drawable/icon_decrease" />
+                app:srcCompat="@drawable/icon_decrease" />
 
             <ImageButton
                 android:id="@+id/imageButtonDecrementGolpe1"
@@ -127,7 +127,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe1"
                 app:layout_constraintEnd_toStartOf="@+id/editTextGolpe1"
                 app:layout_constraintTop_toTopOf="@+id/editTextGolpe1"
-                app:srcCompat="@android:drawable/icon_decrease" />
+                app:srcCompat="@drawable/icon_decrease" />
 
             <TextView
                 android:id="@+id/textAmostraN"
