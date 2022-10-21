@@ -12,19 +12,17 @@
         <item name="colorAccent">@color/accent</item>
 
         <!-- fundo-->
-        <item name="android:windowBackground">#FFFFFF</item>
 
         <item name="android:textColorHint">@color/hint</item>
         <item name="android:buttonStyle">@style/ButtonPadrao_light</item>
         <item name="imageButtonStyle">@style/ImageButton_light</item>
-        <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
         <item name="editTextStyle">@style/Edit_Text_light</item>
 
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/color_primary</item>
 
         <!--Button flutuante-->
-        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnSecondary">@color/color_primary</item>
 
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/color_primary</item>

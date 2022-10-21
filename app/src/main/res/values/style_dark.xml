@@ -30,4 +30,10 @@
         <item name="backgroundTint">#00042741</item>
         <item name="tint">@color/destaque</item>
     </style>
+
+    <!-- TextView Padrão do app Dark-->
+    <style name="TextView_Dark" parent="Widget.AppCompat.TextView">
+        <item name="tint">@color/fundo</item>
+    </style>
+
 </resources>
