@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MontaigneApp"
         tools:targetApi="31">
         <activity
+            android:name=".SptActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.spt.carimboUnico.CarimboUnicoActivity"
             android:exported="false" />
         <activity
