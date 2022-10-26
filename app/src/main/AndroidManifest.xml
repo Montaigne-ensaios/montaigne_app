@@ -16,7 +16,7 @@
             android:name=".SptActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.spt.carimboUnico.CarimboUnicoActivity"
+            android:name=".activity.spt.carimboEnsaio.CarimboEnsaiooActivity"
             android:exported="false" />
         <activity
             android:name=".activity.spt.projeto.ProjetoActivity"
@@ -28,7 +28,7 @@
             android:name=".activity.spt.ensaio.EnsaioActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.carimboDefinitivo.CarimboDefinitivoActivity"
+            android:name=".activity.carimboProjeto.CarimboProjetoActivity"
             android:exported="false" />
         <activity
             android:name=".activity.home.HomeActivity"

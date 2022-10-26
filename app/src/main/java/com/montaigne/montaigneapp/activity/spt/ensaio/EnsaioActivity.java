@@ -62,7 +62,7 @@ public class EnsaioActivity extends AbstractActivity {
 
     @Override
     protected boolean initializeViews() {
-        setContentView(R.layout.activity_ensaio);
+        setContentView(R.layout.fragment_ensaio);
 
         textAmostraN = findViewById(R.id.textAmostraN);
         editTextProfundidade = findViewById(R.id.editTextProfundidade);

@@ -10,13 +10,12 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.montaigne.montaigneapp.R;
-import com.montaigne.montaigneapp.activity.carimboDefinitivo.CarimboDefinitivoActivity;
-import com.montaigne.montaigneapp.activity.spt.carimboUnico.CarimboUnicoFragment;
-import com.montaigne.montaigneapp.activity.spt.carimboUnico.CarimboUnicoVM;
+import com.montaigne.montaigneapp.activity.spt.carimboEnsaio.CarimboEnsaioFragment;
+import com.montaigne.montaigneapp.activity.spt.carimboEnsaio.CarimboEnsaioVM;
 import com.montaigne.montaigneapp.activity.spt.fragment.SptFragment;
 
 public class SptActivity extends AppCompatActivity {
-    private CarimboUnicoVM mCarimboUnicoVM;
+    private CarimboEnsaioVM mCarimboUnicoVM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +23,7 @@ public class SptActivity extends AppCompatActivity {
         setContentView(R.layout.activity_spt);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.container, CarimboUnicoFragment.newInstance())
+                    .replace(R.id.container, CarimboEnsaioFragment.newInstance())
                     .commitNow();
         }
     }

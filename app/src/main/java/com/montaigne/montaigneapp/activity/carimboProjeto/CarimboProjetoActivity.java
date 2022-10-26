@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.activity.carimboDefinitivo;
+package com.montaigne.montaigneapp.activity.carimboProjeto;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -13,7 +13,7 @@ import com.montaigne.montaigneapp.activity.AbstractActivity;
 
 import java.util.HashMap;
 
-public class CarimboDefinitivoActivity extends AbstractActivity {
+public class CarimboProjetoActivity extends AbstractActivity {
     protected final HashMap<String, EditText> fields = new HashMap<>();
     protected final HashMap<EditText, ImageButton> buttonsHelp = new HashMap<>();
 
@@ -28,14 +28,14 @@ public class CarimboDefinitivoActivity extends AbstractActivity {
 
         initializeViews();
 
-        CarimboDefinitivoVM viewModel = new ViewModelProvider(this).get(CarimboDefinitivoVM.class);
+        CarimboProjetoVM viewModel = new ViewModelProvider(this).get(CarimboProjetoVM.class);
 
         buttonContinuarCarimbo.setOnClickListener(v -> viewModel.continuarCarimboButtonListener (v, fields));
         imageButtonHome.setOnClickListener(viewModel::homeButtonListener);
     }
 
     protected boolean initializeViews() {
-        setContentView(R.layout.activity_carimbo_definitivo);
+        setContentView(R.layout.fragment_carimbo_projeto);
 
         buttonContinuarCarimbo = findViewById(R.id.buttonContinueCarimbo);
         imageButtonHome = findViewById(R.id.imageButtonHome);

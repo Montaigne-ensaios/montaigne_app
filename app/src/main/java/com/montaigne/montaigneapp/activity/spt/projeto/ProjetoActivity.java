@@ -36,7 +36,7 @@ public class ProjetoActivity extends AbstractActivity {
 
     @Override
     protected boolean initializeViews() {
-        setContentView(R.layout.activity_projeto);
+        setContentView(R.layout.fragment_projeto);
 
         recyclerFuros = findViewById(R.id.recyclerFuro);
         buttonDeleteFuro = findViewById(R.id.imageButtonDeleteFuro);

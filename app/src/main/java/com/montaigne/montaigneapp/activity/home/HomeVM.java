@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
-import com.montaigne.montaigneapp.activity.carimboDefinitivo.CarimboDefinitivoActivity;
+import com.montaigne.montaigneapp.activity.carimboProjeto.CarimboProjetoActivity;
 import com.montaigne.montaigneapp.data.ModelHolder;
 import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
 import com.montaigne.montaigneapp.model.Projeto;
@@ -61,6 +61,6 @@ public class HomeVM extends ViewModel implements ModelHolder<Projeto> {
     }
 
     protected void newProjectFabListener(View view) {
-        view.getContext().startActivity(new Intent(view.getContext(), CarimboDefinitivoActivity.class));
+        view.getContext().startActivity(new Intent(view.getContext(), CarimboProjetoActivity.class));
     }
 }

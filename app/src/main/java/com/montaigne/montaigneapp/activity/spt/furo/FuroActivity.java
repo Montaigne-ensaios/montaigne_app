@@ -43,7 +43,7 @@ public class FuroActivity extends AbstractActivity {
 
     @Override
     protected boolean initializeViews() {
-        setContentView(R.layout.acitivity_furo);
+        setContentView(R.layout.fragment_furo);
 
         buttonAddAmostra = findViewById(R.id.imageButtonAddAmostra);
         buttonDeleteAmostra = findViewById(R.id.imageButtonDeleteAmostra);
