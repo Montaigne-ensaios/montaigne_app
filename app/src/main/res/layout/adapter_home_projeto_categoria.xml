@@ -7,7 +7,7 @@
     android:layout_margin="5dp"
     app:cardCornerRadius="20dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
@@ -15,14 +15,7 @@
             android:id="@+id/imageProjeto"
             android:layout_width="160dp"
             android:layout_height="160dp"
-            android:background="#00FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/ic_logospt_azul" />
+            android:background="#00FFFFFF" />
 
         <Button
             android:id="@+id/buttoProjetoName"
@@ -34,12 +27,7 @@
             android:elevation="40dp"
             android:padding="0dp"
             android:text="SPT"
-            android:textColor="@color/fundo"
-            app:cornerRadius="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageProjeto" />
+            android:textColor="@color/fundo" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 </androidx.cardview.widget.CardView>
