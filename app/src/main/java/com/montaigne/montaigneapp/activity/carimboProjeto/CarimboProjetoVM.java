@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.activity.carimboDefinitivo;
+package com.montaigne.montaigneapp.activity.carimboProjeto;
 
 import android.content.Intent;
 import android.view.View;
@@ -7,16 +7,16 @@ import android.widget.EditText;
 import androidx.lifecycle.ViewModel;
 
 import com.montaigne.montaigneapp.activity.home.HomeActivity;
-import com.montaigne.montaigneapp.activity.spt.carimboUnico.CarimboUnicoActivity;
+import com.montaigne.montaigneapp.activity.spt.carimboEnsaio.CarimboUnicoActivity;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.Map;
 
-public class CarimboDefinitivoVM extends ViewModel {
+public class CarimboProjetoVM extends ViewModel {
     // método de getData (validação de entradas)
 
     protected void continuarCarimboButtonListener(View view, Map<String, EditText> fields) {
-        Intent intent = new Intent(view.getContext(), CarimboUnicoActivity.class);
+        Intent intent = new Intent(view.getContext(), Carimboensaioactivity.class);
 
         /*
         intent.putExtra("Tecnico", activity.fields.get ("Tecnico"). getText(). toString());

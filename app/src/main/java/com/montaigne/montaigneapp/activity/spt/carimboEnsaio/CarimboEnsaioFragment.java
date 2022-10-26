@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.activity.spt.carimboUnico;
+package com.montaigne.montaigneapp.activity.spt.carimboEnsaio;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,13 +10,13 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-public class CarimboUnicoFragment extends Fragment {
-    private CarimboUnicoVM carimboUnicoVM;
+public class CarimboEnsaioFragment extends Fragment {
+    private CarimboEnsaioVM carimboUnicoVM;
 
-    public static CarimboUnicoFragment newInstance() {
+    public static CarimboEnsaioFragment newInstance() {
         Bundle args = new Bundle();
 
-        CarimboUnicoFragment fragment = new CarimboUnicoFragment();
+        CarimboEnsaioFragment fragment = new CarimboEnsaioFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -28,7 +28,7 @@ public class CarimboUnicoFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        carimboUnicoVM = new ViewModelProvider(this).get(CarimboUnicoVM.class);
+        carimboUnicoVM = new ViewModelProvider(this).get(CarimboEnsaioVM.class);
     }
 
     @Nullable

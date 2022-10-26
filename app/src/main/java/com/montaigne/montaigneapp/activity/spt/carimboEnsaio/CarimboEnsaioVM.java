@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.activity.spt.carimboUnico;
+package com.montaigne.montaigneapp.activity.spt.carimboEnsaio;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,11 +16,11 @@ import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.ArrayList;
 
-public class CarimboUnicoVM extends ViewModel {
+public class CarimboEnsaioVM extends ViewModel {
     private ProjetoSpt projeto;
     private Bundle extras;
 
-    public CarimboUnicoVM() {
+    public CarimboEnsaioVM() {
         projeto = new ProjetoSpt();
 
     }
