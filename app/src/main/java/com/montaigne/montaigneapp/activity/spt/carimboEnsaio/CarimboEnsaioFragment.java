@@ -10,30 +10,32 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.montaigne.montaigneapp.databinding.FragmentCarimboEnsaioBinding;
+
 public class CarimboEnsaioFragment extends Fragment {
-    private CarimboEnsaioVM carimboUnicoVM;
+    private CarimboEnsaioVM viewModel;
+    private FragmentCarimboEnsaioBinding binding;
 
-    public static CarimboEnsaioFragment newInstance() {
-        Bundle args = new Bundle();
-
-        CarimboEnsaioFragment fragment = new CarimboEnsaioFragment();
-        fragment.setArguments(args);
-        return fragment;
+    public CarimboEnsaioFragment() {
     }
-//        imageButtonHome.setOnClickListener(viewModel::homeButtonListener);
-//        buttonIniciarEnsaio.setOnClickListener(v -> viewModel.ensaioButtonListener (v, editTextDataInicio));
-
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        carimboUnicoVM = new ViewModelProvider(this).get(CarimboEnsaioVM.class);
+        viewModel = new ViewModelProvider(this).get(CarimboEnsaioVM.class);
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
+        super.onCreateView(inflater, container, savedInstanceState);
+        binding = FragmentCarimboEnsaioBinding.inflate(inflater, container, false);
+
+        binding.imageButtonHome.setOnClickListener(viewModel::homeButtonListener);
+        binding.buttonStartEnsaio.setOnClickListener(v -> viewModel.ensaioButtonListener (v,
+                binding.editTextStartDate));
+
+        return binding.getRoot();
     }
 }
