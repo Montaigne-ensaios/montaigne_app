@@ -9,45 +9,48 @@
     app:cardCornerRadius="20dp"
     app:cardElevation="20dp">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="174dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/textNameProjeto"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginTop="8dp"
+            android:layout_height="wrap_content"
             android:text="Nome do projeto" />
-
-        <TextView
-            android:id="@+id/textDateProjeto"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="5dp"
-            android:text="Inicio do Projeto: xx/xx/xxxx" />
 
         <TextView
             android:id="@+id/textTipoEnsaio"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginTop="2dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textNameProjeto"
+            android:layout_Right="@id/imageView"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
             android:text="Tipo de Ensaio"
             android:textColor="#FF0909" />
 
         <TextView
             android:id="@+id/textDescricaoProjeto"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginTop="4dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textTipoEnsaio"
             android:text="Descrição do projeto localização" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/textDateProjeto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textDescricaoProjeto"
+            android:layout_marginBottom="5dp"
+            android:text="Inicio do Projeto: xx/xx/xxxx" />
+
+    </RelativeLayout>
 </androidx.cardview.widget.CardView>

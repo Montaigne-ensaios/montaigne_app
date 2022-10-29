@@ -51,7 +51,7 @@ public class ProjetoCategoriaAdapter extends RecyclerView.Adapter<ProjetoCategor
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            buttonProjetoName = itemView.findViewById(R.id.buttoProjetoName);
+            buttonProjetoName = itemView.findViewById(R.id.buttonProjetoName);
             imageProjeto = itemView.findViewById(R.id.imageProjeto);
         }
     }
