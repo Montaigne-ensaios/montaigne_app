@@ -33,4 +33,20 @@
         <item name ="android:background">@drawable/style_edit_text_light</item>
     </style>
 
+
+
+    <style name="ImputLight" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:colorAccent">@color/accent</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="startIconTint">@color/color_primary</item>
+        <item name="startIconScaleType">centerInside</item>
+
+
+        <item name="android:textSize">14dp</item>
+
+
+    </style>
+
 </resources>
