@@ -14,7 +14,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageLogoProject"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:srcCompat="@tools:sample/avatars" />
@@ -23,6 +23,9 @@
             android:id="@+id/textNameProjeto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/imageLogoProject"
+            android:layout_marginTop="05dp"
+            android:layout_marginLeft="10dp"
             android:text="Nome do projeto" />
 
         <TextView
@@ -30,9 +33,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textNameProjeto"
-            android:layout_Right="@id/imageView"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@id/imageLogoProject"
+            android:layout_marginTop="05dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginBottom="20dp"
             android:text="Tipo de Ensaio"
             android:textColor="#FF0909" />
@@ -42,6 +45,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textTipoEnsaio"
+            android:layout_toEndOf="@id/imageLogoProject"
+            android:layout_marginTop="-5dp"
+            android:layout_marginLeft="10dp"
             android:text="Descrição do projeto localização" />
 
         <TextView
@@ -49,7 +55,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textDescricaoProjeto"
-            android:layout_marginBottom="5dp"
+            android:layout_toEndOf="@id/imageLogoProject"
+            android:layout_marginTop="05dp"
+            android:layout_marginLeft="10dp"
             android:text="Inicio do Projeto: xx/xx/xxxx" />
 
     </RelativeLayout>
