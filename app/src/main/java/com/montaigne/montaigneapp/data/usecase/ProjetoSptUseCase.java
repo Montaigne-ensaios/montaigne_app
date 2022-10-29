@@ -7,19 +7,29 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.ValueEventListener;
+import com.montaigne.montaigneapp.data.InsertListener;
 import com.montaigne.montaigneapp.data.ModelHolder;
 import com.montaigne.montaigneapp.data.dao.ProjetoSptDao;
 import com.montaigne.montaigneapp.model.Projeto;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 public class ProjetoSptUseCase {
-    public static void save(ProjetoSpt projetoSpt) {
+    public static void save(ProjetoSpt projetoSpt, InsertListener insertObserver) {
         ProjetoSptDao projetoSptDao = new ProjetoSptDao();
 
-        projetoSptDao.insertProjeto(projetoSpt).addOnCompleteListener(task -> Log.i("Firebase", "Sucesso ao salvar projeto de SPT")).addOnFailureListener(exception -> {
-            Log.e("Erro ao salvar", "Erro ao salvar projeto de SPT");
-            Log.e("Firebase", "Falha ao salvar projeto");
-        });
+        projetoSptDao.insertProjeto(projetoSpt)
+                .addOnCompleteListener(task -> {
+                    Log.i("Firebase", "Sucesso ao salvar projeto de SPT");
+                    if (task.isSuccessful()) {
+                        insertObserver.onSuccess(projetoSpt);
+                    } else {
+                        insertObserver.onFailure(task.getException(), projetoSpt);
+                    }
+                })
+                .addOnFailureListener(exception -> {
+                    Log.e("Erro ao salvar", "Erro ao salvar projeto de SPT");
+                    Log.e("Firebase", "Falha ao salvar projeto");
+                });
     }
 
     public static void update(ProjetoSpt projetoSpt) {

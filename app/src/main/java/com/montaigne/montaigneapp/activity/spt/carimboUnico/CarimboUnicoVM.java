@@ -47,7 +47,7 @@ public class CarimboUnicoVM extends ViewModel {
         projeto.setDataInicio(editTextDataInicio.getText().toString());
         //SaveProjetoSpt.saveProjetoSpt(projeto);
 
-        ProjetoSptUseCase.save(projeto);
+        ProjetoSptUseCase.save(projeto, null);
     }
 
     protected void ensaioButtonListener(View view, EditText editTextDataInicio) {

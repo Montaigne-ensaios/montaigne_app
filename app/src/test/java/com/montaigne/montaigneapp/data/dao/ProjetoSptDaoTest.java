@@ -1,5 +1,7 @@
 package com.montaigne.montaigneapp.data.dao;
 
+import com.google.firebase.database.FirebaseDatabase;
+import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
 import com.montaigne.montaigneapp.model.Coordenada;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
@@ -7,6 +9,7 @@ import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import java.util.ArrayList;
@@ -15,7 +18,12 @@ import java.util.List;
 
 
 public class ProjetoSptDaoTest {
+
     ProjetoSpt projeto;
+
+    @Mock
+    private FirebaseDatabase firebaseDatabaseMock;
+    private ProjetoSptUseCase projetoSptUseCase;
 
     @Before
     public void setup() {
