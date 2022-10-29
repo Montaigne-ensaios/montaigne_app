@@ -1,20 +1,21 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Padrão do tema claro . -->
-    <style name="Theme.MontaigneApp" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Theme.MontaigneApp" parent="Theme.MaterialComponents.Light.NoActionBar">
 
         <!-- Primary color. -->
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryVariant">@color/black</item>
-        <item name="colorOnPrimary">@color/white</item>
 
         <!-- Estilos padrão. -->
         <item name="android:textColor">@color/black</item>
         <item name="colorAccent">@color/accent</item>
+        <item name="colorSurface">@color/fundo</item>
+        <item name="colorError">#B00020</item>
 
         <!-- fundo-->
 
         <item name="android:textColorHint">@color/hint</item>
-        <item name="android:buttonStyle">@style/ButtonPadrao_light</item>
+        <item name="materialButtonStyle">@style/ButtonPadrao_light</item>
         <item name="imageButtonStyle">@style/ImageButton_light</item>
         <item name="editTextStyle">@style/Edit_Text_light</item>
 
@@ -22,7 +23,7 @@
         <item name="colorSecondary">@color/color_primary</item>
 
         <!--Button flutuante-->
-        <item name="colorOnSecondary">@color/color_primary</item>
+        <item name="colorOnSecondary">@color/fundo</item>
 
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/color_primary</item>

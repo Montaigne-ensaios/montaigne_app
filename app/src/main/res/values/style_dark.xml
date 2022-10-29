@@ -14,7 +14,7 @@
     </style>
 
     <!--- Button padrão do app Dark. -->
-    <style name="ButtonPadrao_Dark" parent="Widget.AppCompat.Button">
+    <style name="ButtonPadrao_Dark" parent="Widget.MaterialComponents.Button">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">14dp</item>
         <item name="backgroundTint">@color/destaque</item>
@@ -28,6 +28,7 @@
     <!--- ImageButton padrão do app Dark. -->
     <style name="ImageButton_Dark" parent="Widget.AppCompat.ImageButton">
         <item name="backgroundTint">#00042741</item>
+
         <item name="tint">@color/destaque</item>
     </style>
 

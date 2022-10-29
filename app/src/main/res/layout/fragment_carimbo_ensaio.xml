@@ -147,10 +147,12 @@
 
             <ImageButton
                 android:id="@+id/imageButtonHome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="16dp"
+                android:layout_marginEnd="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/buttonStartEnsaio"
+                app:layout_constraintEnd_toStartOf="@+id/buttonStartEnsaio"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/buttonStartEnsaio"
                 app:srcCompat="@drawable/icon_home" />
