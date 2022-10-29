@@ -10,7 +10,7 @@
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
-            app:startIconDrawable="@drawable/ic_perfil"
+            app:startIconDrawable="@drawable/ic_name_project"
             android:id="@+id/TextImputLayoutNameProjeto"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -49,6 +49,8 @@
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/TextInputLayoutContato"
+                        app:startIconDrawable="@drawable/ic_contato"
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <com.google.android.material.textfield.TextInputEditText
@@ -56,6 +58,61 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="hint" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/TextInputLayoutCliente"
+
+                        android:layout_width="match_parent"
+                        app:startIconDrawable="@drawable/ic_perfil"
+
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/TextImputEditTextCliente"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="hint" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            app:startIconDrawable="@drawable/ic_location"
+                            android:id="@+id/TextInputLayoutLocalObra"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/TextImputEditTextLocalObra"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="hint" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                app:startIconDrawable="@drawable/ic_furo"
+
+                                android:id="@+id/TextInputLayoutQuantidadeFuros"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/TextImputEditTextQuantidadeFuros"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="hint" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    app:startIconDrawable="@drawable/ic_referencia_furo"
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="hint" />
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </com.google.android.material.textfield.TextInputLayout>
                     </com.google.android.material.textfield.TextInputLayout>
 
                 </com.google.android.material.textfield.TextInputLayout>
