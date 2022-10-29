@@ -42,8 +42,9 @@
         <item name="android:textColor">@color/black</item>
         <item name="startIconTint">@color/color_primary</item>
         <item name="startIconScaleType">centerInside</item>
-
-
+        <item name="helperTextTextColor">@color/destaque</item>
+        <item name="hintTextColor">@color/color_primary</item>
+        <item name="endIconMode">clear_text</item>
         <item name="android:textSize">14dp</item>
 
 

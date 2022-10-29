@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/CardViewCarimboProjeto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -10,131 +11,125 @@
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
-            app:startIconDrawable="@drawable/ic_name_project"
+            app:hintEnabled="true"
+            app:errorEnabled="true"
+            app:helperText="@string/requerid"
             android:id="@+id/TextImputLayoutNameProjeto"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            app:startIconDrawable="@drawable/ic_name_project">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/TextImputEditTextNameProjeto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="hint" />
+                android:inputType="textAutoComplete"
+                android:hint="Nome do Projeto" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/TextInputLayoutTecnico"
-                app:startIconDrawable="@drawable/ic_technician"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                app:startIconDrawable="@drawable/ic_technician">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/TextImputEditTextTecnico"
-
                     android:layout_width="match_parent"
+                    android:inputType="textAutoComplete"
                     android:layout_height="wrap_content"
-                    android:hint="hint" />
+                    android:hint= "Técnico" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/TextInputLayouteEmpresa"
-                    app:startIconDrawable="@drawable/ic_empresa"
-
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    app:helperText="*ou construtora"
+
+                    android:layout_height="match_parent"
+                    app:startIconDrawable="@drawable/ic_empresa">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/TextImputEditTextEmpresa"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="hint" />
+                        android:hint="Empresa Responsável" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/TextInputLayoutContato"
-                        app:startIconDrawable="@drawable/ic_contato"
-
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+
+
+                        android:layout_height="wrap_content"
+                        app:startIconDrawable="@drawable/ic_contato">
+
                         <com.google.android.material.textfield.TextInputEditText
+
                             android:id="@+id/TextImputEditTextContato"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="hint" />
+                            android:inputType="phone"
+                            android:hint="Contato" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/TextInputLayoutCliente"
 
                         android:layout_width="match_parent"
-                        app:startIconDrawable="@drawable/ic_perfil"
+                        android:layout_height="match_parent"
 
-                        android:layout_height="match_parent">
+                        app:startIconDrawable="@drawable/ic_perfil">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/TextImputEditTextCliente"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="hint" />
+                            android:hint="Nome do cliente" />
 
                         <com.google.android.material.textfield.TextInputLayout
-                            app:startIconDrawable="@drawable/ic_location"
                             android:id="@+id/TextInputLayoutLocalObra"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            app:hintEnabled="true"
+                            app:errorEnabled="true"
+                            android:layout_height="match_parent"
+                            app:startIconDrawable="@drawable/ic_location">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/TextImputEditTextLocalObra"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="hint" />
+                                android:hint="Local da obra" />
 
                             <com.google.android.material.textfield.TextInputLayout
-                                app:startIconDrawable="@drawable/ic_furo"
-
-                                android:id="@+id/TextInputLayoutQuantidadeFuros"
-
+                                android:id="@+id/TextInputLayoutNúmeroFuros"
+                                app:helperText="@string/requerid"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent">
+                                android:layout_height="match_parent"
+                                app:startIconDrawable="@drawable/ic_furo">
 
                                 <com.google.android.material.textfield.TextInputEditText
-                                    android:id="@+id/TextImputEditTextQuantidadeFuros"
+                                    android:id="@+id/TextImputEditTextNúmerosFuros"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="hint" />
+                                    android:hint="Números de Furos" />
 
                                 <com.google.android.material.textfield.TextInputLayout
-                                    app:startIconDrawable="@drawable/ic_referencia_furo"
-
+                                    app:helperText="@string/requerid"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
+                                    android:id="@+id/TextInputLayoutReferenciaNivel"
+
+                                    android:layout_height="match_parent"
+                                    app:startIconDrawable="@drawable/ic_referencia_furo">
 
                                     <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/TextImputEditTextReferenciaNivel"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:hint="hint" />
+                                        android:hint="Referência de Nível" />
                                 </com.google.android.material.textfield.TextInputLayout>
                             </com.google.android.material.textfield.TextInputLayout>
                         </com.google.android.material.textfield.TextInputLayout>
                     </com.google.android.material.textfield.TextInputLayout>
 
                 </com.google.android.material.textfield.TextInputLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
             </com.google.android.material.textfield.TextInputLayout>
