@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.montaigne.montaigneapp.R;
+import com.montaigne.montaigneapp.ui.carimboProjeto.CarimboProjetoFragment;
 import com.montaigne.montaigneapp.ui.spt.carimboEnsaio.CarimboEnsaioFragment;
 import com.montaigne.montaigneapp.databinding.ActivitySptBinding;
 
@@ -18,7 +19,7 @@ public class SptActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.containerSpt, new CarimboEnsaioFragment())
+                .replace(R.id.containerSpt, new CarimboProjetoFragment())
                 .commitNow();
 
     }

@@ -6,7 +6,6 @@ import android.widget.EditText;
 
 import androidx.lifecycle.ViewModel;
 
-import com.montaigne.montaigneapp.ui.home.HomeActivity;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
@@ -40,10 +39,5 @@ public class CarimboProjetoVM extends ViewModel {
         intent.putExtra("ProjetoSpt", projetoSpt);
 
         view.getContext().startActivity(intent);
-    }
-
-    protected void homeButtonListener(View view) {
-        view.getContext().startActivity(new Intent(view.getContext(), HomeActivity.class));
-        //todo:limpar tasks;
     }
 }

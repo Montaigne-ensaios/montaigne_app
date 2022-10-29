@@ -42,7 +42,6 @@ public class CarimboProjetoFragment extends Fragment {
         fields.put ("LocalObra",  binding.editTextLocalObra);
         fields.put ("QuantidadeFuros",  binding.editTextQuantidadeFuros);
         binding.buttonContinueCarimbo.setOnClickListener(v -> viewModel.continuarCarimboButtonListener (v, fields));
-        binding.imageButtonHome.setOnClickListener(viewModel::homeButtonListener);
 
         return binding.getRoot();
     }
