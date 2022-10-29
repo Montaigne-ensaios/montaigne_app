@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.activity.spt.ensaio;
+package com.montaigne.montaigneapp.ui.spt.ensaio;
 
 import android.content.Intent;
 import android.view.View;
@@ -6,7 +6,7 @@ import android.widget.EditText;
 
 import androidx.lifecycle.ViewModel;
 
-import com.montaigne.montaigneapp.activity.home.HomeActivity;
+import com.montaigne.montaigneapp.ui.home.HomeActivity;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.ArrayList;

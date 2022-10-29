@@ -1,18 +1,13 @@
-package com.montaigne.montaigneapp.activity.home;
+package com.montaigne.montaigneapp.ui.home;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.montaigne.montaigneapp.R;
-import com.montaigne.montaigneapp.activity.spt.projeto.ProjetoActivity;
+import com.montaigne.montaigneapp.ui.spt.projeto.ProjetoActivity;
 import com.montaigne.montaigneapp.databinding.AdapterHomeProjetosBinding;
 import com.montaigne.montaigneapp.model.Projeto;
 
@@ -30,8 +25,12 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAd
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_home_projetos, parent, false);
-        return new ViewHolder(view);
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+
+        AdapterHomeProjetosBinding binding = AdapterHomeProjetosBinding
+                .inflate(layoutInflater, parent, false);
+
+        return new ViewHolder(binding);
     }
 
     @Override
@@ -59,8 +58,9 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAd
     protected static class ViewHolder extends RecyclerView.ViewHolder {
         private AdapterHomeProjetosBinding binding;
 
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
+        public ViewHolder(AdapterHomeProjetosBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
         }
     }
 }

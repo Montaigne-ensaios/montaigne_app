@@ -1,15 +1,11 @@
-package com.montaigne.montaigneapp.activity.home;
+package com.montaigne.montaigneapp.ui.home;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.databinding.AdapterHomeProjetoCategoriaBinding;
 
 import java.util.ArrayList;
@@ -22,8 +18,12 @@ public class ProjetoCategoriaAdapter extends RecyclerView.Adapter<ProjetoCategor
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_home_projeto_categoria, parent, false);
-        return new ViewHolder(view);
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+
+        AdapterHomeProjetoCategoriaBinding binding = AdapterHomeProjetoCategoriaBinding
+                .inflate(inflater, parent, false);
+
+        return new ViewHolder(binding);
     }
 
     @Override
@@ -46,10 +46,11 @@ public class ProjetoCategoriaAdapter extends RecyclerView.Adapter<ProjetoCategor
     }
 
     protected static class ViewHolder extends RecyclerView.ViewHolder{
-        private AdapterHomeProjetoCategoriaBinding binding;
+        private final AdapterHomeProjetoCategoriaBinding binding;
 
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
+        public ViewHolder(AdapterHomeProjetoCategoriaBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
         }
     }
 }

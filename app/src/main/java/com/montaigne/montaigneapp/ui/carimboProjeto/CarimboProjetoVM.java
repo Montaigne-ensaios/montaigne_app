@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.activity.carimboProjeto;
+package com.montaigne.montaigneapp.ui.carimboProjeto;
 
 import android.content.Intent;
 import android.view.View;
@@ -6,8 +6,8 @@ import android.widget.EditText;
 
 import androidx.lifecycle.ViewModel;
 
-import com.montaigne.montaigneapp.activity.home.HomeActivity;
-import com.montaigne.montaigneapp.activity.spt.SptActivity;
+import com.montaigne.montaigneapp.ui.home.HomeActivity;
+import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.Map;

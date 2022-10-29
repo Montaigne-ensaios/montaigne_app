@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.activity.home;
+package com.montaigne.montaigneapp.ui.home;
 
 import android.os.Bundle;
 

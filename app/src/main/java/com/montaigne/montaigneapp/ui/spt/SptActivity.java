@@ -1,12 +1,11 @@
-package com.montaigne.montaigneapp.activity.spt;
+package com.montaigne.montaigneapp.ui.spt;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.Menu;
 
 import com.montaigne.montaigneapp.R;
-import com.montaigne.montaigneapp.activity.spt.carimboEnsaio.CarimboEnsaioFragment;
+import com.montaigne.montaigneapp.ui.spt.carimboEnsaio.CarimboEnsaioFragment;
 import com.montaigne.montaigneapp.databinding.ActivitySptBinding;
 
 public class SptActivity extends AppCompatActivity {

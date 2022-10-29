@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.activity.spt.carimboEnsaio;
+package com.montaigne.montaigneapp.ui.spt.carimboEnsaio;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

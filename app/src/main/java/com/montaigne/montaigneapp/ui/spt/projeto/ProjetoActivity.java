@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.activity.spt.projeto;
+package com.montaigne.montaigneapp.ui.spt.projeto;
 
 import android.os.Bundle;
 import android.widget.ImageButton;
@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
-import com.montaigne.montaigneapp.activity.AbstractActivity;
+import com.montaigne.montaigneapp.ui.AbstractActivity;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 public class ProjetoActivity extends AbstractActivity {

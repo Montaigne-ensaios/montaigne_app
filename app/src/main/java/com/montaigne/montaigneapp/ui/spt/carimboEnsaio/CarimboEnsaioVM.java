@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.activity.spt.carimboEnsaio;
+package com.montaigne.montaigneapp.ui.spt.carimboEnsaio;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,8 +7,8 @@ import android.widget.EditText;
 
 import androidx.lifecycle.ViewModel;
 
-import com.montaigne.montaigneapp.activity.home.HomeActivity;
-import com.montaigne.montaigneapp.activity.spt.ensaio.EnsaioActivity;
+import com.montaigne.montaigneapp.ui.home.HomeActivity;
+import com.montaigne.montaigneapp.ui.spt.ensaio.EnsaioActivity;
 import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;

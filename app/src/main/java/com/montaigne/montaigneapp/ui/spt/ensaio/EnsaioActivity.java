@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.activity.spt.ensaio;
+package com.montaigne.montaigneapp.ui.spt.ensaio;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.montaigne.montaigneapp.R;
-import com.montaigne.montaigneapp.activity.AbstractActivity;
+import com.montaigne.montaigneapp.ui.AbstractActivity;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.ArrayList;

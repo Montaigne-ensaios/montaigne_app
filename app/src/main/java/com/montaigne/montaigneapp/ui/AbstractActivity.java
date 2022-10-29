@@ -1,14 +1,13 @@
-package com.montaigne.montaigneapp.activity;
+package com.montaigne.montaigneapp.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.montaigne.montaigneapp.activity.home.HomeActivity;
+import com.montaigne.montaigneapp.ui.home.HomeActivity;
 
 public abstract class AbstractActivity extends AppCompatActivity {
     @Override

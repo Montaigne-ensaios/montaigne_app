@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.activity.spt.projeto;
+package com.montaigne.montaigneapp.ui.spt.projeto;
 
 import android.view.View;
 

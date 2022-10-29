@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.activity.spt.furo;
+package com.montaigne.montaigneapp.ui.spt.furo;
 
 import android.view.View;
 
