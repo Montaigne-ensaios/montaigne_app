@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.spt.projeto.ProjetoActivity;
+import com.montaigne.montaigneapp.databinding.AdapterHomeProjetosBinding;
 import com.montaigne.montaigneapp.model.Projeto;
 
 import java.util.ArrayList;
@@ -37,12 +38,12 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAd
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Projeto projeto = projetoList.get(position);
 
-        holder.textNomeProjeto.setText( projeto.getNome() );
+        holder.binding.textNameProjeto.setText( projeto.getNome() );
 
-        holder.cardView.setOnClickListener(v -> {
+        holder.binding.cardView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), ProjetoActivity.class);
             intent.putExtra("projeto", projeto);
-            //TODO: java.lang.RuntimeException: Parcelable encountered IOException writing serializable object (name = com.montaigne.montaigneapp.model.spt.ProjetoSpt)
+            //FIXME: java.lang.RuntimeException: Parcelable encountered IOException writing serializable object (name = com.montaigne.montaigneapp.model.spt.ProjetoSpt)
             v.getContext().startActivity(intent);
         });
     }
@@ -55,22 +56,11 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAd
     @Override
     public int getItemCount() { return projetoList.size();}
 
-    protected class ViewHolder extends RecyclerView.ViewHolder {
-        protected final CardView cardView;
-        protected final ImageView imageProjeto;
-        protected final TextView textNomeProjeto, textDescricaoProjeto, textTipoEnsaio, textDateProjeto;
+    protected static class ViewHolder extends RecyclerView.ViewHolder {
+        private AdapterHomeProjetosBinding binding;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
-            cardView = itemView.findViewById(R.id.cardView);
-            textNomeProjeto = itemView.findViewById(R.id.textNameProjeto);
-            textDescricaoProjeto = itemView.findViewById(R.id.textDescricaoProjeto);
-            textTipoEnsaio = itemView.findViewById(R.id.textTipoEnsaio);
-            textDateProjeto = itemView.findViewById(R.id.textDateProjeto);
-            imageProjeto = itemView.findViewById(R.id.imageProjeto);
-
-           imageProjeto.setImageResource(R.drawable.icon_home);
         }
     }
 }

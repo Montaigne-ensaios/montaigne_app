@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
+import com.montaigne.montaigneapp.databinding.AdapterHomeProjetoCategoriaBinding;
 
 import java.util.ArrayList;
 
@@ -27,9 +28,9 @@ public class ProjetoCategoriaAdapter extends RecyclerView.Adapter<ProjetoCategor
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.buttonProjetoName.setText((String) categoriasProjeto.get(position)[0]);
+        holder.binding.buttonProjetoName.setText((String) categoriasProjeto.get(position)[0]);
         int drawableId = (Integer) categoriasProjeto.get(position)[1];
-        holder.imageProjeto.setImageResource(drawableId);
+        holder.binding.imageProjeto.setImageResource(drawableId);
 
         // Aqui que se deve passar o listener
     }
@@ -44,15 +45,11 @@ public class ProjetoCategoriaAdapter extends RecyclerView.Adapter<ProjetoCategor
         notifyDataSetChanged();
     }
 
-    protected class ViewHolder extends RecyclerView.ViewHolder{
-        protected final ImageView imageProjeto;
-        protected final Button buttonProjetoName;
+    protected static class ViewHolder extends RecyclerView.ViewHolder{
+        private AdapterHomeProjetoCategoriaBinding binding;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
-            buttonProjetoName = itemView.findViewById(R.id.buttonProjetoName);
-            imageProjeto = itemView.findViewById(R.id.imageProjeto);
         }
     }
 }
