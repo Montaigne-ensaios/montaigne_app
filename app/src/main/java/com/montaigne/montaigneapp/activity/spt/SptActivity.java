@@ -3,6 +3,7 @@ package com.montaigne.montaigneapp.activity.spt;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Menu;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.spt.carimboEnsaio.CarimboEnsaioFragment;
@@ -18,8 +19,9 @@ public class SptActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new CarimboEnsaioFragment())
+                .replace(R.id.containerSpt, new CarimboEnsaioFragment())
                 .commitNow();
 
     }
-}
+
+   }

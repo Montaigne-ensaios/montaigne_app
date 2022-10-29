@@ -1,10 +1,25 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.montaigne.montaigneapp.activity.home.HomeActivity">
+    >
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/add"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="novo projeto"
+        android:icon="@drawable/ic_add"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/delet"
+        android:orderInCategory="100"
+        android:title="Amostras"
+        android:icon="@drawable/ic_add"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_ver"
+        android:orderInCategory="100"
+        android:title="Tutorial"
+        android:icon="@drawable/ic_add"
+        app:showAsAction="never" />
+
+
 </menu>
