@@ -7,6 +7,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:padding="10dp"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
@@ -14,6 +15,7 @@
             app:hintEnabled="true"
             app:errorEnabled="true"
             app:helperText="@string/requerid"
+            app:errorIconDrawable="@drawable/ic_erro"
             android:id="@+id/TextImputLayoutNameProjeto"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -28,6 +30,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/TextInputLayoutTecnico"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:startIconDrawable="@drawable/ic_technician">

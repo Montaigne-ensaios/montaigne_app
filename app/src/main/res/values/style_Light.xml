@@ -28,7 +28,7 @@
         <item name="android:colorAccent">@color/accent</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">14dp</item>
-
+        <item name="android:layout_marginTop">20dp</item>
         <item name="android:padding">10dp</item>
         <item name ="android:background">@drawable/style_edit_text_light</item>
     </style>
@@ -43,11 +43,12 @@
         <item name="startIconTint">@color/color_primary</item>
         <item name="startIconScaleType">centerInside</item>
         <item name="helperTextTextColor">@color/destaque</item>
-        <item name="hintTextColor">@color/color_primary</item>
         <item name="endIconMode">clear_text</item>
         <item name="android:textSize">14dp</item>
 
 
-    </style>
 
+
+
+</style>
 </resources>
