@@ -54,7 +54,8 @@
                         android:id="@+id/TextImputEditTextEmpresa"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Empresa Responsável" />
+                        android:hint="Empresa Responsável"
+                        android:inputType="textAutoComplete"/>
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/TextInputLayoutContato"
@@ -85,7 +86,8 @@
                             android:id="@+id/TextImputEditTextCliente"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Nome do cliente" />
+                            android:hint="Nome do cliente"
+                            android:inputType="textAutoComplete"/>
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/TextInputLayoutLocalObra"
@@ -99,7 +101,8 @@
                                 android:id="@+id/TextImputEditTextLocalObra"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Local da obra" />
+                                android:hint="Local da obra"
+                                android:inputType="textAutoComplete"/>
 
                             <com.google.android.material.textfield.TextInputLayout
                                 android:id="@+id/TextInputLayoutNúmeroFuros"
@@ -112,7 +115,8 @@
                                     android:id="@+id/TextImputEditTextNúmerosFuros"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:hint="Números de Furos" />
+                                    android:hint="Números de Furos"
+                                    android:inputType="number"/>
 
                                 <com.google.android.material.textfield.TextInputLayout
                                     app:helperText="@string/requerid"
@@ -126,7 +130,8 @@
                                         android:id="@+id/TextImputEditTextReferenciaNivel"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:hint="Referência de Nível" />
+                                        android:hint="Referência de Nível"
+                                        android:inputType="textAutoComplete"/>
                                 </com.google.android.material.textfield.TextInputLayout>
                             </com.google.android.material.textfield.TextInputLayout>
                         </com.google.android.material.textfield.TextInputLayout>
