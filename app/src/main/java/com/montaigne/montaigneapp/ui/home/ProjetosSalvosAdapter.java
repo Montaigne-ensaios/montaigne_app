@@ -41,8 +41,7 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAd
 
         holder.binding.cardView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), ProjetoActivity.class);
-            intent.putExtra("projeto", projeto);
-            //FIXME: java.lang.RuntimeException: Parcelable encountered IOException writing serializable object (name = com.montaigne.montaigneapp.model.spt.ProjetoSpt)
+            intent.putExtra(HomeVM.PROJETO, projeto);
             v.getContext().startActivity(intent);
         });
     }

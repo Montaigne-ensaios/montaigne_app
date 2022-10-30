@@ -8,14 +8,19 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
+import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.data.ModelHolder;
 import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
 import com.montaigne.montaigneapp.model.Projeto;
+import com.montaigne.montaigneapp.ui.spt.projeto.ProjetoActivity;
 
 import java.util.ArrayList;
 
 public class HomeVM extends ViewModel implements ModelHolder<Projeto> {
+    // Keys de Bundle:
+    public static final String PROJETO = "projeto";
+
     private ArrayList<Projeto> projetosSalvos = new ArrayList<>();
     private final ProjetosSalvosAdapter adapter = new ProjetosSalvosAdapter();
 
@@ -61,6 +66,9 @@ public class HomeVM extends ViewModel implements ModelHolder<Projeto> {
     }
 
     protected void newProjectFabListener(View view) {
-        view.getContext().startActivity(new Intent(view.getContext(), SptActivity.class));
+        // passa novo projeto vazio
+        Intent intent = new Intent(view.getContext(), SptActivity.class);
+        intent.putExtra(HomeVM.PROJETO, new ProjetoSpt());
+        view.getContext().startActivity(intent);
     }
 }
