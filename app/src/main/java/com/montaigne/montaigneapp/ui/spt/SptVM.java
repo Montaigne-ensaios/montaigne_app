@@ -16,9 +16,16 @@ import com.montaigne.montaigneapp.ui.spt.carimboEnsaio.CarimboEnsaioFragment;
 public class SptVM extends ViewModel {
     private ProjetoSpt projeto;
 
-    protected void navigateFragments(View view) {
+    protected void navigateFragments(View view, FragmentManager manager) {
         // todo: implementar navegação dentro da activity
-        // este método deve ser responsável por decidir de onde para onde navegar os fragments
+        CarimboProjetoFragment carimboProjetoFragment = (CarimboProjetoFragment) manager.getFragments().get(0);
+        projeto = (ProjetoSpt) carimboProjetoFragment.getProjeto();
+
+        CarimboEnsaioFragment carimboEnsaioFragment = new CarimboEnsaioFragment();
+        manager.beginTransaction()
+                .replace(R.id.containerSpt, carimboEnsaioFragment)
+                .commitNow();
+
     }
 
     protected void intentHome(View view) {
@@ -34,14 +41,18 @@ public class SptVM extends ViewModel {
     public void setProjeto(ProjetoSpt projeto, FragmentManager manager) {
         this.projeto = projeto;
         if (projeto.getNome() == null) {
+            CarimboProjetoFragment fragment = new CarimboProjetoFragment();
             manager.beginTransaction()
-                    .replace(R.id.containerSpt, new CarimboProjetoFragment())
+                    .replace(R.id.containerSpt, fragment)
                     .commitNow();
+            fragment.setProjeto(projeto);
         } else {
+            CarimboProjetoFragment fragment = new CarimboProjetoFragment();
+            // todo: substituir fragmente por ProjetoFragment e revisar esta comunicação
             manager.beginTransaction()
-                    .replace(R.id.containerSpt, new CarimboEnsaioFragment())
-                    // todo: substituir fragmente por ProjetoFragment
+                    .replace(R.id.containerSpt, fragment)
                     .commitNow();
+            fragment.setProjeto(projeto);
         }
     }
 

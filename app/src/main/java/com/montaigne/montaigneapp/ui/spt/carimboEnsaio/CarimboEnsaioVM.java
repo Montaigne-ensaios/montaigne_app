@@ -15,44 +15,19 @@ import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class CarimboEnsaioVM extends ViewModel {
     private ProjetoSpt projeto;
-    private Bundle extras;
-
-    public CarimboEnsaioVM() {
-        projeto = new ProjetoSpt();
-
-    }
-
-    protected void setExtras(Bundle bundle) {
-        extras = bundle;
-    }
 
     private void updateProjeto(EditText editTextDataInicio) {
-        projeto = (ProjetoSpt) extras.get("ProjetoSpt");
-
-        /*
-        projeto.setNome(extras.getString("NomeProjeto"));
-        projeto.setTecnico(extras.getString("Tecnico"));
-        projeto.setEmpresa(extras.getString("Empresa"));
-        projeto.setNumeroDeTelefone(extras.getString("Contato"));
-        projeto.setCliente(extras.getString("Cliente"));
-         */
-
-        // projeto.setCoordinate(extras.getString("Cliente"));  // precisa da api de coordenadas
-        // projeto.setHoleNumber(extras.getInt("nFuros"));
-        // todo: eliminar a recuperação dos campos por intent
-
         projeto.setDataInicio(editTextDataInicio.getText().toString());
-        //SaveProjetoSpt.saveProjetoSpt(projeto);
 
-        ProjetoSptUseCase.save(projeto);
+        ProjetoSptUseCase.save(projeto);  // todo: decidir quando dar save e quando dar update
     }
 
     protected void ensaioButtonListener(View view, EditText editTextDataInicio) {
         FuroSpt furoSpt = new FuroSpt();
-        //furoSpt.setCode("0");
         ArrayList<AmostraSpt> amostras = new ArrayList<>();
         amostras.add(new AmostraSpt());
         amostras.get(0).setId("0");
@@ -70,8 +45,18 @@ public class CarimboEnsaioVM extends ViewModel {
         view.getContext().startActivity(intent);
     }
 
-    protected void homeButtonListener (View view) {
-        view.getContext().startActivity(new Intent(view.getContext(), HomeActivity.class));
-        //todo: limpar tasks;
+    public ProjetoSpt getProjeto() {
+        return projeto;
+    }
+
+    public void setProjeto(ProjetoSpt projeto, Map<String, EditText> fields) {
+        this.projeto = projeto;
+
+        try {
+            fields.get("DataInicio").setText(projeto.getDataInicio());
+            fields.get("NivelFuro").setText("Não implementado");
+        } catch (NullPointerException ignored) {
+            // todo: forma adequada de checar se os campos foram ou não definidos
+        }
     }
 }

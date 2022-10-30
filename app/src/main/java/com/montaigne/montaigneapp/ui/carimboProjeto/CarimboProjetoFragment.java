@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.montaigne.montaigneapp.databinding.FragmentCarimboProjetoBinding;
+import com.montaigne.montaigneapp.model.Projeto;
 
 import java.util.HashMap;
 
@@ -21,13 +22,13 @@ public class CarimboProjetoFragment extends Fragment {
     protected final HashMap<String, EditText> fields = new HashMap<>();
 
     public CarimboProjetoFragment() {
+        CarimboProjetoVM viewModel = new ViewModelProvider(this).get(CarimboProjetoVM.class);
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        CarimboProjetoVM viewModel = new ViewModelProvider(this).get(CarimboProjetoVM.class);
     }
 
     @Nullable
@@ -41,8 +42,14 @@ public class CarimboProjetoFragment extends Fragment {
         fields.put ("Cliente",  binding.editTextCliente);
         fields.put ("LocalObra",  binding.editTextLocalObra);
         fields.put ("QuantidadeFuros",  binding.editTextQuantidadeFuros);
-        binding.buttonContinueCarimbo.setOnClickListener(v -> viewModel.continuarCarimboButtonListener (v, fields));
+        binding.buttonContinueCarimbo.setOnClickListener(v -> viewModel.updateProjeto (v, fields));
 
         return binding.getRoot();
     }
+
+    public void setProjeto(Projeto projeto) {
+        viewModel.setProjeto(projeto, fields);
+    }
+
+    public Projeto getProjeto() {return viewModel.getProjeto();}
 }

@@ -29,11 +29,6 @@ public class SptActivity extends AppCompatActivity {
         );
 
         binding.imgButtonHome.setOnClickListener(viewModel::intentHome);
-        binding.buttonContinue.setOnClickListener(v ->
-                        getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.containerSpt, new CarimboEnsaioFragment())
-                                .commitNow()
-//                viewModel::navigateFragments
-        );
+        binding.buttonContinue.setOnClickListener(v -> viewModel.navigateFragments(v, getSupportFragmentManager()));
     }
 }

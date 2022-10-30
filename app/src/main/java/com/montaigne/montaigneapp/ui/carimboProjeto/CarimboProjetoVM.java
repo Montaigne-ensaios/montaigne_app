@@ -6,38 +6,50 @@ import android.widget.EditText;
 
 import androidx.lifecycle.ViewModel;
 
+import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
+import com.montaigne.montaigneapp.model.Projeto;
+import com.montaigne.montaigneapp.ui.home.HomeVM;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.Map;
 
 public class CarimboProjetoVM extends ViewModel {
+    private Projeto projeto;
+
     // método de getData (validação de entradas)
+    protected void updateProjeto(View view, Map<String, EditText> fields) {
+        // todo: revisar o fluxo de dados deste fragment
+        // revisar como a comunicação foi planejada
+        projeto.setNome(fields.get("NomeProjeto").getText().toString());
+        projeto.setEmpresa(fields.get("Empresa").getText().toString());
+        projeto.setCliente(fields.get("Tecnico").getText().toString());
+        projeto.setTecnico(fields.get("Contato").getText().toString());
+        projeto.setNumeroDeTelefone(fields.get("Cliente").getText().toString());
+        projeto.setEmpresa(fields.get("LocalObra").getText().toString());
+//        fields.get("nFuros").getText().toString();
+//        fields.get("ReferenciaNivel").getText().toString;
 
-    protected void continuarCarimboButtonListener(View view, Map<String, EditText> fields) {
-        Intent intent = new Intent(view.getContext(), SptActivity.class);
+//        ProjetoSptUseCase.save((ProjetoSpt) projeto);  // todo: decidir quando dar save e quando dar update
+    }
 
+    public Projeto getProjeto() {
+        return projeto;
+    }
 
-        String nome = fields.get("NomeProjeto").getText().toString();
-        String empresa = fields.get("Empresa").getText().toString();
-        String tecnico = fields.get("Tecnico").getText().toString();
-        String cotato = fields.get("Contato").getText().toString();
-        String cliente = fields.get("Cliente").getText().toString();
-        String local = fields.get("LocalObra").getText().toString();
-        //String nFuros = fields.get("nFuros").getText().toString();
-        String referenciaNivel = fields.get("ReferenciaNivel").getText().toString();
+    public void setProjeto(Projeto projeto, Map<String, EditText> fields) {
+        this.projeto = projeto;
 
-
-        ProjetoSpt projetoSpt = new ProjetoSpt();
-        projetoSpt.setNome(nome);
-        projetoSpt.setEmpresa(empresa);
-        projetoSpt.setCliente(cliente);
-        projetoSpt.setTecnico(tecnico);
-        projetoSpt.setNumeroDeTelefone(cotato);
-        projetoSpt.setEmpresa(empresa);
-
-        intent.putExtra("ProjetoSpt", projetoSpt);
-
-        view.getContext().startActivity(intent);
+        try {
+            fields.get("NomeProjeto").setText(projeto.getNome());
+            fields.get("Empresa").setText(projeto.getEmpresa());
+            fields.get("Tecnico").setText(projeto.getTecnico());
+            fields.get("Contato").setText(projeto.getNumeroDeTelefone());
+            fields.get("Cliente").setText(projeto.getCliente());
+            fields.get("LocalObra").setText("Não implementado");
+            fields.get("ReferenciaNivel").setText("Não implementado");
+        } catch (NullPointerException ignored) {
+            // todo: forma adequada de checar se os campos foram ou não definidos
+        }
     }
 }
