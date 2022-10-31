@@ -20,35 +20,6 @@ import java.util.Map;
 public class CarimboEnsaioVM extends ViewModel {
     private ProjetoSpt projeto;
 
-    private void updateProjeto(EditText editTextDataInicio) {
-        projeto.setDataInicio(editTextDataInicio.getText().toString());
-
-        ProjetoSptUseCase.save(projeto);  // todo: decidir quando dar save e quando dar update
-    }
-
-    protected void ensaioButtonListener(View view, EditText editTextDataInicio) {
-        FuroSpt furoSpt = new FuroSpt();
-        ArrayList<AmostraSpt> amostras = new ArrayList<>();
-        amostras.add(new AmostraSpt());
-        amostras.get(0).setId("0");
-
-        furoSpt.setListaDeAmostras(amostras);
-
-        ArrayList<FuroSpt> furos = new ArrayList();
-        furos.add(furoSpt);
-
-        projeto.setListaDeFuros(furos);
-        updateProjeto(editTextDataInicio);
-
-        Intent intent = new Intent(view.getContext(), EnsaioActivity.class);
-        intent.putExtra("Projeto", projeto);
-        view.getContext().startActivity(intent);
-    }
-
-    public ProjetoSpt getProjeto() {
-        return projeto;
-    }
-
     public void setProjeto(ProjetoSpt projeto, Map<String, EditText> fields) {
         this.projeto = projeto;
 
@@ -58,5 +29,10 @@ public class CarimboEnsaioVM extends ViewModel {
         } catch (NullPointerException ignored) {
             // todo: forma adequada de checar se os campos foram ou não definidos
         }
+    }
+
+    public ProjetoSpt getProjeto(Map<String, EditText> fields) {
+        projeto.setDataInicio((String) fields.get("DataInicio").getText().toString());
+        return projeto;
     }
 }

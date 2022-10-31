@@ -12,13 +12,16 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.montaigne.montaigneapp.databinding.FragmentCarimboEnsaioBinding;
+import com.montaigne.montaigneapp.model.Projeto;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
+import com.montaigne.montaigneapp.ui.spt.SptVM;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class CarimboEnsaioFragment extends Fragment {
     private CarimboEnsaioVM viewModel;
+    private SptVM projectViewModel;
     private FragmentCarimboEnsaioBinding binding;
     private Map<String, EditText> fields;
 
@@ -30,6 +33,7 @@ public class CarimboEnsaioFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         viewModel = new ViewModelProvider(this).get(CarimboEnsaioVM.class);
+        projectViewModel = new ViewModelProvider(requireActivity()).get(SptVM.class);
     }
 
     @Nullable
@@ -42,11 +46,15 @@ public class CarimboEnsaioFragment extends Fragment {
         fields.put("DataInicio", binding.editTextStartDate);
         fields.put("NivelFuro", binding.editTextNivelFuro);
 
-        binding.buttonStartEnsaio.setOnClickListener(v -> viewModel.ensaioButtonListener (v,
-                binding.editTextStartDate));  // todo: remover essa responsabilidade daqui
+        ProjetoSpt projeto = projectViewModel.getProjeto();
+        viewModel.setProjeto(projeto, fields);
 
         return binding.getRoot();
     }
 
-    public void setProjetoSpt(ProjetoSpt projetoSpt) {viewModel.setProjeto(projetoSpt, fields);}
+    @Override
+    public void onPause() {
+        super.onPause();
+        projectViewModel.updateProjeto(viewModel.getProjeto(fields));
+    }
 }
