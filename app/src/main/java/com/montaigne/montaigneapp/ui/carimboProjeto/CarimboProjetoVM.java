@@ -12,26 +12,6 @@ import java.util.Map;
 public class CarimboProjetoVM extends ViewModel {
     private Projeto projeto;
 
-    // método de getData (validação de entradas)
-    protected void updateProjeto(View view, Map<String, EditText> fields) {
-        // todo: revisar o fluxo de dados deste fragment
-        // revisar como a comunicação foi planejada
-        projeto.setNome(fields.get("NomeProjeto").getText().toString());
-        projeto.setEmpresa(fields.get("Empresa").getText().toString());
-        projeto.setCliente(fields.get("Tecnico").getText().toString());
-        projeto.setTecnico(fields.get("Contato").getText().toString());
-        projeto.setNumeroDeTelefone(fields.get("Cliente").getText().toString());
-        projeto.setEmpresa(fields.get("LocalObra").getText().toString());
-//        fields.get("nFuros").getText().toString();
-//        fields.get("ReferenciaNivel").getText().toString;
-
-//        ProjetoSptUseCase.save((ProjetoSpt) projeto);  // todo: decidir quando dar save e quando dar update
-    }
-
-    public Projeto getProjeto() {
-        return projeto;
-    }
-
     public void setProjeto(Projeto projeto, Map<String, EditText> fields) {
         this.projeto = projeto;
 
@@ -46,5 +26,14 @@ public class CarimboProjetoVM extends ViewModel {
         } catch (NullPointerException ignored) {
             // todo: forma adequada de checar se os campos foram ou não definidos
         }
+    }
+
+    protected Projeto getProjeto(Map<String, EditText> fields) {
+        projeto.setNome(fields.get("NomeProjeto").getText().toString());
+        projeto.setEmpresa(fields.get("Empresa").getText().toString());
+        projeto.setCliente(fields.get("Cliente").getText().toString());
+        projeto.setTecnico(fields.get("Tecnico").getText().toString());
+        projeto.setNumeroDeTelefone(fields.get("Contato").getText().toString());
+        return projeto;
     }
 }

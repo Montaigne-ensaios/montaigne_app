@@ -1,6 +1,7 @@
 package com.montaigne.montaigneapp.ui.spt;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +9,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModel;
 
 import com.montaigne.montaigneapp.R;
+import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.carimboProjeto.CarimboProjetoFragment;
 import com.montaigne.montaigneapp.ui.home.HomeActivity;
@@ -15,12 +17,11 @@ import com.montaigne.montaigneapp.ui.spt.carimboEnsaio.CarimboEnsaioFragment;
 
 public class SptVM extends ViewModel {
     private ProjetoSpt projeto;
+    private boolean isProjetoNew = false;
+    // variável que define se o projeto deve ser salvo ou deve-se criar um novo
 
     protected void navigateFragments(View view, FragmentManager manager) {
         // todo: implementar navegação dentro da activity
-        CarimboProjetoFragment carimboProjetoFragment = (CarimboProjetoFragment) manager.getFragments().get(0);
-        projeto = (ProjetoSpt) carimboProjetoFragment.getProjeto();
-
         CarimboEnsaioFragment carimboEnsaioFragment = new CarimboEnsaioFragment();
         manager.beginTransaction()
                 .replace(R.id.containerSpt, carimboEnsaioFragment)
@@ -38,15 +39,26 @@ public class SptVM extends ViewModel {
         // todo: implementar botão de mais ações relativo ao fragment
     }
 
-    public void setProjeto(ProjetoSpt projeto, FragmentManager manager) {
+    public void updateProjeto(ProjetoSpt projeto) {
+        this.projeto = projeto;
+        if (isProjetoNew) {
+            ProjetoSptUseCase.save(projeto);
+            isProjetoNew = false;
+        } else {
+            ProjetoSptUseCase.update(projeto);
+        }
+    }
+
+    protected void setupViewModel(ProjetoSpt projeto, FragmentManager manager) {
         this.projeto = projeto;
         if (projeto.getNome() == null) {
-            CarimboProjetoFragment fragment = new CarimboProjetoFragment(projeto);
+            isProjetoNew = true;
+            CarimboProjetoFragment fragment = new CarimboProjetoFragment();
             manager.beginTransaction()
                     .replace(R.id.containerSpt, fragment)
                     .commitNow();
         } else {
-            CarimboProjetoFragment fragment = new CarimboProjetoFragment(projeto);
+            CarimboProjetoFragment fragment = new CarimboProjetoFragment();
             // todo: substituir fragmente por ProjetoFragment e revisar esta comunicação
             manager.beginTransaction()
                     .replace(R.id.containerSpt, fragment)

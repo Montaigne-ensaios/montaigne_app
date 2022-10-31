@@ -1,7 +1,6 @@
 package com.montaigne.montaigneapp.ui.carimboProjeto;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,26 +14,24 @@ import androidx.lifecycle.ViewModelProvider;
 import com.montaigne.montaigneapp.databinding.FragmentCarimboProjetoBinding;
 import com.montaigne.montaigneapp.model.Projeto;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
+import com.montaigne.montaigneapp.ui.spt.SptVM;
 
 import java.util.HashMap;
 
 public class CarimboProjetoFragment extends Fragment {
     private CarimboProjetoVM viewModel;
+    private SptVM projectViewModel;  // todo: criar uma classe abstrata de viewmodel agnóstica ao tipo de ensaio
     private FragmentCarimboProjetoBinding binding;
     protected final HashMap<String, EditText> fields = new HashMap<>();
-    private final Projeto projeto;
 
-    public CarimboProjetoFragment() {projeto = new ProjetoSpt();}
-
-    public CarimboProjetoFragment(Projeto projeto) {
-        this.projeto = projeto;
-    }
+    public CarimboProjetoFragment() {}
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         viewModel = new ViewModelProvider(this).get(CarimboProjetoVM.class);
+        projectViewModel = new ViewModelProvider(requireActivity()).get(SptVM.class);
     }  // todo: criar um adapter que adapte todos os campos de um projeto para os dados de um editText
 
     @Nullable
@@ -49,12 +46,16 @@ public class CarimboProjetoFragment extends Fragment {
         fields.put ("Cliente",  binding.editTextCliente);
         fields.put ("LocalObra",  binding.editTextLocalObra);
         fields.put ("QuantidadeFuros",  binding.editTextQuantidadeFuros);
-        binding.buttonContinueCarimbo.setOnClickListener(v -> viewModel.updateProjeto (v, fields));
 
+        Projeto projeto = projectViewModel.getProjeto();
         viewModel.setProjeto(projeto, fields);
 
         return binding.getRoot();
     }
 
-    public Projeto getProjeto() {return viewModel.getProjeto();}
+    @Override
+    public void onPause() {
+        super.onPause();
+        projectViewModel.updateProjeto((ProjetoSpt) viewModel.getProjeto(fields));
+    }
 }

@@ -9,6 +9,7 @@ import com.montaigne.montaigneapp.databinding.ActivityHomeBinding;
 
 public class HomeActivity extends AppCompatActivity {
     private ActivityHomeBinding binding;
+    private HomeVM viewModel;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -16,11 +17,17 @@ public class HomeActivity extends AppCompatActivity {
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        HomeVM viewModel = new ViewModelProvider(this).get(HomeVM.class);
+        viewModel = new ViewModelProvider(this).get(HomeVM.class);
 
         viewModel.initializeProjetosSalvosAdapter(binding.recyclerProjetosSalvos);
         viewModel.initializeProjetoCategoriaAdapter(binding.recyclerCategorias);
         binding.fabNewProjeto.setOnClickListener(viewModel::newProjectFabListener);
+    }
+
+    @Override
+    protected void onPostResume() {
+        // todo: revisar se o refresh deve ser aqui
+        super.onPostResume();
         viewModel.refreshProjetosSalvos();
     }
 }

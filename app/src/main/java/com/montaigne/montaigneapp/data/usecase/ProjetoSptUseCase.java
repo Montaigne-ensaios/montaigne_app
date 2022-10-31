@@ -50,10 +50,12 @@ public class ProjetoSptUseCase {
         projetoSptDao.getProjetos().addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                holder.clearModels();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     ProjetoSpt projetoSpt = dataSnapshot.getValue(ProjetoSpt.class);
                     holder.addModel(projetoSpt);
                 }
+                Log.i("Firebase", "Sucesso ao ler projetos SPT.");
             }
 
             @Override
