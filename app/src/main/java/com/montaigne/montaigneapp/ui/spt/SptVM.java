@@ -41,12 +41,12 @@ public class SptVM extends ViewModel {
     public void setProjeto(ProjetoSpt projeto, FragmentManager manager) {
         this.projeto = projeto;
         if (projeto.getNome() == null) {
-            CarimboProjetoFragment fragment = new CarimboProjetoFragment();
+            CarimboProjetoFragment fragment = new CarimboProjetoFragment(projeto);
             manager.beginTransaction()
                     .replace(R.id.containerSpt, fragment)
                     .commitNow();
         } else {
-            CarimboProjetoFragment fragment = new CarimboProjetoFragment();
+            CarimboProjetoFragment fragment = new CarimboProjetoFragment(projeto);
             // todo: substituir fragmente por ProjetoFragment e revisar esta comunicação
             manager.beginTransaction()
                     .replace(R.id.containerSpt, fragment)

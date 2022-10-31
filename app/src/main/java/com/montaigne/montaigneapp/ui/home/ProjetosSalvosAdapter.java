@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.ui.spt.projeto.ProjetoActivity;
 import com.montaigne.montaigneapp.databinding.AdapterHomeProjetosBinding;
 import com.montaigne.montaigneapp.model.Projeto;
@@ -38,9 +39,10 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAd
         Projeto projeto = projetoList.get(position);
 
         holder.binding.textNameProjeto.setText( projeto.getNome() );
+        holder.binding.textDescricaoProjeto.setText(projeto.getCliente());
 
         holder.binding.cardView.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(), ProjetoActivity.class);
+            Intent intent = new Intent(v.getContext(), SptActivity.class);
             intent.putExtra(HomeVM.PROJETO, projeto);
             v.getContext().startActivity(intent);
         });
