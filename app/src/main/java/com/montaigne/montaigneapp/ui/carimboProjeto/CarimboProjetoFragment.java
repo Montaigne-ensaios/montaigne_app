@@ -21,14 +21,11 @@ public class CarimboProjetoFragment extends Fragment {
     private FragmentCarimboProjetoBinding binding;
     protected final HashMap<String, EditText> fields = new HashMap<>();
 
-    public CarimboProjetoFragment() {
-        CarimboProjetoVM viewModel = new ViewModelProvider(this).get(CarimboProjetoVM.class);
-    }
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        viewModel = new ViewModelProvider(this).get(CarimboProjetoVM.class);
     }
 
     @Nullable
