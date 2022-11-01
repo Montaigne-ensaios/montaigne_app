@@ -59,27 +59,14 @@
                     app:layout_constraintStart_toStartOf="@+id/guidelineStart"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/textWarning2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:text="@string/TxtCarimboDefinitivoAviso2"
-                    android:textColor="@color/destaque"
-                    android:textSize="18sp"
-                    app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-                    app:layout_constraintTop_toBottomOf="@+id/textWarning1" />
-
                 <ImageView
                     android:id="@+id/imageProfile"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
-                    android:layout_marginTop="16dp"
                     android:scaleType="centerCrop"
                     app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
                     app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-                    app:layout_constraintTop_toBottomOf="@+id/textWarning2"
+                    app:layout_constraintTop_toBottomOf="@+id/textWarning1"
                     tools:srcCompat="@drawable/icon_profile" />
 
                 <TextView

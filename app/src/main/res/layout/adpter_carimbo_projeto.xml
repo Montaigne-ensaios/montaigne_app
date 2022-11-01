@@ -14,7 +14,7 @@
         <com.google.android.material.textfield.TextInputLayout
             app:hintEnabled="true"
             app:errorEnabled="true"
-            app:helperText="@string/requerid"
+            app:helperText="substitua observação"
             app:errorIconDrawable="@drawable/ic_erro"
             android:id="@+id/TextImputLayoutNameProjeto"
             android:layout_width="match_parent"
@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textAutoComplete"
-                android:hint="Nome do Projeto" />
+                android:hint="Substitua hint" />
 
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
