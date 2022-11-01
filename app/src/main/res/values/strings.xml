@@ -23,19 +23,23 @@
     <!-- Strings da tela FURO-->
 
 
-    <!-- Strings da tela Carimbo Definitivo-->
-    <string name="TxtCarimboDefinitivoAviso1">O carimbo definitivo é feito para todos os furos contendo informações gerais que não serão alteradas nas outras sondagens.</string>
-    <string name="TxtCarimboDefinitivoAviso2">Alterações salvas automaticamente.</string>
-    <string name="TxtCarimboDefinitivoNomeProjeto">Nome do Projeto:</string>
-    <string name="TxtCarimboDefinitivoNomeTecnico">Técnico:</string>
-    <string name="TxtCarimboDefinitivoNomeEmpresa">Empresa Responsável:</string>
-    <string name="TxtBotaoContinuacao">Próximo</string>
-    <string name="TxtCarimboDefinitivoContato">Contato:</string>
-    <string name="TxtCarimboDefinitivoNomeCliente">Nome do Cliente:</string>
-    <string name="TxtCarimboDefinitivoLocalObra">Local da obra:</string>
-    <string name="TxtCarimboDefinitivoQuantidadeFuros">Quantidade de Furos:</string>
-    <string name="TxtCarimboDefinitivoReferenciaNivel">Referência de Nível:</string>
-    <string name="TxtCampoAsterisco">*</string>
+    <!-- Strings da tela Carimbo Definitivo e hints do adpter carimbo projeto-->
+
+    <string name="HintAdpterCarimboProjetoNomeProjeto">Nome do Projeto</string>
+    <string name="HintAdpterCarimboProjetoNomeTecnico">Técnico:</string>
+    <string name="HintAdpterCarimboProjetoNomeEmpresa">Empresa Responsável</string>
+    <string name="HintAdpterCarimboProjetoContato">Contato</string>
+    <string name="HintAdpterCarimboProjetoCliente">Cliente</string>
+    <string name="HintAdpterCarimboProjetoLocalObra">Local da obra</string>
+    <string name="HintAdpterCarimboProjetoQuantidadeFuros">Número de Furos</string>
+    <string name="HintAdpterCarimboProjetoReferenciaNivel">Referência de Nível</string>
+    <string name="HintAdpterCarimboProjetoAlturaReferenciaNivel">Altura da Referência de Nível</string>
+
+    <string name="TxtBotaoContinuar">Próximo</string>
+
+
+
+
 
     <!-- Strings da tela Carimbo Único-->
     <string name="TxtCarimboUnicoDataInicio">Data de inicio:</string>
@@ -48,7 +52,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <!-- Strings da Projeto-->
 
 
     <!-- Strings da tela Adpter_home_projetos-->
