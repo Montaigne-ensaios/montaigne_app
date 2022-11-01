@@ -8,60 +8,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <FrameLayout
-        android:id="@+id/rodapeCarimbo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageButton
-                android:id="@+id/imageButtonHome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                app:layout_constraintBottom_toBottomOf="@+id/buttonContinueCarimbo"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/buttonContinueCarimbo"
-                app:srcCompat="@drawable/icon_home" />
-
-            <Button
-                android:id="@+id/buttonContinueCarimbo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:text="@string/TxtBotaoContinuacao"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/textWarningObrigatory"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                android:text="@string/TxtCarimboUnicoAviso"
-                android:textColor="@color/destaque"
-                app:layout_constraintBottom_toTopOf="@+id/buttonContinueCarimbo"
-                app:layout_constraintEnd_toEndOf="@+id/buttonContinueCarimbo"
-                app:layout_constraintStart_toStartOf="@+id/buttonContinueCarimbo"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </FrameLayout>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/rodapeCarimbo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -93,10 +42,7 @@
                     app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/textNameProjeto"
-                    app:layout_constraintTop_toBottomOf="@+id/textNameProjeto"/>
-
-
-
+                    app:layout_constraintTop_toBottomOf="@+id/textNameProjeto" />
 
 
                 <TextView
@@ -352,14 +298,6 @@
                     app:layout_constraintStart_toStartOf="@+id/imageProfile"
                     app:layout_constraintTop_toBottomOf="@+id/imageProfile"
                     app:srcCompat="@drawable/icon_photo" />
-
-
-
-
-
-
-
-
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

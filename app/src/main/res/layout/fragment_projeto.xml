@@ -11,45 +11,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonCarimbo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textFuro"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/buttonCarimbo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="Carimbo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageButton
-        android:id="@+id/imageButtonAddFuro"
-        android:layout_width="44dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="20dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonCarimbo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/icon_add_padron" />
-
-    <ImageButton
-        android:id="@+id/imageButtonDeleteFuro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonCarimbo"
-        app:layout_constraintTop_toTopOf="@+id/buttonCarimbo"
-        app:layout_constraintVertical_bias="0.26"
-        app:srcCompat="@drawable/icon_delet" />
+        app:layout_constraintTop_toBottomOf="@+id/textFuro" />
 
     <TextView
         android:id="@+id/textFuro"

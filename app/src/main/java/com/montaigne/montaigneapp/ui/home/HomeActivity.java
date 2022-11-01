@@ -1,10 +1,12 @@
 package com.montaigne.montaigneapp.ui.home;
 
 import android.os.Bundle;
+import android.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.databinding.ActivityHomeBinding;
 
 public class HomeActivity extends AppCompatActivity {
@@ -18,7 +20,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         viewModel = new ViewModelProvider(this).get(HomeVM.class);
-
+        setSupportActionBar(binding.toolbarHome.toolbarHome);  // todo: criar toolbar para home
         viewModel.initializeProjetosSalvosAdapter(binding.recyclerProjetosSalvos);
         viewModel.initializeProjetoCategoriaAdapter(binding.recyclerCategorias);
         binding.fabNewProjeto.setOnClickListener(viewModel::newProjectFabListener);
