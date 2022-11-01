@@ -6,22 +6,24 @@ public abstract class Projeto implements Serializable {
 
     private String id;
     private String nome;
-    private String cliente;
-    private String empresa;
-    private String tecnico;
-    private String numeroDeTelefone;
-    private String dataInicio;
-    private Coordenada coordenadas;
+    private String cliente;  // opcional
+    private String empresa;  // opcional
+    private String tecnico;  // opcional
+    private String contato;  // opcional. pode ser qualquer forma de contato
+    private String dataInicio, dataFim;
+    private Coordenada coordenadas;  // todo: subsitutir por texto do endereço?
 
     public Projeto() {}
 
-    public Projeto(String id, String nome, String cliente, String empresa, String tecnico, String numeroDeTelefone, String dataInicio, Coordenada coordenadas) {
+    public Projeto(String id, String nome, String cliente,
+                   String empresa, String tecnico, String contato,
+                   String dataInicio, Coordenada coordenadas) {
         this.id = id;
         this.nome = nome;
         this.cliente = cliente;
         this.empresa = empresa;
         this.tecnico = tecnico;
-        this.numeroDeTelefone = numeroDeTelefone;
+        this.contato = contato;
         this.dataInicio = dataInicio;
         this.coordenadas = coordenadas;
     }
@@ -66,12 +68,20 @@ public abstract class Projeto implements Serializable {
         this.tecnico = tecnico;
     }
 
-    public String getNumeroDeTelefone() {
-        return numeroDeTelefone;
+    public String getContato() {
+        return contato;
     }
 
-    public void setNumeroDeTelefone(String numeroDeTelefone) {
-        this.numeroDeTelefone = numeroDeTelefone;
+    public void setContato(String contato) {
+        this.contato = contato;
+    }
+
+    public String getDataFim() {
+        return dataFim;
+    }
+
+    public void setDataFim(String dataFim) {
+        this.dataFim = dataFim;
     }
 
     public String getDataInicio() {
