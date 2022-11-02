@@ -22,7 +22,7 @@
             android:name=".ui.spt.projeto.ProjetoFragment"
             android:exported="false" />
         <activity
-            android:name=".ui.spt.furo.FuroActivity"
+            android:name=".ui.spt.furo.FuroFragment"
             android:exported="false" />
         <activity
             android:name=".ui.spt.ensaio.EnsaioActivity"

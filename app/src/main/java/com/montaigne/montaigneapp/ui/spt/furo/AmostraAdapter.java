@@ -2,19 +2,15 @@ package com.montaigne.montaigneapp.ui.spt.furo;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.montaigne.montaigneapp.R;
-import com.montaigne.montaigneapp.ui.spt.ensaio.EnsaioActivity;
+import com.montaigne.montaigneapp.databinding.AdapterProjetoBinding;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
+import com.montaigne.montaigneapp.ui.spt.ensaio.EnsaioFragment;
 
 import java.util.List;
 
@@ -38,17 +34,21 @@ public class AmostraAdapter extends RecyclerView.Adapter<AmostraAdapter.ViewHold
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_projeto, parent, false);  // ver se o layout deve ser alterado
-        return new ViewHolder(view);
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+
+        AdapterProjetoBinding binding = AdapterProjetoBinding
+                .inflate(inflater, parent, false);
+
+        return new ViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.textView.setText("Amostra " + (position + 1));
+        holder.binding.textFuroName.setText("Amostra " + (position + 1));
         int idAmostra = position;
 
-        holder.cardView.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(), EnsaioActivity.class);
+        holder.binding.cardView.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), EnsaioFragment.class);
             intent.putExtra("idAmostra", idAmostra);
             intent.putExtra("idFuro", idFuro);
             intent.putExtra("projetoSpt", projetoSpt);
@@ -63,16 +63,11 @@ public class AmostraAdapter extends RecyclerView.Adapter<AmostraAdapter.ViewHold
     }
 
     protected class ViewHolder extends RecyclerView.ViewHolder{
-        protected final CardView cardView;
-        protected final CheckBox checkBox;
-        protected final TextView textView;
+        private final AdapterProjetoBinding binding;
 
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            cardView = itemView.findViewById(R.id.cardView);
-            textView = itemView.findViewById(R.id.textFuroName);
-            // todo: garantir que este nome sempre seja um int
-            checkBox = itemView.findViewById(R.id.checkBox);
+        public ViewHolder(AdapterProjetoBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
         }
     }
 }

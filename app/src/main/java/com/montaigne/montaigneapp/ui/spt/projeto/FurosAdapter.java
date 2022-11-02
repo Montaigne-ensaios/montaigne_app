@@ -2,18 +2,13 @@ package com.montaigne.montaigneapp.ui.spt.projeto;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.databinding.AdapterProjetoBinding;
-import com.montaigne.montaigneapp.ui.spt.furo.FuroActivity;
+import com.montaigne.montaigneapp.ui.spt.furo.FuroFragment;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
@@ -42,7 +37,7 @@ public class FurosAdapter extends RecyclerView.Adapter<FurosAdapter.ViewHolder> 
         int id = position;
 
         holder.binding.cardView.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(), FuroActivity.class);
+            Intent intent = new Intent(v.getContext(), FuroFragment.class);
             intent.putExtra("idFuro", id);
             intent.putExtra("projetoSpt", projetoSpt);
 
