@@ -76,9 +76,9 @@ public class EnsaioActivity extends AbstractActivity {
         penetracoes.add(findViewById(R.id.editTextPenetracao3));
 
         editTextNivelAgua = findViewById(R.id.editTextNivelAgua);
-        buttonFinalizarFuro = findViewById(R.id.buttonFinishFuro);
-        imageButtonHome = findViewById(R.id.imageButtonHome);
-        imageButtonHelpNivelAgua = findViewById(R.id.imageButtonHelpNivelAgua);
+     //   buttonFinalizarFuro = findViewById(R.id.buttonFinishFuro);
+      //  imageButtonHome = findViewById(R.id.imageButtonHome);
+     //   imageButtonHelpNivelAgua = findViewById(R.id.imageButtonHelpNivelAgua);
 
         buttonsDecrementGolpes.add(findViewById(R.id.imageButtonIcrementGolpe1));
         buttonsDecrementGolpes.add(findViewById(R.id.imageButtonIcrementGolpe2));

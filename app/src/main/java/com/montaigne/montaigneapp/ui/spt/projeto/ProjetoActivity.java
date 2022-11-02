@@ -39,8 +39,8 @@ public class ProjetoActivity extends AbstractActivity {
         setContentView(R.layout.fragment_projeto);
 
         recyclerFuros = findViewById(R.id.recyclerFuro);
-        buttonDeleteFuro = findViewById(R.id.imageButtonDeleteFuro);
-        buttonAddFuro = findViewById(R.id.imageButtonAddFuro);
+        //buttonDeleteFuro = findViewById(R.id.imageButtonDeleteFuro);
+       // buttonAddFuro = findViewById(R.id.imageButtonAddFuro);
         textFuro = findViewById(R.id.textFuro);  // adicionado apenas pela atual ausência
         // de título na activity
 

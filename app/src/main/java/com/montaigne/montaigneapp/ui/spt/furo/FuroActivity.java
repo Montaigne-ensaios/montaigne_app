@@ -45,9 +45,9 @@ public class FuroActivity extends AbstractActivity {
     protected boolean initializeViews() {
         setContentView(R.layout.fragment_furo);
 
-        buttonAddAmostra = findViewById(R.id.imageButtonAddAmostra);
-        buttonDeleteAmostra = findViewById(R.id.imageButtonDeleteAmostra);
-        buttonPrint = findViewById(R.id.buttonPrint);
+     //   buttonAddAmostra = findViewById(R.id.imageButtonAddAmostra);
+     //   buttonDeleteAmostra = findViewById(R.id.imageButtonDeleteAmostra);
+   //     buttonPrint = findViewById(R.id.buttonPrint);
         recyclerAmostras = findViewById(R.id.recyclerAmostra);
         textAmostra = findViewById(R.id.textAmostra);
 

@@ -7,16 +7,16 @@ import android.os.Bundle;
 
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.home.HomeVM;
-import com.montaigne.montaigneapp.databinding.ActivitySptBinding;
+import com.montaigne.montaigneapp.databinding.AcitivitySptBinding;
 
 public class SptActivity extends AppCompatActivity {
-    private ActivitySptBinding binding;
+    private AcitivitySptBinding binding;
     private SptVM viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivitySptBinding.inflate(getLayoutInflater());
+        binding = AcitivitySptBinding .inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         viewModel = new ViewModelProvider(this).get(SptVM.class);
