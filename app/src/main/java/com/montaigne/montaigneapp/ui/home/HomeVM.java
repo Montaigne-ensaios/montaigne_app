@@ -13,7 +13,6 @@ import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.data.ModelHolder;
 import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
 import com.montaigne.montaigneapp.model.Projeto;
-import com.montaigne.montaigneapp.ui.spt.projeto.ProjetoActivity;
 
 import java.util.ArrayList;
 

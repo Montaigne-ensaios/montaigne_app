@@ -13,7 +13,6 @@ import java.util.List;
 
 public class ProjetoVM extends ViewModel {
     private ProjetoSpt projetoSpt;
-    private List<FuroSpt> furos;
 
     protected void updateFurosAdapter(RecyclerView recyclerFuros) {
         // TODO: no caso de passar o projetoSpt para o adapter, não é preciso setar ele aqui
@@ -23,21 +22,6 @@ public class ProjetoVM extends ViewModel {
 
         recyclerFuros.setAdapter(adapter);
         recyclerFuros.setLayoutManager(new LinearLayoutManager(recyclerFuros.getContext()));
-    }
-
-    protected void deleteFurosButtonListener(View view) {
-    }
-
-    private List<FuroSpt> getFuros() {
-        /*
-        ArrayList<String> mock = new ArrayList<>();
-        mock.add("furo1");
-        mock.add("outro furo");
-        mock.add("vc já entendeu");
-        return mock;
-         */
-
-        return projetoSpt.getListaDeFuros();
     }
 
     public ProjetoSpt getProjetoSpt() {
