@@ -2,17 +2,13 @@ package com.montaigne.montaigneapp.ui.spt.projeto;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.montaigne.montaigneapp.R;
-import com.montaigne.montaigneapp.ui.spt.furo.FuroActivity;
+import com.montaigne.montaigneapp.databinding.AdapterProjetoBinding;
+import com.montaigne.montaigneapp.ui.spt.furo.FuroFragment;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
@@ -25,19 +21,23 @@ public class FurosAdapter extends RecyclerView.Adapter<FurosAdapter.ViewHolder> 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_projeto, parent, false);
-        return new ViewHolder(view);
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+
+        AdapterProjetoBinding binding = AdapterProjetoBinding
+                .inflate(inflater, parent, false);
+
+        return new ViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         // TODO: verificar se vai ser realmente o código que será exibido e como gerá-lo
-        holder.textView.setText(furos.get(position).getCodigo());
+        holder.binding.textFuroName.setText(furos.get(position).getCodigo());
 
         int id = position;
 
-        holder.cardView.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(), FuroActivity.class);
+        holder.binding.cardView.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), FuroFragment.class);
             intent.putExtra("idFuro", id);
             intent.putExtra("projetoSpt", projetoSpt);
 
@@ -62,16 +62,12 @@ public class FurosAdapter extends RecyclerView.Adapter<FurosAdapter.ViewHolder> 
         this.projetoSpt = projetoSpt;
     }
 
-    protected class ViewHolder extends RecyclerView.ViewHolder{
-        protected final CardView cardView;
-        protected final CheckBox checkBox;
-        protected final TextView textView;
+    protected static class ViewHolder extends RecyclerView.ViewHolder{
+        private final AdapterProjetoBinding binding;
 
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            cardView = itemView.findViewById(R.id.cardView);
-            textView = itemView.findViewById(R.id.textFuroName);
-            checkBox = itemView.findViewById(R.id.checkBox);
+        public ViewHolder(AdapterProjetoBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
         }
     }
 }

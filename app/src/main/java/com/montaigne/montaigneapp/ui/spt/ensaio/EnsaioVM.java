@@ -1,12 +1,12 @@
 package com.montaigne.montaigneapp.ui.spt.ensaio;
 
-import android.content.Intent;
-import android.view.View;
 import android.widget.EditText;
 
 import androidx.lifecycle.ViewModel;
 
-import com.montaigne.montaigneapp.ui.home.HomeActivity;
+import com.montaigne.montaigneapp.model.Projeto;
+import com.montaigne.montaigneapp.model.spt.AmostraSpt;
+import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.ArrayList;
@@ -16,44 +16,43 @@ public class EnsaioVM extends ViewModel {
     private  int idAmostra;
     private  ProjetoSpt projeto;
 
-    public void setIdFuro(int idFuro) {
-        this.idFuro = idFuro;
-    }
-
-    public void setIdAmostra(int idAmostra) {
-        this.idAmostra = idAmostra;
-    }
-
-    public void setProjeto(ProjetoSpt projeto) {
+    public void setAmostra(ProjetoSpt projeto,int idFuro, int idAmostra,
+                           ArrayList<EditText> golpes, ArrayList<EditText> penetracoes) {
         this.projeto = projeto;
+        this.idAmostra = idAmostra;
+        this.idFuro = idFuro;
+        golpes.get(1).setText(getAmostra().getGolpe1());
+        golpes.get(2).setText(getAmostra().getGolpe2());
+        golpes.get(3).setText(getAmostra().getGolpe3());
+        penetracoes.get(1).setText("nao implementado");
+        penetracoes.get(2).setText("nao implementado");
+        penetracoes.get(3).setText("nao implementado");
+        // TODO: 02/11/2022 Implementar penetracoes na Amostra.
+
     }
 
-    /*
-    TODO: rever as formas(métodos) de atualização de uma amostra
-    protected void finalizarFuroButtonListener(View view, ArrayList<EditText> golpes,
-                                               ArrayList<EditText> penetracoes) {
-        updateAmostra(golpes, penetracoes);
-        view.getContext().startActivity(new Intent(view.getContext(), ProjetoActivity.class));
-    }
-     */
-
-    protected void homeButtonListener(View view) {
-        view.getContext().startActivity(new Intent(view.getContext(), HomeActivity.class));
-        //todo:limpar tasks
+    private FuroSpt getFuro() {
+        return projeto.getListaDeFuros().get(idFuro);
     }
 
-    private void updateAmostra(ArrayList<EditText> golpes, ArrayList<EditText> penetracoes){
-        /*
-        amostra.setGolpe1(getInt(golpes.get(0)));
-        amostra.setGolpe2(getInt(golpes.get(1)));
-        amostra.setGolpe3(getInt(golpes.get(2)));
-         */
-
-        // amostra.setNspt(getInt(penetracoes.get(1)) + getInt(penetracoes.get(2)));
-
-        // SaveAmostraSpt.saveAmostraSpt(amostra);
+    private AmostraSpt getAmostra() {
+        return projeto.getListaDeFuros().get(idFuro).getListaDeAmostras().get(idAmostra);
     }
 
+    protected ProjetoSpt getProjeto(ArrayList<EditText> golpes, ArrayList<EditText> penetracoes) {
+        AmostraSpt amostra = getAmostra();
+        FuroSpt furo = getFuro();
+
+        amostra.setGolpe1(Integer.parseInt(golpes.get(1).getText().toString()));
+        amostra.setGolpe2(Integer.parseInt(golpes.get(2).getText().toString()));
+        amostra.setGolpe3(Integer.parseInt(golpes.get(3).getText().toString()));
+        // TODO: 02/11/2022 implementar penetracoes.
+
+        furo.getListaDeAmostras().set(idAmostra, amostra);
+        projeto.getListaDeFuros().set(idFuro, furo);
+
+        return projeto;
+    }
 
     protected void incrementGolpe(EditText editText) {
         setInt(editText, getInt(editText) + 1);
