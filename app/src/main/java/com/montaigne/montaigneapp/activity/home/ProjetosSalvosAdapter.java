@@ -2,7 +2,6 @@ package com.montaigne.montaigneapp.activity.home;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,7 +55,6 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAd
 
     @Override
     public int getItemCount() {
-        Log.i("projeto", String.valueOf(projetoList.size()));
         return projetoList.size();}
 
     public void refreshProjetoList(){
