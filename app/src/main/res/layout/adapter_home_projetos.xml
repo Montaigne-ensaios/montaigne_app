@@ -15,9 +15,9 @@
 
         <ImageView
             android:id="@+id/imageLogoProject"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            tools:srcCompat="@drawable/ic_perfil" />
 
         <TextView
             android:id="@+id/textNameProjeto"

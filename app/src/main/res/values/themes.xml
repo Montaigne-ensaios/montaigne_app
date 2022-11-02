@@ -4,6 +4,8 @@
 
         <!-- Primary color. -->
         <item name="colorPrimary">@color/color_primary</item>
+        <item name="actionMenuTextColor">@color/fundo</item>
+        <item name="tint">@color/color_primary</item>
         <item name="colorPrimaryVariant">@color/black</item>
 
         <!-- Estilos padrão. -->
