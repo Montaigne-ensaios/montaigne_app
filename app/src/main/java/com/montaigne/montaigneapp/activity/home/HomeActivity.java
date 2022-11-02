@@ -9,8 +9,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.AbstractActivity;
 
-
-
 public class HomeActivity extends AbstractActivity {
     protected FloatingActionButton newProjectFab;
     protected RecyclerView recyclerProjetoCategorias, recyclerProjetosSalvos;
@@ -24,7 +22,6 @@ public class HomeActivity extends AbstractActivity {
         viewModel.initializeProjetosSalvosAdapter(recyclerProjetosSalvos);
         viewModel.initializeProjetoCategoriaAdapter(recyclerProjetoCategorias);
         newProjectFab.setOnClickListener(viewModel::newProjectFabListener);
-        viewModel.refreshProjetosSalvos();
     }
 
     @Override

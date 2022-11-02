@@ -9,26 +9,25 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.carimboDefinitivo.CarimboDefinitivoActivity;
-import com.montaigne.montaigneapp.data.ModelHolder;
-import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
-import com.montaigne.montaigneapp.model.Projeto;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class HomeVM extends ViewModel implements ModelHolder<Projeto> {
-    private ArrayList<Projeto> projetosSalvos = new ArrayList<>();
-    private final ProjetosSalvosAdapter adapter = new ProjetosSalvosAdapter();
+public class HomeVM extends ViewModel {
+    private ProjetoCategoriaAdapter adapterCategorias;
+    private ProjetosSalvosAdapter adapterProjetosSalvos;
 
     protected void initializeProjetoCategoriaAdapter(RecyclerView recyclerProjetoCategorias) {
-        ArrayList<Object[]> categorias = new ArrayList<>();  // lista de filtros de projeto
+        this.adapterCategorias = new ProjetoCategoriaAdapter();
+
+        // todo: substituir strings por referência ao `values.xml`
+        List<Object[]> categorias = new ArrayList<>();  // lista de filtros de projeto
         categorias.add(new Object[]{"SPT", R.drawable.ic_logospt_azul});
         categorias.add(new Object[]{"Granulometria", R.drawable.ic_logospt_azul});
-        // todo: substituir strings por referência ao `values.xml`
 
-        ProjetoCategoriaAdapter adapter = new ProjetoCategoriaAdapter();
-        adapter.setCategoriasProjeto(categorias);
+        adapterCategorias.setCategoriasProjeto(categorias);
 
-        recyclerProjetoCategorias.setAdapter(adapter);
+        recyclerProjetoCategorias.setAdapter(adapterCategorias);
         recyclerProjetoCategorias.setLayoutManager(new LinearLayoutManager(
                         recyclerProjetoCategorias.getContext(),
                         LinearLayoutManager.HORIZONTAL,
@@ -36,25 +35,27 @@ public class HomeVM extends ViewModel implements ModelHolder<Projeto> {
     }
 
     protected void initializeProjetosSalvosAdapter(RecyclerView recyclerProjetosSalvos) {
-        recyclerProjetosSalvos.setAdapter(adapter);
-        recyclerProjetosSalvos.setLayoutManager(new LinearLayoutManager(recyclerProjetosSalvos.getContext()));
+        adapterProjetosSalvos = new ProjetosSalvosAdapter(recyclerProjetosSalvos.getContext());
+        adapterProjetosSalvos.refreshProjetoList();
+
+        recyclerProjetosSalvos.setAdapter(adapterProjetosSalvos);
+        recyclerProjetosSalvos.setLayoutManager(new LinearLayoutManager(
+                recyclerProjetosSalvos.getContext(),
+                LinearLayoutManager.VERTICAL,
+                false));
     }
 
-    protected void refreshProjetosSalvos(){
-        ProjetoSptUseCase.read(this);
-    }
-
-    @Override
-    public void addModel(Projeto projeto) {
-        projetosSalvos.add(projeto);
-        adapter.setProjetoList(projetosSalvos);
-    }
-
-    @Override
-    public void clearModels() {
-        projetosSalvos = new ArrayList<>();
-        adapter.setProjetoList(projetosSalvos);
-    }
+//    @Override
+//    public void addModel(Projeto projeto) {
+//        projetosSalvos.add(projeto);
+//        adapter.setProjetoList(projetosSalvos);
+//    }
+//
+//    @Override
+//    public void clearModels() {
+//        projetosSalvos = new ArrayList<>();
+//        adapter.setProjetoList(projetosSalvos);
+//    }
 
     private void categoriaFilterListener(View view) {
         // seleciona apenas os projetos da categoria especifica

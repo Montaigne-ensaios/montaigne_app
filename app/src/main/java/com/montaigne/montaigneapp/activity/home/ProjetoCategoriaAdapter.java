@@ -12,9 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.montaigne.montaigneapp.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProjetoCategoriaAdapter extends RecyclerView.Adapter<ProjetoCategoriaAdapter.ViewHolder>{
-    private ArrayList<Object[]> categoriasProjeto = new ArrayList<>();
+    private List<Object[]> categoriasProjeto = new ArrayList<>();
     // lista com: nome, referência da imagem
     // não pode ser um hash map pois não é acessível por posição
 
@@ -39,7 +40,7 @@ public class ProjetoCategoriaAdapter extends RecyclerView.Adapter<ProjetoCategor
         return categoriasProjeto.size();
     }
 
-    public void setCategoriasProjeto(ArrayList<Object[]> categoriasProjeto) {
+    public void setCategoriasProjeto(List<Object[]> categoriasProjeto) {
         this.categoriasProjeto = categoriasProjeto;
         notifyDataSetChanged();
     }

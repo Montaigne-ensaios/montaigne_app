@@ -1,6 +1,7 @@
 package com.montaigne.montaigneapp.activity.carimboDefinitivo;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -10,27 +11,25 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.AbstractActivity;
-
-import java.util.HashMap;
+import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 public class CarimboDefinitivoActivity extends AbstractActivity {
-    protected final HashMap<String, EditText> fields = new HashMap<>();
-    protected final HashMap<EditText, ImageButton> buttonsHelp = new HashMap<>();
-
     protected Button buttonContinuarCarimbo;
     protected ImageButton imageButtonHome, imageButtonCamera;
     protected ImageView imagePerfil;
+    private EditText editTextNomeProjeto, editTextCliente, editTextContato, editTextTecnico,
+            editTextEmpresa, editTextLocalObra, editTextQuantidadeFuros, editTextReferenciaNivel;
 
+    private CarimboDefinitivoVM viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         initializeViews();
 
-        CarimboDefinitivoVM viewModel = new ViewModelProvider(this).get(CarimboDefinitivoVM.class);
+        this.viewModel = new ViewModelProvider(this).get(CarimboDefinitivoVM.class);
 
-        buttonContinuarCarimbo.setOnClickListener(v -> viewModel.continuarCarimboButtonListener (v, fields));
+        buttonContinuarCarimbo.setOnClickListener(view -> continuarCarimboButtonListener(view));
         imageButtonHome.setOnClickListener(viewModel::homeButtonListener);
     }
 
@@ -42,34 +41,36 @@ public class CarimboDefinitivoActivity extends AbstractActivity {
         imageButtonCamera = findViewById(R.id.imageButtonPhoto);
         imagePerfil = findViewById(R.id.imageProfile);
 
-//     i fields.put ("Tecnico", (EditText) findViewById(R.id.editTextTecnico));
-//        fields.put ("Empresa", (EdtText) findViewById(R.id.editTextEmpresa));
-//        fields.put ("Contato", (EditText) findViewById(R.id.editTextContato));
-//        fields.put ("Cliente", (EditText) findViewById(R.id.editTextCliente));
-//        fields.put ("LocalObra", (EditText) findViewById(R.id.editTextLocalObra));
-//        fields.put ("QuantidadeFuros", (EditText) findViewById(R.id.editTextQuantidadeFuros));
-//        fields.put ("ReferenciaNivel", (EditText) findViewById(R.id.editTextReferenciaNivel));
-//        fields.put ("NomeProjeto", (EditText) findViewById(R.id.editTextNameProjeto));
-//
-//        buttonsHelp.put(fields.get ("Tecnico"),
-//                (ImageButton) findViewById(R.id.imageButtonHelpLocalObra));
-//        buttonsHelp.put(fields.get ("Empresa"),
-//                (ImageButton)findViewById(R.id.imageButtonHelpNameProjeto));
-//        buttonsHelp.put(fields.get ("Contato"),
-//                (ImageButton)findViewById(R.id.imageButtonHelpTecnico));
-//        buttonsHelp.put(fields.get ("Cliente"),
-//                (ImageButton)findViewById(R.id. imageButtonHelpEmpresa));
-//        buttonsHelp.put(fields.get ("LocalObra"),
-//                (ImageButton) findViewById(R.id.imageButtonHelpContato));
-//        buttonsHelp.put(fields.get ("QuantidadeFuros"),
-//                (ImageButton) findViewById(R.id.imageButtonHelpQuantidadeFuros));
-//        buttonsHelp.put(fields.get ("ReferenciaNivel"),
-//                (ImageButton)findViewById(R.id.imageButtonHelpReferenciaNivel));
-//        buttonsHelp.put(fields.get ("NomeProjeto"),
-//                (ImageButton) findViewById(R.id.imageButtonHelpCliente));
+        editTextNomeProjeto = findViewById(R.id.editTextNameProjeto);
+        editTextCliente = findViewById(R.id.editTextCliente);
+        editTextContato = findViewById(R.id.editTextContato);
+        editTextTecnico = findViewById(R.id.editTextTecnico);
+        editTextEmpresa = findViewById(R.id.editTextEmpresa);
+        editTextLocalObra = findViewById(R.id.editTextLocalObra);
+        editTextQuantidadeFuros = findViewById(R.id.editTextQuantidadeFuros);
+        editTextReferenciaNivel = findViewById(R.id.editTextReferenciaNivel);
 
         return imageButtonCamera == null;
+    }
 
+    public void continuarCarimboButtonListener(View view) {
+        String nome = editTextNomeProjeto.getText().toString();
+        String empresa = editTextEmpresa.getText().toString();
+        String tecnico = editTextTecnico.getText().toString();
+        String cotato = editTextContato.getText().toString();
+        String cliente = editTextCliente.getText().toString();
+        String local = editTextLocalObra.getText().toString();
+        String referenciaNivel = editTextReferenciaNivel.getText().toString();
+        //String nFuros = fields.get("nFuros").getText().toString();
 
+        ProjetoSpt projetoSpt = new ProjetoSpt();
+        projetoSpt.setNome(nome);
+        projetoSpt.setEmpresa(empresa);
+        projetoSpt.setCliente(cliente);
+        projetoSpt.setTecnico(tecnico);
+        projetoSpt.setNumeroDeTelefone(cotato);
+        projetoSpt.setEmpresa(empresa);
+
+        viewModel.continuarCarimbo(view, projetoSpt);
     }
 }

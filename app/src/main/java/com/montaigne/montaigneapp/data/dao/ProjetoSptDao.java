@@ -1,9 +1,9 @@
 package com.montaigne.montaigneapp.data.dao;
 
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 public class ProjetoSptDao {
@@ -17,8 +17,8 @@ public class ProjetoSptDao {
         return dbReference;
     }
 
-    public Query getProjetos() {
-        return dbReference.orderByKey();
+    public Task<DataSnapshot> getProjetos() {
+        return dbReference.get();
     }
 
     public Task<Void> insertProjeto(ProjetoSpt projeto) {

@@ -1,29 +1,36 @@
 package com.montaigne.montaigneapp.activity.home;
 
+import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DataSnapshot;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.spt.projeto.ProjetoActivity;
+import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
 import com.montaigne.montaigneapp.model.Projeto;
+import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAdapter.ViewHolder> {
     // todo: passar esta array list para a entity
-    private List<Projeto> projetoList;
+    private Context context;
+    private List<ProjetoSpt> projetoList = new ArrayList<>();
 
-    public ProjetosSalvosAdapter() {
-        projetoList = new ArrayList<>();
+    public ProjetosSalvosAdapter(Context context) {
+        this.context = context;
     }
 
     @NonNull
@@ -47,13 +54,36 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAd
         });
     }
 
-    public void setProjetoList(List<Projeto> projetoList){
-        this.projetoList = projetoList;
-        notifyDataSetChanged();
-    }
-
     @Override
-    public int getItemCount() { return projetoList.size();}
+    public int getItemCount() {
+        Log.i("projeto", String.valueOf(projetoList.size()));
+        return projetoList.size();}
+
+    public void refreshProjetoList(){
+        projetoList.clear();
+
+        try {
+            ProjetoSptUseCase.getDatabase().keepSynced(true);
+
+        } catch (Exception e) {
+
+        }
+
+        ProjetoSptUseCase.read().addOnCompleteListener(task -> {
+            if(task.isSuccessful()) {
+                for (DataSnapshot child : task.getResult().getChildren()) {
+                    ProjetoSpt projeto = child.getValue(ProjetoSpt.class);
+                    projetoList.add(projeto);
+                }
+
+                notifyDataSetChanged();
+                Toast.makeText(context, "Sucesso ao carregar projetos", Toast.LENGTH_SHORT).show();
+
+            } else {
+                Toast.makeText(context, "Erro ao carregar projetos", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 
     protected class ViewHolder extends RecyclerView.ViewHolder {
         protected final CardView cardView;
