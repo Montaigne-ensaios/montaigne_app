@@ -1,7 +1,6 @@
 package com.montaigne.montaigneapp.ui.home;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 

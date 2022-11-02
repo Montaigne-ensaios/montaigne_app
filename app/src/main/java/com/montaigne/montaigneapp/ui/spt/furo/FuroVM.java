@@ -34,7 +34,7 @@ public class FuroVM extends ViewModel {
     }
 
     protected void updateFurosAdapter(RecyclerView recyclerAmostras) {
-
+        // todo: implementar deleção
         AmostraAdapter adapter = new AmostraAdapter();
         adapter.setIdFuro(idFuro);
         adapter.setProjetoSpt(projetoSpt);

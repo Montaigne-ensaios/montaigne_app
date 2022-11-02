@@ -15,7 +15,7 @@ public class ProjetoVM extends ViewModel {
     private ProjetoSpt projetoSpt;
 
     protected void updateFurosAdapter(RecyclerView recyclerFuros) {
-        // TODO: no caso de passar o projetoSpt para o adapter, não é preciso setar ele aqui
+        // TODO: implementar deleção
         FurosAdapter adapter = new FurosAdapter();
         adapter.setFuros(projetoSpt.getListaDeFuros());
         adapter.setProjetoSpt(projetoSpt);

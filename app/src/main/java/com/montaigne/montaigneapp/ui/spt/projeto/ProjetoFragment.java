@@ -4,22 +4,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.montaigne.montaigneapp.R;
-import com.montaigne.montaigneapp.databinding.FragmentCarimboProjetoBinding;
 import com.montaigne.montaigneapp.databinding.FragmentProjetoBinding;
-import com.montaigne.montaigneapp.model.Projeto;
-import com.montaigne.montaigneapp.ui.AbstractActivity;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
-import com.montaigne.montaigneapp.ui.carimboProjeto.CarimboProjetoVM;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
 
 public class ProjetoFragment extends Fragment {
@@ -32,8 +24,6 @@ public class ProjetoFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // todo: talvez seja uma boa usar enum para padronizar os nomes dos extras em intents
 
         viewModel = new ViewModelProvider(this).get(ProjetoVM.class);
         projectViewModel = new ViewModelProvider(requireActivity()).get(SptVM.class);
@@ -51,6 +41,12 @@ public class ProjetoFragment extends Fragment {
         viewModel.updateFurosAdapter(binding.recyclerFuro);
 
         return binding.getRoot();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        // todo: refresh adapter
     }
 
     @Override

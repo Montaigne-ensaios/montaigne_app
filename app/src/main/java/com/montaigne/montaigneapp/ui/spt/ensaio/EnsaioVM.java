@@ -43,9 +43,9 @@ public class EnsaioVM extends ViewModel {
         AmostraSpt amostra = getAmostra();
         FuroSpt furo = getFuro();
 
-        amostra.setGolpe1(Integer.parseInt(golpes.get(1).getText().toString()));
-        amostra.setGolpe2(Integer.parseInt(golpes.get(2).getText().toString()));
-        amostra.setGolpe3(Integer.parseInt(golpes.get(3).getText().toString()));
+        amostra.setGolpe1(getInt(golpes.get(1)));
+        amostra.setGolpe2(getInt(golpes.get(2)));
+        amostra.setGolpe3(getInt(golpes.get(3)));
         // TODO: 02/11/2022 implementar penetracoes.
 
         furo.getListaDeAmostras().set(idAmostra, amostra);

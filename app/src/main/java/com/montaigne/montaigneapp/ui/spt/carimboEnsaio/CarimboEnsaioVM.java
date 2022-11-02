@@ -1,20 +1,11 @@
 package com.montaigne.montaigneapp.ui.spt.carimboEnsaio;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
 import android.widget.EditText;
 
 import androidx.lifecycle.ViewModel;
 
-import com.montaigne.montaigneapp.ui.home.HomeActivity;
-import com.montaigne.montaigneapp.ui.spt.ensaio.EnsaioActivity;
-import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
-import com.montaigne.montaigneapp.model.spt.AmostraSpt;
-import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
-import java.util.ArrayList;
 import java.util.Map;
 
 public class CarimboEnsaioVM extends ViewModel {

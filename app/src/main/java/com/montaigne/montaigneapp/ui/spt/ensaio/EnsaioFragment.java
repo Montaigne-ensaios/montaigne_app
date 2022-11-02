@@ -40,8 +40,6 @@ public class EnsaioFragment extends Fragment {
 
         viewModel = new ViewModelProvider(this).get(EnsaioVM.class);
         projectViewModel = new ViewModelProvider(requireActivity()).get(SptVM.class);
-
-
     }
 
     @Nullable
@@ -68,7 +66,6 @@ public class EnsaioFragment extends Fragment {
 
         ProjetoSpt projeto = projectViewModel.getProjeto();
         viewModel.setAmostra(projeto, idFuro, idAmostra, golpes, penetracoes);
-
 
         return binding.getRoot();
     }
