@@ -1,6 +1,7 @@
 package com.montaigne.montaigneapp.ui.home;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 
 import androidx.lifecycle.ViewModel;
@@ -13,7 +14,6 @@ import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.data.ModelHolder;
 import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
 import com.montaigne.montaigneapp.model.Projeto;
-import com.montaigne.montaigneapp.ui.spt.projeto.ProjetoActivity;
 
 import java.util.ArrayList;
 
@@ -65,10 +65,23 @@ public class HomeVM extends ViewModel implements ModelHolder<Projeto> {
         // seleciona apenas os projetos da categoria especifica
     }
 
-    protected void newProjectFabListener(View view) {
+    protected void newProject(View view) {
         // passa novo projeto vazio
         Intent intent = new Intent(view.getContext(), SptActivity.class);
         intent.putExtra(HomeVM.PROJETO, new ProjetoSpt());
         view.getContext().startActivity(intent);
+    }
+
+    public void removeProjects() {
+        for (int i = 0; i < projetosSalvos.size(); i++) {
+            if (adapter.getIsCheckedList().get(i)) {
+                Projeto projeto = projetosSalvos.get(i);
+                if (projeto.getClass() == ProjetoSpt.class) {
+                    Log.d("Delete", "Deletando projeto " + projeto.getNome());
+                    ProjetoSptUseCase.delete((ProjetoSpt) projeto);
+                }
+            }
+        }
+        refreshProjetosSalvos();
     }
 }

@@ -9,9 +9,9 @@
         android:icon="@drawable/ic_add"
         app:showAsAction="always" />
     <item
-        android:id="@+id/delet"
+        android:id="@+id/delete"
         android:orderInCategory="100"
-        android:title="Amostras"
+        android:title="Apagar"
         android:icon="@drawable/ic_add"
         app:showAsAction="never" />
     <item

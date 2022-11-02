@@ -1,20 +1,15 @@
 package com.montaigne.montaigneapp.ui.home;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.widget.Toolbar;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.databinding.ActivityHomeBinding;
-
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
 
 public class HomeActivity extends AppCompatActivity {
     private ActivityHomeBinding binding;
@@ -28,33 +23,31 @@ public class HomeActivity extends AppCompatActivity {
 
         viewModel = new ViewModelProvider(this).get(HomeVM.class);
 
-        setSupportActionBar(binding.toolbarHome.toolbarHome);  // todo: criar toolbar para home
-
+        setSupportActionBar(binding.toolbarHome.toolbarHome);
 
         viewModel.initializeProjetosSalvosAdapter(binding.recyclerProjetosSalvos);
         viewModel.initializeProjetoCategoriaAdapter(binding.recyclerCategorias);
-        binding.fabNewProjeto.setOnClickListener(viewModel::newProjectFabListener);
-
-        try {
-            OutputStream out = new FileOutputStream("arquivo.xlsx");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        binding.fabNewProjeto.setOnClickListener(viewModel::newProject);
+        binding.toolbarHome.toolbarHome.setOnMenuItemClickListener(item -> {
+            if (item.getItemId() == R.id.add) {
+                viewModel.newProject(item.getActionView());
+            } else if (item.getItemId() == R.id.delete) {
+                viewModel.removeProjects();
+            }
+            return true;
+        });
     }
 
     @Override
     protected void onPostResume() {
-        // todo: revisar se o refresh deve ser aqui
         super.onPostResume();
         viewModel.refreshProjetosSalvos();
-
-
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-      MenuInflater menuInflater= getMenuInflater();
-      menuInflater.inflate(R.menu.menu_main, menu);
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_main, menu);
         return super.onCreateOptionsMenu(menu);
     }
 }
