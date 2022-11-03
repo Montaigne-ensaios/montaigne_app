@@ -30,21 +30,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <EditText
-                    android:id="@+id/editTextNameProjeto"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginEnd="70dp"
-                    android:hint="name"
-                    android:minHeight="48dp"
-                    app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/textNameProjeto"
-                    app:layout_constraintTop_toBottomOf="@+id/textNameProjeto" />
-
-
                 <TextView
                     android:id="@+id/textWarning1"
                     android:layout_width="0dp"
@@ -69,71 +54,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/textWarning1"
                     tools:srcCompat="@drawable/icon_profile" />
 
-                <TextView
-                    android:id="@+id/textNameProjeto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/HintAdpterCarimboProjetoNomeProjeto"
-                    android:textSize="18sp"
-                    app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-                    app:layout_constraintTop_toBottomOf="@+id/imageButtonPhoto" />
-
-
-                <TextView
-                    android:id="@+id/textTecnico"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/HintAdpterCarimboProjetoNomeTecnico"
-                    android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="@+id/textNameProjeto"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/textNameProjeto"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextNameProjeto" />
-
-                <EditText
-                    android:id="@+id/editTextTecnico"
-                    android:layout_width="309dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:drawableRight="@android:drawable/ic_menu_today"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:minHeight="48dp"
-                    app:layout_constraintEnd_toEndOf="@+id/editTextNameProjeto"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/textTecnico"
-                    app:layout_constraintTop_toBottomOf="@+id/textTecnico" />
-
-                <TextView
-                    android:id="@+id/textEmpresa"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/HintAdpterCarimboProjetoNomeEmpresa"
-                    android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="@+id/textTecnico"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/textTecnico"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextTecnico" />
-
-                <EditText
-                    android:id="@+id/editTextEmpresa"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:drawableRight="@android:drawable/ic_menu_today"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:minHeight="48dp"
-                    app:layout_constraintEnd_toEndOf="@+id/editTextTecnico"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="@+id/editTextTecnico"
-                    app:layout_constraintTop_toBottomOf="@+id/textEmpresa" />
-
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guidelineStart"
                     android:layout_width="wrap_content"
@@ -148,134 +68,6 @@
                     android:orientation="vertical"
                     app:layout_constraintGuide_percent="0.96" />
 
-                <TextView
-                    android:id="@+id/textContato"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/HintAdpterCarimboProjetoContato"
-                    android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="@+id/textEmpresa"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/textEmpresa"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextEmpresa" />
-
-                <EditText
-                    android:id="@+id/editTextContato"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:drawableRight="@android:drawable/ic_menu_call"
-                    android:ems="10"
-                    android:inputType="phone"
-                    android:minHeight="48dp"
-                    app:layout_constraintEnd_toEndOf="@+id/editTextEmpresa"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/editTextEmpresa"
-                    app:layout_constraintTop_toBottomOf="@+id/textContato" />
-
-                <TextView
-                    android:id="@+id/textCliente"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/HintAdpterCarimboProjetoCliente"
-                    android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="@+id/textContato"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextContato" />
-
-                <EditText
-                    android:id="@+id/editTextCliente"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:minHeight="48dp"
-                    app:layout_constraintEnd_toEndOf="@+id/editTextContato"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-                    app:layout_constraintTop_toBottomOf="@+id/textCliente" />
-
-                <TextView
-                    android:id="@+id/textLocalObra"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/HintAdpterCarimboProjetoLocalObra"
-                    android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="@+id/textCliente"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextCliente" />
-
-                <EditText
-                    android:id="@+id/editTextLocalObra"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:drawableRight="@android:drawable/ic_dialog_map"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:minHeight="48dp"
-                    app:layout_constraintEnd_toEndOf="@+id/editTextCliente"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-                    app:layout_constraintTop_toBottomOf="@+id/textLocalObra" />
-
-                <TextView
-                    android:id="@+id/textQuantidadeFuros"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/HintAdpterCarimboProjetoQuantidadeFuros"
-                    android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="@+id/textLocalObra"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextLocalObra" />
-
-                <EditText
-                    android:id="@+id/editTextQuantidadeFuros"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:ems="10"
-                    android:inputType="number"
-                    android:minHeight="48dp"
-                    app:layout_constraintEnd_toEndOf="@+id/editTextLocalObra"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-                    app:layout_constraintTop_toBottomOf="@+id/textQuantidadeFuros" />
-
-                <TextView
-                    android:id="@+id/textReferenciaNivel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="@string/HintAdpterCarimboProjetoReferenciaNivel"
-                    android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="@+id/textQuantidadeFuros"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-                    app:layout_constraintTop_toBottomOf="@+id/editTextQuantidadeFuros" />
-
-                <EditText
-                    android:id="@+id/editTextReferenciaNivel"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:drawableRight="@android:drawable/ic_menu_today"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:minHeight="48dp"
-                    app:layout_constraintEnd_toEndOf="@+id/editTextQuantidadeFuros"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-                    app:layout_constraintTop_toBottomOf="@+id/textReferenciaNivel" />
-
                 <ImageButton
                     android:id="@+id/imageButtonPhoto"
                     android:layout_width="32dp"
@@ -286,9 +78,14 @@
                     app:layout_constraintTop_toBottomOf="@+id/imageProfile"
                     app:srcCompat="@drawable/icon_photo" />
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerCarimboProjeto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
         </FrameLayout>
     </ScrollView>
 

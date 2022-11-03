@@ -10,8 +10,9 @@ import java.util.Map;
 
 public class CarimboProjetoVM extends ViewModel {
     private Projeto projeto;
+    private
 
-    public void setProjeto(Projeto projeto, Map<String, EditText> fields) {
+    public void setProjeto(Projeto projet) {
         this.projeto = projeto;
 
         try {
@@ -27,7 +28,7 @@ public class CarimboProjetoVM extends ViewModel {
         }
     }
 
-    protected Projeto getProjeto(Map<String, EditText> fields) {
+    protected Projeto getProjeto() {
         projeto.setNome(fields.get("NomeProjeto").getText().toString());
         projeto.setEmpresa(fields.get("Empresa").getText().toString());
         projeto.setCliente(fields.get("Cliente").getText().toString());

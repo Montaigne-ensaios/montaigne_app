@@ -8,7 +8,7 @@
 
     <include
         android:id="@+id/toolbarHome"
-        layout="@layout/fragment_toolbar_home"></include>
+        layout="@layout/fragment_toolbar_home" />
 
 
     <TextView

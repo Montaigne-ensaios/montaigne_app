@@ -3,30 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/CardViewCarimboProjeto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:padding="10dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <com.google.android.material.textfield.TextInputLayout
-            app:hintEnabled="true"
-            app:errorEnabled="true"
-            app:helperText="substitua observação"
-            app:errorIconDrawable="@drawable/ic_erro"
             android:id="@+id/TextImputLayoutNameProjeto"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_erro"
+            app:helperText="substitua observação"
+            app:hintEnabled="true"
             app:startIconDrawable="@drawable/ic_name_project">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/TextImputEditTextNameProjeto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textAutoComplete"
-                android:hint="Substitua hint" />
+                android:hint="Substitua hint"
+                android:inputType="textAutoComplete" />
 
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>

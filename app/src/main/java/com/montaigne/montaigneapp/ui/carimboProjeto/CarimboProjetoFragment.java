@@ -16,13 +16,10 @@ import com.montaigne.montaigneapp.model.Projeto;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
 
-import java.util.HashMap;
-
 public class CarimboProjetoFragment extends Fragment {
     private CarimboProjetoVM viewModel;
     private SptVM projectViewModel;  // todo: criar uma classe abstrata de viewmodel agnóstica ao tipo de ensaio
     private FragmentCarimboProjetoBinding binding;
-    protected final HashMap<String, EditText> fields = new HashMap<>();
 
     public CarimboProjetoFragment() {}
 
@@ -39,16 +36,10 @@ public class CarimboProjetoFragment extends Fragment {
     public View onCreateView (@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         super.onCreateView(inflater, container, savedInstanceState);
         binding = FragmentCarimboProjetoBinding.inflate(inflater, container, false);
-        fields.put("NomeProjeto", binding.editTextNameProjeto);
-        fields.put ("Empresa",  binding.editTextEmpresa);
-        fields.put ("Tecnico",  binding.editTextTecnico);
-        fields.put ("Contato",  binding.editTextContato);
-        fields.put ("Cliente",  binding.editTextCliente);
-        fields.put ("LocalObra",  binding.editTextLocalObra);
-        fields.put ("QuantidadeFuros",  binding.editTextQuantidadeFuros);
 
         Projeto projeto = projectViewModel.getProjeto();
-        viewModel.setProjeto(projeto, fields);
+        viewModel.setProjeto(projeto);
+        viewModel.initializeRecycler(binding.recyclerCarimboProjeto);
 
         return binding.getRoot();
     }
