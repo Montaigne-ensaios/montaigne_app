@@ -1,22 +1,20 @@
 package com.montaigne.montaigneapp.ui.spt.projeto;
 
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.databinding.AdapterProjetoBinding;
-import com.montaigne.montaigneapp.ui.spt.furo.FuroFragment;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
-import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.List;
 
 public class FurosAdapter extends RecyclerView.Adapter<FurosAdapter.ViewHolder> {
-    protected ProjetoSpt projetoSpt;
-    protected List<FuroSpt> furos;
+    private List<FuroSpt> furos;
+    private final MutableLiveData<FuroSpt> furoClicado = new MutableLiveData<>();
 
     @NonNull
     @Override
@@ -31,18 +29,10 @@ public class FurosAdapter extends RecyclerView.Adapter<FurosAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        // TODO: verificar se vai ser realmente o código que será exibido e como gerá-lo
-        holder.binding.textFuroName.setText(furos.get(position).getCodigo());
-
-        int id = position;
-
-        holder.binding.cardView.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(), FuroFragment.class);
-            intent.putExtra("idFuro", id);
-            intent.putExtra("projetoSpt", projetoSpt);
-
-            v.getContext().startActivity(intent);
-        });
+        FuroSpt furo = furos.get(position);
+        holder.binding.textFuroName.setText(furo.getCodigo());
+        
+        holder.binding.cardView.setOnClickListener(v -> furoClicado.setValue(furo));
     }
 
     @Override
@@ -53,13 +43,13 @@ public class FurosAdapter extends RecyclerView.Adapter<FurosAdapter.ViewHolder> 
         return furos.size();
     }
 
+    public LiveData<FuroSpt> getOnClickObservable() {
+        return furoClicado;
+    }
+
     // TODO: seria bom pensarmos no caso de utilizar um construtor para recebimento desses dados
     public void setFuros(List<FuroSpt> furos) {
         this.furos = furos;
-    }
-
-    public void setProjetoSpt(ProjetoSpt projetoSpt) {
-        this.projetoSpt = projetoSpt;
     }
 
     protected static class ViewHolder extends RecyclerView.ViewHolder{

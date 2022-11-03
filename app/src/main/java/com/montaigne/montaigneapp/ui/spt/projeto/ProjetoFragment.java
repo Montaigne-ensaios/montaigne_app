@@ -48,10 +48,4 @@ public class ProjetoFragment extends Fragment {
         super.onResume();
         // todo: refresh adapter
     }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        projectViewModel.updateProjeto(viewModel.getProjetoSpt());
-    }
 }
