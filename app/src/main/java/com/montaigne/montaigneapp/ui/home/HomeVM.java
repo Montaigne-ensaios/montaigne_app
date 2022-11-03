@@ -1,5 +1,6 @@
 package com.montaigne.montaigneapp.ui.home;
 
+import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
@@ -65,11 +66,11 @@ public class HomeVM extends ViewModel implements ModelHolder<Projeto> {
         // seleciona apenas os projetos da categoria especifica
     }
 
-    protected void newProject(View view) {
+    protected void newProject(Context context) {
         // passa novo projeto vazio
-        Intent intent = new Intent(view.getContext(), SptActivity.class);
+        Intent intent = new Intent(context, SptActivity.class);
         intent.putExtra(HomeVM.PROJETO, new ProjetoSpt());
-        view.getContext().startActivity(intent);
+        context.startActivity(intent);
     }
 
     public void removeProjects() {

@@ -26,10 +26,10 @@ public class HomeActivity extends AppCompatActivity {
 
         viewModel.initializeProjetosSalvosAdapter(binding.recyclerProjetosSalvos);
         viewModel.initializeProjetoCategoriaAdapter(binding.recyclerCategorias);
-        binding.fabNewProjeto.setOnClickListener(viewModel::newProject);
+        binding.fabNewProjeto.setOnClickListener(v -> viewModel.newProject(this));
         binding.toolbarHome.toolbarHome.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.add) {
-                viewModel.newProject(item.getActionView());
+                viewModel.newProject(this);
             } else if (item.getItemId() == R.id.delete) {
                 viewModel.removeProjects();
             }

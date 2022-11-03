@@ -3,6 +3,7 @@ package com.montaigne.montaigneapp.ui.spt;
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -14,6 +15,7 @@ import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.carimboProjeto.CarimboProjetoFragment;
 import com.montaigne.montaigneapp.ui.home.HomeActivity;
 import com.montaigne.montaigneapp.ui.spt.carimboEnsaio.CarimboEnsaioFragment;
+import com.montaigne.montaigneapp.ui.spt.projeto.ProjetoFragment;
 
 public class SptVM extends ViewModel {
     private ProjetoSpt projeto;
@@ -22,6 +24,7 @@ public class SptVM extends ViewModel {
 
     protected void navigateFragments(View view, FragmentManager manager) {
         // todo: implementar navegação dentro da activity
+        ((Button) view).setText("Novo furo");
         CarimboEnsaioFragment carimboEnsaioFragment = new CarimboEnsaioFragment();
         manager.beginTransaction()
                 .replace(R.id.containerSpt, carimboEnsaioFragment)
@@ -58,7 +61,7 @@ public class SptVM extends ViewModel {
                     .replace(R.id.containerSpt, fragment)
                     .commitNow();
         } else {
-            CarimboProjetoFragment fragment = new CarimboProjetoFragment();
+            ProjetoFragment fragment = new ProjetoFragment();
             // todo: substituir fragmente por ProjetoFragment e revisar esta comunicação
             manager.beginTransaction()
                     .replace(R.id.containerSpt, fragment)
