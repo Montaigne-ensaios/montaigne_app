@@ -3,19 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/spt_nav_graph"
-    app:startDestination="@id/sptActivity">
-    <activity
-        android:id="@+id/sptActivity"
-        android:name="com.montaigne.montaigneapp.ui.spt.SptActivity"
-        android:label="SptActivity"
-        tools:layout="@layout/acitivity_spt">
-        <action
-            android:id="@+id/aciton_edit_Projeto"
-            app:destination="@id/carimboProjetoFragment" />
-        <action
-            android:id="@+id/action_new_Projeto"
-            app:destination="@id/projetoFragment" />
-    </activity>
+    app:startDestination="@id/projetoFragment">
     <fragment
         android:id="@+id/carimboProjetoFragment"
         android:name="com.montaigne.montaigneapp.ui.carimboProjeto.CarimboProjetoFragment"
@@ -24,9 +12,6 @@
         <action
             android:id="@+id/action_new_Ensaio"
             app:destination="@id/carimboEnsaioFragment" />
-        <action
-            android:id="@+id/action_back_to_Projeto"
-            app:destination="@id/projetoFragment" />
     </fragment>
     <fragment
         android:id="@+id/projetoFragment"
@@ -46,9 +31,6 @@
         android:label="CarimboEnsaioFragment"
         tools:layout="@layout/fragment_carimbo_ensaio">
         <action
-            android:id="@+id/action_back_to_Furo"
-            app:destination="@id/furoFragment" />
-        <action
             android:id="@+id/action_execute_Ensaio"
             app:destination="@id/ensaioFragment" />
     </fragment>
@@ -57,9 +39,6 @@
         android:name="com.montaigne.montaigneapp.ui.spt.furo.FuroFragment"
         android:label="FuroFragment"
         tools:layout="@layout/fragment_furo">
-        <action
-            android:id="@+id/action_back_to_projetoFragment"
-            app:destination="@id/projetoFragment" />
         <action
             android:id="@+id/action_edit_Amostra"
             app:destination="@id/ensaioFragment" />

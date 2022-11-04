@@ -8,6 +8,8 @@ import android.widget.Button;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModel;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
@@ -17,6 +19,8 @@ import com.montaigne.montaigneapp.ui.home.HomeActivity;
 import com.montaigne.montaigneapp.ui.spt.carimboEnsaio.CarimboEnsaioFragment;
 import com.montaigne.montaigneapp.ui.spt.projeto.ProjetoFragment;
 
+import java.util.Objects;
+
 public class SptVM extends ViewModel {
     private ProjetoSpt projeto;
     private boolean isProjetoNew = false;
@@ -25,11 +29,13 @@ public class SptVM extends ViewModel {
     protected void navigateFragments(View view, FragmentManager manager) {
         // todo: implementar navegação dentro da activity
         ((Button) view).setText(R.string.TxtBotaoContinuar_novo_furo);
-        CarimboEnsaioFragment carimboEnsaioFragment = new CarimboEnsaioFragment();
-        manager.beginTransaction()
-                .replace(R.id.containerSpt, carimboEnsaioFragment)
-                .commitNow();
+//        CarimboEnsaioFragment carimboEnsaioFragment = new CarimboEnsaioFragment();
+//        manager.beginTransaction()
+//                .replace(R.id.containerSpt, carimboEnsaioFragment)
+//                .commitNow();
 
+        ((NavHostFragment) Objects.requireNonNull(manager.findFragmentById(R.id.containerSpt)))
+                .getNavController().navigate(R.id.action_edit_Carimbo);
     }
 
     protected void intentHome(View view) {
@@ -50,19 +56,19 @@ public class SptVM extends ViewModel {
 
     protected void setupViewModel(ProjetoSpt projeto, FragmentManager manager) {
         this.projeto = projeto;
-        if (projeto.getNome() == null) {
-            isProjetoNew = true;
-            CarimboProjetoFragment fragment = new CarimboProjetoFragment();
-            manager.beginTransaction()
-                    .replace(R.id.containerSpt, fragment)
-                    .commitNow();
-        } else {
-            ProjetoFragment fragment = new ProjetoFragment();
-            // todo: substituir fragmente por ProjetoFragment e revisar esta comunicação
-            manager.beginTransaction()
-                    .replace(R.id.containerSpt, fragment)
-                    .commitNow();
-        }
+//        if (projeto.getNome() == null) {
+//            isProjetoNew = true;
+//            CarimboProjetoFragment fragment = new CarimboProjetoFragment();
+//            manager.beginTransaction()
+//                    .replace(R.id.containerSpt, fragment)
+//                    .commitNow();
+//        } else {
+//            ProjetoFragment fragment = new ProjetoFragment();
+//            // todo: substituir fragmente por ProjetoFragment e revisar esta comunicação
+//            manager.beginTransaction()
+//                    .replace(R.id.containerSpt, fragment)
+//                    .commitNow();
+//        }
     }
 
     public ProjetoSpt getProjeto() {
