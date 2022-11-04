@@ -4,6 +4,7 @@ import android.widget.EditText;
 
 import androidx.lifecycle.ViewModel;
 
+import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.Map;
@@ -16,7 +17,7 @@ public class CarimboEnsaioVM extends ViewModel {
 
         try {
             fields.get("DataInicio").setText(projeto.getDataInicio());
-            fields.get("NivelFuro").setText("Não implementado");
+            fields.get("NivelFuro").setText(R.string.notImplemented);
         } catch (NullPointerException ignored) {
             // todo: forma adequada de checar se os campos foram ou não definidos
         }

@@ -24,7 +24,7 @@ public class SptVM extends ViewModel {
 
     protected void navigateFragments(View view, FragmentManager manager) {
         // todo: implementar navegação dentro da activity
-        ((Button) view).setText("Novo furo");
+        ((Button) view).setText(R.string.TxtBotaoContinuar_novo_furo);
         CarimboEnsaioFragment carimboEnsaioFragment = new CarimboEnsaioFragment();
         manager.beginTransaction()
                 .replace(R.id.containerSpt, carimboEnsaioFragment)

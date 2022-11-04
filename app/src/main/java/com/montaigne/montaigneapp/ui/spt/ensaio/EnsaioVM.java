@@ -4,6 +4,7 @@ import android.widget.EditText;
 
 import androidx.lifecycle.ViewModel;
 
+import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.model.Projeto;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
@@ -24,9 +25,9 @@ public class EnsaioVM extends ViewModel {
         golpes.get(1).setText(getAmostra().getGolpe1());
         golpes.get(2).setText(getAmostra().getGolpe2());
         golpes.get(3).setText(getAmostra().getGolpe3());
-        penetracoes.get(1).setText("nao implementado");
-        penetracoes.get(2).setText("nao implementado");
-        penetracoes.get(3).setText("nao implementado");
+        penetracoes.get(1).setText(R.string.notImplemented);
+        penetracoes.get(2).setText(R.string.notImplemented);
+        penetracoes.get(3).setText(R.string.notImplemented);
         // TODO: 02/11/2022 Implementar penetracoes na Amostra.
 
     }

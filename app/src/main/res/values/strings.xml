@@ -5,7 +5,6 @@
     <string name="requerid">Obrigatório*</string>
 
 
-
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -25,22 +24,22 @@
 
     <!-- Strings da tela Carimbo Definitivo e hints do adpter carimbo projeto-->
 
-    <string name="HintAdpterCarimboProjetoNomeProjeto">Nome do Projeto</string>
-    <string name="HintAdpterCarimboProjetoAvisoCarimbo">O carimbo projeto é realizado para todos os furos, contendo informações gerais que não serão alteradas nos demais furos.</string>
-    <string name="HintAdpterCarimboProjetoNomeTecnico">Técnico:</string>
-    <string name="HintAdpterCarimboProjetoNomeEmpresa">Empresa Responsável</string>
-    <string name="HintAdpterCarimboProjetoContato">Contato</string>
-    <string name="HintAdpterCarimboProjetoCliente">Cliente</string>
-    <string name="HintAdpterCarimboProjetoLocalObra">Local da obra</string>
-    <string name="HintAdpterCarimboProjetoQuantidadeFuros">Número de Furos</string>
-    <string name="HintAdpterCarimboProjetoReferenciaNivel">Referência de Nível</string>
-    <string name="HintAdpterCarimboProjetoAlturaReferenciaNivel">Altura da Referência de Nível</string>
+    <string name="HintAdapterCarimboProjetoNomeProjeto">Nome do projeto</string>
+    <string name="HintAdapterCarimboProjetoAvisoCarimbo">O carimbo projeto é realizado para todos os furos, contendo informações gerais que não serão alteradas nos demais furos.</string>
+    <string name="HintAdapterCarimboProjetoNomeTecnico">Técnico</string>
+    <string name="HintAdapterCarimboProjetoNomeEmpresa">Empresa responsável</string>
+    <string name="HintAdapterCarimboProjetoContato">Contato</string>
+    <string name="HintAdapterCarimboProjetoCliente">Cliente</string>
+    <string name="HintAdapterCarimboProjetoLocalObra">Local da obra</string>
+    <string name="HintAdapterCarimboProjetoQuantidadeFuros">Número de furos</string>
+    <string name="HintAdapterCarimboProjetoDataInicio">Data de inicio</string>
+    <string name="HintAdapterCarimboProjetoReferenciaNivel">Referência de nivel</string>
+    <string name="HintAdapterCarimboProjetoAlturaReferenciaNivel">Altura da referência de nível</string>
+    <string name="HintAdapterCarimboProjetoLocal">Coordenadas do projeto</string>
+
 
     <string name="TxtBotaoContinuar">Próximo</string>
-
-
-
-
+    <string name="TxtBotaoContinuar_novo_furo">Novo furo</string>
 
     <!-- Strings da tela Carimbo Único-->
     <string name="TxtCarimboUnicoDataInicio">Data de inicio:</string>
@@ -50,9 +49,8 @@
     <string name="TxtBotaoLocalizacao">Capturar Localização</string>
     <string name="TxtCarimboUnicoAviso">Os campos indicados com * são obrigatórios</string>
     <string name="TxtBotaoIniciarEnsaio">Iniciar Ensaio</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="notImplemented">Não implementado</string>
 
 
     <!-- Strings da tela Adpter_home_projetos-->
