@@ -22,12 +22,12 @@ public class HomeActivity extends AppCompatActivity {
 
         viewModel = new ViewModelProvider(this).get(HomeVM.class);
 
-        setSupportActionBar(binding.toolbarHome.toolbarHome);
+        setSupportActionBar(binding.toolbarHomeInclude.toolbarHome);
 
         viewModel.initializeProjetosSalvosAdapter(binding.recyclerProjetosSalvos);
         viewModel.initializeProjetoCategoriaAdapter(binding.recyclerCategorias);
         binding.fabNewProjeto.setOnClickListener(v -> viewModel.newProject(this));
-        binding.toolbarHome.toolbarHome.setOnMenuItemClickListener(item -> {
+        binding.toolbarHomeInclude.toolbarHome.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.add) {
                 viewModel.newProject(this);
             } else if (item.getItemId() == R.id.delete) {

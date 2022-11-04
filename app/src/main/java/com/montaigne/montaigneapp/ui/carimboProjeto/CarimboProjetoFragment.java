@@ -47,6 +47,6 @@ public class CarimboProjetoFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-        projectViewModel.updateProjeto((ProjetoSpt) viewModel.getProjeto(fields));
+        projectViewModel.updateProjeto((ProjetoSpt) viewModel.getProjeto());
     }
 }

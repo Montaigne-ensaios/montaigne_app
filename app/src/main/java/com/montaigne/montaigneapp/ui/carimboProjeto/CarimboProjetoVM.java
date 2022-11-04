@@ -1,39 +1,34 @@
 package com.montaigne.montaigneapp.ui.carimboProjeto;
 
-import android.widget.EditText;
-
 import androidx.lifecycle.ViewModel;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.model.Projeto;
 
 import java.util.Map;
 
+
 public class CarimboProjetoVM extends ViewModel {
     private Projeto projeto;
-    private
+    private CarimboProjetoAdapter adapter;
 
-    public void setProjeto(Projeto projet) {
-        this.projeto = projeto;
-
-        try {
-            fields.get("NomeProjeto").setText(projeto.getNome());
-            fields.get("Empresa").setText(projeto.getEmpresa());
-            fields.get("Tecnico").setText(projeto.getTecnico());
-            fields.get("Contato").setText(projeto.getNumeroDeTelefone());
-            fields.get("Cliente").setText(projeto.getCliente());
-            fields.get("LocalObra").setText("Não implementado");
-            fields.get("ReferenciaNivel").setText("Não implementado");
-        } catch (NullPointerException ignored) {
-            // todo: forma adequada de checar se os campos foram ou não definidos
-        }
-    }
+    public void setProjeto(Projeto projeto) { this.projeto = projeto; }
 
     protected Projeto getProjeto() {
-        projeto.setNome(fields.get("NomeProjeto").getText().toString());
-        projeto.setEmpresa(fields.get("Empresa").getText().toString());
-        projeto.setCliente(fields.get("Cliente").getText().toString());
-        projeto.setTecnico(fields.get("Tecnico").getText().toString());
-        projeto.setNumeroDeTelefone(fields.get("Contato").getText().toString());
+        Map<String, String> values = adapter.getValues();
+        projeto.setNome(values.get("nome"));
+        projeto.setCliente(values.get("cliente"));
+        projeto.setEmpresa(values.get("empresa"));
+        projeto.setTecnico(values.get("tecnico"));
+        projeto.setNumeroDeTelefone(values.get("numeroDeTelefone"));
+        projeto.setDataInicio(values.get("dataInicio"));
         return projeto;
+    }
+
+    public void initializeRecycler(RecyclerView recycler) {
+        this.adapter = new CarimboProjetoAdapter(projeto);
+        recycler.setAdapter(adapter);
+        recycler.setLayoutManager(new LinearLayoutManager(recycler.getContext()));
     }
 }
