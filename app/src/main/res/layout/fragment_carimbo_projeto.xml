@@ -37,7 +37,7 @@
                     android:layout_height="wrap_content"
 
                     android:layout_marginTop="16dp"
-                    android:text="@string/HintAdpterCarimboProjetoAvisoCarimbo"
+                    android:text="@string/HintAdapterCarimboProjetoAvisoCarimbo"
                     android:textAlignment="center"
                     android:textColor="@color/destaque"
                     android:textSize="12sp"

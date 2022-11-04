@@ -24,7 +24,7 @@
 
     <!-- Strings da tela Carimbo Definitivo e hints do adpter carimbo projeto-->
 
-    <string name="HintAdapterCarimboProjetoNomeProjeto">Nome do projeto</string>
+    <string name="HintAdapterCarimboProjetoNome">Nome do projeto</string>
     <string name="HintAdapterCarimboProjetoAvisoCarimbo">O carimbo projeto é realizado para todos os furos, contendo informações gerais que não serão alteradas nos demais furos.</string>
     <string name="HintAdapterCarimboProjetoNomeTecnico">Técnico</string>
     <string name="HintAdapterCarimboProjetoNomeEmpresa">Empresa responsável</string>

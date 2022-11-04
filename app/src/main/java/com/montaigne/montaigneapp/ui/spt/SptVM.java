@@ -38,10 +38,6 @@ public class SptVM extends ViewModel {
         view.getContext().startActivity(intent);
     }
 
-    protected void moreActions(View view, Fragment fragment) {
-        // todo: implementar botão de mais ações relativo ao fragment
-    }
-
     public void updateProjeto(ProjetoSpt projeto) {
         this.projeto = projeto;
         if (isProjetoNew) {

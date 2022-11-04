@@ -1,5 +1,6 @@
 package com.montaigne.montaigneapp.ui.carimboProjeto;
 
+import android.app.Application;
 import android.content.res.Resources;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -24,7 +25,7 @@ public class CarimboProjetoAdapter extends RecyclerView.Adapter<BindedViewHolder
 
     private static class Field {
         private final String fieldName;
-        private final String hint;
+        private final int hintId;
         private final String obsMsg;
         private final int iconId;
         private String value;
@@ -32,7 +33,7 @@ public class CarimboProjetoAdapter extends RecyclerView.Adapter<BindedViewHolder
         public Field(String fieldName, String value, int hintId, String obsMsg, int iconId){
             this.fieldName = fieldName;
             this.value = value;
-            this.hint = Resources.getSystem().getString(hintId);
+            this.hintId = hintId;
             this.obsMsg = obsMsg;
             this.iconId = iconId;
         }
@@ -43,7 +44,7 @@ public class CarimboProjetoAdapter extends RecyclerView.Adapter<BindedViewHolder
     }
 
     private void setProjeto(Projeto projeto) {
-        fields.add(new Field("nome", projeto.getNome(), R.string.HintAdapterCarimboProjetoNomeProjeto, "msgDeErro", R.drawable.ic_contato));
+        fields.add(new Field("nome", projeto.getNome(), R.string.HintAdapterCarimboProjetoNome, "msgDeErro", R.drawable.ic_contato));
         fields.add(new Field("cliente", projeto.getCliente(), R.string.HintAdapterCarimboProjetoCliente, "msgErro", R.drawable.icon_delet));  // todo: replace icon
         fields.add(new Field("empresa", projeto.getEmpresa(), R.string.HintAdapterCarimboProjetoNomeEmpresa, "msgErro", R.drawable.ic_empresa));
         fields.add(new Field("tecnico", projeto.getTecnico(), R.string.HintAdapterCarimboProjetoNomeTecnico, "msgErro", R.drawable.ic_technician));
@@ -82,7 +83,7 @@ public class CarimboProjetoAdapter extends RecyclerView.Adapter<BindedViewHolder
         Field field = fields.get(position);
         holder.binding.textInputLayoutNameProjeto.setStartIconDrawable(field.iconId);
         holder.binding.textInputLayoutNameProjeto.setHelperText(field.obsMsg);
-        holder.binding.textInputEditTextNameProjeto.setHint(field.hint);
+        holder.binding.textInputEditTextNameProjeto.setHint(field.hintId);
         holder.binding.textInputEditTextNameProjeto.setText(field.value);
 
         holder.binding.textInputEditTextNameProjeto.addTextChangedListener(new TextWatcher() {
