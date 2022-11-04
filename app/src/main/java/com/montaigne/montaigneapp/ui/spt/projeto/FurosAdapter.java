@@ -9,26 +9,27 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.databinding.AdapterProjetoBinding;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
+import com.montaigne.montaigneapp.ui.BindedViewHolder;
 
 import java.util.List;
 
-public class FurosAdapter extends RecyclerView.Adapter<FurosAdapter.ViewHolder> {
+public class FurosAdapter extends RecyclerView.Adapter<BindedViewHolder<AdapterProjetoBinding>> {
     private List<FuroSpt> furos;
     private final MutableLiveData<FuroSpt> furoClicado = new MutableLiveData<>();
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BindedViewHolder<AdapterProjetoBinding> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 
         AdapterProjetoBinding binding = AdapterProjetoBinding
                 .inflate(inflater, parent, false);
 
-        return new ViewHolder(binding);
+        return new BindedViewHolder<>(binding);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull BindedViewHolder<AdapterProjetoBinding> holder, int position) {
         FuroSpt furo = furos.get(position);
         holder.binding.textFuroName.setText(furo.getCodigo());
         
@@ -50,14 +51,5 @@ public class FurosAdapter extends RecyclerView.Adapter<FurosAdapter.ViewHolder> 
     // TODO: seria bom pensarmos no caso de utilizar um construtor para recebimento desses dados
     public void setFuros(List<FuroSpt> furos) {
         this.furos = furos;
-    }
-
-    protected static class ViewHolder extends RecyclerView.ViewHolder{
-        private final AdapterProjetoBinding binding;
-
-        public ViewHolder(AdapterProjetoBinding binding) {
-            super(binding.getRoot());
-            this.binding = binding;
-        }
     }
 }

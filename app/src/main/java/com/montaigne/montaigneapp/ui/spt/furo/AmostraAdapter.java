@@ -7,14 +7,16 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.montaigne.montaigneapp.databinding.AdapterHomeProjetosBinding;
 import com.montaigne.montaigneapp.databinding.AdapterProjetoBinding;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
+import com.montaigne.montaigneapp.ui.BindedViewHolder;
 import com.montaigne.montaigneapp.ui.spt.ensaio.EnsaioFragment;
 
 import java.util.List;
 
-public class AmostraAdapter extends RecyclerView.Adapter<AmostraAdapter.ViewHolder>{
+public class AmostraAdapter extends RecyclerView.Adapter<BindedViewHolder<AdapterProjetoBinding>>{
     private int idFuro;
     private ProjetoSpt projetoSpt;
     private List<AmostraSpt> amostras;
@@ -33,17 +35,17 @@ public class AmostraAdapter extends RecyclerView.Adapter<AmostraAdapter.ViewHold
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BindedViewHolder<AdapterProjetoBinding> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 
         AdapterProjetoBinding binding = AdapterProjetoBinding
                 .inflate(inflater, parent, false);
 
-        return new ViewHolder(binding);
+        return new BindedViewHolder<>(binding);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull BindedViewHolder<AdapterProjetoBinding> holder, int position) {
         holder.binding.textFuroName.setText("Amostra " + (position + 1));
         int idAmostra = position;
 
@@ -60,14 +62,5 @@ public class AmostraAdapter extends RecyclerView.Adapter<AmostraAdapter.ViewHold
     @Override
     public int getItemCount() {
         return amostras.size();
-    }
-
-    protected class ViewHolder extends RecyclerView.ViewHolder{
-        private final AdapterProjetoBinding binding;
-
-        public ViewHolder(AdapterProjetoBinding binding) {
-            super(binding.getRoot());
-            this.binding = binding;
-        }
     }
 }

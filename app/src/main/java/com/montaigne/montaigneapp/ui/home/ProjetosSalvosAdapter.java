@@ -8,7 +8,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.montaigne.montaigneapp.databinding.AdapterHomeProjetoCategoriaBinding;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
+import com.montaigne.montaigneapp.ui.BindedViewHolder;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.databinding.AdapterHomeProjetosBinding;
 import com.montaigne.montaigneapp.model.Projeto;
@@ -16,7 +18,7 @@ import com.montaigne.montaigneapp.model.Projeto;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAdapter.ViewHolder> {
+public class ProjetosSalvosAdapter extends RecyclerView.Adapter<BindedViewHolder<AdapterHomeProjetosBinding>> {
     // todo: passar esta array list para a entity
     private List<Projeto> projetoList;
     private List<Boolean> isCheckedList;
@@ -27,17 +29,17 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAd
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BindedViewHolder<AdapterHomeProjetosBinding> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
 
         AdapterHomeProjetosBinding binding = AdapterHomeProjetosBinding
                 .inflate(layoutInflater, parent, false);
 
-        return new ViewHolder(binding);
+        return new BindedViewHolder<>(binding);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull BindedViewHolder<AdapterHomeProjetosBinding> holder, int position) {
         Projeto projeto = projetoList.get(position);
 
         holder.binding.textNameProjeto.setText( projeto.getNome() );
@@ -80,14 +82,5 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<ProjetosSalvosAd
 
     public List<Boolean> getIsCheckedList() {
         return isCheckedList;
-    }
-
-    protected static class ViewHolder extends RecyclerView.ViewHolder {
-        private AdapterHomeProjetosBinding binding;
-
-        public ViewHolder(AdapterHomeProjetosBinding binding) {
-            super(binding.getRoot());
-            this.binding = binding;
-        }
     }
 }
