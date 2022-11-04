@@ -12,13 +12,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.databinding.AdapterCarimboProjetoBinding;
 import com.montaigne.montaigneapp.model.Projeto;
+import com.montaigne.montaigneapp.ui.BindedViewHolder;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CarimboProjetoAdapter extends RecyclerView.Adapter<CarimboProjetoAdapter.ViewHolder> {
+public class CarimboProjetoAdapter extends RecyclerView.Adapter<BindedViewHolder<AdapterCarimboProjetoBinding>> {
     List<Field> fields = new ArrayList<>();
 
     private static class Field {
@@ -67,17 +68,17 @@ public class CarimboProjetoAdapter extends RecyclerView.Adapter<CarimboProjetoAd
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BindedViewHolder<AdapterCarimboProjetoBinding> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 
         AdapterCarimboProjetoBinding binding = AdapterCarimboProjetoBinding
                 .inflate(inflater, parent, false);
 
-        return new ViewHolder(binding);
+        return new BindedViewHolder<>(binding);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull BindedViewHolder<AdapterCarimboProjetoBinding> holder, int position) {
         Field field = fields.get(position);
         Log.d("Adapter", "Adapter criado: " + field.fieldName);
         holder.binding.textInputLayoutNameProjeto.setStartIconDrawable(field.iconId);
@@ -102,15 +103,5 @@ public class CarimboProjetoAdapter extends RecyclerView.Adapter<CarimboProjetoAd
     @Override
     public int getItemCount() {
         return fields.size();
-    }
-
-
-    public static class ViewHolder extends RecyclerView.ViewHolder{
-        private final AdapterCarimboProjetoBinding binding;
-
-        public ViewHolder(AdapterCarimboProjetoBinding binding) {
-            super(binding.getRoot());
-            this.binding = binding;
-        }
     }
 }
