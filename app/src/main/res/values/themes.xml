@@ -2,36 +2,49 @@
     <!-- Padrão do tema claro . -->
     <style name="Theme.MontaigneApp" parent="Theme.MaterialComponents.Light.NoActionBar">
 
-        <!-- Primary color. -->
+        <!-- Primary color and color secondary. -->
+
         <item name="colorPrimary">@color/color_primary</item>
-        <item name="actionMenuTextColor">@color/fundo</item>
-        <item name="tint">@color/color_primary</item>
         <item name="colorPrimaryVariant">@color/black</item>
-
-        <!-- Estilos padrão. -->
-        <item name="android:textColor">@color/black</item>
-        <item name="textInputStyle">@style/ImputLight</item>
-        <item name="colorAccent">@color/accent</item>
-        <item name="colorSurface">@color/fundo</item>
-        <item name="colorError">#B00020</item>
-        <item name="checkedIconTint">@color/destaque</item>
-        <!-- fundo-->
-
-        <item name="android:textColorHint">@color/hint</item>
-        <item name="materialButtonStyle">@style/ButtonPadrao_light</item>
-        <item name="imageButtonStyle">@style/ImageButton_light</item>
-        <item name="editTextStyle">@style/Edit_Text_light</item>
-
-        <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/color_primary</item>
-
-        <!--Button flutuante-->
-        <item name="colorOnSecondary">@color/fundo</item>
 
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/color_primary</item>
 
+        <!-- fundo-->
+        <item name="colorOnSecondary">@color/fundo</item>
+        <item name="android:textColorHint">@color/hint</item>
+
+
+        <!-- Color de interação com butões -->
+        <item name="colorAccent">@color/accent</item>
+        <item name="colorSurface">@color/fundo</item>
+        <item name="colorError">#B00020</item>
+        <item name="tint">@color/color_primary</item>
+
+        <item name="checkedIconTint">@color/destaque</item>
+
+        <!-- Estilos de textos. -->
+        <item name="textInputStyle">@style/ImputLight</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="actionMenuTextColor">@color/fundo</item>
+
+        <!-- Estilos gerais padrão do tema light. -->
+        <item name="materialButtonStyle">@style/ButtonPadrao_light</item>
+        <item name="imageButtonStyle">@style/ImageButton_light</item>
+        <item name="editTextStyle">@style/Edit_Text_light</item>
+        <item name="iconTint">@color/color_primary</item>
+
+
+
+
+
+
+
+
+
         <!--Styles do aplicativo. -->
+
     </style>
 
     <style name="Theme.MontaigneApp.NoActionBar">

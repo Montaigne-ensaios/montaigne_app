@@ -22,24 +22,27 @@
     <!-- Strings da tela FURO-->
 
 
-    <!-- Strings da tela Carimbo Definitivo e hints do adpter carimbo projeto-->
+    <!-- Strings da tela Carimbo Definitivo -->
 
-    <string name="HintAdapterCarimboProjetoNome">Nome do projeto</string>
-    <string name="HintAdapterCarimboProjetoAvisoCarimbo">O carimbo projeto é realizado para todos os furos, contendo informações gerais que não serão alteradas nos demais furos.</string>
+    <string name="registration_projectName_hint">Nome do projeto</string>
+    <string name="msg_carimboautomátizado">O carimbo projeto é realizado para todos os furos, contendo informações gerais que não serão alteradas nos demais furos.</string>
+    <string name="error_campo_obrigatorio"></string>
+
+
     <string name="HintAdapterCarimboProjetoNomeTecnico">Técnico</string>
     <string name="HintAdapterCarimboProjetoNomeEmpresa">Empresa responsável</string>
     <string name="HintAdapterCarimboProjetoContato">Contato</string>
     <string name="HintAdapterCarimboProjetoCliente">Cliente</string>
+
     <string name="HintAdapterCarimboProjetoLocalObra">Local da obra</string>
+
     <string name="HintAdapterCarimboProjetoQuantidadeFuros">Número de furos</string>
     <string name="HintAdapterCarimboProjetoDataInicio">Data de inicio</string>
     <string name="HintAdapterCarimboProjetoReferenciaNivel">Referência de nivel</string>
     <string name="HintAdapterCarimboProjetoAlturaReferenciaNivel">Altura da referência de nível</string>
-    <string name="HintAdapterCarimboProjetoLocal">Coordenadas do projeto</string>
-
-
-    <string name="TxtBotaoContinuar">Próximo</string>
-    <string name="TxtBotaoContinuar_novo_furo">Novo furo</string>
+    <string name="HintLocal">Coordenadas do projeto</string>
+    <string name="TitleBntContinuar">Próximo</string>
+    <string name="TitletBntContinuar_novo_furo">Novo furo</string>
 
     <!-- Strings da tela Carimbo Único-->
     <string name="TxtCarimboUnicoDataInicio">Data de inicio:</string>

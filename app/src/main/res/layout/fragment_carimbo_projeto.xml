@@ -36,8 +36,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
 
-                    android:layout_marginTop="16dp"
-                    android:text="@string/HintAdapterCarimboProjetoAvisoCarimbo"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/msg_carimboautomátizado"
                     android:textAlignment="center"
                     android:textColor="@color/destaque"
                     android:textSize="12sp"
@@ -47,33 +47,32 @@
 
                 <ImageView
                     android:id="@+id/imageProfile"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:scaleType="centerCrop"
-                    app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-                    app:layout_constraintTop_toBottomOf="@+id/textWarning1"
-                    tools:srcCompat="@drawable/icon_profile" />
+                    android:layout_width="120dp"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/icon_profile"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textWarning1" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guidelineStart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.08" />
+                    app:layout_constraintGuide_percent="0.04" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guidelineEnd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.96" />
+                    app:layout_constraintGuide_percent="0.94" />
 
                 <ImageButton
                     android:id="@+id/imageButtonPhoto"
-                    android:layout_width="32dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_width="40dp"
+                    android:layout_height="30dp"
                     app:layout_constraintEnd_toEndOf="@+id/imageProfile"
                     app:layout_constraintStart_toStartOf="@+id/imageProfile"
                     app:layout_constraintTop_toBottomOf="@+id/imageProfile"
@@ -81,11 +80,14 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerCarimboProjeto"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageButtonPhoto" />
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+                    app:layout_constraintTop_toBottomOf="@+id/imageButtonPhoto"
+                    app:layout_constraintVertical_bias="0.0" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </FrameLayout>
