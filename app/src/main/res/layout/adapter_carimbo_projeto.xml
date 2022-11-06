@@ -15,10 +15,11 @@
             android:id="@+id/textInputLayoutNameProjeto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
+            app:errorIconDrawable="@drawable/ic_erro"
             app:errorEnabled="true"
             android:hint="substitua hint"
             android:textColorHint="@color/black"
-            app:errorIconDrawable="@drawable/ic_erro"
             app:helperText="substitua observação"
             app:hintEnabled="true"
             app:startIconDrawable="@drawable/ic_name_project">

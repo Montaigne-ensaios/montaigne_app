@@ -41,14 +41,13 @@
         <item name="android:colorAccent">@color/accent</item>
         <item name="android:textColor">@color/black</item>
         <item name="startIconTint">@color/color_primary</item>
+        <item name="errorIconTint">@color/destaque</item>
         <item name="startIconScaleType">centerInside</item>
         <item name="helperTextTextColor">@color/destaque</item>
         <item name="endIconMode">clear_text</item>
         <item name="android:textSize">14dp</item>
 
-
-
-
-
 </style>
+
+
 </resources>

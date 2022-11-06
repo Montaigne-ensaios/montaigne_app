@@ -18,29 +18,30 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textProfundidade"
-                android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutProfundiade"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="60dp"
-                android:layout_marginTop="40dp"
-                android:text="Profundidade:"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textAmostraN" />
-
-            <EditText
-                android:id="@+id/editTextProfundidade"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="30dp"
-                android:ems="10"
-                android:inputType="number"
-                android:text="xx"
-                app:layout_constraintBottom_toBottomOf="@+id/textProfundidade"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="40dp"
+                app:errorEnabled="true"
+                app:errorIconDrawable="@drawable/ic_erro"
+                app:hintEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/textProfundidade"
-                app:layout_constraintTop_toTopOf="@+id/textProfundidade" />
+                app:layout_constraintHorizontal_bias="0.03"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textAmostraN"
+                app:startIconDrawable="@drawable/ic_edit">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputEditTextProfundidade"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Profundidade"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <ImageButton
                 android:id="@+id/imageButtonIcrementGolpe1"
@@ -74,6 +75,15 @@
                 app:layout_constraintStart_toEndOf="@+id/editTextGolpe3"
                 app:layout_constraintTop_toTopOf="@+id/editTextGolpe3"
                 app:srcCompat="@drawable/icon_increase" />
+
+            <ImageButton
+                android:id="@+id/ButtonAddPhotoAmostra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/textSegmento"
+                app:layout_constraintStart_toStartOf="@+id/textSegmento"
+                app:layout_constraintTop_toBottomOf="@+id/textSegmento"
+                app:srcCompat="@drawable/ic_photo_amostra" />
 
             <ImageButton
                 android:id="@+id/imageButtonDecrementGolpe3"
@@ -113,7 +123,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
-                android:text="AMOSTRA N"
+                android:text="Substituir número de amostra"
+                android:textAlignment="textStart"
+                android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -122,17 +134,20 @@
                 android:id="@+id/textGolpes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:text="Golpes"
-                app:layout_constraintEnd_toEndOf="@+id/textProfundidade"
-                app:layout_constraintStart_toStartOf="@+id/textProfundidade"
-                app:layout_constraintTop_toBottomOf="@+id/textProfundidade" />
+                android:layout_marginTop="30dp"
+                android:text="Golpes:"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayoutProfundiade"
+                app:layout_constraintHorizontal_bias="0.068"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayoutProfundiade"
+                app:layout_constraintTop_toBottomOf="@+id/textInputEditTextNivelDAgua" />
 
             <TextView
                 android:id="@+id/textPenetracao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Penetração"
+                android:text="Penetração:"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/textGolpes"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.43"
@@ -146,8 +161,8 @@
                 android:layout_height="41dp"
                 android:layout_marginTop="12dp"
                 android:ems="10"
+                android:hint="0"
                 android:inputType="number"
-                android:text="Name"
                 app:layout_constraintEnd_toEndOf="@+id/textGolpes"
                 app:layout_constraintHorizontal_bias="0.3"
                 app:layout_constraintStart_toStartOf="@+id/textGolpes"
@@ -196,8 +211,9 @@
                 android:layout_height="41dp"
                 android:layout_marginTop="16dp"
                 android:ems="10"
+                android:hint="0"
+
                 android:inputType="number"
-                android:text="0"
                 app:layout_constraintEnd_toEndOf="@+id/editTextGolpe1"
                 app:layout_constraintStart_toStartOf="@+id/editTextGolpe1"
                 app:layout_constraintTop_toBottomOf="@+id/editTextGolpe1" />
@@ -206,41 +222,13 @@
                 android:id="@+id/editTextGolpe3"
                 android:layout_width="93dp"
                 android:layout_height="41dp"
+                android:hint="0"
                 android:layout_marginTop="16dp"
                 android:ems="10"
                 android:inputType="number"
-                android:text="0"
                 app:layout_constraintEnd_toEndOf="@+id/editTextGolpe2"
                 app:layout_constraintStart_toStartOf="@+id/editTextGolpe2"
                 app:layout_constraintTop_toBottomOf="@+id/editTextGolpe2" />
-
-            <EditText
-                android:id="@+id/editTextNivelAgua"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:layout_marginBottom="250dp"
-                android:ems="10"
-                android:inputType="number"
-                android:text="xx"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.51"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextGolpe3"
-                app:layout_constraintVertical_bias="1.0" />
-
-            <TextView
-                android:id="@+id/textNivelAgua"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"
-                android:text="Nível de água"
-                app:layout_constraintBottom_toBottomOf="@+id/editTextNivelAgua"
-                app:layout_constraintEnd_toStartOf="@+id/editTextNivelAgua"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/imageButtonDecrementGolpe3"
-                app:layout_constraintTop_toTopOf="@+id/editTextNivelAgua" />
 
             <TextView
                 android:id="@+id/textSegmento"
@@ -250,7 +238,26 @@
                 android:text="3 segmentos"
                 app:layout_constraintBottom_toBottomOf="@+id/editTextPenetracao3"
                 app:layout_constraintStart_toEndOf="@+id/editTextPenetracao2"
-                app:layout_constraintTop_toTopOf="@+id/editTextPenetracao1" />
+                app:layout_constraintTop_toTopOf="@+id/editTextPenetracao1"
+                app:layout_constraintVertical_bias="0.3" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputEditTextNivelDAgua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="40dp"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayoutProfundiade"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayoutProfundiade"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutProfundiade"
+                app:startIconDrawable="@drawable/ic_edit">>
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nível de Água" />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
