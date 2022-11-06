@@ -5,9 +5,9 @@
     android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
+    android:layout_margin="7dp"
     app:cardCornerRadius="20dp"
-    app:cardElevation="20dp">
+    app:cardElevation="8dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -15,9 +15,10 @@
 
         <ImageView
             android:id="@+id/imageLogoProject"
+            android:layout_margin="5dp"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            tools:srcCompat="@drawable/ic_perfil" />
+            android:src="@drawable/ic_technician" />
 
         <TextView
             android:id="@+id/textNameProjeto"

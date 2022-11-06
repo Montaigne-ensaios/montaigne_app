@@ -28,15 +28,16 @@
                 app:errorEnabled="true"
                 app:errorIconDrawable="@drawable/ic_erro"
                 app:hintEnabled="true"
+                app:helperText="Cota da amostra"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.03"
-
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textAmostraN"
                 app:startIconDrawable="@drawable/ic_edit">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/textInputEditTextProfundidade"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Profundidade"
