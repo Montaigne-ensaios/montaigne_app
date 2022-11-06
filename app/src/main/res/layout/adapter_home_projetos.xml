@@ -15,9 +15,12 @@
 
         <ImageView
             android:id="@+id/imageLogoProject"
-            android:layout_margin="5dp"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
             android:src="@drawable/ic_technician" />
 
         <TextView
