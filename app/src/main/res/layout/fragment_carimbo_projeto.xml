@@ -31,6 +31,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <Button
+                    android:id="@+id/buttonGetLocation2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:drawableLeft="@drawable/icon_pin"
+                    android:text="@string/TxtBotaoLocalizacao"
+                    app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@+id/recyclerCarimboProjeto"
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerCarimboProjeto" />
+
                 <TextView
                     android:id="@+id/textWarning1"
                     android:layout_width="0dp"
