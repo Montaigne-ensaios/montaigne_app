@@ -1,13 +1,25 @@
 package com.montaigne.montaigneapp.activity.carimboDefinitivo;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.View;
 import android.widget.EditText;
 
 import androidx.lifecycle.ViewModel;
 
+import com.google.firebase.storage.FirebaseStorage;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionDeniedResponse;
+import com.karumi.dexter.listener.PermissionGrantedResponse;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.single.PermissionListener;
 import com.montaigne.montaigneapp.activity.home.HomeActivity;
 import com.montaigne.montaigneapp.activity.spt.carimboUnico.CarimboUnicoActivity;
+import com.montaigne.montaigneapp.data.usecase.ImageUseCase;
+import com.montaigne.montaigneapp.model.ImageModel;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.Map;
@@ -15,7 +27,7 @@ import java.util.Map;
 public class CarimboDefinitivoVM extends ViewModel {
     // método de getData (validação de entradas)
 
-    protected void continuarCarimboButtonListener(View view, Map<String, EditText> fields) {
+    protected void continuarCarimboButtonListener(View view, Map<String, EditText> fields, Uri imagemUri) {
         Intent intent = new Intent(view.getContext(), CarimboUnicoActivity.class);
 
         /*
@@ -50,10 +62,43 @@ public class CarimboDefinitivoVM extends ViewModel {
         intent.putExtra("ProjetoSpt", projetoSpt);
 
         view.getContext().startActivity(intent);
+        if (imagemUri != null) {
+            ImageModel imageModel = new ImageModel();
+            imageModel.setUriImagem(imagemUri.toString());
+            uploadImagem(imageModel);
+        }
     }
 
     protected void homeButtonListener(View view) {
         view.getContext().startActivity(new Intent(view.getContext(), HomeActivity.class));
         //todo:limpar tasks;
+    }
+
+    protected void addPhotoButtonListener(Activity activity) {
+        Dexter.withContext(activity.getApplicationContext())
+                .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                .withListener(new PermissionListener() {
+                    @Override
+                    public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
+                        Intent intentGaleria = new Intent();
+                        intentGaleria.setType("image/*");
+                        intentGaleria.setAction(Intent.ACTION_GET_CONTENT);
+                        activity.startActivityForResult(intentGaleria, 100);
+                    }
+
+                    @Override
+                    public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
+
+                    }
+
+                    @Override
+                    public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken permissionToken) {
+                        permissionToken.continuePermissionRequest();
+                    }
+                }).check();
+    }
+
+    protected void uploadImagem(ImageModel imageModel) {
+        ImageUseCase.saveImage(imageModel);
     }
 }

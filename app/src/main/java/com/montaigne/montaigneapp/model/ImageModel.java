@@ -3,7 +3,7 @@ package com.montaigne.montaigneapp.model;
 import android.net.Uri;
 
 public class ImageModel {
-    private Uri uriImagem;
+    private String uriImagem;
     private String id;
 
     public String getId() {
@@ -16,15 +16,15 @@ public class ImageModel {
 
     public ImageModel() {}
 
-    public ImageModel(Uri uriImagem) {
+    public ImageModel(String uriImagem) {
         this.uriImagem = uriImagem;
     }
 
-    public void setUriImagem(Uri uriImagem) {
+    public void setUriImagem(String uriImagem) {
         this.uriImagem = uriImagem;
     }
 
-    public Uri getUriImagem() {
+    public String getUriImagem() {
         return this.uriImagem;
     }
 }

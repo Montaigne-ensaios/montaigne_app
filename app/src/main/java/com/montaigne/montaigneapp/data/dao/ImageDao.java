@@ -25,9 +25,8 @@ public class ImageDao {
         return databaseReference.child(imageModel.getId()).setValue(imageModel);
     }
 
-    public Task<Void> removeImageUri(ImageModel imageModel) {
-        imageModel.setId(databaseReference.push().getKey());
-        return databaseReference.child(imageModel.getId()).removeValue();
+    public Task<Void> removeImageUri(String id) {
+        return databaseReference.child(id).removeValue();
     }
 
     public Task<Void> updateImageUri(ImageModel imageModel) {

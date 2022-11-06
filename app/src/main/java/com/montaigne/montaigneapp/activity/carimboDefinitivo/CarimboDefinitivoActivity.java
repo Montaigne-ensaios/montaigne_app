@@ -1,15 +1,19 @@
 package com.montaigne.montaigneapp.activity.carimboDefinitivo;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.AbstractActivity;
+import com.montaigne.montaigneapp.model.ImageModel;
 
 import java.util.HashMap;
 
@@ -20,7 +24,8 @@ public class CarimboDefinitivoActivity extends AbstractActivity {
     protected Button buttonContinuarCarimbo;
     protected ImageButton imageButtonHome, imageButtonCamera;
     protected ImageView imagePerfil;
-
+    protected CarimboDefinitivoVM viewModel;
+    protected Uri imagemUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +33,11 @@ public class CarimboDefinitivoActivity extends AbstractActivity {
 
         initializeViews();
 
-        CarimboDefinitivoVM viewModel = new ViewModelProvider(this).get(CarimboDefinitivoVM.class);
+        viewModel = new ViewModelProvider(this).get(CarimboDefinitivoVM.class);
 
-        buttonContinuarCarimbo.setOnClickListener(v -> viewModel.continuarCarimboButtonListener (v, fields));
+        buttonContinuarCarimbo.setOnClickListener(v -> viewModel.continuarCarimboButtonListener (v, fields, imagemUri));
         imageButtonHome.setOnClickListener(viewModel::homeButtonListener);
+        imageButtonCamera.setOnClickListener(v -> viewModel.addPhotoButtonListener(this));
     }
 
     protected boolean initializeViews() {
@@ -42,15 +48,15 @@ public class CarimboDefinitivoActivity extends AbstractActivity {
         imageButtonCamera = findViewById(R.id.imageButtonPhoto);
         imagePerfil = findViewById(R.id.imageProfile);
 
-//     i fields.put ("Tecnico", (EditText) findViewById(R.id.editTextTecnico));
-//        fields.put ("Empresa", (EdtText) findViewById(R.id.editTextEmpresa));
-//        fields.put ("Contato", (EditText) findViewById(R.id.editTextContato));
-//        fields.put ("Cliente", (EditText) findViewById(R.id.editTextCliente));
-//        fields.put ("LocalObra", (EditText) findViewById(R.id.editTextLocalObra));
-//        fields.put ("QuantidadeFuros", (EditText) findViewById(R.id.editTextQuantidadeFuros));
-//        fields.put ("ReferenciaNivel", (EditText) findViewById(R.id.editTextReferenciaNivel));
-//        fields.put ("NomeProjeto", (EditText) findViewById(R.id.editTextNameProjeto));
-//
+        fields.put ("Tecnico", (EditText) findViewById(R.id.editTextTecnico));
+        fields.put ("Empresa", (EditText) findViewById(R.id.editTextEmpresa));
+        fields.put ("Contato", (EditText) findViewById(R.id.editTextContato));
+        fields.put ("Cliente", (EditText) findViewById(R.id.editTextCliente));
+        fields.put ("LocalObra", (EditText) findViewById(R.id.editTextLocalObra));
+        fields.put ("QuantidadeFuros", (EditText) findViewById(R.id.editTextQuantidadeFuros));
+        fields.put ("ReferenciaNivel", (EditText) findViewById(R.id.editTextReferenciaNivel));
+        fields.put ("NomeProjeto", (EditText) findViewById(R.id.editTextNameProjeto));
+
 //        buttonsHelp.put(fields.get ("Tecnico"),
 //                (ImageButton) findViewById(R.id.imageButtonHelpLocalObra));
 //        buttonsHelp.put(fields.get ("Empresa"),
@@ -71,5 +77,14 @@ public class CarimboDefinitivoActivity extends AbstractActivity {
         return imageButtonCamera == null;
 
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 100 && resultCode == RESULT_OK && data != null) {
+            imagemUri = data.getData();
+            imagePerfil.setImageURI(imagemUri);
+        }
     }
 }
