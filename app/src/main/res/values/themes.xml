@@ -22,7 +22,7 @@
         <item name="colorError">#B00020</item>
         <item name="tint">@color/color_primary</item>
 
-        <item name="checkedIconTint">@color/destaque</item>
+        <item name="checkboxStyle">@style/Checkbox_light</item>
 
         <!-- Estilos de textos. -->
         <item name="textInputStyle">@style/ImputLight</item>
