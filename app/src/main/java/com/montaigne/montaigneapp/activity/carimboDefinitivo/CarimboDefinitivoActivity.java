@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.activity.AbstractActivity;
+import com.montaigne.montaigneapp.databinding.ActivityCarimboDefinitivoBinding;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 public class CarimboDefinitivoActivity extends AbstractActivity {
@@ -18,39 +19,47 @@ public class CarimboDefinitivoActivity extends AbstractActivity {
     protected ImageButton imageButtonHome, imageButtonCamera;
     protected ImageView imagePerfil;
     private EditText editTextNomeProjeto, editTextCliente, editTextContato, editTextTecnico,
-            editTextEmpresa, editTextLocalObra, editTextQuantidadeFuros, editTextReferenciaNivel;
+            editTextEmpresa, editTextLocalObra, editTextReferenciaNivel;
+
+    private ActivityCarimboDefinitivoBinding binding;
 
     private CarimboDefinitivoVM viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initializeViews();
 
-        this.viewModel = new ViewModelProvider(this).get(CarimboDefinitivoVM.class);
+        binding = ActivityCarimboDefinitivoBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
-        buttonContinuarCarimbo.setOnClickListener(view -> continuarCarimboButtonListener(view));
+        editTextNomeProjeto = binding.editTextNameProjeto;
+
+        buttonContinuarCarimbo = binding.buttonContinueCarimbo;
+        imageButtonHome = binding.imageButtonHome;
+        imageButtonCamera = binding.imageButtonPhoto;
+        imagePerfil = binding.imageProfile;
+
+        editTextCliente = binding.editTextCliente;
+        editTextContato = binding.editTextContato;
+        editTextTecnico = binding.editTextTecnico;
+        editTextEmpresa = binding.editTextEmpresa;
+        editTextLocalObra = binding.editTextLocalObra;
+        editTextReferenciaNivel = binding.editTextReferenciaNivel;
+
+        viewModel = new ViewModelProvider(this).get(CarimboDefinitivoVM.class);
+
+        buttonContinuarCarimbo.setOnClickListener(viewOnClick -> continuarCarimboButtonListener(viewOnClick));
         imageButtonHome.setOnClickListener(viewModel::homeButtonListener);
+
     }
 
     protected boolean initializeViews() {
         setContentView(R.layout.activity_carimbo_definitivo);
 
-        buttonContinuarCarimbo = findViewById(R.id.buttonContinueCarimbo);
-        imageButtonHome = findViewById(R.id.imageButtonHome);
-        imageButtonCamera = findViewById(R.id.imageButtonPhoto);
-        imagePerfil = findViewById(R.id.imageProfile);
+        // TODO: inicializar as views da interface aqui
 
-        editTextNomeProjeto = findViewById(R.id.editTextNameProjeto);
-        editTextCliente = findViewById(R.id.editTextCliente);
-        editTextContato = findViewById(R.id.editTextContato);
-        editTextTecnico = findViewById(R.id.editTextTecnico);
-        editTextEmpresa = findViewById(R.id.editTextEmpresa);
-        editTextLocalObra = findViewById(R.id.editTextLocalObra);
-        editTextQuantidadeFuros = findViewById(R.id.editTextQuantidadeFuros);
-        editTextReferenciaNivel = findViewById(R.id.editTextReferenciaNivel);
-
-        return imageButtonCamera == null;
+        return false;
     }
 
     public void continuarCarimboButtonListener(View view) {
@@ -65,11 +74,12 @@ public class CarimboDefinitivoActivity extends AbstractActivity {
 
         ProjetoSpt projetoSpt = new ProjetoSpt();
         projetoSpt.setNome(nome);
+        projetoSpt.setContato(cotato);
         projetoSpt.setEmpresa(empresa);
         projetoSpt.setCliente(cliente);
         projetoSpt.setTecnico(tecnico);
-        projetoSpt.setNumeroDeTelefone(cotato);
         projetoSpt.setEmpresa(empresa);
+        projetoSpt.setReferenciaNivel(referenciaNivel);
 
         viewModel.continuarCarimbo(view, projetoSpt);
     }
