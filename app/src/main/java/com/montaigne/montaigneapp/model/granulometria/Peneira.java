@@ -1,24 +1,25 @@
 package com.montaigne.montaigneapp.model.granulometria;
 
 public class Peneira {
+    private float massa;
     private float abertura;
     private float massaRetida;
-    private float fracaoRetida;
-    private float porcentagemRetida;
-    private float fracaoPassante;
-    private float porcentagemPassante;
 
     public Peneira() {
     }
 
-    public Peneira(float abertura, float massaRetida, float fracaoRetida, float porcentagemRetida,
-                   float fracaoPassante, float porcentagemPassante) {
+    public Peneira(float massa, float abertura, float massaRetida) {
+        this.massa = massa;
         this.abertura = abertura;
         this.massaRetida = massaRetida;
-        this.fracaoRetida = fracaoRetida;
-        this.porcentagemRetida = porcentagemRetida;
-        this.fracaoPassante = fracaoPassante;
-        this.porcentagemPassante = porcentagemPassante;
+    }
+
+    public float getMassa() {
+        return massa;
+    }
+
+    public void setMassa(float massa) {
+        this.massa = massa;
     }
 
     public float getAbertura() {
@@ -35,37 +36,5 @@ public class Peneira {
 
     public void setMassaRetida(float massaRetida) {
         this.massaRetida = massaRetida;
-    }
-
-    public float getFracaoRetida() {
-        return fracaoRetida;
-    }
-
-    public void setFracaoRetida(float fracaoRetida) {
-        this.fracaoRetida = fracaoRetida;
-    }
-
-    public float getPorcentagemRetida() {
-        return porcentagemRetida;
-    }
-
-    public void setPorcentagemRetida(float porcentagemRetida) {
-        this.porcentagemRetida = porcentagemRetida;
-    }
-
-    public float getFracaoPassante() {
-        return fracaoPassante;
-    }
-
-    public void setFracaoPassante(float fracaoPassante) {
-        this.fracaoPassante = fracaoPassante;
-    }
-
-    public float getPorcentagemPassante() {
-        return porcentagemPassante;
-    }
-
-    public void setPorcentagemPassante(float porcentagemPassante) {
-        this.porcentagemPassante = porcentagemPassante;
     }
 }
