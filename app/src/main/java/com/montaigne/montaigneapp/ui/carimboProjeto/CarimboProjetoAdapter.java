@@ -83,7 +83,7 @@ public class CarimboProjetoAdapter extends RecyclerView.Adapter<BindedViewHolder
         Field field = fields.get(position);
         holder.binding.textInputLayoutNameProjeto.setStartIconDrawable(field.iconId);
         holder.binding.textInputLayoutNameProjeto.setHelperText(field.obsMsg);
-        holder.binding.textInputEditTextNameProjeto.setHint(field.hintId);
+        holder.binding.textInputEditTextNameProjeto.setHint(field.hintId);  // todo: resolver hint errada
         holder.binding.textInputEditTextNameProjeto.setText(field.value);
 
         holder.binding.textInputEditTextNameProjeto.addTextChangedListener(new TextWatcher() {
