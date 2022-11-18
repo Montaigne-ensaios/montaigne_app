@@ -1,24 +1,23 @@
 package com.montaigne.montaigneapp.utils;
 
+import android.content.Intent;
+
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
+
 import org.apache.poi.hssf.usermodel.HSSFChart;
-import org.apache.poi.hssf.usermodel.HSSFClientAnchor;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.ClientAnchor;
-import org.apache.poi.ss.usermodel.Drawing;
+
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,11 +28,19 @@ public class Sptxlsx {
     Row row;
     Cell furo1,furo2,furo3,nspt;
 
-    public void gerararquivoXlsx (ProjetoSpt projetoSpt, FuroSpt furoSpt, AmostraSpt amostraSpt, File file) {
+    protected void gerarArquivoXlsx (ProjetoSpt projetoSpt, FuroSpt furoSpt, AmostraSpt amostraSpt, File file) {
 
         sheet = wb.createSheet("Projeto: " + projetoSpt.getNome());
+
         List<AmostraSpt> amostrasSpts = furoSpt.getListaDeAmostras();
-        List celulas = new ArrayList();
+
+        // TODO: 17/11/2022 Mock para teste com aplicativo.
+
+        //List<AmostraSpt> amostrasSpts = new ArrayList<>();
+        //AmostraSpt amostraSpt1 = new AmostraSpt("1","teste",3,2,3,4);
+
+        List<Cell> celulas = new ArrayList<>();
+
         int rownumber = 0;
 
         for (AmostraSpt amostras : amostrasSpts) {
@@ -53,10 +60,8 @@ public class Sptxlsx {
             celulas.add(furo3);
             celulas.add(nspt);
 
-
         }
 
-        
     }
 }
 

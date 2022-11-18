@@ -12,6 +12,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MontaigneApp"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.Api-key"
+            android:value="" />
+
+        <activity
+            android:name=".activity.CompartilhaXlsx"
+            android:label="Coletor de arquivos"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.OPENABLE" />
+
+                <data android:mimeType="text/plain" />
+                <data android:mimeType="xlsx/*" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".activity.spt.carimboUnico.CarimboUnicoActivity"
             android:exported="false" />
@@ -38,6 +65,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.montaigne.montaigneapp.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
     </application>
 
 </manifest>
