@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.home.HomeVM;
@@ -22,10 +23,11 @@ public class SptActivity extends AppCompatActivity {
         viewModel = new ViewModelProvider(this).get(SptVM.class);
         viewModel.setupViewModel(
                 (ProjetoSpt) getIntent().getExtras().getSerializable(HomeVM.PROJETO),
+                binding.buttonContinue,
                 getSupportFragmentManager()
         );
 
         binding.imgButtonHome.setOnClickListener(viewModel::intentHome);
-        binding.buttonContinue.setOnClickListener(v -> viewModel.navigateFragments(v, getSupportFragmentManager()));
+        binding.buttonContinue.setOnClickListener(v -> viewModel.handleNavigation((Button) v, getSupportFragmentManager()));
     }
 }
