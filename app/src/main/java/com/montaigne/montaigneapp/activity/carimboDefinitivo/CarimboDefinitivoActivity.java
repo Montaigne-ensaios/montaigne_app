@@ -79,6 +79,7 @@ public class CarimboDefinitivoActivity extends AbstractActivity {
         projetoSpt.setCliente(cliente);
         projetoSpt.setTecnico(tecnico);
         projetoSpt.setEmpresa(empresa);
+        projetoSpt.setLocalDaObra(local);
         projetoSpt.setReferenciaNivel(referenciaNivel);
 
         viewModel.continuarCarimbo(view, projetoSpt);
