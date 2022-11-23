@@ -38,7 +38,7 @@ public class SptVM extends ViewModel {
 
         if (f instanceof ProjetoFragment) {
             navigateFragments(R.id.action_edit_Carimbo, manager);
-            button.setText(R.string.TxtBotaoContinuar_novo_furo);
+            button.setText("String Novo furo");
             Log.v(TAG, "action_edit_Carimbo");
         } else if (f instanceof FuroFragment) {
             navigateFragments(R.id.action_edit_CarimboEnsaio, manager);
@@ -87,7 +87,7 @@ public class SptVM extends ViewModel {
         if (projeto.getNome() == null) {
             isProjetoNew = true;
             navigateFragments(R.id.action_edit_Carimbo, manager);
-            button.setText(R.string.TxtBotaoContinuar_novo_furo);  // tod verificar se esta é a string certa
+            button.setText("String Novo furo");  // tod verificar se esta é a string certa
         } else {
 //            navigateFragments(R.id.action_edit_Carimbo, manager);  // checar se o fragmento home é já é adicionado
             button.setText("String editar carimbo");
