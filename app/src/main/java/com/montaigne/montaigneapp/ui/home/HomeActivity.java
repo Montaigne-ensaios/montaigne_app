@@ -26,6 +26,7 @@ public class HomeActivity extends AppCompatActivity {
 
         viewModel.initializeProjetosSalvosAdapter(binding.recyclerProjetosSalvos);
         viewModel.initializeProjetoCategoriaAdapter(binding.recyclerCategorias);
+
         binding.toolbarHomeInclude.toolbarHome.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.add) {
                 viewModel.newProject(this);

@@ -25,7 +25,7 @@
             android:name=".ui.spt.furo.FuroFragment"
             android:exported="false" />
         <activity
-            android:name=".ui.spt.ensaio.EnsaioActivity"
+            android:name=".ui.spt.ensaio.EnsaioFragment"
             android:exported="false" />
         <activity
             android:name=".ui.carimboProjeto.CarimboProjetoFragment"
@@ -33,7 +33,8 @@
         <activity
             android:name=".ui.home.HomeActivity"
             android:exported="true"
-            android:theme="@style/Theme.MontaigneApp.NoActionBar">
+            android:theme="@style/Theme.MontaigneApp.NoActionBar"
+            android:screenOrientation="userPortrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
