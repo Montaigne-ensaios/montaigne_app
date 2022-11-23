@@ -6,15 +6,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <FrameLayout
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/containerSpt"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@+id/buttonContinue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:context=".ui.spt.SptActivity" />
+        app:navGraph="@navigation/spt_nav_graph" />
 
     <Button
         android:id="@+id/buttonContinue"
@@ -35,5 +37,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/buttonContinue"
         app:srcCompat="@drawable/icon_home" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/buttonAdcionar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonContinue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonContinue"
+        app:layout_constraintTop_toTopOf="@+id/buttonContinue"
+        app:srcCompat="@drawable/icon_fab_add" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
