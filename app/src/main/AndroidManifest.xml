@@ -18,21 +18,6 @@
             android:value="" />
 
         <activity
-            android:name=".activity.CompartilhaXlsx"
-            android:label="Coletor de arquivos"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.intent.action.PICK" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.OPENABLE" />
-
-                <data android:mimeType="text/plain" />
-                <data android:mimeType="xlsx/*" />
-            </intent-filter>
-        </activity>
-
-        <activity
             android:name=".MainActivity"
             android:exported="false">
             <meta-data
