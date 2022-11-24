@@ -4,16 +4,17 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.databinding.FragmentCarimboProjetoBinding;
 import com.montaigne.montaigneapp.model.Projeto;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
+import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
 
 public class CarimboProjetoFragment extends Fragment {
@@ -41,7 +42,15 @@ public class CarimboProjetoFragment extends Fragment {
         viewModel.setProjeto(projeto);
         viewModel.initializeRecycler(binding.recyclerCarimboProjeto);
 
+        ((SptActivity) getActivity())
+                .setNavigateButtonText(getString(R.string.btn_navigate_carimbo_projeto));
+
         return binding.getRoot();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 
     @Override

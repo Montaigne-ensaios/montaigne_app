@@ -10,8 +10,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.databinding.FragmentFuroBinding;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
+import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
 
 public class FuroFragment extends Fragment {
@@ -36,6 +38,8 @@ public class FuroFragment extends Fragment {
         ProjetoSpt projeto = projectViewModel.getProjeto();
         viewModel.setFuro(projeto, idFuro);
 
+        ((SptActivity) getActivity())
+                .setNavigateButtonText(getString(R.string.btn_navigate_furo));
     }
 
     @Nullable
@@ -47,6 +51,9 @@ public class FuroFragment extends Fragment {
         ProjetoSpt projeto = projectViewModel.getProjeto();
         viewModel.setFuro(projeto, idFuro);
         viewModel.updateFurosAdapter(binding.recyclerAmostra);
+
+        ((SptActivity) getActivity())
+                .setNavigateButtonText(getString(R.string.btn_navigate_furo));
 
         return binding.getRoot();
     }

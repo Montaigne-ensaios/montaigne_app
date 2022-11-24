@@ -12,18 +12,18 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:defaultNavHost="true"
-        app:layout_constraintBottom_toTopOf="@+id/buttonContinue"
+        app:layout_constraintBottom_toTopOf="@+id/buttonNavigate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/spt_nav_graph" />
 
     <Button
-        android:id="@+id/buttonContinue"
+        android:id="@+id/buttonNavigate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="Continuar"
+        android:text="Navegar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -32,10 +32,10 @@
         android:id="@+id/imgButtonHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonContinue"
-        app:layout_constraintEnd_toStartOf="@+id/buttonContinue"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonNavigate"
+        app:layout_constraintEnd_toStartOf="@+id/buttonNavigate"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/buttonContinue"
+        app:layout_constraintTop_toTopOf="@+id/buttonNavigate"
         app:srcCompat="@drawable/icon_home" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -44,10 +44,10 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         app:elevation="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonContinue"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonNavigate"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonContinue"
-        app:layout_constraintTop_toTopOf="@+id/buttonContinue"
+        app:layout_constraintStart_toEndOf="@+id/buttonNavigate"
+        app:layout_constraintTop_toTopOf="@+id/buttonNavigate"
         app:srcCompat="@drawable/icon_fab_add" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

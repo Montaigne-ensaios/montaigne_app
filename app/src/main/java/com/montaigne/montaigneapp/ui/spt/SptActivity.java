@@ -17,17 +17,20 @@ public class SptActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = AcitivitySptBinding .inflate(getLayoutInflater());
+        binding = AcitivitySptBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         viewModel = new ViewModelProvider(this).get(SptVM.class);
         viewModel.setupViewModel(
                 (ProjetoSpt) getIntent().getExtras().getSerializable(HomeVM.PROJETO),
-                binding.buttonContinue,
                 getSupportFragmentManager()
         );
 
         binding.imgButtonHome.setOnClickListener(viewModel::intentHome);
-        binding.buttonContinue.setOnClickListener(v -> viewModel.handleNavigation((Button) v, getSupportFragmentManager()));
+        binding.buttonNavigate.setOnClickListener(v -> viewModel.handleNavigation((Button) v, getSupportFragmentManager()));
+    }
+
+    public void setNavigateButtonText(String string) {
+        binding.buttonNavigate.setText(string);
     }
 }

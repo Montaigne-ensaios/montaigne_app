@@ -26,23 +26,17 @@
     <string name="msg_carimboautomátizado">O carimbo projeto é realizado para todos os furos, contendo informações gerais que não serão alteradas nos demais furos.</string>
     <string name="error_campo_obrigatorio"></string>
 
-
-    <string name="registration_ProjectName_hint">Nome do projeto</string>
-    <string name="registration_NomeTecnico_hint">Técnico</string>
-    <string name="registration_NomeEmpresa_hint">Empresa responsável</string>
-    <string name="registration_Contato_hint">Contato</string>
-    <string name="registration_Cliente_hint">Cliente</string>
-    <string name="registration_LocalObra_hint">Local da obra</string>
-    <string name="Registration_QuantidadeFuros_hint">Número de furos</string>
-    <string name="Registration_DataInicio_hint">Data de inicio</string>
-    <string name="Registration_ReferenciaNivel_hint">Referência de nivel</string>
-    <string name="Registration_AlturaReferenciaNivel_hint">Altura da referência de nível</string>
-    <string name="Registration_Coordenadas_hint">Coordenadas do projeto</string>
-
-    <string name="TitleBntContinuar">Próximo</string>
-    <string name="TitletBntContinuar_novo_furo">Novo furo</string>
-
-
+    <string name="registration_projectName_hint">Nome do projeto</string>
+    <string name="registration_tecnico_hint">Técnico</string>
+    <string name="registration_empresa_hint">Empresa responsável</string>
+    <string name="registration_contato_hint">Contato</string>
+    <string name="registration_cliente_hint">Cliente</string>
+    <string name="registration_local_obra_hint">Local da obra</string>
+    <string name="registration_quantidade_furos_hint">Número de furos</string>
+    <string name="registration_data_inicio_hint">Data de inicio</string>
+    <string name="registration_referencia_nivel_hint">Referência de nivel</string>
+    <string name="registration_altura_referencia_nivel_hint">Altura da referência de nível</string>
+    <string name="registration_coordenadas_hint">Coordenadas do projeto</string>
 
     <!-- Strings da tela Carimbo Único-->
     <string name="TxtCarimboUnicoDataInicio">Data de inicio:</string>
@@ -63,10 +57,9 @@
     
     
     <!-- Strings dos butões inferior das telas -->
-    <string name="TitleBntNovoFuro">Novo Furo </string>                     // activity  CarimboProjeto
-    <string name="TitleBntIniciarAmostragem">Inicar amostras </string>      // activity CarimboFuro
-    <string name="TitleBntCarimbo">Carimbo </string>                        // activity  Projeto
-    <string name="TitleBntCarimboFuro">Carimbo do Furo</string>               // activity   Furo
-    <string name="TitleBntFinalizarFuro">Finalizar Furo </string>             // activity     Ensaio
-
+    <string name="btn_navigate_carimbo_projeto">Novo Furo </string>
+    <string name="btn_navigate_carimbo_furo">Inicar amostras </string>
+    <string name="btn_navigate_projeto">Carimbo </string>
+    <string name="btn_navigate_furo">Carimbo do Furo</string>
+    <string name="btn_navigate_ensaio">Finalizar Furo </string>
 </resources>
