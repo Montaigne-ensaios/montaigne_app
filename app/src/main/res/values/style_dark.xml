@@ -17,7 +17,7 @@
     <style name="ButtonPadrao_Dark" parent="Widget.MaterialComponents.Button">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">14dp</item>
-        <item name="backgroundTint">@color/destaque</item>
+        <item name="backgroundTint">@color/color_primary_dark</item>
         <item name="cornerRadius">10dp</item>
         <item name="android:elevation">20dp</item>
         <item name="android:padding">10dp</item>
@@ -29,12 +29,19 @@
     <style name="ImageButton_Dark" parent="Widget.AppCompat.ImageButton">
         <item name="backgroundTint">#00042741</item>
 
-        <item name="tint">@color/destaque</item>
+        <item name="tint">@color/color_primary_dark</item>
     </style>
 
     <!-- TextView Padrão do app Dark-->
     <style name="TextView_Dark" parent="Widget.AppCompat.TextView">
-        <item name="tint">@color/fundo</item>
+        <item name="tint">@color/fundo_light</item>
+    </style>
+
+    <style name="Tollbar_dark" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:background">@color/color_primary_dark</item>
+        <item name="android:textColor">@color/fundo_dark</item>
+
+
     </style>
 
 </resources>

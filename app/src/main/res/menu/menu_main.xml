@@ -1,6 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     >
     <item
         android:id="@+id/add"
@@ -12,13 +13,13 @@
         android:id="@+id/delete"
         android:orderInCategory="100"
         android:title="Apagar"
-        android:icon="@drawable/ic_add"
+        android:icon="@android:drawable/ic_menu_delete"
         app:showAsAction="never" />
     <item
         android:id="@+id/action_ver"
         android:orderInCategory="100"
         android:title="Ajuda"
-        android:icon="@drawable/ic_add"
+        android:icon="@android:drawable/ic_menu_info_details"
         app:showAsAction="never" />
 
 

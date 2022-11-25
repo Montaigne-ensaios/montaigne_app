@@ -50,7 +50,7 @@
                     android:layout_marginTop="40dp"
                     android:text="@string/msg_carimboautomátizado"
                     android:textAlignment="center"
-                    android:textColor="@color/destaque"
+                    android:textColor="@color/color_primary_dark"
                     android:textSize="12sp"
                     app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
                     app:layout_constraintStart_toStartOf="@+id/guidelineStart"

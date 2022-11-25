@@ -2,11 +2,11 @@
     <!-- Base application theme. -->
     <style name="Theme.MontaigneApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="android:colorPrimary">@color/color_primary</item>
+        <item name="android:colorPrimary">@color/color_primary_light</item>
         <item name="android:textColor">@color/white</item>
-        <item name="tint">@color/destaque</item>
+        <item name="tint">@color/color_primary_dark</item>
 
-        <item name="colorSecondary">@color/destaque</item>
+        <item name="colorSecondary">@color/color_primary_dark</item>
 
 
 
@@ -14,11 +14,11 @@
         <!-- Estilos padrão. -->
         <item name="colorAccent">@color/accent</item>
         <item name="backgroundColor">#000000</item>
+        <item name="toolbarStyle">@style/Tollbar_dark</item>
         <item name="materialButtonStyle">@style/ButtonPadrao_Dark</item>
         <item name="imageButtonStyle">@style/ImageButton_Dark</item>
         <item name="editTextStyle">@style/Edit_Text_dark</item>
         <item name="android:textViewStyle">@style/TextView_Dark</item>
-        <item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
 
 
 
