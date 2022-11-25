@@ -6,11 +6,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include
+        android:id="@+id/toolbarSptInclude"
+        layout="@layout/fragment_toolbar_spt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/containerSpt"></include>
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/containerSpt"
         android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="410dp"
+        android:layout_height="681dp"
+        android:layout_marginTop="50dp"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@+id/buttonNavigate"
         app:layout_constraintEnd_toEndOf="parent"

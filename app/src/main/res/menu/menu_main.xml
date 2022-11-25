@@ -12,7 +12,7 @@
     <item
         android:id="@+id/delete"
         android:orderInCategory="100"
-        android:title="Apagar"
+        android:title="Apagar Projeto"
         android:icon="@android:drawable/ic_menu_delete"
         app:showAsAction="never" />
     <item

@@ -44,12 +44,12 @@ public class CarimboProjetoAdapter extends RecyclerView.Adapter<BindedViewHolder
     }
 
     private void setProjeto(Projeto projeto) {
-        fields.add(new Field("nome", projeto.getNome(), R.string.registration_projectName_hint, "Obrigatorio", R.drawable.ic_name_project));
+        fields.add(new Field("nome", projeto.getNome(), R.string.registration_projectName_hint, "Obrigatório*", R.drawable.ic_name_project));
         fields.add(new Field("cliente", projeto.getCliente(), R.string.registration_cliente_hint, "msgErro", R.drawable.ic_perfil));  // todo: replace icon
         fields.add(new Field("empresa", projeto.getEmpresa(), R.string.registration_empresa_hint, "msgErro", R.drawable.ic_empresa));
         fields.add(new Field("tecnico", projeto.getTecnico(), R.string.registration_tecnico_hint, "msgErro", R.drawable.ic_technician));
         fields.add(new Field("numeroDeTelefone", projeto.getNumeroDeTelefone(), R.string.registration_contato_hint, "msgErro", R.drawable.ic_contato));
-        fields.add(new Field("dataInicio", projeto.getDataInicio(), R.string.registration_data_inicio_hint, "msgErro", R.drawable.ic_date));
+        fields.add(new Field("dataInicio", projeto.getDataInicio(), R.string.registration_data_inicio_hint, "Obrigatório*", R.drawable.ic_date));
         fields.add(new Field("coordenadas", "", R.string.registration_coordenadas_hint, "msgErro", R.drawable.ic_location));
         notifyDataSetChanged();
     }
