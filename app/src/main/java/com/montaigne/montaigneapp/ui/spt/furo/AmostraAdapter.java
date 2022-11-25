@@ -1,5 +1,6 @@
 package com.montaigne.montaigneapp.ui.spt.furo;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -7,7 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.montaigne.montaigneapp.databinding.AdapterHomeProjetosBinding;
+import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.databinding.AdapterProjetoBinding;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
@@ -46,12 +47,13 @@ public class AmostraAdapter extends RecyclerView.Adapter<BindedViewHolder<Adapte
 
     @Override
     public void onBindViewHolder(@NonNull BindedViewHolder<AdapterProjetoBinding> holder, int position) {
-        holder.binding.textFuroName.setText("Amostra " + (position + 1));
-        int idAmostra = position;
+        Context context = holder.binding.getRoot().getContext();
+
+        holder.binding.textFuroName.setText(context.getString(R.string.adapter_amostra_name) + (position + 1));
 
         holder.binding.cardView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), EnsaioFragment.class);
-            intent.putExtra("idAmostra", idAmostra);
+            intent.putExtra("idAmostra", position);
             intent.putExtra("idFuro", idFuro);
             intent.putExtra("projetoSpt", projetoSpt);
 

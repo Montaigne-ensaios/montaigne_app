@@ -5,7 +5,6 @@ import android.widget.EditText;
 import androidx.lifecycle.ViewModel;
 
 import com.montaigne.montaigneapp.R;
-import com.montaigne.montaigneapp.model.Projeto;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;

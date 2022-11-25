@@ -19,7 +19,7 @@ public class CarimboEnsaioVM extends ViewModel {
             fields.get("DataInicio").setText(projeto.getDataInicio());
             fields.get("NivelFuro").setText(R.string.notImplemented);
         } catch (NullPointerException ignored) {
-            // todo: forma adequada de checar se os campos foram ou não definidos
+            // fixme: forma adequada de checar se os campos foram ou não definidos
         }
     }
 

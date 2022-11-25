@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
-import android.widget.Button;
 
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.home.HomeVM;
@@ -27,7 +26,7 @@ public class SptActivity extends AppCompatActivity {
         );
 
         binding.imgButtonHome.setOnClickListener(viewModel::intentHome);
-        binding.buttonNavigate.setOnClickListener(v -> viewModel.handleNavigation((Button) v, getSupportFragmentManager()));
+        binding.buttonNavigate.setOnClickListener(v -> viewModel.handleNavigation(getSupportFragmentManager()));
     }
 
     public void setNavigateButtonText(String string) {

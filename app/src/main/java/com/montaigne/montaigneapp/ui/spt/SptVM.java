@@ -3,7 +3,6 @@ package com.montaigne.montaigneapp.ui.spt;
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -29,9 +28,7 @@ public class SptVM extends ViewModel {
     private boolean isProjetoNew = false;
     // variável que define se o projeto deve ser salvo ou deve-se criar um novo
 
-    protected void handleNavigation(Button button, FragmentManager manager) {
-        // todo: substituir strings
-        // todo: refatorar actions
+    protected void handleNavigation(FragmentManager manager) {
         Fragment f = Objects.requireNonNull(
                 manager.getPrimaryNavigationFragment()
         ).getChildFragmentManager().getFragments().get(0);  // fragmento exibido

@@ -1,16 +1,11 @@
 package com.montaigne.montaigneapp.ui.spt.furo;
 
-import android.view.View;
-
 import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
-
-import java.util.List;
 
 public class FuroVM extends ViewModel {
     private int idFuro;

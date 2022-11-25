@@ -30,7 +30,7 @@ public class CarimboProjetoFragment extends Fragment {
 
         viewModel = new ViewModelProvider(this).get(CarimboProjetoVM.class);
         projectViewModel = new ViewModelProvider(requireActivity()).get(SptVM.class);
-    }  // todo: criar um adapter que adapte todos os campos de um projeto para os dados de um editText
+    }
 
     @Nullable
     @Override

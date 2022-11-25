@@ -1,5 +1,6 @@
 package com.montaigne.montaigneapp.ui.home;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.montaigne.montaigneapp.databinding.AdapterHomeProjetoCategoriaBinding;
+import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.BindedViewHolder;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
@@ -19,7 +20,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProjetosSalvosAdapter extends RecyclerView.Adapter<BindedViewHolder<AdapterHomeProjetosBinding>> {
-    // todo: passar esta array list para a entity
     private List<Projeto> projetoList;
     private List<Boolean> isCheckedList;
 
@@ -42,11 +42,17 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<BindedViewHolder
     public void onBindViewHolder(@NonNull BindedViewHolder<AdapterHomeProjetosBinding> holder, int position) {
         Projeto projeto = projetoList.get(position);
 
+        Context context = holder.binding.getRoot().getContext();
+
         holder.binding.textNameProjeto.setText( projeto.getNome() );
         holder.binding.textDescricaoProjeto.setText(projeto.getCliente());
-        holder.binding.textDateProjeto.setText("Inicio do Projeto: " + projeto.getDataInicio());
+        holder.binding.textDateProjeto.setText(
+                context.getString(R.string.adapter_projetos_savlos_data)+ projeto.getDataInicio());
         if (projeto.getClass() == ProjetoSpt.class)
-                holder.binding.textTipoEnsaio.setText("Projeto SPT");  // todo: criar strings no strings.xml
+                holder.binding.textTipoEnsaio.setText(
+                        context.getString(R.string.adapter_projetos_savlos_projeto_label) +
+                        context.getString(R.string.categoria_spt));
+        // todo: add granulometria
 
         holder.binding.cardView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), SptActivity.class);

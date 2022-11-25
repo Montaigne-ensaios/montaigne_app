@@ -15,9 +15,8 @@ public class ProjetoVM extends ViewModel {
         // TODO: implementar deleção
         FurosAdapter adapter = new FurosAdapter();
         adapter.setFuros(projetoSpt.getListaDeFuros());
-        adapter.getOnClickObservable().observeForever(furoSpt -> {
-            Log.d("FurosAdapterClick", "Furo clicado: " + furoSpt.getCodigo());
-        });
+        adapter.getOnClickObservable().observeForever(furoSpt -> Log
+                .d("FurosAdapterClick", "Furo clicado: " + furoSpt.getCodigo()));
 
         recyclerFuros.setAdapter(adapter);
         recyclerFuros.setLayoutManager(new LinearLayoutManager(recyclerFuros.getContext()));

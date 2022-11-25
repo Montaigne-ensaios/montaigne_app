@@ -37,9 +37,6 @@ public class FuroFragment extends Fragment {
 
         ProjetoSpt projeto = projectViewModel.getProjeto();
         viewModel.setFuro(projeto, idFuro);
-
-        ((SptActivity) getActivity())
-                .setNavigateButtonText(getString(R.string.btn_navigate_furo));
     }
 
     @Nullable

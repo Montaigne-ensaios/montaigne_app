@@ -27,9 +27,9 @@ public class HomeVM extends ViewModel implements ModelHolder<Projeto> {
 
     protected void initializeProjetoCategoriaAdapter(RecyclerView recyclerProjetoCategorias) {
         ArrayList<Object[]> categorias = new ArrayList<>();  // lista de filtros de projeto
-        categorias.add(new Object[]{"SPT", R.drawable.ic_logospt_azul});
-        categorias.add(new Object[]{"Granulometria", R.drawable.ic_logospt_azul});
-        // todo: substituir strings por referência ao `values.xml`
+        Context context = recyclerProjetoCategorias.getContext();
+        categorias.add(new Object[]{context.getString(R.string.categoria_spt), R.drawable.ic_logospt_azul});
+        categorias.add(new Object[]{context.getString(R.string.categoria_granulometria), R.drawable.ic_logospt_azul});
 
         ProjetoCategoriaAdapter adapter = new ProjetoCategoriaAdapter();
         adapter.setCategoriasProjeto(categorias);
