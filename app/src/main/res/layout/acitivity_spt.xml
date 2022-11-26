@@ -46,16 +46,4 @@
         app:layout_constraintTop_toTopOf="@+id/buttonNavigate"
         app:srcCompat="@drawable/icon_home" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/buttonAdcionar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        app:elevation="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonNavigate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonNavigate"
-        app:layout_constraintTop_toTopOf="@+id/buttonNavigate"
-        app:srcCompat="@drawable/icon_fab_add" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
