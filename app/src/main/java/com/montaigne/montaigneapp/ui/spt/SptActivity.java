@@ -25,7 +25,8 @@ public class SptActivity extends AppCompatActivity {
         viewModel = new ViewModelProvider(this).get(SptVM.class);
         setSupportActionBar(binding.toolbarSptInclude.toolbarSpt);
         getSupportActionBar().setTitle("Substituir nome do ensaio");//substituir por o tipo de ensaio exemplo: Granulometria ou SPT
-
+        getSupportActionBar().setIcon(R.drawable.icon_arrow_left);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
         viewModel.setupViewModel(
                 (ProjetoSpt) getIntent().getExtras().getSerializable(HomeVM.PROJETO),
                 getSupportFragmentManager()
@@ -58,4 +59,9 @@ public class SptActivity extends AppCompatActivity {
         binding.buttonNavigate.setText(string);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+      //  return super.onSupportNavigateUp();//
+    }
 }

@@ -56,4 +56,6 @@
     <item name="android:background">@color/color_primary_light</item>
     <item name="android:textColorPrimary">@color/white</item>
     </style>
+
+    
 </resources>

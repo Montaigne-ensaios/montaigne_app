@@ -14,7 +14,10 @@
         <!-- fundo-->
         <item name="colorOnSecondary">@color/fundo_light</item>
         <item name="android:textColorHint">@color/hint</item>
-        <item name="titleTextColor">@color/white</item>
+
+
+        <!-- menu-->
+        <item name="itemIconTint">@color/white</item>
 
 
         <!-- Color de interação com butões -->
@@ -28,6 +31,7 @@
         <item name="textInputStyle">@style/ImputLight</item>
         <item name="android:textColor">@color/fundo_dark</item>
         <item name="toolbarStyle">@style/Tollbar_light</item>
+
 
         <!-- Estilos gerais padrão do tema light. -->
         <item name="materialButtonStyle">@style/ButtonPadrao_light</item>

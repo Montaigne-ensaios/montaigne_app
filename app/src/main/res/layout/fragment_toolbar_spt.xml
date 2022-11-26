@@ -8,6 +8,10 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarSpt"
+        app:titleMarginStart="30dp"
+
+        app:titleTextColor="@color/white"
+        app:title="SPT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="?attr/actionBarSize"
