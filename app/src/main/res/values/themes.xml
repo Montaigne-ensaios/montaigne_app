@@ -14,6 +14,7 @@
         <!-- fundo-->
         <item name="colorOnSecondary">@color/fundo_light</item>
         <item name="android:textColorHint">@color/hint</item>
+        <item name="titleTextColor">@color/white</item>
 
 
         <!-- Color de interação com butões -->

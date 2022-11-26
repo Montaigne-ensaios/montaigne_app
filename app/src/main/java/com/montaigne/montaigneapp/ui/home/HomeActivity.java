@@ -22,8 +22,7 @@ public class HomeActivity extends AppCompatActivity {
 
         viewModel = new ViewModelProvider(this).get(HomeVM.class);
 
-        setSupportActionBar(binding.toolbarHomeInclude.toolbarHome);
-
+      setSupportActionBar(binding.toolbarHomeInclude.toolbarHome);
         viewModel.initializeProjetosSalvosAdapter(binding.recyclerProjetosSalvos);
         viewModel.initializeProjetoCategoriaAdapter(binding.recyclerCategorias);
 
