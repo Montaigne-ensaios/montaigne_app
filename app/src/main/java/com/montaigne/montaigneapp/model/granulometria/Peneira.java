@@ -1,25 +1,25 @@
 package com.montaigne.montaigneapp.model.granulometria;
 
 public class Peneira {
-    private float massa;
     private float abertura;
     private float massaRetida;
+    private float massaInicial;
 
     public Peneira() {
     }
 
     public Peneira(float massa, float abertura, float massaRetida) {
-        this.massa = massa;
+        this.massaInicial = massa;
         this.abertura = abertura;
         this.massaRetida = massaRetida;
     }
 
-    public float getMassa() {
-        return massa;
+    public float getMassaInicial() {
+        return massaInicial;
     }
 
-    public void setMassa(float massa) {
-        this.massa = massa;
+    public void setMassaInicial(float massaInicial) {
+        this.massaInicial = massaInicial;
     }
 
     public float getAbertura() {
