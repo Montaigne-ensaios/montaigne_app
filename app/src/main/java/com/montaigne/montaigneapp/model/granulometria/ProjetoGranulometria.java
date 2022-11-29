@@ -6,28 +6,31 @@ import com.montaigne.montaigneapp.model.Projeto;
 import java.util.List;
 
 public class ProjetoGranulometria extends Projeto {
-    private float massa;
+    private float massaTotal;
     private List<Peneira> listaDePeneiras;
 
     public ProjetoGranulometria() {}
 
-    public ProjetoGranulometria(float massa, List<Peneira> listaDePeneiras) {
-        this.massa = massa;
+    public ProjetoGranulometria(float massaTotal, List<Peneira> listaDePeneiras) {
+        this.massaTotal = massaTotal;
         this.listaDePeneiras = listaDePeneiras;
     }
 
-    public ProjetoGranulometria(String id, String nome, String cliente, String empresa, String tecnico, String contato, String dataInicio, Coordenada coordenadas, float massa, List<Peneira> listaDePeneiras) {
+    public ProjetoGranulometria(String id, String nome, String cliente,
+                                String empresa, String tecnico, String contato,
+                                String dataInicio, Coordenada coordenadas, float massaTotal,
+                                List<Peneira> listaDePeneiras) {
         super(id, nome, cliente, empresa, tecnico, contato, dataInicio, coordenadas);
-        this.massa = massa;
+        this.massaTotal = massaTotal;
         this.listaDePeneiras = listaDePeneiras;
     }
 
     public float getMassa() {
-        return massa;
+        return massaTotal;
     }
 
-    public void setMassa(float massa) {
-        this.massa = massa;
+    public void setMassa(float massaInicial) {
+        this.massaTotal = massaInicial;
     }
 
     public List<Peneira> getListaDePeneiras() {

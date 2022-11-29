@@ -11,8 +11,6 @@ public class AmostraSpt implements Serializable {
     // quantos golpes do martelo foram necessários para obter as penetrações abaixo
     private float penatracao1, penatracao2, penatracao3;
     // quanto cada segmento do amsotrador penetrou no solo, em cm
-    private String tipoSolo1, tipoSolo2, tipoSolo3;  // opcional
-    // string detalhando cor, cosnistência e detalhamento de solo
 
     public AmostraSpt() {
     }
@@ -20,7 +18,7 @@ public class AmostraSpt implements Serializable {
     public AmostraSpt(String id, String idFuro,
                       int golpe1, int golpe2, int golpe3,
                       float penatracao1, float penatracao2, float penatracao3,
-                      String tipoSolo1, String tipoSolo2, String tipoSolo3) {
+                      float profundidade) {
         this.id = id;
         this.idFuro = idFuro;
         this.golpe1 = golpe1;
@@ -29,9 +27,6 @@ public class AmostraSpt implements Serializable {
         this.penatracao1 = penatracao1;
         this.penatracao2 = penatracao2;
         this.penatracao3 = penatracao3;
-        this.tipoSolo1 = tipoSolo1;
-        this.tipoSolo2 = tipoSolo2;
-        this.tipoSolo3 = tipoSolo3;
     }
 
     public String getIdFuro() {
@@ -102,27 +97,11 @@ public class AmostraSpt implements Serializable {
         this.penatracao3 = penatracao3;
     }
 
-    public String getTipoSolo1() {
-        return tipoSolo1;
+    public float getProfundidade() {
+        return profundidade;
     }
 
-    public void setTipoSolo1(String tipoSolo1) {
-        this.tipoSolo1 = tipoSolo1;
-    }
-
-    public String getTipoSolo2() {
-        return tipoSolo2;
-    }
-
-    public void setTipoSolo2(String tipoSolo2) {
-        this.tipoSolo2 = tipoSolo2;
-    }
-
-    public String getTipoSolo3() {
-        return tipoSolo3;
-    }
-
-    public void setTipoSolo3(String tipoSolo3) {
-        this.tipoSolo3 = tipoSolo3;
+    public void setProfundidade(float profundidade) {
+        this.profundidade = profundidade;
     }
 }
