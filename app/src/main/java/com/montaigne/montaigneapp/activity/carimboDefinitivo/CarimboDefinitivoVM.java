@@ -9,14 +9,14 @@ import androidx.lifecycle.ViewModel;
 import com.montaigne.montaigneapp.activity.home.HomeActivity;
 import com.montaigne.montaigneapp.activity.spt.carimboUnico.CarimboUnicoActivity;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
-import com.montaigne.montaigneapp.utils.Sptxlsx;
+import com.montaigne.montaigneapp.utils.CreateXlsxSpt;
 
 import java.util.Map;
 
 public class CarimboDefinitivoVM extends ViewModel {
     // método de getData (validação de entradas)
 
-    Sptxlsx sptxlsx;
+    CreateXlsxSpt sptxlsx;
 
     protected void continuarCarimboButtonListener(View view, Map<String, EditText> fields) {
         Intent intent = new Intent(view.getContext(), CarimboUnicoActivity.class);
