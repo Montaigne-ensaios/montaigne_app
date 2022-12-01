@@ -21,7 +21,7 @@ public class CarimboProjetoVM extends ViewModel {
         projeto.setCliente(values.get("cliente"));
         projeto.setEmpresa(values.get("empresa"));
         projeto.setTecnico(values.get("tecnico"));
-        projeto.setNumeroDeTelefone(values.get("numeroDeTelefone"));
+        projeto.setContato(values.get("numeroDeTelefone"));
         projeto.setDataInicio(values.get("dataInicio"));
         return projeto;
     }
