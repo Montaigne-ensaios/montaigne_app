@@ -14,23 +14,18 @@ public class CheckAmostraSptUseCase {
         return result;
     }
 
+
     public static AmostraSpt standardize(AmostraSpt amostraSpt) {
         if (canBeSave(amostraSpt)) {
             return amostraSpt;
         }
 
-        amostraSpt.setNspt(amostraSpt.getGolpe1());
-
         if (amostraSpt.getGolpe2() < 0) {
             amostraSpt.setGolpe2(0);
-        } else {
-            amostraSpt.setNspt(amostraSpt.getGolpe1() + amostraSpt.getGolpe2());
         }
 
         if (amostraSpt.getGolpe3() < 0) {
             amostraSpt.setGolpe3(0);
-        } else {
-            amostraSpt.setNspt(amostraSpt.getGolpe2() + amostraSpt.getGolpe3());
         }
 
         return amostraSpt;
