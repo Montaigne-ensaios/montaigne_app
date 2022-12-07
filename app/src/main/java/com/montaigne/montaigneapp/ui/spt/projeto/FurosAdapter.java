@@ -7,29 +7,29 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.montaigne.montaigneapp.databinding.AdapterProjetoBinding;
+import com.montaigne.montaigneapp.databinding.AdapterFuroBinding;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.ui.BindedViewHolder;
 
 import java.util.List;
 
-public class FurosAdapter extends RecyclerView.Adapter<BindedViewHolder<AdapterProjetoBinding>> {
+public class FurosAdapter extends RecyclerView.Adapter<BindedViewHolder<AdapterFuroBinding>> {
     private List<FuroSpt> furos;
     private final MutableLiveData<FuroSpt> furoClicado = new MutableLiveData<>();
 
     @NonNull
     @Override
-    public BindedViewHolder<AdapterProjetoBinding> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BindedViewHolder<AdapterFuroBinding> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 
-        AdapterProjetoBinding binding = AdapterProjetoBinding
+        AdapterFuroBinding binding = AdapterFuroBinding
                 .inflate(inflater, parent, false);
 
         return new BindedViewHolder<>(binding);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BindedViewHolder<AdapterProjetoBinding> holder, int position) {
+    public void onBindViewHolder(@NonNull BindedViewHolder<AdapterFuroBinding> holder, int position) {
         FuroSpt furo = furos.get(position);
         holder.binding.textFuroName.setText(furo.getCodigo());
         
