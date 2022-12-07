@@ -12,7 +12,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
-import com.montaigne.montaigneapp.ui.carimboProjeto.CarimboProjetoFragment;
+import com.montaigne.montaigneapp.ui.spt.carimboProjeto.CarimboProjetoFragment;
 import com.montaigne.montaigneapp.ui.home.HomeActivity;
 import com.montaigne.montaigneapp.ui.spt.carimboEnsaio.CarimboEnsaioFragment;
 import com.montaigne.montaigneapp.ui.spt.ensaio.EnsaioFragment;
