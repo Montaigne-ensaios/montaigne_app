@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.ui.carimboProjeto;
+package com.montaigne.montaigneapp.ui.spt.carimboProjeto;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,14 +12,13 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.databinding.FragmentCarimboProjetoBinding;
-import com.montaigne.montaigneapp.model.Projeto;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
 
 public class CarimboProjetoFragment extends Fragment {
     private CarimboProjetoVM viewModel;
-    private SptVM projectViewModel;  // todo: criar uma classe abstrata de viewmodel agnóstica ao tipo de ensaio
+    private SptVM projectViewModel;
     private FragmentCarimboProjetoBinding binding;
 
     public CarimboProjetoFragment() {}
@@ -38,8 +37,8 @@ public class CarimboProjetoFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         binding = FragmentCarimboProjetoBinding.inflate(inflater, container, false);
 
-        Projeto projeto = projectViewModel.getProjeto();
-        viewModel.setProjeto(projeto);
+        ProjetoSpt projetoSpt = projectViewModel.getProjeto();
+        viewModel.setProjeto(projetoSpt);
         viewModel.initializeRecycler(binding.recyclerCarimboProjeto);
 
         ((SptActivity) getActivity())
@@ -57,7 +56,5 @@ public class CarimboProjetoFragment extends Fragment {
     public void onPause() {
         super.onPause();
         projectViewModel.updateProjeto((ProjetoSpt) viewModel.getProjeto());
-
-
     }
 }

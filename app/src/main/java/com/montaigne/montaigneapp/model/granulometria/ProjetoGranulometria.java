@@ -11,26 +11,18 @@ public class ProjetoGranulometria extends Projeto {
 
     public ProjetoGranulometria() {}
 
-    public ProjetoGranulometria(float massaTotal, List<Peneira> listaDePeneiras) {
+    public ProjetoGranulometria(String id, String nome, String dataInicio, float massaTotal, List<Peneira> listaDePeneiras) {
+        super(id, nome, dataInicio);
         this.massaTotal = massaTotal;
         this.listaDePeneiras = listaDePeneiras;
     }
 
-    public ProjetoGranulometria(String id, String nome, String cliente,
-                                String empresa, String tecnico, String contato,
-                                String dataInicio, Coordenada coordenadas, float massaTotal,
-                                List<Peneira> listaDePeneiras) {
-        super(id, nome, cliente, empresa, tecnico, contato, dataInicio, coordenadas);
-        this.massaTotal = massaTotal;
-        this.listaDePeneiras = listaDePeneiras;
-    }
-
-    public float getMassa() {
+    public float getMassaTotal() {
         return massaTotal;
     }
 
-    public void setMassa(float massaInicial) {
-        this.massaTotal = massaInicial;
+    public void setMassaTotal(float massaTotal) {
+        this.massaTotal = massaTotal;
     }
 
     public List<Peneira> getListaDePeneiras() {
