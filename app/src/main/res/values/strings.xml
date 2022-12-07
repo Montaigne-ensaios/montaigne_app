@@ -42,7 +42,6 @@
     <string name="registration_coordenadas_hint">Coordenadas do projeto</string>
 
 
-
     <!-- Strings da tela Carimbo Furo-->
     <string name="registration_Data_inicio_furo">Data de inicio:</string>
     <string name="hint_date">MM/DD/YYYY</string>
@@ -58,8 +57,8 @@
 
 
     <!-- Strings da tela Adpter_home_filtro_Ensaios-->
-    
-    
+
+
     <!-- Strings dos butões inferior das telas -->
     <string name="btn_navigate_carimbo_projeto">Novo Furo </string>
     <string name="btn_navigate_carimbo_furo">Inicar amostras </string>
@@ -75,4 +74,6 @@
     <string name="adapter_projetos_savlos_data">Inicio do Projeto: </string>
     <string name="adapter_projetos_savlos_projeto_label">Projeto de</string>
     <string name="adapter_amostra_name">"Amostra "</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
