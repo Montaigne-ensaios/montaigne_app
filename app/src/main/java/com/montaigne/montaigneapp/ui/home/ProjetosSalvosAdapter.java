@@ -45,7 +45,6 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<BindedViewHolder
         Context context = holder.binding.getRoot().getContext();
 
         holder.binding.textNameProjeto.setText( projeto.getNome() );
-        holder.binding.textDescricaoProjeto.setText(projeto.getCliente());
         holder.binding.textDateProjeto.setText(
                 context.getString(R.string.adapter_projetos_savlos_data)+ projeto.getDataInicio());
         if (projeto.getClass() == ProjetoSpt.class)

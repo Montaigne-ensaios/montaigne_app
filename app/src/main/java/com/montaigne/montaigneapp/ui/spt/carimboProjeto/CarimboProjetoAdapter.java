@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.ui.carimboProjeto;
+package com.montaigne.montaigneapp.ui.spt.carimboProjeto;
 
 import android.app.Application;
 import android.content.res.Resources;
@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.databinding.AdapterCarimboProjetoBinding;
-import com.montaigne.montaigneapp.model.Projeto;
+import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.BindedViewHolder;
 
 import java.util.ArrayList;
@@ -39,17 +39,17 @@ public class CarimboProjetoAdapter extends RecyclerView.Adapter<BindedViewHolder
         }
     }
 
-    public CarimboProjetoAdapter(Projeto projeto) {
-        setProjeto(projeto);
+    public CarimboProjetoAdapter(ProjetoSpt ProjetoSpt) {
+        setProjetoSpt(ProjetoSpt);
     }
 
-    private void setProjeto(Projeto projeto) {
-        fields.add(new Field("nome", projeto.getNome(), R.string.registration_projectName_hint, "Obrigatório*", R.drawable.ic_name_project));
-        fields.add(new Field("cliente", projeto.getCliente(), R.string.registration_cliente_hint, "msgErro", R.drawable.ic_perfil));  // todo: replace icon
-        fields.add(new Field("empresa", projeto.getEmpresa(), R.string.registration_empresa_hint, "msgErro", R.drawable.ic_empresa));
-        fields.add(new Field("tecnico", projeto.getTecnico(), R.string.registration_tecnico_hint, "msgErro", R.drawable.ic_technician));
-        fields.add(new Field("numeroDeTelefone", projeto.getContato(), R.string.registration_contato_hint, "msgErro", R.drawable.ic_contato));
-        fields.add(new Field("dataInicio", projeto.getDataInicio(), R.string.registration_data_inicio_hint, "Obrigatório*", R.drawable.ic_date));
+    private void setProjetoSpt(ProjetoSpt ProjetoSpt) {
+        fields.add(new Field("nome", ProjetoSpt.getNome(), R.string.registration_projectName_hint, "Obrigatório*", R.drawable.ic_name_project));
+        fields.add(new Field("cliente", ProjetoSpt.getCliente(), R.string.registration_cliente_hint, "msgErro", R.drawable.ic_perfil));  // todo: replace icon
+        fields.add(new Field("empresa", ProjetoSpt.getEmpresa(), R.string.registration_empresa_hint, "msgErro", R.drawable.ic_empresa));
+        fields.add(new Field("tecnico", ProjetoSpt.getTecnico(), R.string.registration_tecnico_hint, "msgErro", R.drawable.ic_technician));
+        fields.add(new Field("numeroDeTelefone", ProjetoSpt.getContato(), R.string.registration_contato_hint, "msgErro", R.drawable.ic_contato));
+        fields.add(new Field("dataInicio", ProjetoSpt.getDataInicio(), R.string.registration_data_inicio_hint, "Obrigatório*", R.drawable.ic_date));
         fields.add(new Field("coordenadas", "", R.string.registration_coordenadas_hint, "msgErro", R.drawable.ic_location));
         notifyDataSetChanged();
     }

@@ -52,7 +52,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="-5dp"
             android:layout_toEndOf="@id/imageLogoProject"
-            android:text="Descrição do projeto localização" />
+            android:text="POR FAVOR REMOVA ESSE TEXT VIEW NÂO SERÁ USADO MAIS" />
 
         <TextView
             android:id="@+id/textDateProjeto"
