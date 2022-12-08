@@ -3,7 +3,9 @@ package com.montaigne.montaigneapp.ui.home;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -25,14 +27,7 @@ public class HomeActivity extends AppCompatActivity {
         viewModel.initializeProjetosSalvosAdapter(binding.recyclerProjetosSalvos);
         viewModel.initializeProjetoCategoriaAdapter(binding.recyclerCategorias);
 
-        binding.toolbarHomeInclude.toolbarHome.setOnMenuItemClickListener(item -> {
-            if (item.getItemId() == R.id.add) {
-                viewModel.newProject(this);
-            } else if (item.getItemId() == R.id.delete) {
-                viewModel.removeProjects();
-            }
-            return true;
-        });
+        addMenuProvider(new HomeActivity.MenuProvider());
     }
 
     @Override
@@ -41,10 +36,20 @@ public class HomeActivity extends AppCompatActivity {
         viewModel.refreshProjetosSalvos();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu_main, menu);
-        return super.onCreateOptionsMenu(menu);
+    private class MenuProvider implements androidx.core.view.MenuProvider {
+        @Override
+        public void onCreateMenu(@NonNull Menu menu, @NonNull MenuInflater menuInflater) {
+            menuInflater.inflate(R.menu.menu_main, menu);
+        }
+
+        @Override
+        public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
+            if (menuItem.getItemId() == R.id.add) {
+                viewModel.newProject(HomeActivity.this);
+            } else if (menuItem.getItemId() == R.id.delete) {
+                viewModel.removeProjects();
+            }
+            return true;
+        }
     }
 }

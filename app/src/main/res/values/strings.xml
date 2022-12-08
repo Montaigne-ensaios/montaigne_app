@@ -75,4 +75,6 @@
     <string name="adapter_projetos_savlos_data">Inicio do Projeto: </string>
     <string name="adapter_projetos_savlos_projeto_label">Projeto de</string>
     <string name="adapter_amostra_name">"Amostra "</string>
+    <string name="menu_item_projetospt_novo_furo">Novo furo</string>
+    <string name="menu_item_projetospt_apagar_furo">Apagar furo</string>
 </resources>

@@ -2,12 +2,16 @@ package com.montaigne.montaigneapp.ui.spt.projeto;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.montaigne.montaigneapp.R;
@@ -27,14 +31,12 @@ public class ProjetoFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
+
         viewModel = new ViewModelProvider(this).get(ProjetoVM.class);
         projectViewModel = new ViewModelProvider(requireActivity()).get(SptVM.class);
     }
 
-
-
-//        ((SptActivity) getActivity())
-//                .setNavigateButtonText(getString(R.string.btn_navigate_carimbo_projeto));
     @Nullable
     @Override
     public View onCreateView (@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
@@ -52,8 +54,28 @@ public class ProjetoFragment extends Fragment {
     }
 
     @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        requireActivity().addMenuProvider(new ProjetoFragment.MenuProvider(),
+                getViewLifecycleOwner(), Lifecycle.State.RESUMED);  // menu visível apenas quando
+    }
+
+    @Override
     public void onResume() {
         super.onResume();
         // todo: refresh adapter
+    }
+
+    private class MenuProvider implements androidx.core.view.MenuProvider {
+        @Override
+        public void onCreateMenu(@NonNull Menu menu, @NonNull MenuInflater menuInflater) {
+            menuInflater.inflate(R.menu.menu_spt, menu);
+        }
+
+        @Override
+        public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
+            return false;
+        }
     }
 }
