@@ -41,14 +41,11 @@ public class CreateXlsxSpt {
 
         sheet = wb.createSheet("Projeto: " + projetoSpt.getNome());
 
-
-
-        List<AmostraSpt> amostrasSpts = furoSpt.getListaDeAmostras();
+       List<AmostraSpt> amostrasSpts = furoSpt.getListaDeAmostras();
         List<Cell> celulas = new ArrayList<>();
 
-        // TODO: 17/11/2022 Mock para teste com aplicativo.
 
-        Workbook wb = new HSSFWorkbook();
+        // TODO: 17/11/2022 Mock para teste com aplicativo.
 
         Row linha1 = sheet.createRow(0);
         Row linha2 = sheet.createRow(1);
@@ -86,11 +83,21 @@ public class CreateXlsxSpt {
         Cell min_10 = linha5.createCell(5);
         Cell hrs_24 = linha6.createCell(5);
 
-        cab_titulo.setCellValue("PERFIL DE SONDAGEM E PERCUSSÃO");
+        //coluna H
+
+        Cell ref = linha4.createCell(7);
+        Cell sondador = linha5.createCell(7);
+        Cell resptecnico = linha6.createCell(7);
+
+        //coluna K
+
+        Cell prancha = linha4.createCell(10);
+
+        cab_titulo.setCellValue("PERFIL DE SONDAGEM E PERCUSSAO");
 
         cab_cliente.setCellValue("CLIENTE: ");
         cab_local.setCellValue("LOCAL: ");
-        cab_furo.setCellValue("FURO N° ");
+        cab_furo.setCellValue("FURO N: ");
         cab_data.setCellValue("DATA: ");
 
         data_inicial.setCellValue("INICIO");
@@ -101,6 +108,15 @@ public class CreateXlsxSpt {
         na_INICIAL.setCellValue("INICIAL");
         na_10min.setCellValue("10min");
         na_24h.setCellValue("24h");
+
+
+        String texto_resptecnico = "RESP.TECNICO:";
+
+        ref.setCellValue("REF:");
+        sondador.setCellValue("SONDADOR:");
+        resptecnico.setCellValue(texto_resptecnico);
+
+        prancha.setCellValue("FOLHA: 1/1");
 
         Font f1 = wb.createFont();
         f1.setFontName("Arial");
@@ -120,10 +136,15 @@ public class CreateXlsxSpt {
         estilodocabecalho.setAlignment(HorizontalAlignment.CENTER);
         estilodocabecalho.setFont(f2);
 
+        //todo: Estilos aplicados as Células
+
         cab_titulo.setCellStyle(estilodotitulo);
         data_final.setCellStyle(estilodocabecalho);
         data_inicial.setCellStyle(estilodocabecalho);
         nível_de_agua.setCellStyle(estilodocabecalho);
+        ref.setCellStyle(estilodocabecalho);
+        sondador.setCellStyle(estilodocabecalho);
+        resptecnico.setCellStyle(estilodocabecalho);
 
         for (int i = 1; i <= sheet.getLastRowNum(); i++) {
 
@@ -147,16 +168,22 @@ public class CreateXlsxSpt {
 
         sheet.setColumnWidth(0,10*256);
 
-        sheet.addMergedRegion(new CellRangeAddress(0,0,0,7));
+        sheet.addMergedRegion(new CellRangeAddress(0,0,0,10));
         sheet.addMergedRegion(new CellRangeAddress(4,5,0,0));
-        sheet.addMergedRegion(new CellRangeAddress(1,1,1,7));
-        sheet.addMergedRegion(new CellRangeAddress(2,2,1,7));
+        sheet.addMergedRegion(new CellRangeAddress(1,1,1,10));
+        sheet.addMergedRegion(new CellRangeAddress(2,2,1,10));
         sheet.addMergedRegion(new CellRangeAddress(3,3,1,3));
         sheet.addMergedRegion(new CellRangeAddress(3,5,4,4));
         sheet.addMergedRegion(new CellRangeAddress(4,4,2,3));
         sheet.addMergedRegion(new CellRangeAddress(5,5,2,3));
+        sheet.addMergedRegion(new CellRangeAddress(3,5,10,10));
+        sheet.addMergedRegion(new CellRangeAddress(3,3,8,9));
+        sheet.addMergedRegion(new CellRangeAddress(4,4,8,9));
+        sheet.addMergedRegion(new CellRangeAddress(5,5,8,9));
 
-        int rownumber = 0;
+        sheet.setColumnWidth(7,texto_resptecnico.length()*300);
+
+        int rownumber = 6;
 
         for (AmostraSpt amostras : amostrasSpts) {
 
@@ -181,8 +208,9 @@ public class CreateXlsxSpt {
 
         try {
 
-            OutputStream outputStream = new FileOutputStream(file);
-            wb.write(outputStream);
+            //OutputStream out = new FileOutputStream(file);
+            OutputStream out = new FileOutputStream("xlsx");
+            wb.write(out);
 
         }catch (FileNotFoundException e){
             e.fillInStackTrace();

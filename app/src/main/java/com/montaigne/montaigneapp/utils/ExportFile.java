@@ -47,7 +47,7 @@ public class ExportFile {
             sendIntent.putExtra(Intent.EXTRA_STREAM, arquivoUri);
         }
 
-        Intent shareIntent = Intent.createChooser(sendIntent,"Compartilhar");
+        Intent shareIntent = Intent.createChooser(sendIntent,"Compartilhar Xlsx");
         activity.startActivity(shareIntent);
 
     }

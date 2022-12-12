@@ -2,6 +2,7 @@ package com.montaigne.montaigneapp.activity.home;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -37,4 +38,5 @@ public class HomeActivity extends AbstractActivity {
 
         return newProjectFab == null;
     }
+
 }
