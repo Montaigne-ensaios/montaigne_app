@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
+import com.montaigne.montaigneapp.data.usecase.FuroSptUseCase;
+import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
@@ -33,6 +35,10 @@ public class ProjetoVM extends ViewModel {
 
         recyclerFuros.setAdapter(adapter);
         recyclerFuros.setLayoutManager(new LinearLayoutManager(recyclerFuros.getContext()));
+    }
+
+    protected void removeFuro(FuroSpt furoSpt) {
+//        FuroSptUseCase.delete(furoSpt.getId(), projetoSpt);  // fixme: tipo do id incompatível
     }
 
     public ProjetoSpt getProjetoSpt() {

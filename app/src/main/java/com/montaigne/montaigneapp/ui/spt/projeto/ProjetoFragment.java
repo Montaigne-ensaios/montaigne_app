@@ -79,7 +79,7 @@ public class ProjetoFragment extends Fragment {
                 SptVM.navigateFragments(R.id.action_new_Furo,
                         requireActivity().getSupportFragmentManager());
             } else if (menuItem.getItemId() == R.id.deletefuro) {
-                // TODO: handle delete
+                // TODO: lidar com deleção (precisa-se retornar seleção do recycler)
             }
 
             return true;
