@@ -28,7 +28,7 @@
             android:name=".ui.spt.ensaio.EnsaioFragment"
             android:exported="false" />
         <activity
-            android:name=".ui.carimboProjeto.CarimboProjetoFragment"
+            android:name=".ui.spt.carimboProjeto.CarimboProjetoFragment"
             android:exported="false" />
         <activity
             android:name=".ui.home.HomeActivity"

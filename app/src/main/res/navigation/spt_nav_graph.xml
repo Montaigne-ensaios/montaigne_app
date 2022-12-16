@@ -6,7 +6,7 @@
     app:startDestination="@id/projetoFragment">
     <fragment
         android:id="@+id/carimboProjetoFragment"
-        android:name="com.montaigne.montaigneapp.ui.carimboProjeto.CarimboProjetoFragment"
+        android:name="com.montaigne.montaigneapp.ui.spt.carimboProjeto.CarimboProjetoFragment"
         android:label="CarimboProjetoFragment"
         tools:layout="@layout/fragment_carimbo_projeto">
         <action

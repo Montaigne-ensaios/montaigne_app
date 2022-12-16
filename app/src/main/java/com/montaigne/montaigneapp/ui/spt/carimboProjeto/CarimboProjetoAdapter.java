@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.ui.carimboProjeto;
+package com.montaigne.montaigneapp.ui.spt.carimboProjeto;
 
 import android.text.Editable;
 import android.text.TextWatcher;
