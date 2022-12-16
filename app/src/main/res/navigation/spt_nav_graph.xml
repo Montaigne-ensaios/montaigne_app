@@ -50,6 +50,10 @@
         <action
             android:id="@+id/action_edit_CarimboEnsaio"
             app:destination="@id/carimboEnsaioFragment" />
+        <argument
+            android:name="furoId"
+            app:argType="integer"
+            android:defaultValue="-1" />
     </fragment>
     <fragment
         android:id="@+id/ensaioFragment"

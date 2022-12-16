@@ -7,7 +7,6 @@ import java.util.List;
 
 public class ProjetoSpt extends Projeto {
 
-    private int numeroDoFuro;  // todo: remover, número de furos são usados apenas para gerar a lista de furos
     private String referenciaNivel;  // opcional
     private String localDaObra;
     // descrição de algo que serve como referência para a altura dos furos. Ex: calçada
@@ -19,23 +18,14 @@ public class ProjetoSpt extends Projeto {
     public ProjetoSpt() {}
 
     public ProjetoSpt(String id, String nome, String cliente, String empresa, String tecnico,
-                      String contato, String dataInicio, Coordenada coordenadas, int numeroDoFuro,
+                      String contato, String dataInicio, Coordenada coordenadas,
                       String referenciaNivel, String localDaObra, float alturaReferenciaNivelMar,
                       List<FuroSpt> listaDeFuros) {
         super(id, nome, cliente, empresa, tecnico, contato, dataInicio, coordenadas);
-        this.numeroDoFuro = numeroDoFuro;
         this.referenciaNivel = referenciaNivel;
         this.localDaObra = localDaObra;
         this.alturaReferenciaNivelMar = alturaReferenciaNivelMar;
         this.listaDeFuros = listaDeFuros;
-    }
-
-    public int getNumeroDoFuro() {
-        return numeroDoFuro;
-    }
-
-    public void setNumeroDoFuro(int numeroDoFuro) {
-        this.numeroDoFuro = numeroDoFuro;
     }
 
     public String getReferenciaNivel() {

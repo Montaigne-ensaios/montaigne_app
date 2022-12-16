@@ -8,22 +8,18 @@ import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 public class FuroVM extends ViewModel {
-    private int idFuro;
+    private String  idFuro;
     private ProjetoSpt projetoSpt;
 
-    private FuroSpt getFuro() {
-        return projetoSpt.getListaDeFuros().get(idFuro);
-    }
-
-    public void setIdFuro(int idFuro) {
-        this.idFuro = idFuro;
-    }
+//    private FuroSpt getFuro() {
+//        return projetoSpt.getListaDeFuros().get(idFuro);
+//    }
 
     public ProjetoSpt getProjetoSpt() {
         return projetoSpt;
     }
 
-    public void setFuro(ProjetoSpt projetoSpt, int idFuro) {
+    public void setFuro(ProjetoSpt projetoSpt, String idFuro) {
         this.idFuro = idFuro;
         this.projetoSpt = projetoSpt;
     }

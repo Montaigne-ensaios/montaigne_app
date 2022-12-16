@@ -15,18 +15,12 @@ import com.montaigne.montaigneapp.databinding.FragmentFuroBinding;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
+import com.montaigne.montaigneapp.ui.spt.projeto.ProjetoFragment;
 
 public class FuroFragment extends Fragment {
     private FuroVM viewModel;
     private SptVM projectViewModel;
     private FragmentFuroBinding binding;
-    private int idFuro;
-
-    public FuroFragment() {}
-
-    public FuroFragment(int idFuro) {
-        this.idFuro = idFuro;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,8 +29,13 @@ public class FuroFragment extends Fragment {
         viewModel = new ViewModelProvider(this).get(FuroVM.class);
         projectViewModel = new ViewModelProvider(requireActivity()).get(SptVM.class);
 
-        ProjetoSpt projeto = projectViewModel.getProjeto();
-        viewModel.setFuro(projeto, idFuro);
+        getParentFragmentManager().setFragmentResultListener(
+                ProjetoFragment.SELECTEDKEY, this, ((requestKey, result) -> {
+                    String  idFuro = result.getString(ProjetoFragment.IDKEY);
+
+                    ProjetoSpt projeto = projectViewModel.getProjeto();
+                    viewModel.setFuro(projeto, idFuro);
+                }));
     }
 
     @Nullable
@@ -44,10 +43,6 @@ public class FuroFragment extends Fragment {
     public View onCreateView (@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         super.onCreateView(inflater, container, savedInstanceState);
         binding = FragmentFuroBinding.inflate(inflater, container, false);
-
-        ProjetoSpt projeto = projectViewModel.getProjeto();
-        viewModel.setFuro(projeto, idFuro);
-        viewModel.updateFurosAdapter(binding.recyclerAmostra);
 
         ((SptActivity) getActivity())
                 .setNavigateButtonText(getString(R.string.btn_navigate_furo));

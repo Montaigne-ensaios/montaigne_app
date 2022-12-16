@@ -14,8 +14,12 @@ import com.montaigne.montaigneapp.ui.BindedViewHolder;
 import java.util.List;
 
 public class FurosAdapter extends RecyclerView.Adapter<BindedViewHolder<AdapterFuroBinding>> {
-    private List<FuroSpt> furos;
+    private final List<FuroSpt> furos;
     private final MutableLiveData<FuroSpt> furoClicado = new MutableLiveData<>();
+
+    public FurosAdapter(List<FuroSpt> furos) {
+        this.furos = furos;
+    }
 
     @NonNull
     @Override
@@ -46,10 +50,5 @@ public class FurosAdapter extends RecyclerView.Adapter<BindedViewHolder<AdapterF
 
     public LiveData<FuroSpt> getOnClickObservable() {
         return furoClicado;
-    }
-
-    // TODO: seria bom pensarmos no caso de utilizar um construtor para recebimento desses dados
-    public void setFuros(List<FuroSpt> furos) {
-        this.furos = furos;
     }
 }

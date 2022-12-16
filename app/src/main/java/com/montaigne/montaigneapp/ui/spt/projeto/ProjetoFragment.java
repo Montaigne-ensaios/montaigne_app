@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -21,17 +22,16 @@ import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
 
 public class ProjetoFragment extends Fragment {
+    public static final String SELECTEDKEY = "projetoFragmentResult";
+    public static final String IDKEY = "furoId";
+
     private ProjetoVM viewModel;
     private SptVM projectViewModel;
     private FragmentProjetoBinding binding;
 
-    public ProjetoFragment() {}
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
 
         viewModel = new ViewModelProvider(this).get(ProjetoVM.class);
         projectViewModel = new ViewModelProvider(requireActivity()).get(SptVM.class);
@@ -75,7 +75,14 @@ public class ProjetoFragment extends Fragment {
 
         @Override
         public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
-            return false;
+            if (menuItem.getItemId() == R.id.addfuro) {
+                SptVM.navigateFragments(R.id.action_new_Furo,
+                        requireActivity().getSupportFragmentManager());
+            } else if (menuItem.getItemId() == R.id.deletefuro) {
+                // TODO: handle delete
+            }
+
+            return true;
         }
     }
 }

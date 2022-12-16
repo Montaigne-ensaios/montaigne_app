@@ -1,7 +1,6 @@
 package com.montaigne.montaigneapp.ui.spt.furo;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -9,16 +8,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
-import com.montaigne.montaigneapp.databinding.AdapterProjetoBinding;
+import com.montaigne.montaigneapp.databinding.AdapterFuroBinding;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.BindedViewHolder;
-import com.montaigne.montaigneapp.ui.spt.ensaio.EnsaioFragment;
 
 import java.util.List;
 
-public class AmostraAdapter extends RecyclerView.Adapter<BindedViewHolder<AdapterProjetoBinding>>{
-    private int idFuro;
+public class AmostraAdapter extends RecyclerView.Adapter<BindedViewHolder<AdapterFuroBinding>>{
+    private String idFuro;
     private ProjetoSpt projetoSpt;
     private List<AmostraSpt> amostras;
 
@@ -26,7 +24,7 @@ public class AmostraAdapter extends RecyclerView.Adapter<BindedViewHolder<Adapte
         this.amostras = amostras;
     }
 
-    public void setIdFuro(int id) {
+    public void setIdFuro(String id) {
         this.idFuro = id;
     }
 
@@ -36,28 +34,23 @@ public class AmostraAdapter extends RecyclerView.Adapter<BindedViewHolder<Adapte
 
     @NonNull
     @Override
-    public BindedViewHolder<AdapterProjetoBinding> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BindedViewHolder<AdapterFuroBinding> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 
-        AdapterProjetoBinding binding = AdapterProjetoBinding
+        AdapterFuroBinding binding = AdapterFuroBinding
                 .inflate(inflater, parent, false);
 
         return new BindedViewHolder<>(binding);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BindedViewHolder<AdapterProjetoBinding> holder, int position) {
+    public void onBindViewHolder(@NonNull BindedViewHolder<AdapterFuroBinding> holder, int position) {
         Context context = holder.binding.getRoot().getContext();
 
         holder.binding.textFuroName.setText(context.getString(R.string.adapter_amostra_name) + (position + 1));
 
         holder.binding.cardView.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(), EnsaioFragment.class);
-            intent.putExtra("idAmostra", position);
-            intent.putExtra("idFuro", idFuro);
-            intent.putExtra("projetoSpt", projetoSpt);
-
-            v.getContext().startActivity(intent);
+            // todo: implementar navigation
         });
     }
 
