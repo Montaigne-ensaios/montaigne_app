@@ -67,7 +67,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:ems="10"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:minHeight="48dp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline5"
                 app:layout_constraintStart_toStartOf="@+id/guideline4"
