@@ -16,20 +16,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:hint="substitua hint"
-
-
             app:errorEnabled="true"
             app:errorIconDrawable="@drawable/ic_erro"
             app:helperText="substitua observação"
             app:hintEnabled="true"
             app:startIconDrawable="@drawable/ic_name_project">
+        <!--            android:hint="substitua hint"-->
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textInputEditTextNameProjeto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number" />
+                android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>

@@ -23,19 +23,27 @@ import java.util.Map;
 public class CarimboProjetoAdapter extends RecyclerView.Adapter<BindedViewHolder<AdapterCarimboProjetoBinding>> {
     List<Field> fields = new ArrayList<>();
 
+    private enum InputTypes {
+        TEXT,
+        PHONE,
+        DATE
+    }
+
     private static class Field {
         private final String fieldName;
         private final int hintId;
         private final String obsMsg;
         private final int iconId;
         private String value;
+        private String inputType;
 
-        public Field(String fieldName, String value, int hintId, String obsMsg, int iconId){
+        public Field(String fieldName, String value, int hintId, String obsMsg, int iconId, String inputType){
             this.fieldName = fieldName;
             this.value = value;
             this.hintId = hintId;
             this.obsMsg = obsMsg;
             this.iconId = iconId;
+            this.inputType = inputType;
         }
     }
 
@@ -45,12 +53,12 @@ public class CarimboProjetoAdapter extends RecyclerView.Adapter<BindedViewHolder
 
     private void setProjetoSpt(ProjetoSpt ProjetoSpt) {
         fields.add(new Field("nome", ProjetoSpt.getNome(), R.string.registration_projectName_hint, "Obrigatório*", R.drawable.ic_name_project));
-        fields.add(new Field("cliente", ProjetoSpt.getCliente(), R.string.registration_cliente_hint, "msgErro", R.drawable.ic_perfil));  // todo: replace icon
-        fields.add(new Field("empresa", ProjetoSpt.getEmpresa(), R.string.registration_empresa_hint, "msgErro", R.drawable.ic_empresa));
-        fields.add(new Field("tecnico", ProjetoSpt.getTecnico(), R.string.registration_tecnico_hint, "msgErro", R.drawable.ic_technician));
-        fields.add(new Field("numeroDeTelefone", ProjetoSpt.getContato(), R.string.registration_contato_hint, "msgErro", R.drawable.ic_contato));
+        fields.add(new Field("cliente", ProjetoSpt.getCliente(), R.string.registration_cliente_hint, " ", R.drawable.ic_perfil));  // todo: replace icon
+        fields.add(new Field("empresa", ProjetoSpt.getEmpresa(), R.string.registration_empresa_hint, " ", R.drawable.ic_empresa));
+        fields.add(new Field("tecnico", ProjetoSpt.getTecnico(), R.string.registration_tecnico_hint, " ", R.drawable.ic_technician));
+        fields.add(new Field("numeroDeTelefone", ProjetoSpt.getContato(), R.string.registration_contato_hint, " ", R.drawable.ic_contato));
         fields.add(new Field("dataInicio", ProjetoSpt.getDataInicio(), R.string.registration_data_inicio_hint, "Obrigatório*", R.drawable.ic_date));
-        fields.add(new Field("coordenadas", "", R.string.registration_coordenadas_hint, "msgErro", R.drawable.ic_location));
+        fields.add(new Field("coordenadas", "", R.string.registration_coordenadas_hint, " ", R.drawable.ic_location));
         notifyDataSetChanged();
     }
 
