@@ -48,7 +48,8 @@ public class CarimboEnsaioFragment extends Fragment {
         fields.put("NivelFuro", binding.editTextNivelFuro);
 
         ProjetoSpt projeto = projectViewModel.getProjeto();
-        viewModel.setProjeto(projeto, fields);
+        int furoId = requireArguments().getInt("furoId");
+        viewModel.setFuroId(projeto, furoId, fields);
 
         ((SptActivity) getActivity())
                 .setNavigateButtonText(getString(R.string.btn_navigate_carimbo_furo));

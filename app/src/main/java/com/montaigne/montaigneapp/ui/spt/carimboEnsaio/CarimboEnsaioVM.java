@@ -5,25 +5,32 @@ import android.widget.EditText;
 import androidx.lifecycle.ViewModel;
 
 import com.montaigne.montaigneapp.R;
+import com.montaigne.montaigneapp.model.spt.AmostraSpt;
+import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
+import java.sql.Date;
+import java.util.ArrayList;
 import java.util.Map;
 
 public class CarimboEnsaioVM extends ViewModel {
     private ProjetoSpt projeto;
+    private int furoId;
 
-    public void setProjeto(ProjetoSpt projeto, Map<String, EditText> fields) {
+    public void setFuroId(ProjetoSpt projeto, int furoId, Map<String, EditText> fields) {
         this.projeto = projeto;
-
-        try {
-            fields.get("DataInicio").setText(projeto.getDataInicio());
-            fields.get("NivelFuro").setText(R.string.notImplemented);
-        } catch (NullPointerException ignored) {
-            // fixme: forma adequada de checar se os campos foram ou não definidos
-        }
+        this.furoId = furoId;
     }
 
     public ProjetoSpt getProjeto(Map<String, EditText> fields) {
+        FuroSpt furoSpt = new FuroSpt(
+                String.valueOf(furoId),
+                String.valueOf(furoId + 1),
+                Float.parseFloat(fields.get("NivelFuro").getText().toString()),
+                Date.valueOf(fields.get("DataInicio").getText().toString()),
+                new ArrayList<AmostraSpt>()
+                );
+
         projeto.setDataInicio((String) fields.get("DataInicio").getText().toString());
         return projeto;
     }

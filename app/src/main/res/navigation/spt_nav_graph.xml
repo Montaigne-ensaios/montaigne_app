@@ -36,6 +36,10 @@
         <action
             android:id="@+id/action_execute_Ensaio"
             app:destination="@id/ensaioFragment" />
+        <argument
+            android:name="furoId"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/furoFragment"
