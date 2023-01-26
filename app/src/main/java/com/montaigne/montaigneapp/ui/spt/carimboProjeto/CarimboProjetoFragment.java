@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -43,6 +44,11 @@ public class CarimboProjetoFragment extends Fragment {
 
         ((SptActivity) getActivity())
                 .setNavigateButtonText(getString(R.string.btn_navigate_carimbo_projeto));
+
+        binding.buttonGetLocation.setOnClickListener(v -> {
+            Toast.makeText(v.getContext(), R.string.notImplemented, Toast.LENGTH_SHORT).show();
+//            viewModel.setLocation();  // todo: implementar coordenadas
+        });
 
         return binding.getRoot();
     }

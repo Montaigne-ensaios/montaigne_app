@@ -20,6 +20,7 @@ import com.montaigne.montaigneapp.ui.spt.ensaio.EnsaioFragment;
 import com.montaigne.montaigneapp.ui.spt.furo.FuroFragment;
 import com.montaigne.montaigneapp.ui.spt.projeto.ProjetoFragment;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class SptVM extends ViewModel {
@@ -85,6 +86,7 @@ public class SptVM extends ViewModel {
         this.projeto = projeto;
         if (projeto.getNome() == null) {
             isProjetoNew = true;
+            projeto.setListaDeFuros(new ArrayList<>());
             navigateFragments(R.id.action_edit_Carimbo, manager);
         }
     }

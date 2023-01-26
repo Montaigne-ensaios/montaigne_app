@@ -1,6 +1,7 @@
 package com.montaigne.montaigneapp.ui.spt.carimboEnsaio;
 
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.lifecycle.ViewModel;
 
@@ -16,7 +17,7 @@ public class CarimboEnsaioVM extends ViewModel {
     private ProjetoSpt projeto;
     private FuroSpt furo;
 
-    public void setupViewModel(ProjetoSpt projeto, int furoId, Map<String, EditText> fields) {
+    protected void setupViewModel(ProjetoSpt projeto, int furoId, Map<String, EditText> fields) {
         this.projeto = projeto;
         if (furoId == projeto.getListaDeFuros().size()) {
             furo = new FuroSpt();
@@ -29,13 +30,17 @@ public class CarimboEnsaioVM extends ViewModel {
         }
     }
 
-    public void setLocation(Coordenada coordenada) {
+    protected void setLocation(Coordenada coordenada) {
         furo.setCoordenada(coordenada);
     }
 
-    public ProjetoSpt getProjeto(Map<String, EditText> fields) {
+    protected ProjetoSpt getProjeto(Map<String, EditText> fields) {
         furo.setCotaInicial(Float.parseFloat(fields.get("NivelFuro").getText().toString()));
-        furo.setDataInicio(Date.valueOf(fields.get("DataInicio").getText().toString()));
+        try {
+            furo.setDataInicio(Date.valueOf(fields.get("DataInicio").getText().toString()));
+        } catch (IllegalArgumentException e) {
+            Toast.makeText(fields.get("DataInicio").getContext(), "Formato de data ilegal", Toast.LENGTH_SHORT).show();
+        }  // todo: date parser adequado
         furo.setListaDeAmostras(new ArrayList<>());
 
         projeto.getListaDeFuros().add(furo);
