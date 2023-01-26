@@ -12,6 +12,8 @@ import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.home.HomeVM;
 import com.montaigne.montaigneapp.databinding.AcitivitySptBinding;
 
+import java.util.Objects;
+
 public class SptActivity extends AppCompatActivity {
     private AcitivitySptBinding binding;
     private SptVM viewModel;
@@ -23,14 +25,14 @@ public class SptActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         viewModel = new ViewModelProvider(this).get(SptVM.class);
-        setSupportActionBar(binding.toolbarSptInclude.toolbarSpt);
-        getSupportActionBar().setTitle("Substituir nome do ensaio");//substituir por o tipo de ensaio exemplo: Granulometria ou SPT
-        getSupportActionBar().setIcon(R.drawable.icon_arrow_left);
-        getSupportActionBar().setDisplayShowCustomEnabled(true);
         viewModel.setupViewModel(
                 (ProjetoSpt) getIntent().getExtras().getSerializable(HomeVM.PROJETO),
                 getSupportFragmentManager()
         );
+        setSupportActionBar(binding.toolbarSptInclude.toolbarSpt);
+        setActionBarTitle(viewModel.getProjeto().getNome());
+        getSupportActionBar().setIcon(R.drawable.icon_arrow_left);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
 
         binding.imgButtonHome.setOnClickListener(viewModel::intentHome);
         binding.buttonNavigate.setOnClickListener(v -> viewModel.handleNavigation(getSupportFragmentManager()));
@@ -57,6 +59,10 @@ public class SptActivity extends AppCompatActivity {
 
     public void setNavigateButtonText(String string) {
         binding.buttonNavigate.setText(string);
+    }
+
+    public void setActionBarTitle(String string) {
+        Objects.requireNonNull(getSupportActionBar()).setTitle(string);
     }
 
     @Override

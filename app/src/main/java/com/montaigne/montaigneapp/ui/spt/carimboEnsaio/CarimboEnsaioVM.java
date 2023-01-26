@@ -4,8 +4,7 @@ import android.widget.EditText;
 
 import androidx.lifecycle.ViewModel;
 
-import com.montaigne.montaigneapp.R;
-import com.montaigne.montaigneapp.model.spt.AmostraSpt;
+import com.montaigne.montaigneapp.model.Coordenada;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
@@ -15,23 +14,31 @@ import java.util.Map;
 
 public class CarimboEnsaioVM extends ViewModel {
     private ProjetoSpt projeto;
-    private int furoId;
+    private FuroSpt furo;
 
-    public void setFuroId(ProjetoSpt projeto, int furoId, Map<String, EditText> fields) {
+    public void setupViewModel(ProjetoSpt projeto, int furoId, Map<String, EditText> fields) {
         this.projeto = projeto;
-        this.furoId = furoId;
+        if (furoId == projeto.getListaDeFuros().size()) {
+            furo = new FuroSpt();
+            furo.setCodigo(String.valueOf(furoId + 1));
+        } else {
+            furo = projeto.getListaDeFuros().get(furoId);
+
+            fields.get("dataInicio").setText(furo.getDataInicio().toString());
+            fields.get("NivelFuro").setText(String.valueOf(furo.getCotaInicial()));
+        }
+    }
+
+    public void setLocation(Coordenada coordenada) {
+        furo.setCoordenada(coordenada);
     }
 
     public ProjetoSpt getProjeto(Map<String, EditText> fields) {
-        FuroSpt furoSpt = new FuroSpt(
-                String.valueOf(furoId),
-                String.valueOf(furoId + 1),
-                Float.parseFloat(fields.get("NivelFuro").getText().toString()),
-                Date.valueOf(fields.get("DataInicio").getText().toString()),
-                new ArrayList<AmostraSpt>()
-                );
+        furo.setCotaInicial(Float.parseFloat(fields.get("NivelFuro").getText().toString()));
+        furo.setDataInicio(Date.valueOf(fields.get("DataInicio").getText().toString()));
+        furo.setListaDeAmostras(new ArrayList<>());
 
-        projeto.setDataInicio((String) fields.get("DataInicio").getText().toString());
+        projeto.getListaDeFuros().add(furo);
         return projeto;
     }
 }
