@@ -49,8 +49,9 @@ public class FuroFragment extends Fragment {
         viewModel.setFuro(projeto, idFuro);
         viewModel.updateFurosAdapter(binding.recyclerAmostra);
 
-        ((SptActivity) getActivity())
-                .setNavigateButtonText(getString(R.string.btn_navigate_furo));
+        SptActivity activity = (SptActivity) getActivity();
+        activity.setNavigateButtonText(getString(R.string.btn_navigate_furo));
+        activity.setActionBarTitle("Furo " + idFuro + 1);
 
         return binding.getRoot();
     }

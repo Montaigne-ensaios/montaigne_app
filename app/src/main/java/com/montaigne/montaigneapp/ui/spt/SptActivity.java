@@ -30,14 +30,11 @@ public class SptActivity extends AppCompatActivity {
                 getSupportFragmentManager()
         );
         setSupportActionBar(binding.toolbarSptInclude.toolbarSpt);
-        setActionBarTitle(viewModel.getProjeto().getNome());
         getSupportActionBar().setIcon(R.drawable.icon_arrow_left);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
 
         binding.imgButtonHome.setOnClickListener(viewModel::intentHome);
         binding.buttonNavigate.setOnClickListener(v -> viewModel.handleNavigation(getSupportFragmentManager()));
-
-
 
        // binding.toolbarSptInclude.toolbarSpt.setOnMenuItemClickListener(item -> {
         //    if (item.getItemId() == R.id.addfuro) {
@@ -63,11 +60,5 @@ public class SptActivity extends AppCompatActivity {
 
     public void setActionBarTitle(String string) {
         Objects.requireNonNull(getSupportActionBar()).setTitle(string);
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-      //  return super.onSupportNavigateUp();//
     }
 }
