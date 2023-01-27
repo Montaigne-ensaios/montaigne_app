@@ -72,11 +72,11 @@ public class SptVM extends ViewModel {
         }
     }
 
-    private static void navigateFragments(int actionId, FragmentManager manager) {
+    public static void navigateFragments(int actionId, FragmentManager manager) {
         navigateFragments(actionId, manager, null);
     }
 
-    private static void navigateFragments(int actionId, FragmentManager manager, Bundle args) {
+    public static void navigateFragments(int actionId, FragmentManager manager, Bundle args) {
         ((NavHostFragment) Objects.requireNonNull(manager.findFragmentById(R.id.containerSpt)))
                 .getNavController().navigate(actionId, args);
     }
