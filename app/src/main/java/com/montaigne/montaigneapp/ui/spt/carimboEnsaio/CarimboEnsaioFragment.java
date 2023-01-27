@@ -63,6 +63,10 @@ public class CarimboEnsaioFragment extends Fragment {
         return binding.getRoot();
     }
 
+    public int getFuroId() {
+        return viewModel.furoId;
+    }
+
     @Override
     public void onPause() {
         super.onPause();

@@ -16,9 +16,11 @@ import java.util.Map;
 public class CarimboEnsaioVM extends ViewModel {
     private ProjetoSpt projeto;
     private FuroSpt furo;
+    private int furoId;
 
     protected void setupViewModel(ProjetoSpt projeto, int furoId, Map<String, EditText> fields) {
         this.projeto = projeto;
+        this.furoId = furoId;
         if (furoId == projeto.getListaDeFuros().size()) {
             furo = new FuroSpt();
             furo.setCodigo(String.valueOf(furoId + 1));
@@ -43,7 +45,11 @@ public class CarimboEnsaioVM extends ViewModel {
         }  // todo: date parser adequado
         furo.setListaDeAmostras(new ArrayList<>());
 
-        projeto.getListaDeFuros().add(furo);
+        if (furoId > projeto.getListaDeFuros().size())
+            projeto.getListaDeFuros().set(furoId, furo);
+        else
+            projeto.getListaDeFuros().add(furo);
+
         return projeto;
     }
 }

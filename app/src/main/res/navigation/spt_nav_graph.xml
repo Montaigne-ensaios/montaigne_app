@@ -66,5 +66,13 @@
         <action
             android:id="@+id/action_finish_Ensaio"
             app:destination="@id/projetoFragment" />
+        <argument
+            android:name="furoId"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="amostraId"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
 </navigation>

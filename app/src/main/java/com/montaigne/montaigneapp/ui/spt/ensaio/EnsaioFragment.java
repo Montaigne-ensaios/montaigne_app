@@ -25,16 +25,8 @@ public class EnsaioFragment extends Fragment {
     private FragmentEnsaioBinding binding;
     protected final ArrayList<EditText> golpes = new ArrayList<>(), penetracoes = new ArrayList<>();
     // lista de golpes e penetrações por segmento
-    private int idFuro;
-    private int idAmostra;
-
 
     public EnsaioFragment() {}
-
-    public EnsaioFragment(int idFuro, int idAmostra) {
-        this.idFuro = idFuro;
-        this.idAmostra = idAmostra;
-    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -67,10 +59,14 @@ public class EnsaioFragment extends Fragment {
         binding.imageButtonIcrementGolpe3.setOnClickListener(v -> viewModel.incrementGolpe(golpes.get(3)));
 
         ProjetoSpt projeto = projectViewModel.getProjeto();
-        viewModel.setAmostra(projeto, idFuro, idAmostra, golpes, penetracoes);
+        Bundle args = requireArguments();
+        int furoId = args.getInt("furoId");
+        int amostraId = args.getInt("amostraId");
+        viewModel.setupViewModel(projeto, furoId, amostraId, golpes, penetracoes);
 
-        ((SptActivity) getActivity())
-                .setNavigateButtonText(getString(R.string.btn_navigate_ensaio));
+        SptActivity activity = (SptActivity) getActivity();
+        activity.setNavigateButtonText(getString(R.string.btn_navigate_ensaio));
+        activity.setActionBarTitle("Furo " + furoId + 1);
 
         return binding.getRoot();
     }

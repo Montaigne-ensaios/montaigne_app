@@ -35,6 +35,10 @@ public class SptVM extends ViewModel {
                 manager.getPrimaryNavigationFragment()
         ).getChildFragmentManager().getFragments().get(0);  // fragmento exibido
 
+        f.onPause();  // garante que os fragmentos atualizam o projeto
+        // fixme: isto está causando duplicação de furos e amostras,
+        //  é preciso encontrar uma forma para que não crie furos e amostras duas vezes
+
         if (f instanceof ProjetoFragment) {
             navigateFragments(R.id.action_edit_Carimbo, manager);
             Log.v(TAG, "action_edit_Carimbo");
@@ -47,8 +51,12 @@ public class SptVM extends ViewModel {
             navigateFragments(R.id.action_new_Ensaio, manager, b);
             Log.v(TAG, "action_new_Ensaio");
         } else if (f instanceof CarimboEnsaioFragment) {
-            navigateFragments(R.id.action_execute_Ensaio, manager);
             Log.v(TAG, "action_execute_Ensaio");
+            Bundle b = new Bundle();
+            int furoId = ((CarimboEnsaioFragment) f).getFuroId();
+            b.putInt("furoId", furoId);
+            b.putInt("amostraId", projeto.getListaDeFuros().get(furoId).getListaDeAmostras().size());
+            navigateFragments(R.id.action_execute_Ensaio, manager, b);
         } else if (f instanceof EnsaioFragment) {
             navigateFragments(R.id.action_next_Amostra, manager);
             Log.v(TAG, "action_next_Amostra");
