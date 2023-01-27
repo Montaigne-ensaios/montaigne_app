@@ -19,10 +19,8 @@ public class ExportFile {
 
     public static Uri getUri(Activity activity) {
 
-        diretorio = activity.getCacheDir();
-        xlsxDir = new File(diretorio, "xlsx");
+        xlsxDir = new File(activity.getCacheDir(), "xlsx");
         arquivoxlsx = xlsxDir.listFiles();
-        activity.setResult(Activity.RESULT_CANCELED, null);
 
         Uri getUri = FileProvider.getUriForFile(activity,
                 "com.montaigne.montaigneapp.fileprovider", arquivoxlsx[0]);
@@ -35,8 +33,7 @@ public class ExportFile {
 
         Uri arquivoUri = getUri(activity);
 
-        Intent sendIntent = new Intent();
-        sendIntent.setAction(Intent.ACTION_SEND);
+        Intent sendIntent = new Intent().setAction(Intent.ACTION_SEND);
         sendIntent.putExtra(Intent.EXTRA_TEXT,"PLANILHA");
         sendIntent.setType("*/*");
         sendIntent.putExtra(Intent.EXTRA_MIME_TYPES,mimeType);

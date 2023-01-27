@@ -1,8 +1,10 @@
 package com.montaigne.montaigneapp.activity.home;
 
+import android.Manifest;
 import android.content.Intent;
 import android.view.View;
 
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,14 +14,18 @@ import com.montaigne.montaigneapp.activity.carimboDefinitivo.CarimboDefinitivoAc
 import com.montaigne.montaigneapp.data.ModelHolder;
 import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
 import com.montaigne.montaigneapp.model.Projeto;
+import com.montaigne.montaigneapp.utils.PermissionsManager;
 
 import java.util.ArrayList;
 
 public class HomeVM extends ViewModel implements ModelHolder<Projeto> {
+
     private ArrayList<Projeto> projetosSalvos = new ArrayList<>();
     private final ProjetosSalvosAdapter adapter = new ProjetosSalvosAdapter();
 
+
     protected void initializeProjetoCategoriaAdapter(RecyclerView recyclerProjetoCategorias) {
+
         ArrayList<Object[]> categorias = new ArrayList<>();  // lista de filtros de projeto
         categorias.add(new Object[]{"SPT", R.drawable.ic_logospt_azul});
         categorias.add(new Object[]{"Granulometria", R.drawable.ic_logospt_azul});

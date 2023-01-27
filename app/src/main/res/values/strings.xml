@@ -43,6 +43,7 @@
     <string name="TxtBotaoLocalizacao">Capturar Localização</string>
     <string name="TxtCarimboUnicoAviso">Os campos indicados com * são obrigatórios</string>
     <string name="TxtBotaoIniciarEnsaio">Iniciar Ensaio</string>
+    <string name="title_activity_maps">MapsActivity</string>
 
     <!-- Strings da Projeto-->
 

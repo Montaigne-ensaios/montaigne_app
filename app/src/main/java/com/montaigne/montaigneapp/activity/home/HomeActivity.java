@@ -1,5 +1,6 @@
 package com.montaigne.montaigneapp.activity.home;
 
+import android.Manifest;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,7 @@ import com.montaigne.montaigneapp.activity.AbstractActivity;
 
 
 public class HomeActivity extends AbstractActivity {
+
     protected FloatingActionButton newProjectFab;
     protected RecyclerView recyclerProjetoCategorias, recyclerProjetosSalvos;
 

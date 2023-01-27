@@ -37,7 +37,7 @@ public class CreateXlsxSpt {
     private static Cell golpe1, golpe2, golpe3, nspt;
 
     public static void createFileXlsx(ProjetoSpt projetoSpt, FuroSpt furoSpt,
-                                        AmostraSpt amostraSpt, Context context, Activity activity) {
+                                        AmostraSpt amostraSpt, Activity activity) {
 
         sheet = wb.createSheet("Projeto: " + projetoSpt.getNome());
 
@@ -204,12 +204,12 @@ public class CreateXlsxSpt {
 
         }
 
-        File file = new File(context.getCacheDir(),"xlsx");
+        File file = new File(activity.getCacheDir(),"xlsx");
 
         try {
 
-            //OutputStream out = new FileOutputStream(file);
-            OutputStream out = new FileOutputStream("xlsx");
+            OutputStream out = new FileOutputStream(file);
+
             wb.write(out);
 
         }catch (FileNotFoundException e){
