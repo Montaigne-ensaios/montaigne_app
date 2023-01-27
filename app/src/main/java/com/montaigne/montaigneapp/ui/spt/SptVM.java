@@ -35,8 +35,8 @@ public class SptVM extends ViewModel {
                 manager.getPrimaryNavigationFragment()
         ).getChildFragmentManager().getFragments().get(0);  // fragmento exibido
 
-        f.onPause();  // garante que os fragmentos atualizam o projeto
-        // fixme: isto está causando duplicação de furos e amostras,
+//        f.onPause();  // garante que os fragmentos atualizam o projeto
+//         fixme: isto está causando duplicação de furos e amostras,
         //  é preciso encontrar uma forma para que não crie furos e amostras duas vezes
 
         if (f instanceof ProjetoFragment) {
