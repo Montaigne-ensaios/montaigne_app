@@ -60,7 +60,8 @@
                     android:id="@+id/textInputEditTextNivelDAgua"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nível de Água" />
+                    android:hint="Nível de Água"
+                    android:inputType="numberSigned|number|numberDecimal" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <ImageButton

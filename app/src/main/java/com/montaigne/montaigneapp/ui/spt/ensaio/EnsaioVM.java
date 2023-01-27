@@ -3,6 +3,7 @@ package com.montaigne.montaigneapp.ui.spt.ensaio;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModel;
 
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
@@ -12,9 +13,9 @@ import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import java.util.ArrayList;
 
 public class EnsaioVM extends ViewModel {
-    private  ProjetoSpt projeto;
-    private  int furoId;
-    private  int amostraId;
+    private ProjetoSpt projeto;
+    protected int furoId;
+    protected int amostraId;
     private AmostraSpt amostra;
 
     public void setupViewModel(ProjetoSpt projeto, int idFuro, int idAmostra,
@@ -24,10 +25,7 @@ public class EnsaioVM extends ViewModel {
         this.furoId = idFuro;
         this.amostraId = idAmostra;
 
-        if (idAmostra == getFuro()
-                .getListaDeAmostras()
-                .size()) {
-            // fixme: Attempt to invoke interface method 'int java.util.List.size()' on a null object reference
+        if (idAmostra == getFuro().getListaDeAmostras().size()) {
             amostra = new AmostraSpt();
         } else {
             amostra = getAmostra();
@@ -96,7 +94,8 @@ public class EnsaioVM extends ViewModel {
     }
 
     private float getFloat(EditText editText) {
-        return Integer.parseInt(String.valueOf(editText.getText()));
+        String value = String.valueOf(editText.getText());
+        return value.equals("") ? 0 : Float.parseFloat(value);
     }
 
     private void setFloat(@NonNull EditText editText, float value) {
