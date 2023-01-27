@@ -14,7 +14,6 @@ public class ProjetoSpt extends Projeto {
     private String dataInicio, dataFim;
     private String endereco;
 
-    private int numeroDoFuro;  // todo: remover, número de furos são usados apenas para gerar a lista de furos
     private String referenciaNivel;  // opcional
     private String localDaObra;
     // descrição de algo que serve como referência para a altura dos furos. Ex: calçada
@@ -28,8 +27,8 @@ public class ProjetoSpt extends Projeto {
     public ProjetoSpt(String id, String nome, String dataInicio,
                       String cliente, String empresa, String tecnico,
                       String contato, String dataInicio1, String dataFim,
-                      String endereco, int numeroDoFuro, String referenciaNivel,
-                      String localDaObra, float alturaReferenciaNivelMar, List<FuroSpt> listaDeFuros) {
+                      String endereco, String referenciaNivel, String localDaObra,
+                      float alturaReferenciaNivelMar, List<FuroSpt> listaDeFuros) {
         super(id, nome, dataInicio);
         this.cliente = cliente;
         this.empresa = empresa;
@@ -38,7 +37,6 @@ public class ProjetoSpt extends Projeto {
         this.dataInicio = dataInicio1;
         this.dataFim = dataFim;
         this.endereco = endereco;
-        this.numeroDoFuro = numeroDoFuro;
         this.referenciaNivel = referenciaNivel;
         this.localDaObra = localDaObra;
         this.alturaReferenciaNivelMar = alturaReferenciaNivelMar;
@@ -101,14 +99,6 @@ public class ProjetoSpt extends Projeto {
 
     public void setEndereco(String endereco) {
         this.endereco = endereco;
-    }
-
-    public int getNumeroDoFuro() {
-        return numeroDoFuro;
-    }
-
-    public void setNumeroDoFuro(int numeroDoFuro) {
-        this.numeroDoFuro = numeroDoFuro;
     }
 
     public String getReferenciaNivel() {

@@ -6,10 +6,11 @@ public class CheckAmostraSptUseCase {
     public static boolean canBeSave(AmostraSpt amostraSpt) {
         boolean result = true;
 
-        result &= amostraSpt.getGolpe1() > 0;
-        result &= amostraSpt.getGolpe2() >= 0;
-        result &= amostraSpt.getGolpe3() >= 0;
-        result &= amostraSpt.getNspt() > 0;
+        result &= amostraSpt.getProfundidade() != 0;
+//        result &= amostraSpt.getGolpe1() > 0;
+//        result &= amostraSpt.getGolpe2() >= 0;
+//        result &= amostraSpt.getGolpe3() >= 0;
+//        result &= amostraSpt.getNspt() > 0;
 
         return result;
     }
