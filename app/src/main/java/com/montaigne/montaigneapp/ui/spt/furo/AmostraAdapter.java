@@ -16,7 +16,7 @@ import com.montaigne.montaigneapp.ui.BindedViewHolder;
 import java.util.List;
 
 public class AmostraAdapter extends RecyclerView.Adapter<BindedViewHolder<AdapterFuroBinding>>{
-    private String idFuro;
+    private int idFuro;
     private ProjetoSpt projetoSpt;
     private List<AmostraSpt> amostras;
 
@@ -24,7 +24,7 @@ public class AmostraAdapter extends RecyclerView.Adapter<BindedViewHolder<Adapte
         this.amostras = amostras;
     }
 
-    public void setIdFuro(String id) {
+    public void setIdFuro(int id) {
         this.idFuro = id;
     }
 

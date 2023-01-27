@@ -10,7 +10,6 @@ import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.Map;
 
-
 public class CarimboProjetoVM extends ViewModel {
     private ProjetoSpt projetoSpt;
     private CarimboProjetoAdapter adapter;
@@ -34,7 +33,7 @@ public class CarimboProjetoVM extends ViewModel {
     }
 
     protected void initializeRecycler(RecyclerView recycler) {
-        this.adapter = new CarimboProjetoAdapter(projetoSpt);
+        adapter = new CarimboProjetoAdapter(projetoSpt);
         recycler.setAdapter(adapter);
         recycler.setLayoutManager(new LinearLayoutManager(recycler.getContext()));
     }

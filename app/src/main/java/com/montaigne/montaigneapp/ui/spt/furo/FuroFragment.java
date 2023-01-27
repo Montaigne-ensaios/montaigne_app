@@ -32,7 +32,7 @@ public class FuroFragment extends Fragment {
 
         getParentFragmentManager().setFragmentResultListener(
                 ProjetoFragment.SELECTEDKEY, this, ((requestKey, result) -> {
-                    String idFuro = result.getString(ProjetoFragment.IDKEY);
+                    int idFuro = result.getInt(ProjetoFragment.IDKEY);
 
                     ProjetoSpt projeto = projectViewModel.getProjeto();
                     viewModel.setFuro(projeto, idFuro);

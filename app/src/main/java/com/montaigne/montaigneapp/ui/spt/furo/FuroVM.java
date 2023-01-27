@@ -11,7 +11,7 @@ import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import java.util.Objects;
 
 public class FuroVM extends ViewModel {
-    private String  idFuro;
+    private int idFuro;
     private ProjetoSpt projetoSpt;
 
 //    private FuroSpt getFuro() {
@@ -22,18 +22,18 @@ public class FuroVM extends ViewModel {
         return projetoSpt;
     }
 
-    public void setFuro(ProjetoSpt projetoSpt, String idFuro) {
+    public void setFuro(ProjetoSpt projetoSpt, int idFuro) {
         this.projetoSpt = projetoSpt;
-        if (!Objects.equals(idFuro, "")) {
+        if (idFuro < projetoSpt.getListaDeFuros().size()) {
             this.idFuro = idFuro;
         } else {
             FuroSpt furo = new FuroSpt();
             FuroSptUseCase.save(furo, projetoSpt);
-            this.idFuro = furo.getId();  // fixme: como esse id será gerado???
+//            this.idFuro = furo.getCodigo();  // todo: resolver refereência de id
         }
     }
 
-    protected void updateAmostrasAdapter(RecyclerView recyclerAmostras) {
+    protected void updateFurosAdapter(RecyclerView recyclerAmostras) {
         // todo: implementar deleção
         AmostraAdapter adapter = new AmostraAdapter();
         adapter.setIdFuro(idFuro);
