@@ -38,16 +38,19 @@ public class SptVM extends ViewModel {
         f.onPause();  // garante que os fragmentos atualizam o projeto
 
         if (f instanceof ProjetoFragment) {
-            navigateFragments(R.id.action_edit_Carimbo, manager);
             Log.v(TAG, "action_edit_Carimbo");
+            navigateFragments(R.id.action_edit_Carimbo, manager); //
+
         } else if (f instanceof FuroFragment) {
-            navigateFragments(R.id.action_edit_CarimboEnsaio, manager);
             Log.v(TAG, "action_edit_CarimboEnsaio");
+            navigateFragments(R.id.action_edit_CarimboEnsaio, manager);
+
         } else if (f instanceof CarimboProjetoFragment) {
+            Log.v(TAG, "action_new_Ensaio");
             Bundle b = new Bundle();
             b.putInt("furoId", projeto.getListaDeFuros().size());
             navigateFragments(R.id.action_new_Ensaio, manager, b);
-            Log.v(TAG, "action_new_Ensaio");
+
         } else if (f instanceof CarimboEnsaioFragment) {
             Log.v(TAG, "action_execute_Ensaio");
             Bundle b = new Bundle();
@@ -55,19 +58,25 @@ public class SptVM extends ViewModel {
             b.putInt("furoId", furoId);
             b.putInt("amostraId", projeto.getListaDeFuros().get(furoId).getListaDeAmostras().size());
             navigateFragments(R.id.action_execute_Ensaio, manager, b);
+
         } else if (f instanceof EnsaioFragment) {
-            navigateFragments(R.id.action_next_Amostra, manager);
             Log.v(TAG, "action_next_Amostra");
+            Bundle b = new Bundle();
+            int furoId = ((EnsaioFragment) f).getFuroId();
+            b.putInt("furoId", furoId);
+            b.putInt("amostraId", projeto.getListaDeFuros().get(furoId).getListaDeAmostras().size());
+            navigateFragments(R.id.action_next_Amostra, manager, b);
+
         } else {
             Log.v(TAG, "none action");
         }
     }
 
-    private static void navigateFragments(int actionId, FragmentManager manager) {
+    public static void navigateFragments(int actionId, FragmentManager manager) {
         navigateFragments(actionId, manager, null);
     }
 
-    private static void navigateFragments(int actionId, FragmentManager manager, Bundle args) {
+    public static void navigateFragments(int actionId, FragmentManager manager, Bundle args) {
         ((NavHostFragment) Objects.requireNonNull(manager.findFragmentById(R.id.containerSpt)))
                 .getNavController().navigate(actionId, args);
     }

@@ -61,11 +61,12 @@
     
     
     <!-- Strings dos butões inferior das telas -->
-    <string name="btn_navigate_carimbo_projeto">Novo Furo </string>
-    <string name="btn_navigate_carimbo_furo">Inicar amostras </string>
-    <string name="btn_navigate_projeto">Carimbo </string>
-    <string name="btn_navigate_furo">Carimbo do Furo</string>
-    <string name="btn_navigate_ensaio">Finalizar Furo </string>
+    <string name="btn_navigate_carimbo_projeto">Novo Furo</string>
+    <string name="btn_navigate_carimbo_furo">Inicar ensaio</string>
+    <string name="btn_navigate_projeto">Carimbo do projeto</string>
+    <string name="btn_navigate_furo">Carimbo do furo</string>
+    <string name="btn_navigate_ensaio">Próxima camada</string>
+    <string name="btn_finish_ensaio">Suspender ensaio</string>
 
     <!--    Categorias de projetos-->
     <string name="categoria_spt">SPT</string>

@@ -69,11 +69,18 @@ public class EnsaioFragment extends Fragment {
         int amostraId = args.getInt("amostraId");
         viewModel.setupViewModel(projeto, furoId, amostraId, golpes, penetracoes, fields);
 
-        SptActivity activity = (SptActivity) getActivity();
+        SptActivity activity = (SptActivity) requireActivity();
         activity.setNavigateButtonText(getString(R.string.btn_navigate_ensaio));
         activity.setActionBarTitle(getString(R.string.furo_action_bar_title) + (furoId + 1));
 
+        binding.buttonFinnishEnsaio.setOnClickListener(v -> SptVM.navigateFragments(
+                R.id.action_finish_Ensaio, activity.getSupportFragmentManager()));
+
         return binding.getRoot();
+    }
+
+    public int getFuroId() {
+        return viewModel.furoId;
     }
 
     @Override
