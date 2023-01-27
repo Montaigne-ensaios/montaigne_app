@@ -3,6 +3,7 @@
 
     <string name="action_settings">Settings</string>
 
+    <string name="notImplemented">Não implementado</string>
 
     <!-- Strings used for menu  -->
     <string name="action_help">Ajuda</string>
@@ -44,6 +45,7 @@
 
 
     <!-- Strings da tela Carimbo Furo-->
+    <string name="furo_action_bar_title">Furo SP-0</string>
     <string name="registration_Data_inicio_furo">Data de inicio:</string>
     <string name="hint_date">MM/DD/YYYY</string>
     <string name="registration_nivel_furo">Nivel do Furo N:</string>
@@ -51,21 +53,21 @@
     <string name="btn_capturar_location">Capturar Localização</string>
     <string name="btn_start_furo">Iniciar furo</string>
 
-    <string name="notImplemented">Não implementado</string>
 
 
     <!-- Strings da tela Adpter_home_projetos-->
 
 
     <!-- Strings da tela Adpter_home_filtro_Ensaios-->
-    
-    
+
+
     <!-- Strings dos butões inferior das telas -->
-    <string name="btn_navigate_carimbo_projeto">Novo Furo </string>
-    <string name="btn_navigate_carimbo_furo">Inicar amostras </string>
-    <string name="btn_navigate_projeto">Carimbo </string>
-    <string name="btn_navigate_furo">Carimbo do Furo</string>
-    <string name="btn_navigate_ensaio">Finalizar Furo </string>
+    <string name="btn_navigate_carimbo_projeto">Novo Furo</string>
+    <string name="btn_navigate_carimbo_furo">Inicar ensaio</string>
+    <string name="btn_navigate_projeto">Carimbo do projeto</string>
+    <string name="btn_navigate_furo">Carimbo do furo</string>
+    <string name="btn_navigate_ensaio">Próxima camada</string>
+    <string name="btn_finish_ensaio">Suspender ensaio</string>
 
     <!--    Categorias de projetos-->
     <string name="categoria_spt">SPT</string>

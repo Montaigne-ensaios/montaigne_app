@@ -21,6 +21,7 @@ public class FuroFragment extends Fragment {
     private FuroVM viewModel;
     private SptVM projectViewModel;
     private FragmentFuroBinding binding;
+    private int idFuro;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,7 +32,7 @@ public class FuroFragment extends Fragment {
 
         getParentFragmentManager().setFragmentResultListener(
                 ProjetoFragment.SELECTEDKEY, this, ((requestKey, result) -> {
-                    String  idFuro = result.getString(ProjetoFragment.IDKEY);
+                    String idFuro = result.getString(ProjetoFragment.IDKEY);
 
                     ProjetoSpt projeto = projectViewModel.getProjeto();
                     viewModel.setFuro(projeto, idFuro);
@@ -44,8 +45,13 @@ public class FuroFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         binding = FragmentFuroBinding.inflate(inflater, container, false);
 
-        ((SptActivity) getActivity())
-                .setNavigateButtonText(getString(R.string.btn_navigate_furo));
+        ProjetoSpt projeto = projectViewModel.getProjeto();
+        viewModel.setFuro(projeto, idFuro);
+        viewModel.updateFurosAdapter(binding.recyclerAmostra);
+
+        SptActivity activity = (SptActivity) getActivity();
+        activity.setNavigateButtonText(getString(R.string.btn_navigate_furo));
+        activity.setActionBarTitle("Furo " + idFuro + 1);
 
         return binding.getRoot();
     }

@@ -23,18 +23,12 @@ public class EnsaioFragment extends Fragment {
     private EnsaioVM viewModel;
     private SptVM projectViewModel;
     private FragmentEnsaioBinding binding;
-    protected final ArrayList<EditText> golpes = new ArrayList<>(), penetracoes = new ArrayList<>();
+    protected final ArrayList<EditText> golpes = new ArrayList<>(),
+            penetracoes = new ArrayList<>(),
+            fields = new ArrayList<>();
     // lista de golpes e penetrações por segmento
-    private int idFuro;
-    private int idAmostra;
-
 
     public EnsaioFragment() {}
-
-    public EnsaioFragment(int idFuro, int idAmostra) {
-        this.idFuro = idFuro;
-        this.idAmostra = idAmostra;
-    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -58,27 +52,41 @@ public class EnsaioFragment extends Fragment {
         penetracoes.add(binding.editTextPenetracao2);
         penetracoes.add(binding.editTextPenetracao3);
 
-        binding.imageButtonDecrementGolpe1.setOnClickListener(v -> viewModel.decrementGolpe(golpes.get(1)));
-        binding.imageButtonDecrementGolpe2.setOnClickListener(v -> viewModel.decrementGolpe(golpes.get(2)));
-        binding.imageButtonDecrementGolpe3.setOnClickListener(v -> viewModel.decrementGolpe(golpes.get(3)));
+        fields.add(binding.textInputEditTextProfundidade);
+        fields.add(binding.textInputEditTextNivelDAgua);
 
-        binding.imageButtonIcrementGolpe1.setOnClickListener(v -> viewModel.incrementGolpe(golpes.get(1)));
-        binding.imageButtonIcrementGolpe2.setOnClickListener(v -> viewModel.incrementGolpe(golpes.get(2)));
-        binding.imageButtonIcrementGolpe3.setOnClickListener(v -> viewModel.incrementGolpe(golpes.get(3)));
+        binding.imageButtonDecrementGolpe1.setOnClickListener(v -> viewModel.decrementGolpe(golpes.get(0)));
+        binding.imageButtonDecrementGolpe2.setOnClickListener(v -> viewModel.decrementGolpe(golpes.get(1)));
+        binding.imageButtonDecrementGolpe3.setOnClickListener(v -> viewModel.decrementGolpe(golpes.get(2)));
+
+        binding.imageButtonIcrementGolpe1.setOnClickListener(v -> viewModel.incrementGolpe(golpes.get(0)));
+        binding.imageButtonIcrementGolpe2.setOnClickListener(v -> viewModel.incrementGolpe(golpes.get(1)));
+        binding.imageButtonIcrementGolpe3.setOnClickListener(v -> viewModel.incrementGolpe(golpes.get(2)));
 
         ProjetoSpt projeto = projectViewModel.getProjeto();
-        viewModel.setAmostra(projeto, idFuro, idAmostra, golpes, penetracoes);
+        Bundle args = requireArguments();
+        int furoId = args.getInt("furoId");
+        int amostraId = args.getInt("amostraId");
+        viewModel.setupViewModel(projeto, furoId, amostraId, golpes, penetracoes, fields);
 
-        ((SptActivity) getActivity())
-                .setNavigateButtonText(getString(R.string.btn_navigate_ensaio));
+        SptActivity activity = (SptActivity) requireActivity();
+        activity.setNavigateButtonText(getString(R.string.btn_navigate_ensaio));
+        activity.setActionBarTitle(getString(R.string.furo_action_bar_title) + (furoId + 1));
+
+        binding.buttonFinnishEnsaio.setOnClickListener(v -> SptVM.navigateFragments(
+                R.id.action_finish_Ensaio, activity.getSupportFragmentManager()));
 
         return binding.getRoot();
+    }
+
+    public int getFuroId() {
+        return viewModel.furoId;
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        projectViewModel.updateProjeto(viewModel.getProjeto(golpes, penetracoes));
+        projectViewModel.updateProjeto(viewModel.getProjeto(golpes, penetracoes, fields));
     }
 
 

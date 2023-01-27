@@ -41,7 +41,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Profundidade"
-                    android:inputType="numberDecimal" />
+                    android:inputType="numberSigned|number|numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutNivelDAgua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="40dp"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayoutProfundiade"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayoutProfundiade"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutProfundiade"
+                app:startIconDrawable="@drawable/ic_edit">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputEditTextNivelDAgua"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nível de Água"
+                    android:inputType="numberSigned|number|numberDecimal" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <ImageButton
@@ -124,7 +144,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:text="Substituir número de amostra"
+                android:text="Remover isto aqui plss"
                 android:textAlignment="textStart"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -141,7 +161,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/textInputLayoutProfundiade"
                 app:layout_constraintHorizontal_bias="0.068"
                 app:layout_constraintStart_toStartOf="@+id/textInputLayoutProfundiade"
-                app:layout_constraintTop_toBottomOf="@+id/textInputEditTextNivelDAgua" />
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutNivelDAgua" />
 
             <TextView
                 android:id="@+id/textPenetracao"
@@ -242,23 +262,15 @@
                 app:layout_constraintTop_toTopOf="@+id/editTextPenetracao1"
                 app:layout_constraintVertical_bias="0.3" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputEditTextNivelDAgua"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/buttonFinnishEnsaio"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="40dp"
-                app:layout_constraintEnd_toEndOf="@+id/textInputLayoutProfundiade"
-                app:layout_constraintStart_toStartOf="@+id/textInputLayoutProfundiade"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutProfundiade"
-                app:startIconDrawable="@drawable/ic_edit">>
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Nível de Água" />
-            </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginBottom="16dp"
+                android:text="@string/btn_finish_ensaio"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>

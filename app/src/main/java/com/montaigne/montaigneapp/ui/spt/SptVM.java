@@ -1,6 +1,7 @@
 package com.montaigne.montaigneapp.ui.spt;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
@@ -19,6 +20,7 @@ import com.montaigne.montaigneapp.ui.spt.ensaio.EnsaioFragment;
 import com.montaigne.montaigneapp.ui.spt.furo.FuroFragment;
 import com.montaigne.montaigneapp.ui.spt.projeto.ProjetoFragment;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class SptVM extends ViewModel {
@@ -33,29 +35,50 @@ public class SptVM extends ViewModel {
                 manager.getPrimaryNavigationFragment()
         ).getChildFragmentManager().getFragments().get(0);  // fragmento exibido
 
+        f.onPause();  // garante que os fragmentos atualizam o projeto
+
         if (f instanceof ProjetoFragment) {
-            navigateFragments(R.id.action_edit_Carimbo, manager);
             Log.v(TAG, "action_edit_Carimbo");
+            navigateFragments(R.id.action_edit_Carimbo, manager); //
+
         } else if (f instanceof FuroFragment) {
-            navigateFragments(R.id.action_edit_CarimboEnsaio, manager);
             Log.v(TAG, "action_edit_CarimboEnsaio");
+            navigateFragments(R.id.action_edit_CarimboEnsaio, manager);
+
         } else if (f instanceof CarimboProjetoFragment) {
-            navigateFragments(R.id.action_new_Ensaio, manager);
             Log.v(TAG, "action_new_Ensaio");
+            Bundle b = new Bundle();
+            b.putInt("furoId", projeto.getListaDeFuros().size());
+            navigateFragments(R.id.action_new_Ensaio, manager, b);
+
         } else if (f instanceof CarimboEnsaioFragment) {
-            navigateFragments(R.id.action_execute_Ensaio, manager);
             Log.v(TAG, "action_execute_Ensaio");
+            Bundle b = new Bundle();
+            int furoId = ((CarimboEnsaioFragment) f).getFuroId();
+            b.putInt("furoId", furoId);
+            b.putInt("amostraId", projeto.getListaDeFuros().get(furoId).getListaDeAmostras().size());
+            navigateFragments(R.id.action_execute_Ensaio, manager, b);
+
         } else if (f instanceof EnsaioFragment) {
-            navigateFragments(R.id.action_next_Amostra, manager);
             Log.v(TAG, "action_next_Amostra");
+            Bundle b = new Bundle();
+            int furoId = ((EnsaioFragment) f).getFuroId();
+            b.putInt("furoId", furoId);
+            b.putInt("amostraId", projeto.getListaDeFuros().get(furoId).getListaDeAmostras().size());
+            navigateFragments(R.id.action_next_Amostra, manager, b);
+
         } else {
             Log.v(TAG, "none action");
         }
     }
 
     public static void navigateFragments(int actionId, FragmentManager manager) {
+        navigateFragments(actionId, manager, null);
+    }
+
+    public static void navigateFragments(int actionId, FragmentManager manager, Bundle args) {
         ((NavHostFragment) Objects.requireNonNull(manager.findFragmentById(R.id.containerSpt)))
-                .getNavController().navigate(actionId);
+                .getNavController().navigate(actionId, args);
     }
 
     protected void intentHome(View view) {
@@ -78,6 +101,7 @@ public class SptVM extends ViewModel {
         this.projeto = projeto;
         if (projeto.getNome() == null) {
             isProjetoNew = true;
+            projeto.setListaDeFuros(new ArrayList<>());
             navigateFragments(R.id.action_edit_Carimbo, manager);
         }
     }

@@ -1,6 +1,7 @@
 package com.montaigne.montaigneapp.ui.spt.carimboProjeto;
 
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -10,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.databinding.AdapterCarimboProjetoBinding;
-import com.montaigne.montaigneapp.model.Projeto;
+import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.BindedViewHolder;
 
 import java.util.ArrayList;
@@ -27,28 +28,31 @@ public class CarimboProjetoAdapter extends RecyclerView.Adapter<BindedViewHolder
         private final String obsMsg;
         private final int iconId;
         private String value;
+        private int inputType;
 
-        public Field(String fieldName, String value, int hintId, String obsMsg, int iconId){
+        public Field(String fieldName, String value, int hintId,
+                     String obsMsg, int iconId, int inputType){
             this.fieldName = fieldName;
             this.value = value;
             this.hintId = hintId;
             this.obsMsg = obsMsg;
             this.iconId = iconId;
+            this.inputType = inputType;
         }
     }
 
-    public CarimboProjetoAdapter(Projeto projeto) {
-        setProjeto(projeto);
+    public CarimboProjetoAdapter(ProjetoSpt ProjetoSpt) {
+        setProjetoSpt(ProjetoSpt);
     }
 
-    private void setProjeto(Projeto projeto) {
-        fields.add(new Field("nome", projeto.getNome(), R.string.registration_projectName_hint, "Obrigatório*", R.drawable.ic_name_project));
-        fields.add(new Field("cliente", projeto.getCliente(), R.string.registration_cliente_hint, "msgErro", R.drawable.ic_perfil));  // todo: replace icon
-        fields.add(new Field("empresa", projeto.getEmpresa(), R.string.registration_empresa_hint, "msgErro", R.drawable.ic_empresa));
-        fields.add(new Field("tecnico", projeto.getTecnico(), R.string.registration_tecnico_hint, "msgErro", R.drawable.ic_technician));
-        fields.add(new Field("numeroDeTelefone", projeto.getContato(), R.string.registration_contato_hint, "msgErro", R.drawable.ic_contato));
-        fields.add(new Field("dataInicio", projeto.getDataInicio(), R.string.registration_data_inicio_hint, "Obrigatório*", R.drawable.ic_date));
-        fields.add(new Field("coordenadas", "", R.string.registration_coordenadas_hint, "msgErro", R.drawable.ic_location));
+    private void setProjetoSpt(ProjetoSpt ProjetoSpt) {
+        fields.add(new Field("nome", ProjetoSpt.getNome(), R.string.registration_projectName_hint, "Obrigatório*", R.drawable.ic_name_project, InputType.TYPE_CLASS_TEXT));
+        fields.add(new Field("cliente", ProjetoSpt.getCliente(), R.string.registration_cliente_hint, " ", R.drawable.ic_perfil, InputType.TYPE_CLASS_TEXT));
+        fields.add(new Field("empresa", ProjetoSpt.getEmpresa(), R.string.registration_empresa_hint, " ", R.drawable.ic_empresa, InputType.TYPE_CLASS_TEXT));
+        fields.add(new Field("tecnico", ProjetoSpt.getTecnico(), R.string.registration_tecnico_hint, " ", R.drawable.ic_technician, InputType.TYPE_CLASS_TEXT));
+        fields.add(new Field("numeroDeTelefone", ProjetoSpt.getContato(), R.string.registration_contato_hint, " ", R.drawable.ic_contato, InputType.TYPE_CLASS_PHONE));
+        fields.add(new Field("dataInicio", ProjetoSpt.getDataInicio(), R.string.registration_data_inicio_hint, "Obrigatório*", R.drawable.ic_date, InputType.TYPE_CLASS_DATETIME));  // todo: add datepicker
+//        fields.add(new Field("coordenadas", "", R.string.registration_coordenadas_hint, " ", R.drawable.ic_location, InputTypes.TEXT));
         notifyDataSetChanged();
     }
 
@@ -60,7 +64,7 @@ public class CarimboProjetoAdapter extends RecyclerView.Adapter<BindedViewHolder
         map.put("tecnico", fields.get(3).value);
         map.put("numeroDeTelefone", fields.get(4).value);
         map.put("dataInicio", fields.get(5).value);
-        map.put("coordenadas", fields.get(6).value);
+//        map.put("coordenadas", fields.get(6).value);
 
         return map;
     }
@@ -83,6 +87,7 @@ public class CarimboProjetoAdapter extends RecyclerView.Adapter<BindedViewHolder
         holder.binding.textInputLayoutNameProjeto.setHelperText(field.obsMsg);
         holder.binding.textInputEditTextNameProjeto.setHint(field.hintId);  // todo: resolver hint errada
         holder.binding.textInputEditTextNameProjeto.setText(field.value);
+        holder.binding.textInputEditTextNameProjeto.setInputType(field.inputType);
 
         holder.binding.textInputEditTextNameProjeto.addTextChangedListener(new TextWatcher() {
             @Override

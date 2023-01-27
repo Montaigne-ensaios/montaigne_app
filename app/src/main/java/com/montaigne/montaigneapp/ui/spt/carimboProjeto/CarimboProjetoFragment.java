@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,7 +13,6 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.databinding.FragmentCarimboProjetoBinding;
-import com.montaigne.montaigneapp.model.Projeto;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
@@ -21,7 +21,9 @@ public class CarimboProjetoFragment extends Fragment {
     private CarimboProjetoVM viewModel;
     private SptVM projectViewModel;
     private FragmentCarimboProjetoBinding binding;
-    
+
+    public CarimboProjetoFragment() {}
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,12 +38,18 @@ public class CarimboProjetoFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         binding = FragmentCarimboProjetoBinding.inflate(inflater, container, false);
 
-        ProjetoSpt projeto = projectViewModel.getProjeto();
-        viewModel.setProjeto(projeto);
+        ProjetoSpt projetoSpt = projectViewModel.getProjeto();
+        viewModel.setProjeto(projetoSpt);
         viewModel.initializeRecycler(binding.recyclerCarimboProjeto);
 
-        ((SptActivity) getActivity())
-                .setNavigateButtonText(getString(R.string.btn_navigate_carimbo_projeto));
+        SptActivity activity = (SptActivity) getActivity();
+        activity.setNavigateButtonText(getString(R.string.btn_navigate_carimbo_projeto));
+        activity.setActionBarTitle(projetoSpt.getNome());
+
+        binding.buttonGetLocation.setOnClickListener(v -> {
+            Toast.makeText(v.getContext(), R.string.notImplemented, Toast.LENGTH_SHORT).show();
+//            viewModel.setLocation();  // todo: implementar coordenadas
+        });
 
         return binding.getRoot();
     }

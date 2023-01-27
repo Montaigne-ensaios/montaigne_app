@@ -7,8 +7,6 @@ import java.util.Date;
 import java.util.List;
 
 public class FuroSpt implements Serializable {
-    private String id;
-    private String idProjeto;
     private String codigo;
     // identificador do furo, ex: SPT-01. Gerado automaticamente
     private float nivelDAgua;
@@ -24,33 +22,13 @@ public class FuroSpt implements Serializable {
     public FuroSpt() {
     }
 
-    public FuroSpt(String id, String idProjeto, String codigo, float nivelDAgua,
-                   float cotaInicial, Date dataInicio, Date dataFim,
+    public FuroSpt(String codigo,
+                   float cotaInicial, Date dataInicio,
                    List<AmostraSpt> listaDeAmostras) {
-        this.id = id;
-        this.idProjeto = idProjeto;
         this.codigo = codigo;
-        this.nivelDAgua = nivelDAgua;
         this.cotaInicial = cotaInicial;
         this.dataInicio = dataInicio;
-        this.dataFim = dataFim;
         this.listaDeAmostras = listaDeAmostras;
-    }
-
-    public String getIdProjeto() {
-        return idProjeto;
-    }
-
-    public void setIdProjeto(String idProjeto) {
-        this.idProjeto = idProjeto;
-    }
-
-    public String getId() {
-        return this.id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getCodigo() {

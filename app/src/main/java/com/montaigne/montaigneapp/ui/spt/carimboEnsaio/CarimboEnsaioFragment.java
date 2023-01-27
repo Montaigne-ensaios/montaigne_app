@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,7 +25,7 @@ public class CarimboEnsaioFragment extends Fragment {
     private CarimboEnsaioVM viewModel;
     private SptVM projectViewModel;
     private FragmentCarimboEnsaioBinding binding;
-    private Map<String, EditText> fields;
+    private final Map<String, EditText> fields = new HashMap<>();
 
     public CarimboEnsaioFragment() {
     }
@@ -43,17 +44,27 @@ public class CarimboEnsaioFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         binding = FragmentCarimboEnsaioBinding.inflate(inflater, container, false);
 
-        fields = new HashMap<>();
         fields.put("DataInicio", binding.editTextStartDate);
         fields.put("NivelFuro", binding.editTextNivelFuro);
 
         ProjetoSpt projeto = projectViewModel.getProjeto();
-        viewModel.setProjeto(projeto, fields);
+        int furoId = requireArguments().getInt("furoId");
+        viewModel.setupViewModel(projeto, furoId, fields);
 
-        ((SptActivity) getActivity())
-                .setNavigateButtonText(getString(R.string.btn_navigate_carimbo_furo));
+        SptActivity activity = (SptActivity) requireActivity();
+        activity.setNavigateButtonText(getString(R.string.btn_navigate_carimbo_furo));
+        activity.setActionBarTitle(getString(R.string.furo_action_bar_title) + (furoId + 1));
+
+        binding.buttonGetLocation.setOnClickListener(v -> {
+            Toast.makeText(v.getContext(), R.string.notImplemented, Toast.LENGTH_SHORT).show();
+//            viewModel.setLocation();  // todo: implementar coordenadas
+        });
 
         return binding.getRoot();
+    }
+
+    public int getFuroId() {
+        return viewModel.furoId;
     }
 
     @Override
