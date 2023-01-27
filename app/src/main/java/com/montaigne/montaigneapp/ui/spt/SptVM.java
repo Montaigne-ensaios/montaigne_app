@@ -1,6 +1,7 @@
 package com.montaigne.montaigneapp.ui.spt;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
@@ -19,6 +20,7 @@ import com.montaigne.montaigneapp.ui.spt.ensaio.EnsaioFragment;
 import com.montaigne.montaigneapp.ui.spt.furo.FuroFragment;
 import com.montaigne.montaigneapp.ui.spt.projeto.ProjetoFragment;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class SptVM extends ViewModel {
@@ -40,7 +42,9 @@ public class SptVM extends ViewModel {
             navigateFragments(R.id.action_edit_CarimboEnsaio, manager);
             Log.v(TAG, "action_edit_CarimboEnsaio");
         } else if (f instanceof CarimboProjetoFragment) {
-            navigateFragments(R.id.action_new_Ensaio, manager);
+            Bundle b = new Bundle();
+            b.putInt("furoId", projeto.getListaDeFuros().size());
+            navigateFragments(R.id.action_new_Ensaio, manager, b);
             Log.v(TAG, "action_new_Ensaio");
         } else if (f instanceof CarimboEnsaioFragment) {
             navigateFragments(R.id.action_execute_Ensaio, manager);
@@ -54,8 +58,12 @@ public class SptVM extends ViewModel {
     }
 
     private static void navigateFragments(int actionId, FragmentManager manager) {
+        navigateFragments(actionId, manager, null);
+    }
+
+    private static void navigateFragments(int actionId, FragmentManager manager, Bundle args) {
         ((NavHostFragment) Objects.requireNonNull(manager.findFragmentById(R.id.containerSpt)))
-                .getNavController().navigate(actionId);
+                .getNavController().navigate(actionId, args);
     }
 
     protected void intentHome(View view) {
@@ -78,6 +86,7 @@ public class SptVM extends ViewModel {
         this.projeto = projeto;
         if (projeto.getNome() == null) {
             isProjetoNew = true;
+            projeto.setListaDeFuros(new ArrayList<>());
             navigateFragments(R.id.action_edit_Carimbo, manager);
         }
     }

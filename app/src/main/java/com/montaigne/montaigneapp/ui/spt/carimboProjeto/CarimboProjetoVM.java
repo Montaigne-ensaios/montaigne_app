@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.montaigne.montaigneapp.model.Coordenada;
 import com.montaigne.montaigneapp.model.Projeto;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
@@ -14,7 +15,7 @@ public class CarimboProjetoVM extends ViewModel {
     private ProjetoSpt projetoSpt;
     private CarimboProjetoAdapter adapter;
 
-    public void setProjeto(ProjetoSpt projetoSpt) { this.projetoSpt = projetoSpt; }
+    protected void setProjeto(ProjetoSpt projetoSpt) { this.projetoSpt = projetoSpt; }
 
     protected Projeto getProjeto() {
         Map<String, String> values = adapter.getValues();
@@ -27,7 +28,12 @@ public class CarimboProjetoVM extends ViewModel {
         return projetoSpt;
     }
 
-    public void initializeRecycler(RecyclerView recycler) {
+    protected void setLocation(Coordenada coordenada) {
+        projetoSpt.setLocalDaObra(coordenada.toString());
+        // todo: ao invés de usar o toString, deve-se usar a API geocode
+    }
+
+    protected void initializeRecycler(RecyclerView recycler) {
         this.adapter = new CarimboProjetoAdapter(projetoSpt);
         recycler.setAdapter(adapter);
         recycler.setLayoutManager(new LinearLayoutManager(recycler.getContext()));

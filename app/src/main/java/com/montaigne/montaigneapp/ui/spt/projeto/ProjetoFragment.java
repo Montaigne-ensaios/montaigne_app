@@ -31,10 +31,6 @@ public class ProjetoFragment extends Fragment {
         projectViewModel = new ViewModelProvider(requireActivity()).get(SptVM.class);
     }
 
-
-
-//        ((SptActivity) getActivity())
-//                .setNavigateButtonText(getString(R.string.btn_navigate_carimbo_projeto));
     @Nullable
     @Override
     public View onCreateView (@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
@@ -45,8 +41,9 @@ public class ProjetoFragment extends Fragment {
         viewModel.setProjetoSpt(projeto);
         viewModel.updateFurosAdapter(binding.recyclerFuro);
 
-        ((SptActivity) getActivity())
-                .setNavigateButtonText(getString(R.string.btn_navigate_projeto));
+        SptActivity activity = (SptActivity) getActivity();
+        activity.setNavigateButtonText(getString(R.string.btn_navigate_projeto));
+        activity.setActionBarTitle(projeto.getNome());
 
         return binding.getRoot();
     }
