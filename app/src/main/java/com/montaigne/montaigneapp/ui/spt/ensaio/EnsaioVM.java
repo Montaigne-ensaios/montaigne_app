@@ -18,7 +18,8 @@ public class EnsaioVM extends ViewModel {
     private AmostraSpt amostra;
 
     public void setupViewModel(ProjetoSpt projeto, int idFuro, int idAmostra,
-                               ArrayList<EditText> golpes, ArrayList<EditText> penetracoes) {
+                               ArrayList<EditText> golpes, ArrayList<EditText> penetracoes,
+                               ArrayList<EditText> fields) {
         this.projeto = projeto;
         this.furoId = idFuro;
         this.amostraId = idAmostra;
@@ -29,12 +30,15 @@ public class EnsaioVM extends ViewModel {
             amostra = getAmostra();
         }
 
-        setInt(golpes.get(1), getAmostra().getGolpe1());
-        setInt(golpes.get(2), getAmostra().getGolpe2());
-        setInt(golpes.get(3), getAmostra().getGolpe3());
-        setFloat(penetracoes.get(1), getAmostra().getPenatracao1());
-        setFloat(penetracoes.get(2), getAmostra().getPenatracao2());
-        setFloat(penetracoes.get(3), getAmostra().getPenatracao3());
+        setInt(golpes.get(0), amostra.getGolpe1());
+        setInt(golpes.get(1), amostra.getGolpe2());
+        setInt(golpes.get(2), amostra.getGolpe3());
+        setFloat(penetracoes.get(0), amostra.getPenatracao1());
+        setFloat(penetracoes.get(1), amostra.getPenatracao2());
+        setFloat(penetracoes.get(2), amostra.getPenatracao3());
+
+        setFloat(fields.get(0), amostra.getProfundidade());
+//        setFloat(fields.get(1), getFuro().getNivelDAgua());
     }
 
     private FuroSpt getFuro() {
@@ -45,7 +49,8 @@ public class EnsaioVM extends ViewModel {
         return projeto.getListaDeFuros().get(furoId).getListaDeAmostras().get(amostraId);
     }
 
-    protected ProjetoSpt getProjeto(ArrayList<EditText> golpes, ArrayList<EditText> penetracoes) {
+    protected ProjetoSpt getProjeto(
+            ArrayList<EditText> golpes, ArrayList<EditText> penetracoes, ArrayList<EditText> fields) {
         FuroSpt furo = getFuro();
 
         amostra.setGolpe1((int) getFloat(golpes.get(0)));
@@ -55,10 +60,22 @@ public class EnsaioVM extends ViewModel {
         amostra.setPenatracao2(getFloat(penetracoes.get(1)));
         amostra.setPenatracao3(getFloat(penetracoes.get(2)));
 
-        if (amostraId >= furo.getListaDeAmostras().size())
-            furo.getListaDeAmostras().set(amostraId, amostra);
-        else
+        amostra.setProfundidade(getFloat(fields.get(0)));
+//        furo.setNivelDAgua(getFloat(fields.get(1)));
+
+        boolean isNew = true;
+        for (AmostraSpt amostraI: furo.getListaDeAmostras()) {
+            if (amostraI.getProfundidade() == amostra.getProfundidade()) {
+                isNew = false;
+                break;
+            }
+        }
+
+        if (isNew)
             furo.getListaDeAmostras().add(amostra);
+        else
+            furo.getListaDeAmostras().set(amostraId, amostra);
+
         projeto.getListaDeFuros().set(furoId, furo);
 
         return projeto;
