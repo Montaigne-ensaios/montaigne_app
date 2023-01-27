@@ -7,9 +7,9 @@ public class AmostraSpt implements Serializable {
     // profundidade dentro do furo, em que esta amostra está sendo retirada
     private int golpe1, golpe2, golpe3;
     // quantos golpes do martelo foram necessários para obter as penetrações abaixo
-    private float penatracao1;
-    private float penatracao2;
-    private float penatracao3;
+    private float penatracao1 = 15;
+    private float penatracao2 = 15;
+    private float penatracao3 = 15;
     // quanto cada segmento do amsotrador penetrou no solo, em cm
 
     public AmostraSpt() {

@@ -53,7 +53,7 @@ public class EnsaioFragment extends Fragment {
         penetracoes.add(binding.editTextPenetracao3);
 
         fields.add(binding.textInputEditTextProfundidade);
-//        fields.add(binding.textInputEditTextNivelDAgua);  // todo: corrigir referência
+        fields.add(binding.textInputEditTextNivelDAgua);
 
         binding.imageButtonDecrementGolpe1.setOnClickListener(v -> viewModel.decrementGolpe(golpes.get(0)));
         binding.imageButtonDecrementGolpe2.setOnClickListener(v -> viewModel.decrementGolpe(golpes.get(1)));
@@ -71,7 +71,7 @@ public class EnsaioFragment extends Fragment {
 
         SptActivity activity = (SptActivity) getActivity();
         activity.setNavigateButtonText(getString(R.string.btn_navigate_ensaio));
-        activity.setActionBarTitle("Furo " + furoId + 1);
+        activity.setActionBarTitle(getString(R.string.furo_action_bar_title) + (furoId + 1));
 
         return binding.getRoot();
     }

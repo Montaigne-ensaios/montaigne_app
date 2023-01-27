@@ -23,7 +23,7 @@ public class CarimboEnsaioVM extends ViewModel {
         this.furoId = furoId;
         if (furoId == projeto.getListaDeFuros().size()) {
             furo = new FuroSpt();
-            furo.setCodigo("SP-0" + furoId + 1);
+            furo.setCodigo("SP-0" + (furoId + 1));
         } else {
             furo = projeto.getListaDeFuros().get(furoId);
 

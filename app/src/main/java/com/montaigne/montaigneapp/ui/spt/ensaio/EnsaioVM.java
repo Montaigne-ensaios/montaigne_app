@@ -24,7 +24,10 @@ public class EnsaioVM extends ViewModel {
         this.furoId = idFuro;
         this.amostraId = idAmostra;
 
-        if (idAmostra == getFuro().getListaDeAmostras().size()) {
+        if (idAmostra == getFuro()
+                .getListaDeAmostras()
+                .size()) {
+            // fixme: Attempt to invoke interface method 'int java.util.List.size()' on a null object reference
             amostra = new AmostraSpt();
         } else {
             amostra = getAmostra();
@@ -38,7 +41,7 @@ public class EnsaioVM extends ViewModel {
         setFloat(penetracoes.get(2), amostra.getPenatracao3());
 
         setFloat(fields.get(0), amostra.getProfundidade());
-//        setFloat(fields.get(1), getFuro().getNivelDAgua());
+        setFloat(fields.get(1), getFuro().getNivelDAgua());
     }
 
     private FuroSpt getFuro() {
@@ -61,7 +64,7 @@ public class EnsaioVM extends ViewModel {
         amostra.setPenatracao3(getFloat(penetracoes.get(2)));
 
         amostra.setProfundidade(getFloat(fields.get(0)));
-//        furo.setNivelDAgua(getFloat(fields.get(1)));
+        furo.setNivelDAgua(getFloat(fields.get(1)));
 
         boolean isNew = true;
         for (AmostraSpt amostraI: furo.getListaDeAmostras()) {

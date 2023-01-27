@@ -53,7 +53,7 @@ public class CarimboEnsaioFragment extends Fragment {
 
         SptActivity activity = (SptActivity) requireActivity();
         activity.setNavigateButtonText(getString(R.string.btn_navigate_carimbo_furo));
-        activity.setActionBarTitle("Furo " + (furoId + 1));  // todo: criar string resource para isto
+        activity.setActionBarTitle(getString(R.string.furo_action_bar_title) + (furoId + 1));
 
         binding.buttonGetLocation.setOnClickListener(v -> {
             Toast.makeText(v.getContext(), R.string.notImplemented, Toast.LENGTH_SHORT).show();
