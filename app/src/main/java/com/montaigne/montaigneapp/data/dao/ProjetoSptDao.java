@@ -7,10 +7,20 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 public class ProjetoSptDao {
-    private DatabaseReference dbReference;
+    private final DatabaseReference dbReference;
+    private static ProjetoSptDao singleton;
 
-    public ProjetoSptDao() {
-        dbReference = FirebaseDatabase.getInstance().getReference().child("projetos").child("spt");
+    private ProjetoSptDao() {
+        FirebaseDatabase fdb = FirebaseDatabase.getInstance();
+        fdb.setPersistenceEnabled(true);
+        dbReference = fdb.getReference().child("projetos").child("spt");
+        dbReference.keepSynced(true);
+    }
+
+    public static ProjetoSptDao getInstance() {
+        if (singleton == null)
+            singleton = new ProjetoSptDao();
+        return singleton;
     }
 
     public DatabaseReference getDbReference() {
