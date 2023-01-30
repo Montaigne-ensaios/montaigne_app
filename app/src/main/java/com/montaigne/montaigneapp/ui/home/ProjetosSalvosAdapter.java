@@ -22,6 +22,8 @@ import java.util.List;
 public class ProjetosSalvosAdapter extends RecyclerView.Adapter<BindedViewHolder<AdapterHomeProjetosBinding>> {
     private List<Projeto> projetoList;
     private List<Boolean> isCheckedList;
+    private int selectedProjects = 0;
+    private boolean isItemLongClicked = false;
 
     public ProjetosSalvosAdapter() {
         projetoList = new ArrayList<>();
@@ -54,20 +56,33 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<BindedViewHolder
         // todo: add granulometria
 
         holder.binding.cardView.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(), SptActivity.class);
-            intent.putExtra(HomeVM.PROJETO, projeto);
-            v.getContext().startActivity(intent);
+            System.out.println(selectedProjects);
+            if (isItemLongClicked && selectedProjects > 0 && !isCheckedList.get(position)) {
+                isCheckedList.set(position, true);
+                holder.binding.cardView.setBackgroundResource(R.color.hint);
+                selectedProjects++;
+            } else if (isCheckedList.get(position)) {
+                selectedProjects--;
+                if (selectedProjects == 0) isItemLongClicked = false;
+                isCheckedList.set(position, false);
+                holder.binding.cardView.setBackgroundResource(R.color.white);
+            } else if (!isItemLongClicked && selectedProjects == 0) {
+                Intent intent = new Intent(v.getContext(), SptActivity.class);
+                intent.putExtra(HomeVM.PROJETO, projeto);
+                v.getContext().startActivity(intent);
+            }
         });
 
         holder.binding.cardView.setOnLongClickListener(v -> {
-            if (isCheckedList.get(position)) {
-                holder.binding.checkBox.setChecked(false);
-                holder.binding.checkBox.setVisibility(View.GONE);
-                isCheckedList.set(position, false);
-            } else {
-                holder.binding.checkBox.setVisibility(View.VISIBLE);
-                holder.binding.checkBox.setChecked(true);
+            if (!isCheckedList.get(position)) {
                 isCheckedList.set(position, true);
+                isItemLongClicked = true;
+                selectedProjects++;
+                holder.binding.cardView.setBackgroundResource(R.color.hint);
+            } else {
+                isCheckedList.set(position, false);
+                selectedProjects--;
+                holder.binding.cardView.setBackgroundResource(R.color.white);
             }
             return true;
         });
