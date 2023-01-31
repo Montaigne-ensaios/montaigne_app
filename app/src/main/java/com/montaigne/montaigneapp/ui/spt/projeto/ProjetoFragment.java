@@ -22,9 +22,6 @@ import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
 
 public class ProjetoFragment extends Fragment {
-    public static final String SELECTEDKEY = "projetoFragmentResult";
-    public static final String IDKEY = "furoId";
-
     private ProjetoVM viewModel;
     private SptVM projectViewModel;
     private FragmentProjetoBinding binding;
@@ -47,7 +44,7 @@ public class ProjetoFragment extends Fragment {
         viewModel.setProjetoSpt(projeto);
         viewModel.updateFurosAdapter(binding.recyclerFuro);
 
-        SptActivity activity = (SptActivity) getActivity();
+        SptActivity activity = (SptActivity) requireActivity();
         activity.setNavigateButtonText(getString(R.string.btn_navigate_projeto));
         activity.setActionBarTitle(projeto.getNome());
 
@@ -59,7 +56,8 @@ public class ProjetoFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         requireActivity().addMenuProvider(new ProjetoFragment.MenuProvider(),
-                getViewLifecycleOwner(), Lifecycle.State.RESUMED);  // menu visível apenas quando
+                getViewLifecycleOwner(), Lifecycle.State.RESUMED);
+        // menu visível apenas quando a view for criada
     }
 
     @Override

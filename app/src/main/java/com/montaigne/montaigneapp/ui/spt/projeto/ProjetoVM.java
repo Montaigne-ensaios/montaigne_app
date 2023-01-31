@@ -26,10 +26,6 @@ public class ProjetoVM extends ViewModel {
             FragmentManager manager = ((SptActivity) recyclerFuros.getContext())
                     .getSupportFragmentManager();
 
-            Bundle bundle = new Bundle();
-            bundle.putString(ProjetoFragment.IDKEY, furoSpt.getId());
-            manager.setFragmentResult(ProjetoFragment.SELECTEDKEY, bundle);
-
             SptVM.navigateFragments(R.id.action_edit_Furo, manager);
         });
 

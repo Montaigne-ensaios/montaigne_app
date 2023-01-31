@@ -51,7 +51,7 @@ public class EnsaioVM extends ViewModel {
     }
 
     protected ProjetoSpt getProjeto(
-            ArrayList<EditText> golpes, ArrayList<EditText> penetracoes, ArrayList<EditText> fields) {
+        ArrayList<EditText> golpes, ArrayList<EditText> penetracoes, ArrayList<EditText> fields) {
         FuroSpt furo = getFuro();
 
         amostra.setGolpe1((int) getFloat(golpes.get(0)));
