@@ -26,9 +26,9 @@ public class HomeActivity extends AppCompatActivity {
         viewModel.initializeProjetoCategoriaAdapter(binding.recyclerCategorias);
 
         binding.toolbarHomeInclude.toolbarHome.setOnMenuItemClickListener(item -> {
-            if (item.getItemId() == R.id.add) {
+            if (item.getItemId() == R.id.addProjetoSpt) {
                 viewModel.newProject(this);
-            } else if (item.getItemId() == R.id.delete) {
+            } else if (item.getItemId() == R.id.deletefuro) {
                 viewModel.removeProjects();
             }
             return true;

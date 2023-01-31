@@ -4,21 +4,30 @@
 
     >
     <item
-        android:id="@+id/add"
+        android:id="@+id/addProjetoSpt"
+        android:iconTint="@color/white"
         android:orderInCategory="100"
-        android:title="novo projeto"
+        android:title="Novo Projeto SPT"
         android:icon="@drawable/ic_add"
-        app:showAsAction="always" />
+        app:showAsAction="never" />
     <item
-        android:id="@+id/delete"
+        android:id="@+id/addProjetoGranulometria"
+        android:iconTint="@color/white"
+        android:orderInCategory="100"
+        android:title="Novo Projeto Granulometria"
+        android:icon="@drawable/ic_add"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/deletProjeto"
         android:orderInCategory="100"
         android:title="Apagar Projeto"
         android:icon="@android:drawable/ic_menu_delete"
         app:showAsAction="never" />
     <item
-        android:id="@+id/action_ver"
+        android:id="@+id/action_help"
         android:orderInCategory="100"
         android:title="Ajuda"
+        android:iconTint="@color/white"
         android:icon="@android:drawable/ic_menu_info_details"
         app:showAsAction="never" />
 
