@@ -17,6 +17,8 @@
         <item name="materialButtonStyle">@style/ButtonPadrao_Dark</item>
         <item name="imageButtonStyle">@style/ImageButton_Dark</item>
         <item name="editTextStyle">@style/Edit_Text_dark</item>
+        <item name="tint">@color/fundo_light</item>
+
         <item name="android:textViewStyle">@style/TextView_Dark</item>
 
 
