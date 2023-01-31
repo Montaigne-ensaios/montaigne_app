@@ -21,16 +21,15 @@
 
 
         <!-- Color de interação com butões -->
-        <item name="colorAccent">#FFFFFF</item>
+        <item name="colorAccent">@color/color_primary_light</item>
         <item name="colorSurface">@color/fundo_light</item>
         <item name="colorError">#B00020</item>
 
-        <item name="checkboxStyle">@style/Checkbox_light</item>
         <item name="cardViewStyle">@style/CardViewLight</item>
 
         <!-- Estilos de textos. -->
         <item name="textInputStyle">@style/ImputLight</item>
-        <item name="android:textColor">@color/fundo_dark</item>
+        <item name="android:textColor">@color/color_primary_light</item>
         <item name="toolbarStyle">@style/Tollbar_light</item>
 
 
