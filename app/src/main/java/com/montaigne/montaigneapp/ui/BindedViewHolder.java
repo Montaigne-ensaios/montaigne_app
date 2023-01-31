@@ -1,6 +1,4 @@
-package com.montaigne.montaigneapp.data.ui;
-
-import android.view.ViewGroup;
+package com.montaigne.montaigneapp.ui;
 
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;

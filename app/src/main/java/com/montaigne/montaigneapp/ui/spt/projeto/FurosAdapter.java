@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.data.ui.spt.projeto;
+package com.montaigne.montaigneapp.ui.spt.projeto;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.databinding.AdapterProjetoBinding;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
-import com.montaigne.montaigneapp.data.ui.BindedViewHolder;
+import com.montaigne.montaigneapp.ui.BindedViewHolder;
 
 import java.util.List;
 

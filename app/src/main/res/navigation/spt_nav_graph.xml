@@ -6,7 +6,7 @@
     app:startDestination="@id/projetoFragment">
     <fragment
         android:id="@+id/carimboProjetoFragment"
-        android:name="com.montaigne.montaigneapp.data.ui.spt.carimboProjeto.CarimboProjetoFragment"
+        android:name="com.montaigne.montaigneapp.ui.spt.carimboProjeto.CarimboProjetoFragment"
         android:label="CarimboProjetoFragment"
         tools:layout="@layout/fragment_carimbo_projeto">
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/projetoFragment"
-        android:name="com.montaigne.montaigneapp.data.ui.spt.projeto.ProjetoFragment"
+        android:name="com.montaigne.montaigneapp.ui.spt.projeto.ProjetoFragment"
         android:label="ProjetoFragment"
         tools:layout="@layout/fragment_projeto">
         <action
@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/carimboEnsaioFragment"
-        android:name="com.montaigne.montaigneapp.data.ui.spt.carimboEnsaio.CarimboEnsaioFragment"
+        android:name="com.montaigne.montaigneapp.ui.spt.carimboEnsaio.CarimboEnsaioFragment"
         android:label="CarimboEnsaioFragment"
         tools:layout="@layout/fragment_carimbo_ensaio">
         <action
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/furoFragment"
-        android:name="com.montaigne.montaigneapp.data.ui.spt.furo.FuroFragment"
+        android:name="com.montaigne.montaigneapp.ui.spt.furo.FuroFragment"
         android:label="FuroFragment"
         tools:layout="@layout/fragment_furo">
         <action
@@ -57,7 +57,7 @@
     </fragment>
     <fragment
         android:id="@+id/ensaioFragment"
-        android:name="com.montaigne.montaigneapp.data.ui.spt.ensaio.EnsaioFragment"
+        android:name="com.montaigne.montaigneapp.ui.spt.ensaio.EnsaioFragment"
         android:label="EnsaioFragment"
         tools:layout="@layout/fragment_ensaio">
         <action

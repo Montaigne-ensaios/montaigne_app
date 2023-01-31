@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.data.ui.home;
+package com.montaigne.montaigneapp.ui.home;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,9 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
-import com.montaigne.montaigneapp.data.ui.spt.SptActivity;
+import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
-import com.montaigne.montaigneapp.data.ui.BindedViewHolder;
+import com.montaigne.montaigneapp.ui.BindedViewHolder;
 import com.montaigne.montaigneapp.databinding.AdapterHomeProjetosBinding;
 import com.montaigne.montaigneapp.model.Projeto;
 

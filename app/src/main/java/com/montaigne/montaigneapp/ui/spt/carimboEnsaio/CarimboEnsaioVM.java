@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.data.ui.spt.carimboEnsaio;
+package com.montaigne.montaigneapp.ui.spt.carimboEnsaio;
 
 import android.widget.EditText;
 import android.widget.Toast;

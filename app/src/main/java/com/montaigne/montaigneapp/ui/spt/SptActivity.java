@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.data.ui.spt;
+package com.montaigne.montaigneapp.ui.spt;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -9,7 +9,7 @@ import android.view.MenuInflater;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
-import com.montaigne.montaigneapp.data.ui.home.HomeVM;
+import com.montaigne.montaigneapp.ui.home.HomeVM;
 import com.montaigne.montaigneapp.databinding.AcitivitySptBinding;
 
 import java.util.Objects;
