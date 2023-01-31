@@ -29,6 +29,7 @@
 
         <!-- Estilos de textos. -->
         <item name="textInputStyle">@style/ImputLight</item>
+        <item name="errorIconTint">@color/color_primary_dark</item>
         <item name="android:textColor">@color/color_primary_light</item>
         <item name="toolbarStyle">@style/Tollbar_light</item>
 
@@ -37,9 +38,7 @@
         <item name="materialButtonStyle">@style/ButtonPadrao_light</item>
         <item name="imageButtonStyle">@style/ImageButton_light</item>
         <item name="editTextStyle">@style/Edit_Text_light</item>
-        <item name="tint">@color/color_primary_light</item>
-
-
+        <item name="tint">#198FE7</item>
 
 
 

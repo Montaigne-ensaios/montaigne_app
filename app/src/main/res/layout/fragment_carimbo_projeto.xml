@@ -90,7 +90,7 @@
                     app:layout_constraintEnd_toEndOf="@+id/imageProfile"
                     app:layout_constraintStart_toStartOf="@+id/imageProfile"
                     app:layout_constraintTop_toBottomOf="@+id/imageProfile"
-                    tools:srcCompat="@drawable/icon_photo" />
+                    app:srcCompat="@drawable/icon_photo" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerCarimboProjeto"
