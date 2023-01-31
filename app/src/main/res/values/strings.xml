@@ -74,7 +74,7 @@
 
     <!--    Strings de adapters-->
     <string name="adapter_projetos_savlos_data">Inicio do Projeto: </string>
-    <string name="adapter_projetos_savlos_projeto_label">Projeto de</string>
+    <string name="adapter_projetos_savlos_projeto_label">Projeto  de</string>
     <string name="adapter_amostra_name">"Amostra "</string>
     <string name="furo_action_bar_title">Furo SP-0</string>
 </resources>

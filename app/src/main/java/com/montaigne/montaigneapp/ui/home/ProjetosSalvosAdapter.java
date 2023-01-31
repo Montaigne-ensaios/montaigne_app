@@ -50,7 +50,8 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<BindedViewHolder
         if (projeto.getClass() == ProjetoSpt.class)
                 holder.binding.textTipoEnsaio.setText(
                         context.getString(R.string.adapter_projetos_savlos_projeto_label) +
-                        context.getString(R.string.categoria_spt));
+                                ( " ") +
+        context.getString( R.string.categoria_spt));
         // todo: add granulometria
 
         holder.binding.cardView.setOnClickListener(v -> {

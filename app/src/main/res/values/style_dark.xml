@@ -43,5 +43,9 @@
 
 
     </style>
+    <style name="CardViewDark" parent="Widget.Material3.CardView.Outlined">
+        <item name="cardBackgroundColor">@color/fundo_dark</item>
 
+
+    </style>
 </resources>

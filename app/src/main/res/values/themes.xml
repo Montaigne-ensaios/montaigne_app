@@ -26,6 +26,7 @@
         <item name="colorError">#B00020</item>
 
         <item name="checkboxStyle">@style/Checkbox_light</item>
+        <item name="cardViewStyle">@style/CardViewLight</item>
 
         <!-- Estilos de textos. -->
         <item name="textInputStyle">@style/ImputLight</item>
