@@ -49,11 +49,11 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
 
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="20dp"
                     android:text="@string/msg_carimbo_automátizado"
                     android:textAlignment="center"
                     android:textColor="@color/color_primary_dark"
-                    android:textSize="12sp"
+                    android:textSize="15sp"
                     app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
                     app:layout_constraintStart_toStartOf="@+id/guidelineStart"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -96,6 +96,7 @@
                     android:id="@+id/recyclerCarimboProjeto"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
                     app:layout_constraintHorizontal_bias="0.0"
