@@ -27,6 +27,7 @@
                 android:id="@+id/textInputEditTextNameProjeto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/hint"
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
