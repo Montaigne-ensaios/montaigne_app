@@ -1,7 +1,5 @@
-package com.montaigne.montaigneapp.ui.spt.carimboProjeto;
+package com.montaigne.montaigneapp.data.ui.spt.carimboProjeto;
 
-import android.app.Application;
-import android.content.res.Resources;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
@@ -14,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.databinding.AdapterCarimboProjetoBinding;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
-import com.montaigne.montaigneapp.ui.BindedViewHolder;
+import com.montaigne.montaigneapp.data.ui.BindedViewHolder;
 
 import java.util.ArrayList;
 import java.util.HashMap;

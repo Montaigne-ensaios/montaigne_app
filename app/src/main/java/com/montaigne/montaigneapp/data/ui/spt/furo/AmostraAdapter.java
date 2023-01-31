@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.ui.spt.furo;
+package com.montaigne.montaigneapp.data.ui.spt.furo;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,11 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
+import com.montaigne.montaigneapp.data.ui.spt.ensaio.EnsaioFragment;
 import com.montaigne.montaigneapp.databinding.AdapterProjetoBinding;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
-import com.montaigne.montaigneapp.ui.BindedViewHolder;
-import com.montaigne.montaigneapp.ui.spt.ensaio.EnsaioFragment;
+import com.montaigne.montaigneapp.data.ui.BindedViewHolder;
 
 import java.util.List;
 

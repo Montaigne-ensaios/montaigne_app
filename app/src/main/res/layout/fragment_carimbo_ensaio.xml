@@ -40,7 +40,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:ems="10"
-                android:hint="@string/btn_start_furo"
+                android:hint="@string/hint_date"
                 android:inputType="date|datetime"
                 android:minHeight="48dp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline5"
@@ -66,6 +66,8 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
+                android:hint="@string/registration_hint_nivel_furo"
+
                 android:ems="10"
                 android:inputType="numberDecimal"
                 android:minHeight="48dp"

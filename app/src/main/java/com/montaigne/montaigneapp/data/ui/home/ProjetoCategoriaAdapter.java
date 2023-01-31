@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.ui.home;
+package com.montaigne.montaigneapp.data.ui.home;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.databinding.AdapterHomeProjetoCategoriaBinding;
-import com.montaigne.montaigneapp.ui.BindedViewHolder;
+import com.montaigne.montaigneapp.data.ui.BindedViewHolder;
 
 import java.util.ArrayList;
 

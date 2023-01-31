@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.ui.spt.ensaio;
+package com.montaigne.montaigneapp.data.ui.spt.ensaio;
 
 import android.widget.EditText;
 

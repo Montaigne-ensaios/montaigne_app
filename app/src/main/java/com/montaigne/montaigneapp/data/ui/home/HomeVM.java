@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.ui.home;
+package com.montaigne.montaigneapp.data.ui.home;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.montaigne.montaigneapp.R;
+import com.montaigne.montaigneapp.data.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
-import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
 import com.montaigne.montaigneapp.model.Projeto;
 

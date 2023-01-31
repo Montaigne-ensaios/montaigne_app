@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.ui;
+package com.montaigne.montaigneapp.data.ui;
 
 import android.view.ViewGroup;
 

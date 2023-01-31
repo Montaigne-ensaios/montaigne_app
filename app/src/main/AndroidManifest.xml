@@ -13,25 +13,25 @@
         android:theme="@style/Theme.MontaigneApp"
         tools:targetApi="31">
         <activity
-            android:name=".ui.spt.SptActivity"
+            android:name=".data.ui.spt.SptActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.spt.carimboEnsaio.CarimboEnsaioFragment"
+            android:name=".data.ui.spt.carimboEnsaio.CarimboEnsaioFragment"
             android:exported="false" />
         <activity
-            android:name=".ui.spt.projeto.ProjetoFragment"
+            android:name=".data.ui.spt.projeto.ProjetoFragment"
             android:exported="false" />
         <activity
-            android:name=".ui.spt.furo.FuroFragment"
+            android:name=".data.ui.spt.furo.FuroFragment"
             android:exported="false" />
         <activity
-            android:name=".ui.spt.ensaio.EnsaioFragment"
+            android:name=".data.ui.spt.ensaio.EnsaioFragment"
             android:exported="false" />
         <activity
-            android:name=".ui.spt.carimboProjeto.CarimboProjetoFragment"
+            android:name=".data.ui.spt.carimboProjeto.CarimboProjetoFragment"
             android:exported="false" />
         <activity
-            android:name=".ui.home.HomeActivity"
+            android:name=".data.ui.home.HomeActivity"
             android:exported="true"
             android:theme="@style/Theme.MontaigneApp.NoActionBar"
             android:screenOrientation="userPortrait">

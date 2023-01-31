@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.ui.spt.ensaio;
+package com.montaigne.montaigneapp.data.ui.spt.ensaio;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,8 +14,8 @@ import androidx.lifecycle.ViewModelProvider;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.databinding.FragmentEnsaioBinding;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
-import com.montaigne.montaigneapp.ui.spt.SptActivity;
-import com.montaigne.montaigneapp.ui.spt.SptVM;
+import com.montaigne.montaigneapp.data.ui.spt.SptActivity;
+import com.montaigne.montaigneapp.data.ui.spt.SptVM;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.ui.spt;
+package com.montaigne.montaigneapp.data.ui.spt;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,14 +11,14 @@ import androidx.lifecycle.ViewModel;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.montaigne.montaigneapp.R;
+import com.montaigne.montaigneapp.data.ui.spt.carimboEnsaio.CarimboEnsaioFragment;
+import com.montaigne.montaigneapp.data.ui.spt.carimboProjeto.CarimboProjetoFragment;
+import com.montaigne.montaigneapp.data.ui.spt.ensaio.EnsaioFragment;
+import com.montaigne.montaigneapp.data.ui.spt.projeto.ProjetoFragment;
 import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
-import com.montaigne.montaigneapp.ui.spt.carimboProjeto.CarimboProjetoFragment;
-import com.montaigne.montaigneapp.ui.home.HomeActivity;
-import com.montaigne.montaigneapp.ui.spt.carimboEnsaio.CarimboEnsaioFragment;
-import com.montaigne.montaigneapp.ui.spt.ensaio.EnsaioFragment;
-import com.montaigne.montaigneapp.ui.spt.furo.FuroFragment;
-import com.montaigne.montaigneapp.ui.spt.projeto.ProjetoFragment;
+import com.montaigne.montaigneapp.data.ui.home.HomeActivity;
+import com.montaigne.montaigneapp.data.ui.spt.furo.FuroFragment;
 
 import java.util.ArrayList;
 import java.util.Objects;

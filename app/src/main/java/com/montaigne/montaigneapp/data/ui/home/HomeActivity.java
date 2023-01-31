@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.ui.home;
+package com.montaigne.montaigneapp.data.ui.home;
 
 import android.os.Bundle;
 import android.view.Menu;

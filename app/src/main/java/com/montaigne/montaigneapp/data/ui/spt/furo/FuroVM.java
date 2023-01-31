@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.ui.spt.furo;
+package com.montaigne.montaigneapp.data.ui.spt.furo;
 
 import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.LinearLayoutManager;

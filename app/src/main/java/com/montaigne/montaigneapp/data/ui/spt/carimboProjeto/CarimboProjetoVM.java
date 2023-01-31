@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.ui.spt.carimboProjeto;
+package com.montaigne.montaigneapp.data.ui.spt.carimboProjeto;
 
 import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.LinearLayoutManager;
