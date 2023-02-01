@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/spt_nav_graph"
+    app:startDestination="@id/projetoFragment">
+    <fragment
+        android:id="@+id/carimboProjetoFragment"
+        android:name="com.montaigne.montaigneapp.ui.spt.carimboProjeto.CarimboProjetoFragment"
+        android:label="CarimboProjetoFragment"
+        tools:layout="@layout/fragment_carimbo_projeto">
+        <action
+            android:id="@+id/action_new_Ensaio"
+            app:destination="@id/carimboEnsaioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/projetoFragment"
+        android:name="com.montaigne.montaigneapp.ui.spt.projeto.ProjetoFragment"
+        android:label="ProjetoFragment"
+        tools:layout="@layout/fragment_projeto">
+        <action
+            android:id="@+id/action_edit_Carimbo"
+            app:destination="@id/carimboProjetoFragment" />
+        <action
+            android:id="@+id/action_edit_Furo"
+            app:destination="@id/furoFragment" />
+        <action
+            android:id="@+id/action_new_Furo"
+            app:destination="@id/carimboEnsaioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/carimboEnsaioFragment"
+        android:name="com.montaigne.montaigneapp.ui.spt.carimboEnsaio.CarimboEnsaioFragment"
+        android:label="CarimboEnsaioFragment"
+        tools:layout="@layout/fragment_carimbo_ensaio">
+        <action
+            android:id="@+id/action_execute_Ensaio"
+            app:destination="@id/ensaioFragment" />
+        <argument
+            android:name="furoId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/furoFragment"
+        android:name="com.montaigne.montaigneapp.ui.spt.furo.FuroFragment"
+        android:label="FuroFragment"
+        tools:layout="@layout/fragment_furo">
+        <action
+            android:id="@+id/action_edit_Amostra"
+            app:destination="@id/ensaioFragment" />
+<!--        futuramente, adicionar outra forma de editar isto -->
+
+        <action
+            android:id="@+id/action_edit_CarimboEnsaio"
+            app:destination="@id/carimboEnsaioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ensaioFragment"
+        android:name="com.montaigne.montaigneapp.ui.spt.ensaio.EnsaioFragment"
+        android:label="EnsaioFragment"
+        tools:layout="@layout/fragment_ensaio">
+        <action
+            android:id="@+id/action_next_Amostra"
+            app:destination="@id/ensaioFragment" />
+        <action
+            android:id="@+id/action_finish_Ensaio"
+            app:destination="@id/projetoFragment" />
+        <argument
+            android:name="furoId"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="amostraId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>

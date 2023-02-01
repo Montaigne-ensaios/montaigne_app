@@ -6,17 +6,20 @@
     android:layout_height="match_parent"
    >
 
+    <include
+        android:id="@+id/toolbarHomeInclude"
+        layout="@layout/fragment_toolbar_home" />
+
 
     <TextView
         android:id="@+id/textFiltroEnsaio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/TxtHomeFiltrosEnsaiosStr"
+        android:layout_marginTop="80dp"
+        android:text="@string/title_Filtros_Ensaios"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageFilterEnsaio"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -24,8 +27,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="@string/TxtHomeMeusProjetosStr"
-        app:layout_constraintStart_toStartOf="@+id/textFiltroEnsaio"
+        android:text="@string/title_Meus_Projetos"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/recyclerCategorias" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -51,24 +54,13 @@
 
     </androidx.recyclerview.widget.RecyclerView>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabNewProjeto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:src="@drawable/icon_fab_add"
-        app:elevation="20dp"
-        app:fabSize="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <ImageButton
         android:id="@+id/imageFilterEnsaio"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:layout_marginStart="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/textFiltroEnsaio"
-        app:layout_constraintEnd_toStartOf="@+id/textFiltroEnsaio"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textFiltroEnsaio"
         app:layout_constraintVertical_bias="0.428"
         app:srcCompat="@drawable/icon_filter" />
@@ -77,8 +69,9 @@
         android:id="@+id/imageView2"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:layout_marginStart="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/textMeusProjetos"
-        app:layout_constraintEnd_toStartOf="@+id/textMeusProjetos"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textMeusProjetos"
         app:srcCompat="@drawable/icon_folder" />
 

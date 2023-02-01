@@ -56,25 +56,28 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.spt.carimboUnico.CarimboUnicoActivity"
+            android:name=".ui.spt.SptActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.spt.projeto.ProjetoActivity"
+            android:name=".ui.spt.carimboEnsaio.CarimboEnsaioFragment"
             android:exported="false" />
         <activity
-            android:name=".activity.spt.furo.FuroActivity"
+            android:name=".ui.spt.projeto.ProjetoFragment"
             android:exported="false" />
         <activity
-            android:name=".activity.spt.ensaio.EnsaioActivity"
+            android:name=".ui.spt.furo.FuroFragment"
             android:exported="false" />
         <activity
-            android:name=".activity.carimboDefinitivo.CarimboDefinitivoActivity"
+            android:name=".ui.spt.ensaio.EnsaioFragment"
             android:exported="false" />
         <activity
-            android:name=".activity.home.HomeActivity"
+            android:name=".ui.spt.carimboProjeto.CarimboProjetoFragment"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.HomeActivity"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.MontaigneApp.NoActionBar">
+            android:theme="@style/Theme.MontaigneApp.NoActionBar"
+            android:screenOrientation="userPortrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,45 +1,34 @@
 package com.montaigne.montaigneapp.model.spt;
 
+import com.montaigne.montaigneapp.model.Coordenada;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 public class FuroSpt implements Serializable {
-    private String id;
-    private String idProjeto;
     private String codigo;
-    private float nivelDAgua, nivelDoFuro;
+    // identificador do furo, ex: SPT-01. Gerado automaticamente
+    private float nivelDAgua;
+    // altura da água dentrod do furo quando o ensaio terminou, em metros
+    private float cotaInicial;
+    // altura em que o furo é iniciado, em relação a `referencia de nível` do projeto
+    //  seguindo ex do projeto: furo começou a 2,69m abaixo do nível da calçada
     private Date dataInicio, dataFim;
     private List<AmostraSpt> listaDeAmostras;
+    private Coordenada coordenada;
+    // coordenada especificamente do furo
 
     public FuroSpt() {
     }
 
-    public FuroSpt(String id, String idProjeto, String codigo, float nivelDAgua, float nivelDoFuro, Date dataInicio, Date dataFim, List<AmostraSpt> listaDeAmostras) {
-        this.id = id;
-        this.idProjeto = idProjeto;
+    public FuroSpt(String codigo,
+                   float cotaInicial, Date dataInicio,
+                   List<AmostraSpt> listaDeAmostras) {
         this.codigo = codigo;
-        this.nivelDAgua = nivelDAgua;
-        this.nivelDoFuro = nivelDoFuro;
+        this.cotaInicial = cotaInicial;
         this.dataInicio = dataInicio;
-        this.dataFim = dataFim;
         this.listaDeAmostras = listaDeAmostras;
-    }
-
-    public String getIdProjeto() {
-        return idProjeto;
-    }
-
-    public void setIdProjeto(String idProjeto) {
-        this.idProjeto = idProjeto;
-    }
-
-    public String getId() {
-        return this.id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getCodigo() {
@@ -58,12 +47,12 @@ public class FuroSpt implements Serializable {
         this.nivelDAgua = nivelDAgua;
     }
 
-    public float getNivelDoFuro() {
-        return nivelDoFuro;
+    public float getCotaInicial() {
+        return cotaInicial;
     }
 
-    public void setNivelDoFuro(float nivelDoFuro) {
-        this.nivelDoFuro = nivelDoFuro;
+    public void setCotaInicial(float cotaInicial) {
+        this.cotaInicial = cotaInicial;
     }
 
     public Date getDataInicio() {
@@ -80,6 +69,14 @@ public class FuroSpt implements Serializable {
 
     public void setDataFim(Date dataFim) {
         this.dataFim = dataFim;
+    }
+
+    public Coordenada getCoordenada() {
+        return coordenada;
+    }
+
+    public void setCoordenada(Coordenada coordenada) {
+        this.coordenada = coordenada;
     }
 
     public List<AmostraSpt> getListaDeAmostras() {

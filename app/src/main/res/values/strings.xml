@@ -4,6 +4,10 @@
     <string name="action_settings">Settings</string>
 
 
+    <!-- Strings used for menu  -->
+    <string name="action_help">Ajuda</string>
+    <string name="action_infor">Sobre</string>
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -12,8 +16,8 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <!-- Strings da tela HOME-->
-    <string name="TxtHomeFiltrosEnsaiosStr">Filtro de Ensaios</string>
-    <string name="TxtHomeMeusProjetosStr">Meus Projetos</string>
+    <string name="title_Filtros_Ensaios">Filtro de Ensaios</string>
+    <string name="title_Meus_Projetos">Meus Projetos</string>
 
     <!-- Strings da tela ENSAIO-->
 
@@ -21,37 +25,56 @@
     <!-- Strings da tela FURO-->
 
 
-    <!-- Strings da tela Carimbo Definitivo-->
-    <string name="TxtCarimboDefinitivoAviso1">O carimbo definitivo é feito para todos os furos contendo informações gerais que não serão alteradas nas outras sondagens.</string>
-    <string name="TxtCarimboDefinitivoAviso2">Alterações salvas automaticamente.</string>
-    <string name="TxtCarimboDefinitivoNomeProjeto">Nome do Projeto:</string>
-    <string name="TxtCarimboDefinitivoNomeTecnico">Técnico:</string>
-    <string name="TxtCarimboDefinitivoNomeEmpresa">Empresa Responsável:</string>
-    <string name="TxtBotaoContinuacao">Próximo</string>
-    <string name="TxtCarimboDefinitivoContato">Contato:</string>
-    <string name="TxtCarimboDefinitivoNomeCliente">Nome do Cliente:</string>
-    <string name="TxtCarimboDefinitivoLocalObra">Local da obra:</string>
-    <string name="TxtCarimboDefinitivoQuantidadeFuros">Quantidade de Furos:</string>
-    <string name="TxtCarimboDefinitivoReferenciaNivel">Referência de Nível:</string>
-    <string name="TxtCampoAsterisco">*</string>
+    <!-- Strings da tela Carimbo Project -->
+    <string name="msg_carimbo_automátizado">O carimbo projeto é realizado para todos os furos, contendo informações gerais que não serão alteradas nos demais furos.</string>
+    <string name="error_campo_obrigatorio">Obrigatório*</string>
 
-    <!-- Strings da tela Carimbo Único-->
-    <string name="TxtCarimboUnicoDataInicio">Data de inicio:</string>
-    <string name="TxtCarimboUnicoHint">MM/DD/YYYY</string>
-    <string name="TxtCarimboUnicoNivelFuro">Nivel do Furo N:</string>
-    <string name="TxtCarimboUnicoCoordenadaFuro">Coordernadas do Furo N:</string>
-    <string name="TxtBotaoLocalizacao">Capturar Localização</string>
-    <string name="TxtCarimboUnicoAviso">Os campos indicados com * são obrigatórios</string>
-    <string name="TxtBotaoIniciarEnsaio">Iniciar Ensaio</string>
-    <string name="title_activity_maps">MapsActivity</string>
+    <string name="registration_projectName_hint">Nome do projeto</string>
+    <string name="registration_tecnico_hint">Técnico</string>
+    <string name="registration_empresa_hint">Empresa responsável</string>
+    <string name="registration_contato_hint">Contato</string>
+    <string name="registration_cliente_hint">Cliente</string>
+    <string name="registration_local_obra_hint">Local da obra</string>
+    <string name="registration_quantidade_furos_hint">Número de furos</string>
+    <string name="registration_data_inicio_hint">Data de inicio</string>
+    <string name="registration_referencia_nivel_hint">Referência de nivel</string>
+    <string name="registration_altura_referencia_nivel_hint">Altura da referência de nível</string>
+    <string name="registration_coordenadas_hint">Coordenadas do projeto</string>
 
-    <!-- Strings da Projeto-->
+
+
+    <!-- Strings da tela Carimbo Furo-->
+    <string name="registration_Data_inicio_furo">Data de inicio:</string>
+    <string name="hint_date">MM/DD/YYYY</string>
+    <string name="registration_nivel_furo">Nivel do Furo N:</string>
+    <string name="title_button_Coordenadas_furo">Coordernadas do Furo N:</string>
+    <string name="btn_capturar_location">Capturar Localização</string>
+    <string name="btn_start_furo">Iniciar furo</string>
+
+    <string name="notImplemented">Não implementado</string>
 
 
     <!-- Strings da tela Adpter_home_projetos-->
 
 
     <!-- Strings da tela Adpter_home_filtro_Ensaios-->
+    
+    
+    <!-- Strings dos butões inferior das telas -->
+    <string name="btn_navigate_carimbo_projeto">Novo Furo</string>
+    <string name="btn_navigate_carimbo_furo">Inicar ensaio</string>
+    <string name="btn_navigate_projeto">Carimbo do projeto</string>
+    <string name="btn_navigate_furo">Carimbo do furo</string>
+    <string name="btn_navigate_ensaio">Próxima camada</string>
+    <string name="btn_finish_ensaio">Suspender ensaio</string>
 
+    <!--    Categorias de projetos-->
+    <string name="categoria_spt">SPT</string>
+    <string name="categoria_granulometria">Granulometria</string>
 
+    <!--    Strings de adapters-->
+    <string name="adapter_projetos_savlos_data">Inicio do Projeto: </string>
+    <string name="adapter_projetos_savlos_projeto_label">Projeto de</string>
+    <string name="adapter_amostra_name">"Amostra "</string>
+    <string name="furo_action_bar_title">Furo SP-0</string>
 </resources>

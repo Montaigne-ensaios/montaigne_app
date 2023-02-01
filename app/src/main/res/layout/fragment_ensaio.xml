@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutProfundiade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="40dp"
+                app:errorEnabled="true"
+                app:errorIconDrawable="@drawable/ic_erro"
+                app:hintEnabled="true"
+                app:helperText="Cota da amostra"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.03"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textAmostraN"
+                app:startIconDrawable="@drawable/ic_edit">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputEditTextProfundidade"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Profundidade"
+                    android:inputType="numberSigned|number|numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutNivelDAgua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="40dp"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayoutProfundiade"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayoutProfundiade"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutProfundiade"
+                app:startIconDrawable="@drawable/ic_edit">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputEditTextNivelDAgua"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nível de Água"
+                    android:inputType="numberSigned|number|numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageButton
+                android:id="@+id/imageButtonIcrementGolpe1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe1"
+                app:layout_constraintStart_toEndOf="@+id/editTextGolpe1"
+                app:layout_constraintTop_toTopOf="@+id/editTextGolpe1"
+                app:srcCompat="@drawable/icon_increase" />
+
+            <ImageButton
+                android:id="@+id/imageButtonIcrementGolpe2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe2"
+                app:layout_constraintStart_toEndOf="@+id/editTextGolpe2"
+                app:layout_constraintTop_toTopOf="@+id/editTextGolpe2"
+                app:srcCompat="@drawable/icon_increase" />
+
+            <ImageButton
+                android:id="@+id/imageButtonIcrementGolpe3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe3"
+                app:layout_constraintStart_toEndOf="@+id/editTextGolpe3"
+                app:layout_constraintTop_toTopOf="@+id/editTextGolpe3"
+                app:srcCompat="@drawable/icon_increase" />
+
+            <ImageButton
+                android:id="@+id/ButtonAddPhotoAmostra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/textSegmento"
+                app:layout_constraintStart_toStartOf="@+id/textSegmento"
+                app:layout_constraintTop_toBottomOf="@+id/textSegmento"
+                app:srcCompat="@drawable/ic_photo_amostra" />
+
+            <ImageButton
+                android:id="@+id/imageButtonDecrementGolpe3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe3"
+                app:layout_constraintEnd_toStartOf="@+id/editTextGolpe3"
+                app:layout_constraintTop_toTopOf="@+id/editTextGolpe3"
+                app:srcCompat="@drawable/icon_decrease" />
+
+            <ImageButton
+                android:id="@+id/imageButtonDecrementGolpe2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe2"
+                app:layout_constraintEnd_toStartOf="@+id/editTextGolpe2"
+                app:layout_constraintTop_toTopOf="@+id/editTextGolpe2"
+                app:srcCompat="@drawable/icon_decrease" />
+
+            <ImageButton
+                android:id="@+id/imageButtonDecrementGolpe1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe1"
+                app:layout_constraintEnd_toStartOf="@+id/editTextGolpe1"
+                app:layout_constraintTop_toTopOf="@+id/editTextGolpe1"
+                app:srcCompat="@drawable/icon_decrease" />
+
+            <TextView
+                android:id="@+id/textAmostraN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="Remover isto aqui plss"
+                android:textAlignment="textStart"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textGolpes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Golpes:"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayoutProfundiade"
+                app:layout_constraintHorizontal_bias="0.068"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayoutProfundiade"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutNivelDAgua" />
+
+            <TextView
+                android:id="@+id/textPenetracao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Penetração:"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textGolpes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.43"
+                app:layout_constraintStart_toEndOf="@+id/textGolpes"
+                app:layout_constraintTop_toTopOf="@+id/textGolpes"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <EditText
+                android:id="@+id/editTextGolpe1"
+                android:layout_width="93dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="@+id/textGolpes"
+                app:layout_constraintHorizontal_bias="0.3"
+                app:layout_constraintStart_toStartOf="@+id/textGolpes"
+                app:layout_constraintTop_toBottomOf="@+id/textGolpes" />
+
+            <EditText
+                android:id="@+id/editTextPenetracao1"
+                android:layout_width="93dp"
+                android:layout_height="41dp"
+                android:layout_marginStart="24dp"
+                android:ems="10"
+                android:hint="15"
+                android:inputType="number"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextGolpe1"
+                app:layout_constraintStart_toEndOf="@+id/imageButtonIcrementGolpe1"
+                app:layout_constraintTop_toTopOf="@+id/editTextGolpe1" />
+
+            <EditText
+                android:id="@+id/editTextPenetracao2"
+                android:layout_width="93dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="15"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="@+id/editTextPenetracao1"
+                app:layout_constraintStart_toStartOf="@+id/editTextPenetracao1"
+                app:layout_constraintTop_toBottomOf="@+id/editTextPenetracao1" />
+
+            <EditText
+                android:id="@+id/editTextPenetracao3"
+                android:layout_width="93dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="15"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="@+id/editTextPenetracao2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/editTextPenetracao2"
+                app:layout_constraintTop_toBottomOf="@+id/editTextPenetracao2" />
+
+            <EditText
+                android:id="@+id/editTextGolpe2"
+                android:layout_width="93dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="0"
+
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="@+id/editTextGolpe1"
+                app:layout_constraintStart_toStartOf="@+id/editTextGolpe1"
+                app:layout_constraintTop_toBottomOf="@+id/editTextGolpe1" />
+
+            <EditText
+                android:id="@+id/editTextGolpe3"
+                android:layout_width="93dp"
+                android:layout_height="41dp"
+                android:hint="0"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="@+id/editTextGolpe2"
+                app:layout_constraintStart_toStartOf="@+id/editTextGolpe2"
+                app:layout_constraintTop_toBottomOf="@+id/editTextGolpe2" />
+
+            <TextView
+                android:id="@+id/textSegmento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="3 segmentos"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextPenetracao3"
+                app:layout_constraintStart_toEndOf="@+id/editTextPenetracao2"
+                app:layout_constraintTop_toTopOf="@+id/editTextPenetracao1"
+                app:layout_constraintVertical_bias="0.3" />
+
+            <Button
+                android:id="@+id/buttonFinnishEnsaio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="@string/btn_finish_ensaio"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

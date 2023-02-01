@@ -6,24 +6,14 @@ public abstract class Projeto implements Serializable {
 
     private String id;
     private String nome;
-    private String cliente;
-    private String empresa;
-    private String tecnico;
-    private String numeroDeTelefone;
     private String dataInicio;
-    private Coordenada coordenadas;
 
     public Projeto() {}
 
-    public Projeto(String id, String nome, String cliente, String empresa, String tecnico, String numeroDeTelefone, String dataInicio, Coordenada coordenadas) {
+    public Projeto(String id, String nome, String dataInicio) {
         this.id = id;
         this.nome = nome;
-        this.cliente = cliente;
-        this.empresa = empresa;
-        this.tecnico = tecnico;
-        this.numeroDeTelefone = numeroDeTelefone;
         this.dataInicio = dataInicio;
-        this.coordenadas = coordenadas;
     }
 
     public String getId() {
@@ -42,51 +32,11 @@ public abstract class Projeto implements Serializable {
         this.nome = nome;
     }
 
-    public String getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(String cliente) {
-        this.cliente = cliente;
-    }
-
-    public String getEmpresa() {
-        return empresa;
-    }
-
-    public void setEmpresa(String empresa) {
-        this.empresa = empresa;
-    }
-
-    public String getTecnico() {
-        return tecnico;
-    }
-
-    public void setTecnico(String tecnico) {
-        this.tecnico = tecnico;
-    }
-
-    public String getNumeroDeTelefone() {
-        return numeroDeTelefone;
-    }
-
-    public void setNumeroDeTelefone(String numeroDeTelefone) {
-        this.numeroDeTelefone = numeroDeTelefone;
-    }
-
     public String getDataInicio() {
         return dataInicio;
     }
 
     public void setDataInicio(String dataInicio) {
         this.dataInicio = dataInicio;
-    }
-
-    public Coordenada getCoordenadas() {
-        return coordenadas;
-    }
-
-    public void setCoordenadas(Coordenada coordenadas) {
-        this.coordenadas = coordenadas;
     }
 }

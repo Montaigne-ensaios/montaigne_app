@@ -5,72 +5,74 @@
     android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
+    android:layout_margin="7dp"
     app:cardCornerRadius="20dp"
-    app:cardElevation="20dp">
+    app:cardElevation="8dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/imageProjeto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:id="@+id/imageLogoProject"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/ic_technician" />
 
         <TextView
             android:id="@+id/textNameProjeto"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="8dp"
-            android:text="Nome do projeto"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageProjeto"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textDateProjeto"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="5dp"
-            android:text="Inicio do Projeto: xx/xx/xxxx"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageProjeto"
-            app:layout_constraintTop_toBottomOf="@+id/textTipoEnsaio"
-            app:layout_constraintVertical_bias="1.0" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="05dp"
+            android:layout_toEndOf="@id/imageLogoProject"
+            android:text="Nome do projeto" />
 
         <TextView
             android:id="@+id/textTipoEnsaio"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textNameProjeto"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="05dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toEndOf="@id/imageLogoProject"
             android:text="Tipo de Ensaio"
-            android:textColor="#FF0909"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imageProjeto"
-            app:layout_constraintTop_toBottomOf="@+id/textDescricaoProjeto"
-            app:layout_constraintVertical_bias="0.0" />
+            android:textColor="#FF0909" />
 
         <TextView
             android:id="@+id/textDescricaoProjeto"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="4dp"
-            android:text="Descrição do projeto localização"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/imageProjeto"
-            app:layout_constraintTop_toBottomOf="@+id/textNameProjeto"
-            app:layout_constraintVertical_bias="0.122" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textTipoEnsaio"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="-5dp"
+            android:layout_toEndOf="@id/imageLogoProject"
+            android:text="POR FAVOR REMOVA ESSE TEXT VIEW NÂO SERÁ USADO MAIS" />
+
+        <TextView
+            android:id="@+id/textDateProjeto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textDescricaoProjeto"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="05dp"
+            android:layout_toEndOf="@id/imageLogoProject"
+            android:text="Inicio do Projeto: xx/xx/xxxx" />
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/textTipoEnsaio"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:visibility="gone" />
+
+    </RelativeLayout>
 </androidx.cardview.widget.CardView>
