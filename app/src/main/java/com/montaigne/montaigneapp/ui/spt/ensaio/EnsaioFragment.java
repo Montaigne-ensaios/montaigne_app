@@ -74,7 +74,8 @@ public class EnsaioFragment extends Fragment {
         activity.setActionBarTitle(getString(R.string.furo_action_bar_title) + (furoId + 1));
 
         binding.buttonFinnishEnsaio.setOnClickListener(v -> SptVM.navigateFragments(
-                R.id.action_finish_Ensaio, activity.getSupportFragmentManager()));
+                R.id.action_finish_Ensaio, activity.getSupportFragmentManager())
+        );
 
         return binding.getRoot();
     }
@@ -88,7 +89,4 @@ public class EnsaioFragment extends Fragment {
         super.onPause();
         projectViewModel.updateProjeto(viewModel.getProjeto(golpes, penetracoes, fields));
     }
-
-
 }
-

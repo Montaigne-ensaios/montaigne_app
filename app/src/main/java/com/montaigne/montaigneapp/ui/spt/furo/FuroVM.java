@@ -4,40 +4,34 @@ import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.montaigne.montaigneapp.data.usecase.FuroSptUseCase;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
-import java.util.Objects;
-
 public class FuroVM extends ViewModel {
-    private int idFuro;
-    private ProjetoSpt projetoSpt;
+    private ProjetoSpt projeto;
+    private int furoId;
+    private FuroSpt furo;
 
-//    private FuroSpt getFuro() {
-//        return projetoSpt.getListaDeFuros().get(idFuro);  // fixme: como recuperar furo de uma lista de furos
-//    }
-
-    public ProjetoSpt getProjetoSpt() {
-        return projetoSpt;
+    protected ProjetoSpt getProjeto() {
+        return projeto;
     }
 
-    public void setFuro(ProjetoSpt projetoSpt, int idFuro) {
-        this.projetoSpt = projetoSpt;
-        if (idFuro < projetoSpt.getListaDeFuros().size()) {
-            this.idFuro = idFuro;
+    protected void setFuro(ProjetoSpt projeto, int idFuro) {
+        this.projeto = projeto;
+        this.furoId = idFuro;
+
+        if (idFuro == projeto.getListaDeFuros().size()) {
+            furo = new FuroSpt();
         } else {
-            FuroSpt furo = new FuroSpt();
-            FuroSptUseCase.save(furo, projetoSpt);
-//            this.idFuro = furo.getCodigo();  // todo: resolver refereência de id
+            furo = this.projeto.getListaDeFuros().get(idFuro);
         }
     }
 
-    protected void updateFurosAdapter(RecyclerView recyclerAmostras) {
+    protected void updateAmostrasAdapter(RecyclerView recyclerAmostras) {
         // todo: implementar deleção
         AmostraAdapter adapter = new AmostraAdapter();
-        adapter.setIdFuro(idFuro);
-        adapter.setProjetoSpt(projetoSpt);
+        adapter.setIdFuro(furoId);
+        adapter.setProjetoSpt(projeto);
 
         recyclerAmostras.setAdapter(adapter);
         recyclerAmostras.setLayoutManager(new LinearLayoutManager(recyclerAmostras.getContext()));
