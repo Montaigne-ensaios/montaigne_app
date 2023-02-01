@@ -3,6 +3,7 @@ package com.montaigne.montaigneapp.ui.home;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.util.SparseBooleanArray;
 import android.view.View;
 
 import androidx.lifecycle.ViewModel;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.firebase.database.DataSnapshot;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
+import com.montaigne.montaigneapp.ui.IClickListener;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
 import com.montaigne.montaigneapp.model.Projeto;
@@ -27,6 +29,12 @@ public class HomeVM extends ViewModel {
     private List<Projeto> projetosSalvos = new ArrayList<>();
     private ProjetosSalvosAdapter adapterProjetosSalvos;
 
+    private IClickListener clickListener;
+
+    public void setClickListener(IClickListener clickListener) {
+        this.clickListener = clickListener;
+    }
+
     protected void initializeProjetoCategoriaAdapter(RecyclerView recyclerProjetoCategorias) {
         ArrayList<Object[]> categorias = new ArrayList<>();  // lista de filtros de projeto
         Context context = recyclerProjetoCategorias.getContext();
@@ -34,6 +42,7 @@ public class HomeVM extends ViewModel {
         categorias.add(new Object[]{context.getString(R.string.categoria_granulometria), R.drawable.ic_logospt_azul});
 
         ProjetoCategoriaAdapter adapter = new ProjetoCategoriaAdapter();
+        adapterProjetosSalvos.setClickListener(clickListener);
         adapter.setCategoriasProjeto(categorias);
 
         recyclerProjetoCategorias.setAdapter(adapter);
@@ -94,5 +103,14 @@ public class HomeVM extends ViewModel {
                 Log.e(TAG, "Falha ao ler projetos do Banco de dados");
             }
         });
+    }
+
+
+    public void togglePositions(int position) {
+        adapterProjetosSalvos.togglePositions(position);
+    }
+
+    public SparseBooleanArray getIsCheckedList() {
+        return adapterProjetosSalvos.getIsCheckedList();
     }
 }
