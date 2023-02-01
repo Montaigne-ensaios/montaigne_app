@@ -27,7 +27,9 @@ public class CarimboEnsaioVM extends ViewModel {
         } else {
             furo = projeto.getListaDeFuros().get(furoId);
 
-            fields.get("dataInicio").setText(furo.getDataInicio().toString());
+            if (furo.getDataInicio() != null)
+                fields.get("dataInicio").setText(String.valueOf(furo.getDataInicio()));
+
             fields.get("NivelFuro").setText(String.valueOf(furo.getCotaInicial()));
         }
     }

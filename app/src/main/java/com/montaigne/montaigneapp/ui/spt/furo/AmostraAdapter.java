@@ -18,7 +18,7 @@ import java.util.List;
 public class AmostraAdapter extends RecyclerView.Adapter<BindedViewHolder<AdapterFuroBinding>>{
     private List<AmostraSpt> amostras;
 
-    public void setAmostras(List<AmostraSpt> amostras) {
+    public void setAmostras(@NonNull List<AmostraSpt> amostras) {
         this.amostras = amostras;
     }
 
