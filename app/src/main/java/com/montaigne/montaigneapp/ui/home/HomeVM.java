@@ -57,7 +57,7 @@ public class HomeVM extends ViewModel {
         // seleciona apenas os projetos da categoria especifica
     }
 
-    protected void newProject(Context context) {
+    protected void newProjectSpt(Context context) {
         // passa novo projeto vazio
         Intent intent = new Intent(context, SptActivity.class);
         intent.putExtra(HomeVM.PROJETO, new ProjetoSpt());

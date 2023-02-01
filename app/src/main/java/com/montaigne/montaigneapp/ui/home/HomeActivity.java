@@ -27,9 +27,11 @@ public class HomeActivity extends AppCompatActivity {
 
         binding.toolbarHomeInclude.toolbarHome.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.addProjetoSpt) {
-                viewModel.newProject(this);
-            } else if (item.getItemId() == R.id.deletefuro) {
-                viewModel.removeProjects();
+                viewModel.newProjectSpt(this);
+            } else if (item.getItemId() == R.id.addProjetoGranulometria) {
+                // todo: granulometria
+            } else if (item.getItemId() == R.id.action_help) {
+                // todo: help
             }
             return true;
         });

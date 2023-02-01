@@ -38,7 +38,7 @@ public class SptActivity extends AppCompatActivity {
 
        // binding.toolbarSptInclude.toolbarSpt.setOnMenuItemClickListener(item -> {
         //    if (item.getItemId() == R.id.addfuro) {
-       //         viewModel.newProject(this);
+       //         viewModel.newProjectSpt(this);
         //    } else if (item.getItemId() == R.id.deletefuro) {
        //         viewModel.removefuro();
          //   }
