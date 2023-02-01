@@ -11,10 +11,10 @@ public class ProjetoSpt extends Projeto {
     private String empresa;  // opcional
     private String tecnico;  // opcional
     private String contato;  // opcional. pode ser qualquer forma de contato
-    private String dataInicio, dataFim;
-    private String endereco;
+    private String dataInicio, dataFim;  // todo: definir automaticamente
+    private String endereco;  // todo: remove
 
-    private String referenciaNivel;  // opcional
+    private String referenciaNivel;  // obrigatório
     private String localDaObra;
     // descrição de algo que serve como referência para a altura dos furos. Ex: calçada
     private float alturaReferenciaNivelMar;  // não opcional
