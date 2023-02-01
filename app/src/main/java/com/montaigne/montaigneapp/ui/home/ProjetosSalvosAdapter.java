@@ -63,40 +63,35 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<BindedViewHolder
                         context.getString(R.string.categoria_spt));
         // todo: add granulometria
 
+        if (selectedItems.get(position)) {
+            holder.binding.cardView.setBackgroundResource(R.color.hint);
+        } else {
+            holder.binding.cardView.setBackgroundResource(R.color.white);
+        }
+
+
         holder.binding.cardView.setOnClickListener(v -> {
-            if (clickListener != null)
+            if (clickListener != null && selectedItems.size() > 0)
                 clickListener.onItemClick(position);
-            System.out.println(selectedProjects);
-            if (isItemLongClicked && selectedProjects > 0 && !selectedItems.get(position)) {
-                isCheckedList.set(position, true);
-                selectedItems.put(position, true);
-                holder.binding.cardView.setBackgroundResource(R.color.hint);
-            } else if (selectedItems.get(position)) {
-                selectedProjects--;
-                if (selectedProjects == 0) isItemLongClicked = false;
-                isCheckedList.set(position, false);
-                selectedItems.delete(position);
-                holder.binding.cardView.setBackgroundResource(R.color.white);
-            } else if (!isItemLongClicked && selectedProjects == 0) {
+            else {
                 Intent intent = new Intent(v.getContext(), SptActivity.class);
                 intent.putExtra(HomeVM.PROJETO, projeto);
                 v.getContext().startActivity(intent);
             }
+            if (selectedItems.get(position))
+                holder.binding.cardView.setBackgroundResource(R.color.hint);
+            else
+                holder.binding.cardView.setBackgroundResource(R.color.white);
         });
 
         holder.binding.cardView.setOnLongClickListener(v -> {
-            if (clickListener != null)
+            if (clickListener != null) {
                 clickListener.onItemLongClick(position);
-            if (!selectedItems.get(position)) {
-                isCheckedList.set(position, true);
-                isItemLongClicked = true;
-                selectedProjects++;
-                holder.binding.cardView.setBackgroundResource(R.color.hint);
-            } else {
-                isCheckedList.set(position, false);
-                selectedProjects--;
-                holder.binding.cardView.setBackgroundResource(R.color.white);
             }
+            if (selectedItems.get(position))
+                holder.binding.cardView.setBackgroundResource(R.color.hint);
+            else holder.binding.cardView.setBackgroundResource(R.color.white);
+
             return true;
         });
 

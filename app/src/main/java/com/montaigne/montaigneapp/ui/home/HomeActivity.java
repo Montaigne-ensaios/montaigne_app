@@ -1,7 +1,6 @@
 package com.montaigne.montaigneapp.ui.home;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -44,7 +43,7 @@ public class HomeActivity extends AppCompatActivity {
         binding.toolbarHomeInclude.toolbarHome.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.add) {
                 viewModel.newProject(this);
-            } else if (item.getItemId() == R.id.delete) {
+            } else if (item.getItemId() == R.id.action_delete) {
                 viewModel.removeProjects();
             }
             return true;
@@ -67,14 +66,19 @@ public class HomeActivity extends AppCompatActivity {
 
                 @Override
                 public boolean onActionItemClicked(androidx.appcompat.view.ActionMode mode, MenuItem item) {
-                    if (item.getItemId() == R.id.action_delete)
+                    if (item.getItemId() == R.id.action_delete) {
                         viewModel.removeProjects();
+                        actionMode.finish();
+                        viewModel.getIsCheckedList().clear();
+                    }
                     return false;
                 }
 
                 @Override
                 public void onDestroyActionMode(androidx.appcompat.view.ActionMode mode) {
-
+                    viewModel.getIsCheckedList().clear();
+                    actionMode = null;
+                    viewModel.getAdapterProjetosSalvos().notifyDataSetChanged();
                 }
             });
 

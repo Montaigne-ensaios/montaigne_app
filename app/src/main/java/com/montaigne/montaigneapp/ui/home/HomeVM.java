@@ -35,6 +35,10 @@ public class HomeVM extends ViewModel {
         this.clickListener = clickListener;
     }
 
+    public ProjetosSalvosAdapter getAdapterProjetosSalvos() {
+        return adapterProjetosSalvos;
+    }
+
     protected void initializeProjetoCategoriaAdapter(RecyclerView recyclerProjetoCategorias) {
         ArrayList<Object[]> categorias = new ArrayList<>();  // lista de filtros de projeto
         Context context = recyclerProjetoCategorias.getContext();
