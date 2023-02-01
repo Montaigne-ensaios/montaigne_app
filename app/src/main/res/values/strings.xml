@@ -85,7 +85,14 @@
     <!-- Strings fragment indentificar agregados -->
 
     <string name="registration_agregados">Insira a massa retida nas peneiras selecionadas da amostra :</string>
-    <string name="registration_substituir_dados_agregados">Substitua requisito </string>   //TO DO - Criar strings com lista dos dados necessários para o adpter
 
+    <!-- Strings adpter dados agregados para substituir no adpter text -->
+
+    <string name="registration_substituir_dados_agregados">Substitua requisito </string>   //TO DO - Criar strings e hints com lista dos dados necessários para o adpter
+    <string name="registration_name_agregado">Insira o nome do ensaio:</string>
+    <string name="registration_massa_agregado">Insira a massa do agregado a ser analisado:</string>
+    <string name="registration_massa_amostra_1">Indentificação da amostra 1:</string>
+    <string name="registration_massa_amostra_2">Indentificação da amostra 2:</string>
+    <string name="registration_data_início">Data do início:</string>
 
 </resources>
