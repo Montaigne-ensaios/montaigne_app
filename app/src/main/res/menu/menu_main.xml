@@ -4,11 +4,11 @@
 
     >
     <item
-        android:id="@+id/add"
+        android:id="@+id/action_add_project"
         android:orderInCategory="100"
-        android:title="novo projeto"
+        android:title="@string/menu_item_add_spt_projeto"
         android:icon="@drawable/ic_add"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/delete"
         android:orderInCategory="100"
@@ -16,9 +16,9 @@
         android:icon="@android:drawable/ic_menu_delete"
         app:showAsAction="never" />
     <item
-        android:id="@+id/action_ver"
+        android:id="@+id/action_help"
         android:orderInCategory="100"
-        android:title="Ajuda"
+        android:title="@string/action_help"
         android:icon="@android:drawable/ic_menu_info_details"
         app:showAsAction="never" />
 

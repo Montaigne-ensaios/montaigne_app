@@ -56,7 +56,7 @@ public class CarimboEnsaioFragment extends Fragment {
         activity.setActionBarTitle(getString(R.string.furo_action_bar_title) + (furoId + 1));
 
         binding.buttonGetLocation.setOnClickListener(v -> {
-            Toast.makeText(v.getContext(), R.string.notImplemented, Toast.LENGTH_SHORT).show();
+            Toast.makeText(v.getContext(), R.string.not_implemented, Toast.LENGTH_SHORT).show();
 //            viewModel.setLocation();  // todo: implementar coordenadas
         });
 

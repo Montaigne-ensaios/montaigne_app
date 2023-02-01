@@ -25,7 +25,7 @@
             android:id="@+id/action_edit_Furo"
             app:destination="@id/furoFragment" />
         <action
-            android:id="@+id/action_new_Furo"
+            android:id="@+id/action_new_furo"
             app:destination="@id/carimboEnsaioFragment" />
     </fragment>
     <fragment

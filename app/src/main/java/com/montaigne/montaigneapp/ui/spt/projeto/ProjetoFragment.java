@@ -7,6 +7,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -68,16 +69,17 @@ public class ProjetoFragment extends Fragment {
     private class MenuProvider implements androidx.core.view.MenuProvider {
         @Override
         public void onCreateMenu(@NonNull Menu menu, @NonNull MenuInflater menuInflater) {
-            menuInflater.inflate(R.menu.menu_spt, menu);
+            menuInflater.inflate(R.menu.menu_spt_projeto, menu);
         }
 
         @Override
         public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
-            if (menuItem.getItemId() == R.id.addfuro) {
-                SptVM.navigateFragments(R.id.action_new_Furo,
+            if (menuItem.getItemId() == R.id.action_add_furo) {
+                SptVM.navigateFragments(R.id.action_new_furo,
                         requireActivity().getSupportFragmentManager());
-            } else if (menuItem.getItemId() == R.id.deletefuro) {
-                // TODO: lidar com deleção (precisa-se retornar seleção do recycler)
+            } else if (menuItem.getItemId() == R.id.action_genarate_report) {
+                Toast.makeText(requireContext(), R.string.not_implemented, Toast.LENGTH_SHORT).show();
+                // todo: implementar geração de ensaios xlsx
             }
 
             return true;

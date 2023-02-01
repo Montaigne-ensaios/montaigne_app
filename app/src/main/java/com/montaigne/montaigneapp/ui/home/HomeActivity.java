@@ -44,7 +44,7 @@ public class HomeActivity extends AppCompatActivity {
 
         @Override
         public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
-            if (menuItem.getItemId() == R.id.add) {
+            if (menuItem.getItemId() == R.id.action_add_project) {
                 viewModel.newProject(HomeActivity.this);
             } else if (menuItem.getItemId() == R.id.delete) {
                 viewModel.removeProjects();

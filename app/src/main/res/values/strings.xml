@@ -3,11 +3,15 @@
 
     <string name="action_settings">Settings</string>
 
-    <string name="notImplemented">Não implementado</string>
+    <string name="not_implemented">Não implementado</string>
 
     <!-- Strings used for menu  -->
     <string name="action_help">Ajuda</string>
     <string name="action_infor">Sobre</string>
+    <string name="menu_item_add_spt_projeto">Adicionar projeto SPT</string>
+    <string name="menu_item_projetospt_novo_furo">Novo furo</string>
+    <string name="menu_item_projetospt_apagar_furo">Apagar furo</string>
+    <string name="menu_item_generate_report">Gerar relatório SPT</string>
 
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -77,6 +81,4 @@
     <string name="adapter_projetos_savlos_data">Inicio do Projeto: </string>
     <string name="adapter_projetos_savlos_projeto_label">Projeto de</string>
     <string name="adapter_amostra_name">"Amostra "</string>
-    <string name="menu_item_projetospt_novo_furo">Novo furo</string>
-    <string name="menu_item_projetospt_apagar_furo">Apagar furo</string>
 </resources>

@@ -52,7 +52,7 @@ public class SptActivity extends AppCompatActivity {
     private static class MenuProvider implements androidx.core.view.MenuProvider {
         @Override
         public void onCreateMenu(@NonNull Menu menu, @NonNull MenuInflater menuInflater) {
-            menuInflater.inflate(R.menu.menu_spt, menu);
+            menuInflater.inflate(R.menu.menu_spt_projeto, menu);
         }
 
         @Override

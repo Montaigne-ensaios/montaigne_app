@@ -47,7 +47,7 @@ public class CarimboProjetoFragment extends Fragment {
         activity.setActionBarTitle(projetoSpt.getNome());
 
         binding.buttonGetLocation.setOnClickListener(v -> {
-            Toast.makeText(v.getContext(), R.string.notImplemented, Toast.LENGTH_SHORT).show();
+            Toast.makeText(v.getContext(), R.string.not_implemented, Toast.LENGTH_SHORT).show();
 //            viewModel.setLocation();  // todo: implementar coordenadas
         });
 
