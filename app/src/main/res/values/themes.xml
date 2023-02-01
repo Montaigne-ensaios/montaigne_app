@@ -19,6 +19,7 @@
         <!-- menu-->
         <item name="itemIconTint">@color/white</item>
 
+        <item name="android:windowActionModeOverlay">true</item>
 
         <!-- Color de interação com butões -->
         <item name="colorAccent">#FFFFFF</item>
