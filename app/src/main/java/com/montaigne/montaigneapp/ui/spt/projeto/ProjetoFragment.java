@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -41,7 +40,7 @@ public class ProjetoFragment extends Fragment {
         binding = FragmentProjetoBinding.inflate(inflater, container, false);
 
         ProjetoSpt projeto = projectViewModel.getProjeto();
-        viewModel.setProjetoSpt(projeto);
+        viewModel.setProjeto(projeto);
         viewModel.updateFurosAdapter(binding.recyclerFuro);
 
         SptActivity activity = (SptActivity) requireActivity();
