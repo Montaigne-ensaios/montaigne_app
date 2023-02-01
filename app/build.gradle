@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.montaigne.montaigneapp"
-        minSdk 21
+        minSdk 26 //todo: mudança no sdk devido o apache poi. é pra ser 21.
         targetSdk 32
         versionCode 1
         versionName "1.0"
