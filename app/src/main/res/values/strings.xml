@@ -95,4 +95,11 @@
     <string name="registration_massa_amostra_2">Indentificação da amostra 2:</string>
     <string name="registration_data_início">Data do início:</string>
 
+    <!-- Strings adpter dados agregados para substituir no hint  -->
+    <string name="registration_hint_name_agregado">Ex:Areia concreto</string>
+    <string name="registration_hint_massa_agregado">Ex:1000g</string>
+    <string name="registration_hint_massa_amostra_1">Ex:Amostra de areia 1</string>
+    <string name="registration_hint_massa_amostra_2">Ex:Amostra de areia 2</string>
+    <string name="registration_hint_data_início">MM/DD/YYYY</string>
+
 </resources>
