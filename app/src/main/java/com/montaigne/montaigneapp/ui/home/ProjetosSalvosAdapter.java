@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
+import com.montaigne.montaigneapp.ui.AbstracProjectActivity;
 import com.montaigne.montaigneapp.ui.BindedViewHolder;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.databinding.AdapterHomeProjetosBinding;
@@ -55,7 +56,7 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<BindedViewHolder
 
         holder.binding.cardView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), SptActivity.class);
-            intent.putExtra(HomeVM.PROJETO, projeto);
+            intent.putExtra(AbstracProjectActivity.PROJETO, projeto);
             v.getContext().startActivity(intent);
         });
 

@@ -22,7 +22,10 @@ public abstract class AbstracProjectActivity <
 
     protected void setViewModel(@NonNull ProjectViewModel viewModel) {
         this.viewModel = viewModel;
-        viewModel.setUp((Projeto) getIntent().getExtras().getSerializable(HomeVM.PROJETO), getSupportFragmentManager());
+        viewModel.setUp((Projeto) getIntent()
+                .getExtras()
+                .getSerializable(AbstracProjectActivity.PROJETO),
+                getSupportFragmentManager());
     }
 
     protected void setButtonNavigate(Button buttonNavigate) {
