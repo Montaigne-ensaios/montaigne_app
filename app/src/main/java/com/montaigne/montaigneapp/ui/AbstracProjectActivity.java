@@ -1,0 +1,44 @@
+package com.montaigne.montaigneapp.ui;
+
+import android.widget.Button;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.montaigne.montaigneapp.model.Projeto;
+import com.montaigne.montaigneapp.ui.home.HomeVM;
+
+import java.util.Objects;
+
+public abstract class AbstracProjectActivity <ProjectViewModel extends AbstractProjectViewModel<Projeto>> extends AppCompatActivity {
+    public static final String PROJETO = "projeto";  // key intent extra bundle do projeto
+
+    private ProjectViewModel viewModel;
+    private Button buttonNavigate;
+
+    protected void setViewModel(@NonNull ProjectViewModel viewModel) {
+        this.viewModel = viewModel;
+        viewModel.setUp(getProjeto(), getSupportFragmentManager());
+    }
+
+    private void setButtonNavigate(Button buttonNavigate) {
+        this.buttonNavigate = buttonNavigate;
+        this.buttonNavigate.setOnClickListener(v -> viewModel.handleNavigation(getSupportFragmentManager()));
+    }
+
+    private void setButtonHome(@NonNull Button buttonHome) {
+        buttonHome.setOnClickListener(viewModel::intentHome);
+    }
+
+    protected void setNavigationButtonText(String text) {
+        buttonNavigate.setText(text);
+    }
+
+    protected void setActionBarTitle(String title) {
+        Objects.requireNonNull(getSupportActionBar()).setTitle(title);
+    }
+
+    private Projeto getProjeto() {
+        return (Projeto) getIntent().getExtras().getSerializable(HomeVM.PROJETO);
+    }
+}
