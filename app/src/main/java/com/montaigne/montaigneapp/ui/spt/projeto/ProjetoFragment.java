@@ -45,7 +45,7 @@ public class ProjetoFragment extends Fragment {
         viewModel.updateFurosAdapter(binding.recyclerFuro);
 
         SptActivity activity = (SptActivity) requireActivity();
-        activity.setNavigateButtonText(getString(R.string.btn_navigate_projeto));
+        activity.setButtonNavigateText(getString(R.string.btn_navigate_projeto));
         activity.setActionBarTitle(projeto.getNome());
 
         return binding.getRoot();

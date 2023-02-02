@@ -17,8 +17,6 @@ import com.montaigne.montaigneapp.ui.home.HomeActivity;
 import java.util.Objects;
 
 public abstract class AbstractProjectViewModel <Project extends Projeto> extends ViewModel {
-    private Project projeto;
-
     protected abstract void setUp(Projeto projeto, FragmentManager supportFragmentManager);
 
     protected void intentHome(@NonNull View view) {
@@ -35,12 +33,12 @@ public abstract class AbstractProjectViewModel <Project extends Projeto> extends
         ).getChildFragmentManager().getFragments().get(0);
     }
 
-    protected static void navigateFragments(int actionId, FragmentManager manager, Bundle args) {
+    public static void navigateFragments(int actionId, @NonNull FragmentManager manager, Bundle args) {
         ((NavHostFragment) Objects.requireNonNull(manager.findFragmentById(R.id.containerSpt)))
                 .getNavController().navigate(actionId, args);
     }
 
-    protected static void navigateFragments(int actionId, FragmentManager manager) {
+    public static void navigateFragments(int actionId, FragmentManager manager) {
         navigateFragments(actionId, manager, null);
     }
 

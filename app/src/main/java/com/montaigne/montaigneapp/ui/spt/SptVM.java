@@ -12,7 +12,9 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
+import com.montaigne.montaigneapp.model.Projeto;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
+import com.montaigne.montaigneapp.ui.AbstractProjectViewModel;
 import com.montaigne.montaigneapp.ui.spt.carimboProjeto.CarimboProjetoFragment;
 import com.montaigne.montaigneapp.ui.home.HomeActivity;
 import com.montaigne.montaigneapp.ui.spt.carimboEnsaio.CarimboEnsaioFragment;
@@ -23,17 +25,16 @@ import com.montaigne.montaigneapp.ui.spt.projeto.ProjetoFragment;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class SptVM extends ViewModel {
+public class SptVM extends AbstractProjectViewModel <ProjetoSpt> {
     private final String TAG = "SptActivity";
 
     private ProjetoSpt projeto;
     private boolean isProjetoNew = false;
     // variável que define se o projeto deve ser salvo ou deve-se criar um novo
 
+    @Override
     protected void handleNavigation(FragmentManager manager) {
-        Fragment f = Objects.requireNonNull(
-                manager.getPrimaryNavigationFragment()
-        ).getChildFragmentManager().getFragments().get(0);  // fragmento exibido
+        Fragment f = getCurrentFragment(manager);
 
         f.onPause();  // garante que os fragmentos atualizam o projeto
 
@@ -72,21 +73,17 @@ public class SptVM extends ViewModel {
         }
     }
 
-    public static void navigateFragments(int actionId, FragmentManager manager) {
-        navigateFragments(actionId, manager, null);
+    @Override
+    protected void setUp(Projeto projeto, FragmentManager manager) {
+        this.projeto = (ProjetoSpt) projeto;
+        if (projeto.getNome() == null) {
+            isProjetoNew = true;
+            ((ProjetoSpt) projeto).setListaDeFuros(new ArrayList<>());
+            navigateFragments(R.id.action_edit_Carimbo, manager);
+        }
     }
 
-    public static void navigateFragments(int actionId, FragmentManager manager, Bundle args) {
-        ((NavHostFragment) Objects.requireNonNull(manager.findFragmentById(R.id.containerSpt)))
-                .getNavController().navigate(actionId, args);
-    }
-
-    protected void intentHome(View view) {
-        Intent intent = new Intent(view.getContext(), HomeActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-        view.getContext().startActivity(intent);
-    }
-
+    @Override
     public void updateProjeto(ProjetoSpt projeto) {
         this.projeto = projeto;
         if (isProjetoNew) {
@@ -94,15 +91,6 @@ public class SptVM extends ViewModel {
             isProjetoNew = false;
         } else {
             ProjetoSptUseCase.update(projeto);
-        }
-    }
-
-    protected void setupViewModel(ProjetoSpt projeto, FragmentManager manager) {
-        this.projeto = projeto;
-        if (projeto.getNome() == null) {
-            isProjetoNew = true;
-            projeto.setListaDeFuros(new ArrayList<>());
-            navigateFragments(R.id.action_edit_Carimbo, manager);
         }
     }
 

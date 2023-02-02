@@ -43,7 +43,7 @@ public class CarimboProjetoFragment extends Fragment {
         viewModel.initializeRecycler(binding.recyclerCarimboProjeto);
 
         SptActivity activity = (SptActivity) getActivity();
-        activity.setNavigateButtonText(getString(R.string.btn_navigate_carimbo_projeto));
+        activity.setButtonNavigateText(getString(R.string.btn_navigate_carimbo_projeto));
         activity.setActionBarTitle(projetoSpt.getNome());
 
         binding.buttonGetLocation.setOnClickListener(v -> {

@@ -11,14 +11,14 @@ import android.view.MenuItem;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
+import com.montaigne.montaigneapp.ui.AbstracProjectActivity;
 import com.montaigne.montaigneapp.ui.home.HomeVM;
 import com.montaigne.montaigneapp.databinding.AcitivitySptBinding;
 
 import java.util.Objects;
 
-public class SptActivity extends AppCompatActivity {
+public class SptActivity extends AbstracProjectActivity<SptVM, ProjetoSpt> {
     private AcitivitySptBinding binding;
-    private SptVM viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,27 +26,16 @@ public class SptActivity extends AppCompatActivity {
         binding = AcitivitySptBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        viewModel = new ViewModelProvider(this).get(SptVM.class);
-        viewModel.setupViewModel(
-                (ProjetoSpt) getIntent().getExtras().getSerializable(HomeVM.PROJETO),
-                getSupportFragmentManager()
-        );
+        setViewModel(new ViewModelProvider(this).get(SptVM.class));
+
         setSupportActionBar(binding.toolbarSptInclude.toolbarSpt);
         getSupportActionBar().setIcon(R.drawable.icon_arrow_left);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
 
-        binding.imgButtonHome.setOnClickListener(viewModel::intentHome);
-        binding.buttonNavigate.setOnClickListener(v -> viewModel.handleNavigation(getSupportFragmentManager()));
+        setButtonHome(binding.imgButtonHome);
+        setButtonNavigate(binding.buttonNavigate);
 
 //        addMenuProvider(new SptActivity.MenuProvider());  // não necessário no momento
-    }
-
-    public void setNavigateButtonText(String string) {
-        binding.buttonNavigate.setText(string);
-    }
-
-    public void setActionBarTitle(String string) {
-        Objects.requireNonNull(getSupportActionBar()).setTitle(string);
     }
 
     private static class MenuProvider implements androidx.core.view.MenuProvider {

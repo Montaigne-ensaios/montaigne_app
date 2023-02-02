@@ -52,7 +52,7 @@ public class CarimboEnsaioFragment extends Fragment {
         viewModel.setupViewModel(projeto, furoId, fields);
 
         SptActivity activity = (SptActivity) requireActivity();
-        activity.setNavigateButtonText(getString(R.string.btn_navigate_carimbo_furo));
+        activity.setButtonNavigateText(getString(R.string.btn_navigate_carimbo_furo));
         activity.setActionBarTitle(getString(R.string.furo_action_bar_title) + (furoId + 1));
 
         binding.buttonGetLocation.setOnClickListener(v -> {

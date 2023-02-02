@@ -1,6 +1,7 @@
 package com.montaigne.montaigneapp.ui;
 
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,7 +11,10 @@ import com.montaigne.montaigneapp.ui.home.HomeVM;
 
 import java.util.Objects;
 
-public abstract class AbstracProjectActivity <ProjectViewModel extends AbstractProjectViewModel<Projeto>> extends AppCompatActivity {
+public abstract class AbstracProjectActivity <
+        ProjectViewModel extends AbstractProjectViewModel<Project>,
+        Project extends Projeto
+        > extends AppCompatActivity {
     public static final String PROJETO = "projeto";  // key intent extra bundle do projeto
 
     private ProjectViewModel viewModel;
@@ -18,27 +22,23 @@ public abstract class AbstracProjectActivity <ProjectViewModel extends AbstractP
 
     protected void setViewModel(@NonNull ProjectViewModel viewModel) {
         this.viewModel = viewModel;
-        viewModel.setUp(getProjeto(), getSupportFragmentManager());
+        viewModel.setUp((Projeto) getIntent().getExtras().getSerializable(HomeVM.PROJETO), getSupportFragmentManager());
     }
 
-    private void setButtonNavigate(Button buttonNavigate) {
+    protected void setButtonNavigate(Button buttonNavigate) {
         this.buttonNavigate = buttonNavigate;
         this.buttonNavigate.setOnClickListener(v -> viewModel.handleNavigation(getSupportFragmentManager()));
     }
 
-    private void setButtonHome(@NonNull Button buttonHome) {
+    protected void setButtonHome(@NonNull ImageButton buttonHome) {
         buttonHome.setOnClickListener(viewModel::intentHome);
     }
 
-    protected void setNavigationButtonText(String text) {
+    public void setButtonNavigateText(String text) {
         buttonNavigate.setText(text);
     }
 
-    protected void setActionBarTitle(String title) {
+    public void setActionBarTitle(String title) {
         Objects.requireNonNull(getSupportActionBar()).setTitle(title);
-    }
-
-    private Projeto getProjeto() {
-        return (Projeto) getIntent().getExtras().getSerializable(HomeVM.PROJETO);
     }
 }
