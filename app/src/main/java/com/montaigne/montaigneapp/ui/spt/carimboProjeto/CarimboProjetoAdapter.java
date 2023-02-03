@@ -3,6 +3,7 @@ package com.montaigne.montaigneapp.ui.spt.carimboProjeto;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -15,44 +16,41 @@ import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.BindedViewHolder;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class CarimboProjetoAdapter extends RecyclerView.Adapter<BindedViewHolder<AdapterCarimboProjetoBinding>> {
-    List<Field> fields = new ArrayList<>();
+    private final List<Pair<Field, String >> fields = new ArrayList<>();
 
-    private static class Field {
-        private final FieldsIds fieldName;
-        private final int hintId;
-        private final String obsMsg;
-        private final int iconId;
-        private String value;
-        private int inputType;
+    public enum Field {
+        ID("id"),
+        NOME("nome",  R.string.registration_projectName_hint, "Obrigatório*", R.drawable.ic_name_project, InputType.TYPE_CLASS_TEXT),
+        CLIENTE("cliente", R.string.registration_cliente_hint, " ", R.drawable.ic_perfil, InputType.TYPE_CLASS_TEXT),
+        EMPRESA("empresa", R.string.registration_empresa_hint, " ", R.drawable.ic_empresa, InputType.TYPE_CLASS_TEXT),
+        TECNICO("tecnico", R.string.registration_tecnico_hint, " ", R.drawable.ic_technician, InputType.TYPE_CLASS_TEXT),
+        CONTATO("contato",  R.string.registration_contato_hint, " ", R.drawable.ic_contato, InputType.TYPE_CLASS_TEXT),
+        REFERENCIA("referencia", R.string.registration_referencia_nivel_hint, "Obrigatório*", R.drawable.ic_referencia_furo, InputType.TYPE_CLASS_TEXT),
+        ALTURAREFERENCIA("altura", R.string.registration_altura_referencia_nivel_hint, " ", R.drawable.ic_edit, InputType.TYPE_NUMBER_FLAG_SIGNED | InputType.TYPE_NUMBER_FLAG_DECIMAL),
 
-        public Field(FieldsIds fieldName, String value, int hintId,
-                     String obsMsg, int iconId, int inputType){
-            this.fieldName = fieldName;
-            this.value = value;
-            this.hintId = hintId;
-            this.obsMsg = obsMsg;
-            this.iconId = iconId;
-            this.inputType = inputType;
-        }
-    }
-
-    public enum FieldsIds {
-        ID("id"), NOME("nome"), CLIENTE("cliente"),
-        EMPRESA("empresa"), TECNICO("tecnico"), CONTATO("contato"),
-        REFERENCIA("referencia"), ALTURAREFERENCIA("altura"),
-
-        ENDERECO("endereço"), // captura de localização -> geocode
+        ENDERECO("endereço", R.string.registration_coordenadas_hint, " ", R.drawable.ic_location, InputType.TYPE_CLASS_TEXT), // captura de localização -> geocode
         DATA_INICIO("datainicio"), DATA_FIM("datafim");  // datepicker
 
-        final String id;
+        final String id, message;
+        final int hintId, iconId, inputType;
 
-        FieldsIds(String id) {
+        Field(String id) {
             this.id = id;
+            message = null;
+            hintId = -1;
+            iconId = -1;
+            inputType = -1;
+        }
+
+        Field(String id, int hintId, String message, int iconId, int inputType) {
+            this.id = id;
+            this.hintId = hintId;
+            this.message = message;
+            this.iconId = iconId;
+            this.inputType = inputType;
         }
     }
 
@@ -61,28 +59,28 @@ public class CarimboProjetoAdapter extends RecyclerView.Adapter<BindedViewHolder
     }
 
     private void setProjetoSpt(ProjetoSpt ProjetoSpt) {
-        fields.add(new Field(FieldsIds.NOME, ProjetoSpt.getNome(), R.string.registration_projectName_hint, "Obrigatório*", R.drawable.ic_name_project, InputType.TYPE_CLASS_TEXT));
-        fields.add(new Field(FieldsIds.CLIENTE, ProjetoSpt.getCliente(), R.string.registration_cliente_hint, " ", R.drawable.ic_perfil, InputType.TYPE_CLASS_TEXT));
-        fields.add(new Field(FieldsIds.EMPRESA, ProjetoSpt.getEmpresa(), R.string.registration_empresa_hint, " ", R.drawable.ic_empresa, InputType.TYPE_CLASS_TEXT));
-        fields.add(new Field(FieldsIds.TECNICO, ProjetoSpt.getTecnico(), R.string.registration_tecnico_hint, " ", R.drawable.ic_technician, InputType.TYPE_CLASS_TEXT));
-        fields.add(new Field(FieldsIds.CONTATO, ProjetoSpt.getContato(), R.string.registration_contato_hint, " ", R.drawable.ic_contato, InputType.TYPE_CLASS_TEXT));
-        fields.add(new Field(FieldsIds.REFERENCIA, ProjetoSpt.getReferenciaNivel(), R.string.registration_referencia_nivel_hint, "Obrigatório*", R.drawable.ic_referencia_furo, InputType.TYPE_CLASS_TEXT));
-        fields.add(new Field(FieldsIds.ALTURAREFERENCIA, Float.toString(ProjetoSpt.getAlturaReferencia()), R.string.registration_altura_referencia_nivel_hint, " ", R.drawable.ic_edit, InputType.TYPE_NUMBER_FLAG_SIGNED | InputType.TYPE_NUMBER_FLAG_DECIMAL));
-        fields.add(new Field(FieldsIds.ENDERECO, ProjetoSpt.getEndereco(), R.string.registration_coordenadas_hint, " ", R.drawable.ic_location, InputType.TYPE_CLASS_TEXT));
+        fields.add(new Pair<>(Field.NOME, ProjetoSpt.getNome()));
+        fields.add(new Pair<>(Field.CLIENTE, ProjetoSpt.getCliente()));
+        fields.add(new Pair<>(Field.EMPRESA, ProjetoSpt.getEmpresa()));
+        fields.add(new Pair<>(Field.TECNICO, ProjetoSpt.getTecnico()));
+        fields.add(new Pair<>(Field.CONTATO, ProjetoSpt.getContato()));
+        fields.add(new Pair<>(Field.REFERENCIA, ProjetoSpt.getReferenciaNivel()));
+        fields.add(new Pair<>(Field.ALTURAREFERENCIA, Float.toString(ProjetoSpt.getAlturaReferencia())));
+        fields.add(new Pair<>(Field.ENDERECO, ProjetoSpt.getEndereco()));
         notifyDataSetChanged();
     }
 
-    public Map<String, String> getValues() {
-        HashMap<String, String> map = new HashMap<>();
-        map.put("nome", fields.get(0).value);
-        map.put("cliente", fields.get(1).value);
-        map.put("empresa", fields.get(2).value);
-        map.put("tecnico", fields.get(3).value);
-        map.put("numeroDeTelefone", fields.get(4).value);
-        map.put("dataInicio", fields.get(5).value);
-        map.put("coordenadas", fields.get(6).value);
+    public ProjetoSpt updateProjetoSpt(@NonNull ProjetoSpt projeto) {
+        projeto.setNome(fields.get(0).second);
+        projeto.setCliente(fields.get(1).second);
+        projeto.setEmpresa(fields.get(2).second);
+        projeto.setTecnico(fields.get(3).second);
+        projeto.setContato(fields.get(4).second);
+        projeto.setReferenciaNivel(fields.get(5).second);
+        projeto.setAlturaReferencia(Float.parseFloat(fields.get(6).second));
+        projeto.setEndereco(fields.get(7).second);
 
-        return map;
+        return projeto;
     }
 
     @NonNull
@@ -98,11 +96,13 @@ public class CarimboProjetoAdapter extends RecyclerView.Adapter<BindedViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull BindedViewHolder<AdapterCarimboProjetoBinding> holder, int position) {
-        Field field = fields.get(position);
+        Pair<Field, String> pair = fields.get(position);
+        
+        Field field = pair.first;
         holder.binding.textInputLayoutNameProjeto.setStartIconDrawable(field.iconId);
-        holder.binding.textInputLayoutNameProjeto.setHelperText(field.obsMsg);
-        holder.binding.textInputEditTextNameProjeto.setHint(field.hintId);  // todo: resolver hint errada
-        holder.binding.textInputEditTextNameProjeto.setText(field.value);
+        holder.binding.textInputLayoutNameProjeto.setHelperText(field.message);
+        holder.binding.textInputLayoutNameProjeto.setHint(field.hintId);
+        holder.binding.textInputEditTextNameProjeto.setText(pair.second);
         holder.binding.textInputEditTextNameProjeto.setInputType(field.inputType);
 
         holder.binding.textInputEditTextNameProjeto.addTextChangedListener(new TextWatcher() {
@@ -110,11 +110,12 @@ public class CarimboProjetoAdapter extends RecyclerView.Adapter<BindedViewHolder
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {}  // todo: implementar máscaras
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
 
             @Override
             public void afterTextChanged(Editable s) {
-                fields.get(holder.getAdapterPosition()).value = s.toString();
+                fields.set(holder.getAdapterPosition(),  // necessário para chamadas feitas posteriormente
+                        new Pair<>(field, s.toString()));
             }
         });
     }

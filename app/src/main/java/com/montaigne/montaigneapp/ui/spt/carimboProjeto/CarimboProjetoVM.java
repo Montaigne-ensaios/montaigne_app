@@ -17,14 +17,7 @@ public class CarimboProjetoVM extends ViewModel {
     protected void setProjeto(ProjetoSpt projetoSpt) { this.projetoSpt = projetoSpt; }
 
     protected Projeto getProjeto() {
-        Map<String, String> values = adapter.getValues();
-        projetoSpt.setNome(values.get("nome"));
-        projetoSpt.setCliente(values.get("cliente"));
-        projetoSpt.setEmpresa(values.get("empresa"));
-        projetoSpt.setTecnico(values.get("tecnico"));
-        projetoSpt.setContato(values.get("numeroDeTelefone"));
-        projetoSpt.setDataInicio(values.get("dataInicio"));
-        return projetoSpt;
+        return adapter.updateProjetoSpt(projetoSpt);
     }
 
     protected void setLocation(Coordenada coordenada) {
