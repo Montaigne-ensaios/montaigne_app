@@ -34,7 +34,7 @@ public abstract class AbstracProjectActivity <
     }
 
     protected void setButtonHome(@NonNull ImageButton buttonHome) {
-        buttonHome.setOnClickListener(viewModel::intentHome);
+        buttonHome.setOnClickListener(AbstractProjectViewModel::intentHome);
     }
 
     public void setButtonNavigateText(String text) {

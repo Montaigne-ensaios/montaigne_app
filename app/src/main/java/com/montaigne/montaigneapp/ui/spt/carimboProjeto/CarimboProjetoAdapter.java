@@ -13,22 +13,26 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.databinding.AdapterCarimboProjetoBinding;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
+import com.montaigne.montaigneapp.ui.AbstractProjectViewModel;
 import com.montaigne.montaigneapp.ui.BindedViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class CarimboProjetoAdapter extends RecyclerView.Adapter<BindedViewHolder<AdapterCarimboProjetoBinding>> {
     private final List<Pair<Field, String >> fields = new ArrayList<>();
 
+    private static final String OBRIGATORIO = "Campo obrigatório";
+    
     public enum Field {
         ID("id"),
-        NOME("nome",  R.string.registration_projectName_hint, "Obrigatório*", R.drawable.ic_name_project, InputType.TYPE_CLASS_TEXT),
+        NOME("nome",  R.string.registration_projectName_hint, OBRIGATORIO, R.drawable.ic_name_project, InputType.TYPE_CLASS_TEXT),
         CLIENTE("cliente", R.string.registration_cliente_hint, " ", R.drawable.ic_perfil, InputType.TYPE_CLASS_TEXT),
         EMPRESA("empresa", R.string.registration_empresa_hint, " ", R.drawable.ic_empresa, InputType.TYPE_CLASS_TEXT),
         TECNICO("tecnico", R.string.registration_tecnico_hint, " ", R.drawable.ic_technician, InputType.TYPE_CLASS_TEXT),
         CONTATO("contato",  R.string.registration_contato_hint, " ", R.drawable.ic_contato, InputType.TYPE_CLASS_TEXT),
-        REFERENCIA("referencia", R.string.registration_referencia_nivel_hint, "Obrigatório*", R.drawable.ic_referencia_furo, InputType.TYPE_CLASS_TEXT),
+        REFERENCIA("referencia", R.string.registration_referencia_nivel_hint, OBRIGATORIO, R.drawable.ic_referencia_furo, InputType.TYPE_CLASS_TEXT),
         ALTURAREFERENCIA("altura", R.string.registration_altura_referencia_nivel_hint, " ", R.drawable.ic_edit, InputType.TYPE_NUMBER_FLAG_SIGNED | InputType.TYPE_NUMBER_FLAG_DECIMAL),
 
         ENDERECO("endereço", R.string.registration_coordenadas_hint, " ", R.drawable.ic_location, InputType.TYPE_CLASS_TEXT), // captura de localização -> geocode
@@ -99,11 +103,17 @@ public class CarimboProjetoAdapter extends RecyclerView.Adapter<BindedViewHolder
         Pair<Field, String> pair = fields.get(position);
         
         Field field = pair.first;
+        String string = pair.second;
         holder.binding.textInputLayoutNameProjeto.setStartIconDrawable(field.iconId);
         holder.binding.textInputLayoutNameProjeto.setHelperText(field.message);
         holder.binding.textInputLayoutNameProjeto.setHint(field.hintId);
-        holder.binding.textInputEditTextNameProjeto.setText(pair.second);
+        holder.binding.textInputEditTextNameProjeto.setText(string);
         holder.binding.textInputEditTextNameProjeto.setInputType(field.inputType);
+
+        if ((Objects.equals(string, "") || Objects.equals(string, " ") || string == null )
+                && Objects.equals(field.message, OBRIGATORIO)) {
+            AbstractProjectViewModel.addLockingField(field.id);
+        }
 
         holder.binding.textInputEditTextNameProjeto.addTextChangedListener(new TextWatcher() {
             @Override
@@ -114,8 +124,16 @@ public class CarimboProjetoAdapter extends RecyclerView.Adapter<BindedViewHolder
 
             @Override
             public void afterTextChanged(Editable s) {
-                fields.set(holder.getAdapterPosition(),  // necessário para chamadas feitas posteriormente
-                        new Pair<>(field, s.toString()));
+                String string = s.toString();
+                
+                if ((Objects.equals(string, "") || Objects.equals(string, " "))
+                        && Objects.equals(field.message, OBRIGATORIO)) {
+                    AbstractProjectViewModel.addLockingField(field.id);
+                } else {
+                    AbstractProjectViewModel.removeLockingField(field.id);
+                    fields.set(holder.getAdapterPosition(),  // necessário para chamadas feitas posteriormente
+                            new Pair<>(field, string));
+                }
             }
         });
     }

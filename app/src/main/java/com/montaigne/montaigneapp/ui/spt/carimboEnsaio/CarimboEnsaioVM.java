@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.lifecycle.ViewModel;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.montaigne.montaigneapp.model.Coordenada;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
@@ -58,7 +59,6 @@ public class CarimboEnsaioVM extends ViewModel {
             Toast.makeText(Objects.requireNonNull(fields.get("DataInicio")).getContext(), "Formato de data ilegal", Toast.LENGTH_SHORT).show();
             Log.e(TAG, "Formato de data inválido.", e);
         }  // todo: substituir por datepicker
-        furo.setListaDeAmostras(new ArrayList<>());
 
         boolean isNew = true;
         for (FuroSpt furoI: projeto.getListaDeFuros()) {
@@ -68,8 +68,10 @@ public class CarimboEnsaioVM extends ViewModel {
             }
         }
 
-        if (isNew)
+        if (isNew) {
             projeto.getListaDeFuros().add(furo);
+            furo.setListaDeAmostras(new ArrayList<>());
+        }
         else
             projeto.getListaDeFuros().set(furoId, furo);
 

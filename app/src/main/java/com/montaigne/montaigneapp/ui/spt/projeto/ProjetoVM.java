@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.data.usecase.FuroSptUseCase;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
+import com.montaigne.montaigneapp.ui.AbstractProjectViewModel;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
-import com.montaigne.montaigneapp.ui.spt.SptVM;
 
 public class ProjetoVM extends ViewModel {
     private ProjetoSpt projeto;
@@ -35,7 +35,7 @@ public class ProjetoVM extends ViewModel {
             
             b.putInt("furoId", furoId);
 
-            SptVM.navigateFragments(R.id.action_edit_Furo, manager, b);
+            AbstractProjectViewModel.navigateFragments(R.id.action_edit_Furo, manager, b);
         });
 
         recyclerFuros.setAdapter(adapter);

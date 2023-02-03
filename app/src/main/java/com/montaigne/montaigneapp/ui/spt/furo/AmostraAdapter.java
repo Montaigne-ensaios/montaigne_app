@@ -46,6 +46,7 @@ public class AmostraAdapter extends RecyclerView.Adapter<BindedViewHolder<Adapte
 
     @Override
     public int getItemCount() {
+        // fixme: o projeto crasha se você sai de um carimbo antes de a lista ter sido criada
         return amostras.size();
     }
 }
