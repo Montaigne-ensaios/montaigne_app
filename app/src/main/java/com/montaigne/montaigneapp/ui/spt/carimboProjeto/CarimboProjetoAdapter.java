@@ -23,14 +23,14 @@ public class CarimboProjetoAdapter extends RecyclerView.Adapter<BindedViewHolder
     List<Field> fields = new ArrayList<>();
 
     private static class Field {
-        private final String fieldName;
+        private final FieldsIds fieldName;
         private final int hintId;
         private final String obsMsg;
         private final int iconId;
         private String value;
         private int inputType;
 
-        public Field(String fieldName, String value, int hintId,
+        public Field(FieldsIds fieldName, String value, int hintId,
                      String obsMsg, int iconId, int inputType){
             this.fieldName = fieldName;
             this.value = value;
@@ -41,18 +41,34 @@ public class CarimboProjetoAdapter extends RecyclerView.Adapter<BindedViewHolder
         }
     }
 
+    public enum FieldsIds {
+        ID("id"), NOME("nome"), CLIENTE("cliente"),
+        EMPRESA("empresa"), TECNICO("tecnico"), CONTATO("contato"),
+        REFERENCIA("referencia"), ALTURAREFERENCIA("altura"),
+
+        ENDERECO("endereço"), // captura de localização -> geocode
+        DATA_INICIO("datainicio"), DATA_FIM("datafim");  // datepicker
+
+        final String id;
+
+        FieldsIds(String id) {
+            this.id = id;
+        }
+    }
+
     public CarimboProjetoAdapter(ProjetoSpt ProjetoSpt) {
         setProjetoSpt(ProjetoSpt);
     }
 
     private void setProjetoSpt(ProjetoSpt ProjetoSpt) {
-        fields.add(new Field("nome", ProjetoSpt.getNome(), R.string.registration_projectName_hint, "Obrigatório*", R.drawable.ic_name_project, InputType.TYPE_CLASS_TEXT));
-        fields.add(new Field("cliente", ProjetoSpt.getCliente(), R.string.registration_cliente_hint, " ", R.drawable.ic_perfil, InputType.TYPE_CLASS_TEXT));
-        fields.add(new Field("empresa", ProjetoSpt.getEmpresa(), R.string.registration_empresa_hint, " ", R.drawable.ic_empresa, InputType.TYPE_CLASS_TEXT));
-        fields.add(new Field("tecnico", ProjetoSpt.getTecnico(), R.string.registration_tecnico_hint, " ", R.drawable.ic_technician, InputType.TYPE_CLASS_TEXT));
-        fields.add(new Field("numeroDeTelefone", ProjetoSpt.getContato(), R.string.registration_contato_hint, " ", R.drawable.ic_contato, InputType.TYPE_CLASS_PHONE));
-        fields.add(new Field("dataInicio", ProjetoSpt.getDataInicio(), R.string.registration_data_inicio_hint, "Obrigatório*", R.drawable.ic_date, InputType.TYPE_CLASS_DATETIME));  // todo: add datepicker
-//        fields.add(new Field("coordenadas", "", R.string.registration_coordenadas_hint, " ", R.drawable.ic_location, InputTypes.TEXT));
+        fields.add(new Field(FieldsIds.NOME, ProjetoSpt.getNome(), R.string.registration_projectName_hint, "Obrigatório*", R.drawable.ic_name_project, InputType.TYPE_CLASS_TEXT));
+        fields.add(new Field(FieldsIds.CLIENTE, ProjetoSpt.getCliente(), R.string.registration_cliente_hint, " ", R.drawable.ic_perfil, InputType.TYPE_CLASS_TEXT));
+        fields.add(new Field(FieldsIds.EMPRESA, ProjetoSpt.getEmpresa(), R.string.registration_empresa_hint, " ", R.drawable.ic_empresa, InputType.TYPE_CLASS_TEXT));
+        fields.add(new Field(FieldsIds.TECNICO, ProjetoSpt.getTecnico(), R.string.registration_tecnico_hint, " ", R.drawable.ic_technician, InputType.TYPE_CLASS_TEXT));
+        fields.add(new Field(FieldsIds.CONTATO, ProjetoSpt.getContato(), R.string.registration_contato_hint, " ", R.drawable.ic_contato, InputType.TYPE_CLASS_TEXT));
+        fields.add(new Field(FieldsIds.REFERENCIA, ProjetoSpt.getReferenciaNivel(), R.string.registration_referencia_nivel_hint, "Obrigatório*", R.drawable.ic_referencia_furo, InputType.TYPE_CLASS_TEXT));
+        fields.add(new Field(FieldsIds.ALTURAREFERENCIA, Float.toString(ProjetoSpt.getAlturaReferencia()), R.string.registration_altura_referencia_nivel_hint, " ", R.drawable.ic_edit, InputType.TYPE_NUMBER_FLAG_SIGNED | InputType.TYPE_NUMBER_FLAG_DECIMAL));
+        fields.add(new Field(FieldsIds.ENDERECO, ProjetoSpt.getEndereco(), R.string.registration_coordenadas_hint, " ", R.drawable.ic_location, InputType.TYPE_CLASS_TEXT));
         notifyDataSetChanged();
     }
 
@@ -64,7 +80,7 @@ public class CarimboProjetoAdapter extends RecyclerView.Adapter<BindedViewHolder
         map.put("tecnico", fields.get(3).value);
         map.put("numeroDeTelefone", fields.get(4).value);
         map.put("dataInicio", fields.get(5).value);
-//        map.put("coordenadas", fields.get(6).value);
+        map.put("coordenadas", fields.get(6).value);
 
         return map;
     }

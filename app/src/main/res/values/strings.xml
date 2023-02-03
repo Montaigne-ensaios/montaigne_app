@@ -42,7 +42,7 @@
     <string name="registration_local_obra_hint">Local da obra</string>
     <string name="registration_quantidade_furos_hint">Número de furos</string>
     <string name="registration_data_inicio_hint">Data de inicio</string>
-    <string name="registration_referencia_nivel_hint">Referência de nivel</string>
+    <string name="registration_referencia_nivel_hint">Descrição da referência de nivel</string>
     <string name="registration_altura_referencia_nivel_hint">Altura da referência de nível</string>
     <string name="registration_coordenadas_hint">Coordenadas do projeto</string>
 

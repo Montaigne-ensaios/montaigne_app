@@ -1,6 +1,5 @@
 package com.montaigne.montaigneapp.model.spt;
 
-import com.montaigne.montaigneapp.model.Coordenada;
 import com.montaigne.montaigneapp.model.Projeto;
 
 import java.util.List;
@@ -11,13 +10,11 @@ public class ProjetoSpt extends Projeto {
     private String empresa;  // opcional
     private String tecnico;  // opcional
     private String contato;  // opcional. pode ser qualquer forma de contato
-    private String dataInicio, dataFim;  // todo: definir automaticamente
-    private String endereco;  // todo: remove
-
+    private String dataFim;  // todo: definir automaticamente
+    private String endereco;  // gerar com geocode
     private String referenciaNivel;  // obrigatório
-    private String localDaObra;
     // descrição de algo que serve como referência para a altura dos furos. Ex: calçada
-    private float alturaReferenciaNivelMar;  // não opcional
+    private float alturaReferencia;  // não opcional
     // altura da referência de nível em relação ao nível do mar.
     //  Ex: a calçada está a 196,42m do nível do mar.
     private List<FuroSpt> listaDeFuros;
@@ -26,20 +23,18 @@ public class ProjetoSpt extends Projeto {
 
     public ProjetoSpt(String id, String nome, String dataInicio,
                       String cliente, String empresa, String tecnico,
-                      String contato, String dataInicio1, String dataFim,
+                      String contato, String dataFim,
                       String endereco, String referenciaNivel, String localDaObra,
-                      float alturaReferenciaNivelMar, List<FuroSpt> listaDeFuros) {
+                      float alturaReferencia, List<FuroSpt> listaDeFuros) {
         super(id, nome, dataInicio);
         this.cliente = cliente;
         this.empresa = empresa;
         this.tecnico = tecnico;
         this.contato = contato;
-        this.dataInicio = dataInicio1;
         this.dataFim = dataFim;
         this.endereco = endereco;
         this.referenciaNivel = referenciaNivel;
-        this.localDaObra = localDaObra;
-        this.alturaReferenciaNivelMar = alturaReferenciaNivelMar;
+        this.alturaReferencia = alturaReferencia;
         this.listaDeFuros = listaDeFuros;
     }
 
@@ -75,16 +70,6 @@ public class ProjetoSpt extends Projeto {
         this.contato = contato;
     }
 
-    @Override
-    public String getDataInicio() {
-        return dataInicio;
-    }
-
-    @Override
-    public void setDataInicio(String dataInicio) {
-        this.dataInicio = dataInicio;
-    }
-
     public String getDataFim() {
         return dataFim;
     }
@@ -109,20 +94,12 @@ public class ProjetoSpt extends Projeto {
         this.referenciaNivel = referenciaNivel;
     }
 
-    public String getLocalDaObra() {
-        return localDaObra;
+    public float getAlturaReferencia() {
+        return alturaReferencia;
     }
 
-    public void setLocalDaObra(String localDaObra) {
-        this.localDaObra = localDaObra;
-    }
-
-    public float getAlturaReferenciaNivelMar() {
-        return alturaReferenciaNivelMar;
-    }
-
-    public void setAlturaReferenciaNivelMar(float alturaReferenciaNivelMar) {
-        this.alturaReferenciaNivelMar = alturaReferenciaNivelMar;
+    public void setAlturaReferencia(float alturaReferencia) {
+        this.alturaReferencia = alturaReferencia;
     }
 
     public List<FuroSpt> getListaDeFuros() {

@@ -28,7 +28,7 @@ public class CarimboProjetoVM extends ViewModel {
     }
 
     protected void setLocation(Coordenada coordenada) {
-        projetoSpt.setLocalDaObra(coordenada.toString());
+        projetoSpt.setEndereco(coordenada.toString());
         // todo: ao invés de usar o toString, deve-se usar a API geocode
     }
 
