@@ -1,9 +1,10 @@
 package com.montaigne.montaigneapp.ui.spt.ensaio;
 
+import static com.montaigne.montaigneapp.data.utils.editTextInputParser.getFloat;
+import static com.montaigne.montaigneapp.data.utils.editTextInputParser.setValue;
+
 import android.widget.EditText;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModel;
 
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
@@ -31,15 +32,15 @@ public class EnsaioVM extends ViewModel {
             amostra = getAmostra();
         }
 
-        setInt(golpes.get(0), amostra.getGolpe1());
-        setInt(golpes.get(1), amostra.getGolpe2());
-        setInt(golpes.get(2), amostra.getGolpe3());
-        setFloat(penetracoes.get(0), amostra.getPenatracao1());
-        setFloat(penetracoes.get(1), amostra.getPenatracao2());
-        setFloat(penetracoes.get(2), amostra.getPenatracao3());
+        setValue(golpes.get(0), amostra.getGolpe1());
+        setValue(golpes.get(1), amostra.getGolpe2());
+        setValue(golpes.get(2), amostra.getGolpe3());
+        setValue(penetracoes.get(0), amostra.getPenatracao1());
+        setValue(penetracoes.get(1), amostra.getPenatracao2());
+        setValue(penetracoes.get(2), amostra.getPenatracao3());
 
-        setFloat(fields.get(0), amostra.getProfundidade());
-        setFloat(fields.get(1), getFuro().getNivelDAgua());
+        setValue(fields.get(0), amostra.getProfundidade());
+        setValue(fields.get(1), getFuro().getNivelDAgua());
     }
 
     private FuroSpt getFuro() {
@@ -83,26 +84,14 @@ public class EnsaioVM extends ViewModel {
     }
 
     protected void incrementGolpe(EditText editText) {
-        setInt(editText, (int) getFloat(editText) + 1);
+        setValue(editText, (int) getFloat(editText) + 1);
     }
 
     protected void decrementGolpe(EditText editText) {
         // garante que o valor jamais será menor que zero
         int v = (int) getFloat(editText);
         v = (v > 0) ? (v - 1) : v;
-        setInt(editText, v);
+        setValue(editText, v);
     }
 
-    private float getFloat(EditText editText) {
-        String value = String.valueOf(editText.getText());
-        return value.equals("") ? 0 : Float.parseFloat(value);
-    }
-
-    private void setFloat(@NonNull EditText editText, float value) {
-        editText.setText(String.valueOf(value));
-    }
-
-    private void setInt(@NonNull EditText editText, int value) {
-        editText.setText(String.valueOf(value));
-    }
 }
