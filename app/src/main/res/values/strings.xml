@@ -33,6 +33,7 @@
     <!-- Strings da tela Carimbo Project -->
     <string name="msg_carimbo_automátizado">O carimbo projeto é realizado para todos os furos, contendo informações gerais que não serão alteradas nos demais furos.</string>
     <string name="error_campo_obrigatorio">Obrigatório*</string>
+    <string name="btn_capturar_endereco">Determinar endereço via localização do dispositivo</string>
 
     <string name="registration_projectName_hint">Nome do projeto</string>
     <string name="registration_tecnico_hint">Técnico</string>
@@ -44,8 +45,7 @@
     <string name="registration_data_inicio_hint">Data de inicio</string>
     <string name="registration_referencia_nivel_hint">Descrição da referência de nivel</string>
     <string name="registration_altura_referencia_nivel_hint">Altura da referência de nível</string>
-    <string name="registration_coordenadas_hint">Coordenadas do projeto</string>
-
+    <string name="registration_coordenadas_hint">Endereço do projeto</string>
 
 
     <!-- Strings da tela Carimbo Furo-->
