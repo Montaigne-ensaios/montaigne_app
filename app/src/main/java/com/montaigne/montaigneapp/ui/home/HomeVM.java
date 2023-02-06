@@ -47,6 +47,7 @@ public class HomeVM extends ViewModel {
         adapterProjetosSalvos = new ProjetosSalvosAdapter();
 
         recyclerProjetosSalvos.setAdapter(adapterProjetosSalvos);
+        recyclerProjetosSalvos.setNestedScrollingEnabled(false);
         recyclerProjetosSalvos.setLayoutManager(new LinearLayoutManager(
                 recyclerProjetosSalvos.getContext(),
                 LinearLayoutManager.VERTICAL,

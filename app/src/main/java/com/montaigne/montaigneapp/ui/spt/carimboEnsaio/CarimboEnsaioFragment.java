@@ -1,5 +1,6 @@
 package com.montaigne.montaigneapp.ui.spt.carimboEnsaio;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,8 +19,10 @@ import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TimeZone;
 
 public class CarimboEnsaioFragment extends Fragment {
     private CarimboEnsaioVM viewModel;
@@ -44,7 +47,6 @@ public class CarimboEnsaioFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         binding = FragmentCarimboEnsaioBinding.inflate(inflater, container, false);
 
-        fields.put("DataInicio", binding.editTextStartDate);
         fields.put("NivelFuro", binding.editTextNivelFuro);
 
         ProjetoSpt projeto = projectViewModel.getProjeto();
@@ -60,12 +62,35 @@ public class CarimboEnsaioFragment extends Fragment {
 //            viewModel.setLocation();  // todo: implementar coordenadas
         });
 
+        binding.editTextStartDate.setOnClickListener(v -> {
+            Calendar calendario = Calendar.getInstance(TimeZone.getDefault());
+            DatePickerDialog datePicker = new DatePickerDialog(
+                    this.getActivity(),
+                    R.style.Theme_MontaigneApp,
+                    datePickerListener,
+                    calendario.get(Calendar.YEAR),
+                    calendario.get(Calendar.MONTH),
+                    calendario.get(Calendar.DAY_OF_MONTH)
+            );
+            datePicker.setCancelable(false);
+            datePicker.setTitle("Select the date");
+            datePicker.show();
+        });
+
         return binding.getRoot();
     }
 
     public int getFuroId() {
         return viewModel.furoId;
     }
+
+    private DatePickerDialog.OnDateSetListener datePickerListener = (view, selectedYear, selectedMonth, selectedDay) -> {
+        String ano = String.valueOf(selectedYear);
+        String mes = String.valueOf(selectedMonth + 1);
+        String dia = String.valueOf(selectedDay);
+        binding.editTextStartDate.setText(dia + "/" + mes + "/" + ano);
+        fields.put("DataInicio", binding.editTextStartDate);
+    };
 
     @Override
     public void onPause() {
