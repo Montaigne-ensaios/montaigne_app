@@ -13,7 +13,7 @@ import java.util.List;
 
 public class PermissionsManager {
 
-    public Boolean checkPermissions(String[] Permissions, Activity activity, int requestcode){
+    public static Boolean checkPermissions(String[] Permissions, Activity activity, int requestcode){
 
         if(Build.VERSION.SDK_INT>=23){
 
