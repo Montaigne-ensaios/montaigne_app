@@ -36,6 +36,7 @@ public class FuroVM extends ViewModel {
 
         recyclerAmostras.setAdapter(adapter);
         recyclerAmostras.setLayoutManager(new LinearLayoutManager(recyclerAmostras.getContext()));
+
     }
 
 }

@@ -39,7 +39,7 @@ public class CreateXlsxSpt {
     public static void createFileXlsx(ProjetoSpt projetoSpt, FuroSpt furoSpt,
                                         AmostraSpt amostraSpt, Activity activity) {
 
-        sheet = wb.createSheet("Projeto: " + projetoSpt.getNome());
+        sheet = wb.createSheet("Furo " + furoSpt.getCodigo());
 
        List<AmostraSpt> amostrasSpts = furoSpt.getListaDeAmostras();
         List<Cell> celulas = new ArrayList<>();
@@ -180,6 +180,15 @@ public class CreateXlsxSpt {
         sheet.addMergedRegion(new CellRangeAddress(3,3,8,9));
         sheet.addMergedRegion(new CellRangeAddress(4,4,8,9));
         sheet.addMergedRegion(new CellRangeAddress(5,5,8,9));
+
+        cliente.setCellValue(projetoSpt.getCliente());
+        resptecnico.setCellValue(projetoSpt.getTecnico());
+        sondador.setCellValue("-");
+        na_INICIAL.setCellValue(furoSpt.getNivelDAgua());
+        na_10min.setCellValue("-");
+        na_24h.setCellValue("-");
+        data_inicial.setCellValue(furoSpt.getDataInicio());
+        data_final.setCellValue(furoSpt.getDataFim());
 
         sheet.setColumnWidth(7,texto_resptecnico.length()*300);
 
