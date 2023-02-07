@@ -1,5 +1,6 @@
 package com.montaigne.montaigneapp.ui.spt.carimboEnsaio;
 
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -8,15 +9,18 @@ import androidx.lifecycle.ViewModel;
 import com.montaigne.montaigneapp.model.Coordenada;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
+import com.montaigne.montaigneapp.utils.Geolocation;
 
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Map;
 
 public class CarimboEnsaioVM extends ViewModel {
+
     private ProjetoSpt projeto;
     private FuroSpt furo;
     protected int furoId;
+    private Geolocation geolocalização;
 
     protected void setupViewModel(ProjetoSpt projeto, int furoId, Map<String, EditText> fields) {
         this.projeto = projeto;

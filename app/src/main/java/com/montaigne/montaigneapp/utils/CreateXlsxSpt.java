@@ -36,8 +36,8 @@ public class CreateXlsxSpt {
     private static Row row;
     private static Cell golpe1, golpe2, golpe3, nspt;
 
-    public static void createFileXlsx(ProjetoSpt projetoSpt, FuroSpt furoSpt,
-                                        AmostraSpt amostraSpt, Activity activity) {
+    public static void createFileXlsx(ProjetoSpt projetoSpt, FuroSpt furoSpt
+                                      , Activity activity) {
 
         sheet = wb.createSheet("Furo " + furoSpt.getCodigo());
 
@@ -127,7 +127,9 @@ public class CreateXlsxSpt {
         f2.setFontName("Arial");
         f2.setBold(true);
 
-        CellStyle estilodotitulo = wb.createCellStyle();
+        //todo: Estilos aplicados as Células
+
+       /* CellStyle estilodotitulo = wb.createCellStyle();
         estilodotitulo.setAlignment(HorizontalAlignment.CENTER);
         estilodotitulo.setFont(f1);
 
@@ -135,8 +137,6 @@ public class CreateXlsxSpt {
         estilodocabecalho.setVerticalAlignment(VerticalAlignment.CENTER);
         estilodocabecalho.setAlignment(HorizontalAlignment.CENTER);
         estilodocabecalho.setFont(f2);
-
-        //todo: Estilos aplicados as Células
 
         cab_titulo.setCellStyle(estilodotitulo);
         data_final.setCellStyle(estilodocabecalho);
@@ -165,7 +165,7 @@ public class CreateXlsxSpt {
                 cell.setCellStyle(estilodocabecalho);
 
         }
-
+        */
         sheet.setColumnWidth(0,10*256);
 
         sheet.addMergedRegion(new CellRangeAddress(0,0,0,10));

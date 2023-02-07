@@ -11,20 +11,23 @@ import java.io.File;
 public class ExportFile {
 
     final static String mimeType =
-            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+            "application/excel";
 
     private static File diretorio;
     private static File xlsxDir;
     private static File[] arquivoxlsx;
 
     public static Uri getUri(Activity activity) {
-
-        xlsxDir = new File(activity.getCacheDir(), "xlsx");
-        arquivoxlsx = xlsxDir.listFiles();
-
-        Uri getUri = FileProvider.getUriForFile(activity,
-                "com.montaigne.montaigneapp.fileprovider", arquivoxlsx[0]);
-
+        Uri getUri = null;
+        //concertar erro do null exeption
+        try {
+            xlsxDir = new File(activity.getCacheDir(), "xlsx");
+            arquivoxlsx = xlsxDir.listFiles();
+        }catch (NullPointerException e){
+            e.fillInStackTrace();
+        }
+            getUri = FileProvider.getUriForFile(activity,
+                    "com.montaigne.montaigneapp.fileprovider", arquivoxlsx[0]);
         return getUri;
 
     }
@@ -34,8 +37,8 @@ public class ExportFile {
         Uri arquivoUri = getUri(activity);
 
         Intent sendIntent = new Intent().setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT,"PLANILHA");
-        sendIntent.setType("*/*");
+        //sendIntent.putExtra(Intent.EXTRA_TEXT,"PLANILHA");
+        sendIntent.setType("application/*");
         sendIntent.putExtra(Intent.EXTRA_MIME_TYPES,mimeType);
         sendIntent.addCategory(Intent.CATEGORY_OPENABLE);
 

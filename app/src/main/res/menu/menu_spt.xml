@@ -15,6 +15,9 @@
         android:icon="@android:drawable/ic_menu_delete"
         />
     <item
+        android:id="@+id/exportar_xlsx"
+        android:title="Exportar Planilha" />
+    <item
         android:id="@+id/action_help"
         android:orderInCategory="100"
         android:title="Ajuda"
