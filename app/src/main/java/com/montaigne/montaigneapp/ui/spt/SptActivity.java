@@ -36,14 +36,13 @@ public class SptActivity extends AppCompatActivity {
         binding.imgButtonHome.setOnClickListener(viewModel::intentHome);
         binding.buttonNavigate.setOnClickListener(v -> viewModel.handleNavigation(getSupportFragmentManager()));
 
-       // binding.toolbarSptInclude.toolbarSpt.setOnMenuItemClickListener(item -> {
-        //    if (item.getItemId() == R.id.addfuro) {
-       //         viewModel.newProject(this);
-        //    } else if (item.getItemId() == R.id.deletefuro) {
-       //         viewModel.removefuro();
-         //   }
-        //    return true;
-     //   });
+        binding.toolbarSptInclude.toolbarSpt.setOnMenuItemClickListener(item -> {
+            if (item.getItemId() == R.id.deletefuro) {
+                // todo: implementar exportação de ensaio aqui
+                return true;
+            }
+            return false;
+        });
 
     }
 
