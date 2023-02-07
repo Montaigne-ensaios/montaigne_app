@@ -3,7 +3,6 @@
 
     <string name="action_settings">Settings</string>
 
-
     <!-- Strings used for menu  -->
     <string name="action_help">Ajuda</string>
     <string name="action_infor">Sobre</string>
@@ -42,7 +41,6 @@
     <string name="registration_coordenadas_hint">Coordenadas do projeto</string>
 
 
-
     <!-- Strings da tela Carimbo Furo-->
     <string name="registration_Data_inicio_furo">Data de inicio:</string>
     <string name="hint_date">MM/DD/YYYY</string>
@@ -58,8 +56,11 @@
 
 
     <!-- Strings da tela Adpter_home_filtro_Ensaios-->
-    
-    
+
+
+    <!-- Strings da tela de login -->
+    <string name="title_login">Login</string>
+
     <!-- Strings dos butões inferior das telas -->
     <string name="btn_navigate_carimbo_projeto">Novo Furo </string>
     <string name="btn_navigate_carimbo_furo">Inicar amostras </string>
