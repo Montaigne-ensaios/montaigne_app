@@ -7,15 +7,17 @@ import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.ActionMode;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.databinding.ActivityHomeBinding;
+import com.montaigne.montaigneapp.ui.IClickListener;
 
 public class HomeActivity extends AppCompatActivity {
     private ActivityHomeBinding binding;
     private HomeVM viewModel;
-
+    private ActionMode actionMode;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,9 +28,62 @@ public class HomeActivity extends AppCompatActivity {
       setSupportActionBar(binding.toolbarHomeInclude.toolbarHome);
         viewModel.initializeProjetosSalvosAdapter(binding.recyclerProjetosSalvos);
         viewModel.initializeProjetoCategoriaAdapter(binding.recyclerCategorias);
+        viewModel.setClickListener(new IClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                enableActionMode(position);
+            }
 
+            @Override
+            public void onItemLongClick(int position) {
+                enableActionMode(position);
+            }
+        });
         addMenuProvider(new HomeActivity.MenuProvider());
     }
+
+    private void enableActionMode(int position) {
+        if (actionMode == null)
+            actionMode = startSupportActionMode(new androidx.appcompat.view.ActionMode.Callback() {
+                @Override
+                public boolean onCreateActionMode(androidx.appcompat.view.ActionMode mode, Menu menu) {
+                    mode.getMenuInflater().inflate(R.menu.delete_menu, menu);
+                    return true;
+                }
+
+                @Override
+                public boolean onPrepareActionMode(androidx.appcompat.view.ActionMode mode, Menu menu) {
+                    return false;
+                }
+
+                @Override
+                public boolean onActionItemClicked(androidx.appcompat.view.ActionMode mode, MenuItem item) {
+                    if (item.getItemId() == R.id.action_delete) {
+                        viewModel.removeProjects();
+                        actionMode.finish();
+                        viewModel.getIsCheckedList().clear();
+                    }
+                    return false;
+                }
+
+                @Override
+                public void onDestroyActionMode(androidx.appcompat.view.ActionMode mode) {
+                    viewModel.getIsCheckedList().clear();
+                    actionMode = null;
+                    viewModel.getAdapterProjetosSalvos().notifyDataSetChanged();
+                }
+            });
+
+        viewModel.togglePositions(position);
+        final int size = viewModel.getIsCheckedList().size();
+        if (size == 0) {
+            actionMode.finish();
+        } else {
+            actionMode.setTitle(size + "");
+            actionMode.invalidate();
+        }
+    }
+
 
     @Override
     protected void onPostResume() {

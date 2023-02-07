@@ -18,7 +18,7 @@
         <item name="imageButtonStyle">@style/ImageButton_Dark</item>
         <item name="editTextStyle">@style/Edit_Text_dark</item>
         <item name="android:textViewStyle">@style/TextView_Dark</item>
-
+        <item name="windowActionModeOverlay">true</item>
 
 
 
