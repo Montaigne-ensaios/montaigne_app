@@ -1,5 +1,6 @@
 package com.montaigne.montaigneapp.ui.spt.furo;
 
+import static com.montaigne.montaigneapp.utils.editTextInputParser.getFloat;
 import static com.montaigne.montaigneapp.utils.editTextInputParser.setValue;
 
 import android.content.Context;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.databinding.AdapterAmostraBinding;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
+import com.montaigne.montaigneapp.ui.LockingTextWatcher;
 import com.montaigne.montaigneapp.ui.BindedViewHolder;
 import com.montaigne.montaigneapp.ui.IClickListener;
 
@@ -68,6 +70,13 @@ public class AmostraAdapter extends RecyclerView.Adapter<BindedViewHolder<Adapte
         setValue(holder.binding.editTextPenetracao2, amostra.getPenatracao2());
         setValue(holder.binding.editTextPenetracao3, amostra.getPenatracao3());
 
+        holder.binding.editTextProfundidade.addTextChangedListener(
+                new LockingTextWatcher(true, position + "proufundidade"){
+                    @Override
+                    public void afterValidChangeListener(String string) {
+                        amostra.setProfundidade(Float.parseFloat(string));
+                    }
+                });
 
         if (selectedItems.get(position)) {
             holder.binding.cardView.setBackgroundResource(R.color.hint);
