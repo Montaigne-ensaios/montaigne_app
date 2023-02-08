@@ -101,8 +101,6 @@ public class HomeActivity extends AppCompatActivity {
         public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
             if (menuItem.getItemId() == R.id.action_add_project) {
                 viewModel.newProject(HomeActivity.this);
-            } else if (menuItem.getItemId() == R.id.delete) {
-                viewModel.removeProjects();
             }
             return true;
         }
