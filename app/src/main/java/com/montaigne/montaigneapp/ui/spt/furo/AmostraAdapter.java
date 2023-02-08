@@ -1,7 +1,8 @@
 package com.montaigne.montaigneapp.ui.spt.furo;
 
+import static com.montaigne.montaigneapp.utils.editTextInputParser.setValue;
+
 import android.content.Context;
-import android.content.Intent;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -10,17 +11,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
-import com.montaigne.montaigneapp.databinding.AdapterFuroBinding;
+import com.montaigne.montaigneapp.databinding.AdapterAmostraBinding;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
-import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
-import com.montaigne.montaigneapp.ui.AbstracProjectActivity;
 import com.montaigne.montaigneapp.ui.BindedViewHolder;
 import com.montaigne.montaigneapp.ui.IClickListener;
-import com.montaigne.montaigneapp.ui.spt.SptActivity;
 
 import java.util.List;
 
-public class AmostraAdapter extends RecyclerView.Adapter<BindedViewHolder<AdapterFuroBinding>>{
+public class AmostraAdapter extends RecyclerView.Adapter<BindedViewHolder<AdapterAmostraBinding>>{
     private List<AmostraSpt> amostras;
     private int currentSelectedPosition = -1;
     private SparseBooleanArray selectedItems = new SparseBooleanArray();
@@ -48,20 +46,28 @@ public class AmostraAdapter extends RecyclerView.Adapter<BindedViewHolder<Adapte
 
     @NonNull
     @Override
-    public BindedViewHolder<AdapterFuroBinding> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BindedViewHolder<AdapterAmostraBinding> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 
-        AdapterFuroBinding binding = AdapterFuroBinding
+        AdapterAmostraBinding binding = AdapterAmostraBinding
                 .inflate(inflater, parent, false);
 
         return new BindedViewHolder<>(binding);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BindedViewHolder<AdapterFuroBinding> holder, int position) {
+    public void onBindViewHolder(@NonNull BindedViewHolder<AdapterAmostraBinding> holder, int position) {
         Context context = holder.binding.getRoot().getContext();
+        AmostraSpt amostra = amostras.get(position);
 
-        holder.binding.textFuroName.setText(context.getString(R.string.adapter_amostra_name) + (position + 1));
+        setValue(holder.binding.editTextProfundidade, amostra.getProfundidade());
+        setValue(holder.binding.editTextGolpe1, amostra.getGolpe1());
+        setValue(holder.binding.editTextGolpe2, amostra.getGolpe2());
+        setValue(holder.binding.editTextGolpe3, amostra.getGolpe3());
+        setValue(holder.binding.editTextPenetracao1, amostra.getPenatracao1());
+        setValue(holder.binding.editTextPenetracao2, amostra.getPenatracao2());
+        setValue(holder.binding.editTextPenetracao3, amostra.getPenatracao3());
+
 
         if (selectedItems.get(position)) {
             holder.binding.cardView.setBackgroundResource(R.color.hint);

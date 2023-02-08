@@ -1,9 +1,9 @@
 package com.montaigne.montaigneapp.ui.spt.carimboEnsaio;
 
-import static com.montaigne.montaigneapp.data.utils.editTextInputParser.getCurrentDate;
-import static com.montaigne.montaigneapp.data.utils.editTextInputParser.getDate;
-import static com.montaigne.montaigneapp.data.utils.editTextInputParser.getFloat;
-import static com.montaigne.montaigneapp.data.utils.editTextInputParser.setValue;
+import static com.montaigne.montaigneapp.utils.editTextInputParser.getCurrentDate;
+import static com.montaigne.montaigneapp.utils.editTextInputParser.getDate;
+import static com.montaigne.montaigneapp.utils.editTextInputParser.getFloat;
+import static com.montaigne.montaigneapp.utils.editTextInputParser.setValue;
 
 import android.util.Log;
 import android.widget.EditText;
@@ -11,12 +11,10 @@ import android.widget.Toast;
 
 import androidx.lifecycle.ViewModel;
 
-import com.google.android.material.snackbar.Snackbar;
 import com.montaigne.montaigneapp.model.Coordenada;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
-import java.sql.Date;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Map;

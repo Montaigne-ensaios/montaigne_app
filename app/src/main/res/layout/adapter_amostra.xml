@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp">
@@ -87,7 +88,7 @@
             android:inputType="number" />
 
         <EditText
-            android:id="@+id/editTextProfundidade1"
+            android:id="@+id/edit_text_profundidade"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"

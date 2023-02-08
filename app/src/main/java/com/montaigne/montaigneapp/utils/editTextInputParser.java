@@ -1,4 +1,4 @@
-package com.montaigne.montaigneapp.data.utils;
+package com.montaigne.montaigneapp.utils;
 
 import android.widget.EditText;
 
