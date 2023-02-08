@@ -1,9 +1,7 @@
 package com.montaigne.montaigneapp.ui.spt.furo;
 
-import static com.montaigne.montaigneapp.utils.editTextInputParser.getFloat;
 import static com.montaigne.montaigneapp.utils.editTextInputParser.setValue;
 
-import android.content.Context;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -57,9 +55,7 @@ public class AmostraAdapter extends RecyclerView.Adapter<BindedViewHolder<Adapte
         return new BindedViewHolder<>(binding);
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull BindedViewHolder<AdapterAmostraBinding> holder, int position) {
-        Context context = holder.binding.getRoot().getContext();
+    private void setIOForHolder(BindedViewHolder<AdapterAmostraBinding> holder, int position) {
         AmostraSpt amostra = amostras.get(position);
 
         setValue(holder.binding.editTextProfundidade, amostra.getProfundidade());
@@ -71,12 +67,62 @@ public class AmostraAdapter extends RecyclerView.Adapter<BindedViewHolder<Adapte
         setValue(holder.binding.editTextPenetracao3, amostra.getPenatracao3());
 
         holder.binding.editTextProfundidade.addTextChangedListener(
-                new LockingTextWatcher(true, position + "proufundidade"){
+                new LockingTextWatcher(true, position + "profundidade"){
                     @Override
                     public void afterValidChangeListener(String string) {
                         amostra.setProfundidade(Float.parseFloat(string));
                     }
                 });
+
+        holder.binding.editTextGolpe1.addTextChangedListener(
+                new LockingTextWatcher(true, position + "golpe1"){
+                    @Override
+                    public void afterValidChangeListener(String string) {
+                        amostra.setGolpe1(Integer.parseInt(string));
+                    }
+                });
+        holder.binding.editTextGolpe2.addTextChangedListener(
+                new LockingTextWatcher(false, position + "golpe2"){
+                    @Override
+                    public void afterValidChangeListener(String string) {
+                        amostra.setGolpe2(Integer.parseInt(string));
+                    }
+                });
+        holder.binding.editTextGolpe3.addTextChangedListener(
+                new LockingTextWatcher(false, position + "golpe3"){
+                    @Override
+                    public void afterValidChangeListener(String string) {
+                        amostra.setGolpe3(Integer.parseInt(string));
+                    }
+                });
+
+        holder.binding.editTextPenetracao1.addTextChangedListener(
+                new LockingTextWatcher(true, position + "penetração1"){
+                    @Override
+                    public void afterValidChangeListener(String string) {
+                        amostra.setPenatracao1(Float.parseFloat(string));
+                    }
+                });
+        holder.binding.editTextPenetracao2.addTextChangedListener(
+                new LockingTextWatcher(false, position + "penetração2"){
+                    @Override
+                    public void afterValidChangeListener(String string) {
+                        amostra.setPenatracao2(Float.parseFloat(string));
+                    }
+                });
+        holder.binding.editTextPenetracao3.addTextChangedListener(
+                new LockingTextWatcher(false, position + "penetração3"){
+                    @Override
+                    public void afterValidChangeListener(String string) {
+                        amostra.setPenatracao3(Float.parseFloat(string));
+                    }
+                });
+
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull BindedViewHolder<AdapterAmostraBinding> holder, int position) {
+        setIOForHolder(holder, position);
 
         if (selectedItems.get(position)) {
             holder.binding.cardView.setBackgroundResource(R.color.hint);

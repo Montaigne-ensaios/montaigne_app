@@ -15,6 +15,7 @@ import com.montaigne.montaigneapp.databinding.AdapterCarimboProjetoBinding;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.AbstractProjectViewModel;
 import com.montaigne.montaigneapp.ui.BindedViewHolder;
+import com.montaigne.montaigneapp.ui.LockingTextWatcher;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -115,25 +116,12 @@ public class CarimboProjetoAdapter extends RecyclerView.Adapter<BindedViewHolder
             AbstractProjectViewModel.addLockingField(field.id);
         }
 
-        holder.binding.textInputEditTextNameProjeto.addTextChangedListener(new TextWatcher() {
+        holder.binding.textInputEditTextNameProjeto.addTextChangedListener(new LockingTextWatcher(
+                field.message.equals(OBRIGATORIO), field.id) {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {}
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                String string = s.toString();
-                
-                if ((Objects.equals(string, "") || Objects.equals(string, " "))
-                        && Objects.equals(field.message, OBRIGATORIO)) {
-                    AbstractProjectViewModel.addLockingField(field.id);
-                } else {
-                    AbstractProjectViewModel.removeLockingField(field.id);
-                    fields.set(holder.getAdapterPosition(),  // necessário para chamadas feitas posteriormente
-                            new Pair<>(field, string));
-                }
+            public void afterValidChangeListener(String string) {
+                fields.set(holder.getAdapterPosition(),  // necessário para chamadas feitas posteriormente
+                        new Pair<>(field, string));
             }
         });
     }
