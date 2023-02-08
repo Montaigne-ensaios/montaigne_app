@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,6 +15,7 @@ import com.montaigne.montaigneapp.databinding.FragmentCarimboProjetoBinding;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
+import com.montaigne.montaigneapp.utils.Geolocation;
 
 public class CarimboProjetoFragment extends Fragment {
     private CarimboProjetoVM viewModel;
@@ -46,10 +46,9 @@ public class CarimboProjetoFragment extends Fragment {
         activity.setNavigateButtonText(getString(R.string.btn_navigate_carimbo_projeto));
         activity.setActionBarTitle(projetoSpt.getNome());
 
-        binding.buttonGetLocation.setOnClickListener(v -> {
-            Toast.makeText(v.getContext(), R.string.notImplemented, Toast.LENGTH_SHORT).show();
-//            viewModel.setLocation();  // todo: implementar coordenadas
-        });
+        binding.buttonGetLocation.setOnClickListener(v -> viewModel.setLocal(
+                requireActivity(), Geolocation.getLatlog(requireActivity())
+        ));
 
         return binding.getRoot();
     }
