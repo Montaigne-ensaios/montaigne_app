@@ -11,53 +11,48 @@ import android.location.LocationManager;
 
 import androidx.core.app.ActivityCompat;
 
+import com.montaigne.montaigneapp.model.Coordenada;
+
 import java.io.IOException;
 import java.util.List;
 
 public class Geolocation {
 
-    private Location location;
-    private LocationManager locationManager;
-    private double latitude;
-    private double longitude;
-    String[] permissões = new String[]{Manifest.permission.ACCESS_FINE_LOCATION};
-    double[] latlog;
-
-
-    public double[] getLatlog(Activity activity) {
-
-
-        if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            PermissionsManager.checkPermissions(permissões,activity,1);
-        } else {
-            locationManager = (LocationManager) activity.getSystemService(Context.LOCATION_SERVICE);
-            location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-            if (location != null) {
-                latitude = location.getLatitude();
-                longitude = location.getLongitude();
-            }
-            latlog = new double[]{latitude, longitude};
+    public static Coordenada getLatlog(Activity activity) {
+        if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            PermissionsManager.checkPermissions(
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                    activity,
+                    1);
         }
 
-        return latlog;
+        LocationManager locationManager = (LocationManager) activity.getSystemService(Context.LOCATION_SERVICE);
+        Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
+        if (location != null) {
+            return new Coordenada(location.getLatitude(), location.getLongitude());
+        }
+
+        return null;
     }
 
 
-    public Address Geocoder(Activity activity, double[] latlog) throws IOException {
-        Geocoder geocoder;
-        Address address = null;
-        List<Address> addresses;
-        double latitude = latlog[1];
-        double longitude = latlog[2];
+    public static String geocoder(Context context, Coordenada coordenada) throws IOException {
+        Geocoder geocoder = new Geocoder(context.getApplicationContext());
 
-        geocoder = new Geocoder(activity.getApplicationContext());
+        double latitude = coordenada.getN();
+        double longitude = coordenada.getL();
 
-        addresses = geocoder.getFromLocation(latitude, longitude, 1);
+        List<Address> addresses = geocoder.getFromLocation(latitude, longitude, 1);
 
+        Address address;
         if (addresses.size() > 0) {
             address = addresses.get(0);
+        } else {
+            throw new IOException("Endereço não encontrado.");
         }
-        return address;
+        return address.toString();
     }
 }
 

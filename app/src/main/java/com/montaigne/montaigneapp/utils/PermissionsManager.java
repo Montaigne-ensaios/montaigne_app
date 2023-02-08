@@ -21,7 +21,7 @@ public class PermissionsManager {
 
             for(String permission:Permissions){
 
-                Boolean thishavePermission = ContextCompat.checkSelfPermission(activity,permission) == PackageManager.PERMISSION_GRANTED;
+                Boolean thishavePermission = ContextCompat.checkSelfPermission(activity, permission) == PackageManager.PERMISSION_GRANTED;
 
                 if(!thishavePermission) ListofcheckPermissions.add(permission);
             }
