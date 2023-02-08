@@ -23,11 +23,16 @@ public class ExportFile {
         try {
             xlsxDir = new File(activity.getCacheDir(), "xlsx");
             arquivoxlsx = xlsxDir.listFiles();
+            if (arquivoxlsx != null) {
+                getUri = FileProvider.getUriForFile(activity,
+                        "com.montaigne.montaigneapp.fileprovider", arquivoxlsx[0]);
+            }else{
+                throw new NullPointerException("Sem arquivos no diretorio");
+            }
         }catch (NullPointerException e){
             e.fillInStackTrace();
         }
-            getUri = FileProvider.getUriForFile(activity,
-                    "com.montaigne.montaigneapp.fileprovider", arquivoxlsx[0]);
+
         return getUri;
 
     }

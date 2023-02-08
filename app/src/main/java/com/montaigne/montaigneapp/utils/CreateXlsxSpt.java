@@ -1,16 +1,13 @@
 package com.montaigne.montaigneapp.utils;
 
 import android.app.Activity;
-import android.content.Context;
 
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
-
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
-
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
@@ -21,7 +18,6 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.util.CellRangeAddress;
 
 import java.io.File;
-
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -128,8 +124,7 @@ public class CreateXlsxSpt {
         f2.setBold(true);
 
         //todo: Estilos aplicados as Células
-
-       /* CellStyle estilodotitulo = wb.createCellStyle();
+        CellStyle estilodotitulo = wb.createCellStyle();
         estilodotitulo.setAlignment(HorizontalAlignment.CENTER);
         estilodotitulo.setFont(f1);
 
@@ -165,7 +160,7 @@ public class CreateXlsxSpt {
                 cell.setCellStyle(estilodocabecalho);
 
         }
-        */
+
         sheet.setColumnWidth(0,10*256);
 
         sheet.addMergedRegion(new CellRangeAddress(0,0,0,10));
