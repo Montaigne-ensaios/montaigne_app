@@ -43,7 +43,7 @@
             android:layout_marginBottom="20dp"
             android:layout_toEndOf="@id/imageLogoProject"
             android:text="Tipo de Ensaio"
-            android:textColor="#4690C7"
+            android:textColor="#FF3761"
             android:textSize="18sp" />
 
         <TextView

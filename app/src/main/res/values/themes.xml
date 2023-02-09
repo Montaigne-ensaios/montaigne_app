@@ -38,7 +38,9 @@
         <item name="materialButtonStyle">@style/ButtonPadrao_light</item>
         <item name="imageButtonStyle">@style/ImageButton_light</item>
         <item name="editTextStyle">@style/Edit_Text_light</item>
-        <item name="tint">@color/teal_200</item>
+        <item name="tint">@color/color_primary_light</item>
+
+
 
 
 
