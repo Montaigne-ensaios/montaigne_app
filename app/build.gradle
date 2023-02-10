@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin' version '2.0.1' apply false
 }
 
 android {
@@ -14,11 +15,17 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        Properties properties = new Properties();
+        properties.load(project.rootProject.file("local.properties").newDataInputStream())
+
+        buildConfigField "String", "DEFAULT_WEB_CLIENT_ID", "\"${properties.getProperty("DEFAULT_WEB_CLIENT_ID")}\""
     }
 
     buildTypes {
         release {
             minifyEnabled false
+            resValue "string", "default_web_client_id", System.getenv("default_web_client_id") ?: ""
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }

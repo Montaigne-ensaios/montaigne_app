@@ -23,6 +23,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.montaigne.montaigneapp.BuildConfig;
 import com.montaigne.montaigneapp.databinding.ActivityAuthBinding;
 
 public class AuthActivity extends AppCompatActivity {
@@ -43,7 +44,7 @@ public class AuthActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
 
         GoogleSignInOptions options = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken("id")
+                .requestIdToken(BuildConfig.DEFAULT_WEB_CLIENT_ID)
                 .requestEmail()
                 .build();
 
