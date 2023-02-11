@@ -37,9 +37,9 @@ public class CarimboEnsaioVM extends ViewModel {
             furo = projeto.getListaDeFuros().get(furoId);
 
             if (furo.getDataInicio() != null)
-                setValue(Objects.requireNonNull(fields.get("dataInicio")), furo.getDataInicio());
+                setValue(Objects.requireNonNull(fields.get("DataInicio")), furo.getDataInicio());
             else
-                setValue(Objects.requireNonNull(fields.get("dataInicio")), getCurrentDate());
+                setValue(Objects.requireNonNull(fields.get("DataInicio")), getCurrentDate());
 
             setValue(Objects.requireNonNull(fields.get("NivelFuro")), furo.getCotaInicial());
         }

@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModel;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
+import com.montaigne.montaigneapp.ui.LockingTextWatcher;
 
 import java.util.ArrayList;
 
@@ -41,6 +42,14 @@ public class EnsaioVM extends ViewModel {
 
         setValue(fields.get(0), amostra.getProfundidade());
         setValue(fields.get(1), getFuro().getNivelDAgua());
+
+        fields.get(0).addTextChangedListener(new LockingTextWatcher(true,
+                "profundidadeFuro" + furoId) {
+            @Override
+            public void afterValidChangeListener(String string) {
+                amostra.setProfundidade(Float.parseFloat(string));
+            }
+        });
     }
 
     private FuroSpt getFuro() {
@@ -62,7 +71,7 @@ public class EnsaioVM extends ViewModel {
         amostra.setPenatracao2(getFloat(penetracoes.get(1)));
         amostra.setPenatracao3(getFloat(penetracoes.get(2)));
 
-        amostra.setProfundidade(getFloat(fields.get(0)));
+        // profundidade definida pelo listener
         furo.setNivelDAgua(getFloat(fields.get(1)));
 
         boolean isNew = true;
