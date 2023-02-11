@@ -42,7 +42,6 @@
     <string name="registration_coordenadas_hint">Coordenadas do projeto</string>
 
 
-
     <!-- Strings da tela Carimbo Furo-->
     <string name="registration_Data_inicio_furo">Data de inicio:</string>
     <string name="hint_date">MM/DD/YYYY</string>
@@ -58,8 +57,8 @@
 
 
     <!-- Strings da tela Adpter_home_filtro_Ensaios-->
-    
-    
+
+
     <!-- Strings dos butões inferior das telas -->
     <string name="btn_navigate_carimbo_projeto">Novo Furo</string>
     <string name="btn_navigate_carimbo_furo">Inicar ensaio</string>
@@ -77,4 +76,32 @@
     <string name="adapter_projetos_savlos_projeto_label">Projeto de</string>
     <string name="adapter_amostra_name">"Amostra "</string>
     <string name="furo_action_bar_title">Furo SP-0</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+    <!-- Strings Granulometria -->
+
+
+    <!-- Strings fragment indentificar agregados -->
+
+    <string name="registration_agregados">Insira a massa retida nas peneiras selecionadas da amostra :</string>
+
+    <!-- Strings adpter dados agregados para substituir no adpter text -->
+
+    <string name="registration_substituir_dados_agregados">Substitua requisito </string>   //TO DO - Criar strings e hints com lista dos dados necessários para o adpter
+    <string name="registration_name_agregado">Insira o nome do ensaio:</string>
+    <string name="registration_massa_agregado">Insira a massa do agregado a ser analisado:</string>
+    <string name="registration_massa_amostra_1">Indentificação da amostra 1:</string>
+    <string name="registration_massa_amostra_2">Indentificação da amostra 2:</string>
+    <string name="registration_data_início">Data do início:</string>
+
+    <!-- Strings adpter dados agregados para substituir no hint  -->
+    <string name="registration_hint_name_agregado">Ex:Areia concreto</string>
+    <string name="registration_hint_massa_agregado">Ex:1000g</string>
+    <string name="registration_hint_massa_amostra_1">Ex:Amostra de areia 1</string>
+    <string name="registration_hint_massa_amostra_2">Ex:Amostra de areia 2</string>
+    <string name="registration_hint_data_início">MM/DD/YYYY</string>
+
 </resources>

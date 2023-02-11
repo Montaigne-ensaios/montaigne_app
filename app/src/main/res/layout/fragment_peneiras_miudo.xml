@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <CheckBox
+                    android:id="@+id/checkboxMiudo1_2mm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="1,2 mm"
+                    app:layout_constraintEnd_toEndOf="@+id/checkboxMiudo2_4mm"
+                    app:layout_constraintStart_toStartOf="@+id/checkboxMiudo2_4mm"
+                    app:layout_constraintTop_toBottomOf="@+id/checkboxMiudo2_4mm" />
+
+                <CheckBox
+                    android:id="@+id/checkboxMiudo2_4mm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="2,4 mm"
+                    app:layout_constraintEnd_toEndOf="@+id/checkboxMiudo4_8mm"
+                    app:layout_constraintStart_toStartOf="@+id/checkboxMiudo4_8mm"
+                    app:layout_constraintTop_toBottomOf="@+id/checkboxMiudo4_8mm" />
+
+                <CheckBox
+                    android:id="@+id/checkboxMiudo4_8mm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="4,8 mm"
+                    app:layout_constraintEnd_toEndOf="@+id/textPeneirasNormaisMiudo"
+                    app:layout_constraintStart_toStartOf="@+id/textPeneirasNormaisMiudo"
+                    app:layout_constraintTop_toBottomOf="@+id/textPeneirasNormaisMiudo" />
+
+                <TextView
+                    android:id="@+id/textSelecionePeineirasMiudo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Selecione as peneiras:"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textPeneirasIntermediariaMiudo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="40dp"
+                    android:text="Intermediárias"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textSelecionePeineirasMiudo" />
+
+                <CheckBox
+                    android:id="@+id/checkboxMiudo0_15mm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="0,15 mm"
+                    app:layout_constraintStart_toStartOf="@+id/checkboxMiudo0_3mm"
+                    app:layout_constraintTop_toBottomOf="@+id/checkboxMiudo0_3mm" />
+
+                <TextView
+                    android:id="@+id/textPeneirasNormaisMiudo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Normais"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textSelecionePeineirasMiudo" />
+
+                <CheckBox
+                    android:id="@+id/checkboxMiudo0_3mm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="0,3 mm"
+                    app:layout_constraintEnd_toEndOf="@+id/checkboxMiudo0_6mm"
+                    app:layout_constraintStart_toStartOf="@+id/checkboxMiudo0_6mm"
+                    app:layout_constraintTop_toBottomOf="@+id/checkboxMiudo0_6mm" />
+
+                <CheckBox
+                    android:id="@+id/checkboxMiudo0_6mm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="0,6 mm"
+                    app:layout_constraintEnd_toEndOf="@+id/checkboxMiudo1_2mm"
+                    app:layout_constraintStart_toStartOf="@+id/checkboxMiudo1_2mm"
+                    app:layout_constraintTop_toBottomOf="@+id/checkboxMiudo1_2mm" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

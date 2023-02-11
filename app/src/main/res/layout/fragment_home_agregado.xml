@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+  >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/buttonAgregado"
+            android:layout_width="200dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="24dp"
+            android:text="Graúdo"
+            app:layout_constraintEnd_toEndOf="@+id/textSelecioneAgregado"
+            app:layout_constraintStart_toStartOf="@+id/textSelecioneAgregado"
+            app:layout_constraintTop_toBottomOf="@+id/textSelecioneAgregado" />
+
+        <Button
+            android:id="@+id/buttonMiudo"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Miúdo"
+            app:layout_constraintEnd_toEndOf="@+id/buttonAgregado"
+            app:layout_constraintStart_toStartOf="@+id/buttonAgregado"
+            app:layout_constraintTop_toBottomOf="@+id/buttonAgregado" />
+
+        <TextView
+            android:id="@+id/textSelecioneAgregado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="216dp"
+            android:text="Selecione o tipo de agregado:"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="261dp"
+            android:layout_height="253dp"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/granulometria"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
