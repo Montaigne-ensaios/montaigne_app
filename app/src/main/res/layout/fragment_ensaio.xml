@@ -144,7 +144,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:text="Remover isto aqui plss"
+                android:text="substitua numero amostra"
                 android:textAlignment="textStart"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"

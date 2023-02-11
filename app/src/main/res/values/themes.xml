@@ -17,19 +17,20 @@
 
 
         <!-- menu-->
-        <item name="itemIconTint">@color/white</item>
+
 
 
         <!-- Color de interação com butões -->
-        <item name="colorAccent">#FFFFFF</item>
+        <item name="colorAccent">@color/color_primary_light</item>
         <item name="colorSurface">@color/fundo_light</item>
         <item name="colorError">#B00020</item>
 
-        <item name="checkboxStyle">@style/Checkbox_light</item>
+        <item name="cardViewStyle">@style/CardViewLight</item>
 
         <!-- Estilos de textos. -->
         <item name="textInputStyle">@style/ImputLight</item>
-        <item name="android:textColor">@color/fundo_dark</item>
+        <item name="errorIconTint">@color/color_primary_dark</item>
+        <item name="android:textColor">@color/color_primary_light</item>
         <item name="toolbarStyle">@style/Tollbar_light</item>
 
 
@@ -37,7 +38,7 @@
         <item name="materialButtonStyle">@style/ButtonPadrao_light</item>
         <item name="imageButtonStyle">@style/ImageButton_light</item>
         <item name="editTextStyle">@style/Edit_Text_light</item>
-        <item name="iconTint">@color/color_primary_light</item>
+        <item name="tint">@color/color_primary_light</item>
         <item name="windowActionModeOverlay">true</item>
 
 

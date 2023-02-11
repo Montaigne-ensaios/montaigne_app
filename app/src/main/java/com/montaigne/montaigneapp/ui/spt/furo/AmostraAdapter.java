@@ -9,11 +9,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
+import com.montaigne.montaigneapp.ui.spt.ensaio.EnsaioFragment;
 import com.montaigne.montaigneapp.databinding.AdapterProjetoBinding;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.BindedViewHolder;
-import com.montaigne.montaigneapp.ui.spt.ensaio.EnsaioFragment;
 
 import java.util.List;
 

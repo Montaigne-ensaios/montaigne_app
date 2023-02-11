@@ -6,17 +6,19 @@
         <item name="android:textColor">@color/white</item>
 
         <item name="colorSecondary">@color/color_primary_dark</item>
-
-
+        <item name="cardViewStyle">@style/CardViewDark</item>
 
 
         <!-- Estilos padrão. -->
-        <item name="colorAccent">@color/accent</item>
-        <item name="backgroundColor">#000000</item>
+        <item name="colorAccent">@color/color_primary_dark</item>
+        <item name="textInputStyle">@style/ImputDark</item>
+        <item name="backgroundColor">@color/fundo_dark</item>
         <item name="toolbarStyle">@style/Tollbar_dark</item>
         <item name="materialButtonStyle">@style/ButtonPadrao_Dark</item>
         <item name="imageButtonStyle">@style/ImageButton_Dark</item>
         <item name="editTextStyle">@style/Edit_Text_dark</item>
+        <item name="tint">@color/white</item>
+
         <item name="android:textViewStyle">@style/TextView_Dark</item>
 
 

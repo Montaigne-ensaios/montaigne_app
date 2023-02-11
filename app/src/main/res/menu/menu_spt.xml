@@ -3,7 +3,7 @@
     <item
     android:id="@+id/addfuro"
     android:orderInCategory="100"
-    android:title="novo furo"
+    android:title="Novo Furo"
     android:icon="@drawable/ic_add"
 
         />
@@ -11,7 +11,7 @@
     <item
         android:id="@+id/deletefuro"
         android:orderInCategory="100"
-        android:title="Apagar furo"
+        android:title="Apagar Furo"
         android:icon="@android:drawable/ic_menu_delete"
         />
     <item

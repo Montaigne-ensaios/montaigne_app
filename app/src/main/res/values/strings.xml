@@ -46,6 +46,7 @@
     <string name="registration_Data_inicio_furo">Data de inicio:</string>
     <string name="hint_date">MM/DD/YYYY</string>
     <string name="registration_nivel_furo">Nivel do Furo N:</string>
+    <string name="registration_hint_nivel_furo">15m</string>
     <string name="title_button_Coordenadas_furo">Coordernadas do Furo N:</string>
     <string name="btn_capturar_location">Capturar Localização</string>
     <string name="btn_start_furo">Iniciar furo</string>
@@ -73,7 +74,7 @@
 
     <!--    Strings de adapters-->
     <string name="adapter_projetos_savlos_data">Inicio do Projeto: </string>
-    <string name="adapter_projetos_savlos_projeto_label">Projeto de</string>
+    <string name="adapter_projetos_savlos_projeto_label">Projeto  de</string>
     <string name="adapter_amostra_name">"Amostra "</string>
     <string name="furo_action_bar_title">Furo SP-0</string>
     <!-- TODO: Remove or change this placeholder text -->

@@ -15,6 +15,7 @@ import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.IClickListener;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
+import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
 import com.montaigne.montaigneapp.model.Projeto;
 
@@ -70,7 +71,7 @@ public class HomeVM extends ViewModel {
         // seleciona apenas os projetos da categoria especifica
     }
 
-    protected void newProject(Context context) {
+    protected void newProjectSpt(Context context) {
         // passa novo projeto vazio
         Intent intent = new Intent(context, SptActivity.class);
         intent.putExtra(HomeVM.PROJETO, new ProjetoSpt());

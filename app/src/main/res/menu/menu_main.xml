@@ -3,19 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
 
     >
-    <item
-        android:id="@+id/add"
-        android:orderInCategory="100"
-        android:title="novo projeto"
-        android:icon="@drawable/ic_add"
-        app:showAsAction="always" />
 
-    <item
-        android:id="@+id/action_ver"
-        android:orderInCategory="100"
-        android:title="Ajuda"
-        android:icon="@android:drawable/ic_menu_info_details"
-        app:showAsAction="never" />
 
 
 </menu>

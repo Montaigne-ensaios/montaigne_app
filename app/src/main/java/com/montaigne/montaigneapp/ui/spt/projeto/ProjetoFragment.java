@@ -11,9 +11,9 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.montaigne.montaigneapp.R;
+import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.databinding.FragmentProjetoBinding;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
-import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
 
 public class ProjetoFragment extends Fragment {

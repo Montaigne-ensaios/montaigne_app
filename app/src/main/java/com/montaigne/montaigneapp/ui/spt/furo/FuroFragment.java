@@ -11,10 +11,10 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.montaigne.montaigneapp.R;
-import com.montaigne.montaigneapp.databinding.FragmentFuroBinding;
-import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
+import com.montaigne.montaigneapp.databinding.FragmentFuroBinding;
+import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 public class FuroFragment extends Fragment {
     private FuroVM viewModel;

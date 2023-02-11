@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.PopupMenu;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.ActionMode;
@@ -39,15 +42,6 @@ public class HomeActivity extends AppCompatActivity {
       });
         viewModel.initializeProjetosSalvosAdapter(binding.recyclerProjetosSalvos);
         viewModel.initializeProjetoCategoriaAdapter(binding.recyclerCategorias);
-
-        binding.toolbarHomeInclude.toolbarHome.setOnMenuItemClickListener(item -> {
-            if (item.getItemId() == R.id.add) {
-                viewModel.newProject(this);
-            } else if (item.getItemId() == R.id.action_delete) {
-                viewModel.removeProjects();
-            }
-            return true;
-        });
     }
 
     private void enableActionMode(int position) {
@@ -104,4 +98,23 @@ public class HomeActivity extends AppCompatActivity {
         menuInflater.inflate(R.menu.menu_main, menu);
         return super.onCreateOptionsMenu(menu);
     }
-}
+    public void showPopup(View view) {
+        PopupMenu popup = new PopupMenu(this, view);
+        popup.setOnMenuItemClickListener(new OnMenuItemClickListener());
+        popup.inflate(R.menu.popup_menu);
+        popup.show();
+    }
+
+    private class OnMenuItemClickListener implements PopupMenu.OnMenuItemClickListener {
+        @Override
+        public boolean onMenuItemClick(@NonNull MenuItem item) {
+            if (item.getItemId() == R.id.addProjetoSpt) {
+                viewModel.newProjectSpt(HomeActivity.this);
+            } else if (item.getItemId() == R.id.addProjetoGranulometria) {
+                Toast.makeText(HomeActivity.this, R.string.notImplemented, Toast.LENGTH_SHORT).show();
+                // todo: granulometria
+            }
+            return true;
+        }
+    }
+    }
