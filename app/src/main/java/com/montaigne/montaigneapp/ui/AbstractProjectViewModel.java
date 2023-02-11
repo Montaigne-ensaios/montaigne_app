@@ -2,6 +2,7 @@ package com.montaigne.montaigneapp.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -22,15 +23,18 @@ import java.util.Objects;
 public abstract class AbstractProjectViewModel <Project extends Projeto> extends ViewModel {
     protected abstract void setUp(Projeto projeto, FragmentManager supportFragmentManager);
 
+    private static final String TAG = "Navigation Lock Handler";
     private static final HashSet<String> navLockingFields = new HashSet<>();
-    // hashset garante que os campos não vão se repetir. Unica variável global do projeto
+    // hashset garante que os campos não vão se repetir. Única variável global do projeto
 
     public static void addLockingField(String fieldId) {
+        Log.d(TAG, "Adicionando ao set: " + fieldId);
         navLockingFields.add(fieldId);
     }
 
     public static void removeLockingField(String fieldId) {
-            navLockingFields.remove(fieldId);
+        Log.d(TAG, "Removendo do set: " + fieldId);
+        navLockingFields.remove(fieldId);
     }
 
     protected static void intentHome(@NonNull View view) {

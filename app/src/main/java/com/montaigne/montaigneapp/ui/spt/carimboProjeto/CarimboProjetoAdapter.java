@@ -1,8 +1,6 @@
 package com.montaigne.montaigneapp.ui.spt.carimboProjeto;
 
-import android.text.Editable;
 import android.text.InputType;
-import android.text.TextWatcher;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;

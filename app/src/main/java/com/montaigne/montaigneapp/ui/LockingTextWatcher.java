@@ -32,9 +32,9 @@ public abstract class LockingTextWatcher implements TextWatcher {
     @Override
     public void afterTextChanged(Editable s) {
         String string = s.toString().trim();
-        if ((string == null || string.isEmpty()) && obligatory) {
+        if (string.isEmpty() && obligatory) {
             AbstractProjectViewModel.addLockingField(fieldId);
-        } else {
+        } else if (obligatory){
             AbstractProjectViewModel.removeLockingField(fieldId);
             afterValidChangeListener(string);
         }
