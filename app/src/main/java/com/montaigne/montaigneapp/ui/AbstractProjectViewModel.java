@@ -37,15 +37,23 @@ public abstract class AbstractProjectViewModel <Project extends Projeto> extends
         navLockingFields.remove(fieldId);
     }
 
+    public static boolean isLocked() {
+        return navLockingFields.size() == 0;
+    }
+
+    public static void notifyLocking(View view) {
+        Snackbar.make(view,
+                R.string.msg_snackbar_campos_vazios,
+                Snackbar.LENGTH_LONG).show();
+    }
+
     protected static void intentHome(@NonNull View view) {
         if (navLockingFields.size() == 0) {
             Intent intent = new Intent(view.getContext(), HomeActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             view.getContext().startActivity(intent);
         } else {
-            Snackbar.make(view,
-                    R.string.msg_snackbar_campos_vazios,
-                    Snackbar.LENGTH_LONG).show();
+            notifyLocking(view);
         }
     }
 
@@ -62,9 +70,7 @@ public abstract class AbstractProjectViewModel <Project extends Projeto> extends
             ((NavHostFragment) Objects.requireNonNull(manager.findFragmentById(R.id.containerSpt)))
                 .getNavController().navigate(actionId, args);
         else {
-            Snackbar.make(getCurrentFragment(manager).requireView(),
-                    R.string.msg_snackbar_campos_vazios,
-                    Snackbar.LENGTH_LONG).show();
+            notifyLocking(getCurrentFragment(manager).requireView());
         }
     }
 

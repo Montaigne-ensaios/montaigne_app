@@ -44,4 +44,12 @@ public abstract class AbstracProjectActivity <
     public void setActionBarTitle(String title) {
         Objects.requireNonNull(getSupportActionBar()).setTitle(title);
     }
+
+    @Override
+    public void onBackPressed() {
+        if (AbstractProjectViewModel.isLocked())
+            super.onBackPressed();
+        else
+            AbstractProjectViewModel.notifyLocking(getCurrentFocus());
+    }
 }
