@@ -24,7 +24,6 @@ import java.util.List;
 
 public class ProjetosSalvosAdapter extends RecyclerView.Adapter<BindedViewHolder<AdapterHomeProjetosBinding>> {
     private List<Projeto> projetoList;
-    private List<Boolean> isCheckedList;
     private SparseBooleanArray selectedItems = new SparseBooleanArray();
     private IClickListener clickListener;
     private int currentSelectedPosition = -1;
@@ -100,10 +99,6 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<BindedViewHolder
 
     public void setProjetoList(List<Projeto> projetoList){
         this.projetoList = projetoList;
-        this.isCheckedList = new ArrayList<>();
-        for (int i = 0; i < getItemCount(); i++) {
-            isCheckedList.add(false);
-        }
         notifyDataSetChanged();
     }
 

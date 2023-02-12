@@ -18,6 +18,7 @@ import com.montaigne.montaigneapp.ui.IClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class FuroVM extends ViewModel {
     private ProjetoSpt projeto;
@@ -76,42 +77,23 @@ public class FuroVM extends ViewModel {
     }
 
     protected void removeAmostras() {
-        for (int i = 0; i < projeto.getListaDeFuros().get(furoId).getListaDeAmostras().size(); i++) {
+        List<AmostraSpt> listaDeAmostrasDeletadas = new ArrayList<>();
+        for (int i = 0; i < listaDeAmostras.size(); i++) {
             if (amostraAdapter.getSelectedItems().get(i)) {
-                AmostraSpt amostra = projeto.getListaDeFuros().get(furoId).getListaDeAmostras().get(i);
+                AmostraSpt amostra = listaDeAmostras.get(i);
                 if (amostra.getClass() == AmostraSpt.class) {
-                    Log.d("Delete", "Deletando amostra");
-                    AmostraSptUseCase.delete(i, furoId, projeto);
+                    listaDeAmostrasDeletadas.add(amostra);
                 }
             }
         }
-
-        refreshAmostrasSalvas();
+        refreshAmostrasSalvas(listaDeAmostrasDeletadas);
     }
 
-    protected void refreshAmostrasSalvas() {
-        ProjetoSptUseCase.read().addOnCompleteListener(t -> {
-            if(t.isSuccessful()) {
-                listaDeAmostras = new ArrayList<>();
-                for (int i = 0; i < t.getResult().getChildrenCount(); i++) {
-                    listaDeAmostras.add(
-                            t.getResult().
-                                    getValue(ProjetoSpt.class).
-                                    getListaDeFuros().
-                                    get(furoId).
-                                    getListaDeAmostras().
-                                    get(i)
-                    );
-                }
-                amostraAdapter.setAmostras(listaDeAmostras);
-            } else {
-                Log.e(TAG, "Falha ao ler projetos do Banco de dados");
-            }
-        });
+    private void refreshAmostrasSalvas(List<AmostraSpt> amostras) {
+        System.out.println(amostras.size());
+        projeto.getListaDeFuros().get(furoId).getListaDeAmostras().removeAll(amostras);
+        ProjetoSptUseCase.update(projeto);
+        amostraAdapter.setAmostras(projeto.getListaDeFuros().get(furoId).getListaDeAmostras());
     }
 
-    protected void updateFuros(List<FuroSpt> furosList, RecyclerView recyclerView) {
-        projeto.getListaDeFuros().removeAll(furosList);
-        updateAmostrasAdapter(recyclerView);
-    }
 }
