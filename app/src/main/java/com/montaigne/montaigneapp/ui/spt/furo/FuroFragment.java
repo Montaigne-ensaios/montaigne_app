@@ -85,7 +85,7 @@ public class FuroFragment extends Fragment {
                 @Override
                 public boolean onActionItemClicked(android.view.ActionMode mode, MenuItem item) {
                     if (item.getItemId() == R.id.action_delete) {
-                        viewModel.removeFuros(binding.recyclerAmostra);
+                        viewModel.removeAmostras();
                         actionMode.finish();
                         viewModel.getSelectedItems().clear();
                     }

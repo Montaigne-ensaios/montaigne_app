@@ -7,7 +7,11 @@ import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.montaigne.montaigneapp.data.usecase.AmostraSptUseCase;
 import com.montaigne.montaigneapp.data.usecase.FuroSptUseCase;
+import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
+import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.IClickListener;
@@ -20,8 +24,10 @@ public class FuroVM extends ViewModel {
     private int furoId;
     private FuroSpt furo;
     private List<FuroSpt> listaDeFuros;
+    private List<AmostraSpt> listaDeAmostras;
     private IClickListener clickListener;
     private AmostraAdapter amostraAdapter;
+    private final String TAG = "FuroFragment";
 
     public AmostraAdapter getAmostraAdapter() {
         return amostraAdapter;
@@ -50,7 +56,8 @@ public class FuroVM extends ViewModel {
         // todo: implementar deleção
         amostraAdapter = new AmostraAdapter();
         listaDeFuros = projeto.getListaDeFuros();
-        amostraAdapter.setAmostras(projeto.getListaDeFuros().get(furoId).getListaDeAmostras());
+        listaDeAmostras = listaDeFuros.get(furoId).getListaDeAmostras();
+        amostraAdapter.setAmostras(listaDeAmostras);
 
         recyclerAmostras.setAdapter(amostraAdapter);
         recyclerAmostras.setLayoutManager(new LinearLayoutManager(recyclerAmostras.getContext()));
@@ -68,20 +75,39 @@ public class FuroVM extends ViewModel {
         return amostraAdapter.getSelectedItems();
     }
 
-    protected void removeFuros(RecyclerView recyclerAmostra) {
-        List<FuroSpt> deletedFurosList = new ArrayList<>();
-        for (int i = 0; i < projeto.getListaDeFuros().size(); i++) {
+    protected void removeAmostras() {
+        for (int i = 0; i < projeto.getListaDeFuros().get(furoId).getListaDeAmostras().size(); i++) {
             if (amostraAdapter.getSelectedItems().get(i)) {
-                FuroSpt furo = projeto.getListaDeFuros().get(i);
-                deletedFurosList.add(furo);
-                if (furo.getClass() == FuroSpt.class) {
-                    Log.d("Delete", "Deletando furo " + furo.getCodigo());
-                    FuroSptUseCase.delete(i, projeto);
+                AmostraSpt amostra = projeto.getListaDeFuros().get(furoId).getListaDeAmostras().get(i);
+                if (amostra.getClass() == AmostraSpt.class) {
+                    Log.d("Delete", "Deletando amostra");
+                    AmostraSptUseCase.delete(i, furoId, projeto);
                 }
             }
         }
 
-        updateFuros(deletedFurosList, recyclerAmostra);
+        refreshAmostrasSalvas();
+    }
+
+    protected void refreshAmostrasSalvas() {
+        ProjetoSptUseCase.read().addOnCompleteListener(t -> {
+            if(t.isSuccessful()) {
+                listaDeAmostras = new ArrayList<>();
+                for (int i = 0; i < t.getResult().getChildrenCount(); i++) {
+                    listaDeAmostras.add(
+                            t.getResult().
+                                    getValue(ProjetoSpt.class).
+                                    getListaDeFuros().
+                                    get(furoId).
+                                    getListaDeAmostras().
+                                    get(i)
+                    );
+                }
+                amostraAdapter.setAmostras(listaDeAmostras);
+            } else {
+                Log.e(TAG, "Falha ao ler projetos do Banco de dados");
+            }
+        });
     }
 
     protected void updateFuros(List<FuroSpt> furosList, RecyclerView recyclerView) {

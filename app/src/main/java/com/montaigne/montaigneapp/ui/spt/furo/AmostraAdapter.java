@@ -42,6 +42,7 @@ public class AmostraAdapter extends RecyclerView.Adapter<BindedViewHolder<Adapte
 
     public void setAmostras(@NonNull List<AmostraSpt> amostras) {
         this.amostras = amostras;
+
     }
 
     @NonNull
