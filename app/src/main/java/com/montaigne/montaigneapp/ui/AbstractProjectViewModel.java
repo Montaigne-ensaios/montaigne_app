@@ -23,60 +23,7 @@ import java.util.Objects;
 public abstract class AbstractProjectViewModel <Project extends Projeto> extends ViewModel {
     protected abstract void setUp(Projeto projeto, FragmentManager supportFragmentManager);
 
-    private static final String TAG = "Navigation Lock Handler";
-    private static final HashSet<String> navLockingFields = new HashSet<>();
-    // hashset garante que os campos não vão se repetir. Única variável global do projeto
-
-    public static void addLockingField(String fieldId) {
-        Log.d(TAG, "Adicionando ao set: " + fieldId);
-        navLockingFields.add(fieldId);
-    }
-
-    public static void removeLockingField(String fieldId) {
-        Log.d(TAG, "Removendo do set: " + fieldId);
-        navLockingFields.remove(fieldId);
-    }
-
-    public static boolean isLocked() {
-        return navLockingFields.size() == 0;
-    }
-
-    public static void notifyLocking(View view) {
-        Snackbar.make(view,
-                R.string.msg_snackbar_campos_vazios,
-                Snackbar.LENGTH_LONG).show();
-    }
-
-    protected static void intentHome(@NonNull View view) {
-        if (navLockingFields.size() == 0) {
-            Intent intent = new Intent(view.getContext(), HomeActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-            view.getContext().startActivity(intent);
-        } else {
-            notifyLocking(view);
-        }
-    }
-
     protected abstract void handleNavigation(FragmentManager manager);
-
-    protected static Fragment getCurrentFragment(@NonNull FragmentManager manager) {
-        return Objects.requireNonNull(
-                manager.getPrimaryNavigationFragment()
-        ).getChildFragmentManager().getFragments().get(0);
-    }
-
-    public static void navigateFragments(int actionId, @NonNull FragmentManager manager, Bundle args) {
-        if (navLockingFields.size() == 0)
-            ((NavHostFragment) Objects.requireNonNull(manager.findFragmentById(R.id.containerSpt)))
-                .getNavController().navigate(actionId, args);
-        else {
-            notifyLocking(getCurrentFragment(manager).requireView());
-        }
-    }
-
-    public static void navigateFragments(int actionId, FragmentManager manager) {
-        navigateFragments(actionId, manager, null);
-    }
 
     protected abstract void updateProjeto(Project projeto);
 

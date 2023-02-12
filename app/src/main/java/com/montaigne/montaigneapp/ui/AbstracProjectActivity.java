@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.montaigne.montaigneapp.model.Projeto;
-import com.montaigne.montaigneapp.ui.home.HomeVM;
+import com.montaigne.montaigneapp.utils.FragmentNavigator;
 
 import java.util.Objects;
 
@@ -34,7 +34,7 @@ public abstract class AbstracProjectActivity <
     }
 
     protected void setButtonHome(@NonNull ImageButton buttonHome) {
-        buttonHome.setOnClickListener(AbstractProjectViewModel::intentHome);
+        buttonHome.setOnClickListener(FragmentNavigator::intentHome);
     }
 
     public void setButtonNavigateText(String text) {
@@ -47,9 +47,9 @@ public abstract class AbstracProjectActivity <
 
     @Override
     public void onBackPressed() {
-        if (AbstractProjectViewModel.isLocked())
+        if (!FragmentNavigator.hasEmptyFields())
             super.onBackPressed();
         else
-            AbstractProjectViewModel.notifyLocking(getCurrentFocus());
+            FragmentNavigator.notifyEmptyFields(getCurrentFocus());
     }
 }

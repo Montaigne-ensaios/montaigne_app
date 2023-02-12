@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.databinding.FragmentEnsaioBinding;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
-import com.montaigne.montaigneapp.ui.AbstractProjectViewModel;
+import com.montaigne.montaigneapp.utils.FragmentNavigator;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
 
@@ -74,8 +74,8 @@ public class EnsaioFragment extends Fragment {
         activity.setButtonNavigateText(getString(R.string.btn_navigate_ensaio));
         activity.setActionBarTitle(getString(R.string.furo_action_bar_title) + (furoId + 1));
 
-        binding.buttonFinnishEnsaio.setOnClickListener(v -> AbstractProjectViewModel.navigateFragments(
-                R.id.action_finish_Ensaio, activity.getSupportFragmentManager())
+        binding.buttonFinnishEnsaio.setOnClickListener(v -> FragmentNavigator.navigate(
+                R.id.action_finish_Ensaio, activity.getSupportFragmentManager(), R.id.containerSpt)
         );
 
         return binding.getRoot();

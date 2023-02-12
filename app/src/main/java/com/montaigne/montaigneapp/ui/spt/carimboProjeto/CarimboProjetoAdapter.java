@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.databinding.AdapterCarimboProjetoBinding;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
-import com.montaigne.montaigneapp.ui.AbstractProjectViewModel;
 import com.montaigne.montaigneapp.ui.BindedViewHolder;
+import com.montaigne.montaigneapp.utils.FragmentNavigator;
 import com.montaigne.montaigneapp.ui.LockingTextWatcher;
 
 import java.util.ArrayList;
@@ -111,7 +111,7 @@ public class CarimboProjetoAdapter extends RecyclerView.Adapter<BindedViewHolder
 
         if ((Objects.equals(string, "") || Objects.equals(string, " ") || string == null )
                 && Objects.equals(field.message, OBRIGATORIO)) {
-            AbstractProjectViewModel.addLockingField(field.id);
+            FragmentNavigator.addEmptyFieldId(field.id);
         }
 
         holder.binding.textInputEditTextNameProjeto.addTextChangedListener(new LockingTextWatcher(

@@ -18,7 +18,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.databinding.FragmentProjetoBinding;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
-import com.montaigne.montaigneapp.ui.AbstractProjectViewModel;
+import com.montaigne.montaigneapp.utils.FragmentNavigator;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
 
@@ -76,8 +76,9 @@ public class ProjetoFragment extends Fragment {
         @Override
         public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
             if (menuItem.getItemId() == R.id.action_add_furo) {
-                AbstractProjectViewModel.navigateFragments(R.id.action_new_furo,
-                        requireActivity().getSupportFragmentManager());
+                FragmentNavigator.navigate(R.id.action_new_furo,
+                        requireActivity().getSupportFragmentManager(),
+                        R.id.containerSpt);
             } else if (menuItem.getItemId() == R.id.action_genarate_report) {
                 Toast.makeText(requireContext(), R.string.not_implemented, Toast.LENGTH_SHORT).show();
                 // todo: implementar geração de ensaios xlsx

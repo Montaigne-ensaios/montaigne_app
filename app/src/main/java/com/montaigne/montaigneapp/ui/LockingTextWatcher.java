@@ -3,6 +3,8 @@ package com.montaigne.montaigneapp.ui;
 import android.text.Editable;
 import android.text.TextWatcher;
 
+import com.montaigne.montaigneapp.utils.FragmentNavigator;
+
 public abstract class LockingTextWatcher implements TextWatcher {
     private final boolean obligatory;  // if true, asserts never will save blank strings
     private final String fieldId;  // non displayed id to lockingFields list
@@ -33,9 +35,9 @@ public abstract class LockingTextWatcher implements TextWatcher {
     public void afterTextChanged(Editable s) {
         String string = s.toString().trim();
         if (string.isEmpty() && obligatory) {
-            AbstractProjectViewModel.addLockingField(fieldId);
+            FragmentNavigator.addEmptyFieldId(fieldId);
         } else if (obligatory){
-            AbstractProjectViewModel.removeLockingField(fieldId);
+            FragmentNavigator.removeEmptyFieldId(fieldId);
             afterValidChangeListener(string);
         }
     }
