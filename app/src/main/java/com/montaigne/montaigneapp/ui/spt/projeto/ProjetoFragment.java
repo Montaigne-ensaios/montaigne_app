@@ -1,6 +1,7 @@
 package com.montaigne.montaigneapp.ui.spt.projeto;
 
 import android.os.Bundle;
+import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,6 +19,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.databinding.FragmentProjetoBinding;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
+import com.montaigne.montaigneapp.ui.IClickListener;
 import com.montaigne.montaigneapp.utils.FragmentNavigator;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
@@ -26,7 +28,7 @@ public class ProjetoFragment extends Fragment {
     private ProjetoVM viewModel;
     private SptVM projectViewModel;
     private FragmentProjetoBinding binding;
-
+    private ActionMode actionMode;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,12 +47,68 @@ public class ProjetoFragment extends Fragment {
         viewModel.setProjeto(projeto);
         viewModel.updateFurosAdapter(binding.recyclerFuro);
 
+        viewModel.setClickListener(new IClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                enableActionMode(position);
+            }
+
+            @Override
+            public void onItemLongClick(int position) {
+                enableActionMode(position);
+            }
+        });
         SptActivity activity = (SptActivity) requireActivity();
         activity.setButtonNavigateText(getString(R.string.btn_navigate_projeto));
         activity.setActionBarTitle(projeto.getNome());
 
         return binding.getRoot();
     }
+
+    private void enableActionMode(int position) {
+        if (actionMode == null)
+            actionMode = requireActivity().startActionMode(new ActionMode.Callback() {
+                @Override
+                public boolean onCreateActionMode(android.view.ActionMode mode, Menu menu) {
+                    mode.getMenuInflater().inflate(R.menu.delete_menu, menu);
+                    return true;
+                }
+
+                @Override
+                public boolean onPrepareActionMode(android.view.ActionMode mode, Menu menu) {
+                    return false;
+                }
+
+                @Override
+                public boolean onActionItemClicked(android.view.ActionMode mode, MenuItem item) {
+                    if (item.getItemId() == R.id.action_delete) {
+                        viewModel.removeFuros();
+                        actionMode.finish();
+                        viewModel.getSelectedItems().clear();
+                    }
+                    return false;
+                }
+
+                @Override
+                public void onDestroyActionMode(android.view.ActionMode mode) {
+                    viewModel.getSelectedItems().clear();
+                    actionMode = null;
+                    viewModel.getFurosAdapter().notifyDataSetChanged();
+                }
+
+
+            });
+
+        viewModel.togglePositions(position);
+        final int size = viewModel.getSelectedItems().size();
+        if (size == 0) {
+            actionMode.finish();
+        } else {
+            actionMode.setTitle(size + "");
+            actionMode.invalidate();
+        }
+    }
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

@@ -132,10 +132,9 @@ public class AmostraAdapter extends RecyclerView.Adapter<BindedViewHolder<Adapte
         }
 
         holder.binding.cardView.setOnClickListener(v -> {
-            System.out.println("tamanho do selecteditems: " + selectedItems.size());
+
             if (clickListener != null && selectedItems.size() > 0) {
                 clickListener.onItemClick(position);
-                System.out.println("tamanho do selecteditems: " + selectedItems.size());
             }
             else {
                 //TODO:IMPLEMENTAR NAVEGAÇÃO
@@ -149,8 +148,6 @@ public class AmostraAdapter extends RecyclerView.Adapter<BindedViewHolder<Adapte
         holder.binding.cardView.setOnLongClickListener(v -> {
             if (clickListener != null) {
                 clickListener.onItemLongClick(position);
-                System.out.println("tamanho do selecteditems: " + selectedItems.size());
-                System.out.println("longclick hein mano");
             }
             if (selectedItems.get(position))
                 holder.binding.cardView.setBackgroundResource(R.color.hint);
