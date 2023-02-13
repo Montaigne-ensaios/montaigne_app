@@ -1,5 +1,6 @@
 package com.montaigne.montaigneapp.ui.spt.carimboEnsaio;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -62,18 +63,17 @@ public class CarimboEnsaioFragment extends Fragment {
 //            viewModel.setLocation();  // todo: implementar coordenadas
         });
 
-        binding.editTextStartDate.setOnClickListener(v -> {
+        binding.calendarioDataInicio.setOnClickListener(v -> {
             Calendar calendario = Calendar.getInstance(TimeZone.getDefault());
             DatePickerDialog datePicker = new DatePickerDialog(
                     this.getActivity(),
-                    R.style.Theme_MontaigneApp,
+                    AlertDialog.THEME_DEVICE_DEFAULT_DARK,
                     datePickerListener,
                     calendario.get(Calendar.YEAR),
                     calendario.get(Calendar.MONTH),
                     calendario.get(Calendar.DAY_OF_MONTH)
             );
             datePicker.setCancelable(false);
-            datePicker.setTitle("Select the date");
             datePicker.show();
         });
 
@@ -85,9 +85,10 @@ public class CarimboEnsaioFragment extends Fragment {
     }
 
     private DatePickerDialog.OnDateSetListener datePickerListener = (view, selectedYear, selectedMonth, selectedDay) -> {
-        String ano = String.valueOf(selectedYear);
-        String mes = String.valueOf(selectedMonth + 1);
-        String dia = String.valueOf(selectedDay);
+        String ano = preparaData(selectedYear);
+        String mes = preparaData(selectedMonth + 1);
+        String dia = preparaData(selectedDay);
+
         binding.editTextStartDate.setText(dia + "/" + mes + "/" + ano);
         fields.put("DataInicio", binding.editTextStartDate);
     };
@@ -96,5 +97,13 @@ public class CarimboEnsaioFragment extends Fragment {
     public void onPause() {
         super.onPause();
         projectViewModel.updateProjeto(viewModel.getProjeto(fields));
+    }
+
+    private String preparaData(int data) {
+        if (data < 10) {
+            return "0" + String.valueOf(data);
+        } else {
+            return String.valueOf(data);
+        }
     }
 }
