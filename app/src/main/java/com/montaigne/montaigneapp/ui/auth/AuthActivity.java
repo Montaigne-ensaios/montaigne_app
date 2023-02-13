@@ -1,13 +1,17 @@
 package com.montaigne.montaigneapp.ui.auth;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -53,45 +57,10 @@ public class AuthActivity extends AppCompatActivity {
         binding.buttonSignInGoogle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = client.getSignInIntent();
-                startActivityForResult(i,1234);
+                Intent signInIntent = client.getSignInIntent();
+                activityResultLauncher.launch(signInIntent);
             }
         });
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if(requestCode == 1234){
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            try {
-                GoogleSignInAccount account = task.getResult(ApiException.class);
-                AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(),null);
-
-                firebaseAuth.signInWithCredential(credential)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if(task.isSuccessful()){
-                                    viewModel.toHome(getApplicationContext());
-                                    finish();
-
-                                }else {
-                                    Toast.makeText(getApplicationContext(), "Falha ao logar",
-                                            Toast.LENGTH_SHORT).show();
-
-                                    Log.e("Login failed", task.getException().getMessage());
-                                }
-
-                            }
-                        });
-
-            } catch (ApiException e) {
-                e.printStackTrace();
-            }
-
-        }
     }
 
     @Override
@@ -103,5 +72,52 @@ public class AuthActivity extends AppCompatActivity {
             viewModel.toHome(getApplicationContext());
             finish();
         }
+    }
+
+    private ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Intent intentResult = result.getData();
+                        Task<GoogleSignInAccount> task = GoogleSignIn
+                                .getSignedInAccountFromIntent(intentResult);
+
+                        try {
+                            GoogleSignInAccount account = task.getResult(ApiException.class);
+                            loginGoogleWithCredentials(account.getIdToken());
+
+                        } catch (ApiException e) {
+                            Toast.makeText(
+                                    getApplicationContext(),
+                                    "Erro ao logar",
+                                    Toast.LENGTH_LONG).show();
+
+                            Log.e("Login error", e.getMessage());
+                        }
+                    }
+                }
+            });
+
+    private void loginGoogleWithCredentials(String idTolken) {
+        AuthCredential authCredential = GoogleAuthProvider.getCredential(idTolken, null);
+        firebaseAuth.signInWithCredential(authCredential)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            viewModel.toHome(getApplicationContext());
+                            finish();
+
+                        }else {
+                            Toast.makeText(getApplicationContext(), "Falha ao logar",
+                                    Toast.LENGTH_SHORT).show();
+
+                            Log.e("Login error", task.getException().getMessage());
+                        }
+
+                    }
+        });
     }
 }
