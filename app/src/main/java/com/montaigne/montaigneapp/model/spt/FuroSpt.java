@@ -13,8 +13,8 @@ public class FuroSpt implements Serializable {
     // altura da água dentrod do furo quando o ensaio terminou, em metros
     private float cotaInicial;
     // altura em que o furo é iniciado, em relação a `referencia de nível` do projeto
-    //  seguindo ex do projeto: furo começou a 2,69m abaixo do nível da calçada
-    private Date dataInicio, dataFim;
+    //  seguindo ex do projeto: furo começou a 2,69m abaixo do nível da calçada, obrigatório
+    private Date dataInicio, dataFim;  // todo: preencher automaticamente
     private List<AmostraSpt> listaDeAmostras;
     private Coordenada coordenada;
     // coordenada especificamente do furo

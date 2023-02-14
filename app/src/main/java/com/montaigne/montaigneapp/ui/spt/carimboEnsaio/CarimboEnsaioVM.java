@@ -1,5 +1,11 @@
 package com.montaigne.montaigneapp.ui.spt.carimboEnsaio;
 
+import static com.montaigne.montaigneapp.utils.editTextInputParser.getCurrentDate;
+import static com.montaigne.montaigneapp.utils.editTextInputParser.getDate;
+import static com.montaigne.montaigneapp.utils.editTextInputParser.getFloat;
+import static com.montaigne.montaigneapp.utils.editTextInputParser.setValue;
+
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -9,11 +15,14 @@ import com.montaigne.montaigneapp.model.Coordenada;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
-import java.sql.Date;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Objects;
 
 public class CarimboEnsaioVM extends ViewModel {
+    private final String TAG = "CarimboEnsaio";
+
     private ProjetoSpt projeto;
     private FuroSpt furo;
     protected int furoId;
@@ -27,8 +36,12 @@ public class CarimboEnsaioVM extends ViewModel {
         } else {
             furo = projeto.getListaDeFuros().get(furoId);
 
-            fields.get("dataInicio").setText(furo.getDataInicio().toString());
-            fields.get("NivelFuro").setText(String.valueOf(furo.getCotaInicial()));
+            if (furo.getDataInicio() != null)
+                setValue(Objects.requireNonNull(fields.get("DataInicio")), furo.getDataInicio());
+            else
+                setValue(Objects.requireNonNull(fields.get("DataInicio")), getCurrentDate());
+
+            setValue(Objects.requireNonNull(fields.get("NivelFuro")), furo.getCotaInicial());
         }
     }
 
@@ -37,13 +50,13 @@ public class CarimboEnsaioVM extends ViewModel {
     }
 
     protected ProjetoSpt getProjeto(Map<String, EditText> fields) {
-        furo.setCotaInicial(Float.parseFloat(fields.get("NivelFuro").getText().toString()));
+        furo.setCotaInicial(getFloat(Objects.requireNonNull(fields.get("NivelFuro"))));
         try {
-            furo.setDataInicio(Date.valueOf(fields.get("DataInicio").getText().toString()));
-        } catch (IllegalArgumentException e) {
-            Toast.makeText(fields.get("DataInicio").getContext(), "Formato de data ilegal", Toast.LENGTH_SHORT).show();
-        }  // todo: date parser adequado
-        furo.setListaDeAmostras(new ArrayList<>());
+            furo.setDataInicio(getDate(Objects.requireNonNull(fields.get("DataInicio"))));
+        } catch (ParseException e) {
+            Toast.makeText(Objects.requireNonNull(fields.get("DataInicio")).getContext(), "Formato de data ilegal", Toast.LENGTH_SHORT).show();
+            Log.e(TAG, "Formato de data inválido.", e);
+        }  // todo: substituir por datepicker
 
         boolean isNew = true;
         for (FuroSpt furoI: projeto.getListaDeFuros()) {
@@ -53,8 +66,10 @@ public class CarimboEnsaioVM extends ViewModel {
             }
         }
 
-        if (isNew)
+        if (isNew) {
             projeto.getListaDeFuros().add(furo);
+            furo.setListaDeAmostras(new ArrayList<>());
+        }
         else
             projeto.getListaDeFuros().set(furoId, furo);
 

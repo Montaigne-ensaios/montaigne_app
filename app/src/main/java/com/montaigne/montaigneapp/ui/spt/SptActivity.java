@@ -1,22 +1,21 @@
 package com.montaigne.montaigneapp.ui.spt;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
-import com.montaigne.montaigneapp.ui.home.HomeVM;
+import com.montaigne.montaigneapp.ui.AbstracProjectActivity;
 import com.montaigne.montaigneapp.databinding.AcitivitySptBinding;
+import com.montaigne.montaigneapp.ui.AbstractProjectViewModel;
 
-import java.util.Objects;
-
-public class SptActivity extends AppCompatActivity {
+public class SptActivity extends AbstracProjectActivity<SptVM, ProjetoSpt> {
     private AcitivitySptBinding binding;
-    private SptVM viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,41 +23,29 @@ public class SptActivity extends AppCompatActivity {
         binding = AcitivitySptBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        viewModel = new ViewModelProvider(this).get(SptVM.class);
-        viewModel.setupViewModel(
-                (ProjetoSpt) getIntent().getExtras().getSerializable(HomeVM.PROJETO),
-                getSupportFragmentManager()
-        );
+        setViewModel(new ViewModelProvider(this).get(SptVM.class));
+
         setSupportActionBar(binding.toolbarSptInclude.toolbarSpt);
-        getSupportActionBar().setIcon(R.drawable.icon_arrow_left);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        binding.imgButtonHome.setOnClickListener(viewModel::intentHome);
-        binding.buttonNavigate.setOnClickListener(v -> viewModel.handleNavigation(getSupportFragmentManager()));
+        setButtonHome(binding.imgButtonHome);
+        setButtonNavigate(binding.buttonNavigate);
 
-       // binding.toolbarSptInclude.toolbarSpt.setOnMenuItemClickListener(item -> {
-        //    if (item.getItemId() == R.id.addfuro) {
-       //         viewModel.newProjectSpt(this);
-        //    } else if (item.getItemId() == R.id.deletefuro) {
-       //         viewModel.removefuro();
-         //   }
-        //    return true;
-     //   });
-
+        addMenuProvider(new SptActivity.MenuProvider());  // não necessário no momento
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu_spt, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
+    private class MenuProvider implements androidx.core.view.MenuProvider {
+        @Override
+        public void onCreateMenu(@NonNull Menu menu, @NonNull MenuInflater menuInflater) {
+            menuInflater.inflate(R.menu.menu_spt_projeto, menu);
+        }
 
-    public void setNavigateButtonText(String string) {
-        binding.buttonNavigate.setText(string);
-    }
-
-    public void setActionBarTitle(String string) {
-        Objects.requireNonNull(getSupportActionBar()).setTitle(string);
+        @Override
+        public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
+            if (menuItem.getItemId() == android.R.id.home)
+                onBackPressed();
+            return true;
+        }
     }
 }

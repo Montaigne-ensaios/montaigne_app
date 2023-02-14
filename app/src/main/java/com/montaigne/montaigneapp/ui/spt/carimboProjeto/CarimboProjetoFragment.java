@@ -43,11 +43,11 @@ public class CarimboProjetoFragment extends Fragment {
         viewModel.initializeRecycler(binding.recyclerCarimboProjeto);
 
         SptActivity activity = (SptActivity) getActivity();
-        activity.setNavigateButtonText(getString(R.string.btn_navigate_carimbo_projeto));
+        activity.setButtonNavigateText(getString(R.string.btn_navigate_carimbo_projeto));
         activity.setActionBarTitle(projetoSpt.getNome());
 
         binding.buttonGetLocation.setOnClickListener(v -> {
-            Toast.makeText(v.getContext(), R.string.notImplemented, Toast.LENGTH_SHORT).show();
+            Toast.makeText(v.getContext(), R.string.not_implemented, Toast.LENGTH_SHORT).show();
 //            viewModel.setLocation();  // todo: implementar coordenadas
         });
 

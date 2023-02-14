@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_add_furo"
+        android:orderInCategory="100"
+        android:title="@string/menu_item_projetospt_novo_furo"
+        android:icon="@drawable/ic_add"
+        />
+    <item
+        android:id="@+id/action_delete_furo"
+        android:orderInCategory="100"
+        android:title="@string/menu_item_projetospt_apagar_furo"
+        android:icon="@android:drawable/ic_menu_delete"
+        />
+
+    <item
+        android:id="@+id/action_genarate_report"
+        android:orderInCategory="100"
+        android:title="@string/menu_item_generate_report"
+        />
+<!--        todo: icon-->
+
+    <item
+        android:id="@+id/action_help"
+        android:orderInCategory="100"
+        android:title="@string/action_help"
+        android:icon="@android:drawable/ic_menu_info_details"
+        />
+
+</menu>

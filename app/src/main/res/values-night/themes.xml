@@ -20,7 +20,7 @@
         <item name="tint">@color/white</item>
 
         <item name="android:textViewStyle">@style/TextView_Dark</item>
-
+        <item name="windowActionModeOverlay">true</item>
 
 
 

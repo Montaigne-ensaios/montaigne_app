@@ -1,110 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:elevation="10dp"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="10dp">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:elevation="20dp"
+        android:padding="10dp">
 
-        <View
-            android:id="@+id/dividerHorizontal"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="?android:attr/listDivider" />
-
-        <EditText
-            android:id="@+id/editTextGolpe1"
-            android:layout_width="40dp"
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/dividerHorizontal"
-            android:layout_alignStart="@+id/dividerSpt"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="28dp"
-            android:ems="10"
-            android:hint="1"
-            android:inputType="number" />
+            android:button="@drawable/icon_checkbox"
+            tools:ignore="TouchTargetSizeCheck" />
 
-        <EditText
-            android:id="@+id/editTextPenetracao1"
-            android:layout_width="40dp"
+        <TextView
+            android:id="@+id/textFuroName"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/dividerHorizontal"
-            android:layout_alignStart="@+id/editTextGolpe1"
-            android:layout_marginStart="44dp"
-            android:layout_marginTop="28dp"
-            android:ems="10"
-            android:hint="15"
-            android:inputType="number" />
+            android:text="SP01 FURO"
+            android:textSize="15sp"
+            android:visibility="visible" />
 
-        <EditText
-            android:id="@+id/editTextGolpe2"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/dividerHorizontal"
-            android:layout_alignStart="@+id/editTextGolpe1"
-            android:layout_marginStart="96dp"
-            android:layout_marginTop="28dp"
-            android:ems="10"
-            android:hint="1"
-            android:inputType="number" />
-
-        <EditText
-            android:id="@+id/editTextPenetracao2"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/dividerHorizontal"
-            android:layout_alignStart="@+id/editTextGolpe1"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="28dp"
-            android:ems="10"
-            android:hint="15"
-            android:inputType="number" />
-
-        <EditText
-            android:id="@+id/editTextGolpe3"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/dividerHorizontal"
-            android:layout_alignStart="@+id/editTextGolpe1"
-            android:layout_marginStart="194dp"
-            android:layout_marginTop="28dp"
-            android:ems="10"
-            android:hint="1"
-            android:inputType="number" />
-
-        <EditText
-            android:id="@+id/editTextPenetracao3"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/dividerHorizontal"
-            android:layout_alignStart="@+id/editTextGolpe1"
-            android:layout_marginStart="237dp"
-            android:layout_marginTop="28dp"
-            android:ems="10"
-            android:hint="15"
-            android:inputType="number" />
-
-        <EditText
-            android:id="@+id/editTextProfundidade1"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="-80dp"
-            android:layout_toStartOf="@+id/dividerSpt"
-            android:ems="10"
-            android:hint="1"
-            android:inputType="number" />
-
-        <View
-            android:id="@+id/dividerSpt"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="10dp"
-            android:background="?android:attr/listDivider" />
-
-    </RelativeLayout>
-
+    </LinearLayout>
 </androidx.cardview.widget.CardView>

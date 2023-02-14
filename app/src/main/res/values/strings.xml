@@ -3,10 +3,16 @@
 
     <string name="action_settings">Settings</string>
 
+    <string name="not_implemented">Não implementado</string>
+    <string name="msg_snackbar_campos_vazios">Campos obrigatórios ainda precisam ser preenchidos!</string>
 
     <!-- Strings used for menu  -->
     <string name="action_help">Ajuda</string>
     <string name="action_infor">Sobre</string>
+    <string name="menu_item_add_spt_projeto">Adicionar projeto SPT</string>
+    <string name="menu_item_projetospt_novo_furo">Novo furo</string>
+    <string name="menu_item_projetospt_apagar_furo">Apagar furo</string>
+    <string name="menu_item_generate_report">Gerar relatório SPT</string>
 
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -28,6 +34,7 @@
     <!-- Strings da tela Carimbo Project -->
     <string name="msg_carimbo_automátizado">O carimbo projeto é realizado para todos os furos, contendo informações gerais que não serão alteradas nos demais furos.</string>
     <string name="error_campo_obrigatorio">Obrigatório*</string>
+    <string name="btn_capturar_endereco">Determinar endereço via localização do dispositivo</string>
 
     <string name="registration_projectName_hint">Nome do projeto</string>
     <string name="registration_tecnico_hint">Técnico</string>
@@ -37,12 +44,12 @@
     <string name="registration_local_obra_hint">Local da obra</string>
     <string name="registration_quantidade_furos_hint">Número de furos</string>
     <string name="registration_data_inicio_hint">Data de inicio</string>
-    <string name="registration_referencia_nivel_hint">Referência de nivel</string>
+    <string name="registration_referencia_nivel_hint">Descrição da referência de nivel</string>
     <string name="registration_altura_referencia_nivel_hint">Altura da referência de nível</string>
-    <string name="registration_coordenadas_hint">Coordenadas do projeto</string>
-
+    <string name="registration_coordenadas_hint">Endereço do projeto</string>
 
     <!-- Strings da tela Carimbo Furo-->
+    <string name="furo_action_bar_title">Furo SP-0</string>
     <string name="registration_Data_inicio_furo">Data de inicio:</string>
     <string name="hint_date">MM/DD/YYYY</string>
     <string name="registration_nivel_furo">Nivel do Furo N:</string>
@@ -51,7 +58,6 @@
     <string name="btn_capturar_location">Capturar Localização</string>
     <string name="btn_start_furo">Iniciar furo</string>
 
-    <string name="notImplemented">Não implementado</string>
 
 
     <!-- Strings da tela Adpter_home_projetos-->

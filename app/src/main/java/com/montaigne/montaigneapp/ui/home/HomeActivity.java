@@ -29,20 +29,21 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         viewModel = new ViewModelProvider(this).get(HomeVM.class);
-      setSupportActionBar(binding.toolbarHomeInclude.toolbarHome);
-      viewModel.setClickListener(new IClickListener() {
-          @Override
-          public void onItemClick(int position) {
-              enableActionMode(position);
-          }
-
-          @Override
-          public void onItemLongClick(int position) {
-              enableActionMode(position);
-          }
-      });
+        setSupportActionBar(binding.toolbarHomeInclude.toolbarHome);
         viewModel.initializeProjetosSalvosAdapter(binding.recyclerProjetosSalvos);
         viewModel.initializeProjetoCategoriaAdapter(binding.recyclerCategorias);
+        viewModel.setClickListener(new IClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                enableActionMode(position);
+            }
+
+            @Override
+            public void onItemLongClick(int position) {
+                enableActionMode(position);
+            }
+        });
+        addMenuProvider(new HomeActivity.MenuProvider());
     }
 
     private void enableActionMode(int position) {
@@ -87,6 +88,7 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
+
     @Override
     protected void onPostResume() {
         super.onPostResume();
@@ -112,4 +114,4 @@ public class HomeActivity extends AppCompatActivity {
             return true;
         }
     }
-    }
+}

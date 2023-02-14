@@ -1,14 +1,16 @@
 package com.montaigne.montaigneapp.ui.spt.ensaio;
 
+import static com.montaigne.montaigneapp.utils.editTextInputParser.getFloat;
+import static com.montaigne.montaigneapp.utils.editTextInputParser.setValue;
+
 import android.widget.EditText;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModel;
 
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
+import com.montaigne.montaigneapp.ui.LockingTextWatcher;
 
 import java.util.ArrayList;
 
@@ -31,15 +33,23 @@ public class EnsaioVM extends ViewModel {
             amostra = getAmostra();
         }
 
-        setInt(golpes.get(0), amostra.getGolpe1());
-        setInt(golpes.get(1), amostra.getGolpe2());
-        setInt(golpes.get(2), amostra.getGolpe3());
-        setFloat(penetracoes.get(0), amostra.getPenatracao1());
-        setFloat(penetracoes.get(1), amostra.getPenatracao2());
-        setFloat(penetracoes.get(2), amostra.getPenatracao3());
+        setValue(golpes.get(0), amostra.getGolpe1());
+        setValue(golpes.get(1), amostra.getGolpe2());
+        setValue(golpes.get(2), amostra.getGolpe3());
+        setValue(penetracoes.get(0), amostra.getPenatracao1());
+        setValue(penetracoes.get(1), amostra.getPenatracao2());
+        setValue(penetracoes.get(2), amostra.getPenatracao3());
 
-        setFloat(fields.get(0), amostra.getProfundidade());
-        setFloat(fields.get(1), getFuro().getNivelDAgua());
+        setValue(fields.get(0), amostra.getProfundidade());
+        setValue(fields.get(1), getFuro().getNivelDAgua());
+
+        fields.get(0).addTextChangedListener(new LockingTextWatcher(true,
+                "profundidadeFuro" + furoId) {
+            @Override
+            public void afterValidChangeListener(String string) {
+                amostra.setProfundidade(Float.parseFloat(string));
+            }
+        });
     }
 
     private FuroSpt getFuro() {
@@ -51,7 +61,7 @@ public class EnsaioVM extends ViewModel {
     }
 
     protected ProjetoSpt getProjeto(
-            ArrayList<EditText> golpes, ArrayList<EditText> penetracoes, ArrayList<EditText> fields) {
+        ArrayList<EditText> golpes, ArrayList<EditText> penetracoes, ArrayList<EditText> fields) {
         FuroSpt furo = getFuro();
 
         amostra.setGolpe1((int) getFloat(golpes.get(0)));
@@ -61,7 +71,7 @@ public class EnsaioVM extends ViewModel {
         amostra.setPenatracao2(getFloat(penetracoes.get(1)));
         amostra.setPenatracao3(getFloat(penetracoes.get(2)));
 
-        amostra.setProfundidade(getFloat(fields.get(0)));
+        // profundidade definida pelo listener
         furo.setNivelDAgua(getFloat(fields.get(1)));
 
         boolean isNew = true;
@@ -83,26 +93,14 @@ public class EnsaioVM extends ViewModel {
     }
 
     protected void incrementGolpe(EditText editText) {
-        setInt(editText, (int) getFloat(editText) + 1);
+        setValue(editText, (int) getFloat(editText) + 1);
     }
 
     protected void decrementGolpe(EditText editText) {
         // garante que o valor jamais será menor que zero
         int v = (int) getFloat(editText);
         v = (v > 0) ? (v - 1) : v;
-        setInt(editText, v);
+        setValue(editText, v);
     }
 
-    private float getFloat(EditText editText) {
-        String value = String.valueOf(editText.getText());
-        return value.equals("") ? 0 : Float.parseFloat(value);
-    }
-
-    private void setFloat(@NonNull EditText editText, float value) {
-        editText.setText(String.valueOf(value));
-    }
-
-    private void setInt(@NonNull EditText editText, int value) {
-        editText.setText(String.valueOf(value));
-    }
 }

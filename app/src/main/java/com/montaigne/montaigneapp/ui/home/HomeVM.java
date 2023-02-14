@@ -13,9 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.firebase.database.DataSnapshot;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
+import com.montaigne.montaigneapp.ui.AbstracProjectActivity;
 import com.montaigne.montaigneapp.ui.IClickListener;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
-import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
 import com.montaigne.montaigneapp.model.Projeto;
 
@@ -24,16 +24,13 @@ import java.util.List;
 
 public class HomeVM extends ViewModel {
     private final String TAG = "HomeActivity";
-    // Keys de Bundle:
-    public static final String PROJETO = "projeto";
 
     private List<Projeto> projetosSalvos = new ArrayList<>();
     private ProjetosSalvosAdapter adapterProjetosSalvos;
-
     private IClickListener clickListener;
 
     public void setClickListener(IClickListener clickListener) {
-        this.clickListener = clickListener;
+        adapterProjetosSalvos.setClickListener(clickListener);
     }
 
     public ProjetosSalvosAdapter getAdapterProjetosSalvos() {
@@ -47,7 +44,6 @@ public class HomeVM extends ViewModel {
         categorias.add(new Object[]{context.getString(R.string.categoria_granulometria), R.drawable.ic_logospt_azul});
 
         ProjetoCategoriaAdapter adapter = new ProjetoCategoriaAdapter();
-        adapterProjetosSalvos.setClickListener(clickListener);
         adapter.setCategoriasProjeto(categorias);
 
         recyclerProjetoCategorias.setAdapter(adapter);
@@ -59,6 +55,7 @@ public class HomeVM extends ViewModel {
 
     protected void initializeProjetosSalvosAdapter(RecyclerView recyclerProjetosSalvos) {
         adapterProjetosSalvos = new ProjetosSalvosAdapter();
+        adapterProjetosSalvos.setClickListener(clickListener);
 
         recyclerProjetosSalvos.setAdapter(adapterProjetosSalvos);
         recyclerProjetosSalvos.setNestedScrollingEnabled(false);
@@ -75,7 +72,7 @@ public class HomeVM extends ViewModel {
     protected void newProjectSpt(Context context) {
         // passa novo projeto vazio
         Intent intent = new Intent(context, SptActivity.class);
-        intent.putExtra(HomeVM.PROJETO, new ProjetoSpt());
+        intent.putExtra(AbstracProjectActivity.PROJETO, new ProjetoSpt());
         context.startActivity(intent);
     }
 
@@ -110,7 +107,6 @@ public class HomeVM extends ViewModel {
             }
         });
     }
-
 
     public void togglePositions(int position) {
         adapterProjetosSalvos.togglePositions(position);
