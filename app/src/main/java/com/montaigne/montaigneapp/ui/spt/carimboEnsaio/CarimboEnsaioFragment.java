@@ -1,5 +1,7 @@
 package com.montaigne.montaigneapp.ui.spt.carimboEnsaio;
 
+import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,8 +20,10 @@ import com.montaigne.montaigneapp.databinding.FragmentCarimboEnsaioBinding;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TimeZone;
 
 public class CarimboEnsaioFragment extends Fragment {
     private CarimboEnsaioVM viewModel;
@@ -44,7 +48,6 @@ public class CarimboEnsaioFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         binding = FragmentCarimboEnsaioBinding.inflate(inflater, container, false);
 
-        fields.put("DataInicio", binding.editTextStartDate);
         fields.put("NivelFuro", binding.editTextNivelFuro);
 
         ProjetoSpt projeto = projectViewModel.getProjeto();
@@ -60,6 +63,20 @@ public class CarimboEnsaioFragment extends Fragment {
 //            viewModel.setLocation();  // todo: implementar coordenadas
         });
 
+        binding.calendarioDataInicio.setOnClickListener(v -> {
+            Calendar calendario = Calendar.getInstance(TimeZone.getDefault());
+            DatePickerDialog datePicker = new DatePickerDialog(
+                    this.getActivity(),
+                    AlertDialog.THEME_DEVICE_DEFAULT_DARK,
+                    datePickerListener,
+                    calendario.get(Calendar.YEAR),
+                    calendario.get(Calendar.MONTH),
+                    calendario.get(Calendar.DAY_OF_MONTH)
+            );
+            datePicker.setCancelable(false);
+            datePicker.show();
+        });
+
         return binding.getRoot();
     }
 
@@ -67,9 +84,26 @@ public class CarimboEnsaioFragment extends Fragment {
         return viewModel.furoId;
     }
 
+    private DatePickerDialog.OnDateSetListener datePickerListener = (view, selectedYear, selectedMonth, selectedDay) -> {
+        String ano = preparaData(selectedYear);
+        String mes = preparaData(selectedMonth + 1);
+        String dia = preparaData(selectedDay);
+
+        binding.editTextStartDate.setText(dia + "/" + mes + "/" + ano);
+        fields.put("DataInicio", binding.editTextStartDate);
+    };
+
     @Override
     public void onPause() {
         super.onPause();
         projectViewModel.updateProjeto(viewModel.getProjeto(fields));
+    }
+
+    private String preparaData(int data) {
+        if (data < 10) {
+            return "0" + String.valueOf(data);
+        } else {
+            return String.valueOf(data);
+        }
     }
 }
