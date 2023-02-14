@@ -85,15 +85,13 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<BindedViewHolder
         });
 
         holder.binding.cardView.setOnLongClickListener(v -> {
-            if (isCheckedList.get(position)) {
-                holder.binding.checkBox.setChecked(false);
-                holder.binding.checkBox.setVisibility(View.GONE);
-                isCheckedList.set(position, false);
-            } else {
-                holder.binding.checkBox.setVisibility(View.VISIBLE);
-                holder.binding.checkBox.setChecked(true);
-                isCheckedList.set(position, true);
+            if (clickListener != null) {
+                clickListener.onItemLongClick(position);
             }
+            if (selectedItems.get(position))
+                holder.binding.cardView.setBackgroundResource(R.color.hint);
+            else holder.binding.cardView.setBackgroundResource(R.color.white);
+
             return true;
         });
     }

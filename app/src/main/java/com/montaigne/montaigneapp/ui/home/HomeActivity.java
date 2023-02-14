@@ -43,7 +43,7 @@ public class HomeActivity extends AppCompatActivity {
                 enableActionMode(position);
             }
         });
-        addMenuProvider(new HomeActivity.MenuProvider());
+//        addMenuProvider(new HomeActivity.MenuProvider());
     }
 
     private void enableActionMode(int position) {
@@ -108,7 +108,7 @@ public class HomeActivity extends AppCompatActivity {
             if (item.getItemId() == R.id.addProjetoSpt) {
                 viewModel.newProjectSpt(HomeActivity.this);
             } else if (item.getItemId() == R.id.addProjetoGranulometria) {
-                Toast.makeText(HomeActivity.this, R.string.notImplemented, Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomeActivity.this, R.string.not_implemented, Toast.LENGTH_SHORT).show();
                 // todo: granulometria
             }
             return true;
