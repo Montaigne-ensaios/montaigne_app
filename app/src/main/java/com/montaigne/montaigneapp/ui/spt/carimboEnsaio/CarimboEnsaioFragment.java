@@ -49,6 +49,7 @@ public class CarimboEnsaioFragment extends Fragment {
         binding = FragmentCarimboEnsaioBinding.inflate(inflater, container, false);
 
         fields.put("NivelFuro", binding.editTextNivelFuro);
+        fields.put("DataInicio", binding.editTextStartDate);
 
         ProjetoSpt projeto = projectViewModel.getProjeto();
         int furoId = requireArguments().getInt("furoId");

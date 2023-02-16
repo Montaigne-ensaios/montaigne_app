@@ -1,5 +1,6 @@
 package com.montaigne.montaigneapp.ui.spt.carimboEnsaio;
 
+import static com.montaigne.montaigneapp.utils.editTextInputParser.dateToString;
 import static com.montaigne.montaigneapp.utils.editTextInputParser.getCurrentDate;
 import static com.montaigne.montaigneapp.utils.editTextInputParser.getDate;
 import static com.montaigne.montaigneapp.utils.editTextInputParser.getFloat;
@@ -36,8 +37,9 @@ public class CarimboEnsaioVM extends ViewModel {
         } else {
             furo = projeto.getListaDeFuros().get(furoId);
 
-            if (furo.getDataInicio() != null)
-                setValue(Objects.requireNonNull(fields.get("DataInicio")), furo.getDataInicio());
+            if (furo.getDataInicio() != null) {
+                setValue(Objects.requireNonNull(fields.get("DataInicio")), dateToString(furo.getDataInicio()));
+            }
             else
                 setValue(Objects.requireNonNull(fields.get("DataInicio")), getCurrentDate());
 
@@ -56,7 +58,7 @@ public class CarimboEnsaioVM extends ViewModel {
         } catch (ParseException e) {
             Toast.makeText(Objects.requireNonNull(fields.get("DataInicio")).getContext(), "Formato de data ilegal", Toast.LENGTH_SHORT).show();
             Log.e(TAG, "Formato de data inválido.", e);
-        }  // todo: substituir por datepicker
+        }
 
         boolean isNew = true;
         for (FuroSpt furoI: projeto.getListaDeFuros()) {

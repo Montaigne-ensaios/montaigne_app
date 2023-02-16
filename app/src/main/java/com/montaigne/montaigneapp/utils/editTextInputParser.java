@@ -12,6 +12,8 @@ import java.util.Date;
 import java.util.Locale;
 
 public class editTextInputParser {
+    public static String DATE_FORMAT = "dd/MM/yyyy";
+
     public static int getInt(@NonNull EditText editText) {
         return (int) getFloat(editText);
     }
@@ -26,7 +28,11 @@ public class editTextInputParser {
     }
 
     public static Date parseDate(@NonNull String string) throws ParseException {
-        return new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).parse(string);
+        return new SimpleDateFormat(DATE_FORMAT, Locale.getDefault()).parse(string);
+    }
+
+    public static String dateToString(Date date) {
+        return new SimpleDateFormat(DATE_FORMAT, Locale.getDefault()).format(date);
     }
 
     @NonNull
