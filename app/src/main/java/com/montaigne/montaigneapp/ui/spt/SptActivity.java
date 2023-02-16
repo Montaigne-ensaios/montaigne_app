@@ -48,7 +48,7 @@ public class SptActivity extends AppCompatActivity {
             }
             if(item.getItemId() == R.id.exportar_xlsx){
                 ProjetoSpt projetoSpt = viewModel.getProjeto();
-                FuroSpt furoSpt = projetoSpt.getListaDeFuros().get(1);
+                FuroSpt furoSpt = projetoSpt.getListaDeFuros().get(0);
 
                 CreateXlsxSpt.createFileXlsx(projetoSpt, furoSpt, this);
                 ExportFile.getUri(this);

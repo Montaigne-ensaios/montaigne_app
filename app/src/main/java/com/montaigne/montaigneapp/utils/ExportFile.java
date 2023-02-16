@@ -11,7 +11,7 @@ import java.io.File;
 public class ExportFile {
 
     final static String mimeType =
-            "application/excel";
+            "*/*";
 
     private static File diretorio;
     private static File xlsxDir;
@@ -43,14 +43,14 @@ public class ExportFile {
 
         Intent sendIntent = new Intent().setAction(Intent.ACTION_SEND);
         //sendIntent.putExtra(Intent.EXTRA_TEXT,"PLANILHA");
-        sendIntent.setType("application/*");
-        sendIntent.putExtra(Intent.EXTRA_MIME_TYPES,mimeType);
+        sendIntent.setType(mimeType);
+        sendIntent.putExtra(Intent.EXTRA_MIME_TYPES, mimeType);
         sendIntent.addCategory(Intent.CATEGORY_OPENABLE);
 
-        if(arquivoUri != null){
+//        if(arquivoUri != null){
             sendIntent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             sendIntent.putExtra(Intent.EXTRA_STREAM, arquivoUri);
-        }
+//        }
 
         Intent shareIntent = Intent.createChooser(sendIntent,"Compartilhar Xlsx");
         activity.startActivity(shareIntent);

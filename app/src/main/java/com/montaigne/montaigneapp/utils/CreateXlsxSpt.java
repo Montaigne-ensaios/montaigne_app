@@ -124,42 +124,42 @@ public class CreateXlsxSpt {
         f2.setBold(true);
 
         //todo: Estilos aplicados as Células
-        CellStyle estilodotitulo = wb.createCellStyle();
-        estilodotitulo.setAlignment(HorizontalAlignment.CENTER);
-        estilodotitulo.setFont(f1);
+//        CellStyle estilodotitulo = wb.createCellStyle();
+//        estilodotitulo.setAlignment(HorizontalAlignment.CENTER);
+//        estilodotitulo.setFont(f1);
 
-        CellStyle estilodocabecalho = wb.createCellStyle();
-        estilodocabecalho.setVerticalAlignment(VerticalAlignment.CENTER);
-        estilodocabecalho.setAlignment(HorizontalAlignment.CENTER);
-        estilodocabecalho.setFont(f2);
+//        CellStyle estilodocabecalho = wb.createCellStyle();
+//        estilodocabecalho.setVerticalAlignment(VerticalAlignment.CENTER);
+//        estilodocabecalho.setAlignment(HorizontalAlignment.CENTER);
+//        estilodocabecalho.setFont(f2);
+//
+//        cab_titulo.setCellStyle(estilodotitulo);
+//        data_final.setCellStyle(estilodocabecalho);
+//        data_inicial.setCellStyle(estilodocabecalho);
+//        nível_de_agua.setCellStyle(estilodocabecalho);
+//        ref.setCellStyle(estilodocabecalho);
+//        sondador.setCellStyle(estilodocabecalho);
+//        resptecnico.setCellStyle(estilodocabecalho);
 
-        cab_titulo.setCellStyle(estilodotitulo);
-        data_final.setCellStyle(estilodocabecalho);
-        data_inicial.setCellStyle(estilodocabecalho);
-        nível_de_agua.setCellStyle(estilodocabecalho);
-        ref.setCellStyle(estilodocabecalho);
-        sondador.setCellStyle(estilodocabecalho);
-        resptecnico.setCellStyle(estilodocabecalho);
-
-        for (int i = 1; i <= sheet.getLastRowNum(); i++) {
-
-            Row row = sheet.getRow(i);
-            Cell cell = row.getCell(0);
-
-            if (cell != null)
-                cell.setCellStyle(estilodocabecalho);
-        }
-
-        for (int i=3; i <= 5; i++){
-
-            Row row = sheet.getRow(i);
-            Cell cell = row.getCell(5);
-
-            if (cell != null)
-
-                cell.setCellStyle(estilodocabecalho);
-
-        }
+//        for (int i = 1; i <= sheet.getLastRowNum(); i++) {
+//
+//            Row row = sheet.getRow(i);
+//            Cell cell = row.getCell(0);
+//
+//            if (cell != null)
+//                cell.setCellStyle(estilodocabecalho);
+//        }
+//
+//        for (int i=3; i <= 5; i++){
+//
+//            Row row = sheet.getRow(i);
+//            Cell cell = row.getCell(5);
+//
+//            if (cell != null)
+//
+//                cell.setCellStyle(estilodocabecalho);
+//
+//        }
 
         sheet.setColumnWidth(0,10*256);
 

@@ -47,7 +47,7 @@ public class CarimboProjetoFragment extends Fragment {
         activity.setActionBarTitle(projetoSpt.getNome());
 
         binding.buttonGetLocation.setOnClickListener(v -> viewModel.setLocal(
-                requireActivity(), Geolocation.getLatlog(requireActivity())
+                requireActivity(), Geolocation.getLatlog(v)
         ));
 
         return binding.getRoot();
