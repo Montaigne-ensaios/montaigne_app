@@ -68,7 +68,7 @@ public class CarimboEnsaioFragment extends Fragment {
 //            viewModel.setLocation();  // todo: implementar coordenadas
         });
 
-        binding.calendarioDataInicio.setOnClickListener(v -> {
+        binding.calendarioDataInicioFuro.setOnClickListener(v -> {
             DatePickerUtil datePicker = new DatePickerUtil(
                     this.getActivity(),
                     (view, selectedYear, selectedMonth, selectedDay) -> {

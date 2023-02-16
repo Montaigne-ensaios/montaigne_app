@@ -12,11 +12,11 @@ public class PreparaDataUtil {
     public static String preparaData(int selectedYear, int selectedMonth, int selectedDay) {
         StringBuilder stringBuilder = new StringBuilder();
         return stringBuilder
-                .append(preparaDate(selectedYear))
+                .append(preparaDate(selectedDay))
                 .append("/")
                 .append(preparaDate(selectedMonth))
                 .append("/")
-                .append(preparaDate(selectedDay))
+                .append(preparaDate(selectedYear))
                 .toString();
     }
 }

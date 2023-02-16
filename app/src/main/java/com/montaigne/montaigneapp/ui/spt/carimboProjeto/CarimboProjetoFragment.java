@@ -16,6 +16,8 @@ import com.montaigne.montaigneapp.databinding.FragmentCarimboProjetoBinding;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
+import com.montaigne.montaigneapp.utils.DatePickerUtil;
+import com.montaigne.montaigneapp.utils.PreparaDataUtil;
 
 public class CarimboProjetoFragment extends Fragment {
     private CarimboProjetoVM viewModel;
@@ -51,6 +53,18 @@ public class CarimboProjetoFragment extends Fragment {
 //            viewModel.setLocation();  // todo: implementar coordenadas
         });
 
+        binding.calendarioDataInicio.setOnClickListener(v -> {
+            DatePickerUtil datePicker = new DatePickerUtil(
+                    this.getActivity(),
+                    (view, selectedYear, selectedMonth, selectedDay) -> {
+                        binding.editTextDataInicioProjeto.setText(
+                                PreparaDataUtil.preparaData(selectedYear, selectedMonth, selectedDay
+                                )
+                        );
+                    }
+            );
+            datePicker.create();
+        });
         return binding.getRoot();
     }
 
