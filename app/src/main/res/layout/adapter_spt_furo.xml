@@ -5,30 +5,32 @@
     android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+
     android:elevation="10dp"
-    android:layout_margin="5dp"
     app:cardCornerRadius="20dp"
-    app:cardElevation="10dp">
+   >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:elevation="0dp"
         android:padding="10dp">
 
-        <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:button="@drawable/icon_checkbox"
-            tools:ignore="TouchTargetSizeCheck" />
+        <ImageView
+            android:id="@+id/imageViewFuro"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="3dp"
+
+            app:srcCompat="@drawable/ic_furo" />
 
         <TextView
             android:id="@+id/textFuroName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             android:text="SP01 FURO"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:visibility="visible" />
 
     </LinearLayout>

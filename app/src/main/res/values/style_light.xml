@@ -57,6 +57,9 @@
 
 <style name="CardViewLight" parent="Widget.Material3.CardView.Outlined">
     <item name="cardBackgroundColor">#FFFFFF</item>
+</style>
+    <style name="CardViewLight_furo" parent="Widget.Material3.CardView.Outlined">
+        <item name="cardBackgroundColor">@color/accent</item>
 
 </style>
 </resources>
