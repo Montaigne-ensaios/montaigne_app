@@ -35,9 +35,9 @@ public class CarimboProjetoVM extends ViewModel {
     protected void setLocal(Activity activity, Coordenada coordenada) {
         try {
             projetoSpt.setLocalDaObra(Geolocation.geocoder(activity, coordenada));
-        } catch (IOException e) {
+        } catch (IOException | NullPointerException e) {
             e.printStackTrace();
-        }  // todo: handle exception
+        }     // todo: handle exception
     }
 
     protected void initializeRecycler(RecyclerView recycler) {

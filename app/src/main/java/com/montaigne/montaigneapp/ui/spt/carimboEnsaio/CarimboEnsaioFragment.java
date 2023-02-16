@@ -57,7 +57,7 @@ public class CarimboEnsaioFragment extends Fragment {
         activity.setActionBarTitle(getString(R.string.furo_action_bar_title) + (furoId + 1));
 
         binding.buttonGetLocation.setOnClickListener(v -> viewModel.setLocation(
-                Geolocation.getLatlog(requireActivity())
+                Geolocation.getLatlog(v)
         ));
 
         return binding.getRoot();
