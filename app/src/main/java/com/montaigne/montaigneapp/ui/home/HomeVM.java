@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.firebase.database.DataSnapshot;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
-import com.montaigne.montaigneapp.ui.AbstracProjectActivity;
+import com.montaigne.montaigneapp.ui.AbstractProjectActivity;
 import com.montaigne.montaigneapp.ui.IClickListener;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
@@ -72,7 +72,7 @@ public class HomeVM extends ViewModel {
     protected void newProjectSpt(Context context) {
         // passa novo projeto vazio
         Intent intent = new Intent(context, SptActivity.class);
-        intent.putExtra(AbstracProjectActivity.PROJETO, new ProjetoSpt());
+        intent.putExtra(AbstractProjectActivity.PROJETO, new ProjetoSpt());
         context.startActivity(intent);
     }
 

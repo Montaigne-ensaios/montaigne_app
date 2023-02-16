@@ -72,7 +72,6 @@ public class EnsaioFragment extends Fragment {
 
         SptActivity activity = (SptActivity) requireActivity();
         activity.setButtonNavigateText(getString(R.string.btn_navigate_ensaio));
-        activity.setActionBarTitle(getString(R.string.furo_action_bar_title) + (furoId + 1));
 
         binding.buttonFinnishEnsaio.setOnClickListener(v -> FragmentNavigator.navigate(
                 R.id.action_finish_Ensaio, activity.getSupportFragmentManager(), R.id.containerSpt)

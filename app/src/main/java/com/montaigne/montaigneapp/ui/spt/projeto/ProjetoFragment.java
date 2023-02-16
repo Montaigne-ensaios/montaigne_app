@@ -60,7 +60,6 @@ public class ProjetoFragment extends Fragment {
         });
         SptActivity activity = (SptActivity) requireActivity();
         activity.setButtonNavigateText(getString(R.string.btn_navigate_projeto));
-        activity.setActionBarTitle(projeto.getNome());
 
         return binding.getRoot();
     }

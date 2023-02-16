@@ -44,7 +44,6 @@ public class CarimboProjetoFragment extends Fragment {
 
         SptActivity activity = (SptActivity) getActivity();
         activity.setButtonNavigateText(getString(R.string.btn_navigate_carimbo_projeto));
-        activity.setActionBarTitle(projetoSpt.getNome());
 
         binding.buttonGetLocation.setOnClickListener(v -> {
             Toast.makeText(v.getContext(), R.string.not_implemented, Toast.LENGTH_SHORT).show();

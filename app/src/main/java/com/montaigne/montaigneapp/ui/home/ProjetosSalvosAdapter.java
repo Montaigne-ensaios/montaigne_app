@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -12,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
-import com.montaigne.montaigneapp.ui.AbstracProjectActivity;
+import com.montaigne.montaigneapp.ui.AbstractProjectActivity;
 import com.montaigne.montaigneapp.ui.BindedViewHolder;
 import com.montaigne.montaigneapp.ui.IClickListener;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
@@ -75,7 +74,7 @@ public class ProjetosSalvosAdapter extends RecyclerView.Adapter<BindedViewHolder
                 clickListener.onItemClick(position);
             else {
                 Intent intent = new Intent(v.getContext(), SptActivity.class);
-                intent.putExtra(AbstracProjectActivity.PROJETO, projeto);
+                intent.putExtra(AbstractProjectActivity.PROJETO, projeto);
                 v.getContext().startActivity(intent);
             }
             if (selectedItems.get(position))

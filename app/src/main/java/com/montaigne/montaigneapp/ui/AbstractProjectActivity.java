@@ -11,20 +11,20 @@ import com.montaigne.montaigneapp.utils.FragmentNavigator;
 
 import java.util.Objects;
 
-public abstract class AbstracProjectActivity <
+public abstract class AbstractProjectActivity<
         ProjectViewModel extends AbstractProjectViewModel<Project>,
         Project extends Projeto
         > extends AppCompatActivity {
     public static final String PROJETO = "projeto";  // key intent extra bundle do projeto
 
-    private ProjectViewModel viewModel;
+    protected ProjectViewModel viewModel;
     private Button buttonNavigate;
 
     protected void setViewModel(@NonNull ProjectViewModel viewModel) {
         this.viewModel = viewModel;
         viewModel.setUp((Projeto) getIntent()
                 .getExtras()
-                .getSerializable(AbstracProjectActivity.PROJETO),
+                .getSerializable(AbstractProjectActivity.PROJETO),
                 getSupportFragmentManager());
     }
 
@@ -39,10 +39,6 @@ public abstract class AbstracProjectActivity <
 
     public void setButtonNavigateText(String text) {
         buttonNavigate.setText(text);
-    }
-
-    public void setActionBarTitle(String title) {
-        Objects.requireNonNull(getSupportActionBar()).setTitle(title);
     }
 
     @Override

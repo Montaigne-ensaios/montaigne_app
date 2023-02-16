@@ -63,7 +63,6 @@ public class FuroFragment extends Fragment {
         });
         SptActivity activity = (SptActivity) requireActivity();
         activity.setButtonNavigateText(getString(R.string.btn_navigate_furo));
-        activity.setActionBarTitle("Furo " + (furoId + 1));
 
         return binding.getRoot();
     }
