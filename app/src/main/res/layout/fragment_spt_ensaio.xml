@@ -32,7 +32,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.03"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textAmostraN"
+                app:layout_constraintTop_toBottomOf="@+id/textTitle"
                 app:startIconDrawable="@drawable/ic_edit">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -131,11 +131,11 @@
                 app:srcCompat="@drawable/icon_decrease" />
 
             <TextView
-                android:id="@+id/textAmostraN"
+                android:id="@+id/textTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:text="substitua numero amostra"
+                android:text="@string/spt_ensaio_title"
                 android:textAlignment="textStart"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"

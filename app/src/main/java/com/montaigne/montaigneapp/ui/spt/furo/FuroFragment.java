@@ -46,6 +46,7 @@ public class FuroFragment extends Fragment {
         ProjetoSpt projeto = projectViewModel.getProjeto();
         viewModel.setFuro(projeto, furoId);
 
+        binding.textAmostra.setText(projeto.getListaDeFuros().get(furoId).getCodigo());
 
         viewModel.updateAmostrasAdapter(binding.recyclerAmostra);
         viewModel.setClickListener(new IClickListener() {

@@ -26,7 +26,9 @@
     <string name="title_Meus_Projetos">Meus Projetos</string>
 
     <!-- Strings da tela ENSAIO-->
+    <string name="spt_ensaio_title">Amostra de ensaio SPT</string>
 
+    <string name="spt_projeto_title">Sondagens:</string>
 
     <!-- Strings da tela FURO-->
 
@@ -53,7 +55,7 @@
     <string name="registration_Data_inicio_furo">Data de inicio:</string>
     <string name="hint_date">MM/DD/YYYY</string>
     <string name="registration_nivel_furo">Nivel do Furo N:</string>
-    <string name="registration_hint_nivel_furo">15m</string>
+    <string name="registration_hint_nivel_furo">Ex: 15m</string>
     <string name="title_button_Coordenadas_furo">Coordernadas do Furo N:</string>
     <string name="btn_capturar_location">Capturar Localização</string>
     <string name="btn_start_furo">Iniciar furo</string>
