@@ -13,7 +13,9 @@
             android:id="@+id/dividerHorizontal"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="?android:attr/listDivider" />
+            android:background="?android:attr/listDivider"
+            android:backgroundTint="@color/color_primary_light"
+            android:backgroundTintMode="add" />
 
         <EditText
             android:id="@+id/editTextGolpe1"
@@ -101,11 +103,14 @@
 
         <View
             android:id="@+id/dividerSpt"
-            android:layout_width="1dp"
-            android:layout_height="wrap_content"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
             android:layout_marginStart="110dp"
-            android:layout_marginTop="10dp"
-            android:background="?android:attr/listDivider" />
+            android:layout_marginTop="0dp"
+            android:background="?android:attr/listDivider"
+            android:backgroundTint="@color/color_primary_light"
+            android:backgroundTintMode="screen" />
 
     </RelativeLayout>
 
