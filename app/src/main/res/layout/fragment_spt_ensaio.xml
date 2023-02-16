@@ -150,7 +150,7 @@
                 android:text="Golpes:"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="@+id/textInputLayoutProfundiade"
-                app:layout_constraintHorizontal_bias="0.068"
+                app:layout_constraintHorizontal_bias="0.21"
                 app:layout_constraintStart_toStartOf="@+id/textInputLayoutProfundiade"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayoutNivelDAgua" />
 
@@ -247,6 +247,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/color_primary_dark"
                 android:text="@string/btn_finish_ensaio"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

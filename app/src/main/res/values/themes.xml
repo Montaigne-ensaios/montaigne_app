@@ -7,6 +7,7 @@
         <item name="colorPrimary">@color/color_primary_light</item>
         <item name="colorPrimaryDark">@color/color_primary_light</item>
         <item name="navigationIconTint">@color/white</item>
+        <item name="tint">#E93F63</item>
 
         <item name="colorSecondary">@color/color_primary_light</item>
         <!-- Status bar color. -->
@@ -22,6 +23,7 @@
 
         <!-- Color de interação com butões -->
         <item name="colorAccent">@color/accent</item>
+
         <item name="colorSurface">@color/fundo_light</item>
         <item name="colorError">#B00020</item>
 
@@ -38,7 +40,6 @@
         <item name="materialButtonStyle">@style/ButtonPadrao_light</item>
         <item name="imageButtonStyle">@style/ImageButton_light</item>
         <item name="editTextStyle">@style/Edit_Text_light</item>
-        <item name="tint">@color/color_primary_light</item>
         <item name="windowActionModeOverlay">true</item>
 
 
