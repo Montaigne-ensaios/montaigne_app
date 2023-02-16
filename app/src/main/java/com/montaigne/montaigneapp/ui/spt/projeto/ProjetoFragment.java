@@ -17,7 +17,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.montaigne.montaigneapp.R;
-import com.montaigne.montaigneapp.databinding.FragmentProjetoBinding;
+import com.montaigne.montaigneapp.databinding.FragmentSptProjetoBinding;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.IClickListener;
 import com.montaigne.montaigneapp.utils.FragmentNavigator;
@@ -27,7 +27,7 @@ import com.montaigne.montaigneapp.ui.spt.SptVM;
 public class ProjetoFragment extends Fragment {
     private ProjetoVM viewModel;
     private SptVM projectViewModel;
-    private FragmentProjetoBinding binding;
+    private FragmentSptProjetoBinding binding;
     private ActionMode actionMode;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,7 +41,7 @@ public class ProjetoFragment extends Fragment {
     @Override
     public View onCreateView (@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         super.onCreateView(inflater, container, savedInstanceState);
-        binding = FragmentProjetoBinding.inflate(inflater, container, false);
+        binding = FragmentSptProjetoBinding.inflate(inflater, container, false);
 
         ProjetoSpt projeto = projectViewModel.getProjeto();
         viewModel.setProjeto(projeto);

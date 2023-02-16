@@ -2,7 +2,6 @@ package com.montaigne.montaigneapp.ui.home;
 
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.PopupMenu;
@@ -98,7 +97,7 @@ public class HomeActivity extends AppCompatActivity {
     public void showPopup(View view) {
         PopupMenu popup = new PopupMenu(this, view);
         popup.setOnMenuItemClickListener(new OnMenuItemClickListener());
-        popup.inflate(R.menu.popup_menu);
+        popup.inflate(R.menu.home_menu_popup);
         popup.show();
     }
 

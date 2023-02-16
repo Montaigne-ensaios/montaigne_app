@@ -9,7 +9,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
-import com.montaigne.montaigneapp.databinding.AdapterFuroBinding;
+import com.montaigne.montaigneapp.databinding.AdapterSptFuroBinding;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.ui.BindedViewHolder;
 import com.montaigne.montaigneapp.ui.IClickListener;
@@ -17,7 +17,7 @@ import com.montaigne.montaigneapp.ui.IClickListener;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class FurosAdapter extends RecyclerView.Adapter<BindedViewHolder<AdapterFuroBinding>> {
+public class FurosAdapter extends RecyclerView.Adapter<BindedViewHolder<AdapterSptFuroBinding>> {
     private List<FuroSpt> furos;
     private final MutableLiveData<FuroSpt> furoClicado = new MutableLiveData<>();
     private SparseBooleanArray selectedItems = new SparseBooleanArray();
@@ -43,17 +43,17 @@ public class FurosAdapter extends RecyclerView.Adapter<BindedViewHolder<AdapterF
 
     @NonNull
     @Override
-    public BindedViewHolder<AdapterFuroBinding> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BindedViewHolder<AdapterSptFuroBinding> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 
-        AdapterFuroBinding binding = AdapterFuroBinding
+        AdapterSptFuroBinding binding = AdapterSptFuroBinding
                 .inflate(inflater, parent, false);
 
         return new BindedViewHolder<>(binding);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BindedViewHolder<AdapterFuroBinding> holder, int position) {
+    public void onBindViewHolder(@NonNull BindedViewHolder<AdapterSptFuroBinding> holder, int position) {
         FuroSpt furo = furos.get(position);
         holder.binding.textFuroName.setText(furo.getCodigo());
 

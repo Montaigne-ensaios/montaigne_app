@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.montaigne.montaigneapp.R;
-import com.montaigne.montaigneapp.databinding.FragmentFuroBinding;
+import com.montaigne.montaigneapp.databinding.FragmentSptFuroBinding;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.IClickListener;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
@@ -23,7 +23,7 @@ import com.montaigne.montaigneapp.ui.spt.SptVM;
 public class FuroFragment extends Fragment {
     private FuroVM viewModel;
     private SptVM projectViewModel;
-    private FragmentFuroBinding binding;
+    private FragmentSptFuroBinding binding;
     private ActionMode actionMode;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,7 @@ public class FuroFragment extends Fragment {
     @Override
     public View onCreateView (@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         super.onCreateView(inflater, container, savedInstanceState);
-        binding = FragmentFuroBinding.inflate(inflater, container, false);
+        binding = FragmentSptFuroBinding.inflate(inflater, container, false);
 
         Bundle b = requireArguments();
 

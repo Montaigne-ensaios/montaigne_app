@@ -16,7 +16,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
-import com.montaigne.montaigneapp.databinding.FragmentCarimboEnsaioBinding;
+import com.montaigne.montaigneapp.databinding.FragmentSptCarimboEnsaioBinding;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
 
@@ -28,7 +28,7 @@ import java.util.TimeZone;
 public class CarimboEnsaioFragment extends Fragment {
     private CarimboEnsaioVM viewModel;
     private SptVM projectViewModel;
-    private FragmentCarimboEnsaioBinding binding;
+    private FragmentSptCarimboEnsaioBinding binding;
     private final Map<String, EditText> fields = new HashMap<>();
 
     public CarimboEnsaioFragment() {
@@ -46,7 +46,7 @@ public class CarimboEnsaioFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        binding = FragmentCarimboEnsaioBinding.inflate(inflater, container, false);
+        binding = FragmentSptCarimboEnsaioBinding.inflate(inflater, container, false);
 
         fields.put("NivelFuro", binding.editTextNivelFuro);
         fields.put("DataInicio", binding.editTextStartDate);
