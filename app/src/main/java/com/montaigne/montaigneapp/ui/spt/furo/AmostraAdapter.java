@@ -1,6 +1,6 @@
 package com.montaigne.montaigneapp.ui.spt.furo;
 
-import static com.montaigne.montaigneapp.utils.editTextInputParser.setValue;
+import static com.montaigne.montaigneapp.utils.EditTextInputParser.setValue;
 
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;

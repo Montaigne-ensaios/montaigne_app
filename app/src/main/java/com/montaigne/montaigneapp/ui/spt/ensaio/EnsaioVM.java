@@ -1,7 +1,7 @@
 package com.montaigne.montaigneapp.ui.spt.ensaio;
 
-import static com.montaigne.montaigneapp.utils.editTextInputParser.getFloat;
-import static com.montaigne.montaigneapp.utils.editTextInputParser.setValue;
+import static com.montaigne.montaigneapp.utils.EditTextInputParser.getFloat;
+import static com.montaigne.montaigneapp.utils.EditTextInputParser.setValue;
 
 import android.widget.EditText;
 

@@ -20,6 +20,8 @@ import com.montaigne.montaigneapp.ui.IClickListener;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
 
+import java.util.Locale;
+
 public class FuroFragment extends Fragment {
     private FuroVM viewModel;
     private SptVM projectViewModel;
@@ -46,19 +48,22 @@ public class FuroFragment extends Fragment {
         ProjetoSpt projeto = projectViewModel.getProjeto();
         viewModel.setFuro(projeto, furoId);
 
-        binding.textAmostra.setText(projeto.getListaDeFuros().get(furoId).getCodigo());
+        binding.textAmostra.setText(String.format(
+                Locale.getDefault(),
+                "%d%s",
+                R.string.fragment_spt_furo_title,
+                projeto.getListaDeFuros().get(furoId).getCodigo())
+        );
 
         viewModel.updateAmostrasAdapter(binding.recyclerAmostra);
         viewModel.setClickListener(new IClickListener() {
             @Override
             public void onItemClick(int position) {
-                System.out.println("click hein mano");
                 enableActionMode(position);
             }
 
             @Override
             public void onItemLongClick(int position) {
-                System.out.println("long click hein mano");
                 enableActionMode(position);
             }
         });

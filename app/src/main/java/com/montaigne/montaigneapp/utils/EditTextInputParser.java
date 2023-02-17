@@ -4,14 +4,13 @@ import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class editTextInputParser {
+public class EditTextInputParser {
     public static String DATE_FORMAT = "dd/MM/yyyy";
 
     public static int getInt(@NonNull EditText editText) {

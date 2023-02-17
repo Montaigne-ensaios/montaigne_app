@@ -1,10 +1,10 @@
 package com.montaigne.montaigneapp.ui.spt.carimboEnsaio;
 
-import static com.montaigne.montaigneapp.utils.editTextInputParser.dateToString;
-import static com.montaigne.montaigneapp.utils.editTextInputParser.getCurrentDate;
-import static com.montaigne.montaigneapp.utils.editTextInputParser.getDate;
-import static com.montaigne.montaigneapp.utils.editTextInputParser.getFloat;
-import static com.montaigne.montaigneapp.utils.editTextInputParser.setValue;
+import static com.montaigne.montaigneapp.utils.EditTextInputParser.dateToString;
+import static com.montaigne.montaigneapp.utils.EditTextInputParser.getCurrentDate;
+import static com.montaigne.montaigneapp.utils.EditTextInputParser.getDate;
+import static com.montaigne.montaigneapp.utils.EditTextInputParser.getFloat;
+import static com.montaigne.montaigneapp.utils.EditTextInputParser.setValue;
 
 import android.util.Log;
 import android.widget.EditText;

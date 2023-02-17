@@ -28,6 +28,7 @@
     <string name="spt_projeto_title">Sondagens:</string>
 
     <!-- Strings da tela FURO-->
+    <string name="fragment_spt_furo_title">Ensaio de penetração</string>
 
 
     <!-- Strings da tela Carimbo Project -->
@@ -79,12 +80,8 @@
 
     <!--    Strings de adapters-->
     <string name="adapter_projetos_savlos_data">Inicio do Projeto: </string>
-    <string name="adapter_projetos_savlos_projeto_label">Projeto  de</string>
+    <string name="adapter_projetos_savlos_projeto_label">Projeto de </string>
     <string name="adapter_amostra_name">"Amostra "</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
-
 
     <!-- Strings Granulometria -->
 
@@ -95,7 +92,8 @@
 
     <!-- Strings adpter dados agregados para substituir no adpter text -->
 
-    <string name="registration_substituir_dados_agregados">Substitua requisito </string>   //TO DO - Criar strings e hints com lista dos dados necessários para o adpter
+    <string name="registration_substituir_dados_agregados">Substitua requisito </string>
+<!--    TODO - Criar strings e hints com lista dos dados necessários para o adpter-->
     <string name="registration_name_agregado">Insira o nome do ensaio:</string>
     <string name="registration_massa_agregado">Insira a massa do agregado a ser analisado:</string>
     <string name="registration_massa_amostra_1">Indentificação da amostra 1:</string>
