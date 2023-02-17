@@ -23,13 +23,9 @@ import com.montaigne.montaigneapp.ui.spt.SptVM;
 import com.montaigne.montaigneapp.utils.Geolocation;
 import com.montaigne.montaigneapp.utils.DatePickerUtil;
 import com.montaigne.montaigneapp.utils.PreparaDataUtil;
-import com.montaigne.montaigneapp.utils.editTextInputParser;
 
-import java.text.ParseException;
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.TimeZone;
 
 public class CarimboEnsaioFragment extends Fragment {
     private CarimboEnsaioVM viewModel;
