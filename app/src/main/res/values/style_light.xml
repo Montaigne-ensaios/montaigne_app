@@ -47,9 +47,7 @@
         <item name="endIconMode">clear_text</item>
         <item name="android:textSize">14dp</item>
 
-    </style>
-    <style name="Checkbox_light" parent="Widget.AppCompat.CompoundButton.CheckBox">
-        <item name="buttonTint">@color/color_primary_dark</item>
+
     </style>
 
     <style name="Tollbar_light" parent="Widget.MaterialComponents.Toolbar">
@@ -57,5 +55,11 @@
     <item name="android:textColorPrimary">@color/white</item>
     </style>
 
-    
+<style name="CardViewLight" parent="Widget.Material3.CardView.Outlined">
+    <item name="cardBackgroundColor">#FFFFFF</item>
+</style>
+    <style name="CardViewLight_furo" parent="Widget.Material3.CardView.Outlined">
+        <item name="cardBackgroundColor">@color/accent</item>
+
+</style>
 </resources>

@@ -15,8 +15,8 @@
 
         <ImageView
             android:id="@+id/imageLogoProject"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="90dp"
+            android:layout_height="110dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
@@ -28,9 +28,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="05dp"
+            android:layout_marginTop="10dp"
             android:layout_toEndOf="@id/imageLogoProject"
-            android:text="Nome do projeto" />
+            android:text="Nome do projeto"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textTipoEnsaio"
@@ -38,11 +39,12 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/textNameProjeto"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="05dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:layout_toEndOf="@id/imageLogoProject"
             android:text="Tipo de Ensaio"
-            android:textColor="#FF0909" />
+            android:textColor="#FF3761"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/textDescricaoProjeto"
@@ -51,27 +53,30 @@
             android:layout_below="@id/textTipoEnsaio"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="-5dp"
-            android:layout_toEndOf="@id/imageLogoProject"
-            android:text="Descrição do projeto localização" />
+            android:layout_toEndOf="@id/imageLogoProject" />
 
         <TextView
             android:id="@+id/textDateProjeto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textDescricaoProjeto"
+            android:layout_below="@id/textTipoEnsaio"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="05dp"
+
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="10dp"
             android:layout_toEndOf="@id/imageLogoProject"
-            android:text="Inicio do Projeto: xx/xx/xxxx" />
+
+            android:text="Inicio do Projeto: xx/xx/xxxx"
+            android:textSize="16sp" />
 
         <CheckBox
             android:id="@+id/checkBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/textTipoEnsaio"
+            android:layout_alignTop="@+id/textNameProjeto"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="0dp"
-            android:layout_marginEnd="0dp"
+            android:layout_marginEnd="20dp"
             android:visibility="gone" />
 
     </RelativeLayout>

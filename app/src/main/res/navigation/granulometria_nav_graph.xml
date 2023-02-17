@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/granulometria_nav_graph"
+    app:startDestination="@id/homeAgregado">
+
+    <fragment
+        android:id="@+id/homeAgregado"
+        android:label="fragment_home_agregado"
+        tools:layout="@layout/fragment_home_agregado" />
+    <fragment
+        android:id="@+id/peneirasGraudo"
+        android:label="fragment_peneiras_graudo"
+        tools:layout="@layout/fragment_peneiras_graudo" />
+    <fragment
+        android:id="@+id/peneirasMiudo"
+        android:label="fragment_peneiras_miudo"
+        tools:layout="@layout/fragment_peneiras_miudo" />
+    <fragment
+        android:id="@+id/dadosAgregados"
+        android:label="fragment_dados_agregados"
+        tools:layout="@layout/fragment_dados_agregados" />
+    <fragment
+        android:id="@+id/identificarAgregados"
+        android:label="fragment_identificar_agregados"
+        tools:layout="@layout/fragment_identificar_agregados" />
+</navigation>

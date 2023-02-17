@@ -7,6 +7,7 @@ import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 
 import java.util.List;
 
+@Deprecated
 public class AmostraSptUseCase {
     public static Task<Void> save(int idFuro, AmostraSpt amostraSpt, ProjetoSpt projetoSpt) {
         List<FuroSpt> listaDeFuros = projetoSpt.getListaDeFuros();

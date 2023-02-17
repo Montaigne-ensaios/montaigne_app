@@ -1,37 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/CardViewCarimboProjeto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
 
-    <LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutNameProjeto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="10dp">
+        android:hint="substitua hint"
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayoutNameProjeto"
+        app:errorEnabled="true"
+        app:helperText="substitua observação"
+        app:errorIconDrawable="@drawable/ic_erro"
+        app:hintEnabled="true"
+        app:startIconDrawable="@drawable/ic_name_project">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextNameProjeto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="text" />
 
-            android:hint="substitua hint"
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>
 
-
-            app:errorEnabled="true"
-            app:errorIconDrawable="@drawable/ic_erro"
-            app:helperText="substitua observação"
-            app:hintEnabled="true"
-            app:startIconDrawable="@drawable/ic_name_project">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/textInputEditTextNameProjeto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
-
-</androidx.cardview.widget.CardView>

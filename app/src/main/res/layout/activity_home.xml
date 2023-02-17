@@ -8,18 +8,20 @@
 
     <include
         android:id="@+id/toolbarHomeInclude"
-        layout="@layout/fragment_toolbar_home"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        layout="@layout/toolbar_home"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="-6dp" />
 
 
     <TextView
         android:id="@+id/textFiltroEnsaio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="80dp"
         android:text="@string/title_Filtros_Ensaios"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageFilterEnsaio"
@@ -29,8 +31,11 @@
         android:id="@+id/textMeusProjetos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:text="@string/title_Meus_Projetos"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/recyclerCategorias" />
 
@@ -61,21 +66,23 @@
         android:id="@+id/imageFilterEnsaio"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/textFiltroEnsaio"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textFiltroEnsaio"
-        app:layout_constraintVertical_bias="0.428"
+
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/icon_filter" />
 
     <ImageButton
         android:id="@+id/imageView2"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:onClick="showPopup"
         android:layout_marginStart="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/textMeusProjetos"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textMeusProjetos"
-        app:srcCompat="@drawable/icon_folder" />
+        app:srcCompat="@drawable/icon_increase" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

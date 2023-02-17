@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <View
             android:id="@+id/dividerHorizontal"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="?android:attr/listDivider" />
+            android:background="?android:attr/listDivider"
+            android:backgroundTint="@color/color_primary_light"
+            android:backgroundTintMode="add" />
 
         <EditText
             android:id="@+id/editTextGolpe1"
@@ -23,7 +27,7 @@
             android:layout_marginTop="28dp"
             android:ems="10"
             android:hint="1"
-            android:inputType="number" />
+            android:inputType="number|numberDecimal" />
 
         <EditText
             android:id="@+id/editTextPenetracao1"
@@ -47,7 +51,7 @@
             android:layout_marginTop="28dp"
             android:ems="10"
             android:hint="1"
-            android:inputType="number" />
+            android:inputType="number|numberDecimal" />
 
         <EditText
             android:id="@+id/editTextPenetracao2"
@@ -71,7 +75,7 @@
             android:layout_marginTop="28dp"
             android:ems="10"
             android:hint="1"
-            android:inputType="number" />
+            android:inputType="number|numberDecimal" />
 
         <EditText
             android:id="@+id/editTextPenetracao3"
@@ -86,7 +90,7 @@
             android:inputType="number" />
 
         <EditText
-            android:id="@+id/editTextProfundidade1"
+            android:id="@+id/edit_text_profundidade"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -95,15 +99,18 @@
             android:layout_toStartOf="@+id/dividerSpt"
             android:ems="10"
             android:hint="1"
-            android:inputType="number" />
+            android:inputType="numberSigned|number|numberDecimal" />
 
         <View
             android:id="@+id/dividerSpt"
-            android:layout_width="1dp"
+            android:layout_width="2dp"
             android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
             android:layout_marginStart="110dp"
-            android:layout_marginTop="10dp"
-            android:background="?android:attr/listDivider" />
+            android:layout_marginTop="0dp"
+            android:background="?android:attr/listDivider"
+            android:backgroundTint="@color/color_primary_light"
+            android:backgroundTintMode="screen" />
 
     </RelativeLayout>
 

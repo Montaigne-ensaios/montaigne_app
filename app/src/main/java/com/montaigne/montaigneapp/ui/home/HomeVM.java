@@ -3,6 +3,7 @@ package com.montaigne.montaigneapp.ui.home;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.util.SparseBooleanArray;
 import android.view.View;
 
 import androidx.lifecycle.ViewModel;
@@ -12,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.firebase.database.DataSnapshot;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
+import com.montaigne.montaigneapp.ui.AbstractProjectActivity;
+import com.montaigne.montaigneapp.ui.IClickListener;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
 import com.montaigne.montaigneapp.model.Projeto;
@@ -21,11 +24,18 @@ import java.util.List;
 
 public class HomeVM extends ViewModel {
     private final String TAG = "HomeActivity";
-    // Keys de Bundle:
-    public static final String PROJETO = "projeto";
 
     private List<Projeto> projetosSalvos = new ArrayList<>();
     private ProjetosSalvosAdapter adapterProjetosSalvos;
+    private IClickListener clickListener;
+
+    public void setClickListener(IClickListener clickListener) {
+        adapterProjetosSalvos.setClickListener(clickListener);
+    }
+
+    public ProjetosSalvosAdapter getAdapterProjetosSalvos() {
+        return adapterProjetosSalvos;
+    }
 
     protected void initializeProjetoCategoriaAdapter(RecyclerView recyclerProjetoCategorias) {
         ArrayList<Object[]> categorias = new ArrayList<>();  // lista de filtros de projeto
@@ -45,8 +55,10 @@ public class HomeVM extends ViewModel {
 
     protected void initializeProjetosSalvosAdapter(RecyclerView recyclerProjetosSalvos) {
         adapterProjetosSalvos = new ProjetosSalvosAdapter();
+        adapterProjetosSalvos.setClickListener(clickListener);
 
         recyclerProjetosSalvos.setAdapter(adapterProjetosSalvos);
+        recyclerProjetosSalvos.setNestedScrollingEnabled(false);
         recyclerProjetosSalvos.setLayoutManager(new LinearLayoutManager(
                 recyclerProjetosSalvos.getContext(),
                 LinearLayoutManager.VERTICAL,
@@ -57,10 +69,10 @@ public class HomeVM extends ViewModel {
         // seleciona apenas os projetos da categoria especifica
     }
 
-    protected void newProject(Context context) {
+    protected void newProjectSpt(Context context) {
         // passa novo projeto vazio
         Intent intent = new Intent(context, SptActivity.class);
-        intent.putExtra(HomeVM.PROJETO, new ProjetoSpt());
+        intent.putExtra(AbstractProjectActivity.PROJETO, new ProjetoSpt());
         context.startActivity(intent);
     }
 
@@ -94,5 +106,13 @@ public class HomeVM extends ViewModel {
                 Log.e(TAG, "Falha ao ler projetos do Banco de dados");
             }
         });
+    }
+
+    public void togglePositions(int position) {
+        adapterProjetosSalvos.togglePositions(position);
+    }
+
+    public SparseBooleanArray getIsCheckedList() {
+        return adapterProjetosSalvos.getIsCheckedList();
     }
 }

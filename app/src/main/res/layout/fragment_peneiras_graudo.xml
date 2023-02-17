@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+  >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textPeneirasIntermediariasGraudo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="40dp"
+                    android:text="Intermediárias"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textSelecionePeneirasGraudo" />
+
+                <CheckBox
+                    android:id="@+id/checkboxN9_5mm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="9,5 mm"
+                    app:layout_constraintEnd_toEndOf="@+id/checkboxN19mm"
+                    app:layout_constraintStart_toStartOf="@+id/checkboxN19mm"
+                    app:layout_constraintTop_toBottomOf="@+id/checkboxN19mm" />
+
+                <TextView
+                    android:id="@+id/textPeneirasNormaisGraudo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Normais"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textSelecionePeneirasGraudo" />
+
+                <CheckBox
+                    android:id="@+id/checkboxN0_6mm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="0,6 mm"
+                    app:layout_constraintEnd_toEndOf="@+id/checkboxN1_2mm"
+                    app:layout_constraintStart_toStartOf="@+id/checkboxN1_2mm"
+                    app:layout_constraintTop_toBottomOf="@+id/checkboxN1_2mm" />
+
+                <CheckBox
+                    android:id="@+id/checkboxN_24mm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="2,4 mm"
+                    app:layout_constraintEnd_toEndOf="@+id/checkboxn4_8mm"
+                    app:layout_constraintStart_toStartOf="@+id/checkboxn4_8mm"
+                    app:layout_constraintTop_toBottomOf="@+id/checkboxn4_8mm" />
+
+                <CheckBox
+                    android:id="@+id/checkboxI50mm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="50 mm"
+                    app:layout_constraintEnd_toEndOf="@+id/checkboxI64mm"
+                    app:layout_constraintStart_toStartOf="@+id/checkboxI64mm"
+                    app:layout_constraintTop_toBottomOf="@+id/checkboxI64mm" />
+
+                <CheckBox
+                    android:id="@+id/checkboxI6_3mm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="6,3 mm"
+                    app:layout_constraintStart_toStartOf="@+id/checkboxI1_25mm"
+                    app:layout_constraintTop_toBottomOf="@+id/checkboxI1_25mm" />
+
+                <CheckBox
+                    android:id="@+id/checkboxN76mm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="76 mm"
+                    app:layout_constraintEnd_toEndOf="@+id/textPeneirasNormaisGraudo"
+                    app:layout_constraintStart_toStartOf="@+id/textPeneirasNormaisGraudo"
+                    app:layout_constraintTop_toBottomOf="@+id/textPeneirasNormaisGraudo" />
+
+                <CheckBox
+                    android:id="@+id/checkboxI64mm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="64 mm"
+                    app:layout_constraintEnd_toEndOf="@+id/textPeneirasIntermediariasGraudo"
+                    app:layout_constraintStart_toStartOf="@+id/textPeneirasIntermediariasGraudo"
+                    app:layout_constraintTop_toBottomOf="@+id/textPeneirasIntermediariasGraudo" />
+
+                <CheckBox
+                    android:id="@+id/checkboxI1_25mm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="12,5 mm"
+                    app:layout_constraintStart_toStartOf="@+id/checkboxI25mm"
+                    app:layout_constraintTop_toBottomOf="@+id/checkboxI25mm" />
+
+                <TextView
+                    android:id="@+id/textSelecionePeneirasGraudo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Selecione as peneiras:"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <CheckBox
+                    android:id="@+id/checkboxN19mm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:text="19 mm"
+                    app:layout_constraintEnd_toEndOf="@+id/checkboxN38mm"
+                    app:layout_constraintStart_toStartOf="@+id/checkboxN38mm"
+                    app:layout_constraintTop_toBottomOf="@+id/checkboxN38mm" />
+
+                <CheckBox
+                    android:id="@+id/checkboxN1_2mm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="1,2 mm"
+                    app:layout_constraintEnd_toEndOf="@+id/checkboxN_24mm"
+                    app:layout_constraintStart_toStartOf="@+id/checkboxN_24mm"
+                    app:layout_constraintTop_toBottomOf="@+id/checkboxN_24mm" />
+
+                <CheckBox
+                    android:id="@+id/checkboxN0_15mm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="0,15 mm"
+                    app:layout_constraintStart_toStartOf="@+id/checkboxN0_3mm"
+                    app:layout_constraintTop_toBottomOf="@+id/checkboxN0_3mm" />
+
+                <CheckBox
+                    android:id="@+id/checkboxI25mm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="25 mm"
+                    app:layout_constraintEnd_toEndOf="@+id/checkboxI32mm"
+                    app:layout_constraintStart_toStartOf="@+id/checkboxI32mm"
+                    app:layout_constraintTop_toBottomOf="@+id/checkboxI32mm" />
+
+                <CheckBox
+                    android:id="@+id/checkboxN0_3mm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="0,3 mm"
+                    app:layout_constraintEnd_toEndOf="@+id/checkboxN0_6mm"
+                    app:layout_constraintStart_toStartOf="@+id/checkboxN0_6mm"
+                    app:layout_constraintTop_toBottomOf="@+id/checkboxN0_6mm" />
+
+                <CheckBox
+                    android:id="@+id/checkboxn4_8mm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="4,8 mm"
+                    app:layout_constraintEnd_toEndOf="@+id/checkboxN9_5mm"
+                    app:layout_constraintStart_toStartOf="@+id/checkboxN9_5mm"
+                    app:layout_constraintTop_toBottomOf="@+id/checkboxN9_5mm" />
+
+                <CheckBox
+                    android:id="@+id/checkboxI32mm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="32 mm"
+                    app:layout_constraintEnd_toEndOf="@+id/checkboxI50mm"
+                    app:layout_constraintStart_toStartOf="@+id/checkboxI50mm"
+                    app:layout_constraintTop_toBottomOf="@+id/checkboxI50mm" />
+
+                <CheckBox
+                    android:id="@+id/checkboxN38mm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="38 mm"
+                    app:layout_constraintEnd_toEndOf="@+id/checkboxN76mm"
+                    app:layout_constraintStart_toStartOf="@+id/checkboxN76mm"
+                    app:layout_constraintTop_toBottomOf="@+id/checkboxN76mm" />
+
+                <Button
+                    android:id="@+id/buttonNext3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Continuar"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/checkboxN0_15mm" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

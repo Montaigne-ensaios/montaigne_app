@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/textDadosAgregados"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/registration_substituir_dados_agregados"
+            android:textSize="16sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutDadosAgregados"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_erro"
+            app:helperText="substitua observação"
+            app:hintEnabled="true"
+            app:startIconDrawable="@drawable/ic_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="substitua hint">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextDadosAgregados"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date|number|datetime|text|numberDecimal" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

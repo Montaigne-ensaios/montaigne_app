@@ -1,67 +1,65 @@
 package com.montaigne.montaigneapp.ui.spt;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
 
 import com.montaigne.montaigneapp.R;
+import com.montaigne.montaigneapp.model.spt.AmostraSpt;
+import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
-import com.montaigne.montaigneapp.ui.home.HomeVM;
-import com.montaigne.montaigneapp.databinding.AcitivitySptBinding;
+import com.montaigne.montaigneapp.ui.AbstractProjectActivity;
+import com.montaigne.montaigneapp.databinding.ActivitySptBinding;
+import com.montaigne.montaigneapp.utils.CreateXlsxSpt;
+import com.montaigne.montaigneapp.utils.ExportFile;
 
-public class SptActivity extends AppCompatActivity {
-    private AcitivitySptBinding binding;
-    private SptVM viewModel;
+import java.util.Objects;
+
+public class SptActivity extends AbstractProjectActivity<SptVM, ProjetoSpt> {
+    private ActivitySptBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = AcitivitySptBinding.inflate(getLayoutInflater());
+        binding = ActivitySptBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        viewModel = new ViewModelProvider(this).get(SptVM.class);
+        setViewModel(new ViewModelProvider(this).get(SptVM.class));
+
         setSupportActionBar(binding.toolbarSptInclude.toolbarSpt);
-        getSupportActionBar().setTitle("Substituir nome do ensaio");//substituir por o tipo de ensaio exemplo: Granulometria ou SPT
-        getSupportActionBar().setIcon(R.drawable.icon_arrow_left);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
-        viewModel.setupViewModel(
-                (ProjetoSpt) getIntent().getExtras().getSerializable(HomeVM.PROJETO),
-                getSupportFragmentManager()
-        );
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        binding.imgButtonHome.setOnClickListener(viewModel::intentHome);
-        binding.buttonNavigate.setOnClickListener(v -> viewModel.handleNavigation(getSupportFragmentManager()));
+        setButtonHome(binding.imgButtonHome);
+        setButtonNavigate(binding.buttonNavigate);
 
-
-
-       // binding.toolbarSptInclude.toolbarSpt.setOnMenuItemClickListener(item -> {
-        //    if (item.getItemId() == R.id.addfuro) {
-       //         viewModel.newProject(this);
-        //    } else if (item.getItemId() == R.id.deletefuro) {
-       //         viewModel.removefuro();
-         //   }
-        //    return true;
-     //   });
+//        binding.toolbarSptInclude.toolbarSpt.setOnMenuItemClickListener(item -> {
+//            if(item.getItemId() == R.id.exportar_xlsx){
+//                ProjetoSpt projetoSpt = viewModel.getProjeto();
+//                FuroSpt furoSpt = projetoSpt.getListaDeFuros().get(0);
+//
+//                CreateXlsxSpt.createFileXlsx(projetoSpt, furoSpt, this);
+//                ExportFile.getUri(this);
+//                ExportFile.shareXlsx(this);
+//                return true;
+//            }
+//            return false;
+//        });
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu_spt, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater menuInflater = getMenuInflater();
+//        menuInflater.inflate(R.menu.menu_spt, menu);
+//        return super.onCreateOptionsMenu(menu);
+//    }
 
     public void setNavigateButtonText(String string) {
         binding.buttonNavigate.setText(string);
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-      //  return super.onSupportNavigateUp();//
+    public void setActionBarTitle(String string) {
+        Objects.requireNonNull(getSupportActionBar()).setTitle(string);
     }
 }
