@@ -63,7 +63,7 @@ public class CarimboEnsaioFragment extends Fragment {
 //            viewModel.setLocation();  // todo: implementar coordenadas
         });
 
-        binding.calendarioDataInicio.setOnClickListener(v -> {
+        binding.editTextStartDate.setOnClickListener(v -> {
             Calendar calendario = Calendar.getInstance(TimeZone.getDefault());
             DatePickerDialog datePicker = new DatePickerDialog(
                     this.getActivity(),
@@ -84,7 +84,7 @@ public class CarimboEnsaioFragment extends Fragment {
         return viewModel.furoId;
     }
 
-    private DatePickerDialog.OnDateSetListener datePickerListener = (view, selectedYear, selectedMonth, selectedDay) -> {
+    private final DatePickerDialog.OnDateSetListener datePickerListener = (view, selectedYear, selectedMonth, selectedDay) -> {
         String ano = preparaData(selectedYear);
         String mes = preparaData(selectedMonth + 1);
         String dia = preparaData(selectedDay);
@@ -101,7 +101,7 @@ public class CarimboEnsaioFragment extends Fragment {
 
     private String preparaData(int data) {
         if (data < 10) {
-            return "0" + String.valueOf(data);
+            return "0" + data;
         } else {
             return String.valueOf(data);
         }

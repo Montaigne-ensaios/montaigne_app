@@ -10,7 +10,7 @@ public class ProjetoSpt extends Projeto {
     private String empresa;  // opcional
     private String tecnico;  // opcional
     private String contato;  // opcional. pode ser qualquer forma de contato
-    private String dataFim;  // todo: definir automaticamente
+    private String dataFim;
     private String endereco;  // gerar com geocode
     private String referenciaNivel;  // obrigatório
     // descrição de algo que serve como referência para a altura dos furos. Ex: calçada

@@ -1,11 +1,13 @@
 package com.montaigne.montaigneapp.ui.home;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.databinding.AdapterHomeProjetoCategoriaBinding;
 import com.montaigne.montaigneapp.ui.BindedViewHolder;
 
@@ -33,6 +35,11 @@ public class ProjetoCategoriaAdapter extends RecyclerView.Adapter<
         holder.binding.buttonProjetoName.setText((String) categoriasProjeto.get(position)[0]);
         int drawableId = (Integer) categoriasProjeto.get(position)[1];
         holder.binding.imageProjeto.setImageResource(drawableId);
+
+        if (! ((String) categoriasProjeto.get(position)[0]).equals("SPT")) {
+            holder.binding.buttonProjetoName.setEnabled(false);
+            holder.binding.buttonProjetoName.setBackgroundColor(Color.GRAY);
+        }
 
         // Aqui que se deve passar o listener
     }
