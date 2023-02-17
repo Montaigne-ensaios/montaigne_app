@@ -1,6 +1,7 @@
 package com.montaigne.montaigneapp.data.dao;
 
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -10,16 +11,18 @@ public class ProjetoSptDao {
     private final DatabaseReference dbReference;
     private static ProjetoSptDao singleton;
 
-    private ProjetoSptDao() {
+    private ProjetoSptDao(String userId) {
         FirebaseDatabase fdb = FirebaseDatabase.getInstance();
         fdb.setPersistenceEnabled(true);
-        dbReference = fdb.getReference().child("projetos").child("spt");
+        dbReference = fdb.getReference().child("projetos").child("spt").child(userId);
         dbReference.keepSynced(true);
     }
 
     public static ProjetoSptDao getInstance() {
-        if (singleton == null)
-            singleton = new ProjetoSptDao();
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+
+        if ((singleton == null) && (firebaseAuth.getCurrentUser() != null))
+            singleton = new ProjetoSptDao(firebaseAuth.getUid());
         return singleton;
     }
 

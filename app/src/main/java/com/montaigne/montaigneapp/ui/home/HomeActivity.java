@@ -3,8 +3,6 @@ package com.montaigne.montaigneapp.ui.home;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.View;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.PopupMenu;
@@ -18,8 +16,8 @@ import androidx.lifecycle.ViewModelProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.databinding.ActivityHomeBinding;
-import com.montaigne.montaigneapp.ui.auth.AuthActivity;
 import com.montaigne.montaigneapp.ui.IClickListener;
+import com.montaigne.montaigneapp.ui.auth.AuthActivity;
 
 public class HomeActivity extends AppCompatActivity {
     private ActivityHomeBinding binding;
@@ -53,20 +51,9 @@ public class HomeActivity extends AppCompatActivity {
                 enableActionMode(position);
             }
         });
-//        addMenuProvider(new HomeActivity.MenuProvider());
-    }
-
-        binding.toolbarHomeInclude.toolbarHome.setOnMenuItemClickListener(item -> {
-            if (item.getItemId() == R.id.add) {
-                viewModel.newProject(this);
-            } else if (item.getItemId() == R.id.delete) {
-                viewModel.removeProjects();
-            }
-
-            return true;
-        });
 
         binding.toolbarHomeInclude.toolbarItemLogout.setOnClickListener(this::menuItemLogout);
+    }
     private void enableActionMode(int position) {
         if (actionMode == null)
             actionMode = startSupportActionMode(new androidx.appcompat.view.ActionMode.Callback() {
@@ -133,12 +120,6 @@ public class HomeActivity extends AppCompatActivity {
             }
             return true;
         }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu_main, menu);
-
-        return super.onCreateOptionsMenu(menu);
     }
 
     private void checkAuthentication() {
