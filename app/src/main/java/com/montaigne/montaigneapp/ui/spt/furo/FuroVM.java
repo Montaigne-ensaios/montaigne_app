@@ -62,6 +62,7 @@ public class FuroVM extends ViewModel {
 
         recyclerAmostras.setAdapter(amostraAdapter);
         recyclerAmostras.setLayoutManager(new LinearLayoutManager(recyclerAmostras.getContext()));
+
     }
 
     public void setClickListener(IClickListener clickListener) {

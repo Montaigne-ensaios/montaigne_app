@@ -3,28 +3,28 @@ package com.montaigne.montaigneapp.model;
 import java.io.Serializable;
 
 public class Coordenada implements Serializable {
-    private int L;
-    private int N;
-    public Coordenada(int L, int N) {
+    private double L;
+    private double N;
+    public Coordenada(double N, double L) {
         this.L = L;
         this.N = N;
     }
 
     public Coordenada() {}
 
-    public int getL() {
+    public double getL() {
         return L;
     }
 
-    public void setL(int l) {
+    public void setL(double l) {
         L = l;
     }
 
-    public int getN() {
+    public double getN() {
         return N;
     }
 
-    public void setN(int n) {
+    public void setN(double n) {
         N = n;
     }
 }

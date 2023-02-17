@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.montaigne.montaigneapp"
-        minSdk 21
+        minSdk 26 //todo: mudança no sdk devido o apache poi. é pra ser 21.
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -50,6 +50,8 @@ dependencies {
     // firebase
     implementation 'com.google.firebase:firebase-database:20.0.5'
     implementation platform('com.google.firebase:firebase-bom:29.3.1')
+    //apache poi
+    implementation 'org.apache.poi:poi:5.2.2'
     // testing
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'

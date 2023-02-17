@@ -20,6 +20,7 @@ import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.databinding.FragmentCarimboEnsaioBinding;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
+import com.montaigne.montaigneapp.utils.Geolocation;
 import com.montaigne.montaigneapp.utils.DatePickerUtil;
 import com.montaigne.montaigneapp.utils.PreparaDataUtil;
 import com.montaigne.montaigneapp.utils.editTextInputParser;
@@ -63,10 +64,9 @@ public class CarimboEnsaioFragment extends Fragment {
         activity.setButtonNavigateText(getString(R.string.btn_navigate_carimbo_furo));
         activity.setActionBarTitle(getString(R.string.furo_action_bar_title) + (furoId + 1));
 
-        binding.buttonGetLocation.setOnClickListener(v -> {
-            Toast.makeText(v.getContext(), R.string.not_implemented, Toast.LENGTH_SHORT).show();
-//            viewModel.setLocation();  // todo: implementar coordenadas
-        });
+        binding.buttonGetLocation.setOnClickListener(v -> viewModel.setLocation(
+                Geolocation.getLatlog(v)
+        ));
 
         binding.calendarioDataInicioFuro.setOnClickListener(v -> {
             DatePickerUtil datePicker = new DatePickerUtil(
