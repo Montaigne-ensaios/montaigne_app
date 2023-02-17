@@ -9,10 +9,7 @@
     <!-- Strings used for menu  -->
     <string name="action_help">Ajuda</string>
     <string name="action_infor">Sobre</string>
-    <string name="menu_item_add_spt_projeto">Adicionar projeto SPT</string>
-    <string name="menu_item_projetospt_novo_furo">Novo furo</string>
-    <string name="menu_item_projetospt_apagar_furo">Apagar furo</string>
-    <string name="menu_item_generate_report">Gerar relatório SPT</string>
+    <string name="menu_item_projetospt_edit_carimbo">Editar dados do projeto</string>
 
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -71,7 +68,7 @@
     <!-- Strings dos butões inferior das telas -->
     <string name="btn_navigate_carimbo_projeto">Novo Furo</string>
     <string name="btn_navigate_carimbo_furo">Inicar ensaio</string>
-    <string name="btn_navigate_projeto">Carimbo do projeto</string>
+    <string name="btn_navigate_projeto">Criar novo ensaio</string>
     <string name="btn_navigate_furo">Carimbo do furo</string>
     <string name="btn_navigate_ensaio">Próxima camada</string>
     <string name="btn_finish_ensaio">Suspender ensaio</string>

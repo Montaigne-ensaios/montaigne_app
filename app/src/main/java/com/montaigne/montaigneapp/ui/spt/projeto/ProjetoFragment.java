@@ -1,6 +1,7 @@
 package com.montaigne.montaigneapp.ui.spt.projeto;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -8,7 +9,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,6 +25,8 @@ import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
 
 public class ProjetoFragment extends Fragment {
+    private static String TAG = "ProjetoFragment";
+
     private ProjetoVM viewModel;
     private SptVM projectViewModel;
     private FragmentSptProjetoBinding binding;
@@ -132,15 +134,12 @@ public class ProjetoFragment extends Fragment {
 
         @Override
         public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
-            if (menuItem.getItemId() == R.id.action_add_furo) {
-                FragmentNavigator.navigate(R.id.action_new_furo,
+            if (menuItem.getItemId() == R.id.action_edit_carimbo) {
+                FragmentNavigator.navigate(R.id.action_edit_Carimbo,
                         requireActivity().getSupportFragmentManager(),
                         R.id.containerSpt);
-            } else if (menuItem.getItemId() == R.id.action_genarate_report) {
-                Toast.makeText(requireContext(), R.string.not_implemented, Toast.LENGTH_SHORT).show();
-                // todo: implementar geração de ensaios xlsx
+                Log.v(TAG, "action_edit_Carimbo");
             }
-
             return true;
         }
     }

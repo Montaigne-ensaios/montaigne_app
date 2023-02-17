@@ -76,6 +76,7 @@ public class EnsaioVM extends ViewModel {
 
         boolean isNew = true;
         for (AmostraSpt amostraI: furo.getListaDeAmostras()) {
+            // todo: garantir que amostras são únicas
             if (amostraI.getProfundidade() == amostra.getProfundidade()) {
                 isNew = false;
                 break;

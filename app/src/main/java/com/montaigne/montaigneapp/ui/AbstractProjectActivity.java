@@ -9,8 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.montaigne.montaigneapp.model.Projeto;
 import com.montaigne.montaigneapp.utils.FragmentNavigator;
 
-import java.util.Objects;
-
 public abstract class AbstractProjectActivity<
         ProjectViewModel extends AbstractProjectViewModel<Project>,
         Project extends Projeto
