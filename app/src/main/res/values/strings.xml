@@ -10,6 +10,7 @@
     <string name="action_help">Ajuda</string>
     <string name="action_infor">Sobre</string>
     <string name="menu_item_projetospt_edit_carimbo">Editar dados do projeto</string>
+    <string name="menu_item_furospt_edit_carimbo">Editar dados da sondagem</string>
 
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>

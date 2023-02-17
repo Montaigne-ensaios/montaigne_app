@@ -32,6 +32,8 @@ public class FuroVM extends ViewModel {
         return projeto;
     }
 
+    public int getFuroId() {return furoId;}
+
     protected void setFuro(ProjetoSpt projeto, int idFuro) {
         this.projeto = projeto;
         this.furoId = idFuro;

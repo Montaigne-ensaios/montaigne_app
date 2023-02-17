@@ -49,8 +49,6 @@
         <action
             android:id="@+id/action_edit_Amostra"
             app:destination="@id/ensaioFragment" />
-<!--        futuramente, adicionar outra forma de editar isto -->
-
         <action
             android:id="@+id/action_edit_CarimboEnsaio"
             app:destination="@id/carimboEnsaioFragment" />

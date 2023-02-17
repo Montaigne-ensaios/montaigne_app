@@ -1,16 +1,20 @@
 package com.montaigne.montaigneapp.ui.spt.furo;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.view.MenuProvider;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.montaigne.montaigneapp.R;
@@ -19,6 +23,8 @@ import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.IClickListener;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
+import com.montaigne.montaigneapp.ui.spt.projeto.ProjetoFragment;
+import com.montaigne.montaigneapp.utils.FragmentNavigator;
 
 import java.util.Locale;
 
@@ -27,6 +33,8 @@ public class FuroFragment extends Fragment {
     private SptVM projectViewModel;
     private FragmentSptFuroBinding binding;
     private ActionMode actionMode;
+    private static String TAG = "FuroFragment";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +79,14 @@ public class FuroFragment extends Fragment {
         activity.setButtonNavigateText(getString(R.string.btn_navigate_furo));
 
         return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        requireActivity().addMenuProvider(new FuroFragment.MenuProvider(),
+                getViewLifecycleOwner(), Lifecycle.State.RESUMED);
     }
 
     private void enableActionMode(int position) {
@@ -121,5 +137,25 @@ public class FuroFragment extends Fragment {
     public void onPause() {
         super.onPause();
         projectViewModel.updateProjeto(viewModel.getProjeto());
+    }
+
+    public class MenuProvider implements androidx.core.view.MenuProvider {
+        @Override
+        public void onCreateMenu(@NonNull Menu menu, @NonNull MenuInflater menuInflater) {
+            menuInflater.inflate(R.menu.menu_spt_furo, menu);
+        }
+
+        @Override
+        public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
+            if (menuItem.getItemId() == R.id.action_edit_carimboEnsaio) {
+                Bundle b = new Bundle();
+                b.putInt("furoId", viewModel.getFuroId());
+                FragmentNavigator.navigate(R.id.action_edit_CarimboEnsaio,
+                        requireActivity().getSupportFragmentManager(),
+                        R.id.containerSpt, b);
+                Log.v(TAG, "action_edit_CarimboEnsaio");
+            }
+            return false;
+        }
     }
 }

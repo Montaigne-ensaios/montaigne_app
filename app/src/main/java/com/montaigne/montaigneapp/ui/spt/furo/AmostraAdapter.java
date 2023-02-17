@@ -2,6 +2,9 @@ package com.montaigne.montaigneapp.ui.spt.furo;
 
 import static com.montaigne.montaigneapp.utils.EditTextInputParser.setValue;
 
+import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -15,6 +18,7 @@ import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.ui.LockingTextWatcher;
 import com.montaigne.montaigneapp.ui.BindedViewHolder;
 import com.montaigne.montaigneapp.ui.IClickListener;
+import com.montaigne.montaigneapp.utils.FragmentNavigator;
 
 import java.util.List;
 
@@ -23,6 +27,7 @@ public class AmostraAdapter extends RecyclerView.Adapter<BindedViewHolder<Adapte
     private int currentSelectedPosition = -1;
     private SparseBooleanArray selectedItems = new SparseBooleanArray();
     private IClickListener clickListener;
+    private static String TAG = "AmostraAdapter";
 
     public SparseBooleanArray getSelectedItems() {
         return selectedItems;
