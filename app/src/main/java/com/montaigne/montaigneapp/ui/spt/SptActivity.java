@@ -18,6 +18,8 @@ import com.montaigne.montaigneapp.ui.AbstractProjectViewModel;
 import com.montaigne.montaigneapp.utils.CreateXlsxSpt;
 import com.montaigne.montaigneapp.utils.ExportFile;
 
+import java.util.Objects;
+
 public class SptActivity extends AbstracProjectActivity<SptVM, ProjetoSpt> {
     private AcitivitySptBinding binding;
 
@@ -36,31 +38,27 @@ public class SptActivity extends AbstracProjectActivity<SptVM, ProjetoSpt> {
         setButtonHome(binding.imgButtonHome);
         setButtonNavigate(binding.buttonNavigate);
 
-        binding.toolbarSptInclude.toolbarSpt.setOnMenuItemClickListener(item -> {
-            if (item.getItemId() == R.id.deletefuro) {
-                // todo: implementar exportação de ensaio aqui
-                return true;
-            }
-            if(item.getItemId() == R.id.exportar_xlsx){
-                ProjetoSpt projetoSpt = viewModel.getProjeto();
-                FuroSpt furoSpt = projetoSpt.getListaDeFuros().get(0);
-
-                CreateXlsxSpt.createFileXlsx(projetoSpt, furoSpt, this);
-                ExportFile.getUri(this);
-                ExportFile.shareXlsx(this);
-                return true;
-            }
-            return false;
-        });
+//        binding.toolbarSptInclude.toolbarSpt.setOnMenuItemClickListener(item -> {
+//            if(item.getItemId() == R.id.exportar_xlsx){
+//                ProjetoSpt projetoSpt = viewModel.getProjeto();
+//                FuroSpt furoSpt = projetoSpt.getListaDeFuros().get(0);
+//
+//                CreateXlsxSpt.createFileXlsx(projetoSpt, furoSpt, this);
+//                ExportFile.getUri(this);
+//                ExportFile.shareXlsx(this);
+//                return true;
+//            }
+//            return false;
+//        });
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu_spt, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater menuInflater = getMenuInflater();
+//        menuInflater.inflate(R.menu.menu_spt, menu);
+//        return super.onCreateOptionsMenu(menu);
+//    }
 
     public void setNavigateButtonText(String string) {
         binding.buttonNavigate.setText(string);
