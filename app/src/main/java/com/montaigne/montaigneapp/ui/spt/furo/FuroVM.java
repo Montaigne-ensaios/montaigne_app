@@ -1,15 +1,11 @@
 package com.montaigne.montaigneapp.ui.spt.furo;
 
-import android.util.Log;
 import android.util.SparseBooleanArray;
 
 import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firebase.database.DataSnapshot;
-import com.montaigne.montaigneapp.data.usecase.AmostraSptUseCase;
-import com.montaigne.montaigneapp.data.usecase.FuroSptUseCase;
 import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
@@ -18,7 +14,6 @@ import com.montaigne.montaigneapp.ui.IClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class FuroVM extends ViewModel {
     private ProjetoSpt projeto;
@@ -28,19 +23,16 @@ public class FuroVM extends ViewModel {
     private List<AmostraSpt> listaDeAmostras;
     private IClickListener clickListener;
     private AmostraAdapter amostraAdapter;
-    private final String TAG = "FuroFragment";
 
     public AmostraAdapter getAmostraAdapter() {
         return amostraAdapter;
     }
 
-    public void setAmostraAdapter(AmostraAdapter amostraAdapter) {
-        this.amostraAdapter = amostraAdapter;
-    }
-
     protected ProjetoSpt getProjeto() {
         return projeto;
     }
+
+    public int getFuroId() {return furoId;}
 
     protected void setFuro(ProjetoSpt projeto, int idFuro) {
         this.projeto = projeto;
@@ -54,7 +46,6 @@ public class FuroVM extends ViewModel {
     }
 
     protected void updateAmostrasAdapter(RecyclerView recyclerAmostras) {
-        // todo: implementar deleção
         amostraAdapter = new AmostraAdapter();
         listaDeFuros = projeto.getListaDeFuros();
         listaDeAmostras = listaDeFuros.get(furoId).getListaDeAmostras();

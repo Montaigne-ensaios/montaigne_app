@@ -8,7 +8,7 @@
 
     <include
         android:id="@+id/toolbarSptInclude"
-        layout="@layout/fragment_toolbar_spt"
+        layout="@layout/toolbar_spt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/containerSpt"></include>

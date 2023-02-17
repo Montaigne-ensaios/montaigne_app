@@ -1,32 +1,27 @@
 package com.montaigne.montaigneapp.ui.spt;
 
-import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
-import com.montaigne.montaigneapp.ui.AbstracProjectActivity;
-import com.montaigne.montaigneapp.databinding.AcitivitySptBinding;
-import com.montaigne.montaigneapp.ui.AbstractProjectViewModel;
+import com.montaigne.montaigneapp.ui.AbstractProjectActivity;
+import com.montaigne.montaigneapp.databinding.ActivitySptBinding;
 import com.montaigne.montaigneapp.utils.CreateXlsxSpt;
 import com.montaigne.montaigneapp.utils.ExportFile;
 
 import java.util.Objects;
 
-public class SptActivity extends AbstracProjectActivity<SptVM, ProjetoSpt> {
-    private AcitivitySptBinding binding;
+public class SptActivity extends AbstractProjectActivity<SptVM, ProjetoSpt> {
+    private ActivitySptBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = AcitivitySptBinding.inflate(getLayoutInflater());
+        binding = ActivitySptBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setViewModel(new ViewModelProvider(this).get(SptVM.class));

@@ -17,7 +17,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.montaigne.montaigneapp.R;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
-import com.montaigne.montaigneapp.databinding.FragmentCarimboEnsaioBinding;
+import com.montaigne.montaigneapp.databinding.FragmentSptCarimboEnsaioBinding;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
 import com.montaigne.montaigneapp.utils.Geolocation;
@@ -34,7 +34,7 @@ import java.util.TimeZone;
 public class CarimboEnsaioFragment extends Fragment {
     private CarimboEnsaioVM viewModel;
     private SptVM projectViewModel;
-    private FragmentCarimboEnsaioBinding binding;
+    private FragmentSptCarimboEnsaioBinding binding;
     private final Map<String, EditText> fields = new HashMap<>();
 
     public CarimboEnsaioFragment() {
@@ -52,9 +52,10 @@ public class CarimboEnsaioFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        binding = FragmentCarimboEnsaioBinding.inflate(inflater, container, false);
+        binding = FragmentSptCarimboEnsaioBinding.inflate(inflater, container, false);
 
         fields.put("NivelFuro", binding.editTextNivelFuro);
+        fields.put("DataInicio", binding.editTextStartDate);
 
         ProjetoSpt projeto = projectViewModel.getProjeto();
         int furoId = requireArguments().getInt("furoId");
@@ -62,13 +63,12 @@ public class CarimboEnsaioFragment extends Fragment {
 
         SptActivity activity = (SptActivity) requireActivity();
         activity.setButtonNavigateText(getString(R.string.btn_navigate_carimbo_furo));
-        activity.setActionBarTitle(getString(R.string.furo_action_bar_title) + (furoId + 1));
 
         binding.buttonGetLocation.setOnClickListener(v -> viewModel.setLocation(
                 Geolocation.getLatlog(v)
         ));
 
-        binding.calendarioDataInicioFuro.setOnClickListener(v -> {
+        binding.editTextStartDate.setOnClickListener(v -> {
             DatePickerUtil datePicker = new DatePickerUtil(
                     this.getActivity(),
                     (view, selectedYear, selectedMonth, selectedDay) -> {

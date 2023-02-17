@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 <include
-    layout="@layout/fragment_toolbar_granulometria"></include>
+    layout="@layout/toolbar_granulometria"></include>
     <Button
         android:id="@+id/buttonNavigate2"
         android:layout_width="wrap_content"

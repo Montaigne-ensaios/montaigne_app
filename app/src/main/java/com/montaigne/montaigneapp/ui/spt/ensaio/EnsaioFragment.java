@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.montaigne.montaigneapp.R;
-import com.montaigne.montaigneapp.databinding.FragmentEnsaioBinding;
+import com.montaigne.montaigneapp.databinding.FragmentSptEnsaioBinding;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.utils.FragmentNavigator;
 import com.montaigne.montaigneapp.ui.spt.SptActivity;
@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class EnsaioFragment extends Fragment {
     private EnsaioVM viewModel;
     private SptVM projectViewModel;
-    private FragmentEnsaioBinding binding;
+    private FragmentSptEnsaioBinding binding;
     protected final ArrayList<EditText> golpes = new ArrayList<>(),
             penetracoes = new ArrayList<>(),
             fields = new ArrayList<>();
@@ -43,7 +43,7 @@ public class EnsaioFragment extends Fragment {
     @Override
     public View onCreateView (@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         super.onCreateView(inflater, container, savedInstanceState);
-        binding = FragmentEnsaioBinding.inflate(inflater, container, false);
+        binding = FragmentSptEnsaioBinding.inflate(inflater, container, false);
 
         golpes.add(binding.editTextGolpe1);
         golpes.add(binding.editTextGolpe2);
@@ -72,7 +72,6 @@ public class EnsaioFragment extends Fragment {
 
         SptActivity activity = (SptActivity) requireActivity();
         activity.setButtonNavigateText(getString(R.string.btn_navigate_ensaio));
-        activity.setActionBarTitle(getString(R.string.furo_action_bar_title) + (furoId + 1));
 
         binding.buttonFinnishEnsaio.setOnClickListener(v -> FragmentNavigator.navigate(
                 R.id.action_finish_Ensaio, activity.getSupportFragmentManager(), R.id.containerSpt)

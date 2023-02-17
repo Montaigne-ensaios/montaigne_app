@@ -1,9 +1,7 @@
 package com.montaigne.montaigneapp.ui.spt.projeto;
 
-import android.os.BaseBundle;
 import android.os.Bundle;
 import android.util.SparseBooleanArray;
-import android.widget.BaseAdapter;
 
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModel;
@@ -11,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
-import com.montaigne.montaigneapp.data.usecase.FuroSptUseCase;
 import com.montaigne.montaigneapp.data.usecase.ProjetoSptUseCase;
 import com.montaigne.montaigneapp.model.spt.FuroSpt;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
@@ -26,7 +23,6 @@ public class ProjetoVM extends ViewModel {
     private ProjetoSpt projeto;
     private FurosAdapter furosAdapter;
     protected void updateFurosAdapter(RecyclerView recyclerFuros) {
-        // TODO: implementar deleção
         furosAdapter = new FurosAdapter(projeto.getListaDeFuros());
         furosAdapter.getOnClickObservable().observeForever(furoSpt -> {
             FragmentManager manager = ((SptActivity) recyclerFuros.getContext())

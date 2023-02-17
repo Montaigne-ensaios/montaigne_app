@@ -1,7 +1,10 @@
 package com.montaigne.montaigneapp.ui.spt.furo;
 
-import static com.montaigne.montaigneapp.utils.editTextInputParser.setValue;
+import static com.montaigne.montaigneapp.utils.EditTextInputParser.setValue;
 
+import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -10,19 +13,21 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.montaigne.montaigneapp.R;
-import com.montaigne.montaigneapp.databinding.AdapterAmostraBinding;
+import com.montaigne.montaigneapp.databinding.AdapterSptAmostraBinding;
 import com.montaigne.montaigneapp.model.spt.AmostraSpt;
 import com.montaigne.montaigneapp.ui.LockingTextWatcher;
 import com.montaigne.montaigneapp.ui.BindedViewHolder;
 import com.montaigne.montaigneapp.ui.IClickListener;
+import com.montaigne.montaigneapp.utils.FragmentNavigator;
 
 import java.util.List;
 
-public class AmostraAdapter extends RecyclerView.Adapter<BindedViewHolder<AdapterAmostraBinding>>{
+public class AmostraAdapter extends RecyclerView.Adapter<BindedViewHolder<AdapterSptAmostraBinding>>{
     private List<AmostraSpt> amostras;
     private int currentSelectedPosition = -1;
     private SparseBooleanArray selectedItems = new SparseBooleanArray();
     private IClickListener clickListener;
+    private static String TAG = "AmostraAdapter";
 
     public SparseBooleanArray getSelectedItems() {
         return selectedItems;
@@ -47,16 +52,16 @@ public class AmostraAdapter extends RecyclerView.Adapter<BindedViewHolder<Adapte
 
     @NonNull
     @Override
-    public BindedViewHolder<AdapterAmostraBinding> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public BindedViewHolder<AdapterSptAmostraBinding> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 
-        AdapterAmostraBinding binding = AdapterAmostraBinding
+        AdapterSptAmostraBinding binding = AdapterSptAmostraBinding
                 .inflate(inflater, parent, false);
 
         return new BindedViewHolder<>(binding);
     }
 
-    private void setIOForHolder(BindedViewHolder<AdapterAmostraBinding> holder, int position) {
+    private void setIOForHolder(BindedViewHolder<AdapterSptAmostraBinding> holder, int position) {
         AmostraSpt amostra = amostras.get(position);
 
         setValue(holder.binding.editTextProfundidade, amostra.getProfundidade());
@@ -122,7 +127,7 @@ public class AmostraAdapter extends RecyclerView.Adapter<BindedViewHolder<Adapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BindedViewHolder<AdapterAmostraBinding> holder, int position) {
+    public void onBindViewHolder(@NonNull BindedViewHolder<AdapterSptAmostraBinding> holder, int position) {
         setIOForHolder(holder, position);
 
         if (selectedItems.get(position)) {

@@ -9,10 +9,8 @@
     <!-- Strings used for menu  -->
     <string name="action_help">Ajuda</string>
     <string name="action_infor">Sobre</string>
-    <string name="menu_item_add_spt_projeto">Adicionar projeto SPT</string>
-    <string name="menu_item_projetospt_novo_furo">Novo furo</string>
-    <string name="menu_item_projetospt_apagar_furo">Apagar furo</string>
-    <string name="menu_item_generate_report">Gerar relatório SPT</string>
+    <string name="menu_item_projetospt_edit_carimbo">Editar dados do projeto</string>
+    <string name="menu_item_furospt_edit_carimbo">Editar dados da sondagem</string>
 
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -26,9 +24,12 @@
     <string name="title_Meus_Projetos">Meus Projetos</string>
 
     <!-- Strings da tela ENSAIO-->
+    <string name="spt_ensaio_title">Amostra 01</string>
 
+    <string name="spt_projeto_title">Sondagens:</string>
 
     <!-- Strings da tela FURO-->
+    <string name="fragment_spt_furo_title">Ensaio de penetração</string>
 
 
     <!-- Strings da tela Carimbo Project -->
@@ -53,7 +54,7 @@
     <string name="registration_Data_inicio_furo">Data de inicio:</string>
     <string name="hint_date">MM/DD/YYYY</string>
     <string name="registration_nivel_furo">Nivel do Furo N:</string>
-    <string name="registration_hint_nivel_furo">15m</string>
+    <string name="registration_hint_nivel_furo">Ex: 15m</string>
     <string name="title_button_Coordenadas_furo">Coordernadas do Furo N:</string>
     <string name="btn_capturar_location">Capturar Localização</string>
     <string name="btn_start_furo">Iniciar furo</string>
@@ -69,7 +70,7 @@
     <!-- Strings dos butões inferior das telas -->
     <string name="btn_navigate_carimbo_projeto">Novo Furo</string>
     <string name="btn_navigate_carimbo_furo">Inicar ensaio</string>
-    <string name="btn_navigate_projeto">Carimbo do projeto</string>
+    <string name="btn_navigate_projeto">Criar novo ensaio</string>
     <string name="btn_navigate_furo">Carimbo do furo</string>
     <string name="btn_navigate_ensaio">Próxima camada</string>
     <string name="btn_finish_ensaio">Suspender ensaio</string>
@@ -80,12 +81,8 @@
 
     <!--    Strings de adapters-->
     <string name="adapter_projetos_savlos_data">Inicio do Projeto: </string>
-    <string name="adapter_projetos_savlos_projeto_label">Projeto  de</string>
+    <string name="adapter_projetos_savlos_projeto_label">Projeto de </string>
     <string name="adapter_amostra_name">"Amostra "</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
-
 
     <!-- Strings Granulometria -->
 
@@ -96,7 +93,8 @@
 
     <!-- Strings adpter dados agregados para substituir no adpter text -->
 
-    <string name="registration_substituir_dados_agregados">Substitua requisito </string>   //TO DO - Criar strings e hints com lista dos dados necessários para o adpter
+    <string name="registration_substituir_dados_agregados">Substitua requisito </string>
+<!--    TODO - Criar strings e hints com lista dos dados necessários para o adpter-->
     <string name="registration_name_agregado">Insira o nome do ensaio:</string>
     <string name="registration_massa_agregado">Insira a massa do agregado a ser analisado:</string>
     <string name="registration_massa_amostra_1">Indentificação da amostra 1:</string>

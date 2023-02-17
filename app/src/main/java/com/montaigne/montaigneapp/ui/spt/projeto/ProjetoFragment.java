@@ -1,6 +1,7 @@
 package com.montaigne.montaigneapp.ui.spt.projeto;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -8,7 +9,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,7 +17,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.montaigne.montaigneapp.R;
-import com.montaigne.montaigneapp.databinding.FragmentProjetoBinding;
+import com.montaigne.montaigneapp.databinding.FragmentSptProjetoBinding;
 import com.montaigne.montaigneapp.model.spt.ProjetoSpt;
 import com.montaigne.montaigneapp.ui.IClickListener;
 import com.montaigne.montaigneapp.utils.FragmentNavigator;
@@ -25,9 +25,11 @@ import com.montaigne.montaigneapp.ui.spt.SptActivity;
 import com.montaigne.montaigneapp.ui.spt.SptVM;
 
 public class ProjetoFragment extends Fragment {
+    private static String TAG = "ProjetoFragment";
+
     private ProjetoVM viewModel;
     private SptVM projectViewModel;
-    private FragmentProjetoBinding binding;
+    private FragmentSptProjetoBinding binding;
     private ActionMode actionMode;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,7 +43,7 @@ public class ProjetoFragment extends Fragment {
     @Override
     public View onCreateView (@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         super.onCreateView(inflater, container, savedInstanceState);
-        binding = FragmentProjetoBinding.inflate(inflater, container, false);
+        binding = FragmentSptProjetoBinding.inflate(inflater, container, false);
 
         ProjetoSpt projeto = projectViewModel.getProjeto();
         viewModel.setProjeto(projeto);
@@ -60,7 +62,6 @@ public class ProjetoFragment extends Fragment {
         });
         SptActivity activity = (SptActivity) requireActivity();
         activity.setButtonNavigateText(getString(R.string.btn_navigate_projeto));
-        activity.setActionBarTitle(projeto.getNome());
 
         return binding.getRoot();
     }
@@ -133,15 +134,12 @@ public class ProjetoFragment extends Fragment {
 
         @Override
         public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
-            if (menuItem.getItemId() == R.id.action_add_furo) {
-                FragmentNavigator.navigate(R.id.action_new_furo,
+            if (menuItem.getItemId() == R.id.action_edit_carimbo) {
+                FragmentNavigator.navigate(R.id.action_edit_Carimbo,
                         requireActivity().getSupportFragmentManager(),
                         R.id.containerSpt);
-            } else if (menuItem.getItemId() == R.id.action_genarate_report) {
-                Toast.makeText(requireContext(), R.string.not_implemented, Toast.LENGTH_SHORT).show();
-                // todo: implementar geração de ensaios xlsx
+                Log.v(TAG, "action_edit_Carimbo");
             }
-
             return true;
         }
     }

@@ -1,7 +1,7 @@
 package com.montaigne.montaigneapp.ui.spt.ensaio;
 
-import static com.montaigne.montaigneapp.utils.editTextInputParser.getFloat;
-import static com.montaigne.montaigneapp.utils.editTextInputParser.setValue;
+import static com.montaigne.montaigneapp.utils.EditTextInputParser.getFloat;
+import static com.montaigne.montaigneapp.utils.EditTextInputParser.setValue;
 
 import android.widget.EditText;
 
@@ -76,6 +76,7 @@ public class EnsaioVM extends ViewModel {
 
         boolean isNew = true;
         for (AmostraSpt amostraI: furo.getListaDeAmostras()) {
+            // todo: garantir que amostras são únicas
             if (amostraI.getProfundidade() == amostra.getProfundidade()) {
                 isNew = false;
                 break;

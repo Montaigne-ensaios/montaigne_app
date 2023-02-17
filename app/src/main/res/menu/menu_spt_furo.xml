@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/action_edit_carimbo"
+        android:id="@+id/action_edit_carimboEnsaio"
         android:orderInCategory="100"
-        android:title="@string/menu_item_projetospt_edit_carimbo"
+        android:title="@string/menu_item_furospt_edit_carimbo"
         android:icon="@drawable/ic_add"
         />
 

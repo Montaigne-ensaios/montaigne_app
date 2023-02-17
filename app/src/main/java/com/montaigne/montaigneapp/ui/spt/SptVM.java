@@ -38,8 +38,10 @@ public class SptVM extends AbstractProjectViewModel <ProjetoSpt> {
         f.onPause();  // garante que os fragmentos atualizam o projeto
 
         if (f instanceof ProjetoFragment) {
-            Log.v(TAG, "action_edit_Carimbo");
-            navigate(R.id.action_edit_Carimbo, manager, R.id.containerSpt); //
+            Log.v(TAG, "action_new_Furo");
+            Bundle b = new Bundle();
+            b.putInt("furoId", projeto.getListaDeFuros().size());
+            navigate(R.id.action_new_furo, manager, R.id.containerSpt, b);
 
         } else if (f instanceof FuroFragment) {
             Log.v(TAG, "action_edit_CarimboEnsaio");
