@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <meta-data android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version"/>
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission
         android:name="android.permission.ACCESS_FINE_LOCATION"
@@ -38,6 +44,13 @@
             android:value="" />
 
         <activity
+            android:name=".ui.auth.AuthActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ui.spt.SptActivity"
             android:exported="false"
             android:screenOrientation="userPortrait"/>
@@ -64,8 +77,8 @@
         <activity
             android:name=".ui.home.HomeActivity"
             android:exported="true"
-            android:theme="@style/Theme.MontaigneApp.NoActionBar"
-            android:screenOrientation="userPortrait">
+            android:screenOrientation="userPortrait"
+            android:theme="@style/Theme.MontaigneApp.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

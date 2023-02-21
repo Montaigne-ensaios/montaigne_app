@@ -59,6 +59,7 @@
     <string name="btn_capturar_location">Capturar Localização</string>
     <string name="btn_start_furo">Iniciar furo</string>
 
+    <string name="notImplemented">Não implementado</string>
 
 
     <!-- Strings da tela Adpter_home_projetos-->
@@ -66,6 +67,11 @@
 
     <!-- Strings da tela Adpter_home_filtro_Ensaios-->
 
+
+
+
+    <!-- Strings da tela de login -->
+    <string name="title_login">Login</string>
 
     <!-- Strings dos butões inferior das telas -->
     <string name="btn_navigate_carimbo_projeto">Novo Furo</string>
