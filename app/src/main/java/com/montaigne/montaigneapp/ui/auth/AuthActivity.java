@@ -4,14 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Toast;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -20,15 +16,15 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.montaigne.montaigneapp.BuildConfig;
 import com.montaigne.montaigneapp.databinding.ActivityAuthBinding;
+
+import java.util.Objects;
 
 public class AuthActivity extends AppCompatActivity {
     private ActivityAuthBinding binding;
@@ -54,12 +50,9 @@ public class AuthActivity extends AppCompatActivity {
 
         client = GoogleSignIn.getClient(this,options);
 
-        binding.buttonSignInGoogle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent signInIntent = client.getSignInIntent();
-                activityResultLauncher.launch(signInIntent);
-            }
+        binding.buttonSignInGoogle.setOnClickListener(view -> {
+            Intent signInIntent = client.getSignInIntent();
+            activityResultLauncher.launch(signInIntent);
         });
     }
 
@@ -74,50 +67,51 @@ public class AuthActivity extends AppCompatActivity {
         }
     }
 
-    private ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
+    private final ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
-            new ActivityResultCallback<ActivityResult>() {
-                @Override
-                public void onActivityResult(ActivityResult result) {
-                    if (result.getResultCode() == Activity.RESULT_OK) {
-                        Intent intentResult = result.getData();
-                        Task<GoogleSignInAccount> task = GoogleSignIn
-                                .getSignedInAccountFromIntent(intentResult);
+            result -> {
+                if (result.getResultCode() == Activity.RESULT_OK) {
+                    Intent intentResult = result.getData();
+                    Task<GoogleSignInAccount> task = GoogleSignIn
+                            .getSignedInAccountFromIntent(intentResult);
 
-                        try {
-                            GoogleSignInAccount account = task.getResult(ApiException.class);
-                            loginGoogleWithCredentials(account.getIdToken());
+                    try {
+                        GoogleSignInAccount account = task.getResult(ApiException.class);
+                        loginGoogleWithCredentials(account.getIdToken());
 
-                        } catch (ApiException e) {
-                            Toast.makeText(
-                                    getApplicationContext(),
-                                    "Erro ao logar",
-                                    Toast.LENGTH_LONG).show();
+                    } catch (ApiException e) {
+                        Toast.makeText(
+                                getApplicationContext(),
+                                "Erro ao logar",
+                                Toast.LENGTH_LONG).show();
 
-                            Log.e("Login error", e.getMessage());
-                        }
+                        Log.e("Login error", e.getMessage());
                     }
+                } else {
+                    Toast.makeText(
+                            getApplicationContext(),
+                            "Login cancelado",
+                            Toast.LENGTH_LONG).show();
+
+                    Log.e("Login cancelado", "Verifique a compilação, verifique as impressões digitais do App e demais configurações");
                 }
             });
 
     private void loginGoogleWithCredentials(String idTolken) {
         AuthCredential authCredential = GoogleAuthProvider.getCredential(idTolken, null);
         firebaseAuth.signInWithCredential(authCredential)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            viewModel.toHome(getApplicationContext());
-                            finish();
+                .addOnCompleteListener(task -> {
+                    if(task.isSuccessful()){
+                        viewModel.toHome(getApplicationContext());
+                        finish();
 
-                        }else {
-                            Toast.makeText(getApplicationContext(), "Falha ao logar",
-                                    Toast.LENGTH_SHORT).show();
+                    }else {
+                        Toast.makeText(getApplicationContext(), "Falha ao logar",
+                                Toast.LENGTH_SHORT).show();
 
-                            Log.e("Login error", task.getException().getMessage());
-                        }
-
+                        Log.e("Login error",
+                                Objects.requireNonNull(task.getException()).getMessage());
                     }
-        });
+                });
     }
 }
